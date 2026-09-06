@@ -107,7 +107,7 @@ Measured on the development box (WSL2, Threadripper 7970X): 32 asynchronous `Zum
 
 ## License
 
-No license has been assigned yet; until a `LICENSE` file is added, all rights are reserved. Contact the author if you want to build on this work.
+MIT — see [LICENSE](LICENSE). The license covers this project's code and documents only; *Zuma's Revenge* itself, its data files and any original-client material remain the property of their owners and are not distributed here.
 
 ## Author
 
