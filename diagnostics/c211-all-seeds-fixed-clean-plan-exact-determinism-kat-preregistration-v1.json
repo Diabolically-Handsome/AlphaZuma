@@ -1,0 +1,39 @@
+{
+  "acceptance": {
+    "full_800x600_bgra_frames_exact": true,
+    "normalized_gameplay_and_rng_exact": true,
+    "render_state_exact": true,
+    "two_independent_processes_required": true
+  },
+  "created_utc": "2026-08-10T17:58:39.555Z",
+  "fixed_contract": {
+    "end_update": 3438,
+    "freeze_update": 3425,
+    "retained_tick_count": 10,
+    "run_order": ["kat_a", "kat_b"],
+    "start_update": 3429,
+    "warmup_tick_count": 4
+  },
+  "fixed_input": {
+    "board_seed": 1853292490,
+    "dmo_sha256": "sha256:a5306095efb020c747530b0b546c8a8af1267a71ea48395e225f9b9a7c6516cf",
+    "global_rng_seed": 415356078,
+    "plan": "D:/ZumaGolden/diagnostics/clean-c210-natural-loss-all-seeds-fixed-plan-v1/plan.json",
+    "plan_sha256": "sha256:0a09ebf16b4f967891145b9b9718e4e3d0937aefd025a6c313d27e37d0aa060c",
+    "thread_crt_rng_seed": 1020014204
+  },
+  "id": "c211-all-seeds-fixed-clean-plan-exact-determinism-kat",
+  "non_authorizations": ["pc_golden_credit", "mechanism_credit", "fidelity_gate_open", "training_start"],
+  "output_roots_absent_at_freeze": {"kat_a": true, "kat_b": true},
+  "outputs": {
+    "host_pre": "D:/ZumaGolden/diagnostics/c211-all-seeds-determinism-host-pre-v1.json",
+    "kat_a": "D:/ZumaGolden/diagnostics/c211-all-seeds-determinism-kat-a-v1",
+    "kat_b": "D:/ZumaGolden/diagnostics/c211-all-seeds-determinism-kat-b-v1"
+  },
+  "parent": {
+    "path": "diagnostics/c210-global-and-thread-seed-clean-plan-derivation-preregistration-v1.json",
+    "sha256": "sha256:b25c49eebb6bac2e9ff496ca50d522aafc2fd1973056c06f4ab57b286b45b878"
+  },
+  "status": "FROZEN_BEFORE_KAT_OUTPUTS",
+  "version": 1
+}

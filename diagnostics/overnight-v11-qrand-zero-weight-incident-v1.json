@@ -1,0 +1,110 @@
+{
+  "schema": "zuma-rl.overnight-v11-incident",
+  "version": 1,
+  "status": "ROOT_CAUSE_FIXED_AND_RECOVERY_SMOKE_PASSED",
+  "created_utc": "2026-08-13T04:29:17.465Z",
+  "incident_id": "overnight-v11-qrand-zero-weight-selection-20260813",
+  "parent_preregistration": {
+    "path": "diagnostics/overnight-v11-multilevel-s42081301-preregistration-v1.json",
+    "sha256": "sha256:59b581248b3c4324a4dc39c0468ef2ebff389649317d23190b4a755a5c22b954"
+  },
+  "detection": {
+    "failed_run": "uniform-5080",
+    "failed_utc": "2026-08-13T04:16:24.616927Z",
+    "failure": {
+      "path": "/mnt/d/ZumaTraining/overnight-v11-uniform-s42081302-v1/failure.json",
+      "sha256": "sha256:9eca86c60e0c72113ab7c5bf2415934163ba93406909957c984dbf397efe0b1a"
+    },
+    "stderr": {
+      "path": "/mnt/d/ZumaTraining/overnight-v11-uniform-s42081302-v1.launch.stderr.log",
+      "sha256": "sha256:7722834f44ab22b4a8b7efd9d92f877f8dcef079b2ab1669a6ffc09713e41e36"
+    },
+    "worker_exception": "IndexError: index 37 is out of bounds for axis 0 with size 36",
+    "parent_exception": "EOFError",
+    "hardware_failure": false,
+    "model_corruption": false
+  },
+  "root_cause": {
+    "component": "zuma_rl.revenge_core._BalancedColorChooser.choose",
+    "condition": "MSVC CRT random ratio is exactly zero while an earlier QRand storage slot has zero weight",
+    "prior_behavior": "The all-slot scan used needle <= sway and could select an absent zero-weight colour",
+    "downstream_effect": "next_color became 6 for a six-colour observation contract, causing the one-hot observation write to index past its boundary",
+    "minimal_reproducer": {
+      "crt_seed": 20057,
+      "allowed_support": [
+        1
+      ],
+      "prior_selected_colour": 0,
+      "required_selected_colour": 1
+    }
+  },
+  "fix": {
+    "behavior": "Scan only the ordered live support and use its final member as the float32 round-off fallback",
+    "revenge_core": {
+      "path": "src/zuma_rl/revenge_core.py",
+      "sha256": "sha256:2652b12d396d47f70875323ab7157c64d68d5067ff762cc723a2aba99329dae3"
+    },
+    "regression_tests": {
+      "path": "tests/test_revenge_core.py",
+      "sha256": "sha256:cc6eb3d83a0e1e028c93c9cd32d87c58aa3aec207bcf9b81a22c9580831f851e",
+      "qrand_focused_tests_passed": 7,
+      "full_revenge_core_tests_passed": 100,
+      "support_invariant_fuzz_cases": 700000,
+      "support_invariant_fuzz_passed": true,
+      "captured_retail_qrand_vector_unchanged": true
+    }
+  },
+  "preserved_evidence": {
+    "adaptive_checkpoint": {
+      "path": "/mnt/d/ZumaTraining/overnight-v11-adaptive-s42081301-v1/checkpoints/adaptive-5090_3145728_steps.zip",
+      "sha256": "sha256:71432884358856bac6604560173e89b3aa8d2d2d584f860a4c14056a638b1d4f",
+      "timesteps": 3145728
+    },
+    "uniform_checkpoint": {
+      "path": "/mnt/d/ZumaTraining/overnight-v11-uniform-s42081302-v1/checkpoints/uniform-5080_2097152_steps.zip",
+      "sha256": "sha256:ba040a16101fa5b05ddd00d7b2a4e77eeb2caee1eb82afc83da45f88426759e9",
+      "timesteps": 2097152
+    },
+    "adaptive_last_published_curriculum": {
+      "path": "/mnt/d/ZumaTraining/overnight-v11-adaptive-s42081301-v1/training_status.json",
+      "sha256": "sha256:0b150e6656fb27bed7627fefd209f08b8fb149f8f0724229ea648438da6b285a",
+      "published_timesteps": 3135344
+    },
+    "uniform_post_checkpoint_steps_discarded": true,
+    "reason": "No intact model checkpoint exists after 2097152 steps on the failed uniform lineage"
+  },
+  "recovery_smoke": {
+    "preregistration": {
+      "path": "diagnostics/overnight-v11-recovery-resume-smoke-s43081999-preregistration-v1.json",
+      "sha256": "sha256:f0aafa5ebc94e1cded614a735a193868d55045e42389d949e46426e7e335fd74"
+    },
+    "initialization": {
+      "path": "/mnt/d/ZumaTraining/overnight-v11-recovery-smoke-s43081999-v1/initialization.json",
+      "sha256": "sha256:ad677aa57e59a19abad65227511c7e3cb242b6ec4dca6fca890a65e1ba7592e6",
+      "policy_restored_bitwise": true,
+      "optimizer_restored_bitwise": true,
+      "optimizer_state_entries": 24
+    },
+    "completion": {
+      "path": "/mnt/d/ZumaTraining/overnight-v11-recovery-smoke-s43081999-v1/completion.json",
+      "sha256": "sha256:57e1e671cc63a882fdf9bc0ee11d46c78bd0868a18534854326e61f60f3ed2d3",
+      "source_timesteps": 2097152,
+      "added_timesteps": 4096,
+      "final_timesteps": 2101248,
+      "n_updates_before": 511,
+      "n_updates_after": 519
+    },
+    "formal_evidence_eligible": false
+  },
+  "recovery_policy": {
+    "policy_and_value_parameters": "restore bitwise from the last intact checkpoint",
+    "optimizer": "restore Adam state bitwise",
+    "timestep_counter": "continue from checkpoint",
+    "adaptive_curriculum": "resume last published weights; reset unavailable rolling outcome order and disclose this amendment",
+    "environment_episode_seeds": "use new non-overlapping namespaces",
+    "selection_and_morning_blind_seeds": "unchanged from the original preregistration",
+    "success_gates": "unchanged from the original preregistration",
+    "training_deadline": "unchanged at 2026-08-13T13:30:00Z",
+    "reporting_deadline": "unchanged at 2026-08-13T15:30:00Z"
+  }
+}

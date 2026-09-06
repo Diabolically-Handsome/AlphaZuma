@@ -1,0 +1,51 @@
+{
+  "schema": "zuma-rl.alphazuma-55-configured-successor-independent-audit",
+  "version": 1,
+  "status": "PASS",
+  "audited_utc": "2026-08-16T01:57:50.871971+00:00",
+  "controller_result": "COMPLETE_NO_PROMOTION",
+  "formal_seed_consumption": "NONE",
+  "promotion_gate": {
+    "actual": {
+      "wins": 1,
+      "cleared_levels": 1,
+      "total_score": 58160,
+      "median_winning_ticks": 5462,
+      "model_bytes": 9448881
+    },
+    "required": {
+      "selected_model_must_be_one_of": [
+        "polar-wide-epoch-10",
+        "polar-wide-epoch-30",
+        "polar-wide-epoch-60"
+      ],
+      "minimum_cleared_levels": 35,
+      "minimum_wins": 35
+    },
+    "passed": false
+  },
+  "artifacts": {
+    "master": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-wide-successor-s99081539-preregistration-v1.json",
+      "sha256": "sha256:7e46187a4f027dd699f4b8e813d16aa66d8b1eb85535430bc85ef4eb909bb2fb"
+    },
+    "controller": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_configured_successor_certification.py",
+      "sha256": "sha256:1d55eea57947abe87168ec9fdc2157753262474b044329417ee5f725f9eda953"
+    },
+    "promotion_decision": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-wide-successor-s99081539-v1/controller/promotion-decision.json",
+      "sha256": "sha256:328801c33dfe26bc590634857ab3b5b8e97e01d8555774f5aaea6775bf43e8d7"
+    },
+    "engineering_audit": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-wide-validation-s99081538-audit-v1.json",
+      "sha256": "sha256:fc0638f8f612f56153bd6c876d2c666690616b09cce29991dd9230797084d66f"
+    }
+  },
+  "checks": [
+    "engineering_matrix_recomputed",
+    "promotion_ranking_recomputed",
+    "promotable_inventory_recomputed",
+    "successor_seed_roots_absent"
+  ]
+}

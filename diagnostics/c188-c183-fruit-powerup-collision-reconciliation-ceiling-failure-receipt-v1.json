@@ -1,0 +1,59 @@
+{
+  "schema": "zuma-rl.c183-fruit-powerup-collision-reconciliation-ceiling-failure-receipt",
+  "version": 1,
+  "status": "FAIL_RECONCILIATION_SEARCH_CEILING_RETAIN_OUTPUT",
+  "created_utc": "2026-08-10T15:38:15.3515952Z",
+  "preregistration": {
+    "path": "diagnostics/c188-c183-fruit-powerup-collision-reconciled-unbound-diff-preregistration-v1.json",
+    "sha256": "sha256:4b3e7774e14007e2d6b66462145c4a88d0e2f67a135ed1eea78e4aabdc8a50f0"
+  },
+  "failed_output": {
+    "path": "D:/ZumaGolden/diagnostics/jungle2-c183-u8213-u8260-fruit-powerup-collision-diff-v3-reconciled-unbound.json",
+    "bytes": 99034,
+    "sha256": "sha256:736fb7b4778ae54ef970630d88f88b50b350314647dff10f44d865e29770dcbd",
+    "status": "FAIL",
+    "compared_tick_count": 47,
+    "failed_tick_count": 26,
+    "gameplay_state_exact_before_global_rng_tick_count": 47
+  },
+  "reconciliation": {
+    "policy": "conditional_external_mtrand_reconciliation_v2",
+    "maximum_draws_per_tick": 512,
+    "reconciled_tick_count": 1,
+    "total_reconciled_draw_count": 14,
+    "successful_row": {
+      "framework_update": 8234,
+      "phase": "after_gameplay_state_match",
+      "draw_count": 14,
+      "full_state_reached_exactly": true
+    },
+    "first_ceiling_failure": {
+      "framework_update": 8235,
+      "gameplay_state_matched_before_reconciliation": true,
+      "pc_index": 382,
+      "simulator_index_before_reconciliation": 410,
+      "events_are_all_zero": true,
+      "fruit_state_mismatches": {},
+      "curve_state_mismatches": {},
+      "minimum_index_cycle_candidate_draws": 596,
+      "candidate_exceeds_frozen_ceiling": true
+    }
+  },
+  "interpretation": {
+    "simulator_gameplay_mismatch_observed": false,
+    "reconciliation_algorithm_failure_observed": false,
+    "frozen_search_ceiling_sufficient": false,
+    "only_authorized_next_change": "increase per-tick search ceiling from 512 to 1024 on a new immutable output path",
+    "native_call_trace_proof_still_mandatory": true
+  },
+  "decision": {
+    "c188_simulator_diff_credit": false,
+    "failed_output_retained": true,
+    "code_changed": false,
+    "standards_lowered": false,
+    "pc_golden_authentication_start": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

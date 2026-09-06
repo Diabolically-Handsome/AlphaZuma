@@ -1,0 +1,84 @@
+{
+  "schema": "zuma-rl.pc-late-handoff-rng-replication-outcome",
+  "version": 25,
+  "status": "FAIL_13_OF_20_SOURCE_EXACT_LATE_HANDOFF_NOT_QUALIFIED",
+  "created_utc": "2026-08-05T20:06:23.708Z",
+  "id": "late-handoff-rng-replication-v25-outcome",
+  "parent_preregistration": {"path": "diagnostics/late-handoff-rng-replication-preregistration-v25.json", "sha256": "sha256:3d6a5a9ac41afbf2c9522f7aa399119acadf222e1837c776d7a0b80977d99af8"},
+  "execution_binding": {"path": "diagnostics/late-handoff-rng-replication-execution-binding-v25.json", "sha256": "sha256:dc7fbfee4d412a250ad6c707874b3d746d10fd8034b3ee2724d783fc85b4054a", "session_nonce": "d515b956c449464ebb84d6b2b97f5126"},
+  "execution": {
+    "fixed_run_count": 20,
+    "valid_run_count": 20,
+    "selected_probe_manifest_sha256": "sha256:b51f8fd030bec3e04087bcbbd1e7c6d2ae334778533c505097ba734b3474a5a7",
+    "host_snapshot_manifest_sha256": "sha256:5875620bf74b06724f26e37d8a534dc1ac6fdeeec2bbf335809ac1b415f0959e",
+    "roots_with_pre_handoff_infrastructure_retry": ["l02", "l07", "l08"],
+    "retry_count": 3,
+    "all_selected_attempts_first_valid": true,
+    "semantic_retry_count": 0,
+    "post_ready_retry_count": 0
+  },
+  "validity": {
+    "all_20_collector_contracts_pass": true,
+    "all_20_observer_contracts_pass": true,
+    "all_20_actual_handoff_updates": 3009,
+    "all_20_detached_after_updates": 3009,
+    "all_20_ready_v2_handoffs_verified": true,
+    "all_20_handoff_rng_reads": 1,
+    "all_20_handoff_rng_read_bytes": 2500,
+    "all_20_handoff_rng_writes": 0,
+    "all_20_observer_process_memory_writes": 0,
+    "all_20_state_correction_counts": 0,
+    "all_20_hardware_breakpoints_restored": true,
+    "all_20_debugger_detach_errors": null,
+    "all_20_persistent_file_modified": false
+  },
+  "primary_result": {
+    "required_exact_runs": 20,
+    "observed_exact_runs": 13,
+    "observed_deficit_runs": 7,
+    "observed_surplus_runs": 0,
+    "exact_fraction": 0.65,
+    "primary_pass": false,
+    "late_handoff_transport_candidate_qualified": false
+  },
+  "exact_handoff_pairs": [
+    {"handoff_draw_count": 1563, "handoff_to_boundary_increment": 99, "support": 12},
+    {"handoff_draw_count": 1562, "handoff_to_boundary_increment": 100, "support": 1}
+  ],
+  "deficit_observations": [
+    {"run_id": "l03", "handoff_draw_count": 1559, "boundary_draw_count": 1648, "increment": 89, "deficit": 14},
+    {"run_id": "l05", "handoff_draw_count": 1560, "boundary_draw_count": 1648, "increment": 88, "deficit": 14},
+    {"run_id": "l08", "handoff_draw_count": 1548, "boundary_draw_count": 1639, "increment": 91, "deficit": 23},
+    {"run_id": "l09", "handoff_draw_count": 1558, "boundary_draw_count": 1648, "increment": 90, "deficit": 14},
+    {"run_id": "l10", "handoff_draw_count": 1547, "boundary_draw_count": 1640, "increment": 93, "deficit": 22},
+    {"run_id": "l16", "handoff_draw_count": 1552, "boundary_draw_count": 1639, "increment": 87, "deficit": 23},
+    {"run_id": "l17", "handoff_draw_count": 1547, "boundary_draw_count": 1640, "increment": 93, "deficit": 22}
+  ],
+  "scientific_interpretation": {
+    "late_handoff_alone_sufficient": false,
+    "deficit_present_before_handoff_resume": true,
+    "deficit_also_accumulates_after_handoff_resume": true,
+    "exact_dominant_handoff_target_draw_count": 1563,
+    "exact_dominant_post_handoff_increment": 99,
+    "next_hypothesis": "While the main thread remains transactionally suspended at update 3009, allow outstanding non-main work to reach an independently frozen RNG readiness state before publishing ready-v2 and resuming the main thread."
+  },
+  "host_safety": {
+    "canonical_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_pre_sha256": "sha256:ad8704db5429539634d1515db717db725518a81496b0859c3aae29d142788504",
+    "host_after_l20_sha256": "sha256:4b81777fa49cb127a67e38151b60f8fc3f8f51f4376c5065a3ae7246d6e8b980",
+    "host_post_sha256": "sha256:93c7e6df76bc1a471d58268f85a133a2a10a7a0b5340944d214e8b3c95a3fcdd",
+    "all_20_after_run_state_roots_match": true,
+    "host_pre_state_root_match": true,
+    "host_post_state_root_match": true,
+    "residual_retail_process_count": 0
+  },
+  "decision": {
+    "frozen_status": "FAIL_13_OF_20_SOURCE_EXACT_LATE_HANDOFF_NOT_QUALIFIED",
+    "next_action": "Do not use late handoff alone for formal PC Golden. Inspect prior barrier experiments, then freeze a read-only main-suspended readiness intervention only if it is not duplicative and has an independently specified target.",
+    "pc_golden_credit": false,
+    "fidelity_gate_change": false,
+    "formal_transport_change": false,
+    "large_scale_training_start": false
+  },
+  "non_authorizations": ["pc_golden_credit", "fidelity_gate_change", "formal_transport_change", "large_scale_training_start"]
+}

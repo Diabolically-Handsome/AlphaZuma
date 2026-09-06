@@ -1,0 +1,43 @@
+{
+  "schema": "zuma-rl.retail-natural-loss-transition-implementation-receipt",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T08:05:48.2186577Z",
+  "preregistration": {
+    "path": "diagnostics/recording-c139-natural-loss-transition-preregistration-v1.json",
+    "sha256": "sha256:cf532b4576d08849e6f323dab825bf9ceed5d2b532cf32d65d954ac5f182176b"
+  },
+  "implementation": [
+    {
+      "path": "tools/autoplay_live_zuma.py",
+      "bytes": 40989,
+      "sha256": "sha256:e1ab0d987a1a3788ad3436f0bf1b5aa821d05c81b065724662617229336a63f7"
+    },
+    {
+      "path": "tools/record_autoplay_zuma.py",
+      "bytes": 47677,
+      "sha256": "sha256:c21e448fd7d7538f623b6579e4eb626bc2d1ec0ac27a02e381a6d0d9a3ecf390"
+    },
+    {
+      "path": "src/zuma_rl/retail_dmo_provenance.py",
+      "bytes": 38301,
+      "sha256": "sha256:bd7d2acb863130950111be101b12d0637d42ca14d8b51af5c6ecd621b09415f7"
+    }
+  ],
+  "verification": {
+    "command_1": "python -m pytest tests/test_autoplay_live_zuma.py tests/test_record_autoplay_zuma.py tests/test_retail_dmo_provenance.py -q",
+    "command_1_passed": 52,
+    "command_2": "python -m pytest tests/test_popcap_thread_crt_restore.py tests/test_popcap_global_mtrand_restore.py -q",
+    "command_2_passed": 15,
+    "total_passed": 67,
+    "failed": 0
+  },
+  "frozen_semantics": {
+    "loss_counter_not_used": true,
+    "ten_second_terminal_persistence_removed": true,
+    "restart_transition_receipt_required": true,
+    "retail_ui_exit_from_replacement_board_required": true,
+    "recording_report_version": 2,
+    "c137_artifacts_modified": false
+  }
+}

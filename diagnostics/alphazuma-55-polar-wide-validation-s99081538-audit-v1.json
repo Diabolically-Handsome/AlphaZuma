@@ -1,0 +1,104 @@
+{
+  "schema": "zuma-rl.alphazuma-55-training-validation-audit",
+  "version": 1,
+  "status": "PASS",
+  "audited_utc": "2026-08-16T01:57:18.072676+00:00",
+  "formal_selection_authority": false,
+  "training_recipe_change_authority": false,
+  "artifacts": {
+    "master": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+      "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+    },
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-wide-validation-s99081538-preregistration-v1.json",
+      "sha256": "sha256:f0a97831672fbe52302fc53bd7da13a13c8bccbc7239e7b2fda51776908f4cea"
+    },
+    "models_manifest": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-wide-validation-s99081538-models-v1.json",
+      "sha256": "sha256:9b8aebb044ab00f6508d5787a3f69fe674b5c50ccffccdec037cf7bb1943b861"
+    },
+    "matrix_shard": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-wide-validation-s99081538-v1/matrix-shard-00-of-01.json",
+      "sha256": "sha256:24a65ed320cb716ad3f5edea4b39b5cc3e3365da2878f0901e0b7be398140b10"
+    },
+    "auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_training_validation.py",
+      "sha256": "sha256:3621dcb64c3342e3954533d22401f258fe6c72ac49d164456455ad77ea54aa67"
+    }
+  },
+  "matrix": {
+    "levels": 55,
+    "attempts_per_model": 55,
+    "models": 4,
+    "completed_attempts": 220,
+    "seed_plan": {
+      "registry": "training_validation",
+      "base_seed": 1550001400,
+      "last_seed": 1550001454
+    },
+    "runtime": {
+      "python": "3.12.3",
+      "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "parallel_envs": 24,
+      "total_vector_transitions": 1718200,
+      "wall_seconds": 3337.092186238995
+    }
+  },
+  "model_summaries": [
+    {
+      "model_id": "polar-source-final",
+      "model_sha256": "sha256:3e9996b20c18cf24e6a0f23c719bf383e6381d3240c91d9767e0245e372d12b0",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "polar-wide-epoch-10",
+      "model_sha256": "sha256:55115c7e5e2ba7358001f300d4f1495b74f64f0322a3862afd9d9d145f44b3f3",
+      "attempts": 55,
+      "wins": 1,
+      "losses": 54,
+      "truncations": 0,
+      "cleared_levels": 1,
+      "winning_levels": [
+        {
+          "level_id": "Jungle1",
+          "seed": 1550001400,
+          "ticks": 5462,
+          "score": 3670,
+          "trajectory_sha256": "sha256:887f26555949b41d7faa17b4f2f318355269af4b8ebb09940e9c1388f179b42b"
+        }
+      ],
+      "median_winning_ticks": 5462
+    },
+    {
+      "model_id": "polar-wide-epoch-30",
+      "model_sha256": "sha256:400b70a68a7d4354e848ff6910e1de259b3e9a35f8d8e24e67f297d710eeb1a4",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "polar-wide-epoch-60",
+      "model_sha256": "sha256:dc16d4e13e767dc2a5b2669dbb167d5a67f83c0d068eca5b5115c57b5007c00c",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    }
+  ],
+  "paired_comparison": null,
+  "interpretation_boundary": "This PASS proves artifact integrity and a paired training-health signal only; it is not selection, final blind, or continuous-campaign evidence."
+}

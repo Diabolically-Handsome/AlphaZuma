@@ -1,0 +1,279 @@
+{
+  "schema": "zuma-rl.alphazuma-55-polar-wide-distillation-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_TRAINING",
+  "created_utc": "2026-08-15T20:22:50.434907+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "objective": "Test whether a 1024-dimensional polar student trained on three independent full55 teacher passes reduces the compression and single-trajectory generalization bottleneck.",
+  "decision_evidence": {
+    "source_polar_parameters": 324122,
+    "source_polar_consumed_teacher_passes": 1,
+    "source_polar_verb_accuracy": 0.828107,
+    "source_polar_fire_aim_within_three_accuracy": 0.646703,
+    "dagger_round_00_parameters": 324122,
+    "dagger_round_00_fire_aim_within_three_accuracy": 0.586304,
+    "dagger_round_01_partial_online_result": {
+      "levels_observed": 24,
+      "wins": 3,
+      "losses": 21,
+      "teacher_execution_probability": 0.5,
+      "classification": "adaptive engineering evidence before this preregistration"
+    }
+  },
+  "hypotheses": {
+    "alternative": "more learned polar capacity plus three independent teacher streams improves unseen-seed online coverage without changing the actor interface",
+    "null": "the failure is sequential distribution shift rather than capacity or trajectory diversity, so the wider clone does not improve online coverage"
+  },
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "builder": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_polar_wide.py",
+    "sha256": "sha256:a9774fbbf900f9aa6878c12dd68271bd9c3f5a01a89ca6bda4abad13c267167f"
+  },
+  "trainer": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_polar_wide_v1.py",
+    "sha256": "sha256:6ecfebc751af35c33469bace5aea47d80bc6162a9c1500cd71410ce94337f715"
+  },
+  "implementation": {
+    "base_polar_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_polar_distillation.py",
+      "sha256": "sha256:7dec5efc0f0e5faccc03a7eda4d03a10c6230739bceedc67bfafd6c113f61095"
+    },
+    "base_polar_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_polar_v1.py",
+      "sha256": "sha256:9b5a4cc441cac232e7f8df1486e8c774acaa0ac7f7d54951c244b4940390d875"
+    },
+    "settled_v3_distillation_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_settled_v3.py",
+      "sha256": "sha256:42e8c5274b4674c60b17d80470cbf29d5f4f09adc079f128f587f0e085f0a1be"
+    },
+    "legacy_distillation_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55.py",
+      "sha256": "sha256:13ac1883fc9dc9541193dbca0da3b94fa91c7476e07873d22bec51a7a330b38a"
+    },
+    "behavior_clone_batch_primitive": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/pretrain_maskable_ppo_teacher.py",
+      "sha256": "sha256:a8d271e3b70198cd324f8e9bd41f59f50c1874451400cf188156c146187e59c9"
+    },
+    "settled_teacher_v3": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_settled_strategic_teacher_v3.py",
+      "sha256": "sha256:32181d24b6dee736f18afb588ce5baea32d96ac055da06be621c2a36f45369a3"
+    },
+    "environment": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_env.py",
+      "sha256": "sha256:d95407a7127ecc4e580aef041426d012edf5ea8dfa2fa8c4405c398445b1132e"
+    },
+    "core": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_core.py",
+      "sha256": "sha256:7718ae186c173127ac82e488413857dc6c82d2e41c1dfb5e94ca553a1a3abff6"
+    },
+    "features": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_features.py",
+      "sha256": "sha256:d878d7ec034bfe1d0b9c8f16bf2fcc787a05de5ac404eb4f1685c4f5a46646a0"
+    },
+    "scope": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/alphazuma_55.py",
+      "sha256": "sha256:ba316c4537fd62d4c34cfc1c40d722d5d9b5f38ba954e691acea83ab51837649"
+    }
+  },
+  "teacher_evidence": {
+    "exact_mask_fresh_55": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/masked-teacher-v3-fresh-probe-s99081516-v1/result.json",
+      "sha256": "sha256:415aa45c46e3021f8edb9d6b3c061954226aa497b14996a86d006fa86c30f9ec"
+    },
+    "classification": "engineering_teacher_not_formal_blind"
+  },
+  "levels": [
+    "Jungle1",
+    "Jungle2",
+    "Jungle3",
+    "Jungle4",
+    "jungle6",
+    "Jungle7",
+    "Jungle8",
+    "Jungle9",
+    "Jungle10",
+    "village1",
+    "village2",
+    "village3",
+    "village4",
+    "village5",
+    "village6",
+    "village7",
+    "village8",
+    "village10",
+    "city1",
+    "city2",
+    "city3",
+    "city4",
+    "city5",
+    "city6",
+    "city7",
+    "city9",
+    "city10",
+    "Coast1",
+    "Coast2",
+    "Coast3",
+    "Coast4",
+    "Coast5",
+    "Coast6",
+    "Coast7",
+    "Coast9",
+    "Coast10",
+    "grotto1",
+    "grotto2",
+    "grotto3",
+    "grotto4",
+    "grotto5",
+    "grotto6",
+    "grotto7",
+    "grotto9",
+    "grotto10",
+    "volcano1",
+    "volcano2",
+    "volcano3",
+    "volcano4",
+    "volcano5",
+    "volcano6",
+    "volcano7",
+    "volcano8",
+    "volcano9",
+    "volcano10"
+  ],
+  "run": {
+    "id": "alphazuma55-polar-wide-5090",
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-polar-wide-s99081536-v1",
+    "device": "cuda:0",
+    "policy_architecture": "entity_polar_wide",
+    "learned_features_dim": 1024,
+    "model_seed": 1542002500,
+    "training_seed_base": 1542002000,
+    "training_seed_last_consumed": 1542002164,
+    "teacher_passes": 3,
+    "parallel_envs": 24,
+    "max_ticks": 30000,
+    "reservoir_capacity_by_verb": {
+      "wait": 256,
+      "fire": 256,
+      "swap": 192,
+      "hop": 192
+    },
+    "sample_stride_by_verb": {
+      "wait": 4,
+      "fire": 1,
+      "swap": 1,
+      "hop": 1
+    },
+    "target_batch_fraction_by_verb": {
+      "wait": 0.45,
+      "fire": 0.35,
+      "swap": 0.15,
+      "hop": 0.05
+    },
+    "batch_size": 512,
+    "capacity_eval_batch_size": 128,
+    "epochs_per_round": 60,
+    "checkpoint_interval_epochs": 10,
+    "learning_rate": 5e-05,
+    "verb_loss_weight": 2.0,
+    "max_grad_norm": 0.5,
+    "aim_loss_scope": "fire_only",
+    "aim_loss_mode": "categorical",
+    "aim_smoothing_sigma": 1.5,
+    "aim_distance_weight": 0.0,
+    "aim_head_initialization": "scaled_identity",
+    "aim_head_identity_scale": 5.0,
+    "teacher_execution_probability": 1.0,
+    "exact_action_masks_before_every_decision": true,
+    "masked_verb_fallback": "wait_with_teacher_aim",
+    "verb_balanced_optimization": true,
+    "final_runtime_teacher_calls_forbidden": true
+  },
+  "frozen_engineering_validation": {
+    "registry": "training_validation",
+    "base_seed": 1550001400,
+    "last_seed": 1550001454,
+    "level_order": [
+      "Jungle1",
+      "Jungle2",
+      "Jungle3",
+      "Jungle4",
+      "jungle6",
+      "Jungle7",
+      "Jungle8",
+      "Jungle9",
+      "Jungle10",
+      "village1",
+      "village2",
+      "village3",
+      "village4",
+      "village5",
+      "village6",
+      "village7",
+      "village8",
+      "village10",
+      "city1",
+      "city2",
+      "city3",
+      "city4",
+      "city5",
+      "city6",
+      "city7",
+      "city9",
+      "city10",
+      "Coast1",
+      "Coast2",
+      "Coast3",
+      "Coast4",
+      "Coast5",
+      "Coast6",
+      "Coast7",
+      "Coast9",
+      "Coast10",
+      "grotto1",
+      "grotto2",
+      "grotto3",
+      "grotto4",
+      "grotto5",
+      "grotto6",
+      "grotto7",
+      "grotto9",
+      "grotto10",
+      "volcano1",
+      "volcano2",
+      "volcano3",
+      "volcano4",
+      "volcano5",
+      "volcano6",
+      "volcano7",
+      "volcano8",
+      "volcano9",
+      "volcano10"
+    ],
+    "attempts_per_level_per_model": 1,
+    "checkpoint_epochs": [
+      10,
+      30,
+      60
+    ],
+    "comparison_model_id": "polar-source-final",
+    "ranking": [
+      "wins_desc",
+      "level_coverage_desc",
+      "total_score_desc",
+      "median_winning_ticks_asc",
+      "smaller_model_first_as_tie_break"
+    ],
+    "promotion_rule": "engineering evidence only; any later formal successor campaign requires a separately frozen seed range"
+  },
+  "authority_boundary": {
+    "classification": "isolated_adaptive_engineering_training_only",
+    "current_campaign_candidate_authority": false,
+    "s99081535_successor_candidate_authority": false,
+    "formal_selection_seed_consumption": false,
+    "formal_final_blind_seed_consumption": false,
+    "continuous_campaign_seed_consumption": false
+  }
+}

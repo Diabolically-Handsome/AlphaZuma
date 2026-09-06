@@ -1,0 +1,59 @@
+{
+  "schema": "zuma-rl.retail-board-score-target-write-implementation-receipt",
+  "version": 1,
+  "status": "PASS_BEFORE_OUTPUT",
+  "created_utc": "2026-08-10T10:48:15.5976290Z",
+  "preregistration": {
+    "path": "diagnostics/c153-board-score-target-write-trace-preregistration-v1.json",
+    "sha256": "sha256:c3d867cd7808d4d7f0477b70b3c7e859ceaa1e49f1140ee60b4995ad44a2b426"
+  },
+  "implemented": [
+    "The new board_global_precall_and_target_write mode preserves the exact source-call anchor.",
+    "After the source anchor it computes only source_board_address+0x108 and retargets DR0 as a four-byte write-only data breakpoint.",
+    "Each write records post-instruction EIP, exception address, code window, stack bytes and dwords, registers, prior/post target, and compact Board state.",
+    "The trace stops only when the same active Board has a positive score target different from the source target, or fails after sixteen writes.",
+    "The original debug-register tuple is restored in the paused context before detach on completion or bounded failure.",
+    "The recorder recognizes the mode as a source-bound trace and retains verified-foreground navigation."
+  ],
+  "code": [
+    {
+      "path": "tools/trace_popcap_gameplay_mtrand.py",
+      "bytes": 84726,
+      "sha256": "sha256:3509c1a2a07efb83e98303942bf7d7bfdda0f26f01c6f5855982e9ff061544f3"
+    },
+    {
+      "path": "tools/record_autoplay_zuma.py",
+      "bytes": 55097,
+      "sha256": "sha256:aebee6245a460c5c270e7033532668597156907862a446ebdcbe63d2a9cc31e1"
+    },
+    {
+      "path": "tests/test_record_autoplay_zuma.py",
+      "bytes": 13616,
+      "sha256": "sha256:547255a0f4865b5b1f40a866d437c95fd440e87ca063714e75acf4f05f6af2b4"
+    },
+    {
+      "path": "tools/autoplay_live_zuma.py",
+      "bytes": 79647,
+      "sha256": "sha256:8cfa18256a4e699c5fe131db6e1e4b815ec4698c2150c7508ad40435884703f2"
+    }
+  ],
+  "verification": {
+    "py_compile": "PASS",
+    "new_trace_and_monitor_tests_passed": 32,
+    "integration_tests_passed": 200,
+    "write4_dr7_control_bits": "0x000D0001",
+    "unaligned_write4_address_rejected": true,
+    "completion_positive_changed_target_tested": true,
+    "unchanged_zero_and_wrong_board_targets_rejected": true,
+    "failures": 0
+  },
+  "safety": {
+    "process_memory_write_code_added": false,
+    "software_breakpoint_code_added": false,
+    "maximum_simultaneous_hardware_breakpoints": 1,
+    "c153_output_root_created": false,
+    "natural_loss_v3_predicate_changed": false,
+    "gate_change": false,
+    "training_start": false
+  }
+}

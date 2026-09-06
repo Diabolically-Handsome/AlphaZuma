@@ -1,0 +1,89 @@
+{
+  "schema": "zuma-rl.retail-natural-loss-target-write-v4-implementation-receipt",
+  "version": 1,
+  "status": "PASS_BEFORE_RETAIL_OUTPUT",
+  "created_utc": "2026-08-10T11:12:23.0014408Z",
+  "preregistration": {
+    "path": "diagnostics/c155-natural-loss-target-write-v4-preregistration-v1.json",
+    "sha256": "sha256:9302314ca987ea1ffdb7cecabcb88e7d2269b68eed6cadfe38049984f87046f4",
+    "frozen_before_implementation": true,
+    "output_root_absent_after_implementation": true
+  },
+  "implemented": {
+    "explicit_trace_kind": "board_global_precall_and_natural_loss_target_write",
+    "trace_transport": "one read-only DR0 four-byte write watchpoint retargeted from the exact Board source anchor",
+    "static_writer_preflight": [
+      {
+        "address": "0x00412EED",
+        "instruction_hex": "899f08010000",
+        "post_eip": "0x00412EF3"
+      },
+      {
+        "address": "0x00411B8D",
+        "instruction_hex": "899608010000",
+        "post_eip": "0x00411B93"
+      }
+    ],
+    "trace_semantics": "exact source Board and score contract followed by exactly two target writes, 9650 to 0 and 0 to a changed positive target, on one framework update within 5000000 ns",
+    "recorder_semantics": "the legacy polling result is retained and may be promoted to PASS natural_loss only for the explicit new trace kind after independent full receipt validation",
+    "provenance_receipt_kind": "natural_loss_same_board_target_write_transition_v4",
+    "provenance_validation": "independently rechecks trace identity, digest binding, source, both writers, order, Board, target values, clock, score, registers, code windows, timing, final Board binding, zero writes, breakpoint restoration, and clean detach",
+    "backward_compatibility": "existing natural-loss v1-v3 and stable receipts remain accepted under their unchanged branches"
+  },
+  "postimplementation_code": {
+    "tools/autoplay_live_zuma.py": {
+      "bytes": 83030,
+      "sha256": "sha256:6711d208cf0181782b9f9b5c1197f642ebf67a4174c51985b76d14db34d4a77f"
+    },
+    "tools/record_autoplay_zuma.py": {
+      "bytes": 71034,
+      "sha256": "sha256:7d671bf6d1f99f4d7f6cce00759b2912fb287b08ec05548afb06655d24ec9e44"
+    },
+    "tools/trace_popcap_gameplay_mtrand.py": {
+      "bytes": 99377,
+      "sha256": "sha256:b2eddb8e54b9fc684f6ced8200f103def40c1ad78cb3b0bcf5b540000a24f0e8"
+    },
+    "src/zuma_rl/retail_dmo_provenance.py": {
+      "bytes": 63887,
+      "sha256": "sha256:f436003093e804e9a3d15f8f7b80b64f1a65697a28a18d1392d554a706380869"
+    },
+    "tests/test_autoplay_live_zuma.py": {
+      "bytes": 19300,
+      "sha256": "sha256:465d3426d91e473d34fb831fb9daf0fac8f36ecfd8a7c116c040185dc4818c72"
+    },
+    "tests/test_record_autoplay_zuma.py": {
+      "bytes": 23359,
+      "sha256": "sha256:4b935d6f6077310d270c11c723c404729111c75ca12a71f0ca5de4c07c0129db"
+    },
+    "tests/test_retail_dmo_provenance.py": {
+      "bytes": 35872,
+      "sha256": "sha256:5e238e566931db35c7558c99ed693998c8580376e31acd285295226c48b18fc7"
+    }
+  },
+  "verification": [
+    {
+      "command": ".venv-win/Scripts/python.exe -m py_compile tools/record_autoplay_zuma.py tools/trace_popcap_gameplay_mtrand.py src/zuma_rl/retail_dmo_provenance.py",
+      "status": "PASS"
+    },
+    {
+      "command": ".venv-win/Scripts/python.exe -m pytest -q tests/test_record_autoplay_zuma.py tests/test_retail_dmo_provenance.py",
+      "collected": 83,
+      "status": "PASS"
+    },
+    {
+      "command": ".venv-win/Scripts/python.exe -m pytest -q",
+      "collected": 1528,
+      "status": "PASS",
+      "note": "Existing platform-conditioned skips and one pre-existing Gymnasium warning were retained."
+    }
+  ],
+  "run_readiness": {
+    "output_root": "D:/ZumaGolden/record-c155a1-idle-natural-loss-target-write-v4",
+    "output_root_absent": true,
+    "retail_process_count": 0,
+    "maximum_started_attempts": 1,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

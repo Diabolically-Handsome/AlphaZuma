@@ -1,0 +1,86 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-early-behavior-drift-summary",
+  "version": 1,
+  "created_utc": "2026-08-14T01:02:21.4698050Z",
+  "status": "PASS",
+  "classification": "frozen_dataset_post_hoc_training_health_diagnostic_only",
+  "purpose": "Determine whether early V1.1 checkpoints change actual masked-policy behavior, rather than merely changing stored parameter values.",
+  "preregistration": {
+    "path": "diagnostics/alphazuma-v1.1-early-behavior-drift-probe-s52081301-preregistration-v1.json",
+    "sha256": "sha256:b4583adaf943103ca4c8e2ca668b99691ea01197e66c06f5d2f6a86f60919903",
+    "frozen_before_collection": true
+  },
+  "dataset": {
+    "receipt_path": "/mnt/d/ZumaTraining/alphazuma-v1.1-early-behavior-drift-probe-s52081301-v1/dataset_receipt.json",
+    "receipt_sha256": "sha256:8283731c50921ab80f6968d7f0d41f16c36c6c33381bfa522f3b41f05ff4e6ed",
+    "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-early-behavior-drift-probe-s52081301-v1/frozen_probe_dataset.npz",
+    "sha256": "sha256:2a71543c08892dc0232110b1c6ec3e9df40e968507ae671333ea7488f8cfe0aa",
+    "sample_count": 1243,
+    "observation_shape": [1243, 21220],
+    "action_shape": [1243, 2],
+    "mask_shape": [1243, 183],
+    "levels": ["Jungle2", "Jungle7", "village6", "village10"],
+    "episodes": 8,
+    "formal_seed_overlap": false
+  },
+  "audit_tool": {
+    "path": "tools/audit_maskable_policy_drift.py",
+    "sha256": "sha256:2c54c32a3752b3c27ebeb0b38724143b52ddaa02610b19d2be00b25c2098cd26",
+    "device": "cpu",
+    "batch_size": 64
+  },
+  "comparisons": [
+    {
+      "id": "frontier-adaptive-early",
+      "report_path": "/mnt/d/ZumaTraining/alphazuma-v1.1-early-behavior-drift-probe-s52081301-v1/frontier-adaptive-early-drift.json",
+      "report_sha256": "sha256:1d4d2bfdeaa1fd5f83a6d4158da74ab354819e477836f8d59cfa76159846bd1a",
+      "reference_model_sha256": "sha256:7823840418e94525543983d0b05f0660af9c107734909caea936eeb15e042b8d",
+      "candidate_model_sha256": "sha256:378465ced294762041359fb8830b67b3083b118a8f8c8aa04326f0eb5d0ec33e",
+      "exact_action_flip_rate": 0.12228479485116653,
+      "semantic_action_flip_rate": 0.004827031375703942,
+      "verb_argmax_flip_rate": 0.0,
+      "aim_argmax_flip_rate_all_rows": 0.12228479485116653,
+      "aim_argmax_flip_rate_reference_fire_rows": 0.15384615384615385,
+      "aim_forward_kl_mean": 0.03381627513872423,
+      "aim_total_variation_mean": 0.08969342863380572,
+      "value_absolute_delta_mean": 0.044856046147761404,
+      "value_pearson_correlation": 0.9938387456401703,
+      "behavior_changed": true,
+      "status": "PASS"
+    },
+    {
+      "id": "memdense-adaptive-early",
+      "report_path": "/mnt/d/ZumaTraining/alphazuma-v1.1-early-behavior-drift-probe-s52081301-v1/memdense-adaptive-early-drift.json",
+      "report_sha256": "sha256:d84f2bdfaf3dfbff8d0775763e2cc6cb1da9c06a1e99d77a8f82cff8a3e719d6",
+      "reference_model_sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579",
+      "candidate_model_sha256": "sha256:69e98bece2928137127d8663bee6f134d4322bc3d0416f2d9733e50facf7c9f1",
+      "exact_action_flip_rate": 0.413515687851971,
+      "semantic_action_flip_rate": 0.015285599356395816,
+      "verb_argmax_flip_rate": 0.004022526146419952,
+      "aim_argmax_flip_rate_all_rows": 0.4102976669348351,
+      "aim_argmax_flip_rate_reference_fire_rows": 0.358974358974359,
+      "aim_forward_kl_mean": 0.5069061440718262,
+      "aim_total_variation_mean": 0.3224139856467266,
+      "value_absolute_delta_mean": 0.09813421787952589,
+      "value_pearson_correlation": 0.9594398014878318,
+      "behavior_changed": true,
+      "status": "PASS"
+    }
+  ],
+  "conclusion": {
+    "parameter_only_update_hypothesis_rejected": true,
+    "actual_policy_behavior_change_confirmed": true,
+    "both_audited_route_families_changed": true,
+    "relative_observation": "The fresh-optimizer high-density route shows substantially larger early drift than the resumed broad-frontier route on the same frozen observations.",
+    "improvement_claimed": false,
+    "reason_improvement_not_claimed": "Divergence from the reference policy can be beneficial or harmful; only the preregistered selection and independent final blind evaluation may decide performance."
+  },
+  "non_authorizations": [
+    "candidate_selection",
+    "certification_evidence",
+    "fresh_holdout_claim",
+    "recipe_change",
+    "promotion"
+  ],
+  "formal_gate_effect": "none"
+}

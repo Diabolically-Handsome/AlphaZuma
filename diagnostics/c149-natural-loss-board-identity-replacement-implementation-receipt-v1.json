@@ -1,0 +1,84 @@
+{
+  "schema": "zuma-rl.retail-natural-loss-board-identity-replacement-implementation-receipt",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T10:08:34.3472995Z",
+  "preregistration": {
+    "path": "diagnostics/c149-natural-loss-board-identity-replacement-preregistration-v1.json",
+    "sha256": "sha256:cbc44aee91df92f0b98549758889e31e17681ae0306258766ae271d317b6e685"
+  },
+  "implemented_contract": {
+    "receipt_kind": "natural_loss_board_identity_replacement_transition_v3",
+    "old_and_replacement_board_addresses_must_be_positive_and_different": true,
+    "replacement_address_must_remain_constant": true,
+    "minimum_confirmation_snapshots": 2,
+    "minimum_replacement_native_game_time_advance": 5,
+    "positive_target_non_exhausted_populated_replacement_required": true,
+    "zero_target_observation_optional_only": true,
+    "final_state_address_bound_to_confirmed_replacement": true,
+    "process_memory_writes": 0,
+    "idle_gameplay_inputs": 0,
+    "legacy_receipts_preserved": [
+      "natural_loss_restart_transition_v1",
+      "natural_loss_board_replacement_transition_v2",
+      "natural_loss_stable_terminal_v1"
+    ]
+  },
+  "implementation_artifacts": [
+    {
+      "path": "tools/autoplay_live_zuma.py",
+      "bytes": 73735,
+      "sha256": "sha256:f7f84bf2ce6f00821f7c368491b95f0e5d2f1d9065da7436111954699f872034"
+    },
+    {
+      "path": "src/zuma_rl/retail_dmo_provenance.py",
+      "bytes": 52882,
+      "sha256": "sha256:9e34fb036e01ad328f4f88be0deedb88f1d319a0fc953d80952ee069e7d807a2"
+    },
+    {
+      "path": "tests/test_autoplay_live_zuma.py",
+      "bytes": 13210,
+      "sha256": "sha256:f0f4464c34de8d4a04f49680d16eda6341def75940f13096af53e645a3f9e6ef"
+    },
+    {
+      "path": "tests/test_retail_dmo_provenance.py",
+      "bytes": 27133,
+      "sha256": "sha256:490b96b6c8d51e4aa4f40b5f6fccacfc115496ce51a47992c216e161f5f89297"
+    }
+  ],
+  "verification": {
+    "py_compile": {
+      "status": "PASS",
+      "files": 4
+    },
+    "focused_pytest": {
+      "status": "PASS",
+      "passed": 66,
+      "files": [
+        "tests/test_autoplay_live_zuma.py",
+        "tests/test_retail_dmo_provenance.py"
+      ]
+    },
+    "integration_pytest": {
+      "status": "PASS",
+      "passed": 168,
+      "files": [
+        "tests/test_record_autoplay_zuma.py",
+        "tests/test_collect_pc_golden_v4.py",
+        "tests/test_retail_dmo_provenance.py",
+        "tests/test_autoplay_live_zuma.py"
+      ]
+    }
+  },
+  "live_output": {
+    "id": "c149a1",
+    "root": "D:/ZumaGolden/record-c149a1-idle-natural-loss-board-identity-v3",
+    "absent_when_receipt_frozen": true,
+    "maximum_started_attempts": 1
+  },
+  "gate_effect": {
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

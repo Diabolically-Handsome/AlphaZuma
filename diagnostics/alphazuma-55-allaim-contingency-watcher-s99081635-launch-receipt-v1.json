@@ -1,0 +1,50 @@
+{
+  "schema": "zuma-rl.alphazuma-55-allaim-contingency-watcher-launch-receipt",
+  "version": 1,
+  "status": "LAUNCHED_AND_WAITING",
+  "observed_utc": "2026-08-16T10:02:19.7241895Z",
+  "campaign_id": "alphazuma-55-allaim-contingency-watcher-s99081635-v1",
+  "bindings": {
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-allaim-contingency-watcher-s99081635-preregistration-v1.json",
+      "sha256": "sha256:ebb70654b083d88850c692b6b48ccd078540b6d22239a1dbd3ce2095fee00031"
+    },
+    "watcher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_allaim_contingency_watcher_v1.py",
+      "sha256": "sha256:be362013d68442baa9971436919d274d1b0c5c91bf0d679597e85a75f3d4285f"
+    },
+    "launcher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/launch_alphazuma_55_allaim_contingency_watcher_v1.sh",
+      "sha256": "sha256:78f7ba866efe11ab88cc981fce5cdfb74bbda9879514efa5f73b5282b71be9fc"
+    }
+  },
+  "processes": {
+    "windows_launcher_pid": 15888,
+    "wsl_watcher_pid": 359850,
+    "windows_launcher_alive": true,
+    "wsl_watcher_alive": true
+  },
+  "logs": {
+    "stdout": {
+      "path": "D:\\ZumaTraining\\alphazuma-55-allaim-contingency-watcher-s99081635-launcher-01.stdout.log",
+      "bytes_at_snapshot": 0,
+      "sha256_at_snapshot": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "path": "D:\\ZumaTraining\\alphazuma-55-allaim-contingency-watcher-s99081635-launcher-01.stderr.log",
+      "bytes_at_snapshot": 0,
+      "sha256_at_snapshot": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "initial_status": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-allaim-contingency-watcher-s99081635-v1/controller_status.json",
+    "sha256_at_snapshot": "sha256:f2cdbb0b4e965b5fb306513d17ecfb9d6449d548dae606bb18359be4e437e521",
+    "phase": "WAITING_FOR_CURRENT_ENGINEERING_RESULT"
+  },
+  "authority_boundary": {
+    "engineering_only": true,
+    "formal_seed_consumption": "NONE",
+    "formal_candidate_authority": false,
+    "power_restore_authority": false
+  }
+}

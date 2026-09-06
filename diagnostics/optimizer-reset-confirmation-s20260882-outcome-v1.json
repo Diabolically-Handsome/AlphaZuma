@@ -1,0 +1,85 @@
+{
+  "schema": "zuma-rl.optimizer-reset-confirmation-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T13:09:01.609Z",
+  "status": "FRESH_OPTIMIZER_RESET_CONFIRMATION_FAIL",
+  "decision": "DO_NOT_SCALE_REDUCE_PPO_EPOCHS_AND_RECORD_NATIVE_OUTCOMES",
+  "preregistration": {
+    "path": "diagnostics/optimizer-reset-confirmation-s20260882-preregistration-v1.json",
+    "sha256": "sha256:6ed651c47499c172bf98a79ff2996b5537ac34e8737a1ce499437c3e4b6101ed",
+    "status": "FROZEN_BEFORE_RUN_OUTPUT"
+  },
+  "artifacts": {
+    "run_dir": "D:/ZumaTraining/confirmation-optimizer-reset-s20260882-v1",
+    "config_sha256": "sha256:1144afd3e0fdb292b4ce32f2f008975d4000aa76c1c7915f11a04a1b75e5afc7",
+    "final_model_sha256": "sha256:94fdcae39ab5a38db8d51f5dbb9cc731c80cb666aa12edc696ed56067bdb0d1d",
+    "optimizer_reset_sha256": "sha256:eaca6a6bc3fee4d8ce4a5a4877b38a823b2d2d90ae9c87fb14cd54d9bca4219d",
+    "deterministic_comparison_sha256": "sha256:718da5e3e95b8f6a1b34313651961f009d89ce096e372ff508bdf90b8de96ba8",
+    "stochastic_comparison_sha256": "sha256:1f50ed6a29da1319ad6c6928a667cb919c76ba68a9dc8dec9d963ac574317e6d",
+    "completion_sha256": "sha256:569c4441f835577fc70dd9224b9e952f68f42f8feab5759c53ef522e3ebbfaef",
+    "stdout_sha256": "sha256:e9aa0b4a512a74b3e9a4900c430dbef3472017ee1b28ec1ed17dee07a25129d7",
+    "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "acceptance_results": {
+    "pipeline": {
+      "pass": true,
+      "completion_receipt_status": "COMPLETE",
+      "effective_steps": 16384,
+      "optimizer_reset_status": "PASS",
+      "failure_receipt_present": false,
+      "stderr_bytes": 0
+    },
+    "precondition": {
+      "pass": true,
+      "deterministic_wins": 6,
+      "deterministic_losses": 1,
+      "deterministic_truncations": 1,
+      "required_wins": 6
+    },
+    "deterministic_retention": {
+      "pass": false,
+      "pretrain_wins": 6,
+      "posttrain_wins": 7,
+      "posttrain_losses": 0,
+      "posttrain_truncations": 1,
+      "pretrain_mean_reward": 32.066425,
+      "posttrain_mean_reward": 28.42085,
+      "mean_reward_delta": -3.645575,
+      "paired_improvements": 3,
+      "paired_regressions": 5,
+      "paired_regressions_exceeding_5": 4,
+      "allowed_paired_regressions_exceeding_5": 2
+    },
+    "stochastic_retention": {
+      "pass": true,
+      "pretrain_wins": 8,
+      "posttrain_wins": 8,
+      "posttrain_truncations": 0,
+      "pretrain_mean_reward": 36.2383125,
+      "posttrain_mean_reward": 40.264775,
+      "mean_reward_delta": 4.0264625,
+      "paired_regressions_exceeding_5": 2
+    },
+    "overall": {
+      "pass": false,
+      "reason": "fresh deterministic mean-return and identity-paired severe-regression gates failed",
+      "post_hoc_override_applied": false
+    }
+  },
+  "bounded_inference": "fresh optimizer state consistently supports strong stochastic-policy performance, but ten PPO epochs per rollout still move deterministic argmax behavior too far on an independent hard vector stream; optimizer reset is necessary but not sufficient for scale stability",
+  "evidence_upgrade_required": {
+    "issue": "version-3 receipts infer win or loss from reward and length while RevengeEnv already exposes native outcome, score, tick, and TimeLimit.truncated in terminal info",
+    "effect_on_frozen_decision": "none; the preregistered v3 classifier and failed mean/severe-regression gates remain the formal decision",
+    "next_schema": "record terminal outcome metadata per stable episode identity and use it directly in comparisons"
+  },
+  "next_action": {
+    "authorized": "expose PPO epochs per rollout, add native terminal outcome metadata to identity receipts, KAT both changes, then screen one-epoch PPO with optimizer reset on this consumed hard seed",
+    "forbidden": "do not launch the 98304-step scale screen"
+  },
+  "non_authorizations": [
+    "98304_step_scale_screen",
+    "large_scale_training",
+    "fidelity_gate_opening",
+    "original_transfer_certification"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "schema": "alphazuma-55-verdict-addendum",
+  "version": 1,
+  "amends": {
+    "path": "diagnostics/alphazuma-55-jungle9-reopening-outcome-and-first-ai-tas-v1.json",
+    "sha256": "sha256:52c89b4b74f63ab2545062e449aff585b827fd82ddadeb4f717f6834c46732cb"
+  },
+  "field": "first_ai_tas_record.human_reference_note",
+  "written_utc": "2026-08-23T17:33:26Z",
+  "human_reference": {
+    "source": "speedrun.com REST API (level yweqq8lw Adv 9, Any% 1st)",
+    "record": "0:30 RTA",
+    "runner": "Leshik_Doshik",
+    "date": "2021-03-23",
+    "gap": "AI-TAS 48.02s vs human 30s = 1.60x",
+    "calibration_note": "an earlier UNVERIFIED working guess of ~20s was wrong by 50% - the API-binding discipline exists precisely for this"
+  },
+  "formal_seed_consumption": false
+}

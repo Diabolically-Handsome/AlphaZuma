@@ -1,0 +1,47 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-policy-diversity-audit-preregistration",
+  "version": 1,
+  "created_utc": "2026-08-14T03:40:13.8348822Z",
+  "status": "FROZEN_BEFORE_EXECUTION",
+  "classification": "frozen_dataset_post_hoc_training_health_diagnostic_only",
+  "purpose": "Recheck deterministic policy diversity using the independently recoverability-audited 03:38 UTC checkpoint portfolio.",
+  "inputs": {
+    "reference_model": {
+      "path": "/mnt/d/ZumaTraining/overnight-v11-adaptive-recovery-s43081301-v1/checkpoints/adaptive-5090-recovery_13631488_steps.zip",
+      "sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579"
+    },
+    "dataset": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-early-behavior-drift-probe-s52081301-v1/frozen_probe_dataset.npz",
+      "sha256": "sha256:2a71543c08892dc0232110b1c6ec3e9df40e968507ae671333ea7488f8cfe0aa",
+      "sample_count": 1243,
+      "formal_seed_overlap": false
+    },
+    "checkpoint_audit": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-checkpoint-recovery-audit-0338z-s64081301-v1/audit.json",
+      "sha256": "sha256:87d17f0d81cf9cdd2894d826cda348c86424586d2a849790666a1669e972228e",
+      "expected_candidates": 7,
+      "status": "PASS"
+    }
+  },
+  "method": {
+    "tool": {
+      "path": "tools/audit_alphazuma_v11_policy_diversity.py",
+      "sha256": "sha256:17db88ef92f4078748b286af3094335498e6188afd9e21ff50a92bf595dc2249"
+    },
+    "tests": {
+      "path": "tests/test_audit_alphazuma_v11_policy_diversity.py",
+      "sha256": "sha256:6255187d7c27cb10be871f709e7ec4e2c85a7d15a42beba38c908d393aa6cbd2"
+    },
+    "device": "cpu",
+    "batch_size": 64,
+    "expected_candidates": 7
+  },
+  "decision_rule": {
+    "audit_status": "PASS only when hashes, model spaces, stored reference actions and all action masks validate",
+    "diversity_threshold": null,
+    "interpretation": "Descriptive training-health diagnostic only; no formal candidate selection or improvement claim."
+  },
+  "output": "/mnt/d/ZumaTraining/alphazuma-v1.1-policy-diversity-audit-0339z-s65081301-v1/audit.json",
+  "formal_seed_consumption": "none",
+  "formal_gate_effect": "none"
+}

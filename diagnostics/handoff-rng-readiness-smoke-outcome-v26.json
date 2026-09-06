@@ -1,0 +1,87 @@
+{
+  "schema": "zuma-rl.pc-handoff-rng-readiness-smoke-outcome",
+  "version": 26,
+  "status": "PASS_TOOL_QUALIFIED_CANDIDATE_SMOKE_SEMANTIC_RESULT_QUARANTINED",
+  "created_utc": "2026-08-05T20:27:11.8957771Z",
+  "id": "handoff-rng-readiness-smoke-v26-outcome",
+  "parent_preregistration": {
+    "path": "diagnostics/handoff-rng-readiness-smoke-preregistration-v26.json",
+    "sha256": "sha256:aaa2ecde827fcf9ffcdb512b0c9bf521cd4e85ca1b29e95e7d7899eb3d976b25"
+  },
+  "execution_binding": {
+    "path": "diagnostics/handoff-rng-readiness-smoke-execution-binding-v26.json",
+    "sha256": "sha256:f4a1b11dacc9ec345bb035224a139224571775743d4220a6c0cbadad04b7e5c4",
+    "session_nonce": "13a8d1a147b64256ba4c1988b82fa3e2"
+  },
+  "execution": {
+    "selected_attempt": 1,
+    "attempt_count": 1,
+    "collector_status": "PASS",
+    "observer_status": "PASS",
+    "attempts_sha256": "sha256:6af3e49a2e22a5c7f82d83e20fbb183d8b5d023ec8cc72ca92137bc29f9d77c1",
+    "memory_probe_sha256": "sha256:588822d055cd69f9fa57f43861be5f657695cb0c82aa0358a2db7d8c0a66b6cd",
+    "observer_sha256": "sha256:e4733bec9021f80b0998906b73f3d3ac8ee107ca2caeeea2f87e7ec4d69e8e26",
+    "ready_sha256": "sha256:260b440f234f654961adff94cfefcf45130604ccd78f06354ff795f9940af2b3",
+    "actual_handoff_update": 3009,
+    "actual_detached_after_update": 3009,
+    "ready_version": 2,
+    "ready_handoff_verified": true
+  },
+  "readiness_wait": {
+    "status": "TARGET_REACHED",
+    "target_reached": true,
+    "target_words_sha256": "sha256:c67b5898eeb9e1338f7b28f644b51cbceb0f5e2adb4c3c7e879931e8d864e84f",
+    "minimum_index": 315,
+    "initial_draw_count": 1563,
+    "initial_index": 315,
+    "final_draw_count": 1563,
+    "final_index": 315,
+    "final_state_sha256": "sha256:a923e8d806f447b2c04c6936238f90c84ba42296a1faf9ef77a4ae8f35858ccf",
+    "poll_count": 0,
+    "process_memory_reads": 1,
+    "process_memory_read_bytes": 2500,
+    "process_memory_writes": 0,
+    "process_memory_mutation": false,
+    "elapsed_perf_counter_ns": 97400
+  },
+  "boundary": {
+    "source_exact": true,
+    "live_pre_draw_count": 1662,
+    "expected_live_pre_draw_count": 1662,
+    "handoff_to_boundary_increment": 99,
+    "state_correction_count": 0,
+    "observer_process_memory_writes": 0,
+    "hardware_breakpoint_restored": true,
+    "debugger_detach_error": null,
+    "persistent_file_modified": false
+  },
+  "host_safety": {
+    "canonical_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_pre_sha256": "sha256:0e1f23bad9fc386956d2e384b0e0c359a4145e397dff45f9c37d40a817e97a39",
+    "host_post_sha256": "sha256:33e851e0fc24a8172f730d69cf3ed317f2895932c94a499b2fbca122b85c2e54",
+    "host_pre_state_root_match": true,
+    "host_post_state_root_match": true,
+    "residual_retail_process_count": 0
+  },
+  "interpretation": {
+    "tool_qualification_pass": true,
+    "candidate_smoke_pass": true,
+    "causal_wait_exercised": false,
+    "reason_causal_wait_not_exercised": "The first read already observed draw 1563 and index 315, so no polling was necessary.",
+    "scientific_limit": "This single quarantined run validates the wait and evidence plumbing but cannot establish that waiting repairs naturally deficient handoffs."
+  },
+  "decision": {
+    "frozen_status": "PASS_TOOL_QUALIFIED_CANDIDATE_SMOKE_SEMANTIC_RESULT_QUARANTINED",
+    "next_action": "Freeze and run an independent 20-root replication with the same target and wait parameters. Require all roots valid and source exact; retain timeout, mismatch, and deficient outcomes without semantic retry.",
+    "pc_golden_credit": false,
+    "fidelity_gate_change": false,
+    "formal_transport_change": false,
+    "large_scale_training_start": false
+  },
+  "non_authorizations": [
+    "pc_golden_credit",
+    "fidelity_gate_change",
+    "formal_transport_change",
+    "large_scale_training_start"
+  ]
+}

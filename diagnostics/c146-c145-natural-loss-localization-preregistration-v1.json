@@ -1,0 +1,53 @@
+{
+  "schema": "zuma-rl.pc-source-bound-natural-loss-localization-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_OUTPUT",
+  "created_utc": "2026-08-10T09:36:58.9322886Z",
+  "purpose": "Localize the exact retail natural-loss and automatic-replacement updates under the fully source-bound c145a1 command/RNG replay before freezing any formal evidence window.",
+  "classification": "diagnostic-only-no-fidelity-credit",
+  "fixed_source": {
+    "plan_path": "D:/ZumaGolden/diagnostics/full-state-source-bound-natural-loss-c145-plan-v1/plan.json",
+    "plan_sha256": "sha256:b000b0c6e45bc3e750d54b9828102a3c994037e0bda831fa40131548e5ebc86b",
+    "normalized_dmo_sha256": "sha256:c540d5e47d4c2c14e81f0071850e722bb04b6b4d77934155892140c9fcd4a024",
+    "transport_normalization_sha256": "sha256:f640ed1d7ec2dba59b14c39a0b98c8318bb6201f60dcd1a7c0a03ebf909fd0e2",
+    "raw_recording_report_sha256": "sha256:7898b1149de9a441aa7e2f2cd43afe90422c4cf670f70993f95fc2709279be85",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "source_bound_board": {
+      "framework_update": 3120,
+      "source_order": 320,
+      "caller": 6666273,
+      "expected_output": 1161337508,
+      "expected_pre_index": 431,
+      "expected_post_index": 432,
+      "monitor_framework_update": 3429,
+      "monitor_rewind_draws": 6
+    }
+  },
+  "fixed_window": {
+    "probe_update": 11250,
+    "slowdown_update": 11230,
+    "trajectory_start_update": 11250,
+    "trajectory_end_update": 11840,
+    "trajectory_mode": "rng",
+    "expected_score": 7950,
+    "expected_displayed_score": 7950,
+    "estimated_old_board_loss_update": 11324,
+    "estimated_replacement_setup_update": 11802
+  },
+  "output": {
+    "root": "D:/ZumaGolden/diagnostics/c146-c145-natural-loss-localization-u11250-u11840-v1",
+    "absent_at_freeze": true,
+    "maximum_attempts": 1,
+    "retain_every_started_attempt": true
+  },
+  "acceptance_contract": {
+    "strict_source_bound_replay_status": "PASS",
+    "source_bound_board_anchor_exact": true,
+    "diagnostic_mutation_must_be_null": true,
+    "external_input_event_count": 0,
+    "host_state_must_be_restored": true,
+    "no_formal_or_fidelity_credit": true,
+    "localization_may_only_select_a_later_formal_window": true
+  },
+  "command": ".\\.venv-win\\Scripts\\python.exe tools\\collect_pc_memory_probe.py --plan D:\\ZumaGolden\\diagnostics\\full-state-source-bound-natural-loss-c145-plan-v1\\plan.json --prestate D:\\ZumaGolden\\diagnostics\\full-state-source-bound-natural-loss-c145-plan-v1\\protocol\\pre-template.json --host-restore D:\\ZumaGolden\\diagnostics\\full-state-source-bound-natural-loss-c145-plan-v1\\safety\\host-pre.json --output-root D:\\ZumaGolden\\diagnostics\\c146-c145-natural-loss-localization-u11250-u11840-v1 --probe-update 11250 --slowdown-update 11230 --int32-value 7950 --displayed-score-value 7950 --maximum-attempts 1 --trajectory-start-update 11250 --trajectory-end-update 11840 --trajectory-mode rng --skip-repaint-guard --skip-frozen-snapshot --diagnostic-source-bound-replay"
+}

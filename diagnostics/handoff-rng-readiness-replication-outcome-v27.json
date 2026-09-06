@@ -1,0 +1,170 @@
+{
+  "schema": "zuma-rl.pc-handoff-rng-readiness-replication-outcome",
+  "version": 27,
+  "status": "FAIL_16_OF_20_BOUNDARY_EXACT_12_OF_20_TARGET_NO_WAIT_PROGRESS_NOT_QUALIFIED",
+  "created_utc": "2026-08-05T20:52:50.5011260Z",
+  "id": "handoff-rng-readiness-replication-v27-outcome",
+  "parent_preregistration": {
+    "path": "diagnostics/handoff-rng-readiness-replication-preregistration-v27.json",
+    "sha256": "sha256:d82757655e8306c50d71374db1dfaade98db5d4cc4eb7bbe69c4fbbf4bdef028"
+  },
+  "execution_binding": {
+    "path": "diagnostics/handoff-rng-readiness-replication-execution-binding-v27.json",
+    "sha256": "sha256:ba615bb818e978aeb08d72fb3d143a9c2bb81a9408322f7193f2156910f469b8",
+    "session_nonce": "88bc188677184850b4244a5521d39db0"
+  },
+  "selected_manifest": {
+    "path": "diagnostics/handoff-rng-readiness-replication-selected-manifest-v27.json",
+    "sha256": "sha256:747b727d8ed81d5e58c305b8b47163d075937e1f6ae702fb702ca564e4e5fdaf",
+    "run_count": 20,
+    "all_selected_probe_hashes_verified": true
+  },
+  "execution": {
+    "fixed_run_count": 20,
+    "valid_run_count": 20,
+    "total_attempt_count": 23,
+    "pre_handoff_infrastructure_retry_count": 3,
+    "roots_with_pre_handoff_infrastructure_retry": [
+      "g03",
+      "g08"
+    ],
+    "semantic_retry_count": 0,
+    "post_ready_retry_count": 0,
+    "all_selected_attempts_first_valid": true,
+    "actual_handoff_update": 3009,
+    "actual_detached_after_update": 3009
+  },
+  "primary_result": {
+    "required_exact_runs": 20,
+    "observed_boundary_exact_runs": 16,
+    "observed_boundary_deficit_runs": 4,
+    "boundary_exact_fraction": 0.8,
+    "boundary_exact_wilson_95_interval": [
+      0.5839825677481064,
+      0.9193423374202021
+    ],
+    "observed_target_reached_runs": 12,
+    "observed_timeout_runs": 8,
+    "target_reached_fraction": 0.6,
+    "target_reached_wilson_95_interval": [
+      0.38658150076225317,
+      0.7811934676271829
+    ],
+    "primary_pass": false,
+    "readiness_wait_transport_candidate_qualified": false
+  },
+  "wait_mechanism": {
+    "runs_with_state_change_during_wait": 0,
+    "runs_with_polling": 8,
+    "runs_with_polling_that_reached_target": 0,
+    "runs_with_initial_deficit_rescued": 0,
+    "target_reached_with_zero_polls": 12,
+    "timeout_with_exact_boundary": 4,
+    "timeout_with_deficit_boundary": 4,
+    "secondary_mechanism_corroborated": false,
+    "interpretation": "The process-global MTRand state never advanced while the inherited main-thread suspension was held. Missing draws are therefore main-thread-dependent and cannot be repaired by waiting for non-main work at this handoff."
+  },
+  "observed_handoff_pairs": [
+    {
+      "handoff_draw_count": 1563,
+      "handoff_to_boundary_increment": 99,
+      "boundary_draw_count": 1662,
+      "support": 12,
+      "wait_status": "TARGET_REACHED",
+      "source_exact": true
+    },
+    {
+      "handoff_draw_count": 1562,
+      "handoff_to_boundary_increment": 100,
+      "boundary_draw_count": 1662,
+      "support": 4,
+      "wait_status": "TIMEOUT",
+      "source_exact": true
+    }
+  ],
+  "deficit_observations": [
+    {
+      "run_id": "g01",
+      "initial_draw_count": 1548,
+      "final_draw_count": 1548,
+      "poll_count": 167,
+      "boundary_draw_count": 1639,
+      "deficit": 23
+    },
+    {
+      "run_id": "g04",
+      "initial_draw_count": 1542,
+      "final_draw_count": 1542,
+      "poll_count": 165,
+      "boundary_draw_count": 1640,
+      "deficit": 22
+    },
+    {
+      "run_id": "g07",
+      "initial_draw_count": 1557,
+      "final_draw_count": 1557,
+      "poll_count": 165,
+      "boundary_draw_count": 1646,
+      "deficit": 16
+    },
+    {
+      "run_id": "g16",
+      "initial_draw_count": 1557,
+      "final_draw_count": 1557,
+      "poll_count": 166,
+      "boundary_draw_count": 1646,
+      "deficit": 16
+    }
+  ],
+  "historical_context_not_pooled": {
+    "v25_boundary_exact_runs": 13,
+    "v25_run_count": 20,
+    "v27_boundary_exact_runs": 16,
+    "v27_run_count": 20,
+    "independent_two_sided_fisher_exact_p": 0.48011535108309306,
+    "interpretation": "The apparent 65% to 80% increase is not statistically distinguishable in these independent samples and cannot be attributed to the wait because no deficient state advanced during polling."
+  },
+  "validity": {
+    "all_20_collector_contracts_pass": true,
+    "all_20_observer_contracts_pass": true,
+    "all_20_ready_v2_handoffs_verified": true,
+    "all_20_readiness_receipts_bound": true,
+    "all_20_wait_process_memory_writes": 0,
+    "all_20_observer_process_memory_writes": 0,
+    "all_20_state_correction_counts": 0,
+    "all_20_hardware_breakpoints_restored": true,
+    "all_20_debugger_detach_errors": null,
+    "all_20_persistent_file_modified": false
+  },
+  "orchestration_incident": {
+    "path": "diagnostics/handoff-rng-readiness-replication-orchestration-incident-g03-v27.json",
+    "sha256": "sha256:b980013e05b5d1936c0e7fea40f26462de1f10e696036940d23116b7c1963444",
+    "classification": "non-experimental progress-summary parser failure after valid g03",
+    "g03_rerun": false,
+    "resumed_at": "g04",
+    "semantic_effect": false
+  },
+  "host_safety": {
+    "canonical_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_pre_sha256": "sha256:14f434c21805d1efdc68e5bfffd38ca008c56617b1970dad3c84ce0745d95966",
+    "host_post_sha256": "sha256:7bf19ff744aeb0a398cc226395cd6b37a6919dfd070c9a8c5fd0117e4e898e7f",
+    "all_20_after_run_state_roots_match": true,
+    "host_pre_state_root_match": true,
+    "host_post_state_root_match": true,
+    "residual_retail_process_count": 0
+  },
+  "decision": {
+    "frozen_status": "FAIL_16_OF_20_BOUNDARY_EXACT_12_OF_20_TARGET_NO_WAIT_PROGRESS_NOT_QUALIFIED",
+    "next_action": "Do not use a main-thread-suspended readiness wait. Localize and control the main-thread-dependent pre-handoff call divergence before update 3009, preserving zero-write semantics and first-valid-attempt selection.",
+    "pc_golden_credit": false,
+    "fidelity_gate_change": false,
+    "formal_transport_change": false,
+    "large_scale_training_start": false
+  },
+  "non_authorizations": [
+    "pc_golden_credit",
+    "fidelity_gate_change",
+    "formal_transport_change",
+    "large_scale_training_start"
+  ]
+}

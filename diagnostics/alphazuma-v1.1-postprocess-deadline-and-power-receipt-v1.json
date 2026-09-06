@@ -1,0 +1,95 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-postprocess-deadline-and-power-receipt",
+  "version": 1,
+  "created_utc": "2026-08-14T02:46:20.4462263Z",
+  "status": "PASS_WITH_TIGHT_CONSERVATIVE_MARGIN",
+  "classification": "operational_forecast_and_reversible_system_tuning_only",
+  "frozen_inputs": {
+    "master_preregistration": {
+      "path": "diagnostics/alphazuma-v1.1-frontier-postprocess-s51081301-preregistration-v1.json",
+      "sha256": "sha256:3dc8a51563c763ef46b3c3415a6e4da9b5430ab3a19b586e5e0b95b98b0ffc01"
+    },
+    "controller": {
+      "path": "tools/run_alphazuma_v11_frontier_postprocess.py",
+      "sha256": "sha256:0f97b9d143f9d33de935311d11074ea4f68cb4b3027a412ed70b52b76ff99689"
+    },
+    "postprocess_helper": {
+      "path": "tools/run_overnight_v11_postprocess.py",
+      "sha256": "sha256:1f8ce2067be93b001d182f8c22018ad3b2a0fb5e5c051b9a60f9a18de66c1a0e"
+    },
+    "evaluator": {
+      "path": "tools/evaluate_zero_shot_multilevel.py",
+      "sha256": "sha256:d0011f9ad5c6837315007a7fb31e128fb315e4baddb45959c5f3b98d11a6a7e3"
+    }
+  },
+  "empirical_reference": {
+    "run_root": "D:\\ZumaTraining\\overnight-v11-recovery-postprocess-s43081301-v1",
+    "selection_shards": [
+      {
+        "path": "selection-evaluation/matrix-shard-00-of-02.json",
+        "sha256": "sha256:c5dd48525936cc9d26c75b505899b3792eeed3503b1e72af20fa94544b4947a5"
+      },
+      {
+        "path": "selection-evaluation/matrix-shard-01-of-02.json",
+        "sha256": "sha256:203a35a52a9d0bf8fb9aed3bae9717372928804b3b3dccc5b8577e2c44851754"
+      }
+    ],
+    "final_shards": [
+      {
+        "path": "morning-target-evaluation/matrix-shard-00-of-02.json",
+        "sha256": "sha256:0fe4c95c2908ee699fad1ee75765fdbf67637e11ea09e08270f60e18550f70a7"
+      },
+      {
+        "path": "morning-target-evaluation/matrix-shard-01-of-02.json",
+        "sha256": "sha256:e6bda93735eb06894fa4315a5184975251a7596270daa9f4307a21ce2077f520"
+      }
+    ]
+  },
+  "forecast": {
+    "method": "Scale prior wall-clock durations by simulated tick workload, not record count. Current selection uses the same eight-level subset for fifteen models versus five reference models. Current final adds Jungle2 to the prior sixteen-level paired matrix, using its prior mean ticks.",
+    "selection": {
+      "prior_wall_seconds": 2387.839155,
+      "prior_ticks": 2136409,
+      "current_estimated_ticks": 3287127,
+      "tick_ratio": 1.5386225203132922,
+      "forecast_seconds": 3673.983098768862
+    },
+    "final_blind": {
+      "prior_wall_seconds": 3000.71395,
+      "prior_ticks": 3451665,
+      "jungle2_prior_mean_ticks": 3601.85,
+      "current_estimated_ticks": 3566924.2,
+      "tick_ratio": 1.0333923483304435,
+      "forecast_seconds": 3100.9148354584208
+    },
+    "center_evaluation_seconds": 6774.897934227283,
+    "conservative_formula": "center_evaluation_seconds * 1.20 + 600 seconds validation and reporting allowance",
+    "conservative_total_seconds": 8729.87752107274,
+    "available_postprocess_window_seconds": 9000,
+    "conservative_buffer_seconds": 270.12247892726009,
+    "deadline_forecast_pass": true,
+    "caveat": "The twenty-percent scenario leaves only about 4.5 minutes; live phase progress must therefore remain monitored after training stops."
+  },
+  "system_tuning": {
+    "authorization_basis": "User authorized the machine through the morning and requested approximately eighty-percent utilization.",
+    "wsl_vcpu_count": 48,
+    "frozen_evaluation_parallelism": "2 shards x 24 parallel environments",
+    "wsl_configuration_changed": false,
+    "windows_power_plan": {
+      "original_name": "Balanced",
+      "original_guid": "381b4222-f694-41f0-9685-ff5bb260df2e",
+      "temporary_name": "High performance",
+      "temporary_guid": "8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c",
+      "switch_verified": true,
+      "restore_trigger": "independent final audit completion or 2026-08-14T14:30:00Z, regardless of Gate outcome"
+    },
+    "watchdog": {
+      "path": "C:\\Users\\Laure\\.codex\\automations\\alphazuma-v1-1\\automation.toml",
+      "sha256": "sha256:2ce943f68733a7937375e4d14b80caf194815ad091e2231f5c751f356f191f43",
+      "restore_instruction_verified": true
+    }
+  },
+  "training_or_evaluation_semantics_changed": false,
+  "formal_seed_consumption": "none",
+  "formal_gate_effect": "none"
+}

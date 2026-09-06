@@ -1,0 +1,248 @@
+{
+  "schema": "zuma-rl.alphazuma-55-training-validation-audit",
+  "version": 1,
+  "status": "PASS",
+  "audited_utc": "2026-08-15T14:44:00.774688+00:00",
+  "formal_selection_authority": false,
+  "training_recipe_change_authority": false,
+  "artifacts": {
+    "master": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+      "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+    },
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-settled-v3-high-fidelity-validation-s99081520-preregistration-v1.json",
+      "sha256": "sha256:8bcc2475b716f8b4b6de4a741157a1547ca3b0f49f8dced3240ac443841083e1"
+    },
+    "models_manifest": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-settled-v3-high-fidelity-validation-s99081520-models-v1.json",
+      "sha256": "sha256:a53332432e6f7e7711e8502e4e61bfea0dddce3b0a8970b89683f7587f498ba9"
+    },
+    "matrix_shard": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/settled-v3-high-fidelity-validation-s99081520-v1/matrix-shard-00-of-01.json",
+      "sha256": "sha256:66b88e632209c5fa7fc0c3c3e5791906504602ed004f1dbf20b3181fc3a7ea4f"
+    },
+    "auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_training_validation.py",
+      "sha256": "sha256:3621dcb64c3342e3954533d22401f258fe6c72ac49d164456455ad77ea54aa67"
+    }
+  },
+  "matrix": {
+    "levels": 55,
+    "attempts_per_model": 55,
+    "models": 8,
+    "completed_attempts": 440,
+    "seed_plan": {
+      "registry": "training_validation",
+      "base_seed": 1550000300,
+      "last_seed": 1550000354
+    },
+    "runtime": {
+      "python": "3.12.3",
+      "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "parallel_envs": 24,
+      "total_vector_transitions": 5187955,
+      "wall_seconds": 11676.793945486002
+    }
+  },
+  "model_summaries": [
+    {
+      "model_id": "v11-full55-v1",
+      "model_sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d",
+      "attempts": 55,
+      "wins": 13,
+      "losses": 27,
+      "truncations": 15,
+      "cleared_levels": 13,
+      "winning_levels": [
+        {
+          "level_id": "Jungle1",
+          "seed": 1550000300,
+          "ticks": 4920,
+          "score": 2570,
+          "trajectory_sha256": "sha256:08e66cad45f9b6e1f9e7f96a1e0cc5db1150de49c81def638c9b827e47eb188d"
+        },
+        {
+          "level_id": "Jungle2",
+          "seed": 1550000301,
+          "ticks": 1782,
+          "score": 1870,
+          "trajectory_sha256": "sha256:ccf8d296628309b60746baac96dcd73f4bc15a54fb65195ec22a607b19b34636"
+        },
+        {
+          "level_id": "Jungle3",
+          "seed": 1550000302,
+          "ticks": 4422,
+          "score": 4140,
+          "trajectory_sha256": "sha256:8ecf0d80c8a091970a5ce4beea369e2b24d624528b917e960481ab4a635eebcb"
+        },
+        {
+          "level_id": "Jungle4",
+          "seed": 1550000303,
+          "ticks": 4304,
+          "score": 2920,
+          "trajectory_sha256": "sha256:b5563ce9cda1b8286a9b08ad84a6d719f20b8fed331e6067c39f50be4b1413c1"
+        },
+        {
+          "level_id": "jungle6",
+          "seed": 1550000304,
+          "ticks": 2829,
+          "score": 3160,
+          "trajectory_sha256": "sha256:66cb0f387eb2943686862a2a6eff353569d5ed9b5761b6b82bc1b9693abd958c"
+        },
+        {
+          "level_id": "Jungle8",
+          "seed": 1550000306,
+          "ticks": 3208,
+          "score": 3090,
+          "trajectory_sha256": "sha256:cf912a0830c1133a8fe15a9260f949f6fe838e43413280dfcefde1d8282adc18"
+        },
+        {
+          "level_id": "Jungle10",
+          "seed": 1550000308,
+          "ticks": 5566,
+          "score": 6380,
+          "trajectory_sha256": "sha256:cbf23a26ec9b7fd0d13a42b7f036239e538de81627cbf0e260e84a9d4b71dd7c"
+        },
+        {
+          "level_id": "village2",
+          "seed": 1550000310,
+          "ticks": 5295,
+          "score": 4640,
+          "trajectory_sha256": "sha256:7f60093834caf8bfd6bce3553d603d97a85b8555fe33c9e243aa360075cfcde9"
+        },
+        {
+          "level_id": "village4",
+          "seed": 1550000312,
+          "ticks": 12427,
+          "score": 14120,
+          "trajectory_sha256": "sha256:aa6f5feb700aafd5eb1280e54d83943b33123e83834f9364d38e9e4a726f9e62"
+        },
+        {
+          "level_id": "village7",
+          "seed": 1550000315,
+          "ticks": 6040,
+          "score": 5460,
+          "trajectory_sha256": "sha256:bb20f33abe167a73dfa10dda501e6bc79c9d394a1b5991fad967fc9d33aba516"
+        },
+        {
+          "level_id": "village8",
+          "seed": 1550000316,
+          "ticks": 7929,
+          "score": 6230,
+          "trajectory_sha256": "sha256:db05068e1acb362480be6db8ed64f298530876961ee65d173e10f8965f40ba0b"
+        },
+        {
+          "level_id": "city7",
+          "seed": 1550000324,
+          "ticks": 8115,
+          "score": 7600,
+          "trajectory_sha256": "sha256:4fa2e027b66b3533e1fe06e777072a7f0b53961c1e335a3e3a55345fdb0da4b3"
+        },
+        {
+          "level_id": "grotto1",
+          "seed": 1550000336,
+          "ticks": 8567,
+          "score": 5330,
+          "trajectory_sha256": "sha256:4e6181c1c3ce004c57bcfc1be859cc825d54fe8ad07973f02eff71e44ba511b4"
+        }
+      ],
+      "median_winning_ticks": 5295
+    },
+    {
+      "model_id": "settled-v3-hifi-epoch-04",
+      "model_sha256": "sha256:e57af3a7e494a309d554f2d92a3694673bfa86022f54c9470bdeba7d8cc69118",
+      "attempts": 55,
+      "wins": 1,
+      "losses": 54,
+      "truncations": 0,
+      "cleared_levels": 1,
+      "winning_levels": [
+        {
+          "level_id": "Jungle2",
+          "seed": 1550000301,
+          "ticks": 1277,
+          "score": 1920,
+          "trajectory_sha256": "sha256:b2ddc133f7e9af26f3a7858485cd4df2c0725f3da404c3c1c936eda0160c43f6"
+        }
+      ],
+      "median_winning_ticks": 1277
+    },
+    {
+      "model_id": "settled-v3-hifi-epoch-08",
+      "model_sha256": "sha256:67dd6cf8fce51f62d15b9a6d8d5ed4016a702a11266be72c9026c53affba7d74",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "settled-v3-hifi-epoch-12",
+      "model_sha256": "sha256:d4ef0adad30b0b578cc272be58e074b6649773d725b788cf3926c6f9ec4c02a1",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "settled-v3-hifi-epoch-16",
+      "model_sha256": "sha256:4570df2da52e88a437612edb8b5d3e9146e492c5eabda65985c38761d796a374",
+      "attempts": 55,
+      "wins": 1,
+      "losses": 54,
+      "truncations": 0,
+      "cleared_levels": 1,
+      "winning_levels": [
+        {
+          "level_id": "Jungle8",
+          "seed": 1550000306,
+          "ticks": 15426,
+          "score": 4600,
+          "trajectory_sha256": "sha256:1294dcce373ce54343289a499a888e9fdc6c3f581a5abb653f95d378498e5e4e"
+        }
+      ],
+      "median_winning_ticks": 15426
+    },
+    {
+      "model_id": "settled-v3-hifi-epoch-20",
+      "model_sha256": "sha256:309a6852545928e4bc9b21e1c3b94b069fe706e00306fbddbb117bb7b397c699",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "settled-v3-hifi-epoch-24",
+      "model_sha256": "sha256:87cfd53107aa5a44c9ddac1cce526b153026a9b915af7cf60e9df25f7a15e9f8",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "settled-v3-hifi-final",
+      "model_sha256": "sha256:5411ab0a6edf49b549beb9c40a38b267726eceb9a3809a3ac0570d3cff57df97",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    }
+  ],
+  "paired_comparison": null,
+  "interpretation_boundary": "This PASS proves artifact integrity and a paired training-health signal only; it is not selection, final blind, or continuous-campaign evidence."
+}

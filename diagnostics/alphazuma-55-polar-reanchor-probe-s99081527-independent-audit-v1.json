@@ -1,0 +1,97 @@
+{
+  "schema": "zuma-rl.alphazuma-55-polar-reanchor-probe-independent-audit",
+  "version": 1,
+  "status": "PASS",
+  "audited_utc": "2026-08-15T13:03:42.158167+00:00",
+  "formal_selection_authority": false,
+  "artifacts": {
+    "master": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+      "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+    },
+    "polar_plan": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-reanchor-probe-s99081527-plan-v1.json",
+      "sha256": "sha256:46022eab6f4adb4220a99b8e32923efee2969aed9375acc09b4bd76eaa25536c"
+    },
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-reanchor-probe-s99081527-preregistration-v1.json",
+      "sha256": "sha256:86a5c862bb1bfe5053c4c2d0779c62d7c24510ad70d84fe60e9745dc6403c7e8"
+    },
+    "models_manifest": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-reanchor-probe-s99081527-models-v1.json",
+      "sha256": "sha256:490e4b888d84bcfa9a2795288ab91738d99b9956e5f2b792b482bb7b41b1961d"
+    },
+    "matrix": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-reanchor-probe-s99081527-v1/matrix-shard-00-of-01.json",
+      "sha256": "sha256:256cd31351814e7535ec0b6774eb164a0c7a04d8f623c37ca923192997be8832"
+    },
+    "auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_polar_reanchor_probe.py",
+      "sha256": "sha256:ed0dcf22d05550c00169cf2f7ec857c7ede29c92e6d80fa489535a3e8f5256c6"
+    }
+  },
+  "matrix": {
+    "models": 4,
+    "levels": 12,
+    "completed_attempts": 48,
+    "seed_plan": {
+      "registry": "training_validation",
+      "base_seed": 1550000700,
+      "last_seed": 1550000711
+    },
+    "runtime": {
+      "python": "3.12.3",
+      "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "parallel_envs": 24,
+      "total_vector_transitions": 444180,
+      "wall_seconds": 1453.5317215670002
+    }
+  },
+  "model_summaries": [
+    {
+      "model_id": "settled-v3-multiseed-final",
+      "model_sha256": "sha256:ced0d6196fa27317e198d6c7a946fd21c9ed18d4d9574a02ea93ab8b4bcd116c",
+      "attempts": 12,
+      "wins": 0,
+      "losses": 12,
+      "truncations": 0,
+      "total_score": 6700,
+      "median_winning_ticks": null,
+      "winning_levels": []
+    },
+    {
+      "model_id": "polar-reset-identity-scale-5",
+      "model_sha256": "sha256:65ffe5d4db7962c2692114fc3d05100eea3f5497318952701393ccb7a7696d24",
+      "attempts": 12,
+      "wins": 0,
+      "losses": 12,
+      "truncations": 0,
+      "total_score": 6790,
+      "median_winning_ticks": null,
+      "winning_levels": []
+    },
+    {
+      "model_id": "polar-additive-identity-scale-1",
+      "model_sha256": "sha256:97ada7f7eadf8be03036a4036c64a1d27052b7dd1e21bb00ce2e3b2f66b18905",
+      "attempts": 12,
+      "wins": 0,
+      "losses": 12,
+      "truncations": 0,
+      "total_score": 8230,
+      "median_winning_ticks": null,
+      "winning_levels": []
+    },
+    {
+      "model_id": "polar-additive-identity-scale-2",
+      "model_sha256": "sha256:0df656ad28f88ca7c1c4f745889bbe192b9eb127ca8c19ab60aca1286cc0b4a7",
+      "attempts": 12,
+      "wins": 0,
+      "losses": 12,
+      "truncations": 0,
+      "total_score": 6950,
+      "median_winning_ticks": null,
+      "winning_levels": []
+    }
+  ],
+  "interpretation_boundary": "This PASS proves integrity of a posthoc 12-level engineering probe; it is not original formal selection, final blind, or continuous evidence."
+}

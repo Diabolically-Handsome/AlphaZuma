@@ -1,0 +1,43 @@
+{
+  "schema": "zuma-rl.pc-mtrand-reconciliation-proof-generalization-qualification-outcome",
+  "version": 1,
+  "status": "FAIL_WRONG_LEGACY_COMPATIBILITY_FIXTURE_SELECTED",
+  "created_utc": "2026-08-10T13:16:01.5513005Z",
+  "preregistration": {
+    "artifact": "diagnostics/c170-mtrand-proof-v2-source-generalization-preregistration-v1.json",
+    "artifact_sha256": "sha256:f65664a846c312f6d35cbb90c8150151078ea4c3bc4a67634f8a90f29bd94e87"
+  },
+  "candidate_code": {
+    "pc_mtrand_reconciliation_sha256": "sha256:d9781e7626b1f981aa82ce220dd96e55ac074722d83873ba8990617aec4e3ac7",
+    "test_pc_mtrand_reconciliation_sha256": "sha256:0ba2d3d5cdd3e4f4587c7744ad7392f1380096977126f11ced362433e49c40b1"
+  },
+  "completed_checks": {
+    "python_compile": "PASS",
+    "targeted_mtrand_tests": "PASS_17",
+    "caller_only_negative_tests": "PASS",
+    "near_stack_positive_and_negative_tests": "PASS"
+  },
+  "failed_check": {
+    "name": "legacy_c137_bound_proof_independent_reverification",
+    "selected_proof": "D:/ZumaGolden/diagnostics/jungle2-c131b1-u5060-u5098-powerup-reverse-mtrand-proof-v1-confirmatory.json",
+    "selected_proof_sha256": "sha256:e7c9e8178ed55fcfbf8a712b4508b97fb5f162f4323929503654790ee23cf8c8",
+    "selected_report": "D:/ZumaGolden/diagnostics/jungle2-c131b1-u5060-u5098-powerup-reverse-diff-v6-nosync-bound.json",
+    "selected_report_sha256": "sha256:7c53d5a6e4dab09eba1d74d8d472474bd1fb53918da843da49a72c73a447a773",
+    "error": "mtrand_reconciliation_proof_recomputation_mismatch",
+    "first_difference": "/runtime/static_surface/pending_ball_generation",
+    "cause": "the selected v1/v6 pair serializes two pending-ball call sites that the already-current compatibility verifier deliberately omits; it was superseded by the v2-compat/v7 pair"
+  },
+  "unrun_checks": {
+    "canonical_v2_compat_v7_reverification": true,
+    "full_test_suite": true,
+    "fresh_c164_trace": true
+  },
+  "decision": {
+    "c170_cannot_pass": true,
+    "candidate_code_retained_only_for_new_preregistered_qualification": true,
+    "selected_v1_v6_pair_not_relabelled": true,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

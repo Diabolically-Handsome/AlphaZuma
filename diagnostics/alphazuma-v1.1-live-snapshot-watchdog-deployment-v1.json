@@ -1,0 +1,43 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-live-snapshot-watchdog-deployment",
+  "version": 1,
+  "created_utc": "2026-08-14T02:52:31.2185209Z",
+  "status": "PASS",
+  "classification": "read_only_operational_monitoring",
+  "snapshot_tool": {
+    "path": "tools/snapshot_alphazuma_v11_frontier.py",
+    "sha256": "sha256:fcd50b655a0df75912f5f1d1735458eb53818fd358dbee20787946b2c1046d94",
+    "writes_training_or_evaluation_artifacts": false,
+    "formal_seed_consumption": "none"
+  },
+  "tests": {
+    "path": "tests/test_snapshot_alphazuma_v11_frontier.py",
+    "sha256": "sha256:a824ff0b2fad1467062361b2060276e20bc78b6bd93a4a0da59032f226a2ba26",
+    "result": "8_passed"
+  },
+  "production_probe": {
+    "checked_utc": "2026-08-14T02:51:59.607756Z",
+    "status": "PASS",
+    "controller_status": "RUNNING",
+    "controller_phase": "WAITING_FOR_TRAINING",
+    "training_routes": 7,
+    "running_routes": 7,
+    "failed_routes": 0,
+    "total_steps_this_run": 20462872,
+    "max_status_age_seconds": 33.043543,
+    "formal_seed_consumption": "none"
+  },
+  "watchdog": {
+    "id": "alphazuma-v1-1",
+    "path": "C:\\Users\\Laure\\.codex\\automations\\alphazuma-v1-1\\automation.toml",
+    "sha256": "sha256:4e8c838c3a82745f7c95bb8630d56da30a9a30b537ab266f996ddaf51c9387ef",
+    "status": "ACTIVE",
+    "interval_minutes": 10,
+    "snapshot_command_and_hash_bound": true,
+    "phase_eta_monitoring_bound": true,
+    "balanced_power_plan_restore_bound": true,
+    "notification_policy": "failed_runs_only"
+  },
+  "training_or_evaluation_semantics_changed": false,
+  "formal_gate_effect": "none"
+}

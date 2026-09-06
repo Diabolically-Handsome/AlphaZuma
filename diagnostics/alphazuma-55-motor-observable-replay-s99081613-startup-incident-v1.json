@@ -1,0 +1,55 @@
+{
+  "schema": "zuma-rl.alphazuma-55-motor-observable-startup-incident",
+  "version": 1,
+  "status": "STARTUP_ABORTED_BEFORE_CONFIG_NO_SEEDS_CONSUMED",
+  "recorded_utc": "2026-08-16T03:44:24.3668279Z",
+  "campaign_id": "alphazuma-55-motor-observable-replay-s99081613-v1",
+  "classification": "implementation_startup_failure",
+  "error": {
+    "type": "AttributeError",
+    "message": "module 'tools.distill_alphazuma_55_polar_intent_dagger_v1' has no attribute '_write_atomic'",
+    "location": "run before first config.json write"
+  },
+  "artifacts": {
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-replay-s99081613-preregistration-v1.json",
+      "bytes": 9157,
+      "sha256": "sha256:628af14aab0b4fc495e55713e63f2cae4358a700df6f41c4fb585473d935a058"
+    },
+    "trainer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_motor_observable_replay_v1.py",
+      "bytes": 28244,
+      "sha256": "sha256:e400cf0002a8313c4b950da88daf94969ce0b22aab8c4037b5bb0dabec2c1c5d"
+    },
+    "builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_motor_observable_replay.py",
+      "bytes": 11836,
+      "sha256": "sha256:ee7f8aa36cac9cd335c1475aed919b010725903d34ff78b73efad5d19bdac738"
+    },
+    "stderr": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-replay-s99081613-launch.stderr.log",
+      "bytes": 675,
+      "sha256": "sha256:9f0dbe0ae8895f60d4cf8d856111221831af03df99fb676ed2db7b213f9b0aa1"
+    },
+    "stdout": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-replay-s99081613-launch.stdout.log",
+      "bytes": 0,
+      "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "run_dir": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-replay-s99081613-v1",
+      "exists": true,
+      "files": 0
+    }
+  },
+  "seed_boundary": {
+    "config_written": false,
+    "migration_written": false,
+    "teacher_collection_started": false,
+    "student_collection_started": false,
+    "training_seed_consumption": "NONE",
+    "training_validation_seed_consumption": "NONE",
+    "formal_seed_consumption": "NONE"
+  },
+  "recovery_authority": "new trainer, preregistration, hashes, seed interval, and run directory required; no overwrite"
+}

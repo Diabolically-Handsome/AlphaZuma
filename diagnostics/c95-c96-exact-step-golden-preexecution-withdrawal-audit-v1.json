@@ -1,0 +1,39 @@
+{
+  "schema": "zuma-rl.pc-exact-step-golden-preexecution-withdrawal-audit",
+  "version": 1,
+  "status": "WITHDRAWN_BEFORE_RUN_OUTPUTS",
+  "created_utc": "2026-08-04T03:06:00.000Z",
+  "preregistration": {
+    "path": "diagnostics/c95-c96-exact-step-golden-preregistration-v1.json",
+    "sha256": "sha256:b6456242d7112bac74d464e58614804bc19e8be3c3ac48322b99aa751d88c70c"
+  },
+  "execution_binding": {
+    "path": "diagnostics/c95-c96-exact-step-golden-execution-binding-v1.json",
+    "sha256": "sha256:d727a2fe982ecc9d262e2068ac481da91fc07609361d5481ee8b2513a9595ca2"
+  },
+  "reason": "The bound Windows environment omitted the locked dxcam capture backend; installing and qualifying that backend after binding changes the execution environment.",
+  "output_roots": {
+    "c95": {
+      "path": "D:/ZumaGolden/formal-c95-exact-step-golden-u4700-u5100-v1",
+      "absent": true
+    },
+    "c96": {
+      "path": "D:/ZumaGolden/formal-c96-exact-step-golden-u4700-u5100-v1",
+      "absent": true
+    },
+    "case": {
+      "path": "D:/ZumaGolden/cases/jungle2-natural-mechanisms-c95-c96-u4700-u5100-exact-step-v1",
+      "absent": true
+    }
+  },
+  "replacement_environment_qualification": {
+    "path": "diagnostics/windows-dxgi-capture-environment-qualification-v1.json",
+    "sha256": "sha256:83acb154bba8d5491f4d1adcfa51ef44ffee04d44ee6b7fb749024285e38d780"
+  },
+  "decision": {
+    "execute_c95": false,
+    "execute_c96": false,
+    "credit": false,
+    "replacement_requires_new_preregistration_binding_and_run_ids": true
+  }
+}

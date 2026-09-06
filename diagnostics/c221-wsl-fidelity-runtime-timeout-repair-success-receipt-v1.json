@@ -1,0 +1,277 @@
+{
+  "acceptance": {
+    "full_test_suite": "PASS_WITH_ONLY_DOCUMENTED_SKIPS_AND_PREEXISTING_WARNING",
+    "native_fidelity_timeout_seconds": 900,
+    "native_windows_fidelity_report": {
+      "policy": "original-transfer-jungle2-v4",
+      "reasons": [],
+      "status": "OPEN"
+    },
+    "run_directory_created_after_both_gates": true,
+    "targeted_tests": "PASS",
+    "training_recipe_changed": false,
+    "training_service_active_after_gate": true
+  },
+  "artifacts": {
+    "completion": {
+      "bytes": 1428,
+      "path": "D:/ZumaTraining/pc-golden-jungle2-transfer-s20260950-98k-v1/completion.json",
+      "sha256": "sha256:fd064dde4289335832b7c7fcd32cd3fc44e8b3fbe3ed4ca234752c073b999f08"
+    },
+    "config": {
+      "bytes": 160081,
+      "path": "D:/ZumaTraining/pc-golden-jungle2-transfer-s20260950-98k-v1/config.json",
+      "sha256": "sha256:e62643a14df0e5cb4c87f34e0c67c92c031faaaeabf6293164b2aefc0a4a8091"
+    },
+    "final_model": {
+      "bytes": 4650058,
+      "path": "D:/ZumaTraining/pc-golden-jungle2-transfer-s20260950-98k-v1/final_model.zip",
+      "sha256": "sha256:7869b4306a1f05128cd8fbff978361ba1969454dceaf28b5fb611d8965baa97b"
+    },
+    "posttrain_deterministic": {
+      "bytes": 11467,
+      "path": "D:/ZumaTraining/pc-golden-jungle2-transfer-s20260950-98k-v1/posttrain_evaluation.json",
+      "sha256": "sha256:46cef4cbb03a96913a5ecb13641cc4cc5fbd010320e278ea12885f7255e4bffe"
+    },
+    "posttrain_stochastic": {
+      "bytes": 11473,
+      "path": "D:/ZumaTraining/pc-golden-jungle2-transfer-s20260950-98k-v1/posttrain_evaluation_stochastic.json",
+      "sha256": "sha256:5841157c97dc8871faf7ad03adf70b4e3220f87e10961b650af4dbb507ef03ed"
+    },
+    "pretrain_deterministic": {
+      "bytes": 11458,
+      "path": "D:/ZumaTraining/pc-golden-jungle2-transfer-s20260950-98k-v1/pretrain_evaluation.json",
+      "sha256": "sha256:c59b1a429b41bf3fa21b80982fdb05605447d867045c987083cccb0169c40cce"
+    },
+    "pretrain_stochastic": {
+      "bytes": 11470,
+      "path": "D:/ZumaTraining/pc-golden-jungle2-transfer-s20260950-98k-v1/pretrain_evaluation_stochastic.json",
+      "sha256": "sha256:6d5c95eb65a5b5a1bcff20a8af302e567fb0a1594cfda1b7a096ede4c28e2ea5"
+    },
+    "teacher_policy_anchor": {
+      "bytes": 867,
+      "path": "D:/ZumaTraining/pc-golden-jungle2-transfer-s20260950-98k-v1/teacher_policy_anchor.json",
+      "sha256": "sha256:153417321213830517e7a27ff328db13eb00d66abb0205337eb90c68e74a3ef6"
+    },
+    "teacher_policy_anchor_verification": {
+      "bytes": 908,
+      "path": "D:/ZumaTraining/pc-golden-jungle2-transfer-s20260950-98k-v1/teacher_policy_anchor_verification.json",
+      "sha256": "sha256:9a73c4d5732344d6d7c29649032cce257a267aeaa0dad544d8fd6abc315053fd"
+    }
+  },
+  "boundary_evaluation": {
+    "deterministic": {
+      "episode_count": 32,
+      "paired_reward_delta_95_percent_t_interval": [
+        -2.2874595447861585,
+        1.518490794786158
+      ],
+      "posttrain": {
+        "mean_episode_length": 1731.40625,
+        "mean_reward": 35.386234375,
+        "mean_terminal_score": 2555.9375,
+        "wins": 32
+      },
+      "pretrain": {
+        "mean_episode_length": 1730.3125,
+        "mean_reward": 35.77071875,
+        "mean_terminal_score": 2594.375,
+        "wins": 32
+      },
+      "reward_delta_post_minus_pre": -0.384484375,
+      "terminal_score_improved_equal_worse": [
+        7,
+        18,
+        7
+      ]
+    },
+    "interpretation": "Both fixed-seed 32-episode lanes retained 32/32 wins. The small mixed reward deltas have paired 95 percent intervals spanning zero, so this bounded calibration is neutral rather than evidence of a certified improvement or regression.",
+    "stochastic": {
+      "action_sampling_seed": 20280950,
+      "episode_count": 32,
+      "paired_reward_delta_95_percent_t_interval": [
+        -1.1977434169083023,
+        1.3266184169083022
+      ],
+      "posttrain": {
+        "mean_episode_length": 2387.5625,
+        "mean_reward": 40.42999375,
+        "mean_terminal_score": 3066.875,
+        "wins": 32
+      },
+      "pretrain": {
+        "mean_episode_length": 2438.1875,
+        "mean_reward": 40.36555625,
+        "mean_terminal_score": 3060.9375,
+        "wins": 32
+      },
+      "reward_delta_post_minus_pre": 0.0644375,
+      "terminal_score_improved_equal_worse": [
+        5,
+        22,
+        5
+      ]
+    }
+  },
+  "checkpoints": [
+    {
+      "bytes": 8302293,
+      "effective_steps": 16384,
+      "sha256": "sha256:735d14496091d6a07910ed1c93045ef62f307da8e3bf8e789473192d85132069"
+    },
+    {
+      "bytes": 8302545,
+      "effective_steps": 32768,
+      "sha256": "sha256:f9fb801349552ac637e08fadce384783c803631ac872c9e561e5c8e5d82e6f4e"
+    },
+    {
+      "bytes": 8302886,
+      "effective_steps": 49152,
+      "sha256": "sha256:0f559997c326b86d15e92000437fd3f387741a4114298061d09176d14e5ea2b0"
+    },
+    {
+      "bytes": 8303302,
+      "effective_steps": 65536,
+      "sha256": "sha256:45ac931b3f09719dd3cc54890d0d1dfcf1b6cea38919f7e6f69049fa2197def0"
+    },
+    {
+      "bytes": 8303578,
+      "effective_steps": 81920,
+      "sha256": "sha256:277fa872453c143dfbd2545df0de5e69c804b74d599496ec229d54d01e91823f"
+    },
+    {
+      "bytes": 8303922,
+      "effective_steps": 98304,
+      "sha256": "sha256:c185007cef698b6af7e47012f609e9e1991e13b544937cb55b5cf119c14d6381"
+    }
+  ],
+  "completed_utc": "2026-08-12T15:27:30.010Z",
+  "created_utc": "2026-08-12T15:30:00.730Z",
+  "failed_attempt_retained": {
+    "classification": "operational_wrapper_timeout_below_observed_valid_gate_runtime",
+    "log": "D:/ZumaGolden/training/launch-logs/pc-golden-jungle2-transfer-s20260950-98k-v1-20260812T145848Z.stderr.log",
+    "log_bytes": 1674,
+    "log_sha256": "sha256:dd80ebb91e0100fa27eb13af14ac613c5830b14c6204b4afd4df2c7a7cf383e8",
+    "training_steps_executed": 0
+  },
+  "fixed_gate_inputs": {
+    "fidelity_report_sha256": "sha256:a08d64bfd13bdbfdcb74c65163aa9e9b6a004e9d8c8fc5ff35376d252655c7d1",
+    "fidelity_suite_sha256": "sha256:0bfb00323d7544626b1d19452e64e55c88bacc496ecee0ba2303c7cb0ea29712",
+    "initial_model_sha256": "sha256:32e1e841962833b3c74ce743598df1c87e21c9c9c931092152e8bc2700081f64",
+    "recipe_sha256": "sha256:dde6a9ee9c8b7e08f20589e633d1a6a947849bc0831054d8b5019f6f84a4c9c0",
+    "training_report_sha256": "sha256:137f831422e6f40ee51425a184554d767f489ff4265cc3a1b773e9ba537b1999",
+    "training_suite_sha256": "sha256:bedff8521857d36414689fce5682049d8dd9dca10ab010fcc64a86a76b0f8e17"
+  },
+  "gate_execution": {
+    "fidelity_gate": {
+      "policy": "original-transfer-jungle2-v4",
+      "reasons": [],
+      "status": "OPEN"
+    },
+    "run_directory_existed_before_gate_acceptance": false,
+    "training_gate": {
+      "policy": "jungle2-transfer-bootstrap-v3",
+      "reasons": [],
+      "status": "OPEN"
+    }
+  },
+  "hardware_observation": {
+    "device": "NVIDIA GeForce RTX 5090",
+    "observed_active_memory_mib": 3658,
+    "observed_active_power_watts_max_snapshot": 90.9,
+    "observed_active_utilization_percent_max_snapshot": 13,
+    "rtx_5080_training_utilization_percent_in_observed_snapshots": 0,
+    "torch_build_cuda": "13.0",
+    "torch_cuda_available": true
+  },
+  "id": "c221-wsl-fidelity-runtime-timeout-repair-success-v1",
+  "launch": {
+    "end_to_end_wall_seconds": 1194,
+    "launch_script": "tools/launch_pc_golden_transfer_s20260950_v1.sh",
+    "launch_script_sha256": "sha256:81c261b370561306fd43ea2923e15a596645666e8478307ca1050abfc9ad691c",
+    "service_result": "success",
+    "service_unit": "zuma-pc-golden-jungle2-s20260950-v4.service",
+    "started_utc": "2026-08-12T15:07:36Z",
+    "stderr": {
+      "bytes": 0,
+      "path": "D:/ZumaGolden/training/launch-logs/pc-golden-jungle2-transfer-s20260950-98k-v1-20260812T150736Z.stderr.log",
+      "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "bytes": 49947,
+      "path": "D:/ZumaGolden/training/launch-logs/pc-golden-jungle2-transfer-s20260950-98k-v1-20260812T150736Z.stdout.log",
+      "sha256": "sha256:ba949cca780d8516235b8fa30b4a699e84bff62c605a71cf2fa640e51c4aa5d2"
+    }
+  },
+  "preregistration": {
+    "path": "diagnostics/c221-wsl-fidelity-runtime-timeout-repair-preregistration-v1.json",
+    "sha256": "sha256:a383f8b3ddc01b82acc61309cb43b7fdbfc8efd462f5f95cdad7f439a23e8eae",
+    "status": "FROZEN_BEFORE_CODE_CHANGE_AND_RELAUNCH"
+  },
+  "repair": {
+    "domain_error_on_timeout": "FidelityRuntimeError",
+    "native_fidelity_timeout_seconds_after": 900,
+    "native_fidelity_timeout_seconds_before": 300,
+    "policy_or_evidence_changed": false,
+    "source": {
+      "path": "src/zuma_rl/fidelity_runtime.py",
+      "sha256_after": "sha256:8bec47b789dcbd54dada4d9fc7c4a27835bcd4c872ff3a08e141c58193b49004",
+      "sha256_before": "sha256:ac8df93e6bb1cfef0e0286111bf48b2ed70ca2b5abe8f3b3966633e0d7dc27ca"
+    },
+    "tests": {
+      "path": "tests/test_fidelity_runtime.py",
+      "sha256_after": "sha256:acc690a849d6c2b9a65a8f4381ddde1661af3790e9ca37bd99772c17212319cb",
+      "sha256_before": "sha256:5f64374894d17877f129bdcf04af7857b9cba77940c4bb9fbb7cd44a7d36eac3"
+    },
+    "training_semantics_changed": false
+  },
+  "run": {
+    "algorithm": "teacher_anchored_maskable_ppo",
+    "checkpoint_count": 6,
+    "effective_steps": 98304,
+    "environment": "original-transfer-jungle2-v4",
+    "num_envs": 4,
+    "run_directory": "D:/ZumaTraining/pc-golden-jungle2-transfer-s20260950-98k-v1",
+    "seed": 20260950,
+    "status": "COMPLETE",
+    "training_fps_at_final_logged_iteration": 377,
+    "training_wall_seconds": 260
+  },
+  "schema": "zuma-rl.wsl-fidelity-runtime-timeout-repair-success-receipt",
+  "scope": {
+    "diagnostic_non_transferable": false,
+    "original_game_deployment_authorized": false,
+    "statement": "This is a bounded Jungle2 state-policy transfer calibration. It does not authorize visual-policy training or original-game deployment.",
+    "visual_policy_training_authorized": false
+  },
+  "status": "PASS",
+  "teacher_anchor_verification": {
+    "current_policy_bitwise_changed": true,
+    "max_sample_forward_kl": 0.0008505622390657663,
+    "mean_forward_kl": 0.000007258039558699636,
+    "minibatch_count": 192,
+    "sample_count": 98304,
+    "status": "PASS",
+    "teacher_policy_bitwise_unchanged": true,
+    "teacher_policy_detached_before_model_save": true
+  },
+  "tests": {
+    "windows_full": {
+      "collected": 1616,
+      "failed": 0,
+      "passed": 1603,
+      "skipped": 13,
+      "status": "PASS",
+      "warnings": 1
+    },
+    "windows_targeted": {
+      "passed": 4,
+      "status": "PASS"
+    },
+    "wsl_targeted": {
+      "passed": 4,
+      "status": "PASS"
+    }
+  },
+  "version": 1
+}

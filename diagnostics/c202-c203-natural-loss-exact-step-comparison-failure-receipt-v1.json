@@ -1,0 +1,74 @@
+{
+  "comparison": {
+    "first_memory_difference": {
+      "c202": 3451324615,
+      "c203": 1495722086,
+      "field": "thread_crt_rand_state",
+      "update": 11341
+    },
+    "first_render_difference": {
+      "c202": 2,
+      "c203": 0,
+      "normalized_path": "/current_ball/color_id",
+      "update": 11342
+    },
+    "first_visual_difference": {
+      "differing_pixel_count": 4,
+      "maximum_channel_delta": 1,
+      "update": 11342
+    },
+    "independent_process_instances": true,
+    "memory_exact": false,
+    "pixels_exact": false,
+    "protocol_exact": true,
+    "render_state_exact": false,
+    "status": "FAIL"
+  },
+  "created_utc": "2026-08-10T17:52:15.584Z",
+  "decision": {
+    "failed_runs_reusable_as_pc_golden": false,
+    "failed_runs_retained": true,
+    "next_action": "derive fresh plans with the source-observed 32-bit main-thread CRT state fixed at the existing Board seed breakpoint, while retaining the prohibition on complete source-state restoration",
+    "training_authorized": false
+  },
+  "id": "c202-c203-natural-loss-exact-step-comparison-failure",
+  "inputs": {
+    "execution_binding_sha256": "sha256:ffe5c1a514254c41da2225e04a0d060b8758381abfebc77c9e584067568526c5",
+    "plan_sha256": "sha256:bd43e7cf4624fa06c53ed4435252eb1c1c750d2f8c13c9abcc35024cc68e27ad",
+    "preregistration_sha256": "sha256:47be2ea4b072c705da477b18dd5a601e34145f745183293fff90db693d1e1e74"
+  },
+  "packaging": {
+    "case_output_created": false,
+    "error": "formal independent source comparison failed",
+    "status": "REJECTED_BEFORE_PACKAGE_OUTPUT"
+  },
+  "root_cause": {
+    "board_mtrand_semantic_state_at_first_retained_update_equal": true,
+    "chain_length_at_first_retained_update_equal": true,
+    "classification": "missing_independent_fixed_thread_crt_seed",
+    "natural_loss_progress_equal": true,
+    "score_equal": true,
+    "source_bound_full_state_restore_required": false
+  },
+  "runs": {
+    "c202": {
+      "attempts_sha256": "sha256:3428c95a671dab921295ca602f9e98086f88092ab43bcd953ea40eb8c9bb33cd",
+      "external_input_event_count": 0,
+      "memory_probe_sha256": "sha256:d86d82090369348f536ffa2f39c733d8b32bc26d06c9da2f4eaa12f6353cafa5",
+      "process_id": 48848,
+      "status": "PASS_SOURCE_ONLY",
+      "trajectory_index_sha256": "sha256:5a6f74bc3b33a5329b9537f514e2ab08a4cbecaeca3f777ae16b741984537b37"
+    },
+    "c203": {
+      "attempts_sha256": "sha256:14ad2b59bb8767784eb160d993502a6c1995dee8624afbebd9001f10b56f8a1e",
+      "external_input_event_count": 0,
+      "memory_probe_sha256": "sha256:7cc96e9e3ef965f80367f86a84f29b898c7ec52b9b902fb0ba5f2ac324173339",
+      "process_id": 18588,
+      "status": "PASS_SOURCE_ONLY",
+      "trajectory_index_sha256": "sha256:dbbaa5a619e8397570c8b49b9ab6492da8fa47bd22a0d5649728af55a82fec23"
+    }
+  },
+  "schema": "zuma-rl.pc-exact-step-comparison-failure-receipt",
+  "status": "FORMAL_PAIR_REJECTED",
+  "version": 1
+}

@@ -1,0 +1,192 @@
+{
+  "schema": "zuma-rl.human-speedrun-blind-evaluation-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_EVALUATION",
+  "frozen_utc": "2026-08-12T20:17:44.3594311Z",
+  "objective": "blindly test the completed AlphaZuma V1 training trajectory for a human-limited Jungle2 run strictly faster than the 12-second human record",
+  "human_record": {
+    "level": "Jungle2",
+    "leaderboard_name": "Adv 2",
+    "seconds": 12.0,
+    "native_tick_hz": 100,
+    "strict_record_threshold_ticks": 1200,
+    "qualifying_rule": "terminal_outcome_is_win_and_terminal_ticks_less_than_1200"
+  },
+  "selection_disclosure": {
+    "checkpoint_count": 11,
+    "seed_count_per_checkpoint": 32,
+    "total_preregistered_attempts": 352,
+    "checkpoint_selection_is_part_of_the_attempt_count": true,
+    "seed_selection_is_part_of_the_attempt_count": true,
+    "all_attempts_must_be_reported": true
+  },
+  "seeds": [
+    20300812,
+    20300813,
+    20300814,
+    20300815,
+    20300816,
+    20300817,
+    20300818,
+    20300819,
+    20300820,
+    20300821,
+    20300822,
+    20300823,
+    20300824,
+    20300825,
+    20300826,
+    20300827,
+    20300828,
+    20300829,
+    20300830,
+    20300831,
+    20300832,
+    20300833,
+    20300834,
+    20300835,
+    20300836,
+    20300837,
+    20300838,
+    20300839,
+    20300840,
+    20300841,
+    20300842,
+    20300843
+  ],
+  "seed_audit": {
+    "workspace_and_training_json_log_search_before_freeze": "NO_MATCH",
+    "known_training_initial_seeds": [20261010, 20261011, 20261012, 20261013],
+    "known_prior_humanized_smoke_seeds": [20261000, 20261001],
+    "known_prior_boundary_seed_namespace": "20270950-series",
+    "claim": "the 32 listed seeds were not consumed by the known training, smoke, or boundary protocols before this freeze"
+  },
+  "models": [
+    {
+      "id": "step-0262144",
+      "training_steps": 262144,
+      "path": "/mnt/d/ZumaTraining/human-speedrun-v1-jungle2-s20261010-2621k-v1/checkpoints/zuma_human_speedrun_v1_262144_steps.zip",
+      "sha256": "sha256:80db655d9500060257c750ec0f68498c6505185d5d335dac9004bcae4f270225",
+      "policy_pth_sha256": "sha256:eaa486a9667f0d834dc63387a818601c60fed65b26f40fd72e2bdb547c8c065a"
+    },
+    {
+      "id": "step-0524288",
+      "training_steps": 524288,
+      "path": "/mnt/d/ZumaTraining/human-speedrun-v1-jungle2-s20261010-2621k-v1/checkpoints/zuma_human_speedrun_v1_524288_steps.zip",
+      "sha256": "sha256:63a5be9998cb2f7ce313f87f5ec86a7ea07a1a4497dc34efb1dbf30fb4bf12d9"
+    },
+    {
+      "id": "step-0786432",
+      "training_steps": 786432,
+      "path": "/mnt/d/ZumaTraining/human-speedrun-v1-jungle2-s20261010-2621k-v1/checkpoints/zuma_human_speedrun_v1_786432_steps.zip",
+      "sha256": "sha256:8ef60bc39a907e2b1aac140608055665e4d5a0dd55d08cb3a7bd927938f4ffe3"
+    },
+    {
+      "id": "step-1048576",
+      "training_steps": 1048576,
+      "path": "/mnt/d/ZumaTraining/human-speedrun-v1-jungle2-s20261010-2621k-v1/checkpoints/zuma_human_speedrun_v1_1048576_steps.zip",
+      "sha256": "sha256:e4bef98d0517c0b70678215e698469a5e7d5edfcea1a5155c25167d50681c6a1"
+    },
+    {
+      "id": "step-1310720",
+      "training_steps": 1310720,
+      "path": "/mnt/d/ZumaTraining/human-speedrun-v1-jungle2-s20261010-2621k-v1/checkpoints/zuma_human_speedrun_v1_1310720_steps.zip",
+      "sha256": "sha256:916da7443bace720eea4a6618fa6da8b841bb4c4fc684d09524aa4ee0b2783c6"
+    },
+    {
+      "id": "step-1572864",
+      "training_steps": 1572864,
+      "path": "/mnt/d/ZumaTraining/human-speedrun-v1-jungle2-s20261010-2621k-v1/checkpoints/zuma_human_speedrun_v1_1572864_steps.zip",
+      "sha256": "sha256:c55a39f9dd4652171e918557451e4d0e974bfc53c5c3631bb05ca9c2a6361960"
+    },
+    {
+      "id": "step-1835008",
+      "training_steps": 1835008,
+      "path": "/mnt/d/ZumaTraining/human-speedrun-v1-jungle2-s20261010-2621k-v1/checkpoints/zuma_human_speedrun_v1_1835008_steps.zip",
+      "sha256": "sha256:411e713fc6d6ad6609111b3b1cc841625034dc10624691c64f3e6142d2982366"
+    },
+    {
+      "id": "step-2097152",
+      "training_steps": 2097152,
+      "path": "/mnt/d/ZumaTraining/human-speedrun-v1-jungle2-s20261010-2621k-v1/checkpoints/zuma_human_speedrun_v1_2097152_steps.zip",
+      "sha256": "sha256:618473dcd8e6a37f9dbaddeaeb073c15637b584f652528919aa4105f89d73ac7"
+    },
+    {
+      "id": "step-2359296",
+      "training_steps": 2359296,
+      "path": "/mnt/d/ZumaTraining/human-speedrun-v1-jungle2-s20261010-2621k-v1/checkpoints/zuma_human_speedrun_v1_2359296_steps.zip",
+      "sha256": "sha256:5f2a94864dfe18dd7f6572cf65630018457d9b4d57f53f756c681dd9178a0332"
+    },
+    {
+      "id": "step-2621440-pre-update",
+      "training_steps": 2621440,
+      "path": "/mnt/d/ZumaTraining/human-speedrun-v1-jungle2-s20261010-2621k-v1/checkpoints/zuma_human_speedrun_v1_2621440_steps.zip",
+      "sha256": "sha256:c27d149781b06f7116f6ec19044735e7e0b37a10d1caf285986b85c849ebc4b1"
+    },
+    {
+      "id": "step-2621440-final",
+      "training_steps": 2621440,
+      "path": "/mnt/d/ZumaTraining/human-speedrun-v1-jungle2-s20261010-2621k-v1/final_model.zip",
+      "sha256": "sha256:aeb6385c6df3faa0e720b43dd52853284807a25eaf2e4d0da4dcdc0769c4f5b6"
+    }
+  ],
+  "environment": {
+    "level": "Jungle2",
+    "profile_mode": "tutorials_completed",
+    "native_tick_hz": 100,
+    "frame_skip": 1,
+    "max_ticks": 12000,
+    "max_balls": 768,
+    "action_selection": "deterministic_argmax_with_actor_observable_masks",
+    "input_profile": {
+      "id": "elite-human-v1",
+      "reaction_delay_ticks": 12,
+      "max_aim_speed_degrees_per_second": 1080.0,
+      "max_aim_acceleration_degrees_per_second_squared": 18000.0,
+      "min_button_interval_ticks": 5
+    },
+    "reward_profile": {
+      "id": "win-time-score-v1",
+      "win_reward": 10.0,
+      "failure_reward": -10.0,
+      "time_penalty_per_native_tick": -0.0001,
+      "score_progress_reward_cap": 0.01
+    }
+  },
+  "execution": {
+    "device": "cuda:0",
+    "parallel_envs": 16,
+    "seed_batch_order": "listed_order_in_two_contiguous_batches",
+    "model_order": "listed_order",
+    "early_stop": false,
+    "output_directory": "/mnt/d/ZumaTraining/human-speedrun-v1-jungle2-blind-s20300812-n32-v1"
+  },
+  "candidate_ranking": [
+    "terminal_ticks_ascending",
+    "terminal_score_descending",
+    "training_steps_ascending",
+    "seed_ascending"
+  ],
+  "replay_protocol": {
+    "trigger": "at_least_one_qualifying_attempt",
+    "selected_candidate": "first_by_candidate_ranking",
+    "independent_repetitions": 3,
+    "execution_shape": "same_16-seed_batch_and_candidate_index_as_blind_matrix",
+    "required_identity": [
+      "terminal_outcome",
+      "terminal_ticks",
+      "terminal_score",
+      "trajectory_sha256"
+    ]
+  },
+  "decision": {
+    "PASS": "at least one qualifying attempt and all three selected-candidate replays are identical to the blind-matrix attempt",
+    "FAIL": "no qualifying attempt, or selected-candidate replay identity fails",
+    "no_posthoc_seed_or_threshold_changes": true
+  },
+  "evaluator": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_human_speedrun_blind.py",
+    "sha256": "sha256:6d9bd616b186cbd14fd71f1884c441747353694f3ba64b5f0d3344a7d7bda599",
+    "must_be_bound_before_execution": true
+  }
+}

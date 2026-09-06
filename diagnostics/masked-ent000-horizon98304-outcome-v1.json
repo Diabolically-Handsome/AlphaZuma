@@ -1,0 +1,184 @@
+{
+  "schema": "zuma-rl.masked-ent000-horizon98304-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T08:28:04.501Z",
+  "status": "FINITE_HORIZON_RECOVERY_FAIL_RECIPE_REJECTED",
+  "decision": {
+    "finite_horizon_recovery_supported": false,
+    "exact_recipe_rejected": true,
+    "large_scale_training_authorized": false,
+    "fresh_98304_confirmation_authorized": false,
+    "reason": "all three pipelines completed, but zero seeds passed both modes, both aggregate paired-improvement thresholds failed, both median-delta thresholds failed, and only one of three stochastic endpoints exceeded its corresponding 32768-step endpoint",
+    "next_experiment": "mechanism_directed_curriculum_or_lower_variance_algorithm_screening_under_the_closed_fidelity_gate"
+  },
+  "diagnostics": {
+    "classification": "failure_conditioned_closed_gate_finite_horizon_diagnostic",
+    "formal_significance_claim": false,
+    "supported": [
+      "the 32768-step failure is not explained by training horizon alone",
+      "all three 98304-step pipelines completed without failure receipts or missing boundary evaluations",
+      "all six pretrain receipts were byte-identical to their corresponding 32768-step runs",
+      "deterministic endpoints exceeded the 32768-step endpoints for all three seeds but did not produce paired learning from initialization",
+      "stochastic endpoint recovery was inconsistent and met the frozen 32768-step comparison on only one of three seeds"
+    ],
+    "unresolved": [
+      "whether a staged curriculum can reduce the long-horizon credit-assignment variance",
+      "whether a lower-variance policy optimization method is required",
+      "whether observation or reward decomposition limits stable policy improvement"
+    ]
+  },
+  "evidence": {
+    "preregistration": {
+      "path": "diagnostics/masked-ent000-horizon98304-preregistration-v1.json",
+      "sha256": "sha256:8ec1755b0f7fbfe3eddf0f0f1862c72a1d9164e0bfa1ef5cccf43cdcaf48a0fd"
+    },
+    "runs": {
+      "20260811": {
+        "root": "D:/ZumaTraining/horizon98304-jungle2-masked-ent000-s20260811-v1",
+        "status": "COMPLETE",
+        "failure_receipt_present": false,
+        "artifacts": {
+          "config": "sha256:065266f71eebcbf8d0bdd73b373fdfa50b7cb30f920e78344f3796e1f246e4f3",
+          "completion": "sha256:3420a9041be6f2837b325cd8ef317335610c338196c2327571c8e0ec099a34f9",
+          "final_model": "sha256:b22b3f8d6ebd65764afe227ff362ed0360dbd4aaea5de1d00507a383a2ae273e",
+          "pretrain_deterministic": "sha256:c2d1cd7c16e065c220cb52fe5245ee24dad8a0d243b82a99e26454798508b471",
+          "pretrain_stochastic": "sha256:a574110caea42a912f9ae305518e773114b76e00a0addb31ba690da86eead825",
+          "posttrain_deterministic": "sha256:ca0b92aee38e567ceccbe63c70ec38f12ea565e245e1192053de470e7e292484",
+          "posttrain_stochastic": "sha256:8d655bc217b9e9a17da3b73ec9f8d395bcf3c3da49b8364bd254fabfc14ef89b"
+        }
+      },
+      "20260812": {
+        "root": "D:/ZumaTraining/horizon98304-jungle2-masked-ent000-s20260812-v1",
+        "status": "COMPLETE",
+        "failure_receipt_present": false,
+        "artifacts": {
+          "config": "sha256:1d2127ea69f248041656d5e052821a62ab0928216be9e6018cddcae20f1cf2a0",
+          "completion": "sha256:0fd8d46734822ea30345d01113a9f30dab7b4664b3d830fed4bf730d7e952597",
+          "final_model": "sha256:f637e9ee936495afa03da00b6812e7a9fe84de3698172a583f9ffae9a9dbf6f7",
+          "pretrain_deterministic": "sha256:4c7c8ec1f8c414cf08e792da30cf7b5889dfc92354f1ffd7b9cfc0ad583f98a0",
+          "pretrain_stochastic": "sha256:1d0bbedfdfa5e509dbe671f8e33d4ecea57646c03c0d11656076cae9270db23b",
+          "posttrain_deterministic": "sha256:f4e6bc8b9a42ac478bb1861c77fd453d34b1d8d5f5e75b430c3dd79a53d2be1a",
+          "posttrain_stochastic": "sha256:82dd11600e4dc06aabf3450776cd6d8f3bc2c55d52e996b69cdd745e75b4caa8"
+        }
+      },
+      "20260813": {
+        "root": "D:/ZumaTraining/horizon98304-jungle2-masked-ent000-s20260813-v1",
+        "status": "COMPLETE",
+        "failure_receipt_present": false,
+        "artifacts": {
+          "config": "sha256:f8e0b11380d52477b385b2f3be2aed98f2120c91660363101912d1905e1e1b1b",
+          "completion": "sha256:e39247b0b750b8ab93ca1a9ab9fd27dc1dbacad36f21fed5f5d32b26b8e0c8af",
+          "final_model": "sha256:55eda360b5065ebd652f671c865cadca64bbeed118399e4220fc031fe0d29f19",
+          "pretrain_deterministic": "sha256:29a59e3a1dff5b5f648f3ecead3e465e93b2bef891806a50da73ffb5325439e4",
+          "pretrain_stochastic": "sha256:0baa3b4e1087c0d2f624770d4053bc9e8fa352f1baacf06fa90a771ca35a472b",
+          "posttrain_deterministic": "sha256:8a8d36c045088017750af5ac4656c60e91d89925f2d6c22446b83230cf926ea5",
+          "posttrain_stochastic": "sha256:49d73bcdea1f0ce7afdb1f06fe755bc5f605315f559171f5046719e382c87758"
+        }
+      }
+    }
+  },
+  "results": {
+    "aggregate": {
+      "paired_episode_count_per_mode": 24,
+      "seeds_passing_both_modes": 0,
+      "deterministic_paired_improved_count": 11,
+      "stochastic_paired_improved_count": 13,
+      "deterministic_mean_delta": -4.875545833333334,
+      "stochastic_mean_delta": 1.6088166666666694,
+      "deterministic_seed_median_delta": -0.9874374999999995,
+      "stochastic_seed_median_delta": -4.560624999999995,
+      "seeds_higher_than_32768_deterministic": 3,
+      "seeds_higher_than_32768_stochastic": 1
+    },
+    "preregistered_acceptance": {
+      "pipeline": "PASS",
+      "baseline_replay": "PASS_6_OF_6_BYTE_IDENTICAL",
+      "seeds_passing_both": "FAIL_0_OF_2_REQUIRED",
+      "deterministic_paired_improved": "FAIL_11_OF_18_REQUIRED",
+      "stochastic_paired_improved": "FAIL_13_OF_15_REQUIRED",
+      "median_deterministic_delta": "FAIL_MINUS_0.9874375_VS_20_REQUIRED",
+      "median_stochastic_delta": "FAIL_MINUS_4.560625_VS_5_REQUIRED",
+      "horizon_recovery_deterministic": "PASS_3_OF_2_REQUIRED",
+      "horizon_recovery_stochastic": "FAIL_1_OF_2_REQUIRED",
+      "promotion": "FAIL",
+      "rejection_rule": "PASS_EXACT_RECIPE_REJECTED"
+    },
+    "seeds": {
+      "20260811": {
+        "both_modes": "FAIL",
+        "deterministic": {
+          "pretrain_mean": 4.85145,
+          "posttrain_mean": -10.6399,
+          "mean_delta": -15.49135,
+          "paired_improved_count": 0,
+          "paired_deltas": [-4.4990000000000006, -8.243, -27.525, -8.3956, -9.0517, -36.7411, -10.7247, -18.750700000000002],
+          "status": "FAIL"
+        },
+        "stochastic": {
+          "pretrain_mean": 52.0212625,
+          "posttrain_mean": 47.419575,
+          "mean_delta": -4.601687499999997,
+          "paired_improved_count": 4,
+          "paired_deltas": [12.386499999999998, 25.200000000000003, -34.9, -47.00000000000001, 5.699999999999996, 30.1, -26.699999999999996, -1.6000000000000014],
+          "status": "FAIL"
+        },
+        "comparison_to_32768": {
+          "deterministic_32768_post": -10.7042,
+          "deterministic_98304_higher": true,
+          "stochastic_32768_post": 47.4625,
+          "stochastic_98304_higher": false
+        }
+      },
+      "20260812": {
+        "both_modes": "FAIL",
+        "deterministic": {
+          "pretrain_mean": -9.1476875,
+          "posttrain_mean": -7.2955375,
+          "mean_delta": 1.85215,
+          "paired_improved_count": 7,
+          "paired_deltas": [0.5441000000000003, 13.022, 1.2110000000000003, 0.664200000000001, 0.7943000000000016, 4.789900000000001, 0.4712000000000014, -6.6795],
+          "status": "PASS"
+        },
+        "stochastic": {
+          "pretrain_mean": 43.40895,
+          "posttrain_mean": 38.848325,
+          "mean_delta": -4.560624999999995,
+          "paired_improved_count": 2,
+          "paired_deltas": [-28.8568, -39.328199999999995, -16.9, -6.299999999999997, 42.0, -8.800000000000004, 24.7, -3.0],
+          "status": "FAIL"
+        },
+        "comparison_to_32768": {
+          "deterministic_32768_post": -10.7908,
+          "deterministic_98304_higher": true,
+          "stochastic_32768_post": 42.49355,
+          "stochastic_98304_higher": false
+        }
+      },
+      "20260813": {
+        "both_modes": "FAIL",
+        "deterministic": {
+          "pretrain_mean": -3.352075,
+          "posttrain_mean": -4.3395125,
+          "mean_delta": -0.9874374999999995,
+          "paired_improved_count": 4,
+          "paired_deltas": [-3.658499999999999, -1.422699999999999, 0.13949999999999996, -6.9509, 2.2704, -9.2721, 5.6089, 5.3859],
+          "status": "FAIL"
+        },
+        "stochastic": {
+          "pretrain_mean": 37.2112375,
+          "posttrain_mean": 51.2,
+          "mean_delta": 13.9887625,
+          "paired_improved_count": 7,
+          "paired_deltas": [48.3799, 24.260000000000005, 19.770199999999996, 2.299999999999997, 10.999999999999993, 8.399999999999999, -6.399999999999999, 4.199999999999996],
+          "status": "PASS"
+        },
+        "comparison_to_32768": {
+          "deterministic_32768_post": -10.0939,
+          "deterministic_98304_higher": true,
+          "stochastic_32768_post": 21.414675,
+          "stochastic_98304_higher": true
+        }
+      }
+    }
+  }
+}

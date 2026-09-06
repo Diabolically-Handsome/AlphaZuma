@@ -1,0 +1,161 @@
+{
+  "schema": "zuma-rl.alphazuma-55-user-requested-stop-receipt",
+  "version": 1,
+  "status": "TRAINING_AND_AUTOMATIC_FORMAL_EVALUATION_STOPPED",
+  "requested_by": "user",
+  "completed_utc": "2026-08-17T00:09:34.456248+00:00",
+  "scope": {
+    "training_routes_stopped": 7,
+    "seven_route_postprocess_stopped_before_matrix_execution": true,
+    "finalizer_and_independent_audit_watchers_stopped": true,
+    "successor_launchers_stopped": true,
+    "artifacts_deleted": false,
+    "historical_alphaxiang_data_touched": false
+  },
+  "training_routes": [
+    {
+      "run_id": "alphazuma55-speed-frontier-5090",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-speed-frontier-s83081501-v1",
+      "last_status_timesteps": 67358448,
+      "stop_receipt": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-speed-frontier-s83081501-v1/failure.json",
+        "sha256": "sha256:527f259f2eb8be42eeb2d55540a61cf6a6b4b6f372226c3b9636f18686b0adbb",
+        "error_type": "KeyboardInterrupt"
+      },
+      "latest_recovery_checkpoint": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-speed-frontier-s83081501-v1/checkpoints/alphazuma55-speed-frontier-5090_67107840_steps.zip",
+        "sha256": "sha256:143532ee36c5562856e53a09e4b35a4f8c2544f9903eeb1e46326d97f873697e",
+        "bytes": 7172754
+      }
+    },
+    {
+      "run_id": "alphazuma55-v11-balanced-5080",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-v11-balanced-s84081501-v1",
+      "last_status_timesteps": 52731264,
+      "stop_receipt": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-v11-balanced-s84081501-v1/failure.json",
+        "sha256": "sha256:26f25b3927bc9ece1380fd8ca30c454fc498247168cefce419b53473a96157ee",
+        "error_type": "KeyboardInterrupt"
+      },
+      "latest_recovery_checkpoint": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-v11-balanced-s84081501-v1/checkpoints/alphazuma55-v11-balanced-5080_52428800_steps.zip",
+        "sha256": "sha256:308ac3c5d3895f03cb110676f73ed19aaa8a631d07c6ba634ee486e3aacad6c0",
+        "bytes": 6198532
+      }
+    },
+    {
+      "run_id": "alphazuma55-v1-frontier-5080",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-v1-frontier-s87081501-v1",
+      "last_status_timesteps": 51986448,
+      "stop_receipt": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-v1-frontier-s87081501-v1/failure.json",
+        "sha256": "sha256:acb20bae09ea6498539140b0f45ba7b17b32b3f3d5a4ae99c4e99fdbdf747097",
+        "error_type": "KeyboardInterrupt"
+      },
+      "latest_recovery_checkpoint": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-v1-frontier-s87081501-v1/checkpoints/alphazuma55-v1-frontier-5080_51380224_steps.zip",
+        "sha256": "sha256:ea00e4114fd31b482e2f1369de9afa0ba69bd371b0c4ec770ec8429553a2d420",
+        "bytes": 6198531
+      }
+    },
+    {
+      "run_id": "alphazuma55-v1-frontier-replicate-5090",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-v1-frontier-replicate-s88081501-v1",
+      "last_status_timesteps": 47071552,
+      "stop_receipt": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-v1-frontier-replicate-s88081501-v1/failure.json",
+        "sha256": "sha256:0af638a62f346cdefeebdf635bbc78055c70256ece0392fa0978b1f91d12c847",
+        "error_type": "KeyboardInterrupt"
+      },
+      "latest_recovery_checkpoint": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-v1-frontier-replicate-s88081501-v1/checkpoints/alphazuma55-v1-frontier-replicate-5090_46137344_steps.zip",
+        "sha256": "sha256:8c977a603520e65d00975198b68990f9bd048c9be7cd4c742e33f62b83ee63d8",
+        "bytes": 6198541
+      }
+    },
+    {
+      "run_id": "alphazuma55-v1-hard-frontier-rescue-5090",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-v1-hard-frontier-rescue-s89081501-v1",
+      "last_status_timesteps": 46301456,
+      "stop_receipt": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-v1-hard-frontier-rescue-s89081501-v1/failure.json",
+        "sha256": "sha256:b517e8591803c4a5cd9484c4688467b2e7db4e67e7e50270114a27ed5392b563",
+        "error_type": "KeyboardInterrupt"
+      },
+      "latest_recovery_checkpoint": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-v1-hard-frontier-rescue-s89081501-v1/checkpoints/alphazuma55-v1-hard-frontier-rescue-5090_46137344_steps.zip",
+        "sha256": "sha256:b3b0c69f647d4280d661962543ff3025420d298df4fa8e53cbaa8b4d023dba4e",
+        "bytes": 6198543
+      }
+    },
+    {
+      "run_id": "alphazuma55-distilled-frontier-5090",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-distilled-ppo-s86081501-v1",
+      "last_status_timesteps": 49908928,
+      "stop_receipt": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-distilled-ppo-s86081501-v1/failure.json",
+        "sha256": "sha256:6775f6d87d8f37fe1d6c4d620d05149e7902ad71fcc5faf81f1ac7a01c410ab4",
+        "error_type": "KeyboardInterrupt"
+      },
+      "latest_recovery_checkpoint": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-distilled-ppo-s86081501-v1/checkpoints/alphazuma55-distilled-frontier-5090_49283072_steps.zip",
+        "sha256": "sha256:b245541295a76713b8fe78731788fd4211021bd40140fb15d9a68f1edbc2e6f4",
+        "bytes": 6198533
+      }
+    },
+    {
+      "run_id": "alphazuma55-distilled-hard-rescue-5080",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-distilled-hard-rescue-s99081622-v1",
+      "last_status_timesteps": 17744080,
+      "stop_receipt": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-distilled-hard-rescue-s99081622-v1/failure.json",
+        "sha256": "sha256:c8f9d942d9da980e947c30e3086dec8638054f48ef921bc16357237d2586d4e9",
+        "error_type": "KeyboardInterrupt"
+      },
+      "latest_recovery_checkpoint": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-distilled-hard-rescue-s99081622-v1/checkpoints/alphazuma55-distilled-hard-rescue-5080_16777216_steps.zip",
+        "sha256": "sha256:a32059f048117568a57e8b6e7b8263b755f2f569fddc9ba5bab455c20b9db146",
+        "bytes": 6198540
+      }
+    }
+  ],
+  "formal_evaluation_boundary": {
+    "controller_status_path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/postprocess-seven-route-s99081623-v1/controller/controller_status.json",
+    "controller_status_sha256": "sha256:b2fafd1dcf914009c1ce671c35e8ca875d7e7a15744119d0e7eaf00b3538fad1",
+    "controller_status": "FAILED",
+    "controller_error": "KeyboardInterrupt",
+    "selection_preflight_validation_started": true,
+    "selection_shard_00_created": false,
+    "selection_shard_01_created": false,
+    "formal_selection_attempts_executed": 0,
+    "formal_selection_seed_consumption": "NONE"
+  },
+  "retained_inert_processes": [
+    {
+      "pid_at_receipt": 393431,
+      "role": "legacy all-actions postprocess controller",
+      "state": "SIGSTOP_SUSPENDED",
+      "training_or_evaluation_active": false
+    },
+    {
+      "pid_at_receipt": 404830,
+      "role": "legacy head-only postprocess controller",
+      "state": "SIGSTOP_SUSPENDED",
+      "training_or_evaluation_active": false
+    }
+  ],
+  "resource_state": {
+    "active_alphazuma_trainers": 0,
+    "active_alphazuma_evaluators": 0,
+    "gpu_0_utilization_percent": 0,
+    "gpu_1_utilization_percent": 0,
+    "swap_used": 0,
+    "gpu_power_limits_watts": {
+      "RTX_5090": 600,
+      "RTX_5080": 400
+    },
+    "windows_power_scheme_guid": "381b4222-f694-41f0-9685-ff5bb260df2e",
+    "windows_power_scheme": "Balanced"
+  },
+  "resume_boundary": "No route may be represented as COMPLETE or admitted to the frozen seven-route candidate set from this receipt. A future resume requires an explicit new recovery or supersession decision tied to the retained checkpoint hash."
+}

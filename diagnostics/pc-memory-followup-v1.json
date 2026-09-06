@@ -1,0 +1,36 @@
+{
+  "schema": "zuma-rl.pc-memory-followup-plan",
+  "version": 1,
+  "tasks": [
+    {
+      "id": "c4-front-insertion-memory",
+      "session_path": "campaign-c4-two-run-u230-v43",
+      "session_plan_sha256": "sha256:742a59228c8c02d3f0051b1f27e77eaa0893f212b72068e5b8efb6f365bba9fd",
+      "output_path": "memory-followup-c4-front-insertion-u13230-u13326-v2",
+      "slowdown_update": 13220,
+      "probe_update": 13230,
+      "trajectory_end_update": 13326,
+      "maximum_attempts": 3
+    },
+    {
+      "id": "c5-existing-reverse-memory",
+      "session_path": "campaign-c5-existing-reverse-v5-u230-2s",
+      "session_plan_sha256": "sha256:ba184b95b3e56c8b96058ea758a37b5ec93bf745488a2e5d6e84e53123231ef5",
+      "output_path": "memory-followup-c5-existing-reverse-u9539-u9600-v2",
+      "slowdown_update": 9529,
+      "probe_update": 9539,
+      "trajectory_end_update": 9600,
+      "maximum_attempts": 3
+    },
+    {
+      "id": "c6-c35-natural-shot-memory",
+      "session_path": "campaign-c35-natural-win-v8-third-seed-cooldown132-pc-golden-20260802",
+      "session_plan_sha256": "sha256:14d887dd4372a9cdae2d570c9b76fb03f2f287390fbcea1b5d40a5ca055204e2",
+      "output_path": "memory-followup-c35-natural-shot-u3429-u3499-v2",
+      "slowdown_update": 3421,
+      "probe_update": 3429,
+      "trajectory_end_update": 3499,
+      "maximum_attempts": 3
+    }
+  ]
+}

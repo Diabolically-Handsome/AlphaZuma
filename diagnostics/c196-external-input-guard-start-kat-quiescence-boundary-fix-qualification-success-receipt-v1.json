@@ -1,0 +1,98 @@
+{
+  "schema": "zuma-rl.external-input-guard-start-kat-quiescence-boundary-fix-qualification-success-receipt",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T16:36:57.2962877Z",
+  "preregistration": {
+    "artifact": "diagnostics/c196-external-input-guard-start-kat-quiescence-boundary-fix-preregistration-v1.json",
+    "artifact_bytes": 4339,
+    "artifact_sha256": "sha256:e2523259cda7ecca4097a1a3abdefa9187eb49f8fc251a21fddc18cb243c07c9"
+  },
+  "qualified_candidate": {
+    "guard": {
+      "artifact": "tools/pc_external_input_guard.py",
+      "artifact_bytes": 22026,
+      "artifact_sha256": "sha256:2bd4db2f35b23580b7075eddc900ed66217b6d8094cf897fcdbc77df562886b1"
+    },
+    "new_guard_tests": {
+      "artifact": "tests/test_pc_external_input_guard.py",
+      "artifact_bytes": 4888,
+      "artifact_sha256": "sha256:ce0765ec67ebc550803a2799dfca8f26bf49b2f50eafe161966ef3c3f666bc1d"
+    },
+    "validator": {
+      "artifact": "src/zuma_rl/pc_external_input.py",
+      "artifact_bytes": 7690,
+      "artifact_sha256": "sha256:6a89c260fc26dbbda56dabc6c84a28221ceb83512446c7d3f9f002c777ff6ec9",
+      "unchanged": true
+    },
+    "collector": {
+      "artifact": "tools/collect_pc_memory_probe.py",
+      "artifact_bytes": 478340,
+      "artifact_sha256": "sha256:15deb94e655c92e46b6992c9cab24d4108b49621c2d7cbd676a069835bf14d7e",
+      "unchanged": true
+    }
+  },
+  "implemented_contract": {
+    "required_quiet_interval_seconds": 0.5,
+    "maximum_quiescence_wait_seconds": 5.0,
+    "quiescence_poll_interval_seconds": 0.01,
+    "hooks_installed_before_start_kat": true,
+    "start_kat_passes_before_quiescence": true,
+    "coverage_starts_atomically_after_quiescence": true,
+    "coverage_starts_before_start_returns": true,
+    "collector_launches_game_only_after_start_returns": true,
+    "precoverage_unrecognized_events_reset_quiescence": true,
+    "precoverage_unrecognized_events_not_formal_events": true,
+    "continuous_precoverage_activity_fails_before_game_launch": true,
+    "postcoverage_unrecognized_events_remain_formal_external": true,
+    "formal_external_event_limit": 0,
+    "end_boundary_and_end_kat_unchanged": true,
+    "receipt_schema_and_version_unchanged": true,
+    "privacy_surface_unchanged": true,
+    "gameplay_rng_and_process_memory_semantics_unchanged": true
+  },
+  "checks": {
+    "python_compile": "PASS",
+    "targeted_test_count": 112,
+    "targeted_test_failure_count": 0,
+    "unit_start_order": "PASS",
+    "unit_precoverage_event_tracking": "PASS",
+    "unit_quiescence_timer_reset": "PASS",
+    "unit_continuous_activity_timeout": "PASS",
+    "unit_first_postcoverage_event_rejected": "PASS",
+    "standalone_live_guard": {
+      "status": "PASS",
+      "coverage_duration_seconds": 10.0005304,
+      "start_call_duration_ms": 506.3761,
+      "coverage_start_to_start_return_ms": 0.0101,
+      "external_event_count": 0,
+      "self_test_event_count": 8,
+      "stored_external_event_count": 0,
+      "hooks_installed_and_unhooked": true,
+      "protocol_error_count": 0
+    },
+    "immutable_c182_pass_guard_receipt_revalidated": true,
+    "immutable_c191_fail_guard_receipt_revalidated_without_require_pass": true,
+    "full_pytest_suite": "PASS",
+    "full_suite_collected": 1606,
+    "full_suite_failure_count": 0,
+    "full_suite_skip_count": 13,
+    "full_suite_warning_count": 1,
+    "warning_is_existing_gymnasium_render_spec_warning": true
+  },
+  "formal_boundary": {
+    "c195_status_remains": "FAIL_CONTAMINATED",
+    "c195_event_count_remains": 717,
+    "c195_event_reclassification": false,
+    "c195_pc_golden_credit": false,
+    "new_guard_only_applies_prospectively": true
+  },
+  "authorization": {
+    "c197_new_zero_input_confirmatory_trace_may_be_preregistered": true,
+    "qualified_guard_sha256": "sha256:2bd4db2f35b23580b7075eddc900ed66217b6d8094cf897fcdbc77df562886b1",
+    "pc_golden_credit": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

@@ -1,0 +1,511 @@
+{
+  "schema": "zuma-rl.overnight-multilevel-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_TRAINING",
+  "frozen_utc": "2026-08-13T04:29:58.534Z",
+  "objective": "Recover both frozen V1.1 overnight lineages from their last intact checkpoints after the documented QRand zero-weight incident, preserve optimizer and policy state, keep the original 17-level task, selection seeds, morning blind seeds, gates, and 09:30/11:30 deadlines unchanged.",
+  "scope": {
+    "state_policy": true,
+    "single_frog_control_contract_only": true,
+    "two_curve_levels_included": [
+      "Jungle9",
+      "village6"
+    ],
+    "moving_or_multiple_frog_training_included": false,
+    "partial_level_escape_hatch_used": false,
+    "original_client_visual_control": false,
+    "pc_golden_scope_expanded": false
+  },
+  "trainer": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/train_overnight_multilevel.py",
+    "sha256": "sha256:2886a72a7348e492f4d34f4ef9733eee1668df24e17cc896ace0094267d371ba",
+    "launcher_path": "/mnt/c/Users/Laure/Documents/祖玛/tools/launch_overnight_multilevel.sh",
+    "launcher_sha256": "sha256:e4cb78191ac0c05691e7d8d751e7cc4792a55056c2c0578ceb14feace3c279e1",
+    "dual_gpu_smoke": {
+      "preregistration": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/overnight-multilevel-smoke-s310200001-preregistration-v1.json",
+      "preregistration_sha256": "sha256:28c5feed7d65251386a8e13262c133e3a078ff6ff3c2f67b41991de4e4f386cd",
+      "cuda_0_steps": 65536,
+      "cuda_0_steps_per_second": 829.38,
+      "cuda_1_steps": 65536,
+      "cuda_1_steps_per_second": 757.35,
+      "both_complete": true,
+      "stderr_empty": true
+    },
+    "recovery_smoke": {
+      "preregistration": "diagnostics/overnight-v11-recovery-resume-smoke-s43081999-preregistration-v1.json",
+      "preregistration_sha256": "sha256:f0aafa5ebc94e1cded614a735a193868d55045e42389d949e46426e7e335fd74",
+      "source_timesteps": 2097152,
+      "added_timesteps": 4096,
+      "final_timesteps": 2101248,
+      "policy_restored_bitwise": true,
+      "optimizer_restored_bitwise": true,
+      "optimizer_state_entries": 24,
+      "complete": true
+    }
+  },
+  "initial_model": {
+    "id": "step-2621440-final",
+    "training_steps": 2621440,
+    "path": "/mnt/d/ZumaTraining/human-speedrun-v1-jungle2-s20261010-2621k-v1/final_model.zip",
+    "sha256": "sha256:aeb6385c6df3faa0e720b43dd52853284807a25eaf2e4d0da4dcdc0769c4f5b6",
+    "selection_rule": "strongest stable V1 snapshot selected before this experiment by the prior 26-of-32 Jungle2 blind win count",
+    "prior_blind_evidence": {
+      "path": "/mnt/d/ZumaTraining/human-speedrun-v1-jungle2-blind-s20300812-n32-v1/blind_evaluation.json",
+      "sha256": "sha256:8af20964e41d18ad967a5432784b5f4acef75bc1ab94f6a5b1801b0ed25405e9"
+    },
+    "prior_zero_shot_evidence": {
+      "path": "/mnt/d/ZumaTraining/zero-shot-v1-multilevel-final-s20310812-n16-v1/aggregate.json",
+      "sha256": "sha256:632114ff4f202bd1e840aa5a07bfec30cbb41f456679955b114460e4f23719fb",
+      "target_levels_cleared": 10,
+      "target_wins": 40,
+      "target_attempts": 256
+    }
+  },
+  "levels": [
+    {
+      "id": "Jungle1",
+      "display_name": "Shipwrecked!",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle1\\Jungle1"
+      ]
+    },
+    {
+      "id": "Jungle2",
+      "display_name": "Castaway",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle2\\Jungle2"
+      ]
+    },
+    {
+      "id": "Jungle3",
+      "display_name": "Echo Beach",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle3\\Jungle3"
+      ]
+    },
+    {
+      "id": "Jungle4",
+      "display_name": "Bones of an Idol",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle4\\Jungle4"
+      ]
+    },
+    {
+      "id": "jungle6",
+      "display_name": "Jungle Clearing",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle6\\Jungle6"
+      ]
+    },
+    {
+      "id": "Jungle7",
+      "display_name": "Sand Trap",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle7\\Jungle7"
+      ]
+    },
+    {
+      "id": "Jungle8",
+      "display_name": "Nasal Passage",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle8\\Jungle8"
+      ]
+    },
+    {
+      "id": "Jungle9",
+      "display_name": "Creeper Copse",
+      "curve_count": 2,
+      "curve_names": [
+        "Jungle9\\Jungle9-1",
+        "Jungle9\\Jungle9-2"
+      ]
+    },
+    {
+      "id": "Jungle10",
+      "display_name": "Darkness Falls",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle10\\Jungle10"
+      ]
+    },
+    {
+      "id": "village1",
+      "display_name": "Watering Hole",
+      "curve_count": 1,
+      "curve_names": [
+        "Village1"
+      ]
+    },
+    {
+      "id": "village2",
+      "display_name": "Overgrown Plaza",
+      "curve_count": 1,
+      "curve_names": [
+        "Village2"
+      ]
+    },
+    {
+      "id": "village4",
+      "display_name": "Sandspirals",
+      "curve_count": 1,
+      "curve_names": [
+        "Village4v2"
+      ]
+    },
+    {
+      "id": "village5",
+      "display_name": "Abandoned Well",
+      "curve_count": 1,
+      "curve_names": [
+        "Village5"
+      ]
+    },
+    {
+      "id": "village6",
+      "display_name": "Face Your Fear",
+      "curve_count": 2,
+      "curve_names": [
+        "Village6-1",
+        "Village6-2"
+      ]
+    },
+    {
+      "id": "village7",
+      "display_name": "Seven Sides (minus one)",
+      "curve_count": 1,
+      "curve_names": [
+        "Village7"
+      ]
+    },
+    {
+      "id": "village8",
+      "display_name": "Vines of Vengeance",
+      "curve_count": 1,
+      "curve_names": [
+        "Village8"
+      ]
+    },
+    {
+      "id": "village10",
+      "display_name": "The Horseshoe",
+      "curve_count": 1,
+      "curve_names": [
+        "Village10\\Village10v2"
+      ]
+    }
+  ],
+  "environment": {
+    "profile_mode": "tutorials_completed",
+    "hard": false,
+    "curve_index": 0,
+    "base_config": {
+      "aim_bins": 180,
+      "action_mode": "factorized",
+      "frame_skip": 1,
+      "max_ticks": 12000,
+      "max_balls": 768,
+      "max_projectiles": 32,
+      "max_curves": 2,
+      "score_reward_scale": 0.01,
+      "step_penalty": -0.0001,
+      "win_reward": 10,
+      "loss_reward": -10,
+      "privileged_debug": false,
+      "render_width": 400,
+      "render_height": 300
+    },
+    "input_profile": {
+      "profile_id": "elite-human-v1",
+      "reaction_delay_ticks": 12,
+      "max_aim_speed_degrees_per_second": 1080,
+      "max_aim_acceleration_degrees_per_second_squared": 18000,
+      "min_button_interval_ticks": 5
+    },
+    "reward_profile": {
+      "profile_id": "win-time-score-v1",
+      "win_reward": 10,
+      "failure_reward": -10,
+      "time_penalty_per_native_tick": -0.0001,
+      "score_progress_reward_cap": 0.01
+    }
+  },
+  "runs": [
+    {
+      "id": "adaptive-5090-recovery",
+      "description": "Recovered difficulty-adaptive lineage; policy, value function, Adam state, and timestep counter resume from the last intact 3,145,728-step checkpoint.",
+      "run_dir": "/mnt/d/ZumaTraining/overnight-v11-adaptive-recovery-s43081301-v1",
+      "device": "cuda:0",
+      "seed": 43081301,
+      "episode_seed_base": 430000000,
+      "episode_seed_stride": 1000000,
+      "total_steps": 50000000,
+      "num_envs": 16,
+      "rollout_steps": 256,
+      "batch_size": 512,
+      "ppo_epochs": 1,
+      "learning_rate": 0.000005,
+      "entropy_coef": 0,
+      "checkpoint_every": 1048576,
+      "initial_weights": {
+        "Jungle1": 1,
+        "Jungle2": 2.5,
+        "Jungle3": 1,
+        "Jungle4": 1,
+        "jungle6": 1,
+        "Jungle7": 3.5,
+        "Jungle8": 1.5,
+        "Jungle9": 3.5,
+        "Jungle10": 1,
+        "village1": 2.5,
+        "village2": 3.5,
+        "village4": 2.5,
+        "village5": 3.5,
+        "village6": 3.5,
+        "village7": 2.5,
+        "village8": 2.5,
+        "village10": 3.5
+      },
+      "adaptive": {
+        "enabled": true,
+        "update_every_steps": 262144,
+        "rolling_episodes": 64,
+        "minimum_episodes": 4,
+        "minimum_weight": 1,
+        "maximum_weight": 4,
+        "anchor_level": "Jungle2"
+      },
+      "resume_model": {
+        "path": "/mnt/d/ZumaTraining/overnight-v11-adaptive-s42081301-v1/checkpoints/adaptive-5090_3145728_steps.zip",
+        "sha256": "sha256:71432884358856bac6604560173e89b3aa8d2d2d584f860a4c14056a638b1d4f",
+        "timesteps": 3145728,
+        "source_run_id": "adaptive-5090",
+        "source_preregistration_sha256": "sha256:59b581248b3c4324a4dc39c0468ef2ebff389649317d23190b4a755a5c22b954"
+      },
+      "resume_curriculum": {
+        "weights": {
+          "Jungle1": 1.853125,
+          "Jungle2": 2.5,
+          "Jungle3": 1.7800000000000002,
+          "Jungle4": 1.624,
+          "jungle6": 2.21875,
+          "Jungle7": 3.7640624999999996,
+          "Jungle8": 1.9779411764705883,
+          "Jungle9": 3.7816666666666663,
+          "Jungle10": 2.4625000000000004,
+          "village1": 2.3607142857142858,
+          "village2": 3.2354651162790695,
+          "village4": 3.140714285714286,
+          "village5": 3.770833333333333,
+          "village6": 3.770833333333333,
+          "village7": 2.9875000000000003,
+          "village8": 3.3937500000000003,
+          "village10": 3.755357142857143
+        },
+        "source_status": {
+          "path": "/mnt/d/ZumaTraining/overnight-v11-adaptive-s42081301-v1/training_status.json",
+          "sha256": "sha256:0b150e6656fb27bed7627fefd209f08b8fb149f8f0724229ea648438da6b285a",
+          "published_timesteps": 3135344
+        },
+        "rolling_outcome_order_restored": false,
+        "reason": "The original callback did not checkpoint ordered rolling outcomes; last published weights are restored exactly and fresh recovery outcomes drive subsequent updates."
+      }
+    },
+    {
+      "id": "uniform-5080-recovery",
+      "description": "Recovered uniform control lineage; policy, value function, Adam state, and timestep counter resume from the last intact 2,097,152-step checkpoint. Post-checkpoint partial work from the crashed process is excluded.",
+      "run_dir": "/mnt/d/ZumaTraining/overnight-v11-uniform-recovery-s43081302-v1",
+      "device": "cuda:1",
+      "seed": 43081302,
+      "episode_seed_base": 530000000,
+      "episode_seed_stride": 1000000,
+      "total_steps": 50000000,
+      "num_envs": 16,
+      "rollout_steps": 256,
+      "batch_size": 512,
+      "ppo_epochs": 1,
+      "learning_rate": 0.000005,
+      "entropy_coef": 0,
+      "checkpoint_every": 1048576,
+      "initial_weights": {
+        "Jungle1": 1,
+        "Jungle2": 1,
+        "Jungle3": 1,
+        "Jungle4": 1,
+        "jungle6": 1,
+        "Jungle7": 1,
+        "Jungle8": 1,
+        "Jungle9": 1,
+        "Jungle10": 1,
+        "village1": 1,
+        "village2": 1,
+        "village4": 1,
+        "village5": 1,
+        "village6": 1,
+        "village7": 1,
+        "village8": 1,
+        "village10": 1
+      },
+      "adaptive": {
+        "enabled": false,
+        "update_every_steps": 262144,
+        "rolling_episodes": 64,
+        "minimum_episodes": 4,
+        "minimum_weight": 1,
+        "maximum_weight": 4,
+        "anchor_level": "Jungle2"
+      },
+      "resume_model": {
+        "path": "/mnt/d/ZumaTraining/overnight-v11-uniform-s42081302-v1/checkpoints/uniform-5080_2097152_steps.zip",
+        "sha256": "sha256:ba040a16101fa5b05ddd00d7b2a4e77eeb2caee1eb82afc83da45f88426759e9",
+        "timesteps": 2097152,
+        "source_run_id": "uniform-5080",
+        "source_preregistration_sha256": "sha256:59b581248b3c4324a4dc39c0468ef2ebff389649317d23190b4a755a5c22b954"
+      }
+    }
+  ],
+  "seed_isolation": {
+    "parent_adaptive_training_episode_range": [
+      410000000,
+      425999999
+    ],
+    "parent_uniform_training_episode_range": [
+      510000000,
+      525999999
+    ],
+    "recovery_adaptive_training_episode_range": [
+      430000000,
+      445999999
+    ],
+    "recovery_uniform_training_episode_range": [
+      530000000,
+      545999999
+    ],
+    "recovery_smoke_episode_range": [
+      590000000,
+      591999999
+    ],
+    "selection_seed_base": 610000000,
+    "selection_seeds_per_level": 4,
+    "selection_total_seeds_per_model": 68,
+    "morning_blind_target_seed_base": 710000000,
+    "morning_blind_target_seeds_per_level": 16,
+    "morning_blind_jungle2_seed_base": 720000000,
+    "morning_blind_jungle2_seeds": 32,
+    "no_overlap": true,
+    "selection_and_blind_seeds_unchanged_from_parent": true,
+    "recovery_seeds_frozen_before_recovery_training": true
+  },
+  "model_selection": {
+    "candidate_rule_frozen_before_training": true,
+    "candidates": "unchanged initial baseline plus, for each recovered lineage, final model and recovery checkpoint nearest one-half of the full lineage's actual final timesteps",
+    "expected_candidates": 5,
+    "selection_matrix": "17 levels x 4 seeds x 5 candidates = 340 attempts",
+    "ranking": [
+      "prefer Jungle2 retention of at least 3 wins in 4",
+      "target levels cleared descending",
+      "target wins descending",
+      "Village wins descending",
+      "two-curve wins descending",
+      "median winning ticks ascending"
+    ],
+    "selection_results_are_not_blind_claims": true,
+    "recovery_incident_does_not_change_ranking": true
+  },
+  "morning_blind": {
+    "models": "selected overnight candidate paired against the unchanged initial baseline on identical frozen seeds",
+    "target_attempts_per_model": 256,
+    "jungle2_attempts_per_model": 32,
+    "total_attempts": 576,
+    "success_gates": {
+      "target_levels_cleared_at_least": 14,
+      "target_wins_at_least": 77,
+      "target_win_rate_at_least": 0.3,
+      "village_wins_at_least": 20,
+      "village_win_rate_at_least": 0.15,
+      "jungle2_wins_at_least": 24,
+      "Jungle9_wins_at_least": 4,
+      "village6_wins_at_least": 4
+    },
+    "report_all_results_even_if_every_gate_fails": true
+  },
+  "schedule": {
+    "training_stop_utc": "2026-08-13T13:30:00Z",
+    "training_stop_local": "2026-08-13T09:30:00-04:00",
+    "reserved_for_selection_blind_and_reporting_seconds": 7200,
+    "goal_end_utc": "2026-08-13T15:30:00Z",
+    "goal_end_local": "2026-08-13T11:30:00-04:00"
+  },
+  "id": "overnight-v11-multilevel-recovery-s43081301-v1",
+  "implementation": {
+    "revenge_core": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_core.py",
+      "sha256": "sha256:2652b12d396d47f70875323ab7157c64d68d5067ff762cc723a2aba99329dae3"
+    },
+    "revenge_env": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_env.py",
+      "sha256": "sha256:8c4e49e31725a5c47b3dd4933c6e3b9195bcbddc717e5390bf4e5a56f0d6e8d0"
+    },
+    "human_speedrun": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/human_speedrun.py",
+      "sha256": "sha256:d2df69821ce5f5e837a962cfc6efdafaf152baf06a30fb8c6d2c04ddec6517dd"
+    }
+  },
+  "amendment": {
+    "kind": "POST_INCIDENT_RECOVERY",
+    "parent_preregistration": {
+      "path": "diagnostics/overnight-v11-multilevel-s42081301-preregistration-v1.json",
+      "sha256": "sha256:59b581248b3c4324a4dc39c0468ef2ebff389649317d23190b4a755a5c22b954"
+    },
+    "incident_receipt": {
+      "path": "diagnostics/overnight-v11-qrand-zero-weight-incident-v1.json",
+      "sha256": "sha256:54af1b55c7bc372a0b0599361f537f50a53e1f292787a30765fe264308736d3e"
+    },
+    "frozen_before_recovery_training": true,
+    "changed_fields": [
+      "QRand zero-weight support invariant fix",
+      "checkpoint resume sources",
+      "fresh disjoint recovery training seed namespaces",
+      "adaptive curriculum resumes last published weights with unavailable rolling-order history reset",
+      "new run and postprocess output directories"
+    ],
+    "unchanged_fields": [
+      "17 levels",
+      "environment observation and action contract",
+      "elite-human input limits",
+      "win-first reward",
+      "PPO hyperparameters",
+      "candidate count and ranking",
+      "selection seeds",
+      "morning blind seeds",
+      "success gates",
+      "09:30 training deadline",
+      "11:30 reporting deadline"
+    ]
+  },
+  "postprocess": {
+    "launcher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/launch_overnight_v11_recovery_postprocess.sh",
+      "sha256": "sha256:3b298b9de2b2126705ef481abea22667255bc8fae4c2e19b6ad1984414377447"
+    },
+    "controller": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_overnight_v11_postprocess.py",
+      "sha256": "sha256:1f8ce2067be93b001d182f8c22018ad3b2a0fb5e5c051b9a60f9a18de66c1a0e"
+    },
+    "evaluator": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel.py",
+      "sha256": "sha256:d0011f9ad5c6837315007a7fb31e128fb315e4baddb45959c5f3b98d11a6a7e3"
+    },
+    "summarizer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/summarize_multimodel_evaluation.py",
+      "sha256": "sha256:e7096d86aa06cb26abc781977ec4448a7715a6bcb7023d0596870b3baf7e00a6"
+    },
+    "output_root": "/mnt/d/ZumaTraining/overnight-v11-recovery-postprocess-s43081301-v1"
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "schema": "zuma-rl.polar-ppo-identity-confirmation-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T12:19:19.484Z",
+  "status": "IDENTITY_CONFIRMATION_FAIL",
+  "decision": "DO_NOT_SCALE_DIAGNOSE_AND_CONTROL_AIM_DRIFT",
+  "preregistration": {
+    "path": "diagnostics/polar-ppo-identity-confirmation-s20260878-preregistration-v1.json",
+    "sha256": "sha256:481e390e35be4141a288c436e60cda465b03e2c0ffe522f8e8639ad4d77afb47",
+    "status": "FROZEN_BEFORE_RUN_OUTPUT"
+  },
+  "artifacts": {
+    "run_dir": "D:/ZumaTraining/confirmation-identity-polar-ppo-s20260878-v1",
+    "config_sha256": "sha256:9ec77c6d84aca8a9e822b4572d39b3a2f193e5f5afa4f670abfe48151345be8f",
+    "initial_model_sha256": "sha256:f03dee97cb5a3e2ce3abcf4324137fe6ed9b68e827765b4a7b6adfa63cafb8f7",
+    "final_model_sha256": "sha256:16dc5a0d5b7530fdaf7ef99ca913fcbcad4787abdaf163e3e15e2aac57a0e97a",
+    "pretrain_deterministic_sha256": "sha256:4a2c6bc171ea11602baccc900d46cba8e42f8177e759b5e91182fcf77ba091d4",
+    "pretrain_stochastic_sha256": "sha256:876831fbcecf6a804d8390ab17e848cfbd2f211ce8d160b58173fa587b8c881b",
+    "posttrain_deterministic_sha256": "sha256:8e9c49878d9a320ef636112a8dd91ead68e1c8a519963b340e54d2bb3e3a597d",
+    "posttrain_stochastic_sha256": "sha256:57684949ae82c063e33ebef51d0edb1ad8f99a2cd9da7ec34d55c7537924c3d3",
+    "deterministic_comparison_sha256": "sha256:2334cdf1e2f8bb94215ef3bb82c87df3b91534930042a1a0d8aacfb84e8c430c",
+    "stochastic_comparison_sha256": "sha256:c9a001c28a559da19a96d3b753d0a6494421de9374698c706c1207d653883db3",
+    "completion_sha256": "sha256:aad311c975a770da7b62940eb51a3753409b1c415ef42e7dfc7dfe9014083974",
+    "stdout_sha256": "sha256:d652995dc53de8389e1dff6df844dcbd7977fdec263839a38fbc10fd418f923f",
+    "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "acceptance_results": {
+    "pipeline": {
+      "pass": true,
+      "completion_receipt_status": "COMPLETE",
+      "effective_steps": 16384,
+      "all_four_v3_boundary_receipts_present": true,
+      "both_identity_aware_comparisons_present": true,
+      "failure_receipt_present": false,
+      "vector_env_close_status": "PASS",
+      "stderr_bytes": 0
+    },
+    "precondition": {
+      "pass": true,
+      "deterministic_wins": 7,
+      "deterministic_losses": 1,
+      "deterministic_truncations": 0,
+      "required_wins": 6,
+      "mean_reward": 32.5993875
+    },
+    "deterministic_distributional_retention": {
+      "pass": true,
+      "pretrain_wins": 7,
+      "posttrain_wins": 7,
+      "posttrain_losses": 0,
+      "posttrain_truncations": 1,
+      "pretrain_mean_reward": 32.5993875,
+      "posttrain_mean_reward": 31.2279,
+      "mean_reward_delta": -1.3714875
+    },
+    "deterministic_identity_paired_retention": {
+      "pass": false,
+      "paired_improvements": 3,
+      "paired_regressions": 5,
+      "paired_regressions_exceeding_5": 3,
+      "allowed_paired_regressions_exceeding_5": 2,
+      "severe_regression_keys": [
+        "env-0:episode-0",
+        "env-1:episode-0",
+        "env-3:episode-1"
+      ],
+      "outcome_transition": {
+        "improved_loss_to_win": "env-3:episode-0",
+        "regressed_win_to_truncation": "env-1:episode-0"
+      }
+    },
+    "stochastic_retention": {
+      "pass": true,
+      "pretrain_wins": 8,
+      "posttrain_wins": 8,
+      "pretrain_truncations": 0,
+      "posttrain_truncations": 0,
+      "pretrain_mean_reward": 35.657575,
+      "posttrain_mean_reward": 36.1256875,
+      "mean_reward_delta": 0.4681125,
+      "paired_improvements": 6,
+      "paired_regressions": 2,
+      "paired_regressions_exceeding_5": 1
+    },
+    "screen_plus_confirmation_aggregate": {
+      "pass": true,
+      "posttrain_deterministic_wins": 14,
+      "deterministic_episodes": 16,
+      "posttrain_deterministic_truncations": 2,
+      "mean_of_run_level_deterministic_reward_deltas": 0.0408875,
+      "posttrain_stochastic_wins": 16,
+      "stochastic_episodes": 16,
+      "posttrain_stochastic_truncations": 0,
+      "mean_of_run_level_stochastic_reward_deltas": 1.63105
+    },
+    "overall": {
+      "pass": false,
+      "reason": "the corrected deterministic identity-paired severe-regression count exceeded its frozen limit",
+      "post_hoc_override_applied": false
+    }
+  },
+  "post_decision_diagnostic": {
+    "classification": "consumed_teacher_dataset_policy_drift_audit_not_certification_evidence",
+    "initial_teacher_metrics": {
+      "verb_accuracy": 0.9753336029114436,
+      "fire_aim_exact_accuracy": 0.6618421052631579,
+      "fire_aim_within_three_accuracy": 0.7631578947368421,
+      "fire_aim_mean_circular_bin_error": 9.453947368421053
+    },
+    "ppo_final_models": [
+      {
+        "training_seed": 20260876,
+        "report_sha256": "sha256:e1d6ee2205043ef75903c07b5314c77aac53bb8c87887ce8395a01f6a6b1de07",
+        "verb_accuracy": 0.9692680954306511,
+        "fire_aim_exact_accuracy": 0.6381578947368421,
+        "fire_aim_within_three_accuracy": 0.75,
+        "fire_aim_mean_circular_bin_error": 9.610526315789473
+      },
+      {
+        "training_seed": 20260877,
+        "report_sha256": "sha256:b420c3ee7bd9fbd99d130edde02c3360efa50a25091e4727883965d420149706",
+        "verb_accuracy": 0.9672462596037201,
+        "fire_aim_exact_accuracy": 0.6342105263157894,
+        "fire_aim_within_three_accuracy": 0.7355263157894737,
+        "fire_aim_mean_circular_bin_error": 10.369736842105263
+      },
+      {
+        "training_seed": 20260878,
+        "report_sha256": "sha256:96f95bedaf837ea79ff899543ed29e4e58914cc8b7ee09368d3ab299b679d3e9",
+        "verb_accuracy": 0.9777598059037607,
+        "fire_aim_exact_accuracy": 0.6355263157894737,
+        "fire_aim_within_three_accuracy": 0.7381578947368421,
+        "fire_aim_mean_circular_bin_error": 10.242105263157894
+      }
+    ],
+    "inference": "all three PPO seeds retain high verb accuracy but consistently lose about 2.4 to 2.8 percentage points of fire-aim exact accuracy, making aim-head drift the leading mechanism rather than verb collapse"
+  },
+  "next_action": {
+    "authorized": "screen a conservative aim-retention mechanism on consumed seeds, then preregister a fresh-seed confirmation of the selected recipe",
+    "forbidden": "do not launch the 98304-step scale screen or reinterpret aggregate success as an identity-confirmation pass"
+  },
+  "non_authorizations": [
+    "98304_step_scale_screen",
+    "large_scale_training",
+    "fidelity_gate_opening",
+    "original_transfer_certification"
+  ]
+}

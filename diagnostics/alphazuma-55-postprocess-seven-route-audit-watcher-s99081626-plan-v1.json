@@ -1,0 +1,28 @@
+{
+  "schema": "zuma-rl.alphazuma-55-independent-audit-watcher-plan",
+  "version": 1,
+  "status": "FROZEN_BEFORE_AUDIT",
+  "created_utc": "2026-08-16T07:31:24.0397777+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "watcher": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/watch_alphazuma_55_independent_audit_v1.py",
+    "sha256": "sha256:8492c911030b02b8f24602ff3b36a1014cfc0cbef259a1df251b0537cc244e04"
+  },
+  "preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-seven-route-s99081623-preregistration-v1.json",
+    "sha256": "sha256:144698dd7778b1d927a521291b11c9fe3c66befbcf48a087362be640452c2cff"
+  },
+  "auditor": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_result.py",
+    "sha256": "sha256:dd5aa209149e97cf8461b21453a4a548b681a6e630114c65cd245e631036602c"
+  },
+  "controller_status": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/postprocess-seven-route-s99081623-v1/controller/controller_status.json",
+  "independent_audit_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-independent-final-audit-seven-route-s99081623-v1.json",
+  "status_root": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/postprocess-seven-route-audit-watcher-s99081626-v1",
+  "deadline_utc": "2026-08-17T15:00:00Z",
+  "poll_seconds": 30,
+  "formal_seed_consumption": "NONE_BY_WATCHER",
+  "training_recipe_change": false,
+  "selection_semantics_change": false,
+  "hardware_restoration_authority": false
+}

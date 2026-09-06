@@ -1,0 +1,127 @@
+{
+  "schema": "zuma-rl.pc-front-insertion-bottom-row-attempt-audit",
+  "version": 1,
+  "id": "c83-front-insertion-bottom-row-retry-01-failure",
+  "created_utc": "2026-08-03T20:51:55Z",
+  "status": "FAIL",
+  "classification": "fresh-attempt-1-of-3-formal-failure",
+  "parent_preregistration": {
+    "path": "diagnostics/c83-c85-front-insertion-bottom-row-finite-stopping-preregistration-v1.json",
+    "sha256": "sha256:4e69087d5719d43aebaf31be195ee3574de85a532b9d9716af74ba49305be1ae"
+  },
+  "execution_binding": {
+    "path": "diagnostics/c83-front-insertion-bottom-row-execution-binding-v1.json",
+    "sha256": "sha256:f951ae67a6a557f60fb12a24068629e57dbf49d8f0bbfad6f00c92333b10bd85"
+  },
+  "collection": {
+    "path": "D:/ZumaGolden/campaign-c83-natural-win-v8-front-insertion-bottom-row-retry-01-u3569-u3710/collection.json",
+    "sha256": "sha256:0d7af767788451209fb26768b0f8b8a43d5e05563fa91f3ddad29af3eea5eead",
+    "status": "complete",
+    "run_frame_counts": [
+      90,
+      90
+    ],
+    "run_process_ids": [
+      55228,
+      53096
+    ],
+    "poll_armed_updates": [
+      3566,
+      3566
+    ],
+    "host_and_protocol_state_restored_exactly": true
+  },
+  "render_settled_maps": {
+    "r1": {
+      "path": "D:/ZumaGolden/campaign-c83-natural-win-v8-front-insertion-bottom-row-retry-01-u3569-u3710/run-r1/render-settled-updates.json",
+      "sha256": "sha256:f02051bb7612698b43ba78123dcb2636af785e9db6947b25ab7bfed526b467ec",
+      "assigned_update_range": [
+        3642,
+        3695
+      ]
+    },
+    "r2": {
+      "path": "D:/ZumaGolden/campaign-c83-natural-win-v8-front-insertion-bottom-row-retry-01-u3569-u3710/run-r2/render-settled-updates.json",
+      "sha256": "sha256:fb30874fb015eb5c9ac0464f54fed91aa1ce161e937396ddf1b21031a680b83c",
+      "assigned_update_range": [
+        3642,
+        3696
+      ]
+    }
+  },
+  "target_verification": {
+    "path": "D:/ZumaGolden/diagnostics/c83-bottom-row-terminal-state-target-verification-v1.json",
+    "sha256": "sha256:bcaac484a13ea5f212528453c84a402ddec9a46fb29bbcc96123bcbc30381d32",
+    "status": "FAIL",
+    "required_update_count": 21,
+    "selected_update_count": 0,
+    "absent_updates": [],
+    "unmatched_updates": [
+      3664,
+      3665,
+      3666,
+      3667,
+      3668,
+      3669,
+      3670,
+      3671,
+      3672,
+      3673,
+      3674,
+      3675,
+      3676,
+      3677,
+      3678,
+      3679,
+      3680,
+      3681,
+      3682,
+      3683,
+      3684
+    ]
+  },
+  "frozen_frame_localization": {
+    "all_21_updates_have_a_candidate_pair_exact_in_rows_0_through_598": true,
+    "minimum_final_row_mismatch_count_each_update": 2,
+    "maximum_final_row_mismatch_count_among_best_candidates": 2,
+    "stable_mismatch_x_coordinates": [
+      790,
+      791
+    ],
+    "edge_alpha_mismatch_count": 0,
+    "maximum_observed_edge_bgr_channel_delta": 29,
+    "terminal_r1_to_frozen_post_insertion_reference": {
+      "interior_mismatch_count": 0,
+      "edge_mismatch_count": 2,
+      "edge_alpha_mismatch_count": 0,
+      "mismatch_x_coordinates": [
+        790,
+        791
+      ]
+    },
+    "terminal_r2_to_frozen_post_insertion_reference": {
+      "interior_mismatch_count": 0,
+      "edge_mismatch_count": 0,
+      "edge_alpha_mismatch_count": 0
+    }
+  },
+  "host_postcheck": {
+    "path": "D:/ZumaGolden/diagnostics/c83-host-postcheck-v1.json",
+    "sha256": "sha256:db3d393187b3fcf0215060e19ec49cae72879a004a98c9d5dd36965263832160",
+    "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "status": "PASS"
+  },
+  "decision": {
+    "reason": "every_target_update_exceeded_the_preregistered_one_pixel_final_row_budget",
+    "in_place_retry": "FORBIDDEN",
+    "package_pc_golden": "FORBIDDEN",
+    "gate_credit": "NONE",
+    "next_action": "prepare_and_collect_fresh_attempt_c84_without_contract_change"
+  },
+  "non_authorizations": [
+    "pc_golden",
+    "front_insertion",
+    "fidelity_gate_open",
+    "formal_transfer_training"
+  ]
+}

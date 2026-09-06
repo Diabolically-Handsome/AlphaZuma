@@ -1,0 +1,101 @@
+{
+  "schema": "zuma-rl.alphazuma-55-motor-observable-gradual-launch-receipt",
+  "version": 1,
+  "status": "LAUNCHED_AND_COLLECTING",
+  "observed_utc": "2026-08-16T08:20:56.1332510Z",
+  "campaign_id": "alphazuma-55-motor-observable-gradual-s99081629-v1",
+  "bindings": {
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-s99081629-preregistration-v1.json",
+      "sha256": "sha256:11dd10f8537dfa12deb94c41ad3be3998a4204efec93a53fa97b8a04f21d0076"
+    },
+    "trainer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_motor_observable_gradual_v2.py",
+      "sha256": "sha256:7a7da4c374c72c3dafdb96b184a4a57e43c1dd08d224a81a72e04bde193577d2"
+    },
+    "builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_motor_observable_gradual_v2.py",
+      "sha256": "sha256:eb07c7cac9009c806edc0f64214ce1e61a696d242eb8e102477892c19f16108e"
+    },
+    "runtime_incident": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-s99081628-runtime-incident-v1.json",
+      "sha256": "sha256:9371f830fc36baf2d21c95a2e56c4eb9d9094a5da227acc9f36b12265e961b8e"
+    }
+  },
+  "validation": {
+    "status": "VALID",
+    "observation_shape": [22904],
+    "teacher_execution_probabilities": [1.0, 0.9, 0.7, 0.5],
+    "epochs_per_round": 12,
+    "formal_seed_consumption": false
+  },
+  "processes": {
+    "windows_launcher_pid": 14300,
+    "wsl_trainer_pid": 346105,
+    "windows_launcher_alive": true,
+    "wsl_trainer_alive": true
+  },
+  "logs": {
+    "stdout": {
+      "path": "D:\\ZumaTraining\\alphazuma-55-motor-observable-gradual-s99081629-launcher-01.stdout.log",
+      "bytes_at_snapshot": 0,
+      "sha256_at_snapshot": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "path": "D:\\ZumaTraining\\alphazuma-55-motor-observable-gradual-s99081629-launcher-01.stderr.log",
+      "bytes_at_snapshot": 0,
+      "sha256_at_snapshot": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "initial_artifacts": {
+    "config": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-s99081629-v1/config.json",
+      "sha256": "sha256:834d19318270f8215e1f6bb499331506aca259b8c9197934be8199d28b5fab7e"
+    },
+    "training_status": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-s99081629-v1/training_status.json",
+      "sha256_at_snapshot": "sha256:213d46c4cdb15b9811e45c511f53b01ac0c7615d88711cd90e9f652afc7d1e22",
+      "stage": "COLLECTING",
+      "current_round": 0,
+      "teacher_execution_probability": 1.0,
+      "completed_rounds": 0,
+      "expected_rounds": 4
+    }
+  },
+  "resource_snapshot": {
+    "wsl_available_memory_bytes": 17817083904,
+    "wsl_swap_used_bytes": 0,
+    "wsl_root_available_bytes": 26913996800,
+    "d_drive_available_bytes": 720734515200,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5090",
+        "power_draw_watts": 289.84,
+        "power_limit_watts": 550.0,
+        "utilization_percent": 92,
+        "memory_used_mib": 19857,
+        "memory_total_mib": 32607,
+        "temperature_c": 51
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA GeForce RTX 5080",
+        "power_draw_watts": 170.48,
+        "power_limit_watts": 250.0,
+        "utilization_percent": 93,
+        "memory_used_mib": 11962,
+        "memory_total_mib": 16303,
+        "temperature_c": 54
+      }
+    ]
+  },
+  "authority_boundary": {
+    "engineering_training_route_only": true,
+    "formal_selection_seed_consumption": "NONE",
+    "formal_final_blind_seed_consumption": "NONE",
+    "continuous_campaign_seed_consumption": "NONE",
+    "formal_candidate_authority": false,
+    "power_restore_authority": false
+  }
+}

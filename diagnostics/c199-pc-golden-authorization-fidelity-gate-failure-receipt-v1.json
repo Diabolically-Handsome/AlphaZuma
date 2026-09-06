@@ -1,0 +1,134 @@
+{
+  "schema": "zuma-rl.pc-golden-authorization-fidelity-gate-failure-receipt",
+  "version": 1,
+  "status": "FAIL",
+  "created_utc": "2026-08-10T17:03:55.7805525Z",
+  "preregistration": {
+    "artifact": "diagnostics/c199-pc-golden-authorization-fidelity-gate-preregistration-v1.json",
+    "artifact_bytes": 11783,
+    "artifact_sha256": "sha256:11c9b36213967f3d8f07ed8e93fb3fdb2ba299e837324ddc3f09d1481491cb55"
+  },
+  "implementation": {
+    "revision_builder": {
+      "artifact": "tools/build_transfer_fidelity_revision.py",
+      "artifact_bytes": 16143,
+      "artifact_sha256": "sha256:b673b533a59d492ce556b814545979992932e19a74171b801323592d58060882"
+    },
+    "revision_builder_tests": {
+      "artifact": "tests/test_build_transfer_fidelity_revision.py",
+      "artifact_bytes": 3691,
+      "artifact_sha256": "sha256:e9de276bea1a90325cf365b6e14dcea72ba5b68cc05fc22437741853547d7f82",
+      "targeted_status": "PASS",
+      "targeted_test_count": 3
+    },
+    "full_test_suite": {
+      "status": "PASS",
+      "exit_code": 0,
+      "skipped_test_count": 13,
+      "warning_count": 1,
+      "warning": "Existing Gymnasium alternative-render-mode warning."
+    },
+    "fidelity_gate": {
+      "artifact": "src/zuma_rl/fidelity_gate.py",
+      "artifact_bytes": 162800,
+      "artifact_sha256_before_and_after": "sha256:a47d1b5f2ac4b455a6c8e40142a3006ef64509121bd4ee3c4daad38e3b8a90e1",
+      "unchanged": true
+    }
+  },
+  "candidate_suite": {
+    "artifact": "D:/ZumaGolden/diagnostics/fidelity-suite-c199-candidate-v23.json",
+    "artifact_bytes": 26715,
+    "artifact_sha256": "sha256:edc33a721ecbbae5516a16a330f41f00e94fdc003a886a8c42696dc6b4f93848",
+    "policy": "original-transfer-jungle2-v4",
+    "evidence_count": 97,
+    "new_entry_count": 9,
+    "creation_status": "CREATED_IMMUTABLY"
+  },
+  "gate_report": {
+    "artifact": "D:/ZumaGolden/diagnostics/fidelity-gate-c199-candidate-v26-report.json",
+    "artifact_bytes": 88457,
+    "artifact_sha256": "sha256:c4c717bf17e8882c597c9a8474615f89bfbbd428329bf18ef3a1d937231d6759",
+    "status": "CLOSED",
+    "gate_open": false,
+    "missing_certifying_features": [
+      "natural_loss",
+      "natural_win",
+      "powerup_proximity_bomb",
+      "powerup_reverse",
+      "tunnel_collision",
+      "zuma_transition",
+      "actor_no_hidden_state",
+      "fruit_projectile_collision",
+      "fruit_powerup_collision",
+      "fruit_collection_score",
+      "fruit_collection_animation",
+      "fruit_actor_observation"
+    ],
+    "rejected_or_unsupported_evidence": [
+      {
+        "id": "a11-audit-c126-natural-win",
+        "reason": "PC mechanism audit differs from live retail evidence"
+      },
+      {
+        "id": "a13-audit-c131b1-reverse",
+        "reason": "PC mechanism audit differs from live retail evidence"
+      },
+      {
+        "id": "a6-pc-jungle2-natural-entry-c35-v4",
+        "unsupported_features": ["projectile_collision", "shot_release"]
+      },
+      {
+        "id": "a7-audit-c35-natural-shot",
+        "reason": "PC mechanism audit differs from live retail evidence"
+      },
+      {
+        "id": "l-audit-actor-hidden-state-current",
+        "reason": "actor audit fingerprint differs from the live implementation"
+      },
+      {
+        "id": "p3-pc-source-c126-natural-win",
+        "unsupported_feature_count": 12
+      },
+      {
+        "id": "p5-pc-source-c131b1-reverse",
+        "unsupported_feature_count": 8
+      },
+      {
+        "id": "q12-sim-c158-natural-loss",
+        "reason": "simulator differential depends on injected or synthetic state"
+      },
+      {
+        "id": "q14-sim-c183-fruit-powerup-collision",
+        "reason": "gameplay differential MTRand reconciliation totals are invalid"
+      },
+      {
+        "id": "q7-sim-c126-powerup-proximity-bomb",
+        "reason": "simulator source feature proofs differ from raw evidence"
+      },
+      {
+        "id": "q8-sim-c131b1-powerup-reverse",
+        "reason": "simulator source feature proofs differ from raw evidence"
+      }
+    ]
+  },
+  "new_evidence_observations": {
+    "c158_source_and_mechanism_accepted": true,
+    "c164_source_mechanism_and_simulator_diff_accepted": true,
+    "c183_source_and_mechanism_accepted": true,
+    "c158_simulator_diff_rejected": true,
+    "c183_simulator_diff_rejected": true,
+    "no_new_source_fingerprint_mismatch": true
+  },
+  "decision": {
+    "pc_golden_authorized": false,
+    "fidelity_gate_open": false,
+    "training_gate_change": false,
+    "training_started": false,
+    "failed_candidate_retained": true,
+    "next_action": "Diagnose each current-verifier rejection, separate stale evidence from verifier-contract drift, preregister corrections, and issue a new immutable candidate rather than modifying c199."
+  },
+  "host_postcondition": {
+    "zuma_process_running": false,
+    "original_game_interactively_launched": false
+  }
+}

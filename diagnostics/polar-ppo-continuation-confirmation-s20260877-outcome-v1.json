@@ -1,0 +1,96 @@
+{
+  "schema": "zuma-rl.polar-ppo-continuation-confirmation-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T11:52:48.870Z",
+  "status": "PREREGISTERED_CONFIRMATION_FAIL_DESIGN_DEFECT",
+  "decision": "DO_NOT_SCALE_FIX_EPISODE_IDENTITY_AND_RECONFIRM",
+  "preregistration": {
+    "path": "diagnostics/polar-ppo-continuation-confirmation-s20260877-preregistration-v1.json",
+    "sha256": "sha256:193ed3a70bc7ce31d744508893003bb4e58f04556eeeab7d79585a26d56bb434",
+    "status": "FROZEN_BEFORE_RUN_OUTPUT"
+  },
+  "artifacts": {
+    "run_dir": "D:/ZumaTraining/confirmation-polar-ppo-continuation-s20260877-v1",
+    "config_sha256": "sha256:7348c75bfe810e4ec8ac389a1ac640839730f8b4605cb3b841b648c59bdd4d59",
+    "initial_model_sha256": "sha256:f03dee97cb5a3e2ce3abcf4324137fe6ed9b68e827765b4a7b6adfa63cafb8f7",
+    "final_model_sha256": "sha256:7f33cfee416f9c0616ec2dbe12c819e4e1e1cff550c2ecce9af61aa1ac867aed",
+    "pretrain_deterministic_sha256": "sha256:2c2bcc7f02f342f61f2b894f9c728c27a0944423a7da67014a03871e37d7e774",
+    "pretrain_stochastic_sha256": "sha256:62a972250acecaec8769298cbc161dd71622d9a915690fc210a365e4c45b6643",
+    "posttrain_deterministic_sha256": "sha256:0edf94cc563ab5ad166da362cf5ff02f562696286c8185c45e83203d445f7d54",
+    "posttrain_stochastic_sha256": "sha256:3673df8bd17ba673e708ef15e997efcd66913e7bc8649211ccf9c03c886ac39f",
+    "completion_sha256": "sha256:67a1a2dfba550fa7f71ae533e9f9a1bff15489d50acfc2931d145970b01e54b5",
+    "stdout_sha256": "sha256:e69b01e4c5e97c742de9d444bf4a49e477b2ad48784b32e16b2796bfe707f984",
+    "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "acceptance_results": {
+    "pipeline": {
+      "pass": true,
+      "completion_receipt_status": "COMPLETE",
+      "effective_steps": 16384,
+      "failure_receipt_present": false,
+      "vector_env_close_status": "PASS",
+      "stderr_bytes": 0
+    },
+    "replication_distributional_metrics": {
+      "pass": true,
+      "pretrain_deterministic_wins": 8,
+      "posttrain_deterministic_wins": 7,
+      "posttrain_deterministic_truncations": 1,
+      "pretrain_deterministic_mean_reward": 33.6162125,
+      "posttrain_deterministic_mean_reward": 33.955375,
+      "deterministic_mean_reward_delta": 0.3391625,
+      "pretrain_stochastic_wins": 8,
+      "posttrain_stochastic_wins": 8,
+      "posttrain_stochastic_truncations": 0,
+      "pretrain_stochastic_mean_reward": 35.335325,
+      "posttrain_stochastic_mean_reward": 37.9046625,
+      "stochastic_mean_reward_delta": 2.5693375
+    },
+    "literal_array_index_pairing": {
+      "pass": false,
+      "reward_deltas": [3.9113, 6.9467, 7.2606, -5.226, -2.9199, 15.0292, -9.6617, -12.6269],
+      "regressions_exceeding_5": 3,
+      "allowed_regressions_exceeding_5": 2,
+      "formal_effect": "the frozen replication hard gate fails literally"
+    },
+    "two_run_aggregate_distributional_metrics": {
+      "pass": true,
+      "posttrain_deterministic_wins": 14,
+      "deterministic_episodes": 16,
+      "posttrain_deterministic_truncations": 2,
+      "mean_of_run_level_deterministic_reward_deltas": 0.8962125,
+      "posttrain_stochastic_wins": 16,
+      "stochastic_episodes": 16,
+      "posttrain_stochastic_truncations": 0,
+      "mean_of_run_level_stochastic_reward_deltas": 2.6816625
+    },
+    "overall_preregistered_decision": {
+      "pass": false,
+      "reason": "one frozen hard criterion failed under its literal array-index calculation",
+      "post_hoc_override_applied": false
+    }
+  },
+  "design_defect_analysis": {
+    "affected_criterion": "deterministic_paired_reward_regressions_exceeding_5_at_most",
+    "installed_evaluator": {
+      "package": "stable-baselines3",
+      "version": "2.9.0",
+      "source_path": ".venv/lib/python3.12/site-packages/stable_baselines3/common/evaluation.py",
+      "source_sha256": "sha256:a60cc695f1b0fa70c008efffd59fb5e3b1b590601e7992099cfd8b07665983d8"
+    },
+    "confirmed_behavior": "evaluate_policy appends each completed episode while iterating vector environments at every step; with four environments, returned list index reflects cross-environment completion order, not a stable environment-seed and episode-ordinal identity",
+    "consequence": "pretrain and posttrain arrays can reorder when policy-dependent episode lengths change, so subtracting equal list indices is not a valid paired comparison",
+    "bounded_interpretation": "the replication shows no distributional capability collapse and all non-pairing gates pass, but it cannot formally authorize scaling because the preregistered paired gate both fails literally and lacks valid identity semantics"
+  },
+  "next_action": {
+    "authorized": "add vector-environment index and per-environment episode ordinal identities to boundary receipts, test completion-order reordering, then run a fresh-seed corrected confirmation",
+    "forbidden": "do not relabel this frozen decision as pass and do not launch the 98304-step scale screen yet"
+  },
+  "non_authorizations": [
+    "post_hoc_confirmation_pass",
+    "98304_step_scale_screen",
+    "large_scale_training",
+    "fidelity_gate_opening",
+    "original_transfer_certification"
+  ]
+}

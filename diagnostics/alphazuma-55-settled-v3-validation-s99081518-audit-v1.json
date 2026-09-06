@@ -1,0 +1,331 @@
+{
+  "schema": "zuma-rl.alphazuma-55-training-validation-audit",
+  "version": 1,
+  "status": "PASS",
+  "audited_utc": "2026-08-15T14:27:08.714756+00:00",
+  "formal_selection_authority": false,
+  "training_recipe_change_authority": false,
+  "artifacts": {
+    "master": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+      "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+    },
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-settled-v3-validation-s99081518-preregistration-v1.json",
+      "sha256": "sha256:c12d8cc6f8b1e40bbc3f38839a9a33ed780891900dbba1de04dc9f9db57e95df"
+    },
+    "models_manifest": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-settled-v3-validation-s99081518-models-v1.json",
+      "sha256": "sha256:ab9bcb11b7745bca573483445a35304cf64ab866b2f1aa738bf40d36a051c218"
+    },
+    "matrix_shard": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/settled-v3-validation-s99081518-v1/matrix-shard-00-of-01.json",
+      "sha256": "sha256:28e0297c64582f51afae2bf592b63aa56805dbb2bd6824a59fc608b50c13fd65"
+    },
+    "auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_training_validation.py",
+      "sha256": "sha256:3621dcb64c3342e3954533d22401f258fe6c72ac49d164456455ad77ea54aa67"
+    }
+  },
+  "matrix": {
+    "levels": 55,
+    "attempts_per_model": 55,
+    "models": 6,
+    "completed_attempts": 330,
+    "seed_plan": {
+      "registry": "training_validation",
+      "base_seed": 1550000200,
+      "last_seed": 1550000254
+    },
+    "runtime": {
+      "python": "3.12.3",
+      "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "parallel_envs": 24,
+      "total_vector_transitions": 5871636,
+      "wall_seconds": 12588.459228702002
+    }
+  },
+  "model_summaries": [
+    {
+      "model_id": "v11-full55-v1",
+      "model_sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d",
+      "attempts": 55,
+      "wins": 16,
+      "losses": 23,
+      "truncations": 16,
+      "cleared_levels": 16,
+      "winning_levels": [
+        {
+          "level_id": "Jungle1",
+          "seed": 1550000200,
+          "ticks": 7891,
+          "score": 3410,
+          "trajectory_sha256": "sha256:8558ed1f867c9d42b00cdc3f3b06f5c7b8922d8f2599234c72296ac6bc5f808f"
+        },
+        {
+          "level_id": "Jungle2",
+          "seed": 1550000201,
+          "ticks": 1884,
+          "score": 2280,
+          "trajectory_sha256": "sha256:a742ec606e8d5cb4a4529c12baea74bafd70091292193fa26fbb600825ff049e"
+        },
+        {
+          "level_id": "Jungle3",
+          "seed": 1550000202,
+          "ticks": 3831,
+          "score": 2380,
+          "trajectory_sha256": "sha256:1c6b8d9d15db5f08abacb372981d7ff12a78217f9d435c2a8ba40851a4b97a5f"
+        },
+        {
+          "level_id": "Jungle4",
+          "seed": 1550000203,
+          "ticks": 4302,
+          "score": 2740,
+          "trajectory_sha256": "sha256:b71d3e78e1fe6c6643e01fa906d4504697489147efd362160017373299ed5e0c"
+        },
+        {
+          "level_id": "jungle6",
+          "seed": 1550000204,
+          "ticks": 4084,
+          "score": 2600,
+          "trajectory_sha256": "sha256:53c91d8f61a7ee6ab3dfd5e2f68f960a9eea73baac552dbe0ed8b81f23205b9c"
+        },
+        {
+          "level_id": "Jungle8",
+          "seed": 1550000206,
+          "ticks": 2423,
+          "score": 2540,
+          "trajectory_sha256": "sha256:c61ae26ee12543ad3b49d8b8e043bbfe19524328586c6d3602a48549bb4b47a6"
+        },
+        {
+          "level_id": "Jungle9",
+          "seed": 1550000207,
+          "ticks": 9536,
+          "score": 12630,
+          "trajectory_sha256": "sha256:183a638be694a608dd91e034345434ca142577be6d1a5f24bb59304ca9535cac"
+        },
+        {
+          "level_id": "Jungle10",
+          "seed": 1550000208,
+          "ticks": 5714,
+          "score": 6380,
+          "trajectory_sha256": "sha256:7ab45f5f611a67a8c3947067f4b894f1f13bee6ca1ae96d91efdd337b48548f9"
+        },
+        {
+          "level_id": "village1",
+          "seed": 1550000209,
+          "ticks": 4942,
+          "score": 4000,
+          "trajectory_sha256": "sha256:715786c75b8aca1f8a08d3b5c26db1c188d5a2664c3dab9eb2a72dfbc6c95899"
+        },
+        {
+          "level_id": "village2",
+          "seed": 1550000210,
+          "ticks": 6046,
+          "score": 5060,
+          "trajectory_sha256": "sha256:19b99779e6d98aba70d25e12c8951a722d798078f2e7bf249a2eed5b6fc6a145"
+        },
+        {
+          "level_id": "village4",
+          "seed": 1550000212,
+          "ticks": 8967,
+          "score": 7950,
+          "trajectory_sha256": "sha256:87d4e3e1a3c5244b282858dc176091697b9447894b14f0551d412b34d083b866"
+        },
+        {
+          "level_id": "village8",
+          "seed": 1550000216,
+          "ticks": 12768,
+          "score": 8540,
+          "trajectory_sha256": "sha256:9719c3cb8f7b9944587aa83a88f054d2abdb0cb102fe1b933716c7df2998093b"
+        },
+        {
+          "level_id": "city5",
+          "seed": 1550000222,
+          "ticks": 8245,
+          "score": 6010,
+          "trajectory_sha256": "sha256:8f0c24ed1f96bda31cecfafe03b2fdaec17ddea84bd2d40f255be1664d1e8897"
+        },
+        {
+          "level_id": "city7",
+          "seed": 1550000224,
+          "ticks": 7623,
+          "score": 6760,
+          "trajectory_sha256": "sha256:cff34f987f1f3388aa73cc95ff21fd74dea0344a46a2440c92e42745751cd770"
+        },
+        {
+          "level_id": "Coast2",
+          "seed": 1550000228,
+          "ticks": 10247,
+          "score": 11790,
+          "trajectory_sha256": "sha256:e2dac1d7ffb3d1d5821e29bcc0dca8b5529a1b9a149b69a54394a1c3c6921146"
+        },
+        {
+          "level_id": "grotto1",
+          "seed": 1550000236,
+          "ticks": 14485,
+          "score": 7020,
+          "trajectory_sha256": "sha256:c113c5472f49047e16baaf2e8b6ec3be908971cd891ea4070055bc9780e8c57b"
+        }
+      ],
+      "median_winning_ticks": 6834.5
+    },
+    {
+      "model_id": "settled-v3-epoch-02",
+      "model_sha256": "sha256:a50010acd9a6fc05a07f04b4f3b51d611b7e650d54cb0396558c98bdf9dd5bd1",
+      "attempts": 55,
+      "wins": 12,
+      "losses": 25,
+      "truncations": 18,
+      "cleared_levels": 12,
+      "winning_levels": [
+        {
+          "level_id": "Jungle1",
+          "seed": 1550000200,
+          "ticks": 5303,
+          "score": 3340,
+          "trajectory_sha256": "sha256:cf9083279062f60a6d7d693ded50a4210e491b8af1d765ff8c388c26b4001588"
+        },
+        {
+          "level_id": "Jungle2",
+          "seed": 1550000201,
+          "ticks": 2795,
+          "score": 2510,
+          "trajectory_sha256": "sha256:c35516a5a78d12568107e638e7b8ea40497fcc855808a6bf07fdb332b2eeda6d"
+        },
+        {
+          "level_id": "Jungle3",
+          "seed": 1550000202,
+          "ticks": 3373,
+          "score": 2100,
+          "trajectory_sha256": "sha256:fead086b97eee4476a50d7a3020acdbcfb06e0d550383e5a0a01befd1590501e"
+        },
+        {
+          "level_id": "Jungle4",
+          "seed": 1550000203,
+          "ticks": 3226,
+          "score": 3200,
+          "trajectory_sha256": "sha256:7e4d857e509696752a6d91b86eb215e105b282a2df62866f2e3647980269154c"
+        },
+        {
+          "level_id": "jungle6",
+          "seed": 1550000204,
+          "ticks": 2945,
+          "score": 2400,
+          "trajectory_sha256": "sha256:5fb643c32cfb63dc4af37a3cbdfc1c91d3514056a427ee1f2f9655e39e890168"
+        },
+        {
+          "level_id": "Jungle8",
+          "seed": 1550000206,
+          "ticks": 8516,
+          "score": 4260,
+          "trajectory_sha256": "sha256:ab47bc4be5d5e2c04da4bb1510eae1e4abdfb2897d52204ad970cb586de67633"
+        },
+        {
+          "level_id": "Jungle10",
+          "seed": 1550000208,
+          "ticks": 6693,
+          "score": 5130,
+          "trajectory_sha256": "sha256:a85585f235a4337782707b7777da93e07d6ce3a88cc715c2478557125f29b473"
+        },
+        {
+          "level_id": "village1",
+          "seed": 1550000209,
+          "ticks": 4621,
+          "score": 4790,
+          "trajectory_sha256": "sha256:6bb6c5e35d5c8a9596c364550f08446803b415e0e145fe02245c366dec949539"
+        },
+        {
+          "level_id": "village2",
+          "seed": 1550000210,
+          "ticks": 6279,
+          "score": 5560,
+          "trajectory_sha256": "sha256:ea5d6d704bf2cbaf307032b370d508713869d34354362e3071a0711accfdd462"
+        },
+        {
+          "level_id": "village4",
+          "seed": 1550000212,
+          "ticks": 14268,
+          "score": 12840,
+          "trajectory_sha256": "sha256:4a217160d68da3677b3b93e2bebc141787f8e611317724eb41eb27f8b6129fc6"
+        },
+        {
+          "level_id": "village7",
+          "seed": 1550000215,
+          "ticks": 6374,
+          "score": 9130,
+          "trajectory_sha256": "sha256:b51abdbb28375b11e751a070c89f3eaadfd607d5adda20a7c857d28d8860ef86"
+        },
+        {
+          "level_id": "city5",
+          "seed": 1550000222,
+          "ticks": 9955,
+          "score": 6980,
+          "trajectory_sha256": "sha256:0955f8c13bfef21ba5bc7224ad504f023f0444358475557789ca65505bae44fc"
+        }
+      ],
+      "median_winning_ticks": 5791.0
+    },
+    {
+      "model_id": "settled-v3-epoch-04",
+      "model_sha256": "sha256:7434d8a08ef3fc003fc387c0c92578e7279313fc526ccbeffa47a7a12eeadf92",
+      "attempts": 55,
+      "wins": 2,
+      "losses": 53,
+      "truncations": 0,
+      "cleared_levels": 2,
+      "winning_levels": [
+        {
+          "level_id": "Jungle3",
+          "seed": 1550000202,
+          "ticks": 2378,
+          "score": 2510,
+          "trajectory_sha256": "sha256:e2cbbb7b30507d3495099b775659e3c606148fdd6dedb83f42c0246806322b52"
+        },
+        {
+          "level_id": "Jungle4",
+          "seed": 1550000203,
+          "ticks": 13079,
+          "score": 7140,
+          "trajectory_sha256": "sha256:7154433b2a048665a776c361fb1756eb445c0a3d5f147ce30a0d470a045c5282"
+        }
+      ],
+      "median_winning_ticks": 7728.5
+    },
+    {
+      "model_id": "settled-v3-epoch-06",
+      "model_sha256": "sha256:0cb26f7f8bd001997e86217116f3aeb71483721ebeb8f7a67ac136d92dc179b5",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "settled-v3-epoch-08",
+      "model_sha256": "sha256:69971dabaac637536bcfe5ea6c28bbfbd561f7b900d4aeb06e56e6dd3090fb04",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "settled-v3-final",
+      "model_sha256": "sha256:e457794d35b0e2008246c127f7bb377c1fbb4d9cc5b6f253a22a636ce6012c5e",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    }
+  ],
+  "paired_comparison": null,
+  "interpretation_boundary": "This PASS proves artifact integrity and a paired training-health signal only; it is not selection, final blind, or continuous-campaign evidence."
+}

@@ -1,0 +1,33 @@
+{
+  "schema": "zuma-rl.pc-source-bound-natural-loss-localization-preregistration-amendment",
+  "version": 1,
+  "status": "FROZEN_BEFORE_OUTPUT",
+  "created_utc": "2026-08-10T09:37:39.8042279Z",
+  "parent_preregistration_sha256": "sha256:c60f60458fa09c38653e126ced3d21517c91aaf4a8512ba081cf8448a9584b18",
+  "failed_invocation": {
+    "process_started": false,
+    "output_root_created": false,
+    "error": "diagnostic_source_bound_replay_contract_invalid"
+  },
+  "code_contract": {
+    "source_bound_locator_requires_trace_global_rng_calls": false,
+    "source_bound_locator_requires_trajectory_start_update": null,
+    "source_bound_locator_requires_skip_repaint_guard": false,
+    "source_bound_locator_requires_skip_frozen_snapshot": false
+  },
+  "only_change": {
+    "remove_arguments": [
+      "--trajectory-start-update 11250",
+      "--skip-repaint-guard",
+      "--skip-frozen-snapshot"
+    ],
+    "fixed_source_unchanged": true,
+    "probe_update_unchanged": 11250,
+    "slowdown_update_unchanged": 11230,
+    "trajectory_end_update_unchanged": 11840,
+    "score_binding_unchanged": [7950, 7950],
+    "output_root_unchanged": true,
+    "acceptance_contract_unchanged": true
+  },
+  "command": ".\\.venv-win\\Scripts\\python.exe tools\\collect_pc_memory_probe.py --plan D:\\ZumaGolden\\diagnostics\\full-state-source-bound-natural-loss-c145-plan-v1\\plan.json --prestate D:\\ZumaGolden\\diagnostics\\full-state-source-bound-natural-loss-c145-plan-v1\\protocol\\pre-template.json --host-restore D:\\ZumaGolden\\diagnostics\\full-state-source-bound-natural-loss-c145-plan-v1\\safety\\host-pre.json --output-root D:\\ZumaGolden\\diagnostics\\c146-c145-natural-loss-localization-u11250-u11840-v1 --probe-update 11250 --slowdown-update 11230 --int32-value 7950 --displayed-score-value 7950 --maximum-attempts 1 --trajectory-end-update 11840 --trajectory-mode rng --diagnostic-source-bound-replay"
+}

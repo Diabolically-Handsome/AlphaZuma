@@ -1,0 +1,44 @@
+{
+  "schema": "zuma-rl.alphazuma-55-single-policy-goal-watcher-supersession-receipt",
+  "version": 1,
+  "recorded_utc": "2026-08-16T07:27:56.6487240+00:00",
+  "reason": "Bind goal completion and hardware restoration exclusively to the seven-route source postprocess and its independent audit.",
+  "superseded_watchers": [
+    {
+      "finalizer": "diagnostics/alphazuma-55-single-policy-goal-finalizer-s99081612-preregistration-v4.json",
+      "linux_pid": 247988,
+      "pre_stop_status_path": "/mnt/d/ZumaTraining/alphazuma-55-single-policy-goal-finalizer-s99081612-v4/watcher_status.json",
+      "pre_stop_status_sha256": "sha256:d07604bb5cc883652582dfb19d15fc7b351f949d2525c1727f51e3dbe59b24e1",
+      "pre_stop_status": "RUNNING",
+      "pre_stop_phase": "WAITING_FOR_CAMPAIGN_AUDITS",
+      "signal": "SIGTERM",
+      "post_stop_process_present": false
+    },
+    {
+      "finalizer": "diagnostics/alphazuma-55-single-policy-goal-finalizer-s99081621-preregistration-v5.json",
+      "linux_pid": 298373,
+      "pre_stop_status_path": "/mnt/d/ZumaTraining/alphazuma-55-single-policy-goal-finalizer-s99081621-v5/watcher_status.json",
+      "pre_stop_status_sha256": "sha256:3b4b8c16212b726cd6a4d623890bdde5e01ed34e65077cd7bfa65c37c856e1a9",
+      "pre_stop_status": "RUNNING",
+      "pre_stop_phase": "WAITING_FOR_CAMPAIGN_AUDITS",
+      "signal": "SIGTERM",
+      "post_stop_process_present": false
+    }
+  ],
+  "active_watcher": {
+    "finalizer": "diagnostics/alphazuma-55-single-policy-goal-finalizer-s99081625-preregistration-v6.json",
+    "finalizer_sha256": "sha256:e8d6a0158914f2ecd1e87ee1782133b1c07cc96cad785c9f934f8fb4cbc3f276",
+    "goal_audit_plan": "diagnostics/alphazuma-55-single-policy-goal-audit-s99081624-preregistration-v6.json",
+    "goal_audit_plan_sha256": "sha256:7c5ca7c0449c6b3eba18f05b533025f9fcdc7cc98172dca351e866922a8c5293",
+    "windows_launcher_pid": 41652,
+    "linux_pid": 332930,
+    "status_path": "/mnt/d/ZumaTraining/alphazuma-55-single-policy-goal-finalizer-s99081625-v6/watcher_status.json",
+    "status_sha256": "sha256:c409e73ffece6ca31945b990397f5eb07c223031e53be89bd10ac4ffb1167136",
+    "status": "RUNNING",
+    "phase": "WAITING_FOR_CAMPAIGN_AUDITS",
+    "error": null
+  },
+  "formal_seed_semantics_changed": false,
+  "training_recipe_changed": false,
+  "selection_or_final_seed_consumption_during_switch": "NONE"
+}

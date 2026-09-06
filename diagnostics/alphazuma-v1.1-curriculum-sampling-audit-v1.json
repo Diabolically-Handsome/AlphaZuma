@@ -1,0 +1,75 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-curriculum-sampling-audit",
+  "version": 1,
+  "status": "PASS",
+  "completed_utc": "2026-08-14T00:34:30Z",
+  "purpose": "Prove that GPU work is sampling the frozen curriculum rather than an unintended level set. Training outcomes are not used for candidate selection.",
+  "routes": [
+    {
+      "run": "frontier-adaptive-5090-oom-recovery",
+      "expected_levels": 17,
+      "sampled_levels": 17,
+      "episodes": 187,
+      "anchor_episodes": 12,
+      "zero_win_level_episodes": {"Jungle7": 7, "village6": 27, "village10": 30}
+    },
+    {
+      "run": "frontier-fixed-5080-oom-recovery",
+      "expected_levels": 17,
+      "sampled_levels": 17,
+      "episodes": 199,
+      "anchor_episodes": 15,
+      "zero_win_level_episodes": {"Jungle7": 18, "village6": 36, "village10": 43}
+    },
+    {
+      "run": "memdense-adaptive-5090-a",
+      "expected_levels": 8,
+      "sampled_levels": 8,
+      "episodes": 95,
+      "anchor_episodes": 5,
+      "zero_win_level_episodes": {"Jungle7": 9, "village6": 20, "village10": 24}
+    },
+    {
+      "run": "memdense-fixed-5090-b",
+      "expected_levels": 8,
+      "sampled_levels": 8,
+      "episodes": 79,
+      "anchor_episodes": 2,
+      "zero_win_level_episodes": {"Jungle7": 7, "village6": 18, "village10": 25}
+    },
+    {
+      "run": "memdense-adaptive-5080-a",
+      "expected_levels": 8,
+      "sampled_levels": 8,
+      "episodes": 79,
+      "anchor_episodes": 4,
+      "zero_win_level_episodes": {"Jungle7": 8, "village6": 16, "village10": 19}
+    },
+    {
+      "run": "memdense-fixed-5080-b",
+      "expected_levels": 8,
+      "sampled_levels": 8,
+      "episodes": 66,
+      "anchor_episodes": 3,
+      "zero_win_level_episodes": {"Jungle7": 8, "village6": 15, "village10": 13}
+    },
+    {
+      "run": "ultradense-zero-win-5090-c",
+      "expected_levels": 4,
+      "sampled_levels": 4,
+      "episodes": 22,
+      "anchor_episodes": 2,
+      "zero_win_level_episodes": {"Jungle7": 2, "village6": 8, "village10": 10}
+    }
+  ],
+  "validation": {
+    "level_key_sets_match_each_preregistration": true,
+    "weight_key_sets_match_each_preregistration": true,
+    "per_level_episode_sums_match_route_totals": true,
+    "win_loss_truncation_sums_match_episode_totals": true,
+    "every_frozen_level_has_been_sampled_on_every_route": true,
+    "Jungle2_anchor_has_been_sampled_on_every_route": true,
+    "all_three_historical_zero_win_levels_have_been_sampled_on_every_applicable_route": true,
+    "all_checks_passed": true
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-candidate-supply-readiness-audit",
+  "version": 1,
+  "completed_utc": "2026-08-14T03:44:42.5903343Z",
+  "status": "PASS",
+  "classification": "preselection_readiness_diagnostic_only",
+  "frozen_contract": {
+    "master_preregistration": "diagnostics/alphazuma-v1.1-frontier-postprocess-s51081301-preregistration-v1.json",
+    "master_preregistration_sha256": "sha256:3dc8a51563c763ef46b3c3415a6e4da9b5430ab3a19b586e5e0b95b98b0ffc01",
+    "candidate_rule": "Published V1 baseline plus the checkpoint nearest the temporal midpoint of each formal route and the final model of each formal route; exactly fifteen candidates.",
+    "expected_candidates": 15,
+    "training_stop_utc": "2026-08-14T12:00:00Z"
+  },
+  "controller": {
+    "path": "tools/run_alphazuma_v11_frontier_postprocess.py",
+    "sha256": "sha256:0f97b9d143f9d33de935311d11074ea4f68cb4b3027a412ed70b52b76ff99689",
+    "tests": "tests/test_alphazuma_v11_frontier_postprocess.py",
+    "tests_sha256": "sha256:1693a3799e49323a581d66c5ed910dafe27f926a0fd3080161f3ad2ba145c0a1",
+    "tests_result": "5_passed"
+  },
+  "baseline": {
+    "id": "baseline-v1",
+    "path": "/mnt/d/ZumaTraining/overnight-v11-adaptive-recovery-s43081301-v1/checkpoints/adaptive-5090-recovery_13631488_steps.zip",
+    "sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579",
+    "bytes": 6010449,
+    "hash_revalidated": true
+  },
+  "routes": [
+    {"run": "frontier-adaptive-5090-oom-recovery", "source_counter": 16777216, "current_counter": 22630416, "steps_this_run": 5853200, "checkpoint_every": 524288, "eligible_checkpoints": 11, "earliest_eligible": 17301504, "latest_eligible": 22544384, "current_midpoint_target": 19703816, "nearest_midpoint_counter": 19922944, "nearest_midpoint_distance": 219128},
+    {"run": "frontier-fixed-5080-oom-recovery", "source_counter": 15728640, "current_counter": 21771824, "steps_this_run": 6043184, "checkpoint_every": 524288, "eligible_checkpoints": 11, "earliest_eligible": 16252928, "latest_eligible": 21495808, "current_midpoint_target": 18750232, "nearest_midpoint_counter": 18874368, "nearest_midpoint_distance": 124136},
+    {"run": "memdense-adaptive-5090-a", "source_counter": 0, "current_counter": 3280912, "steps_this_run": 3280912, "checkpoint_every": 524288, "eligible_checkpoints": 6, "earliest_eligible": 524288, "latest_eligible": 3145728, "current_midpoint_target": 1640456, "nearest_midpoint_counter": 1572864, "nearest_midpoint_distance": 67592},
+    {"run": "memdense-fixed-5090-b", "source_counter": 0, "current_counter": 3186704, "steps_this_run": 3186704, "checkpoint_every": 524288, "eligible_checkpoints": 6, "earliest_eligible": 524288, "latest_eligible": 3145728, "current_midpoint_target": 1593352, "nearest_midpoint_counter": 1572864, "nearest_midpoint_distance": 20488},
+    {"run": "memdense-adaptive-5080-a", "source_counter": 0, "current_counter": 3198992, "steps_this_run": 3198992, "checkpoint_every": 524288, "eligible_checkpoints": 6, "earliest_eligible": 524288, "latest_eligible": 3145728, "current_midpoint_target": 1599496, "nearest_midpoint_counter": 1572864, "nearest_midpoint_distance": 26632},
+    {"run": "memdense-fixed-5080-b", "source_counter": 0, "current_counter": 3100688, "steps_this_run": 3100688, "checkpoint_every": 524288, "eligible_checkpoints": 5, "earliest_eligible": 524288, "latest_eligible": 2621440, "current_midpoint_target": 1550344, "nearest_midpoint_counter": 1572864, "nearest_midpoint_distance": 22520},
+    {"run": "ultradense-zero-win-5090-c", "source_counter": 0, "current_counter": 1548296, "steps_this_run": 1548296, "checkpoint_every": 524288, "eligible_checkpoints": 2, "earliest_eligible": 524288, "latest_eligible": 1048576, "current_midpoint_target": 774148, "nearest_midpoint_counter": 524288, "nearest_midpoint_distance": 249860}
+  ],
+  "validation": {
+    "formal_routes": 7,
+    "routes_running": 7,
+    "routes_with_eligible_checkpoint": 7,
+    "total_eligible_checkpoints": 47,
+    "all_checkpoint_sequences_contiguous_at_frozen_interval": true,
+    "all_current_midpoint_distances_within_half_checkpoint_interval": true,
+    "all_config_run_ids_match": true,
+    "all_config_preregistration_hashes_match": true,
+    "completion_receipts_present_before_stop": 0,
+    "final_models_present_before_stop": 0,
+    "early_finalization_detected": false,
+    "projected_candidate_count_after_normal_finalization": 15
+  },
+  "finalization_contract": {
+    "trainer_saves_final_model_before_completion_receipt": true,
+    "trainer_hashes_final_model_before_completion_receipt": true,
+    "trainer_writes_completion_receipt_atomically": true,
+    "controller_revalidates_completion_config_and_final_model_hash": true
+  },
+  "interpretation": {
+    "candidate_shortage_detected": false,
+    "normal_finalization_still_required": true,
+    "formal_candidate_selection_started": false,
+    "performance_claimed": false
+  },
+  "training_or_evaluation_semantics_changed": false,
+  "formal_seed_consumption": "none",
+  "formal_gate_effect": "none"
+}

@@ -1,0 +1,111 @@
+{
+  "schema": "zuma-rl.teacher-bc-dagger-semantic-aim-preregistration",
+  "version": 1,
+  "created_utc": "2026-08-04T10:03:29.082Z",
+  "status": "FROZEN_BEFORE_RUN_OUTPUT",
+  "classification": "failure_conditioned_matched_objective_semantics_screen",
+  "hypotheses": {
+    "null": "removing aim gradients from wait and swap samples does not resolve the fire-versus-swap instability or produce a held-out Jungle2 win",
+    "alternative": "restricting aim supervision to semantically relevant fire samples prevents shared-feature interference and recovers stable held-out behavior"
+  },
+  "design": {
+    "run_dir": "/mnt/d/ZumaTraining/screening-teacher-bc-dagger-semantic-aim-s20260859-v1",
+    "expected_run_dir_absent": true,
+    "matched_control": "/mnt/d/ZumaTraining/screening-teacher-bc-dagger-s20260859-v1",
+    "only_training_objective_difference": "aim_loss_scope_fire_only_instead_of_all_actions",
+    "diagnostic_reporting_changes_do_not_affect_training": true,
+    "common_recipe": {
+      "algorithm": "maskable_ppo_actor_behavior_cloning_with_dagger",
+      "policy_architecture": "entity_attention",
+      "level": "Jungle2",
+      "profile_mode": "tutorials_completed",
+      "aim_bins": 180,
+      "max_ticks": 12000,
+      "max_balls": 768,
+      "frame_skip": 1,
+      "training_episodes": 4,
+      "training_seed": 20271859,
+      "validation_episodes": 2,
+      "validation_seed": 20272859,
+      "model_seed": 20260859,
+      "batch_size": 256,
+      "initial_epochs": 30,
+      "wait_sample_stride": 16,
+      "swap_sample_repeat": 2,
+      "learning_rate": 0.0001,
+      "verb_loss_weight": 10.0,
+      "max_grad_norm": 0.5,
+      "dagger_rounds": 2,
+      "dagger_episodes_per_round": 1,
+      "dagger_epochs_per_round": 15,
+      "dagger_seed": 20273859,
+      "dagger_max_steps": 4000,
+      "dagger_teacher_action_probability": 0.5
+    },
+    "intervention": {
+      "aim_loss_scope": "fire_only",
+      "semantic_basis": "the environment ignores aim for wait and swap verbs"
+    },
+    "resources": {
+      "cuda_visible_devices": "0",
+      "expected_cuda_device": "NVIDIA GeForce RTX 5090",
+      "rtx_5080_excluded": true,
+      "cpu_thread_limit": 8
+    }
+  },
+  "acceptance": {
+    "pipeline": {
+      "process_exit_code": 0,
+      "completion_receipt_status": "COMPLETE",
+      "all_dagger_rounds_required": true
+    },
+    "aggregated_dataset": {
+      "verb_accuracy_at_least": 0.9,
+      "fire_recall_at_least": 0.65,
+      "swap_recall_at_least": 0.65
+    },
+    "held_out_full_horizon": {
+      "wins_at_least": 1,
+      "validation_episodes": 2,
+      "mean_score_greater_than_matched_control": true,
+      "all_swap_degenerate_episode_forbidden": true
+    },
+    "promotion_rule": "a pass supports the semantic objective correction and authorizes a fresh-seed confirmation only",
+    "rejection_rule": "if either dataset discrimination or held-out full-horizon behavior fails, retain the semantic correction as logically valid infrastructure but reject it as a sufficient recipe fix"
+  },
+  "evidence_anchor": {
+    "matched_control": {
+      "report": "D:/ZumaTraining/screening-teacher-bc-dagger-s20260859-v1/report.json",
+      "report_sha256": "sha256:a654d9a9d003d85d0fb8e88ec4b752da2267834fdf1be498d6721e2ccc8f8315",
+      "outcome": "diagnostics/teacher-bc-dagger-jungle2-s20260859-outcome-v1.json",
+      "status": "DAGGER_SCREEN_FAIL_RECIPE_REJECTED",
+      "held_out_wins": 0,
+      "held_out_mean_score": 0.0
+    },
+    "infrastructure_smoke": {
+      "report": "D:/ZumaTraining/infrastructure-teacher-bc-semantic-aim-s20260860-v1/report.json",
+      "report_sha256": "sha256:da8a2ab35c417e144a7c83888811dda230c4a992181ca6bc0f1c4a0a79d6a284",
+      "completion_sha256": "sha256:3df843a95e4a430aa0dcc11ec58b8b51d53cc91fa5ba13a629462ea9282519f1",
+      "result": "pipeline_complete_and_fire_only_aim_sample_accounting_present"
+    },
+    "regression": {
+      "wsl_targeted_pytest": "PASS_56"
+    }
+  },
+  "source_hashes": {
+    "pretrain_maskable_ppo_teacher.py": "sha256:2d556408010024de2d15a4d947622baa3c1d9b72b8f29203166b08d72151d20b",
+    "revenge_features.py": "sha256:6de7d8116c4e7c919d1704fa7cf532c8da06b207087e1fd64f5af005c66d57b0",
+    "revenge_teacher.py": "sha256:9a7d343f824e29b0074053440a93ec4456e7584c433342fff850afd89bb1f3a5",
+    "revenge_env.py": "sha256:ff18c84e8b73459994aa738fe3a767c019de452a898d8506531978a12c40b849",
+    "test_revenge_env.py": "sha256:0060f7d2b0fb403b7a54c0491cf3776151856181bbc5ccf10088dcd4d92dc8cd"
+  },
+  "non_authorizations": [
+    "fresh_seed_generalization_claim",
+    "large_scale_training",
+    "rl_recipe_promotion",
+    "fidelity_gate_opening",
+    "original_game_deployment",
+    "original_transfer_certification",
+    "visual_policy_training"
+  ]
+}

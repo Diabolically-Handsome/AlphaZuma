@@ -1,0 +1,57 @@
+{
+  "schema": "zuma-rl.pc-front-insertion-render-settled-failure-audit",
+  "version": 1,
+  "id": "c70-front-insertion-render-settled-poll-arm-failure",
+  "created_utc": "2026-08-03T18:19:09Z",
+  "classification": "invalidated-infrastructure-failure-not-pc-golden",
+  "gate_effect": "none",
+  "parent_execution_binding": {
+    "path": "diagnostics/c70-front-insertion-render-settled-execution-binding-v1.json",
+    "sha256": "sha256:4ee08cb19fc34e187ef06dedf2c1e53c4a147676d6f7561afe345336021c87e7"
+  },
+  "session": {
+    "root": "D:/ZumaGolden/campaign-c70-natural-win-v8-front-insertion-render-settled-u3569-u3710",
+    "plan_sha256": "sha256:dbce6d0bd7c1e61c4f54a0c1a5f9963268ecb48982ad1d35cc64a6c9d28b7b00",
+    "collection_failure_sha256": "sha256:64f0b3f962186848e0ecda4c24e3f6775a311f90eabc7c2640a411cbde94ff63",
+    "failure_code": "framework_state_poll_failed",
+    "poll_failure": "framework_poll_arm_update_missed",
+    "failed_run": "r1",
+    "process_id": 56284,
+    "process_creation_filetime_100ns": 134302546260448997
+  },
+  "observer": {
+    "ready_marker_sha256": "sha256:6e9461649efe9b05cfe954b47cc8a6c65f3e59c773b99366a71776f0ecfea0de",
+    "stop_marker_sha256": "sha256:f05a1a68683d38103468e46ce4cac50d9b6b475b8f325f6c90749ca363e5222a",
+    "failure_log_sha256": "sha256:ad8b7f3341f15cfb45d9e93d2252fa51177779a646a42906dba8ab7135163675",
+    "ready_initial_framework_update": 3531,
+    "requested_exact_arm_update": 3568,
+    "high_rate_evidence_published": false,
+    "interpretation": "The 1 ms pre-arm observer requires a particular stable render phase at exactly one framework update. The retail loop may advance past that exact phase, so the observer can reject an otherwise complete capture."
+  },
+  "raw_capture": {
+    "status": "acquisition_complete_but_not_certifiable_without_poll_evidence",
+    "metadata_sha256": "sha256:d52c19d9e69615ee524f93dfd6c93340b678ba795d331c1e5ae57fd622dfba6b",
+    "frames_csv_sha256": "sha256:ce9790e101a8068dbb945a12e19c438962c9af1ceec4a02226cd8fc9536f8197",
+    "framework_update_map_sha256": "sha256:01c88f5d9e240bdcc37fc48c907175d837cd9f33155c6c300d8e5120bfdeadd4",
+    "frame_count": 90,
+    "observed_update_range": [
+      3645,
+      3699
+    ],
+    "required_target_was_inside_raw_capture": true,
+    "reuse_for_certification_forbidden": true
+  },
+  "restoration": {
+    "host_pre_snapshot_sha256": "sha256:b0f168463691c99eefdcb9e5dcbad0696a132d421c23b87c0c6fcb2eeeeb1449",
+    "host_restored_snapshot_sha256": "sha256:96991d4ee37d9c4a53dd86e072ac9065e69d46c3e37e0d06c849a2e2662951d4",
+    "host_pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_restored_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "game_process_remaining": false
+  },
+  "decision": {
+    "c70_status": "INVALIDATED",
+    "may_not_be_packaged": true,
+    "may_not_be_retried_in_place": true,
+    "next_attempt_requires_fresh_session_and_frozen_bounded-arm-semantics": true
+  }
+}

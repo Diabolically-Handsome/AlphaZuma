@@ -1,0 +1,114 @@
+{
+  "schema": "zuma-rl.alphazuma-55-polar-intent-autonomy-validation-plan",
+  "version": 1,
+  "status": "FROZEN_BEFORE_TARGET_PREREGISTRATION",
+  "created_utc": "2026-08-16T00:41:48.618601+00:00",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "training_plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-autonomy-s99081601-plan-v1.json",
+    "sha256": "sha256:82752ae5561bd19c2a8c05b3fd315989ae25593062b0465e1f4dc68231b25139"
+  },
+  "training_preregistration": {
+    "expected_path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-autonomy-s99081601-preregistration-v1.json",
+    "binding_rule": "must validate and bind this exact training_plan sha256"
+  },
+  "training_launch_controller": {
+    "status": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-autonomy-s99081601-watch-v1/controller_status.json",
+    "required_terminal_status": "COMPLETE"
+  },
+  "target": {
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-autonomy-s99081601-v1",
+    "expected_completion": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-autonomy-s99081601-v1/completion.json",
+    "expected_failure": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-autonomy-s99081601-v1/failure.json",
+    "round_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "round_model_paths": [
+      "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-autonomy-s99081601-v1/round_00/final_model.zip",
+      "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-autonomy-s99081601-v1/round_01/final_model.zip",
+      "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-autonomy-s99081601-v1/round_02/final_model.zip",
+      "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-autonomy-s99081601-v1/round_03/final_model.zip"
+    ]
+  },
+  "matrix": {
+    "registry": "training_validation",
+    "base_seed": 1550002000,
+    "last_seed": 1550002054,
+    "levels": 55,
+    "models": 5,
+    "expected_attempts": 275,
+    "max_ticks": 30000,
+    "paired_models_share_identical_task_seeds": true
+  },
+  "execution": {
+    "device": "cuda:1",
+    "parallel_envs": 24,
+    "shard_count": 1
+  },
+  "original_root": "/mnt/d/SteamLibrary/steamapps/common/Zuma's Revenge",
+  "wait_for_engineering_slot": {
+    "prior_polar_audit": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-dagger-validation-s99081550-audit-v1.json",
+    "required_status": "PASS",
+    "reason": "serialize all 24-env engineering matrices"
+  },
+  "outputs": {
+    "run_root": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-autonomy-validation-s99081602-v1",
+    "models_manifest": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-autonomy-validation-s99081602-models-v1.json",
+    "evaluation_preregistration": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-autonomy-validation-s99081602-preregistration-v1.json",
+    "audit_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-autonomy-validation-s99081602-audit-v1.json",
+    "status_root": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-autonomy-validation-s99081602-watch-v1"
+  },
+  "implementation": {
+    "planner": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_polar_intent_autonomy_validation_plan.py",
+      "sha256": "sha256:0a7041762a1d409d10cefa11e5b67eed33b0d537fa4baaf4ead028c4b8f2c8cc"
+    },
+    "materializer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/materialize_alphazuma_55_polar_intent_autonomy_validation.py",
+      "sha256": "sha256:6ae54d88cdbc449ea1ac26765d4de962525a13cddab0113a910e3838f6d19cd5"
+    },
+    "watcher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/watch_alphazuma_55_polar_intent_autonomy_validation.py",
+      "sha256": "sha256:2f1cb535de496b2d3d8989f8ce176185036cbc12d4d33850a5a6b52e056bd2fb"
+    },
+    "contract_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_training_validation.py",
+      "sha256": "sha256:45fcdd98cda89f2a606cb24c30a82c12b877d108b232d37f7623ed71bb9a1391"
+    },
+    "evaluator": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel_v2.py",
+      "sha256": "sha256:811de7b530e6703858ae218aa9a0309724c49824d817e2f55733646ec89fd6c3"
+    },
+    "independent_auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_training_validation.py",
+      "sha256": "sha256:3621dcb64c3342e3954533d22401f258fe6c72ac49d164456455ad77ea54aa67"
+    }
+  },
+  "decision_rule": {
+    "ranking": [
+      "wins_desc",
+      "level_coverage_desc",
+      "total_score_desc",
+      "median_winning_ticks_asc",
+      "earlier_round_first"
+    ],
+    "minimum_wins": 35,
+    "minimum_cleared_levels": 35,
+    "negative_results_retained": true,
+    "current_campaign_candidate_promotion": false
+  },
+  "authority_boundary": {
+    "classification": "engineering_validation_only",
+    "current_campaign_candidate_authority": false,
+    "predecessor_successor_candidate_authority": false,
+    "formal_seed_consumption": false,
+    "power_restore_authority": false,
+    "training_recipe_change_authority": false
+  }
+}

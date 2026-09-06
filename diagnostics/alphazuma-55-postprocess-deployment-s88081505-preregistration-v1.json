@@ -1,0 +1,127 @@
+{
+  "schema": "zuma-rl.alphazuma-55-postprocess-deployment-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_FORMAL_SEEDS",
+  "created_utc": "2026-08-15T17:59:56.969280+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "supersedes": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-deployment-s88081503-withdrawal-for-s88081505-v1.json",
+    "sha256": "sha256:9224021659c6f9df147dc59ca8a6ebc2c4944d6bcae4ca80f1374ed5feab6c99"
+  },
+  "parallelism_decision": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-evaluation-parallelism-decision-s90081503-v1.json",
+    "sha256": "sha256:52c3c18e5af75f9115b4111c4caea549e184fabe58f2e5a0a29b08dd4c91c17a"
+  },
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "teacher_pipeline_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-teacher-pipeline-s85081501-preregistration-v1.json",
+    "sha256": "sha256:0171d15f8899a91420bc1e0483d3fbc4ef8fbbd8377dfcc3b06d7cd83aa5642d"
+  },
+  "original_root": "/mnt/d/SteamLibrary/steamapps/common/Zuma's Revenge",
+  "migrations": [
+    "v1_baseline=v1-full55=/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v1-full55-v1-migration.json",
+    "v11_baseline=v11-full55=/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1-migration.json",
+    "speed_essence_baseline=speed-essence-full55=/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/speed-essence-full55-v1-migration.json"
+  ],
+  "fixed_routes": [
+    {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-speed-frontier-s83081501-preregistration-v1.json",
+      "sha256": "sha256:da146c52314fa7c9b30398acc484b1f2f6442b61d22f4cb2a4772ca581d3e22f"
+    },
+    {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-v11-balanced-s84081501-preregistration-v1.json",
+      "sha256": "sha256:d7f6e4eb65e9e31c34b54d97828a33ae5df3ab5c2fa09b111a83ffef8e4b7b23"
+    },
+    {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-v1-frontier-s87081501-preregistration-v1.json",
+      "sha256": "sha256:81decbb22039957342d1419efbd4a53f4ddf70147b6f96a50e91fab62de19fbe"
+    },
+    {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-v1-frontier-replicate-s88081501-preregistration-v1.json",
+      "sha256": "sha256:3044c0c33a44230cc9aa0f4207ad043dd2c6b0f09746970e5c336b93bb22ab6a"
+    },
+    {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-v1-hard-frontier-rescue-s89081501-preregistration-v1.json",
+      "sha256": "sha256:524330741123505a13cb447d80f791c07c11c6f0df085fe50f7a581f75077124"
+    }
+  ],
+  "expected_distilled_route": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-distilled-ppo-s86081501-preregistration-v1.json",
+    "route_id": "alphazuma55-distilled-frontier-5090",
+    "episode_seed_first": 1530000000,
+    "episode_seed_last": 1533999999,
+    "source_completion_path": "/mnt/d/ZumaTraining/alphazuma-55-specialist-distillation-s85081501-v1/completion.json"
+  },
+  "route_wait_deadline_utc": "2026-08-15T08:00:00Z",
+  "poll_seconds": 30,
+  "postprocess_preregistration": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-s89081704-preregistration-v1.json",
+  "formal_outputs": {
+    "controller": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/postprocess-s89081704-v1",
+    "selection": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/selection-s89081704-v1",
+    "final_blind": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/final-blind-s89081704-v1",
+    "continuous": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/continuous-s89081704-v1"
+  },
+  "independent_audit_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-independent-final-audit-s89081704-v1.json",
+  "deployment_output_root": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/postprocess-deployment-s88081505-v1",
+  "implementation": {
+    "deployer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/deploy_alphazuma_55_postprocess_parallel_v3.py",
+      "sha256": "sha256:c56d3b02c16ee7604c93086d6a4c5ef4738b2f457426a3a4c43948c5aa15b112"
+    },
+    "builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_postprocess_parallel_v3.py",
+      "sha256": "sha256:d7558403946d49fd3ca9fe7941797a7f532cd2214a22ede2ccf757e09e4c8fdc"
+    },
+    "controller": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_postprocess_parallel_v3.py",
+      "sha256": "sha256:dfc243c145eb4a0c5b06f231c5bf9244ec29768800a171ab752eb8a8600f0ff8"
+    },
+    "auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_result.py",
+      "sha256": "sha256:dd5aa209149e97cf8461b21453a4a548b681a6e630114c65cd245e631036602c"
+    }
+  },
+  "restore": {
+    "gpu_guard": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/manage_alphazuma_55_power.ps1",
+      "sha256": "sha256:4e507c3256615c70875665a5b04aa4924519f9261dd85fd95165858708e1d67f"
+    },
+    "power_plan_guard": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/manage_alphazuma_55_power_plan.ps1",
+      "sha256": "sha256:9eabf56257236edd2ce2aa731eb3c69d417995b622c4f20e7cd180ebe6bd4d8c"
+    },
+    "gpu_receipt": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/hardware/gpu-power-guard.json",
+    "power_plan_receipt": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/hardware/windows-power-plan-guard.json",
+    "balanced_guid": "381b4222-f694-41f0-9685-ff5bb260df2e"
+  },
+  "capacity_expansion": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-capacity-expansion-s96081501-preregistration-v1.json",
+    "sha256": "sha256:982786bd9e8539937f4afe2e5c9b78c05e23cea3ad3b71db4559004bbd85fb0d"
+  },
+  "capacity_expansion_deployment_builder": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_capacity_safe_deployment.py",
+    "sha256": "sha256:b0e611af907275bd29d81a05c176b2ec09fb3f834b42a6750b29b9cbfb4fba56"
+  },
+  "evaluation_capacity_remediation": {
+    "remediation_preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-evaluation-capacity-remediation-s99081503-preregistration-v1.json",
+      "sha256": "sha256:9b79bb2b1a4fa6ddc089ba6c121292026d302163b7f30c620f16fa8a30b73237"
+    },
+    "recovery_outcome": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-horizon-probe-recovery-s99081502-outcome-v1.json",
+      "sha256": "sha256:02d3a56540bbaf80b0a2b642c8f15f55639ad7dbddbd87d615964c2a70fcf295"
+    },
+    "evaluator": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel_v2.py",
+      "sha256": "sha256:811de7b530e6703858ae218aa9a0309724c49824d817e2f55733646ec89fd6c3"
+    },
+    "promotion_scope": {
+      "capacity_safe_postprocess_authorized": true,
+      "training_recipe_change_authorized": false,
+      "formal_seed_consumption_before_supersession": false
+    }
+  }
+}

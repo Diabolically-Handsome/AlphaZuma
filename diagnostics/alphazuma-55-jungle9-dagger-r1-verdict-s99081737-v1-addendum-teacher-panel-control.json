@@ -1,0 +1,35 @@
+{
+  "schema": "alphazuma-55-verdict-addendum",
+  "version": 1,
+  "amends": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-jungle9-dagger-r1-verdict-s99081737-v1.json",
+    "sha256": "sha256:5138667483f6e97f0a8e3b0a4854574d7ac68f10023ff84dd61903c303b92577"
+  },
+  "field": "pending_control",
+  "written_utc": "2026-08-21T12:39:50Z",
+  "control_result": "teacher-through-macro WINS ALL THREE probed panel seeds (5764 / 6323 / 6713 ticks, hold 4, tools/probe_alphazuma_55_macro_teacher_v1) - the jungle9 panel is winnable at normal teacher pace. The 0/16 is therefore ENTIRELY a student-capability gap; the gate metric stands. Next lever queued: beta-mixed DAgger collection (--teacher-drive-prob 0.5, collector s99081742) aggregated with the teacher collection ONLY (round-1 student-only data excluded as receipted poison).",
+  "probes": [
+    {
+      "seed": 1494001000,
+      "outcome": "win",
+      "ticks": 5764,
+      "receipt": "/mnt/d/ZumaTraining/alphazuma-55-j9-teacher-panel-probe-1494001000/completion.json",
+      "sha256": "sha256:c192740d2a0a3262e7de8bfe11c637384cf29d61fd7a3a577c0d8ca79969d571"
+    },
+    {
+      "seed": 1494001005,
+      "outcome": "win",
+      "ticks": 6323,
+      "receipt": "/mnt/d/ZumaTraining/alphazuma-55-j9-teacher-panel-probe-1494001005/completion.json",
+      "sha256": "sha256:4c32412948153bf81d86b4d8e9ca715ff8f541ab01827798c196b54973658a98"
+    },
+    {
+      "seed": 1494001010,
+      "outcome": "win",
+      "ticks": 6713,
+      "receipt": "/mnt/d/ZumaTraining/alphazuma-55-j9-teacher-panel-probe-1494001010/completion.json",
+      "sha256": "sha256:3b040e2eb9d45d9c3d34e43910ef16c779e2318f93b04832ba2aab977703e40c"
+    }
+  ],
+  "formal_seed_consumption": false
+}

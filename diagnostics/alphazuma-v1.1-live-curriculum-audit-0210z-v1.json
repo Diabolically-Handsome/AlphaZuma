@@ -1,0 +1,123 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-live-curriculum-audit",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-14T02:10:16.2599605+00:00",
+  "classification": "live_training_diagnostic_only",
+  "formal_gate_effect": "none",
+  "evidence_root": "D:\\ZumaTraining\\alphazuma-v1.1-live-curriculum-audit-s57081301-v1",
+  "checks": {
+    "seven_routes_present": true,
+    "all_jsonl_records_parsed": true,
+    "all_history_timesteps_monotonic": true,
+    "all_weights_positive_and_finite": true,
+    "all_fixed_routes_invariant": true,
+    "all_adaptive_routes_changed_from_initial": true,
+    "village10_received_training_episodes": true
+  },
+  "summary": {
+    "routes": 7,
+    "adaptive_routes": 4,
+    "fixed_routes": 3,
+    "village10_total_training_episodes": 423,
+    "village10_live_training_wins": 0,
+    "zero_win_weight_mass_pct_minimum": 33.73,
+    "zero_win_weight_mass_pct_maximum": 86.25
+  },
+  "runs": [
+    {
+      "run_id": "frontier-adaptive-5090-oom-recovery",
+      "mode": "adaptive",
+      "history_records": 14,
+      "first_step": 16777216,
+      "last_step": 20185088,
+      "weights_invariant": false,
+      "zero_win_weight_mass_pct": 33.73,
+      "weights": {"Jungle7": 4.6500, "village6": 5.0164, "village10": 5.0213},
+      "village10_episodes": 73,
+      "status_sha256": "sha256:168d5fe3ef9c1d4f3aea21807ec73e8fda1338e24544b5aa0c8c8a50b40a3cff",
+      "history_sha256": "sha256:3593e5487d97ee824605b11e417fff13358a19bf5253b3efc1201c3376e5f52a"
+    },
+    {
+      "run_id": "frontier-fixed-5080-oom-recovery",
+      "mode": "fixed",
+      "history_records": 1,
+      "first_step": 15728640,
+      "last_step": 15728640,
+      "weights_invariant": true,
+      "zero_win_weight_mass_pct": 44.20,
+      "weights": {"Jungle7": 6.0000, "village6": 7.0000, "village10": 7.0000},
+      "village10_episodes": 101,
+      "status_sha256": "sha256:fd88acba87b777d6e0394a863e2e5a2b3f9e712645311d4d8432d3fba894ec66",
+      "history_sha256": "sha256:a5ffcf793a88ee5ac9a37317710dddc32c2b32234245da6a48fbef60e60aaaa4"
+    },
+    {
+      "run_id": "memdense-adaptive-5080-a",
+      "mode": "adaptive",
+      "history_records": 8,
+      "first_step": 0,
+      "last_step": 1835008,
+      "weights_invariant": false,
+      "zero_win_weight_mass_pct": 46.92,
+      "weights": {"Jungle7": 4.6409, "village6": 5.0067, "village10": 5.0085},
+      "village10_episodes": 45,
+      "status_sha256": "sha256:08c203c3907e1fbe232f8407d49961f5029be483735bb09515942502cd4754e3",
+      "history_sha256": "sha256:368143675f8b987b4b6023bf4b28451976202615bebc41fb92a50be251d2a817"
+    },
+    {
+      "run_id": "memdense-adaptive-5090-a",
+      "mode": "adaptive",
+      "history_records": 8,
+      "first_step": 0,
+      "last_step": 1835008,
+      "weights_invariant": false,
+      "zero_win_weight_mass_pct": 46.78,
+      "weights": {"Jungle7": 4.6536, "village6": 5.0118, "village10": 5.0118},
+      "village10_episodes": 49,
+      "status_sha256": "sha256:a8b6aabb1d3eaddb11931ca1a968e18bbf0899fa081ff9e3d2cf8b43f6d8cea3",
+      "history_sha256": "sha256:1f96e9342b8fbb6a76d97a1accbb009fa2e3271b7b22f666e6a848970c5333bb"
+    },
+    {
+      "run_id": "memdense-fixed-5080-b",
+      "mode": "fixed",
+      "history_records": 1,
+      "first_step": 0,
+      "last_step": 0,
+      "weights_invariant": true,
+      "zero_win_weight_mass_pct": 52.63,
+      "weights": {"Jungle7": 6.0000, "village6": 7.0000, "village10": 7.0000},
+      "village10_episodes": 50,
+      "status_sha256": "sha256:4fb34b8985f427d17d86548fca1258a36688ba2145e1d91e363e40eec2549c24",
+      "history_sha256": "sha256:81df68f84a3ca1a26ca825a6d827d08980e398ae0fd030188c6956b9eb5372bc"
+    },
+    {
+      "run_id": "memdense-fixed-5090-b",
+      "mode": "fixed",
+      "history_records": 1,
+      "first_step": 0,
+      "last_step": 0,
+      "weights_invariant": true,
+      "zero_win_weight_mass_pct": 52.63,
+      "weights": {"Jungle7": 6.0000, "village6": 7.0000, "village10": 7.0000},
+      "village10_episodes": 56,
+      "status_sha256": "sha256:a2aece5051abe0061fdb9d29df51d31c5b455367eef5a0c7499df3cbf9817a27",
+      "history_sha256": "sha256:3e991783fc1fc35075b49eace9849f8e97ac6a1e01535544888bd7eaf1137db6"
+    },
+    {
+      "run_id": "ultradense-zero-win-5090-c",
+      "mode": "adaptive",
+      "history_records": 4,
+      "first_step": 0,
+      "last_step": 786432,
+      "weights_invariant": false,
+      "zero_win_weight_mass_pct": 86.25,
+      "weights": {"Jungle7": 4.9593, "village6": 5.3610, "village10": 5.3618},
+      "village10_episodes": 49,
+      "status_sha256": "sha256:2b7edd8add780b39d1e19e6eaaeb631ab42144ef29b7a464b39c7ddf10538d98",
+      "history_sha256": "sha256:b5d651a15a281e4c92128fc9df5eff391a02e517fb79a103ecd2841ea70e4182"
+    }
+  ],
+  "interpretation": "The unresolved village10 frontier is not explained by sampling starvation or curriculum corruption. It received 423 live-training episodes across the portfolio, every fixed schedule remained exact, every adaptive schedule updated, and the zero-win specialist allocated 86.25 percent of its current weight mass to the three historically zero-win levels.",
+  "training_or_evaluation_semantics_changed": false,
+  "formal_seed_consumption": "none"
+}

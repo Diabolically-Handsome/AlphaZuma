@@ -1,0 +1,49 @@
+{
+  "schema": "zuma-rl.alphazuma-55-polar-wide-launch-plan",
+  "version": 1,
+  "status": "FROZEN_BEFORE_WAIT",
+  "created_utc": "2026-08-15T20:26:54.921657+00:00",
+  "wide_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-wide-s99081536-preregistration-v1.json",
+    "sha256": "sha256:c95427de4b4557ae12b02069d4cc0e3aeabe4c959737e77699e6be6e1cad7ad2"
+  },
+  "source_dagger_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-dagger-s99081533-preregistration-v1.json",
+    "sha256": "sha256:a011bc5a92af9255b2eff8814871030fce16c110c1c306296d6f27b183f1e6a1"
+  },
+  "source_terminal": {
+    "completion": "/mnt/d/ZumaTraining/alphazuma-55-polar-dagger-s99081533-v1/completion.json",
+    "failure": "/mnt/d/ZumaTraining/alphazuma-55-polar-dagger-s99081533-v1/failure.json",
+    "trainer_pid_at_registration": 176026,
+    "launch_after_either_terminal_receipt_and_process_exit": true
+  },
+  "target": {
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-polar-wide-s99081536-v1",
+    "completion": "/mnt/d/ZumaTraining/alphazuma-55-polar-wide-s99081536-v1/completion.json",
+    "failure": "/mnt/d/ZumaTraining/alphazuma-55-polar-wide-s99081536-v1/failure.json"
+  },
+  "original_root": "/mnt/d/SteamLibrary/steamapps/common/Zuma's Revenge",
+  "outputs": {
+    "status_root": "/mnt/d/ZumaTraining/alphazuma-55-polar-wide-s99081536-watch-v1"
+  },
+  "implementation": {
+    "builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_polar_wide_launch_plan.py",
+      "sha256": "sha256:2a7505592ae217db3e936d17a0f1dcd8d708e73befdd53423e9b3f475b71212c"
+    },
+    "watcher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/watch_alphazuma_55_polar_wide.py",
+      "sha256": "sha256:a44b0126f3a99624a1f41f341c411df73c135bb1a41aec9dc2c0b0563db319df"
+    },
+    "trainer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_polar_wide_v1.py",
+      "sha256": "sha256:6ecfebc751af35c33469bace5aea47d80bc6162a9c1500cd71410ce94337f715"
+    }
+  },
+  "authority_boundary": {
+    "formal_seed_consumption": false,
+    "current_campaign_candidate_authority": false,
+    "s99081535_successor_candidate_authority": false,
+    "power_restore_authority": false
+  }
+}

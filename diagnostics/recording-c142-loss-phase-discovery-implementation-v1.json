@@ -1,0 +1,16 @@
+{
+  "schema": "zuma-rl.retail-loss-phase-discovery-implementation-receipt",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T08:43:38.5467741Z",
+  "preregistration_sha256": "sha256:2f0e411288bb6e7096f85ed4117094ac76b80cb3efbb92eb0ef32bab422b66c3",
+  "live_controller": {
+    "path": "tools/autoplay_live_zuma.py",
+    "bytes": 50168,
+    "sha256": "sha256:35ec0408947895d1145a5582569f91f92dbc0ea5e1a6d3e5a6eff11d2eb7bc85"
+  },
+  "focused_tests_passed": 55,
+  "failed": 0,
+  "decision_logic_changed": false,
+  "logging_only": true
+}

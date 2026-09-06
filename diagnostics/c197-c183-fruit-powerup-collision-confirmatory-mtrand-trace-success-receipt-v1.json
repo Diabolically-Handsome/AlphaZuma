@@ -1,0 +1,129 @@
+{
+  "schema": "zuma-rl.pc-gameplay-mtrand-call-trace-confirmatory-success-receipt",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T16:47:26.4687038Z",
+  "preregistration": {
+    "artifact": "diagnostics/c197-c183-fruit-powerup-collision-confirmatory-mtrand-trace-preregistration-v1.json",
+    "artifact_bytes": 6430,
+    "artifact_sha256": "sha256:57a11c97d1f48be05275e3bd3b4221b60fb80dfe6f1ab5a450eef8d930486bc0"
+  },
+  "collection": {
+    "attempt_count": 1,
+    "attempt_status": "PASS",
+    "attempts": {
+      "artifact": "D:/ZumaGolden/diagnostics/c197-c183-confirmatory-source-bound-rng-trace-u8213-u8260-v1/attempts.json",
+      "artifact_bytes": 520,
+      "artifact_sha256": "sha256:898f353746f5aa228f0478a6de287fcbf16aa899300462e13b737c4bcee5ea96"
+    },
+    "memory_probe": {
+      "artifact": "D:/ZumaGolden/diagnostics/c197-c183-confirmatory-source-bound-rng-trace-u8213-u8260-v1/attempt-01/memory-probe.json",
+      "artifact_bytes": 322743,
+      "artifact_sha256": "sha256:054c9ce91885af0394bd4a777785f48c87744415e57cc77e29ba074788d3e8c4",
+      "schema": "zuma-rl.pc-memory-int32-probe",
+      "evidence_classification": "diagnostic",
+      "diagnostic_mutation": null
+    },
+    "strict_replay": {
+      "artifact": "D:/ZumaGolden/diagnostics/c197-c183-confirmatory-source-bound-rng-trace-u8213-u8260-v1/attempt-01/strict-replay.json",
+      "artifact_bytes": 55157,
+      "artifact_sha256": "sha256:b93152708ff9381106700c7292df791ce10ac9ce344cb6a71dafaf8a35ea3450",
+      "status": "PASS",
+      "classification": "source_bound_original_natural_retail_outcome",
+      "failure_count": 0,
+      "post_board_construction_process_memory_write_count": 0,
+      "persistent_file_modified": false
+    },
+    "call_trace": {
+      "artifact": "D:/ZumaGolden/diagnostics/c197-c183-confirmatory-source-bound-rng-trace-u8213-u8260-v1/attempt-01/global-rng-call-trace.json",
+      "artifact_bytes": 2874257,
+      "artifact_sha256": "sha256:a371f8121afc71141fa32df4b98ba3747d4aa7ddf84fce83b99a30b86fd0200a",
+      "status": "PASS",
+      "stop_reason": "stop_requested",
+      "call_count": 3587,
+      "process_memory_mutation": false,
+      "access_denied_thread_skip_event_count": 0
+    },
+    "trajectory": {
+      "artifact": "D:/ZumaGolden/diagnostics/c197-c183-confirmatory-source-bound-rng-trace-u8213-u8260-v1/attempt-01/trajectory/index.json",
+      "artifact_bytes": 559659,
+      "artifact_sha256": "sha256:36ea1ddf2622bae9cd10d2e202652f0292f0f633737dce1c3a9392d4e898bdf0",
+      "start_update": 8213,
+      "end_update": 8260,
+      "tick_count": 48,
+      "transition_count": 47
+    }
+  },
+  "external_input_guard": {
+    "artifact": "D:/ZumaGolden/diagnostics/c197-c183-confirmatory-source-bound-rng-trace-u8213-u8260-v1/attempt-01/external-input-guard.json",
+    "artifact_bytes": 785,
+    "artifact_sha256": "sha256:b1d54f48078bbc8520a610ef85be4546109c204ad1d02289138a22b0ad0308a2",
+    "status": "PASS",
+    "external_event_count": 0,
+    "allowed_repaint_event_count": 0,
+    "self_test_event_count": 8,
+    "stored_external_event_count": 0,
+    "hook_install_and_unhook_complete": true,
+    "protocol_error_count": 0,
+    "qualified_guard_sha256": "sha256:2bd4db2f35b23580b7075eddc900ed66217b6d8094cf897fcdbc77df562886b1"
+  },
+  "independent_checks": {
+    "alignment": {
+      "artifact": "D:/ZumaGolden/diagnostics/c197-c183-confirmatory-source-bound-rng-trace-u8213-u8260-v1/attempt-01/global-rng-call-trace-alignment.json",
+      "artifact_bytes": 412004,
+      "artifact_sha256": "sha256:8f39999bcf3f853e090b49e66f5b984f4c878a6c849f5126f218abf7de57cef1",
+      "status": "PASS",
+      "exact_transition_count": 47,
+      "aligned_call_count": 3587
+    },
+    "source_overlap": {
+      "artifact": "D:/ZumaGolden/diagnostics/c197-c183-confirmatory-source-bound-rng-trace-u8213-u8260-v1/attempt-01/c111-compact-overlap-verification.json",
+      "artifact_bytes": 1359,
+      "artifact_sha256": "sha256:1db68d693ec704a0d23fa683dfb2a3a4951dca8c6eca402ab5571cc55c738eb6",
+      "status": "PASS",
+      "compact_exact_tick_count": 48,
+      "mtrand_exact_tick_count": 48
+    },
+    "natural_recording_sequence": {
+      "source_call_count": 3587,
+      "confirmatory_call_count": 3587,
+      "compared_fields": [
+        "framework_update",
+        "caller",
+        "output",
+        "pre_index",
+        "post_index",
+        "pre_state_sha256"
+      ],
+      "mismatch_count": 0,
+      "exact": true
+    },
+    "c194_semantic_partition": {
+      "pi_effect_particle_update": 9,
+      "pil_particle_emitter_update": 3562,
+      "score_digit_transition": 14,
+      "shadow_canopy_animation": 2,
+      "modeled_gameplay": 0,
+      "unclassified": 0,
+      "total": 3587,
+      "exact": true
+    }
+  },
+  "host_restoration": {
+    "snapshot": "D:/ZumaGolden/diagnostics/c197-host-post-v1.json",
+    "snapshot_bytes": 33118,
+    "snapshot_sha256": "sha256:ac9373191de72097342d8398ae7cd8dd1574ab959027fc0dbcef3a6f75e3b399",
+    "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "residual_game_process_count": 0,
+    "exact_host_restore": true
+  },
+  "authorization": {
+    "trace_is_eligible_for_preregistered_proof_derivation": true,
+    "proof_binding_must_use_exact_artifact_hashes_above": true,
+    "proof_binding_requires_separate_preregistration": true,
+    "pc_golden_credit_before_bound_proof": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

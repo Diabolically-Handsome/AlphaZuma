@@ -1,0 +1,86 @@
+{
+  "schema": "zuma-rl.pc-gameplay-mtrand-call-trace-forensic-failure-receipt",
+  "version": 1,
+  "status": "FAIL_INFRASTRUCTURE_REPLAY_STEP_BARRIER_TIMEOUT",
+  "created_utc": "2026-08-10T15:55:25.2578904Z",
+  "preregistration": {
+    "artifact": "diagnostics/c191-c183-fruit-powerup-collision-forensic-mtrand-trace-preregistration-v1.json",
+    "artifact_bytes": 8921,
+    "artifact_sha256": "sha256:dc902e10a4283d113d03a355c10a064c369c8ae99cc5b4bec5fad408192140d0"
+  },
+  "collector": {
+    "status": "RETRY_EXHAUSTED",
+    "attempt_count": 1,
+    "process_id": 18960,
+    "error_type": "TimeoutError",
+    "error": "timed out waiting for replay-step barrier at update 8235, target 8235, fast_forward_target=8235, fast_forward_to_marker=False, fast_forward_step=True",
+    "attempts_artifact": "D:/ZumaGolden/diagnostics/c191-c183-forensic-source-bound-rng-trace-u8213-u8260-v1/attempts.json",
+    "attempts_bytes": 325,
+    "attempts_sha256": "sha256:4987e9ed661cea3e14b217445841d267bf85ef3f45fb07c1708778820976bfd1",
+    "strict_replay_sha256": "sha256:83443afd7070b37ee95aefd6ebda68e38c7e2ca563fbe683a4d552f2eb1ed6e9",
+    "external_input_guard_sha256": "sha256:4669b5dad77225d6513eb5a33ee4178122f61a4ad5629922e747e2e99b761c7d",
+    "external_input_event_count": 0
+  },
+  "partial_trace": {
+    "artifact": "D:/ZumaGolden/diagnostics/c191-c183-forensic-source-bound-rng-trace-u8213-u8260-v1/attempt-01/global-rng-call-trace.json",
+    "artifact_bytes": 43027,
+    "artifact_sha256": "sha256:d2152ddc1adc16112ae5bcfaa4772567126d345c84600a623fce30b0c6e15585",
+    "log_sha256": "sha256:82c73fd6f3a8cd307f45918649944214377289bf0844ee3c788dd823e774d1f8",
+    "status": "PASS",
+    "stop_reason": "stop_requested",
+    "failure": null,
+    "process_memory_mutation": false,
+    "access_denied_thread_skip_event_count": 0,
+    "call_count": 55,
+    "calls_by_update": {
+      "8234": 14,
+      "8235": 41
+    },
+    "expected_complete_call_count": 3587,
+    "complete": false,
+    "use": "forensic stack hypothesis generation only"
+  },
+  "root_cause": {
+    "classification": "collector transport timeout, not gameplay or mechanism failure",
+    "trajectory_step_timeout_seconds": 5.0,
+    "update_8235_expected_native_calls": 1220,
+    "update_8235_calls_observed_before_timeout": 41,
+    "replay_state_at_timeout": {
+      "framework_update": 8235,
+      "fast_forward_target": 8235,
+      "fast_forward_to_marker": false,
+      "fast_forward_step": true
+    },
+    "explanation": "The native caller tracer intentionally suspends and single-steps the retail process at every MTRand call. The trajectory controller's legacy five-second post-update barrier budget expired while the same retail update was still executing under 1220 traced breakpoints.",
+    "scientific_contract_reached": false,
+    "c190_gameplay_diff_invalidated": false
+  },
+  "forensic_stack_finding": {
+    "all_observed_pil_direct_callers_share_stack_address": "0x00901e46",
+    "observed_generic_0x0040ae62_calls_also_share_stack_address": "0x00901e46",
+    "runtime_rtti_type": ".?AVEmitter@PIL@@",
+    "runtime_rtti_type_descriptor_address": "0x009f0d10",
+    "runtime_complete_object_locator_address": "0x009a56f0",
+    "runtime_vtable_address": "0x00994cec",
+    "runtime_vtable_slot_19": "0x0090796f",
+    "classification_status": "hypothesis only pending complete trace and independent confirmation"
+  },
+  "host_restore": {
+    "artifact": "D:/ZumaGolden/diagnostics/c191-host-post-v1.json",
+    "artifact_bytes": 33118,
+    "artifact_sha256": "sha256:fa26fc8e3d3f4167b9fcacb7982238c8f22148cbfb13c523297c0acb382f6918",
+    "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_restored_exactly": true,
+    "residual_game_process_count": 0
+  },
+  "decision": {
+    "failed_output_retained": true,
+    "same_output_root_reuse_forbidden": true,
+    "bounded_timeout_transport_fix_permitted_after_preregistration": true,
+    "proof_derivation_from_c191_forbidden": true,
+    "pc_golden_credit": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

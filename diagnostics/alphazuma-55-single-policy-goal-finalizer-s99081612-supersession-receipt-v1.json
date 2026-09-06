@@ -1,0 +1,47 @@
+{
+  "schema": "zuma-rl.alphazuma-55-single-policy-goal-finalizer-supersession",
+  "version": 1,
+  "status": "SUPERSEDED_BEFORE_GOAL_COMPLETION",
+  "created_utc": "2026-08-16T02:00:30Z",
+  "reason": "Add the clean replay-anchor successor as the highest-priority seventh route before any goal completion or power-restoration authority is exercised.",
+  "predecessor": {
+    "finalizer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-single-policy-goal-finalizer-s99081606-preregistration-v3.json",
+      "sha256": "sha256:a7fd5c8f3c1c7a2aebc67fcad64aac1276155b77a0734866de62b6ba48609f2b"
+    },
+    "terminal_process_action": {
+      "pid": 233917,
+      "signal": "SIGTERM",
+      "verified_not_running": true
+    },
+    "last_status_snapshot": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-single-policy-goal-finalizer-s99081606-v3/watcher_status.json",
+      "sha256_at_supersession": "sha256:0e5a1eddd1b06ba1687685efd7b8919f7931900c9fe6de5bb6d2defbadefba670",
+      "status": "RUNNING",
+      "phase": "WAITING_FOR_CAMPAIGN_AUDITS",
+      "goal_status": "WAITING",
+      "power_restore_markers_absent": true
+    }
+  },
+  "successor": {
+    "finalizer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-single-policy-goal-finalizer-s99081612-preregistration-v4.json",
+      "sha256": "sha256:da425431a1eca688f67b3590706e88be018b152ab44b78885034c7e8e7fe4db6"
+    },
+    "watcher_status_snapshot": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-single-policy-goal-finalizer-s99081612-v4/watcher_status.json",
+      "sha256_at_supersession": "sha256:fd6f4f0231fe50ebf5de649bd06d344352c58efd1ecf044582bba963a7a7f030",
+      "status": "RUNNING",
+      "phase": "WAITING_FOR_CAMPAIGN_AUDITS",
+      "selection_blocked_by": "polar-intent-replay-anchor-successor-s99081609"
+    }
+  },
+  "semantic_invariants": {
+    "training_recipes_changed": false,
+    "candidate_rules_changed": false,
+    "gate_semantics_changed": false,
+    "formal_seed_ranges_changed_for_existing_campaigns": false,
+    "formal_seed_consumption_caused_by_supersession": false,
+    "power_restore_authority_exercised": false
+  }
+}

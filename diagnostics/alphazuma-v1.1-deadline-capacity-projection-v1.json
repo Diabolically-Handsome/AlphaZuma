@@ -1,0 +1,47 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-deadline-capacity-projection",
+  "version": 1,
+  "status": "ON_TRACK",
+  "projected_utc": "2026-08-14T00:35:59.319689+00:00",
+  "training_stop_utc": "2026-08-14T12:00:00+00:00",
+  "goal_end_utc": "2026-08-14T14:30:00+00:00",
+  "projection_method": "Hold each route's cumulative observed steps-per-second constant from the current training_status through the frozen wall-clock stop. This is a capacity estimate, not a performance claim.",
+  "routes": [
+    {"run": "frontier-adaptive-5090-oom-recovery", "observed_steps_per_second": 470.36, "projected_steps_this_run": 20761303, "projected_checkpoints": 39},
+    {"run": "frontier-fixed-5080-oom-recovery", "observed_steps_per_second": 478.15, "projected_steps_this_run": 21108534, "projected_checkpoints": 40},
+    {"run": "memdense-adaptive-5090-a", "observed_steps_per_second": 257.13, "projected_steps_this_run": 11236707, "projected_checkpoints": 21},
+    {"run": "memdense-fixed-5090-b", "observed_steps_per_second": 252.57, "projected_steps_this_run": 10963538, "projected_checkpoints": 20},
+    {"run": "memdense-adaptive-5080-a", "observed_steps_per_second": 244.77, "projected_steps_this_run": 10688628, "projected_checkpoints": 20},
+    {"run": "memdense-fixed-5080-b", "observed_steps_per_second": 237.00, "projected_steps_this_run": 10316332, "projected_checkpoints": 19},
+    {"run": "ultradense-zero-win-5090-c", "observed_steps_per_second": 132.47, "projected_steps_this_run": 5575767, "projected_checkpoints": 10}
+  ],
+  "projected_total_new_steps_across_routes": 90650809,
+  "historical_postprocess_timing": {
+    "source": "/mnt/d/ZumaTraining/overnight-v11-recovery-postprocess-s43081301-v1",
+    "selection_attempts": 340,
+    "selection_models": 5,
+    "selection_minutes": 39.8,
+    "target_blind_attempts": 512,
+    "target_blind_minutes": 50.1,
+    "anchor_blind_attempts": 64,
+    "anchor_blind_minutes": 8.2
+  },
+  "current_postprocess_workload": {
+    "selection_models": 15,
+    "selection_attempts_total": 480,
+    "final_blind_attempts_total": 544,
+    "estimated_selection_minutes": 60,
+    "estimated_final_blind_minutes": 52,
+    "estimated_validation_and_reporting_minutes": 8,
+    "estimated_total_minutes": 120,
+    "reserved_minutes": 150,
+    "estimated_margin_minutes": 30
+  },
+  "capacity": {
+    "d_drive_free_gib_observed": 674.8,
+    "projected_checkpoint_storage_is_not_a_constraint": true,
+    "no_reduction_to_candidate_count_needed": true,
+    "no_reduction_to_blind_attempts_needed": true,
+    "full_frozen_evidence_plan_fits_goal_window": true
+  }
+}

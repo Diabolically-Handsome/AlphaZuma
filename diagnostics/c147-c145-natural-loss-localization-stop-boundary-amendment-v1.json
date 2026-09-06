@@ -1,0 +1,61 @@
+{
+  "schema": "zuma-rl.pc-source-bound-natural-loss-localization-stop-boundary-amendment",
+  "version": 1,
+  "status": "FROZEN_BEFORE_NEW_PLAN_OR_OUTPUT",
+  "created_utc": "2026-08-10T09:41:21.9885373Z",
+  "purpose": "Correct only the finite strict-replay stop point to an exact DMO command boundary after the c145 source-bound Board anchor; retain the failed c146 attempt and keep the natural-loss localization window unchanged.",
+  "parents": {
+    "preregistration_sha256": "sha256:c60f60458fa09c38653e126ced3d21517c91aaf4a8512ba081cf8448a9584b18",
+    "parameter_amendment_path": "diagnostics/c146-c145-natural-loss-localization-parameter-amendment-v1.json"
+  },
+  "failed_c146_evidence": {
+    "output_root": "D:/ZumaGolden/diagnostics/c146-c145-natural-loss-localization-u11250-u11840-v1",
+    "attempts_sha256": "sha256:eac293a551e14369642d4bcffbe33fa08e5890b0908944b5693f1f5345aa638f",
+    "strict_replay_sha256": "sha256:0674c8818409dfb22824d62cd2a72b9b3e6656ebaa1d07e45789672067282f42",
+    "strict_replay_log_sha256": "sha256:5dc226897ddbc7fc45f88a5b4e24b448cdea88354f11ea5b9f9aa31d0ef3db87",
+    "collector_error": "source_bound_strict_trace_result_invalid",
+    "requested_stop_after_update": 3151,
+    "observed_last_update": 3165,
+    "stopped_at_update": true,
+    "failure_count": 0,
+    "boundary_failure_count": 0,
+    "broker_failure_count": 0,
+    "source_bound_board_anchor_exact_observation_count": 1,
+    "immutable": true
+  },
+  "boundary_evidence": {
+    "normalized_dmo_sha256": "sha256:c540d5e47d4c2c14e81f0071850e722bb04b6b4d77934155892140c9fcd4a024",
+    "preceding_command": {
+      "sequence": 277,
+      "framework_update": 3150,
+      "kind": "idle",
+      "command_number": 31
+    },
+    "next_command": {
+      "sequence": 278,
+      "framework_update": 3165,
+      "kind": "idle",
+      "command_number": 31
+    },
+    "reason": "The broker evaluates a finite update stop at command boundaries; 3151 is not a command update, while 3165 is the first exact boundary after it."
+  },
+  "only_change": {
+    "source_bound_command_broker_stop_after_update_from": 3151,
+    "source_bound_command_broker_stop_after_update_to": 3165,
+    "base_plan_path": "D:/ZumaGolden/diagnostics/base-c145-natural-loss-source-bound-plan-v1/plan.json",
+    "base_plan_sha256": "sha256:cf40738408daf8d9a078ca5968a7fb80104216b758163f497686735be6abc9c2",
+    "new_plan_root": "D:/ZumaGolden/diagnostics/full-state-source-bound-natural-loss-c145-plan-v2-stop3165",
+    "new_plan_root_absent_at_freeze": true,
+    "new_output_root": "D:/ZumaGolden/diagnostics/c147-c145-natural-loss-localization-u11250-u11840-v1",
+    "new_output_root_absent_at_freeze": true,
+    "probe_update_unchanged": 11250,
+    "slowdown_update_unchanged": 11230,
+    "trajectory_end_update_unchanged": 11840,
+    "trajectory_mode_unchanged": "rng",
+    "score_binding_unchanged": [7950, 7950],
+    "maximum_attempts_unchanged": 1,
+    "acceptance_contract_unchanged": true
+  },
+  "prepare_command": ".\\.venv-win\\Scripts\\python.exe tools\\prepare_pc_source_bound_plan.py --base-plan D:\\ZumaGolden\\diagnostics\\base-c145-natural-loss-source-bound-plan-v1\\plan.json --host-pre D:\\ZumaGolden\\diagnostics\\full-state-source-bound-natural-loss-c145-plan-v1\\safety\\host-pre.json --output-root D:\\ZumaGolden\\diagnostics\\full-state-source-bound-natural-loss-c145-plan-v2-stop3165 --stop-after-update 3165",
+  "collection_command": ".\\.venv-win\\Scripts\\python.exe tools\\collect_pc_memory_probe.py --plan D:\\ZumaGolden\\diagnostics\\full-state-source-bound-natural-loss-c145-plan-v2-stop3165\\plan.json --prestate D:\\ZumaGolden\\diagnostics\\full-state-source-bound-natural-loss-c145-plan-v2-stop3165\\protocol\\pre-template.json --host-restore D:\\ZumaGolden\\diagnostics\\full-state-source-bound-natural-loss-c145-plan-v2-stop3165\\safety\\host-pre.json --output-root D:\\ZumaGolden\\diagnostics\\c147-c145-natural-loss-localization-u11250-u11840-v1 --probe-update 11250 --slowdown-update 11230 --int32-value 7950 --displayed-score-value 7950 --maximum-attempts 1 --trajectory-end-update 11840 --trajectory-mode rng --diagnostic-source-bound-replay"
+}

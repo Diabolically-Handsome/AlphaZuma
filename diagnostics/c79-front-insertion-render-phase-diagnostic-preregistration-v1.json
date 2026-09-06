@@ -1,0 +1,152 @@
+{
+  "schema": "zuma-rl.pc-front-insertion-render-phase-diagnostic-preregistration",
+  "version": 1,
+  "id": "c79-front-insertion-u3660-u3690-independent-exact-step-memory-visual-diagnostic",
+  "created_utc": "2026-08-03T19:54:06Z",
+  "status": "FROZEN_BEFORE_EITHER_OUTPUT_ROOT_WAS_CREATED",
+  "classification": "mechanism-diagnostic-after-consumed-c78-visual-failure-not-pc-golden",
+  "gate_effect": "none",
+  "question": "At the C78 u3684 bottom-chain lower-edge transient, do independent exact-step retail replays differ in render-driving Ball memory, or only in the displayed RGB surface?",
+  "parent_evidence": {
+    "c78_failure_audit": {
+      "path": "diagnostics/c78-front-insertion-render-settled-finite-retry-visual-failure-audit-v1.json",
+      "sha256": "sha256:8569cc3ddd2945d6885604eefac939408381583b6c8dbf19412867d079b158d2"
+    },
+    "c78_plan": {
+      "path": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/plan.json",
+      "sha256": "sha256:5a7ba58eccd7e0d1b1008ac089cce59c167a26ba8bc359ef76f3dcd2bea8c0db"
+    },
+    "c78_replay_prestate": {
+      "path": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/protocol/pre.json",
+      "sha256": "sha256:06d243f34ecf209c6296659fd4cc3c0a6c299c203cc8b4e342f55cc001c32842",
+      "state_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526"
+    },
+    "c78_host_restore": {
+      "path": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/safety/host-pre.json",
+      "sha256": "sha256:c48bd69be03fc6e2fdf1a400b571f0f0294a5fadda1c48e08c1bd6d1dd093f46",
+      "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061"
+    },
+    "c79_live_host_precheck": {
+      "path": "D:/ZumaGolden/diagnostics/c79-live-host-precheck-v1.json",
+      "sha256": "sha256:83be5c42463f1f7c84bc84c2984a8f20fa9cf63b4f9056ff5efa54189313c4e9",
+      "session_nonce": "15b32fa2909141d4bd75de6b021e0340",
+      "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+      "matched_c78_host_restore_before_freeze": true
+    }
+  },
+  "fixed_runtime_identity": {
+    "dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20"
+  },
+  "tooling_correction_before_freeze": {
+    "reason": "The prior compact RNG schema compared identities, colours, ordering, counters and RNG state but did not compare Ball position or other render-driving geometry.",
+    "added_read_only_fields": [
+      "curve_distance",
+      "orientation_radians",
+      "previous_orientation_radians",
+      "angular_step_radians",
+      "position_x",
+      "position_y",
+      "scale",
+      "radius",
+      "render_float32_bits_hex",
+      "flags_b4_c2_hex"
+    ],
+    "float_binding": "exact_little_endian_float32_bits",
+    "flag_binding": "exact_ball_base_bytes_b4_through_c2",
+    "scope": "shooter_current_next_and_all_curve_intrusive_list_entities",
+    "collector": {
+      "path": "tools/collect_pc_memory_probe.py",
+      "sha256": "sha256:f1d41e712644ae09d1ad055218baaaa760e427fc471fd12be57b1ca28092d0ec"
+    },
+    "trajectory_analyzer": {
+      "path": "tools/analyze_pc_rng_trajectory.py",
+      "sha256": "sha256:41e06384738250fb354b6a439452d43dd1aaaba7f9066c0d713e1087680e6791"
+    },
+    "pair_comparator": {
+      "path": "tools/compare_pc_step_visual_trajectories.py",
+      "sha256": "sha256:977183e5a2fc83aebdc13c0c61e3b1be8dbc1abecb0230d27802c96bbd70b4a5",
+      "report_schema_version": 2,
+      "requires_distinct_process_ids": true,
+      "requires_exact_render_state": true
+    },
+    "verification": {
+      "targeted_command": "python -m pytest -q tests/test_collect_pc_memory_probe.py tests/test_compare_pc_step_visual_trajectories.py",
+      "targeted_status": "PASS",
+      "targeted_test_count": 36,
+      "full_suite_command": "python -m pytest -q",
+      "full_suite_status": "PASS",
+      "full_suite_warning_count": 1
+    }
+  },
+  "fixed_trajectory_recipe": {
+    "probe_update": 3660,
+    "slowdown_update": 3650,
+    "trajectory_start_update": 3660,
+    "trajectory_end_update": 3690,
+    "retained_tick_count": 31,
+    "trajectory_mode": "rng",
+    "int32_value": 7950,
+    "displayed_score_value": 7950,
+    "score_discovery": false,
+    "skip_repaint_guard": true,
+    "skip_frozen_snapshot": true,
+    "snapshot_trajectory_frames": true,
+    "snapshot_semantics": "diagnostic_single_frame_not_formal_evidence",
+    "trace_global_rng_calls": false,
+    "gameplay_mtrand_sync": null,
+    "process_affinity_override": null,
+    "startup_priority_bias": null,
+    "target_update_of_interest": 3684
+  },
+  "independent_runs": [
+    {
+      "label": "a",
+      "output_root": "D:/ZumaGolden/memory-followup-c78-front-insertion-render-phase-a-v1",
+      "maximum_startup_attempts": 3,
+      "verified_output_root_absent_at_freeze": true,
+      "analysis_output": "D:/ZumaGolden/diagnostics/c79-front-insertion-render-phase-a-rng-analysis-v1.json"
+    },
+    {
+      "label": "b",
+      "output_root": "D:/ZumaGolden/memory-followup-c78-front-insertion-render-phase-b-v1",
+      "maximum_startup_attempts": 3,
+      "verified_output_root_absent_at_freeze": true,
+      "analysis_output": "D:/ZumaGolden/diagnostics/c79-front-insertion-render-phase-b-rng-analysis-v1.json"
+    }
+  ],
+  "attempt_and_selection_rule": {
+    "collector_attempts_are_only_for_fail_closed_startup_races": true,
+    "each_run_stops_at_first_collector_pass": true,
+    "each_started_attempt_must_remain_recorded_in_attempts_json": true,
+    "successful_index_is_the_unique_first_pass_in_declared_attempt_order": true,
+    "no_successful_attempt_cherry_picking": true,
+    "no_more_than_three_attempts_per_run": true,
+    "if_either_run_has_no_pass_after_three_attempts": "C79_INCONCLUSIVE_INFRASTRUCTURE_FAILURE",
+    "additional_runs_under_this_preregistration_forbidden": true
+  },
+  "fixed_comparison": {
+    "left_run": "a",
+    "right_run": "b",
+    "output": "D:/ZumaGolden/diagnostics/c79-front-insertion-exact-step-memory-visual-comparison-v2.json",
+    "verified_output_absent_at_freeze": true,
+    "memory_contract": "all_loaded_gameplay_and_rng_fields_except_process_local_curve_topology_sha256",
+    "render_state_contract": "exact_float32_bits_flags_identity_colour_powerups_and_intrusive_list_order",
+    "pixel_contract": "full_800x600_rgb_each_retained_post_update_tick",
+    "process_local_addresses_excluded_only_as_declared_by_comparator": true
+  },
+  "decision_matrix": {
+    "render_state_mismatch": "INTERNAL_STATE_DIVERGENCE; locate the first update and field before any visual-contract revision",
+    "render_state_exact_and_rgb_mismatch": "DISPLAYED_SURFACE_OR_RENDER_PHASE_DIVERGENCE; retain exact internal-state evidence and localize RGB bounds without widening a mask",
+    "render_state_exact_and_rgb_exact_all_ticks": "INTERNAL_STATE_DETERMINISM_CONFIRMED_BUT_C78_VISUAL_TRANSIENT_NOT_REPRODUCED; no mask change",
+    "memory_or_protocol_or_independence_validation_failure": "C79_INVALID_OR_INCONCLUSIVE"
+  },
+  "non_authorizations": [
+    "pc_golden",
+    "front_insertion_gate_credit",
+    "fidelity_gate_open",
+    "training_start",
+    "expansion_of_c65_c66_sparse_mask",
+    "reclassification_of_c78_as_pass"
+  ]
+}

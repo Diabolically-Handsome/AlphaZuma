@@ -1,0 +1,109 @@
+{
+  "schema": "zuma-rl.c164-fruit-collection-source-packaging-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_SOURCE_MANIFEST_OR_MECHANISM_OUTPUT",
+  "created_utc": "2026-08-10T12:48:52.4724276Z",
+  "purpose": "Package the immutable c164 formal fruit-collection trajectory as one independently verified PC source and machine-derive the direct-projectile collision, isolated score, and complete installed collection-animation proofs before any simulator comparison.",
+  "classification": "preregistered-source-packaging-and-fruit-mechanism-authorization",
+  "parent": {
+    "success_receipt": "diagnostics/c164-c138a3-fruit-collection-formal-source-success-receipt-v1.json",
+    "success_receipt_sha256": "sha256:a7598a9daf2dde368637e73e690ff9b63cd8c4f83b48c7dfd96f9047929cc002"
+  },
+  "fixed_source_inputs": {
+    "evidence_root": "D:/ZumaGolden",
+    "original_root": "D:/SteamLibrary/steamapps/common/Zuma's Revenge",
+    "source_id": "c164-u5220-u5310-source-bound-fruit-collection-v1",
+    "run_id": "formal-full-state-c164-fruit-collection-u5220-u5310-v1",
+    "run_root": "D:/ZumaGolden/formal-full-state-c138a3-fruit-collection-c164-campaign-v1/attempt-01/source",
+    "runtime_payload": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+    "runtime_payload_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "dmo": "D:/ZumaGolden/diagnostics/full-state-source-bound-fruit-collection-c138a3-plan-v1-stop3151/inputs/input.dmo",
+    "dmo_sha256": "sha256:6f2d645c3109f73b77ef55c7e7e7941f7f1d2f73dccd5a71adc3051d4a360989",
+    "pre_snapshot": "D:/ZumaGolden/formal-full-state-c138a3-fruit-collection-c164-campaign-v1/attempt-01/host-pre.json",
+    "pre_snapshot_sha256": "sha256:c9e18f5ae01cadd14ea57dc2adc25660c191316e275034132d5efd1571736206",
+    "post_snapshot": "D:/ZumaGolden/formal-full-state-c138a3-fruit-collection-c164-campaign-v1/attempt-01/host-post.json",
+    "post_snapshot_sha256": "sha256:6bdf801cad8c4a1863362b88413f2adbafc6aa9325806f350ae80d7be7d95e30",
+    "host_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "start_update": 5220,
+    "end_update": 5310,
+    "tick_count": 91,
+    "selected_run_inner_maximum_startup_attempts": 1,
+    "campaign_maximum_attempts_disclosed_in_parent": 8,
+    "campaign_selected_attempt": 1
+  },
+  "source_output": {
+    "path": "D:/ZumaGolden/sources/c164-u5220-u5310-source-bound-fruit-collection-v1.json",
+    "absent_at_freeze": true,
+    "expected_schema": "zuma-rl.pc-source-manifest",
+    "expected_version": 3,
+    "expected_source_kind": "formal_full_state_source_bound_original_replay"
+  },
+  "source_command": ".\\.venv-win\\Scripts\\python.exe tools\\build_pc_full_state_source.py --evidence-root D:\\ZumaGolden --original-root \"D:\\SteamLibrary\\steamapps\\common\\Zuma's Revenge\" --source-id c164-u5220-u5310-source-bound-fruit-collection-v1 --run-id formal-full-state-c164-fruit-collection-u5220-u5310-v1 --run-root D:\\ZumaGolden\\formal-full-state-c138a3-fruit-collection-c164-campaign-v1\\attempt-01\\source --runtime-payload D:\\ZumaGolden\\tools\\direct-runtime\\popcapgame1.exe --dmo D:\\ZumaGolden\\diagnostics\\full-state-source-bound-fruit-collection-c138a3-plan-v1-stop3151\\inputs\\input.dmo --pre-snapshot D:\\ZumaGolden\\formal-full-state-c138a3-fruit-collection-c164-campaign-v1\\attempt-01\\host-pre.json --post-snapshot D:\\ZumaGolden\\formal-full-state-c138a3-fruit-collection-c164-campaign-v1\\attempt-01\\host-post.json --start-update 5220 --end-update 5310 --maximum-startup-attempts 1 --output D:\\ZumaGolden\\sources\\c164-u5220-u5310-source-bound-fruit-collection-v1.json",
+  "mechanism_plan": {
+    "path": "D:/ZumaGolden/diagnostics/pc-mechanism-c164-fruit-collection-plan-v1.json",
+    "absent_at_freeze": true,
+    "exact_payload": {
+      "cases": [
+        {
+          "id": "c164-fruit-collection",
+          "manifest_path": "sources/c164-u5220-u5310-source-bound-fruit-collection-v1.json",
+          "memory_probe_path": "formal-full-state-c138a3-fruit-collection-c164-campaign-v1/attempt-01/source/attempt-01/memory-probe.json",
+          "window": {
+            "end_update": 5310,
+            "start_update": 5220
+          }
+        }
+      ],
+      "schema": "zuma-rl.pc-mechanism-audit-plan",
+      "version": 1
+    }
+  },
+  "mechanism_output": {
+    "path": "D:/ZumaGolden/diagnostics/pc-mechanism-c164-fruit-collection-live-v1.json",
+    "absent_at_freeze": true
+  },
+  "mechanism_command": ".\\.venv-win\\Scripts\\python.exe -m zuma_rl.pc_mechanism_audit D:\\ZumaGolden\\diagnostics\\pc-mechanism-c164-fruit-collection-plan-v1.json --evidence-root D:\\ZumaGolden --original-root \"D:\\SteamLibrary\\steamapps\\common\\Zuma's Revenge\" --level Jungle2 --compact --output D:\\ZumaGolden\\diagnostics\\pc-mechanism-c164-fruit-collection-live-v1.json",
+  "frozen_code": {
+    "tools/build_pc_full_state_source.py": "sha256:992d090116e78d874d8f7d6c0351c1016136d3e87f4814d75a0bc0c69bf3b9c9",
+    "src/zuma_rl/pc_source.py": "sha256:7971e5f9cd02f9d7888427f42f87227e6ba1ee121cfdea8128568d3abf80163f",
+    "src/zuma_rl/pc_mechanism_audit.py": "sha256:b413e07ca095f2e9bb6048d300883dd04f80697776e6d9da6f4d0601e9321e87"
+  },
+  "acceptance": {
+    "source_verifier_status": "PASS",
+    "source_tick_count": 91,
+    "source_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "source_runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "source_dmo_sha256": "sha256:6f2d645c3109f73b77ef55c7e7e7941f7f1d2f73dccd5a71adc3051d4a360989",
+    "mechanism_audit_status": "PASS",
+    "mechanism_case_count": 1,
+    "required_fruit_features": [
+      "fruit_projectile_collision",
+      "fruit_collection_score",
+      "fruit_collection_animation"
+    ],
+    "forbidden_fruit_features": [
+      "fruit_powerup_collision",
+      "fruit_scheduler_spawn",
+      "fruit_expiry",
+      "fruit_visual_oscillator"
+    ],
+    "incidental_nonfruit_features_may_be_retained_but_are_not_credited_by_c165": true,
+    "collision_cause": "free_projectile",
+    "projectile_ball_id": 134,
+    "collection_transition_update": 5279,
+    "score_before": 8810,
+    "score_after": 9310,
+    "score_delta": 500,
+    "animation_clear_update": 5305,
+    "animation_collection_ticks": 26
+  },
+  "decision_rule": {
+    "pass": "The source verifier recomputes all fixed identities, the mechanism audit passes, all three required fruit proofs match their frozen event facts, and no forbidden fruit proof is emitted.",
+    "failure": "Retain any exclusively created output, do not rewrite it, and do not credit any c165 feature.",
+    "pc_golden_authentication_pending": true,
+    "simulator_diff_pending": true,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

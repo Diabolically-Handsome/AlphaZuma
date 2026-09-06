@@ -1,0 +1,67 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-post-checkpoint-capacity-projection",
+  "version": 1,
+  "created_utc": "2026-08-14T01:30:52.6325826Z",
+  "status": "PASS_ON_TRACK",
+  "classification": "runtime_capacity_projection_not_performance_evidence",
+  "anchors": {
+    "prior_projection": {
+      "path": "diagnostics/alphazuma-v1.1-deadline-capacity-projection-v1.json",
+      "sha256": "sha256:8232deadede2a8a5f65482af402620c6e0b46b06afb0426678b59e2dadea7dd1"
+    },
+    "checkpoint_recovery_7of7": {
+      "path": "diagnostics/alphazuma-v1.1-checkpoint-recovery-audit-7of7-v1.json",
+      "sha256": "sha256:e514df98bc9da339bae4c7f8d2578659c8a38bb4379f7f4fed22a13bea9bbdc5"
+    },
+    "postprocess_preregistration": {
+      "path": "diagnostics/alphazuma-v1.1-frontier-postprocess-s51081301-preregistration-v1.json",
+      "sha256": "sha256:3dc8a51563c763ef46b3c3415a6e4da9b5430ab3a19b586e5e0b95b98b0ffc01"
+    }
+  },
+  "schedule": {
+    "training_stop_utc": "2026-08-14T12:00:00Z",
+    "remaining_training_hours_at_projection": 10.485,
+    "postprocess_deadline_utc": "2026-08-14T14:30:00Z",
+    "postprocess_window_minutes": 150,
+    "historical_postprocess_estimate_minutes": 120,
+    "projected_margin_minutes": 30
+  },
+  "portfolio": {
+    "formal_routes": 7,
+    "running_routes": 7,
+    "routes_with_error": 0,
+    "current_total_new_steps": 11609112,
+    "projected_total_new_steps_at_training_stop": 87740514,
+    "projected_additional_steps_from_snapshot": 76131402,
+    "projected_total_checkpoints": 164,
+    "routes": [
+      {"run": "frontier-adaptive-5090-oom-recovery", "current_new_steps": 2736432, "steps_per_second": 443.30, "projected_new_steps": 19469557, "projected_checkpoints": 37},
+      {"run": "frontier-fixed-5080-oom-recovery", "current_new_steps": 2819008, "steps_per_second": 456.14, "projected_new_steps": 20036859, "projected_checkpoints": 38},
+      {"run": "memdense-adaptive-5090-a", "current_new_steps": 1433616, "steps_per_second": 251.20, "projected_new_steps": 10915630, "projected_checkpoints": 20},
+      {"run": "memdense-fixed-5090-b", "current_new_steps": 1355792, "steps_per_second": 249.47, "projected_new_steps": 10772405, "projected_checkpoints": 20},
+      {"run": "memdense-adaptive-5080-a", "current_new_steps": 1384464, "steps_per_second": 243.20, "projected_new_steps": 10564622, "projected_checkpoints": 20},
+      {"run": "memdense-fixed-5080-b", "current_new_steps": 1327120, "steps_per_second": 238.88, "projected_new_steps": 10344097, "projected_checkpoints": 19},
+      {"run": "ultradense-zero-win-5090-c", "current_new_steps": 552680, "steps_per_second": 134.70, "projected_new_steps": 5637344, "projected_checkpoints": 10}
+    ]
+  },
+  "gpu_spotcheck": {
+    "duration_seconds": 20,
+    "sample_interval_seconds": 1,
+    "accepted_average_utilization_band_percent": [65, 90],
+    "gpus": [
+      {"index": 0, "name": "NVIDIA GeForce RTX 5090", "average_utilization_percent": 76.0, "median_utilization_percent": 82, "minimum_utilization_percent": 42, "maximum_utilization_percent": 91, "maximum_memory_used_mib": 10329, "maximum_temperature_c": 52, "average_power_w": 231.7, "status": "PASS"},
+      {"index": 1, "name": "NVIDIA GeForce RTX 5080", "average_utilization_percent": 73.8, "median_utilization_percent": 88, "minimum_utilization_percent": 12, "maximum_utilization_percent": 93, "maximum_memory_used_mib": 9494, "maximum_temperature_c": 59, "average_power_w": 147.0, "status": "PASS"}
+    ]
+  },
+  "host": {
+    "d_drive_free_gib": 674.77
+  },
+  "postprocess_controller": {
+    "status": "RUNNING",
+    "phase": "WAITING_FOR_TRAINING",
+    "error": null,
+    "selection_directory_exists": false,
+    "final_directory_exists": false
+  },
+  "interpretation": "The seven-route portfolio remains recoverable, within the frozen utilization safety band, and projected to leave approximately thirty minutes of deadline margin after historical postprocess runtime. Projection is not a guarantee and must be refreshed if throughput or postprocess state materially changes."
+}

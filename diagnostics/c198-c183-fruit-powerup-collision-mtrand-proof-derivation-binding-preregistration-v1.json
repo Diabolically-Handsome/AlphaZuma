@@ -1,0 +1,89 @@
+{
+  "schema": "zuma-rl.pc-gameplay-mtrand-proof-derivation-binding-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_OUTPUT",
+  "created_utc": "2026-08-10T16:48:19.5621694Z",
+  "id": "c198-c183-bomb-fruit-confirmatory-mtrand-proof-binding-v1",
+  "purpose": "Derive a fail-closed complete native-call-sequence proof from the clean c197 trace, bind it to the immutable c190 exact gameplay differential, and independently recompute the complete proof object before any PC Golden authorization.",
+  "parents": {
+    "c190_unbound_diff_success": {
+      "artifact": "diagnostics/c190-c183-fruit-powerup-collision-reconciliation-2048-success-receipt-v1.json",
+      "artifact_sha256": "sha256:55cc26feeb4924792e0ce880f6a72ebec9016247eecc1878cf897d500cb9fbc1"
+    },
+    "c197_confirmatory_trace_success": {
+      "artifact": "diagnostics/c197-c183-fruit-powerup-collision-confirmatory-mtrand-trace-success-receipt-v1.json",
+      "artifact_bytes": 5500,
+      "artifact_sha256": "sha256:a01b2fbe1a3c2988d72a318fa7a91c3826f51fe3ae6296458f8fb410010de81d"
+    },
+    "c194_verifier_qualification": {
+      "artifact": "diagnostics/c194-pil-particle-mtrand-reconciliation-verifier-extension-qualification-success-receipt-v1.json",
+      "artifact_sha256": "sha256:fc110a92f3039daece835b8a40f1f6059ba2c9f953110c8314f15b333f6b20f4"
+    }
+  },
+  "fixed_inputs": {
+    "gameplay_diff": {
+      "artifact": "D:/ZumaGolden/diagnostics/jungle2-c183-u8213-u8260-fruit-powerup-collision-diff-v5-reconciled-unbound.json",
+      "artifact_bytes": 112539,
+      "artifact_sha256": "sha256:454458b782fa0764e9c4dc530f50833a1b74f513cc214b63d9eb68cae6ec388a",
+      "status": "PASS",
+      "version": 5,
+      "compared_tick_count": 47,
+      "reconciled_tick_count": 27,
+      "total_reconciled_draw_count": 3587,
+      "proof_absent": true
+    },
+    "evidence_root": "D:/ZumaGolden",
+    "trace_window_root": "diagnostics/c197-c183-confirmatory-source-bound-rng-trace-u8213-u8260-v1/attempt-01",
+    "trace_sha256": "sha256:a371f8121afc71141fa32df4b98ba3747d4aa7ddf84fce83b99a30b86fd0200a",
+    "trace_alignment_sha256": "sha256:8f39999bcf3f853e090b49e66f5b984f4c878a6c849f5126f218abf7de57cef1",
+    "source_overlap_sha256": "sha256:1db68d693ec704a0d23fa683dfb2a3a4951dca8c6eca402ab5571cc55c738eb6",
+    "memory_probe_sha256": "sha256:054c9ce91885af0394bd4a777785f48c87744415e57cc77e29ba074788d3e8c4",
+    "external_input_guard_sha256": "sha256:b1d54f48078bbc8520a610ef85be4546109c204ad1d02289138a22b0ad0308a2",
+    "runtime_artifact": "tools/direct-runtime/popcapgame1.exe",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "verifier_sha256": "sha256:674474238016605fb895f17bafe7ba0691a268a24cf5dedf8b1d6080df602625",
+    "derive_tool_sha256": "sha256:793560ed8691a75e9b3b2d6a0abeca2f8117dec0c9a6f20e8f64e3153cf48239",
+    "bind_tool_sha256": "sha256:e6dccde3970daf4934d08be700a5dfdc9887905938ac605822eac90677af5e45"
+  },
+  "outputs": {
+    "proof": "D:/ZumaGolden/diagnostics/jungle2-c183-u8213-u8260-fruit-powerup-collision-mtrand-proof-v1-confirmatory.json",
+    "proof_absent_at_freeze": true,
+    "bound_diff": "D:/ZumaGolden/diagnostics/jungle2-c183-u8213-u8260-fruit-powerup-collision-diff-v6-reconciled-bound.json",
+    "bound_diff_absent_at_freeze": true,
+    "unbound_diff_must_not_be_modified": true
+  },
+  "derive_command": ".\\.venv-win\\Scripts\\python.exe tools\\derive_pc_mtrand_reconciliation_proof.py --gameplay-diff D:\\ZumaGolden\\diagnostics\\jungle2-c183-u8213-u8260-fruit-powerup-collision-diff-v5-reconciled-unbound.json --evidence-root D:\\ZumaGolden --trace-window-root diagnostics/c197-c183-confirmatory-source-bound-rng-trace-u8213-u8260-v1/attempt-01 --runtime-artifact tools/direct-runtime/popcapgame1.exe --output D:\\ZumaGolden\\diagnostics\\jungle2-c183-u8213-u8260-fruit-powerup-collision-mtrand-proof-v1-confirmatory.json",
+  "bind_command": ".\\.venv-win\\Scripts\\python.exe tools\\bind_pc_mtrand_reconciliation_proof.py --gameplay-diff D:\\ZumaGolden\\diagnostics\\jungle2-c183-u8213-u8260-fruit-powerup-collision-diff-v5-reconciled-unbound.json --proof D:\\ZumaGolden\\diagnostics\\jungle2-c183-u8213-u8260-fruit-powerup-collision-mtrand-proof-v1-confirmatory.json --evidence-root D:\\ZumaGolden --output D:\\ZumaGolden\\diagnostics\\jungle2-c183-u8213-u8260-fruit-powerup-collision-diff-v6-reconciled-bound.json",
+  "acceptance": {
+    "proof_status": "PASS",
+    "proof_classification": "complete-native-call-sequence-visual-omission-decomposition",
+    "reconciled_tick_count": 27,
+    "reconciled_draw_count": 3587,
+    "native_call_count": 3587,
+    "modeled_gameplay_call_count": 0,
+    "semantic_call_counts": {
+      "pi_effect_particle_update": 9,
+      "pil_particle_emitter_update": 3562,
+      "score_digit_transition": 14,
+      "shadow_canopy_animation": 2
+    },
+    "all_reconciled_calls_omitted_visual": true,
+    "pil_static_surface_present": true,
+    "pil_verified_direct_call_site_count": 11,
+    "source_bound_original_replay_verified": true,
+    "external_input_event_count": 0,
+    "bound_diff_status": "PASS",
+    "bound_diff_proof_descriptor_hash_exact": true,
+    "bound_diff_reconciliation_transcript_hash_exact": true,
+    "independent_full_proof_object_recomputation_equal": true,
+    "original_unbound_diff_hash_unchanged": true
+  },
+  "decision_rule": {
+    "pass": "Create a c198 success receipt, then preregister bomb-fruit PC Golden authorization and Gate candidate updates.",
+    "fail": "Retain any partial output, grant no PC Golden or Gate credit, diagnose the exact failed invariant, and preregister any revision before retrying.",
+    "pc_golden_credit_before_success_receipt": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

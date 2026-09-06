@@ -1,0 +1,116 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-checkpoint-recovery-audit-receipt",
+  "version": 1,
+  "completed_utc": "2026-08-14T01:28:16.340203Z",
+  "status": "PASS",
+  "classification": "training_integrity_diagnostic_only",
+  "source_report": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-checkpoint-recovery-audit-7of7-s53081301-v1/audit.json",
+    "sha256": "sha256:5064e7d6f19ee20e02cdf5157862dccc139df65e9e266e55fae3374c7458b3d9",
+    "bytes": 7838,
+    "strict_json": true
+  },
+  "auditor": {
+    "path": "tools/audit_alphazuma_v11_checkpoints.py",
+    "sha256": "sha256:f690cf732d147c8bc5ad777261ea9a016a4babcc8895fc9861443e5be2a800d4",
+    "device": "cpu",
+    "stable_age_seconds": 45,
+    "tests_passed": 3
+  },
+  "runtime_logs": {
+    "stdout_path": "/mnt/d/ZumaTraining/alphazuma-v1.1-checkpoint-auditor-s53081301.stdout.log",
+    "stdout_sha256": "sha256:015558a3540b2b6d7192fad1ede13652ccb7cc3b71a27d003b55dc28e5b232cb",
+    "stdout_bytes": 8015,
+    "stderr_path": "/mnt/d/ZumaTraining/alphazuma-v1.1-checkpoint-auditor-s53081301.stderr.log",
+    "stderr_bytes": 0,
+    "watcher_or_auditor_processes_after_completion": 0
+  },
+  "validation": {
+    "formal_routes": 7,
+    "audited_routes": 7,
+    "passed_routes": 7,
+    "all_formal_routes_passed": true,
+    "all_report_checks_true": true,
+    "all_current_file_hashes_match": true,
+    "all_filename_timesteps_match_internal_timesteps": true,
+    "all_observation_shapes_match_21220": true,
+    "all_action_spaces_match_factorized_3_by_180": true,
+    "all_optimizer_state_entry_counts_match_24": true,
+    "all_policy_parameters_finite": true,
+    "all_files_unchanged_during_audit": true
+  },
+  "checkpoints": [
+    {
+      "run": "frontier-adaptive-5090-oom-recovery",
+      "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-frontier-adaptive-oom-recovery-s47081301-v1/checkpoints/frontier-adaptive-5090-oom-recovery_19398656_steps.zip",
+      "bytes": 6010464,
+      "sha256": "sha256:bb880646e937b905c8b33c3c91449e381e84e1312428c8055065dd594d70d767",
+      "filename_timesteps": 19398656,
+      "model_timesteps": 19398656,
+      "optimizer_state_entries": 24,
+      "status": "PASS"
+    },
+    {
+      "run": "frontier-fixed-5080-oom-recovery",
+      "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-frontier-fixed-oom-recovery-s47081302-v1/checkpoints/frontier-fixed-5080-oom-recovery_18350080_steps.zip",
+      "bytes": 6010461,
+      "sha256": "sha256:9d086fa2ef80db5d62223215c977da8fc09ca677372a3d1f6a11fbb08ab519ca",
+      "filename_timesteps": 18350080,
+      "model_timesteps": 18350080,
+      "optimizer_state_entries": 24,
+      "status": "PASS"
+    },
+    {
+      "run": "memdense-adaptive-5090-a",
+      "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-memdense-adaptive-5090-a-s48081301-v1/checkpoints/memdense-adaptive-5090-a_1048576_steps.zip",
+      "bytes": 6010125,
+      "sha256": "sha256:bd04c53a020badf967f9acac417426428f791ff66516c75b21603fe5b76fbfcc",
+      "filename_timesteps": 1048576,
+      "model_timesteps": 1048576,
+      "optimizer_state_entries": 24,
+      "status": "PASS"
+    },
+    {
+      "run": "memdense-fixed-5090-b",
+      "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-memdense-fixed-5090-b-s48081302-v1/checkpoints/memdense-fixed-5090-b_1048576_steps.zip",
+      "bytes": 6010122,
+      "sha256": "sha256:4a3570fc5ec3ea266f454e26ac335f4a1a6dc16af26942e178082948ca255cb2",
+      "filename_timesteps": 1048576,
+      "model_timesteps": 1048576,
+      "optimizer_state_entries": 24,
+      "status": "PASS"
+    },
+    {
+      "run": "memdense-adaptive-5080-a",
+      "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-memdense-adaptive-5080-a-s48081303-v1/checkpoints/memdense-adaptive-5080-a_1048576_steps.zip",
+      "bytes": 6010125,
+      "sha256": "sha256:e8973e73f9bb3ddd33f93ee4f09de4f036b321262ce0c708280e611bd1dabe7d",
+      "filename_timesteps": 1048576,
+      "model_timesteps": 1048576,
+      "optimizer_state_entries": 24,
+      "status": "PASS"
+    },
+    {
+      "run": "memdense-fixed-5080-b",
+      "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-memdense-fixed-5080-b-s48081304-v1/checkpoints/memdense-fixed-5080-b_1048576_steps.zip",
+      "bytes": 6010122,
+      "sha256": "sha256:f5eb8f09cd2d00907d99939cd07c8b8bb282ca2a58fe9d57afe3406b6b53f08b",
+      "filename_timesteps": 1048576,
+      "model_timesteps": 1048576,
+      "optimizer_state_entries": 24,
+      "status": "PASS"
+    },
+    {
+      "run": "ultradense-zero-win-5090-c",
+      "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-ultradense-zero-win-5090-c-s50081301-v1/checkpoints/ultradense-zero-win-5090-c_524288_steps.zip",
+      "bytes": 5104644,
+      "sha256": "sha256:65e486144e550cf997d668c3c52d3ea76d54b65dabb00a15fb73eecaa20f9e60",
+      "filename_timesteps": 524288,
+      "model_timesteps": 524288,
+      "optimizer_state_entries": 24,
+      "status": "PASS"
+    }
+  ],
+  "interpretation": "All seven formal routes have at least one independently loadable, internally consistent, finite checkpoint with restored optimizer state. This proves recoverability, not gameplay improvement.",
+  "formal_gate_effect": "none"
+}

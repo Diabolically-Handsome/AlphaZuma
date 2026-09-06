@@ -1,0 +1,64 @@
+{
+  "schema": "zuma-rl.teacher-policy-anchor-coefficient-kat-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T15:23:37.505Z",
+  "status": "COEFFICIENT_1000_KAT_PASS",
+  "scope": "consumed_stream_infrastructure_and_coefficient_calibration_only",
+  "run": {
+    "path": "D:/ZumaTraining/infrastructure-teacher-anchor-c1000-4k-s20260874-v1",
+    "effective_steps": 4096,
+    "teacher_anchor_coefficient": 1000.0,
+    "completion_status": "COMPLETE",
+    "teacher_policy_bitwise_unchanged": true,
+    "teacher_requires_grad_all_false": true,
+    "current_policy_bitwise_changed": true,
+    "train_calls": 2,
+    "minibatches": 8,
+    "samples": 4096,
+    "mean_forward_kl": 0.0000021512152841296484,
+    "max_sample_forward_kl": 0.000041886698454618454
+  },
+  "comparison_to_coefficient_100_4096_step_kat": {
+    "coefficient_100_mean_forward_kl": 0.000006660449969331239,
+    "coefficient_1000_mean_forward_kl": 0.0000021512152841296484,
+    "relative_mean_kl_reduction": 0.6773168126276928,
+    "current_policy_still_changed_bitwise": true
+  },
+  "factor_drift_diagnostic": {
+    "report_sha256": "sha256:1fa370d6cda541ded0bd7e4932fb50ccd944f5c1eef99e6ca68a4d25d961c522",
+    "verb_argmax_flips": 0,
+    "aim_argmax_flips": 2,
+    "semantic_argmax_flips": 2,
+    "samples": 2473,
+    "aim_mean_forward_kl": 0.0000023553389622103744,
+    "verb_mean_forward_kl": 0.0000004112874735034419,
+    "all_aim_flips_reference_margin_below_0_001": true,
+    "classification": "post_hoc_consumed_dataset_diagnostic_only"
+  },
+  "decision": {
+    "selected_for_next_test": 1000.0,
+    "authorized": "one deterministic-only 16384-step controlled repair screen on the already consumed s20260910 streams",
+    "reason": "coefficient 1000 reduced rollout KL by 67.7 percent relative to coefficient 100 while preserving nonzero updates and limiting frozen-dataset drift to two near-tie aim flips",
+    "fresh_confirmation_authorized": false,
+    "scale_screen_authorized": false
+  },
+  "artifacts": {
+    "config_sha256": "sha256:407f71b59ba2ec3d1fcd872e871040ddaedfaa5aa0cd3b61fb858ec774cbafec",
+    "completion_sha256": "sha256:25fe2de5caa31e4805f849fc5e7c2180f91e6b287bbe25537fb8101af83cae2c",
+    "teacher_anchor_verification_sha256": "sha256:9b15e0db8c816f716dbf2360e7bfa1302d45070036bc569449964c9a07f64e6c",
+    "final_model_sha256": "sha256:6f0cd92c6e100cfa2f73223092009a033a7b8fa85bc8ad3a67cb74d18123d137",
+    "factor_drift_report_sha256": "sha256:1fa370d6cda541ded0bd7e4932fb50ccd944f5c1eef99e6ca68a4d25d961c522"
+  },
+  "tooling": {
+    "factor_drift_tool_sha256": "sha256:2c54c32a3752b3c27ebeb0b38724143b52ddaa02610b19d2be00b25c2098cd26",
+    "factor_drift_tests_sha256": "sha256:77209d36293a5b49152a67f38c83f6824ae806caba7a0b017f403737e6107066",
+    "factor_drift_targeted_tests": "PASS_3"
+  },
+  "non_authorizations": [
+    "fresh_holdout_claim",
+    "recipe_promotion",
+    "98304_step_scale_screen",
+    "large_scale_training",
+    "fidelity_gate_opening"
+  ]
+}

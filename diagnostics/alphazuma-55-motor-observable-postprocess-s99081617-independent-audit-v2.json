@@ -1,0 +1,71 @@
+{
+  "schema": "zuma-rl.alphazuma-55-motor-observable-independent-audit",
+  "version": 1,
+  "status": "PASS",
+  "audited_utc": "2026-08-16T09:00:43.785629+00:00",
+  "controller_result": "COMPLETE_NO_PROMOTION",
+  "gate_passed": false,
+  "winner": {
+    "model_id": "motor-r01-e02",
+    "model_sha256": "sha256:79fcbacd6b481a309bb4fc0276486181c152f3506431ff53bbcb63c862d66e74",
+    "observation_profile": "motor-observable-v1",
+    "promotable": true,
+    "candidate_order": 6,
+    "attempts": 55,
+    "wins": 4,
+    "losses": 51,
+    "cleared_levels": 4,
+    "total_score": 112620,
+    "median_winning_ticks": 10149.5,
+    "capacity_overflows": 0,
+    "rank": 1
+  },
+  "artifacts": {
+    "plan": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-postprocess-s99081617-plan-v2.json",
+      "sha256": "sha256:5dad99563dfbb11d705d446daa4a83051100dc10094e67d5e46fa377115f0964"
+    },
+    "controller_status": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-postprocess-s99081617-v2/preaudit-controller-status.json",
+      "sha256": "sha256:6d6dc1d6d28a4df690743e7fa5531ffad252422a98b7421545a5f44179bf1b49"
+    },
+    "final_report": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-postprocess-s99081617-v2/final_report.json",
+      "sha256": "sha256:e366698c82f32a08d4059549e856aaa70455bf821c9b13f3f1a23b8e676afedd"
+    },
+    "screen_preregistration": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-postprocess-s99081617-v2/screen-preregistration.json",
+      "sha256": "sha256:b76b8fbe3bd20265717119439db59d1edbd8e457c17188f3eb3c35d136f24b2a"
+    },
+    "screen_manifest": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-postprocess-s99081617-v2/screen-models-manifest.json",
+      "sha256": "sha256:189ebd8776786320a35abb2d9b1d5e98ef72660446c662acfaebf6d42ddffd9f"
+    },
+    "full55_preregistration": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-postprocess-s99081617-v2/full55-preregistration.json",
+      "sha256": "sha256:3b87b0cfe5341348e5b2058410d3f2d0ae160a5af7a603962a85f7c430b525d2"
+    },
+    "full55_manifest": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-postprocess-s99081617-v2/full55-models-manifest.json",
+      "sha256": "sha256:b5119847d4d3888dd8e274af0523ff9275cddd7a9b256c25dc7339ec9f870ef6"
+    },
+    "auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_motor_observable_postprocess_v2.py",
+      "sha256": "sha256:a04af1d8e8cabf6a929fd90e238368a0d72edddfea12805c57a4bef85d6eff1d"
+    }
+  },
+  "recomputed": {
+    "screen_attempts": 156,
+    "selected_for_full55_gate": [
+      "motor-r00-e01",
+      "base-polar-intent-wide-epoch-10",
+      "motor-r00-e03",
+      "motor-r00-e02",
+      "motor-r01-e02"
+    ],
+    "full55_attempts": 275,
+    "winner_wins": 4,
+    "winner_cleared_levels": 4
+  },
+  "formal_seed_consumption": "NONE"
+}

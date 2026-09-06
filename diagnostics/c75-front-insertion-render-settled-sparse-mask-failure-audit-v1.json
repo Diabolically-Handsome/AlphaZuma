@@ -1,0 +1,167 @@
+{
+  "schema": "zuma-rl.pc-front-insertion-render-settled-sparse-mask-failure-audit",
+  "version": 1,
+  "id": "c75-front-insertion-sparse-mask-threshold-and-isolated-phase-failure",
+  "created_utc": "2026-08-03T19:16:27Z",
+  "classification": "failed-fresh-preregistered-target-holdout-not-pc-golden",
+  "gate_effect": "none",
+  "parent_execution_binding": {
+    "path": "diagnostics/c75-front-insertion-render-settled-sparse-mask-execution-binding-v1.json",
+    "sha256": "sha256:398fa55b2c72fc6f80c2e0eead1298addb66d5a99e2f5d683cdc64a5c23ee5cb"
+  },
+  "session": {
+    "root": "D:/ZumaGolden/campaign-c75-natural-win-v8-front-insertion-sparse-mask-u3569-u3710",
+    "plan_sha256": "sha256:d1b7cc8ea86b57efce0d50db0bd6bba7e3c4e1a41a6c1f63308c8c6cac50a49d",
+    "collection_sha256": "sha256:87400c4f159e7a62c2a060e0d1773db0bd9e3353b2412f384554cf4bca4bc01a",
+    "collection_status": "complete",
+    "distinct_process_instances": true,
+    "run_process_ids": [
+      12588,
+      53876
+    ]
+  },
+  "collection_and_transport": {
+    "status": "PASS",
+    "r1": {
+      "strict_replay_sha256": "sha256:4f67b3d9487087c3903ff3343945cc10de9798efdf5b21b9b89ac747fb1eb5a5",
+      "strict_replay_failure_count": 0,
+      "strict_replay_last_update": 10536,
+      "actual_arm_update": 3566,
+      "mean_poll_hz": 4977.115884282801,
+      "p99_poll_interval_ns": 204700,
+      "skipped_draw_increments": 0,
+      "frame_count": 91,
+      "capture_metadata_sha256": "sha256:3c5aa9346058eb26e868315d8338eb1a80228c1cca3450c159399797cf651ddb",
+      "frames_csv_sha256": "sha256:49ed1b3d13447568242d4003604d013e9c06a385dac502c0ac32fb39ce1bdfeb",
+      "framework_poll_sha256": "sha256:b385aa96aa6481e642b4028167d46777becae176c71752d7765881e814df14bb",
+      "render_settled_map_sha256": "sha256:3f78e1931baa5b45e8e9455f84a2565a01bc45b7728c2178b716e46844eab683",
+      "assigned_update_range": [
+        3643,
+        3697
+      ],
+      "ffv1_sha256": "sha256:cd00f40516568b923d5786df2e701e20e3cc5d1ddb91d32beae006a87e49ad85",
+      "ffv1_bytes": 69790835
+    },
+    "r2": {
+      "strict_replay_sha256": "sha256:147adced035696e098a09485dbcc7024de8d866171d02bca5cb6a1ad398c70bd",
+      "strict_replay_failure_count": 0,
+      "strict_replay_last_update": 10536,
+      "actual_arm_update": 3566,
+      "mean_poll_hz": 4987.964985724798,
+      "p99_poll_interval_ns": 204000,
+      "skipped_draw_increments": 0,
+      "frame_count": 91,
+      "capture_metadata_sha256": "sha256:21ea4d123a8101bf7a659299bc8745dbf0aa162431e664dbe95fb3c15e0ebc93",
+      "frames_csv_sha256": "sha256:fe7d47bfee358673304ac1e42c268ade368b86d225db44c3b497422b33fd0b0e",
+      "framework_poll_sha256": "sha256:2fe11851b884de563f40d5db861e5c51ca6969183c7adb6ddde4df684d47110e",
+      "render_settled_map_sha256": "sha256:6552e0f512e18b5f2259a01eda2f94d0dce2881da113b690176819f71315764f",
+      "assigned_update_range": [
+        3640,
+        3694
+      ],
+      "ffv1_sha256": "sha256:6332bd409812e35d6b0cf02350a642e48292bc0068bfa5b1e31de04fac69f92a",
+      "ffv1_bytes": 69775671
+    }
+  },
+  "preregistered_verdict": {
+    "report": "D:/ZumaGolden/diagnostics/c75-render-settled-sparse-target-verification-v1.json",
+    "report_sha256": "sha256:f97c0581c3b9e517f8567263f77b6cb485b8464881283ea005a8e1b1b651c798",
+    "verifier": "tools/verify_pc_render_settled_target.py",
+    "verifier_sha256": "sha256:ce52edccce714dc9f7b7a86ef990afcf3ca717cd7faa183b571d2972bcd3fe03",
+    "status": "FAIL",
+    "required_target_update_count": 21,
+    "target_update_present_in_both_runs_count": 21,
+    "accepted_update_count_under_frozen_maximum_bgr_delta_3": 0,
+    "failed_criterion": "complete_target_update_coverage",
+    "reason": "All 21 same-update pairs exceeded the preregistered mask BGR delta limit of 3; C75 is immutable and may not use a posthoc threshold."
+  },
+  "posthoc_diagnostic_only": {
+    "classification": "consumed-method-diagnosis-not-c75-credit",
+    "independent_mask_facts": {
+      "mask_sha256": "sha256:5e88cfacf441a56a5de6636fd3fe1259c9c844fc8494a992655d92e3a970530b",
+      "mask_pixel_count": 66,
+      "c65_c66_contract_bounded_coordinates_but_did_not_preregister_a_channel_delta": true,
+      "c75_observed_mask_mismatch_count_each_target_update": 66,
+      "c75_observed_maximum_mask_bgr_channel_delta_each_target_update": 56,
+      "mask_alpha_mismatch_count_each_target_update": 0
+    },
+    "max255_recomputation": {
+      "artifact": "D:/ZumaGolden/diagnostics/c75-render-settled-sparse-target-max255-posthoc-v1.json",
+      "sha256": "sha256:d11c20485047b7dea30f18e15925f6293839f3397bb9af2347e79e1d0e69ed96",
+      "status": "FAIL",
+      "accepted_update_count": 20,
+      "required_update_count": 21,
+      "only_unmatched_update": 3678,
+      "all_other_target_updates_exact_outside_mask": true
+    },
+    "isolated_phase_failure": {
+      "framework_update": 3678,
+      "r1_sequence": 59,
+      "r2_sequence": 63,
+      "outside_mask_mismatched_pixel_count": 72878,
+      "total_mismatched_pixel_count": 72944,
+      "difference_bounds_xyxy": [
+        0,
+        45,
+        800,
+        600
+      ],
+      "maximum_absolute_delta_by_bgra_channel": [
+        251,
+        246,
+        228,
+        0
+      ],
+      "rendered_comparison": "outputs/c75-u3678-divergence.png",
+      "rendered_comparison_sha256": "sha256:eff9f93b373f52d8f0d107918818a00bd7705ff9be73a7b214e6a9e92c76ce3a",
+      "r1_u3678_visual_matches_natural_u3677_outside_mask": true,
+      "r2_matches_c69_natural_same_update_outside_mask_for_all_21_target_updates": true,
+      "r1_matches_c69_natural_same_update_outside_mask_for_20_of_21_target_updates": true,
+      "same_update_reconverged_at_3679": true,
+      "interpretation": "One run presented the prior visual state under the u3678 draw/update label, then immediately reconverged. This is an isolated presentation-phase failure, not persistent gameplay replay divergence."
+    },
+    "delay_sweep": {
+      "artifact": "D:/ZumaGolden/diagnostics/c75-poll-alignment-delay-sweep-v1.json",
+      "sha256": "sha256:6652a913db8166914dec310027829221e3646f62a12912669e86ac8eb5feb802",
+      "candidate_delays_ns": [
+        0,
+        5000000,
+        50000
+      ],
+      "best_exact_draw_pairs": 51,
+      "best_unresolved_draw_pairs": 1,
+      "unresolved_draw_update": 3678,
+      "interpretation": "No fixed delay in the swept 0 through 5 ms range recovers the missing u3678 visual state."
+    },
+    "non_authorizations": [
+      "pc_golden",
+      "front_insertion",
+      "fidelity_gate_open",
+      "retroactive_threshold_change"
+    ]
+  },
+  "source_bound_anchor": {
+    "framework_update": 3121,
+    "board_seed_each_run": 835125098,
+    "expected_post_index_each_run": 415,
+    "live_post_index_each_run": 415,
+    "post_state_match_each_run": true,
+    "gameplay_mtrand_sync_used": false
+  },
+  "restoration": {
+    "protocol_pre_state_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526",
+    "protocol_restored_state_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526",
+    "host_pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_restored_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "game_process_remaining": false
+  },
+  "decision": {
+    "c75_status": "FAIL",
+    "may_not_be_packaged": true,
+    "may_not_receive_front_insertion_gate_credit": true,
+    "may_not_be_retried_in_place": true,
+    "future_attempt_may_remove_the_unsupported_channel_delta_only_if_frozen_before_collection": true,
+    "future_attempt_must_still_require_all_21_updates_exact_outside_the_independently_frozen_mask": true,
+    "finite_preregistered_stopping_rule_required_before_additional_sampling": true
+  }
+}

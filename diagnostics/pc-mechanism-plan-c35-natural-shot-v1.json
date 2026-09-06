@@ -1,0 +1,15 @@
+{
+  "schema": "zuma-rl.pc-mechanism-audit-plan",
+  "version": 1,
+  "cases": [
+    {
+      "id": "c35-natural-shot-window",
+      "manifest_path": "cases/jungle2-natural-entry-c35-third-seed-provenance-v1/manifest.json",
+      "memory_probe_path": "memory-followup-c35-natural-shot-u3429-u3499-v2/attempt-01/memory-probe.json",
+      "window": {
+        "start_update": 3429,
+        "end_update": 3499
+      }
+    }
+  ]
+}

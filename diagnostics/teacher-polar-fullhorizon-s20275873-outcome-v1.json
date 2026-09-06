@@ -1,0 +1,62 @@
+{
+  "schema": "zuma-rl.teacher-polar-fullhorizon-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T11:09:29.039Z",
+  "status": "FRESH_FULL_HORIZON_PASS",
+  "decision": "AUTHORIZE_SMALL_PPO_CONTINUATION_SCREEN",
+  "preregistration": {
+    "path": "diagnostics/teacher-polar-fullhorizon-s20275873-preregistration-v1.json",
+    "sha256": "sha256:42966c1f100e61d019fe3676053950ff269621a0144a0ee8bcd23aaedd5a594c",
+    "status": "FROZEN_BEFORE_RUN_OUTPUT"
+  },
+  "artifacts": {
+    "run_dir": "D:/ZumaTraining/screening-teacher-polar-fullhorizon-s20275873-v1",
+    "report_sha256": "sha256:96ab4d54fcda2eda00fc57102f78a6e8312c5783e22fdec86826ac68585487d1",
+    "completion_sha256": "sha256:dc9330fb60a4776ff11669ca51816324ac6f233df11c319adaf4f9aedf30abfe",
+    "evaluated_input_model_sha256": "sha256:f03dee97cb5a3e2ce3abcf4324137fe6ed9b68e827765b4a7b6adfa63cafb8f7"
+  },
+  "acceptance_results": {
+    "pipeline": {
+      "pass": true,
+      "process_exit_code": 0,
+      "completion_receipt_status": "COMPLETE",
+      "optimization_update_count": 0,
+      "policy_parameter_count": 321188
+    },
+    "capacity_replay": {
+      "pass": true,
+      "verb_accuracy": 0.9753336029114436,
+      "fire_aim_exact_accuracy": 0.6618421052631579
+    },
+    "fresh_full_horizon": {
+      "pass": true,
+      "wins": 4,
+      "required_wins": 3,
+      "losses": 0,
+      "truncations": 0,
+      "scores": [1870, 2220, 2780, 3180],
+      "ticks": [1202, 1404, 1212, 2863],
+      "mean_score": 2512.5,
+      "mean_ticks": 1670.25,
+      "episode_action_counts": [
+        {"wait": 1141, "fire": 50, "swap": 11},
+        {"wait": 1327, "fire": 63, "swap": 14},
+        {"wait": 1149, "fire": 55, "swap": 8},
+        {"wait": 2703, "fire": 128, "swap": 32}
+      ]
+    }
+  },
+  "bounded_inference": "the frozen actor-observable polar policy generalized from its consumed teacher dataset to four fresh full-horizon simulator episodes; this supports initialization viability but is not yet evidence that PPO updates preserve or improve it",
+  "next_action": {
+    "authorized": "one preregistered small MaskablePPO continuation screen initialized from the frozen polar model with pre/post fresh-seed full-horizon evaluation",
+    "forbidden": "do not launch large-scale training until PPO stability and capability retention pass"
+  },
+  "non_authorizations": [
+    "large_scale_training",
+    "rl_recipe_promotion",
+    "fidelity_gate_opening",
+    "original_game_deployment",
+    "original_transfer_certification",
+    "visual_policy_training"
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "schema": "zuma-rl.pc-formal-window-preregistration",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-09T22:26:32.4000195Z",
+  "evidence_classification": "diagnostic-locator-and-preregistration-not-certifying",
+  "purpose": "Freeze exact formal full-state windows before collecting evidence for missing Fidelity Gate mechanisms.",
+  "gate_claim": null,
+  "source": {
+    "dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "runtime_executable_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "plan": {
+      "path": "diagnostics/full-state-source-bound-natural-win-c126-plan-v1/plan.json",
+      "bytes": 12888,
+      "sha256": "sha256:d814b8fc4a46c619a4d9834f8a744a31e48a27696ec25e2b73ff2fdc6b920755"
+    },
+    "prestate": {
+      "path": "diagnostics/full-state-source-bound-natural-win-c126-plan-v1/protocol/pre-template.json",
+      "bytes": 16964,
+      "sha256": "sha256:b67be1d2693b26cdad4c9189022a5df9dcce1dd65c88ac61ca2c170b4b82af2a"
+    }
+  },
+  "diagnostic_locators": [
+    {
+      "id": "c128a",
+      "start_update": 3429,
+      "end_update": 5476,
+      "tick_count": 2048,
+      "analysis_maximum_calls_per_tick": 64,
+      "trajectory": {
+        "path": "diagnostics/source-bound-compact-locator-c128a-u3429-u5476-v1/attempt-01/trajectory/index.json",
+        "bytes": 47190014,
+        "sha256": "sha256:c884df25ff31bb91ff48307a1c99d031d7ee7a86aa1d26d7bc41289b7eb68c56"
+      },
+      "analysis": {
+        "path": "diagnostics/source-bound-compact-locator-c128a-analysis-v1.json",
+        "bytes": 879002,
+        "sha256": "sha256:68e8726ec2cb127646a21eded143778fed285c38b5c1a01b29b8981ea8445638"
+      },
+      "memory_probe_sha256": "sha256:8c08327f99eac674bca0e408ff228bc78d397f66cb2d59cdad9314bdcf2c568b",
+      "strict_replay_sha256": "sha256:0a888715b79d5f589ec8e236578313aa4666ecd6d982927e41067a2612bb6b5e",
+      "external_input_guard_sha256": "sha256:dc69e4b39d5c220929d2675fdd747ffa360449987a0482fb370b1a9540c35b06",
+      "external_input_event_count": 0,
+      "strict_replay_failure_count": 0
+    },
+    {
+      "id": "c128b2",
+      "start_update": 5476,
+      "end_update": 7520,
+      "tick_count": 2045,
+      "analysis_maximum_calls_per_tick": 2048,
+      "maximum_observed_calls_per_tick": 1219,
+      "trajectory": {
+        "path": "diagnostics/source-bound-compact-locator-c128b2-u5476-u7520-v1/attempt-01/trajectory/index.json",
+        "bytes": 19540407,
+        "sha256": "sha256:651fb9a437f55bb4afc4879db8c7d93be039b7f6d5c4acb8f411c0876774e559"
+      },
+      "analysis": {
+        "path": "diagnostics/source-bound-compact-locator-c128b2-analysis-v1.json",
+        "bytes": 919054,
+        "sha256": "sha256:7650eb9aed88a80ef462a57418dd35efbcb53dc11bed62b33ef830bd8f261f30"
+      },
+      "memory_probe_sha256": "sha256:abb95585b653101aacddec88fd16123d32ce2107de1f840835e29b8107734129",
+      "strict_replay_sha256": "sha256:1a137094378a8d4c748bb3e093b77ba15c41d303301a5fcf4d608dc8729a5683",
+      "external_input_guard_sha256": "sha256:a3584c533699de02d1e14633e43ab8e5eaeaa6f10acf22b650085eabe5db17d5",
+      "external_input_event_count": 0,
+      "strict_replay_failure_count": 0
+    }
+  ],
+  "locator_seam": {
+    "framework_update": 5476,
+    "status": "PASS",
+    "comparison": "all compact gameplay, identity, RNG, and render fields after removing only capture-transport sample_barrier metadata",
+    "left_sample_barrier": "replay_fast_forward_step",
+    "right_sample_barrier": "freeze_multiplier_message",
+    "sample_phase": "frozen_post_replay_update_barrier",
+    "left_semantic_projection_sha256": "sha256:56aae3fa084d6978d4f5ad6950580293da2a8805a893b0dfc1f9959b2c431894",
+    "right_semantic_projection_sha256": "sha256:56aae3fa084d6978d4f5ad6950580293da2a8805a893b0dfc1f9959b2c431894"
+  },
+  "host_state": {
+    "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "c128a_host_pre_sha256": "sha256:26b39f4b3716752e3da326f305227a27ff646a2a1dad3940bd60b1d1812f8d21",
+    "c128b2_host_pre_sha256": "sha256:559b1ee0338923e0d2d2d79ba06aa2e434ff15bf56a0108fc276dda040733394",
+    "c128b2_host_post_sha256": "sha256:eaa619c3ffcd31b4c8cf0ac6c170d7fd51e2b2afbb5098b3de36f4e134cf41c2",
+    "restored_exactly": true
+  },
+  "locator_observations": [
+    {
+      "feature_candidates": [
+        "rng_rejection"
+      ],
+      "from_update": 3581,
+      "to_update": 3582,
+      "mtrand_call_count": 7,
+      "pending_colors_before": [],
+      "pending_colors_after": [
+        0
+      ]
+    },
+    {
+      "feature_candidates": [
+        "gap_shot",
+        "rollback_chain"
+      ],
+      "search_start_update": 3575,
+      "search_end_update": 3970,
+      "score_events": [
+        {
+          "from_update": 3909,
+          "to_update": 3910,
+          "score_delta": 70
+        },
+        {
+          "from_update": 3938,
+          "to_update": 3939,
+          "score_delta": 150
+        }
+      ],
+      "chain_drop_updates": [
+        3889,
+        3890,
+        3949,
+        3950
+      ]
+    },
+    {
+      "feature_candidates": [
+        "powerup_spawn",
+        "powerup_reverse"
+      ],
+      "spawn_from_update": 4961,
+      "spawn_to_update": 4962,
+      "activation_from_update": 5061,
+      "activation_to_update": 5062,
+      "ball_id": 76,
+      "powerup_type": 3
+    },
+    {
+      "feature_candidates": [
+        "powerup_spawn",
+        "powerup_proximity_bomb"
+      ],
+      "spawn_from_update": 5755,
+      "spawn_to_update": 5756,
+      "activation_from_update": 5855,
+      "activation_to_update": 5856,
+      "effect_end_from_update": 5873,
+      "effect_end_to_update": 5874,
+      "ball_id": 161,
+      "powerup_type": 0
+    }
+  ],
+  "formal_windows": [
+    {
+      "id": "c129a-rng-gap-rollback",
+      "features_sought": [
+        "gap_shot",
+        "rng_rejection",
+        "rollback_chain"
+      ],
+      "slowdown_update": 3565,
+      "freeze_update": 3575,
+      "trajectory_end_update": 3970,
+      "session_nonce": "c129a000000000000000000000000000",
+      "output_root": "formal-full-state-c129a-rng-gap-rollback-u3575-u3970-v1",
+      "maximum_attempts": 1,
+      "acceptance_independent_of_feature_presence": true
+    },
+    {
+      "id": "c129b-reverse",
+      "features_sought": [
+        "powerup_reverse",
+        "powerup_spawn"
+      ],
+      "slowdown_update": 4945,
+      "freeze_update": 4955,
+      "trajectory_end_update": 5160,
+      "session_nonce": "c129b000000000000000000000000000",
+      "output_root": "formal-full-state-c129b-reverse-u4955-u5160-v1",
+      "maximum_attempts": 1,
+      "acceptance_independent_of_feature_presence": true
+    },
+    {
+      "id": "c129c-proximity",
+      "features_sought": [
+        "powerup_proximity_bomb",
+        "powerup_spawn"
+      ],
+      "slowdown_update": 5735,
+      "freeze_update": 5745,
+      "trajectory_end_update": 5890,
+      "session_nonce": "c129c000000000000000000000000000",
+      "output_root": "formal-full-state-c129c-proximity-u5745-u5890-v1",
+      "maximum_attempts": 1,
+      "acceptance_independent_of_feature_presence": true
+    }
+  ],
+  "decision_rules": {
+    "failed_attempts_are_retained": true,
+    "window_coordinates_are_immutable_after_first_launch": true,
+    "feature_absence_does_not_permit_retry": true,
+    "formal_collection_requires_zero_external_input_events": true,
+    "formal_collection_requires_zero_post_board_memory_writes": true,
+    "formal_collection_requires_exact_host_state_restore": true,
+    "diagnostic_locator_must_not_be_submitted_to_fidelity_gate": true
+  }
+}

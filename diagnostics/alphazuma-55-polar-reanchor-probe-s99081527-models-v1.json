@@ -1,0 +1,42 @@
+{
+  "schema": "zuma-rl.zero-shot-models-manifest",
+  "version": 1,
+  "status": "FROZEN",
+  "created_utc": "2026-08-15T12:34:57.942593+00:00",
+  "stage": "engineering_polar_reanchor_probe",
+  "purpose": "Posthoc paired engineering smoke test; no original formal selection authority.",
+  "models": [
+    {
+      "id": "settled-v3-multiseed-final",
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-multiseed-s99081525-v1/final_model.zip",
+      "sha256": "sha256:ced0d6196fa27317e198d6c7a946fd21c9ed18d4d9574a02ea93ab8b4bcd116c",
+      "training_steps": 36027227
+    },
+    {
+      "id": "polar-reset-identity-scale-5",
+      "training_steps": 36027227,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-reanchor-variants-s99081527-v1/polar-reset-identity-scale-5.zip",
+      "sha256": "sha256:65ffe5d4db7962c2692114fc3d05100eea3f5497318952701393ccb7a7696d24"
+    },
+    {
+      "id": "polar-additive-identity-scale-1",
+      "training_steps": 36027227,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-reanchor-variants-s99081527-v1/polar-additive-identity-scale-1.zip",
+      "sha256": "sha256:97ada7f7eadf8be03036a4036c64a1d27052b7dd1e21bb00ce2e3b2f66b18905"
+    },
+    {
+      "id": "polar-additive-identity-scale-2",
+      "training_steps": 36027227,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-reanchor-variants-s99081527-v1/polar-additive-identity-scale-2.zip",
+      "sha256": "sha256:0df656ad28f88ca7c1c4f745889bbe192b9eb127ca8c19ab60aca1286cc0b4a7"
+    }
+  ],
+  "plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-reanchor-probe-s99081527-plan-v1.json",
+    "sha256": "sha256:46022eab6f4adb4220a99b8e32923efee2969aed9375acc09b4bd76eaa25536c"
+  },
+  "completion": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-reanchor-variants-s99081527-v1/completion.json",
+    "sha256": "sha256:e500e7afdc65d61a04c66a4a1459c30d98c9bd7de84a86cb740ab9496e714eed"
+  }
+}

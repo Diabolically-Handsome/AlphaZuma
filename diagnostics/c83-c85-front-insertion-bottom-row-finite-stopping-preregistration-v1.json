@@ -1,0 +1,252 @@
+{
+  "schema": "zuma-rl.pc-front-insertion-bottom-row-finite-stopping-preregistration",
+  "version": 1,
+  "id": "c83-c85-front-insertion-u3664-u3684-bounded-bottom-row-holdout",
+  "created_utc": "2026-08-03T20:43:46Z",
+  "status": "FROZEN_BEFORE_ANY_C83_C85_PREPARE_OR_COLLECTION",
+  "classification": "fresh-bounded-sequential-holdout-after-c82-built-in-bottom-row-contract-localization",
+  "gate_effect": "none_until_one_attempt_passes_bottom_row_terminal_pc_golden_and_source_bound_mechanism_audit",
+  "method_basis_only": {
+    "c82_formal_terminal_campaign_failure": {
+      "path": "diagnostics/c82-front-insertion-terminal-state-finite-campaign-failure-audit-v1.json",
+      "sha256": "sha256:975e7f51486b6ac11958827588f4ad961f3c6c3daca3f31fe317f69f83a986dd",
+      "formal_status": "FAIL",
+      "retrospective_gate_credit_forbidden": true
+    },
+    "c82_consumed_bottom_row_method_validation": {
+      "path": "D:/ZumaGolden/diagnostics/c82-bottom-row-terminal-target-posthoc-v1.json",
+      "sha256": "sha256:51291f49f7cf3372e73dbd1de6b8422f9adc26cfd917fa7b8067838bef3126dc",
+      "status": "PASS",
+      "observed_update_count": 21,
+      "observed_exact_above_final_raster_row": true,
+      "observed_maximum_final_row_pixel_mismatches": 1,
+      "use": "tool_and_method_validation_only"
+    },
+    "existing_pc_golden_bottom_row_contract": {
+      "path": "src/zuma_rl/pc_golden.py",
+      "sha256": "sha256:7c0204b167bb4e4c66d285e3bd74c81168a881348887bb7a20aadeca3ef9a13c",
+      "contract": "exact_except_bounded_bottom_raster_edge",
+      "excluded_bottom_rows": 1,
+      "maximum_excluded_edge_mismatches": 1,
+      "new_acceptance_schema_or_mask_not_introduced": true
+    },
+    "all_c82_and_earlier_data_reuse_for_c83_c85_acceptance_forbidden": true
+  },
+  "finite_stopping_rule": {
+    "maximum_attempts": 3,
+    "attempt_order": [
+      "c83",
+      "c84",
+      "c85"
+    ],
+    "evaluate_strictly_in_declared_order": true,
+    "stop_immediately_after_first_complete_pass": true,
+    "do_not_prepare_or_collect_later_attempts_after_pass": true,
+    "every_started_attempt_is_immutable_and_must_be_reported": true,
+    "failed_or_incomplete_attempt_may_not_be_retried_in_place": true,
+    "unlisted_attempts_forbidden": true,
+    "posthoc_attempt_reordering_forbidden": true,
+    "no_pass_after_three_attempts_means_campaign_fail": true
+  },
+  "ordered_fresh_attempts": [
+    {
+      "attempt": 1,
+      "campaign_id": "c83",
+      "session_root": "D:/ZumaGolden/campaign-c83-natural-win-v8-front-insertion-bottom-row-retry-01-u3569-u3710",
+      "session_nonce": "1e1b9d325ec74306b769619c15e8427e",
+      "execution_binding": "diagnostics/c83-front-insertion-bottom-row-execution-binding-v1.json",
+      "target_report": "D:/ZumaGolden/diagnostics/c83-bottom-row-terminal-state-target-verification-v1.json",
+      "case_root": "D:/ZumaGolden/cases/jungle2-natural-front-insertion-c83-bottom-row-retry-01-provenance-v1",
+      "case_id": "jungle2_natural_front_insertion_c83_bottom_row_retry_01_provenance_v1",
+      "verified_outputs_absent_at_freeze": true
+    },
+    {
+      "attempt": 2,
+      "campaign_id": "c84",
+      "session_root": "D:/ZumaGolden/campaign-c84-natural-win-v8-front-insertion-bottom-row-retry-02-u3569-u3710",
+      "session_nonce": "905af7df601645f3a809fa0ce00197c6",
+      "execution_binding": "diagnostics/c84-front-insertion-bottom-row-execution-binding-v1.json",
+      "target_report": "D:/ZumaGolden/diagnostics/c84-bottom-row-terminal-state-target-verification-v1.json",
+      "case_root": "D:/ZumaGolden/cases/jungle2-natural-front-insertion-c84-bottom-row-retry-02-provenance-v1",
+      "case_id": "jungle2_natural_front_insertion_c84_bottom_row_retry_02_provenance_v1",
+      "verified_outputs_absent_at_freeze": true
+    },
+    {
+      "attempt": 3,
+      "campaign_id": "c85",
+      "session_root": "D:/ZumaGolden/campaign-c85-natural-win-v8-front-insertion-bottom-row-retry-03-u3569-u3710",
+      "session_nonce": "8252f1cbf95b416dbbf7db23b9a409dc",
+      "execution_binding": "diagnostics/c85-front-insertion-bottom-row-execution-binding-v1.json",
+      "target_report": "D:/ZumaGolden/diagnostics/c85-bottom-row-terminal-state-target-verification-v1.json",
+      "case_root": "D:/ZumaGolden/cases/jungle2-natural-front-insertion-c85-bottom-row-retry-03-provenance-v1",
+      "case_id": "jungle2_natural_front_insertion_c85_bottom_row_retry_03_provenance_v1",
+      "verified_outputs_absent_at_freeze": true
+    }
+  ],
+  "frozen_collection_recipe": {
+    "reference_plan": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/plan.json",
+    "reference_plan_sha256": "sha256:5a7ba58eccd7e0d1b1008ac089cce59c167a26ba8bc359ef76f3dcd2bea8c0db",
+    "only_allowed_recursive_plan_difference": "session_nonce",
+    "required_plan_difference_count": 1,
+    "collector": {
+      "path": "tools/collect_pc_golden_v4.py",
+      "sha256": "sha256:3981b8d0dd31e655e704d5e658026b4b2762512ff87af9e7acb22844d79d2b95"
+    },
+    "required_host_precheck": {
+      "path": "D:/ZumaGolden/diagnostics/c83-c85-live-host-precheck-v1.json",
+      "sha256": "sha256:273d5ee57aef9556d8d4090be2cec8019e0b4cc9492e200147cbf7f5ae7b4dc5",
+      "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061"
+    },
+    "dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "framework_state_poll_arm_window": [
+      3566,
+      3568
+    ],
+    "capture_wait_update": 3569,
+    "render_settle_delay_ns": 400000,
+    "capture_duration_seconds": 0.55,
+    "frame_budget_fps": 180,
+    "gameplay_mtrand_sync": null,
+    "maximum_hits": 100000
+  },
+  "frozen_render_transport": {
+    "preregistration": {
+      "path": "diagnostics/c65-render-transport-preregistration-v1.json",
+      "sha256": "sha256:e28cf5ce21428cc64fca82e822d818bb9797e743511f58d660efeaf703b5d8cb"
+    },
+    "execution_binding": {
+      "path": "diagnostics/c66-render-transport-execution-binding-v1.json",
+      "sha256": "sha256:8fabe40f33cc8cc0e0bc03e807ed9a9a796845dbfee4ef7ad88757d5642174e6"
+    },
+    "independent_holdout": {
+      "path": "D:/ZumaGolden/diagnostics/c66-render-transport-holdout-v1.json",
+      "sha256": "sha256:2c01c7f14c7e636db2fd06d904a9beb927de0f09e828d9bba85dd9e0c98481dd",
+      "required_status": "PASS"
+    },
+    "render_settle_delay_ns": 400000,
+    "map_assignment_uses_frozen_66_pixel_transport_mask_only": true,
+    "acceptance_comparison_does_not_use_transport_mask": true,
+    "mask_expansion_forbidden": true
+  },
+  "frozen_bottom_row_terminal_contract": {
+    "required_update_range": [
+      3664,
+      3684
+    ],
+    "required_update_count": 21,
+    "required_exact_gameplay_rows": [
+      0,
+      598
+    ],
+    "excluded_bottom_rows": 1,
+    "excluded_row_index": 599,
+    "maximum_excluded_edge_pixel_mismatches_per_update": 1,
+    "require_exact_excluded_row_alpha": true,
+    "require_every_selected_replay_pair_meet_contract": true,
+    "terminal_update": 3684,
+    "terminal_reference": {
+      "path": "outputs/c78-r2-u3684-seq74-post.png",
+      "sha256": "sha256:1d482a13d29a99eb048587dc43f1fb07dbae4437ce671430abb3e7c8055881a2",
+      "semantic_role": "c79-confirmed-native-post-insertion-displayed-surface"
+    },
+    "terminal_reference_must_meet_same_bottom_row_contract_for_both_runs": true,
+    "pre_transition_or_intermediate_terminal_frame_forbidden": true,
+    "missing_update_or_event_bracket_substitution_forbidden": true,
+    "posthoc_range_edge_budget_settle_delay_reference_or_alignment_change_forbidden": true
+  },
+  "frozen_bottom_row_terminal_verifier": {
+    "path": "tools/verify_pc_bottom_row_terminal_target.py",
+    "sha256": "sha256:42773493b7ffc7a8fd5d45a671eca3909f6571f075b9b1eb73c198426884fbf8",
+    "base_verifier": {
+      "path": "tools/verify_pc_render_settled_target.py",
+      "sha256": "sha256:9645734fc47bcf9e030fa66b6738905fb6667a29df2ca0c125603567d7f21261"
+    },
+    "arguments": {
+      "target_start": 3664,
+      "target_end": 3684,
+      "terminal_update": 3684,
+      "maximum_edge_mismatches": 1
+    },
+    "required_status": "PASS"
+  },
+  "frozen_packaging_contract": {
+    "packager": {
+      "path": "tools/package_pc_golden_v4.py",
+      "sha256": "sha256:e0fc21d01060a9dfde73a81e9c5b382d71de022e3a59239bd851402ba3f8ecda"
+    },
+    "render_map_builder": {
+      "path": "tools/build_pc_render_settled_update_map.py",
+      "sha256": "sha256:9551c7899cc02235b2b1f61a34c117302778f02f42199d23edd2d6d36557c7d0"
+    },
+    "pc_golden_verifier": {
+      "path": "src/zuma_rl/verify_pc_golden.py",
+      "sha256": "sha256:57e802c7a649959ee205eaae920d0e4d5afde959ff2e554351bb3075b50429e3"
+    },
+    "minimum_ticks": 21,
+    "required_start_update": 3664,
+    "required_end_update": 3684,
+    "select_exact_required_range": true,
+    "allow_idle_input_window": true,
+    "replay_excluded_bottom_rows": 1,
+    "replay_maximum_excluded_edge_mismatches": 1,
+    "os_build": "Windows11-10.0.26200-build26200",
+    "driver": "NVIDIA-32.0.16.1088",
+    "level_id": "Jungle2",
+    "observed_score": 8000
+  },
+  "frozen_source_bound_mechanism_followup": {
+    "collector_output_root": "D:/ZumaGolden/memory-followup-c83-c85-front-insertion-certification-v1",
+    "mechanism_plan": "diagnostics/c83-c85-front-insertion-mechanism-plan-v1.json",
+    "mechanism_report": "D:/ZumaGolden/diagnostics/c83-c85-front-insertion-mechanism-audit-v1.json",
+    "mechanism_auditor": {
+      "path": "src/zuma_rl/pc_mechanism_audit.py",
+      "sha256": "sha256:cc5f59b5b4237254b76efa42cd083fbd9447bd2f7a972f6a9cad581e47c24545"
+    },
+    "probe_update": 3664,
+    "slowdown_update": 3654,
+    "trajectory_mode": "full",
+    "trajectory_end_update": 3684,
+    "board_score_at_probe": 7950,
+    "displayed_score_at_probe": 7950,
+    "maximum_startup_attempts": 3,
+    "skip_repaint_guard": false,
+    "skip_frozen_snapshot": false,
+    "diagnostic_mutation": null,
+    "audit_window": [
+      3664,
+      3684
+    ],
+    "required_machine_authorized_feature": "front_insertion",
+    "required_native_source_fingerprint_equal_to_pc_golden": true
+  },
+  "verification_receipt_before_freeze": {
+    "targeted_command": "python -m pytest -q tests/test_verify_pc_bottom_row_terminal_target.py tests/test_verify_pc_terminal_state_target.py",
+    "targeted_status": "PASS",
+    "full_suite_command": "python -m pytest -q",
+    "full_suite_status": "PASS",
+    "full_suite_warning_count": 1,
+    "bottom_row_verifier_test_sha256": "sha256:633f91c611bb02d9a7800bf2a380efaab0f6bb17afb9bf716f1364abb41ffe28"
+  },
+  "acceptance": {
+    "require_both_strict_replays_complete_without_boundary_failures": true,
+    "require_actual_arm_update_inside_3566_through_3568_each_run": true,
+    "require_poll_quality_contract_each_run": true,
+    "require_distinct_process_instances": true,
+    "require_exact_protocol_and_host_restore": true,
+    "require_bottom_row_terminal_verifier_status": "PASS",
+    "require_all_21_pairs_exact_in_rows_0_through_598": true,
+    "require_maximum_one_mismatched_pixel_in_row_599_per_pair": true,
+    "require_exact_row_599_alpha": true,
+    "require_terminal_post_insertion_reference_binding": "PASS",
+    "require_pc_golden_packager_contract_recomputation": true,
+    "require_pc_golden_verifier_status": "PASS",
+    "require_source_bound_front_insertion_mechanism_audit": "PASS"
+  },
+  "non_authorizations_before_all_acceptance_requirements_pass": [
+    "pc_golden",
+    "front_insertion",
+    "fidelity_gate_open",
+    "formal_transfer_training"
+  ]
+}

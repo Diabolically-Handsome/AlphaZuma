@@ -1,0 +1,53 @@
+{
+  "schema": "zuma-rl.alphazuma-55-weekend-evaluation-resource-schedule",
+  "version": 1,
+  "status": "FROZEN_BEFORE_ANY_CURRENT_ROUTE_ENGINEERING_INFERENCE",
+  "created_utc": "2026-08-16T16:24:57.480281+00:00",
+  "deadline_utc": "2026-08-17T15:00:00+00:00",
+  "objective": "Prevent concurrent dual-shard evaluators from contending with the three registered training routes on two GPUs and limited WSL memory.",
+  "pre_pause_evidence": {
+    "all_actions_postprocess": {
+      "pid": 393431,
+      "status": "RUNNING",
+      "phase": "WAITING_FOR_TRAINING",
+      "formal_seed_consumption": "NONE",
+      "updated_utc": "2026-08-16T12:24:37.252589-04:00"
+    },
+    "head_only_postprocess": {
+      "pid": 404830,
+      "status": "RUNNING",
+      "phase": "WAITING_FOR_TRAINING",
+      "formal_seed_consumption": "NONE",
+      "updated_utc": "2026-08-16T12:24:52.934566-04:00"
+    }
+  },
+  "training_priority": [
+    "finish all-actions on cuda:1",
+    "launch fresh-seed head-only plus all-actions factorial route on cuda:1",
+    "allow the existing head-only route to finish on cuda:0"
+  ],
+  "evaluation_resume_order": [
+    "head-only plus all-actions factorial",
+    "head-only fire-aim",
+    "full-policy all-actions aim"
+  ],
+  "ordering_basis": "Frozen causal prior: combined actuator alignment plus representation preservation, then representation preservation alone, then the already-degrading full-policy update.",
+  "suspension_contract": {
+    "mechanism": "Linux SIGSTOP followed by SIGCONT on idle postprocess controller only",
+    "trainers_must_not_be_suspended": true,
+    "formal_successor_controllers_must_not_be_suspended": true,
+    "candidate_rules_changed": false,
+    "gate_thresholds_changed": false,
+    "evaluation_seed_ranges_changed": false,
+    "attempt_matrix_changed": false,
+    "model_bytes_changed": false,
+    "negative_results_must_be_retained": true
+  },
+  "safety": {
+    "resume_immediately_if_training_launch_fails": true,
+    "resume_only_one_dual-shard_postprocessor_at_a_time": true,
+    "record_every_stop_and_continue_transition": true,
+    "formal_seed_consumption_at_freeze": "NONE",
+    "power_restore_authority": false
+  }
+}

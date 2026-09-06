@@ -1,0 +1,31 @@
+{
+  "schema": "alphazuma-55-timepolish-outcome",
+  "version": 1,
+  "preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-timepolish-jungle6-s99081717-preregistration-v1.json",
+    "sha256": "sha256:47a39051a9d447b196f7d49c3222ea4ac76e24fce3023e1628a7552bf670cb93"
+  },
+  "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle6-s99081717-v1",
+  "written_utc": "2026-08-20T21:31:13Z",
+  "status": "FAIL_LAUNCH_WINDOW_MISSED",
+  "verdict": "NO TRAINING OCCURRED. The sequential batch-2 launch queue released this run at 2026-08-20T21:23:37Z - 4 h 18 min AFTER the preregistered training_stop_utc (2026-08-20T17:05:00Z). The v2 wall-clock clause fired at the first deadline check: 40 macro steps, 0 episodes, elapsed 3.2 s. final_model.zip is the init policy plus 40 optimizer-warmup steps and holds NO champion authority. No checkpoint was produced, so no early-stop clause was ever evaluated; clause outcomes are VACUOUS, not failed.",
+  "evidence": {
+    "trainer_started_utc": "2026-08-20T21:23:37.977392+00:00",
+    "preregistered_stop_at_utc": "2026-08-20T17:05:00+00:00",
+    "stop_reason": "PREREGISTERED_WALL_CLOCK_DEADLINE",
+    "actual_steps": 40,
+    "episodes": 0,
+    "elapsed_seconds": 3.1642869409988634,
+    "checkpoints_dir_empty": true
+  },
+  "root_cause": "Launch-orchestration defect, not a training defect: the launch was queued behind the sibling jungle2 run with an ABSOLUTE frozen deadline baked into the prereg, and the queue's wait condition held ~8.8 h past the intended 12:35Z window-open. Lesson adopted: any queued launch must enforce a latest-launch bound and alarm when the wait exceeds the teardown margin; deadlines for queued runs are recomputed at actual launch inside a preregistered window LENGTH.",
+  "seed_accounting": {
+    "reserved_range": [
+      1514000000,
+      1517999999
+    ],
+    "consumed": "40 macro steps of env experience from the reservation's first episodes",
+    "formal_seed_consumption": false
+  },
+  "disposition": "Amended refreeze as preregistration-v2 (same frozen hyperparameters, instruments, floor formula, and init model; new run_dir -v2, fresh disjoint seed block 1518000000+, schedule recomputed at refreeze). See alphazuma-55-timepolish-jungle6-s99081717-preregistration-v2.json."
+}

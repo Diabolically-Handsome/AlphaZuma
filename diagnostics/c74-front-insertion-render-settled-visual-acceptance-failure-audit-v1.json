@@ -1,0 +1,194 @@
+{
+  "schema": "zuma-rl.pc-front-insertion-render-settled-visual-acceptance-failure-audit",
+  "version": 1,
+  "id": "c74-front-insertion-late-arm-full-frame-and-target-coverage-failure",
+  "created_utc": "2026-08-03T19:01:10Z",
+  "classification": "failed-fresh-two-run-preregistered-visual-acceptance-not-pc-golden",
+  "gate_effect": "none",
+  "parent_execution_binding": {
+    "path": "diagnostics/c74-front-insertion-render-settled-late-arm-execution-binding-v1.json",
+    "sha256": "sha256:8105e8f04ea795fdcc2f545b0379311844a5318fbe0ebd6a27b749a38045d819"
+  },
+  "frozen_acceptance_contract": {
+    "parent_preregistration": "diagnostics/c74-front-insertion-render-settled-late-arm-infrastructure-retry-preregistration-v1.json",
+    "parent_preregistration_sha256": "sha256:0a80405c7462796d1bde3d759b50312ff4fd358eab22a700979f9c88196a020b",
+    "required_update_range": [
+      3664,
+      3684
+    ],
+    "required_update_count": 21,
+    "pixel_comparison": "exact_full_800x600_bgra",
+    "required_exact_target_matches": 21,
+    "posthoc_mask_or_range_change_forbidden": true
+  },
+  "session": {
+    "root": "D:/ZumaGolden/campaign-c74-natural-win-v8-front-insertion-render-settled-late-arm-u3569-u3710",
+    "plan_sha256": "sha256:828bdc4364f0f6a6bed83495b9c13bb8576682254868d71eb395468cad2ac227",
+    "collection_sha256": "sha256:07811ca95092a682c39f1835eb2351606eaf726a601b42e3e37de550fdd82336",
+    "collection_status": "complete",
+    "distinct_process_instances": true,
+    "run_process_ids": [
+      46640,
+      44284
+    ]
+  },
+  "transport_evidence": {
+    "status": "PASS",
+    "r1": {
+      "actual_arm_update": 3566,
+      "mean_poll_hz": 4978.058723390787,
+      "p99_poll_interval_ns": 205300,
+      "skipped_draw_increments": 0,
+      "capture_frame_count": 90,
+      "assigned_update_range": [
+        3644,
+        3697
+      ],
+      "render_settled_map_sha256": "sha256:890620c39999139f5992740ad4d9902b48eddf1bf1648b8768f49c04444c0431",
+      "capture_metadata_sha256": "sha256:118b30f41985094b697f3afd7ed16361d576ea1b315dc3c655b176b16fd916a4",
+      "frames_csv_sha256": "sha256:94a1370254d3efdd02e452ffaa8e698836fa9252decd1f6bb66825ecb8febb23",
+      "ffv1_sha256": "sha256:c0f1f2348d708d048a950cf575d8a90d87e2d3d57382591fb61ee37acc68d473",
+      "ffv1_bytes": 69041981,
+      "framework_poll_sha256": "sha256:c0431192e12e8e5f1af9ee313d0ecb84942b435556da794a0364719df192de26",
+      "strict_replay_sha256": "sha256:c97fcf96db15db501015a0282b7cacb005744328b981c76d62a9e9beee47b36f",
+      "strict_replay_failure_count": 0,
+      "strict_replay_last_update": 10536
+    },
+    "r2": {
+      "actual_arm_update": 3566,
+      "mean_poll_hz": 4975.529504680656,
+      "p99_poll_interval_ns": 203700,
+      "skipped_draw_increments": 0,
+      "capture_frame_count": 90,
+      "assigned_update_range": [
+        3642,
+        3695
+      ],
+      "render_settled_map_sha256": "sha256:6261f0286e74d56fed7f7e96baa6cd8b43bcc518456c8f6c9a66ef61c6a908f5",
+      "capture_metadata_sha256": "sha256:c446fb5bff663688755b8a65792dafca242b116f75d6954a4f1a6245d00e1840",
+      "frames_csv_sha256": "sha256:1957707fec133eb823c41fe58ab24ef2d55deb5fd17a3ccad05d98fab028c36c",
+      "ffv1_sha256": "sha256:01af4d787dac5489597a63a9cd21136843719cd51d1789de291999371240c7fe",
+      "ffv1_bytes": 69019593,
+      "framework_poll_sha256": "sha256:9b418f36b8fe2193972398ba24702a7653d6c6e55d0d4f02a64b24f1ad3ecc70",
+      "strict_replay_sha256": "sha256:7efd2741f4dba984cd658ee28a11772baa5d4c25865cbfce3fb73d9f5b066cea",
+      "strict_replay_failure_count": 0,
+      "strict_replay_last_update": 10536
+    }
+  },
+  "preregistered_visual_failure": {
+    "comparison": "best_monotonic_candidate_pair_at_same_render_settled_update",
+    "common_update_range": [
+      3644,
+      3695
+    ],
+    "common_update_count": 50,
+    "missing_updates_inside_common_span": [
+      3684,
+      3694
+    ],
+    "common_full_frame_exact_update_count": 0,
+    "target_present_update_range": [
+      3664,
+      3683
+    ],
+    "target_present_update_count": 20,
+    "target_absent_updates": [
+      3684
+    ],
+    "target_full_frame_exact_update_count": 0,
+    "required_target_update_count": 21,
+    "status": "FAIL",
+    "reasons": [
+      "no target update is exact under the preregistered full-frame comparison",
+      "run r1 has no render-settled draw assigned to required update 3684"
+    ]
+  },
+  "posthoc_diagnostic_only": {
+    "classification": "consumed-analysis-not-eligible-for-c74-credit",
+    "reproducible_verification": {
+      "artifact": "D:/ZumaGolden/diagnostics/c74-render-settled-sparse-target-verification-v1.json",
+      "sha256": "sha256:cb60e121b0052ff54cff071e038a3090d09eb9d8034db478f27283e1f2b9fa5e",
+      "status": "FAIL",
+      "only_failed_criterion": "complete_target_update_coverage",
+      "tool": "tools/verify_pc_render_settled_target.py",
+      "tool_sha256": "sha256:ce52edccce714dc9f7b7a86ef990afcf3ca717cd7faa183b571d2972bcd3fe03"
+    },
+    "external_mask": {
+      "preregistration": "diagnostics/c65-render-transport-preregistration-v1.json",
+      "preregistration_sha256": "sha256:e28cf5ce21428cc64fca82e822d818bb9797e743511f58d660efeaf703b5d8cb",
+      "independent_holdout": "D:/ZumaGolden/diagnostics/c66-render-transport-holdout-v1.json",
+      "independent_holdout_sha256": "sha256:2c01c7f14c7e636db2fd06d904a9beb927de0f09e828d9bba85dd9e0c98481dd",
+      "pixel_count": 66,
+      "mask_sha256": "sha256:5e88cfacf441a56a5de6636fd3fe1259c9c844fc8494a992655d92e3a970530b",
+      "bounds_xyxy": [
+        0,
+        588,
+        800,
+        600
+      ]
+    },
+    "same_update_results": {
+      "common_masked_exact_update_count": 48,
+      "common_update_count": 50,
+      "masked_nonexact_updates": [
+        3690,
+        3691
+      ],
+      "target_present_masked_exact_update_count": 20,
+      "target_present_update_count": 20,
+      "target_present_difference_pixel_count_each_update": 66,
+      "target_present_difference_mask_exactly_equals_external_mask_each_update": true,
+      "target_present_maximum_bgr_channel_delta": 3
+    },
+    "event_bracket_observation": {
+      "pre_event_updates": [
+        3664,
+        3683
+      ],
+      "pre_event_update_count": 20,
+      "missing_required_event_update": 3684,
+      "first_common_post_event_update": 3685,
+      "post_event_r1_sequence": 68,
+      "post_event_r2_sequence": 72,
+      "post_event_outside_mask_mismatch_count": 0,
+      "post_event_total_mismatch_count": 66,
+      "post_event_maximum_bgr_channel_delta": 3,
+      "combined_pre_and_post_state_count": 21,
+      "combined_outside_mask_exact_state_count": 21,
+      "combined_difference_union_equals_external_mask": true,
+      "interpretation": "The late observer arm restored deterministic gameplay pixels. The remaining target failure is a fixed compositor edge plus the absence of a run-r1 draw at update 3684, not a C71-style board replay divergence."
+    },
+    "non_authorizations": [
+      "pc_golden",
+      "front_insertion",
+      "fidelity_gate_open",
+      "retroactive_masked_acceptance",
+      "retroactive_event_bracket_acceptance"
+    ]
+  },
+  "source_bound_anchor": {
+    "framework_update": 3121,
+    "board_seed_each_run": 835125098,
+    "expected_post_index_each_run": 415,
+    "live_post_index_each_run": 415,
+    "post_state_match_each_run": true,
+    "gameplay_mtrand_sync_used": false
+  },
+  "restoration": {
+    "protocol_pre_state_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526",
+    "protocol_restored_state_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526",
+    "host_pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_restored_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "game_process_remaining": false
+  },
+  "decision": {
+    "c74_status": "FAIL",
+    "may_not_be_packaged": true,
+    "may_not_receive_front_insertion_gate_credit": true,
+    "may_not_be_retried_in_place": true,
+    "next_attempt_requires_fresh_session": true,
+    "next_attempt_may_use_c74_for_method_design_only": true,
+    "next_attempt_requires_precollection_sparse_mask_and_target_coverage_contract": true,
+    "core_pc_golden_per_tick_presentation_requirement_remains_unchanged": true
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "schema": "zuma-rl.teacher-bc-dagger-relational-aim-refinement-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T10:37:46.112Z",
+  "status": "AIM_REFINEMENT_SCREEN_FAIL_INSUFFICIENT",
+  "decision": "RETAIN_DATASET_AND_STAGED_DIRECTION_REJECT_EXACT_RECIPE",
+  "preregistration": {
+    "path": "diagnostics/teacher-bc-dagger-relational-refine-s20260859-preregistration-v1.json",
+    "sha256": "sha256:2d00f1134fc1b08457ac177f2ba9be4e103198acc0698ae59db69f569365fcc1",
+    "status": "FROZEN_BEFORE_RUN_OUTPUT"
+  },
+  "artifacts": {
+    "run_dir": "D:/ZumaTraining/screening-teacher-bc-dagger-relational-refine-s20260859-v1",
+    "report_sha256": "sha256:a3b5d23dbbac7cb11286e862cc7ba70fbc0ad5047fb1c99e100fa6a0e6b0baa5",
+    "completion_sha256": "sha256:7ae89e8defa4a58e0cd2f686fd6f51824564a5a53187e7aa78e36a7785fc3f31",
+    "model_sha256": "sha256:0f538b539347e8d4ec1f0c8cda1829a8f60a6fa2d3f694a61c5bb4ab1fd7e423",
+    "dataset_sha256": "sha256:1f01535ef45794071e819b779abf91f0f005e982a33b07cada0d4d82da614862",
+    "dataset_size_bytes": 2245203
+  },
+  "acceptance_results": {
+    "pipeline": {
+      "pass": true,
+      "process_exit_code": 0,
+      "completion_receipt_status": "COMPLETE",
+      "dataset_artifact_present": true
+    },
+    "verb_retention": {
+      "pass": true,
+      "verb_accuracy": 0.9704811969268096,
+      "fire_recall": 0.9092105263157895,
+      "swap_recall": 0.9933554817275747,
+      "confusion_expected_rows_predicted_columns": [
+        [1111, 0, 0],
+        [1, 691, 68],
+        [0, 4, 598]
+      ]
+    },
+    "aim_learning": {
+      "pass": false,
+      "fire_aim_exact_accuracy": 0.08157894736842106,
+      "required_exact_accuracy": 0.1,
+      "fire_aim_within_three_accuracy": 0.14078947368421052,
+      "required_within_three_accuracy": 0.2,
+      "fire_predicted_unique_aim_bins": 15,
+      "required_predicted_unique_aim_bins": 20,
+      "fire_expected_unique_aim_bins": 165,
+      "mean_circular_bin_error": 29.542105263157893,
+      "median_circular_bin_error": 22.0,
+      "p90_circular_bin_error": 73.10000000000002
+    },
+    "held_out_full_horizon": {
+      "pass": false,
+      "wins": 0,
+      "required_wins": 1,
+      "losses": 0,
+      "truncations": 2,
+      "scores": [5570, 5850],
+      "mean_score": 5710.0,
+      "matched_control_mean_score": 5405.0,
+      "mean_score_greater_than_matched_control": true
+    }
+  },
+  "bounded_inference": "lowering verb-loss dominance improved aim accuracy and held-out mean score without losing verb discrimination, but 30 epochs still collapsed 165 teacher aim bins into only 15 predicted bins and did not complete the level",
+  "next_action": {
+    "authorized": "use the frozen aggregated dataset for preregistered offline aim-head optimization and reserve full environment evaluation for candidates that pass aim metrics",
+    "forbidden": "do not extend this exact 30-epoch refinement directly to large-scale RL"
+  },
+  "non_authorizations": [
+    "fresh_seed_generalization_claim",
+    "large_scale_training",
+    "rl_recipe_promotion",
+    "fidelity_gate_opening",
+    "original_game_deployment",
+    "original_transfer_certification",
+    "visual_policy_training"
+  ]
+}

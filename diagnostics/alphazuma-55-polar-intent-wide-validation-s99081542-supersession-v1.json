@@ -1,0 +1,35 @@
+{
+  "schema": "zuma-rl.alphazuma-55-polar-intent-wide-validation-supersession",
+  "version": 1,
+  "status": "SUPERSEDED_BEFORE_SEED_CONSUMPTION",
+  "captured_utc": "2026-08-15T20:57:55.4669020Z",
+  "superseded_plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-wide-validation-s99081542-plan-v1.json",
+    "sha256": "sha256:015f2be106f2b6796ba7ccc560f00356517489fe14c7899c605fca5b308a0755"
+  },
+  "replacement_plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-wide-validation-s99081544-plan-v1.json",
+    "sha256": "sha256:8a0918bf7e4a52b6a9beaf12a396f360821ca39d638c814f3da10171179ab8e6"
+  },
+  "superseded_controller_snapshot": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-wide-validation-s99081542-watch-v1/controller_status.json",
+    "sha256": "sha256:fafb9e333d0d3504377053b6522fd0a2ec399b5cc00c4a30263b479d12b6aab8",
+    "pid": 196373,
+    "status": "RUNNING",
+    "stage": "WAITING_FOR_TRAINING"
+  },
+  "reason": "Close the transient schema race by waiting for the intent trainer launch controller to become terminal before reading completion.json.",
+  "preserved_invariants": {
+    "training_recipe_changed": false,
+    "candidate_inventory_changed": false,
+    "validation_seed_matrix_changed": false,
+    "formal_seed_consumption": "NONE",
+    "engineering_seed_consumption_by_superseded_plan": "NONE"
+  },
+  "superseded_outputs_absent_at_capture": [
+    "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-wide-validation-s99081542-v1",
+    "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-wide-validation-s99081542-models-v1.json",
+    "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-wide-validation-s99081542-preregistration-v1.json",
+    "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-wide-validation-s99081542-audit-v1.json"
+  ]
+}

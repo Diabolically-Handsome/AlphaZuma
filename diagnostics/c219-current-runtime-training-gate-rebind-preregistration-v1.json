@@ -1,0 +1,152 @@
+{
+  "acceptance": {
+    "environment_contract_v13": {
+      "fresh_recomputation_exact": true,
+      "status": "PASS",
+      "training_runtime": "WSL Ubuntu .venv Python with torch 2.12.1+cu130",
+      "trajectory_rows_reproducible": 3
+    },
+    "fidelity_gate": {
+      "all_four_lanes": "PASS",
+      "frozen_report_equals_fresh_recomputation": true,
+      "policy": "original-transfer-jungle2-v4",
+      "status": "OPEN"
+    },
+    "model_migration_v7": {
+      "current_actor_interface_compatible": true,
+      "functional_preservation": "PASS",
+      "migrated_model_sha256_unchanged": "sha256:32e1e841962833b3c74ce743598df1c87e21c9c9c931092152e8bc2700081f64",
+      "source_model_sha256_unchanged": "sha256:f03dee97cb5a3e2ce3abcf4324137fe6ed9b68e827765b4a7b6adfa63cafb8f7",
+      "status": "PASS",
+      "transformed_state_dict_exact": true
+    },
+    "training_gate_v9": {
+      "authorized_effective_steps": 98304,
+      "authorized_seed": 20260950,
+      "reasons": [],
+      "recipe_sha256": "sha256:dde6a9ee9c8b7e08f20589e633d1a6a947849bc0831054d8b5019f6f84a4c9c0",
+      "status": "OPEN"
+    },
+    "training_start": false
+  },
+  "allowed_changes": {
+    "create": [
+      "D:/ZumaGolden/training/contracts/jungle2-training-environment-v13.json",
+      "D:/ZumaGolden/training/reports/fruit-actor-model-migration-v7.json",
+      "D:/ZumaGolden/training/suites/training-gate-v3-candidate-v9.json",
+      "D:/ZumaGolden/training/reports/training-gate-v3-candidate-v9-report.json",
+      "diagnostics/c219-current-runtime-training-gate-rebind-success-receipt-v1.json",
+      "diagnostics/c219-current-runtime-training-gate-rebind-failure-receipt-v1.json"
+    ],
+    "forbidden": [
+      "modifying or deleting any prior contract, migration, suite, report, model, or evidence artifact",
+      "changing the jungle2-transfer-bootstrap-v3 recipe, policy, thresholds, seed, or authorized step count",
+      "changing Fidelity Gate policy, evidence, or thresholds",
+      "changing simulator, policy, environment-contract, model-migration, or Training Gate code during this campaign",
+      "creating or modifying the migrated model",
+      "starting training before both Gates are independently OPEN"
+    ],
+    "modify": []
+  },
+  "baseline": {
+    "environment_contract_v12": {
+      "artifact": "D:/ZumaGolden/training/contracts/jungle2-training-environment-v12.json",
+      "artifact_sha256": "sha256:36b700eee9ae6c0d8f6dbf2da2fbb1cc08e9443690243e8c8fca49eb0fe6b604",
+      "contract_fingerprint": "sha256:cb9398e7b73fa97791e7dc98db273cb885078e34afbd062272031538bcb2ccaf",
+      "status": "PASS_AT_CREATION_BUT_NOT_CURRENT"
+    },
+    "model_migration_v6": {
+      "artifact": "D:/ZumaGolden/training/reports/fruit-actor-model-migration-v6.json",
+      "artifact_sha256": "sha256:0074d3bb5f4ef9b4db29e53482c6a749eb1a76d9a3cc145dc3306d995fe1c6dd",
+      "status": "PASS_AT_CREATION_BUT_BOUND_TO_V12"
+    },
+    "training_gate_v8": {
+      "report": "D:/ZumaGolden/training/reports/training-gate-v3-candidate-v8-report.json",
+      "report_sha256": "sha256:161842a65025fa39bc102602a208dae827fa96babb97eaa1279eb25d49026862",
+      "reasons": [
+        "bound Fidelity Gate is not OPEN on all v4 evidence lanes"
+      ],
+      "status": "CLOSED",
+      "suite": "D:/ZumaGolden/training/suites/training-gate-v3-candidate-v8.json",
+      "suite_sha256": "sha256:b37a1d1b1e2493809470da1819f74c902819c5e643f8ee4b7795b29c662beb64"
+    }
+  },
+  "created_utc": "2026-08-10T18:35:14.030Z",
+  "decision_rule": {
+    "fail": "Retain every newly created artifact, create the immutable c219 failure receipt, grant no training authorization, and diagnose the first failed invariant before a separately preregistered retry.",
+    "pass": "Create the immutable c219 success receipt, then perform a non-training command-level preflight of the exact authorized request before declaring original-transfer PC Golden training launchable."
+  },
+  "fixed_code": {
+    "src/zuma_rl/environment_contract.py": "sha256:4b17ade563223e44a76c3815395dd09ac4cc307cde084b36f452c37e0aeedd74",
+    "src/zuma_rl/fidelity_gate.py": "sha256:793a667f21026c5c6b6b5047d8f34376227db393c01c8ce7c53bf94976a80139",
+    "src/zuma_rl/model_migration.py": "sha256:1dd5675cb0cf16644dcaf2ff11dc18d13e2006fc0105068abf7f4b85c121d33c",
+    "src/zuma_rl/revenge_core.py": "sha256:0229faec8c7b3fb05f64831bcc93565ef072184d48bb96c489b767d6c55628ad",
+    "src/zuma_rl/train.py": "sha256:5f7258e16f6248ec146de6def880228199e216ba8d3e4c069fafbfd1ab3612d6",
+    "src/zuma_rl/training_gate.py": "sha256:e83745e55aa7a4446c0778c5ae59e3c7ab20f40cf7a1ea78516f175c2413e5a5",
+    "tools/audit_fruit_actor_model.py": "sha256:56bf0f6f81a37d8f8479ce2415edf6013d2e57ed052c0882e9f8c0d9c0248913",
+    "tools/build_training_environment_contract.py": "sha256:0ca347a68c864c19850f53329b180ecc7298f78ea329f4c195e3bb49d17b865d",
+    "tools/build_training_gate_v3_suite.py": "sha256:236898f458635aa331abbc97b47278edb3f5aa0729970337cdd22be74b19e33d"
+  },
+  "fixed_inputs": {
+    "fidelity_gate_report": {
+      "artifact": "D:/ZumaGolden/diagnostics/fidelity-gate-c218-candidate-v28-report.json",
+      "artifact_sha256": "sha256:a08d64bfd13bdbfdcb74c65163aa9e9b6a004e9d8c8fc5ff35376d252655c7d1",
+      "status": "OPEN"
+    },
+    "fidelity_suite": {
+      "artifact": "D:/ZumaGolden/diagnostics/fidelity-suite-c200-candidate-v24.json",
+      "artifact_sha256": "sha256:0bfb00323d7544626b1d19452e64e55c88bacc496ecee0ba2303c7cb0ea29712",
+      "evidence_count": 97
+    },
+    "migrated_model": {
+      "artifact": "D:/ZumaGolden/training/models/fruit-actor-migrated-v1.zip",
+      "artifact_bytes": 1600326,
+      "artifact_sha256": "sha256:32e1e841962833b3c74ce743598df1c87e21c9c9c931092152e8bc2700081f64"
+    },
+    "scale_stability_outcome": {
+      "artifact": "D:/ZumaGolden/training/evidence/teacher-policy-anchor-c1000-scale98k-behavioral-s20260940-outcome-v1.json",
+      "artifact_sha256": "sha256:2db48f6ff73b72e84705e715d4d9431cf24afeb3e4135dc5c83114e7ae4a2449"
+    },
+    "scale_stability_preregistration": {
+      "artifact": "D:/ZumaGolden/training/evidence/teacher-policy-anchor-c1000-scale98k-behavioral-s20260940-preregistration-v1.json",
+      "artifact_sha256": "sha256:e51c651e5f17604f59c7c3a057a5d3c9e95ff32428c689077db4ef2993fc9c50"
+    },
+    "source_model": {
+      "artifact": "D:/ZumaGolden/training/evidence/legacy-refined-model-f03dee97-v1.zip",
+      "artifact_bytes": 3286219,
+      "artifact_sha256": "sha256:f03dee97cb5a3e2ce3abcf4324137fe6ed9b68e827765b4a7b6adfa63cafb8f7"
+    }
+  },
+  "id": "c219-current-runtime-training-gate-rebind-v1",
+  "observed_staleness": {
+    "classification": "expected_environment_contract_invalidation_after_certified_simulator_dynamics_repair",
+    "current_revenge_core_sha256": "sha256:0229faec8c7b3fb05f64831bcc93565ef072184d48bb96c489b767d6c55628ad",
+    "difference_count": 6,
+    "differing_fields": [
+      "contract_fingerprint",
+      "deterministic_kat.aggregate_sha256",
+      "deterministic_kat.rows[0].trajectory_sha256",
+      "deterministic_kat.rows[1].trajectory_sha256",
+      "deterministic_kat.rows[2].trajectory_sha256",
+      "implementation_source_sha256.environment_runtime.src/zuma_rl/revenge_core.py"
+    ],
+    "repair_provenance": {
+      "implementation_receipt": "diagnostics/c163-c158-loss-chamber-lock-implementation-receipt-v1.json",
+      "implementation_receipt_sha256": "sha256:4d63748bbded2788c43a6b7c2ba470081b82d41e681dea9a04a2142683f8d828",
+      "original_diff_success_receipt": "diagnostics/c163-c158-natural-loss-simulator-diff-success-receipt-v1.json",
+      "original_diff_success_receipt_sha256": "sha256:60b3c10f0bf8e57e3eca7b13b2ef912d47f5ba4ae849788dea2b4715a27006f1"
+    },
+    "v12_revenge_core_sha256": "sha256:bf4051039dccdf17f6e7b7eead4c53b014afbeaa48dfae0765ae5a4042ef8e79"
+  },
+  "outputs": {
+    "all_absent_at_freeze": true,
+    "environment_contract": "D:/ZumaGolden/training/contracts/jungle2-training-environment-v13.json",
+    "model_migration_audit": "D:/ZumaGolden/training/reports/fruit-actor-model-migration-v7.json",
+    "training_gate_report": "D:/ZumaGolden/training/reports/training-gate-v3-candidate-v9-report.json",
+    "training_gate_suite": "D:/ZumaGolden/training/suites/training-gate-v3-candidate-v9.json"
+  },
+  "purpose": "Refresh the immutable Training Gate dependencies for the currently Fidelity-qualified simulator, without changing the model, training recipe, policy, Gate logic, or any prior evidence.",
+  "schema": "zuma-rl.current-runtime-training-gate-rebind-preregistration",
+  "status": "FROZEN_BEFORE_NEW_OUTPUTS",
+  "version": 1
+}

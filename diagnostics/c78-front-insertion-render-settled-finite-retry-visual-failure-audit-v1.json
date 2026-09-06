@@ -1,0 +1,224 @@
+{
+  "schema": "zuma-rl.pc-front-insertion-render-settled-finite-retry-failure-audit",
+  "version": 1,
+  "id": "c78-front-insertion-finite-retry-03-bottom-chain-lower-edge-transient-failure",
+  "created_utc": "2026-08-03T19:40:59Z",
+  "classification": "failed-final-finite-attempt-render-settled-visual-holdout-not-pc-golden",
+  "gate_effect": "none",
+  "parent_chain": {
+    "preregistration": {
+      "path": "diagnostics/c76-c78-front-insertion-render-settled-finite-stopping-preregistration-v1.json",
+      "sha256": "sha256:fc654b1240946e3fc58aa94b053c52c6ca1ef439f3d0929000d120165fdf8078"
+    },
+    "execution_binding": {
+      "path": "diagnostics/c78-front-insertion-render-settled-finite-retry-execution-binding-v1.json",
+      "sha256": "sha256:5e434936927f5a6d8cdd1fbbd1d278e5ceb68706bad6aaf3943214bc940e7599"
+    },
+    "prior_failure_audits": [
+      {
+        "path": "diagnostics/c76-front-insertion-render-settled-finite-retry-infrastructure-failure-audit-v1.json",
+        "sha256": "sha256:98889f41bc6f4e417c8e69af5a4657e6dd6350be11f63a917faa2147633407ad"
+      },
+      {
+        "path": "diagnostics/c77-front-insertion-render-settled-finite-retry-trace-failure-audit-v1.json",
+        "sha256": "sha256:adde2b3803c0696b5b4a6e33e1268c999ccba093398eab65407a7174ddcdef7e"
+      }
+    ]
+  },
+  "session": {
+    "root": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710",
+    "plan_sha256": "sha256:5a7ba58eccd7e0d1b1008ac089cce59c167a26ba8bc359ef76f3dcd2bea8c0db",
+    "session_nonce": "30180590748c4ce1a755832239ac3431",
+    "collection": {
+      "path": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/collection.json",
+      "sha256": "sha256:08789f7421db492acca3dd94d6bb6a417ac3388e1a5c488a856bd938ee1d74e4",
+      "status": "complete",
+      "distinct_process_ids": [
+        50060,
+        43412
+      ]
+    }
+  },
+  "collection_and_transport": {
+    "status": "PASS",
+    "r1": {
+      "strict_replay_sha256": "sha256:eff0a09a8bacb334331c2c38ec7cab9813285f1a0e6d21f64c208984098cc2ed",
+      "strict_replay_failure_count": 0,
+      "strict_replay_last_update": 10536,
+      "actual_arm_update": 3566,
+      "mean_poll_hz": 4975.565511993669,
+      "p99_poll_interval_ns": 203900,
+      "skipped_draw_increments": 0,
+      "frame_count": 90,
+      "capture_metadata_sha256": "sha256:2a745699a212af64eb0e79434a191ff89511f15a801c406e82335c76155e3523",
+      "frames_csv_sha256": "sha256:53004e529abd03da6a6933758e57373003d5b2c3fb82e6e2d06addcfece00262",
+      "framework_poll_sha256": "sha256:99d81a4261cf0c782590a7f4eabfdb981d7f0140eeea1e2ca99c8c109187dd1b",
+      "render_settled_map_sha256": "sha256:4eb7db1f64205ff3abd81a8ff16ffd7335815f895d868157402223e307b5f749",
+      "assigned_update_range": [
+        3640,
+        3694
+      ],
+      "ffv1_sha256": "sha256:1b61ba3469d108bc3eac2c016c6f901d769b682354176710b73c5053bcd2234c",
+      "ffv1_bytes": 69014392
+    },
+    "r2": {
+      "strict_replay_sha256": "sha256:ffa896233445ec0e505ef03207500cf90893d9fefbe22f1bec8f764ef394451b",
+      "strict_replay_failure_count": 0,
+      "strict_replay_last_update": 10536,
+      "actual_arm_update": 3566,
+      "mean_poll_hz": 4976.030177549681,
+      "p99_poll_interval_ns": 204900,
+      "skipped_draw_increments": 0,
+      "frame_count": 91,
+      "capture_metadata_sha256": "sha256:d88d96dbe0f329176c8922bf897b9bf32d57a04a8a06b030036121b3ea422b5e",
+      "frames_csv_sha256": "sha256:0797bcf292d8496850c9af1c1db88390bae1e7503408d2e1eadc4a936de050ed",
+      "framework_poll_sha256": "sha256:8c65fd2f2ccde0132043dae36de698bfb5e416a0938affd6ff074ed174c7068c",
+      "render_settled_map_sha256": "sha256:1656b4e98b79b06571195468b1e07b8233047ed2f66593ea5a21dc02b2c5bac8",
+      "assigned_update_range": [
+        3640,
+        3694
+      ],
+      "ffv1_sha256": "sha256:3a6ca49e9817c9a49ea2aebbf2a5eccf135dedbda7af4a2e957d89617e1c6235",
+      "ffv1_bytes": 69778938
+    },
+    "source_bound_anchor": {
+      "framework_update": 3121,
+      "board_seed_each_run": 835125098,
+      "expected_post_index_each_run": 415,
+      "live_post_index_each_run": 415,
+      "post_state_match_each_run": true,
+      "gameplay_mtrand_sync_used": false
+    }
+  },
+  "frozen_verdict": {
+    "report": "D:/ZumaGolden/diagnostics/c78-render-settled-sparse-target-verification-v2.json",
+    "report_sha256": "sha256:b1b8c9958e0a6349c7a1cb03179a0bc49c01ebe1009142d031b366a4b6310bc3",
+    "verifier": "tools/verify_pc_render_settled_target.py",
+    "verifier_sha256": "sha256:9645734fc47bcf9e030fa66b6738905fb6667a29df2ca0c125603567d7f21261",
+    "status": "FAIL",
+    "required_target_update_count": 21,
+    "accepted_update_count": 20,
+    "full_frame_exact_update_count": 20,
+    "accepted_exact_range": [
+      3664,
+      3683
+    ],
+    "absent_updates": [],
+    "unmatched_updates": [
+      3684
+    ],
+    "failed_criteria": [
+      "complete_target_update_coverage",
+      "monotonic_selected_frame_pairs",
+      "exact_outside_frozen_sparse_mask",
+      "bounded_frozen_mask_pixels",
+      "bounded_frozen_mask_bgr_delta",
+      "exact_mask_alpha"
+    ],
+    "dependent_criteria_fail_closed_on_partial_window": true
+  },
+  "posthoc_failure_localization_only": {
+    "classification": "consumed-method-diagnosis-not-c78-credit",
+    "framework_update": 3684,
+    "render_settled_candidates": {
+      "r1_sequences": [
+        72
+      ],
+      "r2_sequences": [
+        73,
+        74
+      ]
+    },
+    "best_same_update_pair": {
+      "r1_sequence": 72,
+      "r2_sequence": 73,
+      "r1_frame_sha256": "sha256:b0551c3afa33203d1c55e0e4dedaa5dcc28ec9f3aacd1e425c5ab06f1d3817d7",
+      "r2_frame_sha256": "sha256:4eb70594556b95756776c0fc3488d488e69160097f87f45b6e1d03ab22db8280",
+      "mismatched_pixel_count": 360,
+      "difference_bounds_xyxy": [
+        198,
+        588,
+        470,
+        592
+      ],
+      "maximum_absolute_delta_by_bgra_channel": [
+        44,
+        53,
+        57,
+        0
+      ],
+      "mismatch_mask_sha256": "sha256:9097a92af595aa701dfa1190715ca8a5e2ac7294999baf6fbeabcebe454c0c97",
+      "all_differences_outside_c65_c66_sparse_mask": true,
+      "all_differences_inside_bottom_twelve_raster_rows": true,
+      "all_pixels_above_y_588_exact": true,
+      "magnified_visual_localization": "lower_antialiased_or_shadow_edges_of_visible_bottom_chain_ball_sprites",
+      "safe_to_classify_as_noninteractive_border_noise": false
+    },
+    "exact_visual_bracket": {
+      "pre_transition": {
+        "r1_sequence": 70,
+        "r2_sequence": 73,
+        "frame_sha256": "sha256:4eb70594556b95756776c0fc3488d488e69160097f87f45b6e1d03ab22db8280",
+        "full_frame_exact": true
+      },
+      "post_transition": {
+        "r1_sequence": 73,
+        "r2_sequence": 74,
+        "frame_sha256": "sha256:3b9873df59daab8b4512493cb0f4d83760eba3b25bed42bfb33e5930a4c9e5a4",
+        "full_frame_exact": true
+      },
+      "same_update_3685_reconvergence": {
+        "r1_sequence": 74,
+        "r2_sequence": 75,
+        "frame_sha256": "sha256:7e759bb1c31e1b71099387a387c97582957503d2abed8b47b6391bf6e0f59d0e",
+        "full_frame_exact": true
+      }
+    },
+    "rendered_frames": [
+      {
+        "path": "outputs/c78-r1-u3684-seq72.png",
+        "sha256": "sha256:f67a43bc2d4fe4f56d4998dd39f1b3ac65b29ad7676d41e3699019b86f6a58ca"
+      },
+      {
+        "path": "outputs/c78-r2-u3684-seq73-pre.png",
+        "sha256": "sha256:0d892bdf8f69be9656c888304ad8d5f6cb37a0887d546f0ec7eaca8d46b43d72"
+      },
+      {
+        "path": "outputs/c78-r2-u3684-seq74-post.png",
+        "sha256": "sha256:1d482a13d29a99eb048587dc43f1fb07dbae4437ce671430abb3e7c8055881a2"
+      },
+      {
+        "path": "outputs/c78-r1-u3685-seq73-post.png",
+        "sha256": "sha256:1d482a13d29a99eb048587dc43f1fb07dbae4437ce671430abb3e7c8055881a2"
+      },
+      {
+        "path": "outputs/c78-u3684-bottom-raster-crop-x4.png",
+        "sha256": "sha256:6c51cd745d27eb52b841c8c048e83462887e168d42732dcd12eabb341e662d6b",
+        "role": "magnified_lower_ball_sprite_edge_localization"
+      }
+    ],
+    "interpretation": "The only frozen-window failure is a four-row transient on the lower raster edges of visible bottom-chain ball sprites. Exact full-frame pre and post states and immediate same-update reconvergence rule out persistent gameplay-state divergence in this pair, but the pixels are gameplay-adjacent and may not be relabeled as harmless border noise. C78 cannot authorize a new exclusion mask; internal ball-position and renderer-phase evidence must separate state divergence from rasterization phase."
+  },
+  "restoration": {
+    "protocol_pre_state_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526",
+    "protocol_restored_state_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526",
+    "host_pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_restored_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_restored_artifact_sha256": "sha256:d157d68e23dc68a1e9e0812bad2fb0c0a3e1739a43a34f7f6f09669e12305da4",
+    "game_process_remaining": false
+  },
+  "finite_stopping_accounting": {
+    "attempts_consumed": 3,
+    "attempts_remaining": 0,
+    "campaign_status": "FAIL_NO_COMPLETE_21_OF_21_PASS",
+    "additional_target_sampling_under_this_preregistration_forbidden": true
+  },
+  "decision": {
+    "c78_status": "FAIL_VISUAL_BOUNDARY_TRANSIENT",
+    "may_not_be_packaged": true,
+    "may_not_receive_front_insertion_gate_credit": true,
+    "pc_golden_status": "NOT_CREATED",
+    "fidelity_gate_status": "CLOSED",
+    "next_method_step": "Use consumed C74 C75 and C78 evidence to preregister an internal ball-position and renderer-phase diagnostic. Do not expand the visual mask unless an independent mechanism-specific calibration and holdout later justify it."
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "schema": "zuma-rl.retail-recording-control-correction-preregistration",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T07:59:04.2059956Z",
+  "purpose": "Correct the acquisition control contradiction exposed by the completed c137 ensemble without relabeling any frozen outcome and without granting gameplay-mechanism credit to a recording report.",
+  "classification": "post-acquisition-control-correction-preregistered-before-implementation",
+  "parent_preregistration": {
+    "path": "diagnostics/recording-c137-c138-preregistration-v1.json",
+    "sha256": "sha256:8db2719df78ab8423796e1b1ac221dbd6421fefc450648c7f216803aa1dc59ec"
+  },
+  "frozen_observations": {
+    "c137a1": {
+      "result_path": "D:/ZumaGolden/record-c137a1-idle-natural-loss-v1/result.json",
+      "result_sha256": "sha256:dc19ea7b984e2f70092d52bc7e1d1413c4b7961eb2a3c48cd1eeb23f5c0a53bb",
+      "dmo_sha256": "sha256:f94a2a91e4ab32b63315cfb4ad1669e8b845ba86c94cfbf12abdcfcd92814b4f",
+      "trace_sha256": "sha256:2dbf89ef8785e8f7745ae8721f68b87f242c26c98c2f879dc6a3c9776ea5076f",
+      "reported_status": "INCOMPLETE",
+      "reported_outcome": "timeout"
+    },
+    "c137a2": {
+      "result_path": "D:/ZumaGolden/record-c137a2-idle-natural-loss-v1/result.json",
+      "result_sha256": "sha256:6e0f0e66a8f3c83ae4720c7bae2174fbd4d55566d48c8d4e7ead32c093904e8d",
+      "dmo_sha256": "sha256:dcd381e2c141af673c1cdfcd6e8aaf7f15cdbfc68d7a8ea5878ffcdb9f1794f2",
+      "trace_sha256": "sha256:3e6f8b43770f33301c2d719ea5726a4f5d60f0a7a74b2ea57b459b43cead2a64",
+      "reported_status": "INCOMPLETE",
+      "reported_outcome": "timeout"
+    },
+    "c137a3": {
+      "result_path": "D:/ZumaGolden/record-c137a3-idle-natural-loss-v1/result.json",
+      "result_sha256": "sha256:3174433044bf03ced9ef65f516063f5ee41721c466ca84b0464ea07a0ea07cbf",
+      "dmo_sha256": "sha256:e705fb755afb51775e9547bc78d7e426803d4d20dbac21d89fc05fc9ea188072",
+      "trace_sha256": "sha256:d1f5754b586f8a84c77f14aedfddb6589d401f47d1e05623fd99a251b76222c1",
+      "reported_status": "INCOMPLETE",
+      "reported_outcome": "timeout"
+    }
+  },
+  "observed_control_failure": {
+    "retail_behavior": "A natural life loss is transient: the retail game deducts a life and automatically starts a replacement board before the old ten-second quiescent-loss confirmation can complete.",
+    "detector_failure": "The frozen recorder therefore times out after observing later replacement boards instead of certifying the first loss transition.",
+    "acceptance_contradiction": "The frozen recorder closes every non-win outcome through retail_window_close while its PASS predicate requires retail_ui, so a natural_loss result could not pass even if detected.",
+    "synthetic_test_gap": "Existing natural-loss fixtures combine a ten-second quiescent terminal state with retail_ui and therefore do not exercise the integrated retail transition."
+  },
+  "frozen_corrections": {
+    "separate_transport_from_outcome": true,
+    "transport_scope_name": "bounded_authentic_retail_capture",
+    "transport_scope_requirements": [
+      "raw DMO path, byte count, and SHA-256 bind exactly to the frozen report",
+      "byte-identical pinned retail runtime",
+      "zero process-memory writes in recorder, main-thread receipt, RNG monitor, and MTRand trace",
+      "natural uncontrolled RNG with no seed override",
+      "verified retail-window main thread and matching process/thread identities",
+      "MTRand hardware trace status PASS with restored breakpoint and exact trace SHA-256",
+      "Win32 SendInput transport",
+      "normal retail process exit code 0 through either retail_ui or retail_window_close",
+      "exact host pre-state restoration",
+      "version 2 expected_outcome natural_loss, gameplay_policy idle, zero gameplay actions and swaps",
+      "frozen report status INCOMPLETE and gameplay outcome timeout remain unchanged"
+    ],
+    "explicit_opt_in_required": true,
+    "default_source_bound_contract_remains_certifying_natural_outcome": true,
+    "transport_normalization_may_claim_only_source_authenticity": true,
+    "bounded_capture_may_not_claim_natural_loss_or_any_fidelity_feature": true,
+    "future_recorder_fix": "Represent natural loss as an update-coherent loss-to-restart transition receipt and make the allowed normal exit path outcome-specific; do not require a terminal state to persist for ten seconds.",
+    "frozen_reports_and_dmos_are_never_modified": true
+  },
+  "implementation_order": [
+    "add fail-closed bounded-authentic-capture validation and negative tests",
+    "thread an explicit bounded-capture opt-in through source-bound global and CRT anchor loaders and plan preparation",
+    "retain strict certifying-outcome validation as the default and for all Fidelity Gate credit",
+    "normalize c137a1 only by the already-proven duplicate startup registry-read removal",
+    "prepare a source-bound c137a1 replay plan from its exact RNG monitor and MTRand trace",
+    "run a compact diagnostic replay to localize the first natural loss transition",
+    "freeze a fixed formal window before collecting two full-state native replays",
+    "audit recurrence and simulator difference before requesting natural_loss Gate credit"
+  ],
+  "decision_rules": {
+    "no_retroactive_recording_pass": true,
+    "no_outcome_credit_from_transport_validation": true,
+    "no_feature_credit_from_single_live_observation": true,
+    "formal_replay_requires_two_independent_native_runs": true,
+    "formal_replay_requires_exact_source_bound_rng_receipts": true,
+    "natural_loss_credit_requires_recurrent_update_coherent_original-state_transition": true,
+    "failed_or_incomparable_replays_are_retained": true,
+    "c137a2_and_c137a3_are_holdback_sources_until_c137a1_fails_a_declared_integrity_or_replayability_check": true,
+    "source_selection": "Use c137a1 first because run order was frozen before outcomes; use c137a2 then c137a3 only on a declared technical failure, never because their gameplay result looks preferable."
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "zuma-rl.teacher-policy-anchor-kl-trajectory",
+  "version": 1,
+  "created_utc": "2026-08-04T16:28:22.064Z",
+  "status": "PASS_DIAGNOSTIC_EXTRACTION",
+  "classification": "post_hoc_tensorboard_diagnostic_only",
+  "run_dir": "D:/ZumaTraining/scale-teacher-anchor-c1000-s20260930-98k-n32-v1",
+  "input": {
+    "event_file": "D:/ZumaTraining/scale-teacher-anchor-c1000-s20260930-98k-n32-v1/tensorboard/MaskablePPO_1/events.out.tfevents.1785859882.Laure.422.0",
+    "sha256": "sha256:411536bd2e7ee3909f8fe1a317d09c59b829c3ca6f543083160a6f11f94d5abd",
+    "scalar_tag": "train/teacher_anchor_kl"
+  },
+  "summary": {
+    "logged_point_count": 47,
+    "verification_train_call_count": 48,
+    "first_logged_value": 0.0000028236427169758826,
+    "last_logged_value": 0.000012978138329344802,
+    "minimum_logged_value": 0.0000008115191008073452,
+    "maximum_logged_value": 0.000014629817997047212,
+    "mean_logged_value": 0.000006627942928225047,
+    "verification_sample_weighted_mean": 0.000006675925556365314,
+    "linear_slope_per_effective_step": 1.1802141998303966e-10
+  },
+  "eight_update_blocks": [
+    {"step_end": 18432, "point_count": 8, "mean": 0.0000014722277157375174, "max": 0.0000028236427169758826},
+    {"step_end": 34816, "point_count": 8, "mean": 0.000003960059245855518, "max": 0.000007138945875340141},
+    {"step_end": 51200, "point_count": 8, "mean": 0.0000066309777366768685, "max": 0.000007757542334729806},
+    {"step_end": 67584, "point_count": 8, "mean": 0.00000776780859723658, "max": 0.000008918021194403991},
+    {"step_end": 83968, "point_count": 8, "mean": 0.000008758951423715189, "max": 0.000010760505574580748},
+    {"step_end": 98304, "point_count": 7, "mean": 0.000011827588553257686, "max": 0.000014629817997047212}
+  ],
+  "bounded_inference": "the fixed coefficient does not hold rollout-state teacher KL stationary over 98304 steps; logged block means rise by roughly eightfold from the first to the final block, although the absolute KL remains small and behavior must be judged separately",
+  "non_authorizations": [
+    "formal_scale_pass",
+    "threshold_reinterpretation",
+    "large_scale_training",
+    "fidelity_gate_opening"
+  ]
+}

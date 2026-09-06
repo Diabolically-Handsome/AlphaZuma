@@ -1,0 +1,46 @@
+{
+  "schema": "zuma-rl.alphazuma-55-single-policy-goal-finalizer",
+  "version": 1,
+  "status": "FROZEN_BEFORE_GOAL_COMPLETION",
+  "campaign_id": "alphazuma-55-single-policy-goal-finalizer-s99081606",
+  "created_utc": "2026-08-16T01:01:00Z",
+  "deadline_utc": "2026-08-17T15:00:00Z",
+  "supersedes": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-single-policy-goal-finalizer-s99081554-preregistration-v2.json",
+    "sha256": "sha256:55cc5983104284ab4e8af4aa79e37b8f1e51d270983fd68941c60f45be98aee3"
+  },
+  "goal_audit_plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-single-policy-goal-audit-s99081605-preregistration-v3.json",
+    "sha256": "sha256:61b54cf6702f2ebbb75c97117521b997a7dc61b3cda88f931dbf2647e0a9db52"
+  },
+  "implementation": {
+    "goal_auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_single_policy_goal_v3.py",
+      "sha256": "sha256:a911f355d529ffb19570e41c33758123f5b49764f3803def15ea4d4d0b625297"
+    },
+    "watcher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/watch_alphazuma_55_single_policy_goal_v3.py",
+      "sha256": "sha256:6de301bfcaecf5b841b99abb448aed1565e7a33acf101429b9bb9f55dca98ee0"
+    }
+  },
+  "outputs": {
+    "status_root": "/mnt/d/ZumaTraining/alphazuma-55-single-policy-goal-finalizer-s99081606-v3",
+    "goal_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-single-policy-goal-independent-audit-s99081605-v3.json"
+  },
+  "hardware_restoration": {
+    "gpu_restore_request": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/hardware/restore-requested.txt",
+    "power_plan_restore_request": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/hardware/power-plan-restore-requested.txt",
+    "gpu_guard_receipt": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/hardware/gpu-power-guard.json",
+    "power_plan_guard_receipt": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/hardware/windows-power-plan-guard.json",
+    "restore_gpu_limits_watts": {"0": 600, "1": 400},
+    "restore_windows_power_plan_guid": "381b4222-f694-41f0-9685-ff5bb260df2e",
+    "restore_after_goal_independent_pass_or_deadline": true,
+    "verification_required": true
+  },
+  "authority_boundary": {
+    "watcher_may_only_create_goal_receipt_after_goal_auditor_pass": true,
+    "watcher_may_request_power_restore_only_after_goal_pass_or_deadline": true,
+    "watcher_has_no_policy_inference_authority": true,
+    "watcher_cannot_change_campaign_priority_or_gate_semantics": true
+  }
+}

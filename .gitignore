@@ -1,0 +1,26 @@
+.venv/
+.venv-win/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+runs/
+checkpoints/
+*.zip
+.original_cache/
+pc_captures/
+external/
+
+# --- added 2026-09-06 (git init) ---
+# third-party media & retail-game captures never enter the repo
+outputs/analysis-v1-vs-human-adv17/human-*
+*.ts
+*.bmp
+# rendered replay videos live in the aispeedrun repo (github.com/Diabolically-Handsome/aispeedrun)
+*.mp4
+# misc
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,48 @@
+{
+  "schema": "zuma-rl.pc-late-handoff-rng-smoke-execution-binding",
+  "version": 22,
+  "status": "BOUND_BEFORE_RUN_OUTPUTS",
+  "created_utc": "2026-08-05T19:33:02.159Z",
+  "id": "late-handoff-rng-smoke-v22-execution",
+  "session_nonce": "b16225408efa42b68e332508da38641a",
+  "parent_preregistration": "diagnostics/late-handoff-rng-smoke-preregistration-v22.json",
+  "parent_preregistration_sha256": "sha256:f1a43b92bbc12891b5088da5c25aceb278c67c7f781d69fbcd72bf62ca2e7ff1",
+  "trigger_outcome": "diagnostics/handoff-rng-state-correlation-outcome-v21.json",
+  "trigger_outcome_sha256": "sha256:3755a3f4d60574d6e66721e703c5f2a9863ea300d45e8db53bc733c605e4339e",
+  "preflight": {
+    "run_root_absent": true,
+    "host_outputs_absent": true,
+    "outcome_absent": true,
+    "runtime_process_count": 0,
+    "input_and_tool_hashes_match": true,
+    "capture_fresh_host_pre_after_this_binding": true
+  },
+  "fixed_command_contract": {
+    "probe_update": 3425,
+    "slowdown_update": 3415,
+    "maximum_attempts": 3,
+    "trajectory_mode": "rng",
+    "trajectory_end_update": 3425,
+    "trace_detach_update": 3120,
+    "trace_reattach_update": 3501,
+    "global_mtrand_call_start_after_update": 3120,
+    "global_mtrand_call_end_at_update": 3121,
+    "global_mtrand_call_observe_boundary_only": true,
+    "global_mtrand_call_observe_thread_runtime": true,
+    "global_mtrand_call_observe_handoff_thread_runtime": true,
+    "global_mtrand_call_observe_handoff_rng_state": true,
+    "diagnostic_disable_source_bound_board_anchor": true,
+    "skip_repaint_guard": true,
+    "skip_frozen_snapshot": true,
+    "timeout_seconds": 900
+  },
+  "execution_rule": {
+    "retain_every_attempt": true,
+    "stop_at_first_valid_observation": true,
+    "never_retry_for_semantic_result": true,
+    "post_verified_ready_failure_is_nonretryable": true,
+    "capture_and_verify_host_post": true
+  },
+  "output_absence_recheck": {"run_root": true, "host_pre": true, "host_post": true, "outcome": true},
+  "non_authorizations": ["pc_golden_credit", "fidelity_gate_change", "formal_transport_change", "large_scale_training_start"]
+}

@@ -1,0 +1,80 @@
+{
+  "schema": "zuma-rl.gate-contract-and-drift-refresh-success-receipt",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T17:36:00Z",
+  "id": "c200-c199-fidelity-gate-root-cause-correction",
+  "controls": {
+    "preregistration": {
+      "path": "diagnostics/c200-gate-contract-and-drift-refresh-preregistration-v1.json",
+      "sha256": "sha256:ca8c0150eb043d7d43d169080579a4d881b9e87a1d07b0ab921e6fe040350d56"
+    },
+    "mtrand_amendment": {
+      "path": "diagnostics/c200-mtrand-proof-rebinding-amendment-v1.json",
+      "sha256": "sha256:500f0c732698ef2e7f0182808a7fb7377e1e6163e22818dcddb420adf889b6af"
+    },
+    "actor_path_amendment": {
+      "path": "diagnostics/c200-actor-evidence-root-path-amendment-v1.json",
+      "sha256": "sha256:83ac87b0743e4438a4b98eb05244dfcce1292e719c1e0a272745ca39a0f360aa"
+    }
+  },
+  "qualified_implementation": {
+    "src/zuma_rl/fidelity_gate.py": "sha256:b2ad6a5b39536cfcf050e95624c9ab4cf1db3e9202447fe013e520fefec2e22a",
+    "src/zuma_rl/pc_loss_sequence.py": "sha256:31be24a5ff06c77140a05b62dc081af7eb3a7219e67cc39273fc1c0fc6934e54",
+    "tools/compare_pc_loss_sequence.py": "sha256:a51047860f0537d049dd66d4b53a98133f9b7e328ca177a9cfe08d19fdb6f5dc",
+    "tools/build_transfer_fidelity_revision.py": "sha256:f2e5bb529919121c668b7076f7b1e1eaf757d540c7a8753ab901e3e935ad4dfd"
+  },
+  "tests": {
+    "targeted": {
+      "command": ".venv-win/Scripts/python.exe -m pytest -q tests/test_pc_loss_sequence.py tests/test_fidelity_gate.py tests/test_build_transfer_fidelity_revision.py",
+      "status": "PASS",
+      "test_count": 54
+    },
+    "full": {
+      "command": ".venv-win/Scripts/python.exe -m pytest -q",
+      "status": "PASS",
+      "collected_test_count": 1612,
+      "documented_skip_count": 13,
+      "warning_count": 1,
+      "warning_is_preexisting_gymnasium_render_spec_warning": true
+    }
+  },
+  "immutable_outputs": {
+    "c126_mechanism": "sha256:3542cafd517ace8da9853d4844274b711e8d50521d6c93412c1d3c83cdfb54bd",
+    "c131_mechanism": "sha256:4b0ebaa9372e06815de23397c78b81ae8e5196ed4bad6764c5dc40ffaa61ca5d",
+    "c35_mechanism": "sha256:99b6921f3b3d771343121524a97e5a4612d8d88145e0dadbbe5bdc07789b3aa4",
+    "actor_audit": "sha256:676b6d540d22efac9e1fdc4279044ff2f54cf2b390fbe86872984330176cbd11",
+    "c126_mtrand_proof": "sha256:265e1963302e76407a438943a64dc6793f019e1513e09b1b9526d3eeb35b99bb",
+    "c126_bound_diff": "sha256:14d8eee9d68ea2378a909a718ba05d26e4ac8675a3c6b291c83e74ce9b9edb14",
+    "c131_mtrand_proof": "sha256:4db4e08e21cd7cbb9fac80e84e186a12d6c8de2a8c373f9edcca06b572e2364e",
+    "c131_bound_diff": "sha256:562259c664f122f3b49355af33f040c9bbf56b54065a5d8b2e1632aa21a4f8a7",
+    "c158_loss_v2": "sha256:6fa77254e917a9fc854e49701efc1f86e26d5483cac7cffb66feafaa56a763d8",
+    "candidate_suite": "sha256:0bfb00323d7544626b1d19452e64e55c88bacc496ecee0ba2303c7cb0ea29712",
+    "candidate_gate_report": "sha256:2531c36cf52d5cc58876283e213da477b064fca22c48b01cb50bd77e4616bb82"
+  },
+  "gate_result": {
+    "status": "CLOSED",
+    "evidence_count": 97,
+    "rejected_evidence_count": 0,
+    "accepted_simulator_diff_cases": 21,
+    "interface_lane": "PASS",
+    "distribution_lane": "PASS",
+    "source_authenticity_lane": "PASS",
+    "dynamics_lane": "MISSING",
+    "missing_feature_count": 5,
+    "missing_features": [
+      "natural_loss",
+      "fruit_projectile_collision",
+      "fruit_powerup_collision",
+      "fruit_collection_score",
+      "fruit_collection_animation"
+    ],
+    "sole_remaining_cause": "c158, c164, and c183 PC sources use three DMO identities that do not yet have accepted same-DMO PC Golden v5 cases"
+  },
+  "postcondition": {
+    "historical_reports_modified": false,
+    "zuma_processes_running": 0,
+    "training_started": false,
+    "next_authorized_stage": "preregister and collect three clean same-DMO two-process PC Golden v5 pairs"
+  }
+}

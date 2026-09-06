@@ -1,0 +1,91 @@
+{
+  "schema": "zuma-rl.alphazuma-55-lilypad-calibration",
+  "version": 1,
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "created_utc": "2026-08-15T01:40:35.7081122Z",
+  "status": "PASS",
+  "master_preregistration": {
+    "path": "diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "retail_reference": {
+    "url": "https://www.youtube.com/watch?v=Gi-eViMcFzY",
+    "title": "Zuma's Revenge - All Levels | Full Game",
+    "video_fps": 29.97002997002997,
+    "frame_interval_seconds": 0.03336666666666667,
+    "clips": [
+      {
+        "level": "Level 13 - Lilypad Leap",
+        "role": "tutorial corroboration only",
+        "source_offset_seconds": 1295.0,
+        "path": "D:/ZumaTraining/alphazuma-55-weekend-s81081401-v1/retail-calibration/reference-video/fullgame-level13.mp4",
+        "sha256": "sha256:ca3f3d271dcb0c93e0cbded270d1962f79005d5f929a7455e1e805817d312374",
+        "contact_sheet_path": "D:/ZumaTraining/alphazuma-55-weekend-s81081401-v1/retail-calibration/reference-video/level13-hop-detail-frame.png",
+        "contact_sheet_sha256": "sha256:833a1026e7c7ac2b6ff2a77a45788a93125677ef428a1b697ee80b795fd30ef0",
+        "observations_local_seconds": {
+          "last_stable_source_pose": 21.254,
+          "first_visible_motion": 21.288,
+          "destination_center_reached": 21.421,
+          "first_stable_destination_pose": 21.454
+        },
+        "notes": "The tutorial click/glow begins near 20.987 s, but popup and instruction delay are excluded from the physical hop duration."
+      },
+      {
+        "level": "Level 23 - Empty Cistern",
+        "role": "primary non-tutorial gameplay calibration",
+        "source_offset_seconds": 3215.0,
+        "path": "D:/ZumaTraining/alphazuma-55-weekend-s81081401-v1/retail-calibration/reference-video/fullgame-level23.mp4",
+        "sha256": "sha256:4d24c9e733f14d08b0a8c08176efc92a446f87c4c82307c0548dfe79e014423d",
+        "contact_sheet_path": "D:/ZumaTraining/alphazuma-55-weekend-s81081401-v1/retail-calibration/reference-video/level23-hop1-frame.png",
+        "contact_sheet_sha256": "sha256:17a7b8e03030dc1f2fd9e9df1ce2fad22a0024604a6f35c97814af864ede9888",
+        "observations_local_seconds": {
+          "target_hover_or_glow": 54.021,
+          "last_stable_source_pose": 54.221,
+          "first_visible_motion": 54.254,
+          "destination_entered": 54.421,
+          "first_stable_destination_pose": 54.454
+        },
+        "notes": "The ball chain visibly continues to advance while the frog is hopping."
+      }
+    ]
+  },
+  "decision": {
+    "measurement_boundary": "last stable source pose to first stable destination pose",
+    "observed_frame_intervals": 6,
+    "observed_seconds": 0.2002,
+    "native_tick_seconds": 0.01,
+    "hop_transition_ticks": 20,
+    "input_lock_during_hop": true,
+    "chain_continues_during_hop": true,
+    "destination_commits_after_transition": true,
+    "uncertainty_seconds": 0.0334,
+    "uncertainty_native_ticks": 3,
+    "rejected_interpretation": {
+      "hop_transition_ticks": 17,
+      "reason": "It measured first visible motion to destination center and omitted the stable-pose boundary frames."
+    }
+  },
+  "implementation": {
+    "core_path": "src/zuma_rl/revenge_core.py",
+    "core_sha256": "sha256:7718ae186c173127ac82e488413857dc6c82d2e41c1dfb5e94ca553a1a3abff6",
+    "environment_path": "src/zuma_rl/revenge_env.py",
+    "environment_sha256": "sha256:d95407a7127ecc4e580aef041426d012edf5ea8dfa2fa8c4405c398445b1132e",
+    "core_test_path": "tests/test_revenge_core.py",
+    "core_test_sha256": "sha256:7e7b74860031385d5ed6f1b1e22dd0c46fe77e0876ccbc5cd9bc3e2eefec4825",
+    "environment_test_path": "tests/test_revenge_env.py",
+    "environment_test_sha256": "sha256:b57c2610aeb2f1b167cc1449ec9bcfe29b5d89c34e34f7d9fa427c607e1443da"
+  },
+  "verification": {
+    "targeted_tests": {
+      "status": "PASS",
+      "tests": [
+        "tests/test_revenge_core.py::test_installed_factory_preserves_and_switches_dual_frog_positions",
+        "tests/test_revenge_env.py::test_full55_dual_position_hop_updates_actor_visible_shooter"
+      ]
+    },
+    "relevant_regression": {
+      "status": "PASS",
+      "command": ".venv-win/Scripts/python.exe -m pytest -q tests/test_revenge_core.py tests/test_revenge_env.py tests/test_replay.py"
+    }
+  }
+}

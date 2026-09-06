@@ -1,0 +1,23 @@
+{
+  "schema": "zuma-rl.alphazuma-55-record-claim-addendum",
+  "version": 1,
+  "amends": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-jungle6-speedrun-record-15p46s-claim-v1.json",
+    "sha256": "sha256:861081f3fe84cf2f382dd779822101d2a917dd9d832b1ac24f2d8f67c4c538ce"
+  },
+  "field": "human_reference",
+  "written_utc": "2026-08-21T02:11:27Z",
+  "human_reference": {
+    "source": "speedrun.com REST API, fetched 2026-08-21T02:11:27Z",
+    "api_chain": [
+      "GET /api/v1/games?name=zumas+revenge -> game w6jx27dj 'Zuma's Revenge'",
+      "GET /api/v1/games/w6jx27dj/levels -> level ldy33pp9 'Adv 6'",
+      "GET /api/v1/levels/ldy33pp9/records -> Any% 1st place: 18 s, player x33gp0kx, date 2022-07-24",
+      "GET /api/v1/users/x33gp0kx -> international name 'WYL071018'"
+    ],
+    "record": "0:18 RTA",
+    "runner": "WYL071018",
+    "date": "2022-07-24",
+    "note": "same runner as the Adv 2 (Jungle2) 0:12 reference in the jungle2 claim receipt"
+  }
+}

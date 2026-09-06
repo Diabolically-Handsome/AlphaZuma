@@ -1,0 +1,58 @@
+{
+  "schema": "zuma-rl.alphazuma-55-motor-observable-gradual-successor-launch-receipt",
+  "version": 1,
+  "status": "LAUNCHED_WAITING_FOR_ENGINEERING_AUDIT",
+  "observed_utc": "2026-08-16T08:58:25Z",
+  "campaign_id": "alphazuma-55-motor-observable-gradual-successor-s99081631-v1",
+  "bindings": {
+    "master": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-successor-s99081631-preregistration-v1.json",
+      "sha256": "sha256:d6ec0907b7d87fb13147c94deb00d12c362da7bea0f4c34238c3e0a1b2d39cf4"
+    },
+    "controller": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_motor_observable_gradual_successor_v1.py",
+      "sha256": "sha256:40f22af0a63383bdf4401282568299a372cb996c0da65a73a6fac3a49d397068"
+    },
+    "independent_auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_motor_observable_gradual_successor_v1.py",
+      "sha256": "sha256:c4ab12171dc7413a3d123a7220086dffe3ab114908f9a10c5c591f44050daa95"
+    },
+    "formal_seed_registry": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-formal-seed-registry-s99081632-v6.json",
+      "sha256": "sha256:9c079b5de166623b112864547e4e6f040c29680593dedbb53bde5a5da04e7db3"
+    }
+  },
+  "validation": {
+    "status": "VALID",
+    "final_blind_attempts": 440,
+    "continuous_attempts": 220,
+    "final_blind_seed_range": [3500000000, 3500000439],
+    "continuous_seed_range": [3600000000, 3600000219],
+    "registry_ranges_strictly_non_overlapping": true,
+    "formal_seed_consumption": "NONE"
+  },
+  "processes": {
+    "windows_launcher_pid": 44772,
+    "wsl_controller_pid": 354971,
+    "windows_launcher_alive": true,
+    "wsl_controller_alive": true
+  },
+  "logs": {
+    "stdout": "D:\\ZumaTraining\\alphazuma-55-motor-observable-gradual-successor-s99081631-launcher-01.stdout.log",
+    "stderr": "D:\\ZumaTraining\\alphazuma-55-motor-observable-gradual-successor-s99081631-launcher-01.stderr.log"
+  },
+  "controller_snapshot": {
+    "status": "RUNNING",
+    "phase": "WAITING_FOR_ENGINEERING_AUDIT",
+    "formal_seed_consumption": "NONE",
+    "waiting_for": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-postprocess-s99081630-independent-audit-v1.json",
+    "error": null
+  },
+  "authority_boundary": {
+    "engineering_gate_minimum_wins": 35,
+    "engineering_gate_minimum_cleared_levels": 35,
+    "formal_inference_before_independent_engineering_audit_pass": false,
+    "runtime_model_switching": false,
+    "power_restore_authority": false
+  }
+}

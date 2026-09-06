@@ -1,0 +1,32 @@
+{
+  "schema": "zuma-rl.alphazuma-55-factorial-bootstrap-launch-receipt",
+  "version": 1,
+  "status": "WAITING_FOR_FACTORIAL_ROUND0",
+  "observed_utc": "2026-08-16T16:42:03.3053565Z",
+  "bootstrap": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/bootstrap_alphazuma_55_headonly_allaim_postprocess_and_successor_v1.sh",
+    "sha256": "sha256:4fbaa38a5766532a141ddb8b7535ad1999f68769e06164b5a4133947ffb8782b"
+  },
+  "windows_launcher_pid": 14936,
+  "wsl_bootstrap_pid": 410979,
+  "logs": {
+    "stdout": "/mnt/d/ZumaTraining/alphazuma-55-headonly-allaim-s99081647-bootstrap.stdout.log",
+    "stderr": "/mnt/d/ZumaTraining/alphazuma-55-headonly-allaim-s99081647-bootstrap.stderr.log"
+  },
+  "ordering": [
+    "capture_training_launch_receipt",
+    "freeze_engineering_plan",
+    "independent_pre_inference_audit",
+    "freeze_conditional_formal_master",
+    "freeze_nonoverlap_formal_seed_registry",
+    "wait_for_all_training_routes",
+    "run_factorial_engineering_evaluation",
+    "conditionally_run_formal_evaluation"
+  ],
+  "authority_boundary": {
+    "checkpoint_results_seen_before_plan_freeze": false,
+    "engineering_seed_consumption_before_plan_freeze": false,
+    "formal_seed_consumption_before_promotion": false,
+    "power_restore_authority": false
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "schema": "zuma-rl.pc-targeted-capture-execution-amendment",
+  "version": 1,
+  "id": "c67-front-insertion-u3664-u3684-amendment-2",
+  "parent_amendment": {
+    "path": "diagnostics/c67-front-insertion-execution-amendment-v1.json",
+    "sha256": "sha256:c11b03ed6a14076bf7d5cd11df66037de1c6f900e338bcd4a1c92402fc2196f6"
+  },
+  "invalidated_prepare_attempt": {
+    "result": "source_bound_anchor_invalid",
+    "session_directory_created": false,
+    "game_launched": false,
+    "evidence_generated": false
+  },
+  "reason": "The prepare command incorrectly supplied the source-bound Board output as the source global MTRand seed. The frozen C35 source plan distinguishes global_seed=23557968 from expected_output=835125098.",
+  "allowed_amendment": {
+    "source_bound_board_seed": {
+      "from": 835125098,
+      "to": 23557968
+    }
+  },
+  "frozen_reference": {
+    "board_seed": 835125098,
+    "board_seed_call_address": 6666280,
+    "source_anchor_framework_update": 3121,
+    "source_anchor_caller": 6666273
+  },
+  "all_other_fields": "unchanged_from_parent_chain"
+}

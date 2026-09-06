@@ -1,0 +1,75 @@
+{
+  "acceptance": {
+    "all_three_plans_must_validate": true,
+    "board_mtrand_seed_fixed_at_existing_board_call": true,
+    "complete_crt_state_block_restore_forbidden": true,
+    "complete_mtrand_state_restore_forbidden": true,
+    "process_local_object_restore_forbidden": true,
+    "source_bound_anchor_forbidden": true,
+    "thread_crt_write_size_bytes": 4,
+    "thread_crt_write_timing": "existing_board_seed_breakpoint_on_paused_board_thread"
+  },
+  "classification": "clean_fixed_seed_plan_derivation_with_independent_thread_crt_seed",
+  "created_utc": "2026-08-10T17:53:02.831Z",
+  "failure_evidence": {
+    "path": "diagnostics/c202-c203-natural-loss-exact-step-comparison-failure-receipt-v1.json",
+    "sha256": "sha256:6a35cc3d85fa03c79263c64fc25ba7e249c88eb430a660299be2a4669feefc10",
+    "status": "FORMAL_PAIR_REJECTED"
+  },
+  "id": "c208-thread-crt-fixed-clean-pc-golden-plan-derivation",
+  "non_authorizations": [
+    "reuse_c202_or_c203_as_pc_golden",
+    "pc_golden_credit",
+    "fidelity_gate_open",
+    "training_gate_open",
+    "large_scale_training_start"
+  ],
+  "plans": [
+    {
+      "board_seed": 1853292490,
+      "crt_rand_seed": 147023375,
+      "dmo_sha256": "sha256:a5306095efb020c747530b0b546c8a8af1267a71ea48395e225f9b9a7c6516cf",
+      "id": "natural_loss",
+      "output_absent_at_freeze": true,
+      "output_root": "D:/ZumaGolden/diagnostics/clean-c208-natural-loss-thread-crt-fixed-plan-v1",
+      "parent_clean_plan_sha256": "sha256:bd43e7cf4624fa06c53ed4435252eb1c1c750d2f8c13c9abcc35024cc68e27ad",
+      "session_nonce": "c2080000000000000000000000000001",
+      "source_anchor_framework_update": 3137,
+      "source_anchor_identity_sha256": "sha256:ed6bc59310c53f2badcd97371140db3aca4adfe84cd88dcf908a7ff7034a7da3",
+      "thread_crt_rng_seed": 1020014204
+    },
+    {
+      "board_seed": 1300598932,
+      "crt_rand_seed": 147023375,
+      "dmo_sha256": "sha256:6f2d645c3109f73b77ef55c7e7e7941f7f1d2f73dccd5a71adc3051d4a360989",
+      "id": "fruit_collection",
+      "output_absent_at_freeze": true,
+      "output_root": "D:/ZumaGolden/diagnostics/clean-c208-fruit-collection-thread-crt-fixed-plan-v1",
+      "parent_clean_plan_sha256": "sha256:0d57bbcc2c3005e859de3a9ac20ec210f922696b8c72c2bbee0de771b896c653",
+      "session_nonce": "c2080000000000000000000000000002",
+      "source_anchor_framework_update": 3121,
+      "source_anchor_identity_sha256": "sha256:5749727a3472ed375d14a7021c4753bc2d80e65c7e188b751552011184771644",
+      "thread_crt_rng_seed": 3534207302
+    },
+    {
+      "board_seed": 2088163177,
+      "crt_rand_seed": 147023375,
+      "dmo_sha256": "sha256:413ff5b6470f695dc703b99064762a3d5749434530e620833291925c56339e77",
+      "id": "fruit_powerup_collision",
+      "output_absent_at_freeze": true,
+      "output_root": "D:/ZumaGolden/diagnostics/clean-c208-fruit-powerup-thread-crt-fixed-plan-v1",
+      "parent_clean_plan_sha256": "sha256:63562791e59a2a4474b36bbe96707d2583859752fe335032a14127e45b8380e1",
+      "session_nonce": "c2080000000000000000000000000003",
+      "source_anchor_framework_update": 3136,
+      "source_anchor_identity_sha256": "sha256:9a5b12e6bf1ccb96777aab34c68523d0dfc89fb51add334e5b41defa1d341fda",
+      "thread_crt_rng_seed": 689787496
+    }
+  ],
+  "rationale": "The fresh c202 and c203 runs matched Board MTRand, chain state, score, and natural-loss progress but diverged first in the one-word main-thread CRT state. The collector already exposes a bounded fixed-seed transport for that exact state at the Board seed breakpoint. This is a seed-level intervention, not a source process snapshot restore.",
+  "status": "FROZEN_BEFORE_REVISED_PLAN_OUTPUTS",
+  "tooling": {
+    "collect_pc_golden_v4_sha256": "sha256:9f8b9daf566e992458becd8dde817da6dae5d46e7f7aec93d9be073c865a5fd5",
+    "collector_sha256": "sha256:15deb94e655c92e46b6992c9cab24d4108b49621c2d7cbd676a069835bf14d7e"
+  },
+  "version": 1
+}

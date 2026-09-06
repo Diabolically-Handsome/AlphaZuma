@@ -1,0 +1,52 @@
+{
+  "schema": "zuma-rl.alphazuma-55-resource-pressure-incident",
+  "version": 1,
+  "status": "OBSERVED_DURING_CONCURRENT_FROZEN_TRAINING",
+  "observed_utc": "2026-08-16T16:50:35Z",
+  "memory_bytes": {
+    "total": 101237669888,
+    "used": 94977572864,
+    "available": 6260097024
+  },
+  "swap_bytes": {
+    "device": "/dev/sdc",
+    "total": 17179869184,
+    "used": 1659817984
+  },
+  "principal_current_route_rss_bytes": {
+    "all_actions_pid_390568": 16404086784,
+    "head_only_pid_401221": 10748633088
+  },
+  "additional_frozen_weekend_training_routes": {
+    "count": 7,
+    "status": "RUNNING",
+    "individual_rss_approx_gib_range": [1.9, 2.5],
+    "goal_end_utc_in_preregistrations": "2026-08-17T15:00:00Z",
+    "action_taken": "none"
+  },
+  "gpu_snapshot": [
+    {
+      "index": 0,
+      "temperature_c": 51,
+      "power_limit_watts": 550
+    },
+    {
+      "index": 1,
+      "temperature_c": 56,
+      "power_limit_watts": 250
+    }
+  ],
+  "response": {
+    "training_processes_terminated": false,
+    "historical_data_touched": false,
+    "factorial_launch_blocked_until_memory_available_gib_at_least": 12,
+    "factorial_launch_blocked_until_swap_used_bytes": 0,
+    "conditional_recovery": "after cuda:1 predecessor exits and sufficient RAM is available, reload swapped pages by cycling only /dev/sdc if swap does not naturally return to zero"
+  },
+  "authority_boundary": {
+    "training_recipe_changed": false,
+    "candidate_rule_changed": false,
+    "formal_seed_consumption": "NONE",
+    "power_restore_authority": false
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "schema": "alphazuma-55-experiment-verdict",
+  "version": 1,
+  "written_utc": "2026-08-21T12:36:53Z",
+  "experiment": "jungle9 macro DAgger round 1 (student drives, teacher labels, aggregate re-distill)",
+  "verdict": "FAIL_AGGREGATE_BC_COLLAPSED_TOWARD_NEVER_FIRE",
+  "chain": {
+    "problem": "jungle9 strengthened-init BC (240 teacher eps, 104,206 decisions; offline calibration healthy) scored 0/16 on the checkpoint panel - ALL active losses (median death ~5,330 ticks, 80 on-target shots, score 2,855): the student fights but drifts into deep-chain crisis states absent from teacher data (~434 decisions/ep compounds drift)",
+    "intervention": "DAgger round 1: 160 student-driven episodes (7 wins, 44,240 teacher-labeled decisions on student-visited states; collector s99081737), merged with the teacher collection (merge s99081738, 148,446 decisions, fire fraction 19.9%), re-distilled with the standard invfreq recipe (BC s99081739; offline calibration still healthy: fire_ratio 1.21, recall 0.82, aim_w3 0.82)",
+    "outcome": "panel STILL 0/16 - and the failure MODE changed for the worse: median death 4,948 ticks with THREE on-target shots and score 70 (vs 80 shots / 2,855 score for the teacher-only BC). The aggregate BC is functionally never-fire in closed loop."
+  },
+  "diagnosis": "The never-fire attractor returned THROUGH DATA COMPOSITION: the 44k DAgger rows concentrate exactly on the runtime state distribution, and the model resolved the two-regime dataset by fitting 'states like the ones I visit -> wait/park' strongly enough to suppress firing in deployment, even though the global fire fraction (19.9%) and class weights were nominally unchanged. Offline metrics were blind to it (they average over the mixed distribution). LESSON (campaign rule): a DAgger round that leaves the student 0-win must be treated as POISON for plain aggregation - the label distribution on doomed trajectories teaches avoidance of action, not avoidance of danger. Candidate follow-ups: beta-mixed driving (--teacher-drive-prob ~0.5) to collect near the winning corridor, or curriculum-style anchoring; NOT another plain aggregate round.",
+  "pending_control": "teacher-through-macro sanity on panel seeds 1494001000/05/10 running at receipt time - if the TEACHER cannot win these panel seeds, part of jungle9's 0/16 is a panel-difficulty property and the gate metric itself needs re-examination; result to be appended as an addendum",
+  "evidence": {
+    "dagger_collection": "/mnt/d/ZumaTraining/alphazuma-55-macro-dagger-jungle9-r1-s99081737-v1/completion.json",
+    "merge": "/mnt/d/ZumaTraining/alphazuma-55-macro-merged-jungle9-r1-s99081738-v1/merge_summary.json",
+    "aggregate_bc": "/mnt/d/ZumaTraining/alphazuma-55-macro-bc-jungle9-dagger-s99081739-v1/completion.json",
+    "teacher_bc_baseline": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-baselines/jungle9-240bc",
+    "dagger_bc_baseline": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-baselines/jungle9-daggerbc",
+    "sidecar_agreement": "mean exact 0.050 over 160 sidecars (harsh metric: wait rows require exact park-bin equality)"
+  },
+  "new_tools_receipted": {
+    "dagger_collector": {
+      "path": "tools/collect_alphazuma_55_macro_dagger_decisions_v1.py",
+      "sha256": "sha256:2cd8600238c9b7ca60c081f8003739b099f4862647b2fe6993c25d3bb3d27897",
+      "tests": "tests/test_collect_alphazuma_55_macro_dagger_decisions_v1.py (3 passed)"
+    },
+    "collection_merger": {
+      "path": "tools/merge_alphazuma_55_macro_collections_v1.py",
+      "sha256": "sha256:a522167adac1e0b69f6ae516ad2dbb0021a5740b110256c050041a9b2dbc9a64",
+      "tests": "tests/test_merge_alphazuma_55_macro_collections_v1.py (2 passed)"
+    }
+  },
+  "formal_seed_consumption": false
+}

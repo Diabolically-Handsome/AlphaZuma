@@ -1,0 +1,141 @@
+{
+  "schema": "zuma-rl.pc-gameplay-mtrand-call-trace-preregistration",
+  "version": 2,
+  "id": "c113-c111-u3615-crt-bound-residual-call-trace",
+  "status": "FROZEN_BEFORE_RUN_OUTPUTS",
+  "created_utc": "2026-08-09T09:45:49.372Z",
+  "question": "Which exact retail global-MTRand callers account for all 38 residual v9 draws after fruit generation is implemented?",
+  "classification": "diagnostic_source_bound_thread_crt_restore_supporting_formal_c111_full_state_source",
+  "formal_evidence_boundary": {
+    "formal_c111_remains_primary_pc_state_source": true,
+    "c113_is_not_natural_pc_evidence": true,
+    "c113_process_memory_mutation_is_required_to_be_disclosed": true,
+    "c113_may_only_classify_callers_after_exact_overlap_with_c111": true
+  },
+  "fixed_inputs": {
+    "collector_plan": {
+      "path": "D:/ZumaGolden/diagnostics/full-state-natural-strict-plan-c111-v1/plan.json",
+      "sha256": "sha256:9910710ce9069bcafea8ab77d08b2245c593c898a510d3da0e1dd4907f13aaa8"
+    },
+    "playback_dmo": {
+      "path": "D:/ZumaGolden/diagnostics/full-state-natural-strict-plan-c111-v1/inputs/input.dmo",
+      "sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7"
+    },
+    "replay_pre_snapshot": {
+      "path": "D:/ZumaGolden/diagnostics/full-state-natural-strict-plan-c111-v1/protocol/pre-template.json",
+      "sha256": "sha256:81de1c356b0cd189003b31cc5e80952ebd2dad9c6815745122113c17504fdcd7"
+    },
+    "host_restore_snapshot": {
+      "path": "D:/ZumaGolden/diagnostics/c112-trace-host-pre-v1.json",
+      "sha256": "sha256:9c07e1d357cd1b0eaf0efb7893a0d23941c7c959bee3f1a01768f55e596e1e10",
+      "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061"
+    },
+    "formal_full_state_source": {
+      "path": "D:/ZumaGolden/formal-full-state-c111-natural-u3615-u4240-v1/attempt-01/trajectory/index.json",
+      "sha256": "sha256:ba85ba65f22156179b3af2767eeec04e58573f0116c4f21328209ee758788e2d"
+    },
+    "formal_source_probe": {
+      "path": "D:/ZumaGolden/formal-full-state-c111-natural-u3615-u4240-v1/attempt-01/memory-probe.json",
+      "sha256": "sha256:c5d21728b17ee7ca8c229019996f5dd72325b9769cd0b2dee6c3c2bb3fda2b2b"
+    },
+    "thread_crt_source": {
+      "path": "D:/ZumaGolden/formal-full-state-c111-natural-u3615-u4240-v1/attempt-01/thread-crt-rand-state.bin",
+      "sha256": "sha256:91b42e363133c8f3698be8335d4e11bd30a1896da23a6775194211da042f0ac8",
+      "bytes": 4,
+      "framework_update": 3615,
+      "little_endian_uint32": 514352131
+    },
+    "simulator_diff": {
+      "path": "D:/ZumaGolden/diagnostics/jungle2-c111-u3620-u4240-full-gameplay-diff-v9.json",
+      "sha256": "sha256:ea020dfa9b86e39ca2c3a6619ae2468ef9dd26d82c14ac025fcf4444d8bb59cc",
+      "reconciled_tick_count": 16,
+      "reconciled_draw_count": 38
+    }
+  },
+  "diagnostic_mutation_contract": {
+    "freeze_update": 3615,
+    "source_update": 3615,
+    "source_payload_bytes": 4,
+    "target": "main_thread_crt_rand_state",
+    "write_timing": "after_exact_freeze_before_any_warmup_step",
+    "expected_bytes_written": 4,
+    "writeback_must_verify": true,
+    "transactional_rollback_on_failure": true,
+    "persistent_file_modified": false,
+    "strict_command_replay_must_remain_natural_and_zero_rng_write": true
+  },
+  "fixed_segments": [
+    {
+      "probe_update": 3615,
+      "trace_start_update": 3648,
+      "end_update": 3710,
+      "target_residual_updates": [3657, 3684, 3685, 3707],
+      "output": "D:/ZumaGolden/diagnostics/c113-crt-bound-rng-trace-u3648-u3710-v1"
+    },
+    {
+      "probe_update": 3615,
+      "trace_start_update": 3768,
+      "end_update": 3910,
+      "target_residual_updates": [3776, 3783, 3830, 3907],
+      "output": "D:/ZumaGolden/diagnostics/c113-crt-bound-rng-trace-u3768-u3910-v1"
+    },
+    {
+      "probe_update": 3615,
+      "trace_start_update": 4058,
+      "end_update": 4130,
+      "target_residual_updates": [4067, 4122],
+      "output": "D:/ZumaGolden/diagnostics/c113-crt-bound-rng-trace-u4058-u4130-v1"
+    },
+    {
+      "probe_update": 3615,
+      "trace_start_update": 4184,
+      "end_update": 4240,
+      "target_residual_updates": [4192, 4193, 4204, 4215, 4228, 4240],
+      "output": "D:/ZumaGolden/diagnostics/c113-crt-bound-rng-trace-u4184-u4240-v1"
+    }
+  ],
+  "collection_contract": {
+    "trajectory_mode": "rng",
+    "maximum_startup_attempts_per_segment": 3,
+    "declared_probe_score": 7950,
+    "declared_probe_displayed_score": 7950,
+    "skip_repaint_guard": true,
+    "skip_frozen_snapshot": true,
+    "trace_global_rng_calls": true,
+    "defer_call_trace_attach_until_trace_start_update": true,
+    "retain_every_started_attempt": true,
+    "source_thread_crt_restore_flag": "--diagnostic-thread-crt-state-source",
+    "source_thread_crt_update_flag": "--diagnostic-thread-crt-state-source-update"
+  },
+  "acceptance_contract": {
+    "all_four_segments_must_pass": true,
+    "each_strict_command_replay_must_pass": true,
+    "each_diagnostic_mutation_receipt_must_pass": true,
+    "each_mutation_must_bind_the_fixed_source_sha256": true,
+    "each_mutation_must_write_exactly_four_bytes": true,
+    "each_trace_status_must_be_pass": true,
+    "each_trace_stop_reason_must_be_stop_requested": true,
+    "timeout_trace_is_never_complete": true,
+    "each_trace_must_align_call_by_call_to_its_compact_rng_trajectory": true,
+    "every_overlapping_compact_state_must_equal_the_formal_c111_state": true,
+    "all_sixteen_v9_reconciliation_rows_must_map_to_contiguous_native_calls": true,
+    "mapped_native_draw_count_must_equal_38": true,
+    "gameplay_relevant_callers_must_never_be_classified_as_visual": true,
+    "unknown_callers_fail_closed": true,
+    "host_post_state_root_must_equal_fixed_host_restore_state_root": true
+  },
+  "decision": {
+    "pass": "derive a content-addressed residual-call proof, implement every missing gameplay mechanism, and rerun an unreconciled C111 simulator diff",
+    "trace_failure": "retain the immutable failed segment and preregister any retry before producing retry outputs",
+    "formal_state_mismatch": "reject the complete C113 support set",
+    "unknown_caller": "keep Fidelity Gate closed and continue static plus dynamic caller analysis"
+  },
+  "tooling": {
+    "collector_sha256": "sha256:9c073d781c4add8995fe4e5d2b050e26374abce1358ecde3a68e9c7d6a80ed55",
+    "call_tracer_sha256": "sha256:02a0eb56c3930bee24bcb3a2267d1cdc7002f6a57ee89acf38be57514ebc9d24",
+    "rng_trajectory_reader_sha256": "sha256:881187b9f968d31b8b00f454d6616113092ef218011f2d9e45277c2b0a327f22",
+    "collector_test_command": ".venv-win/Scripts/python.exe -m pytest tests/test_collect_pc_memory_probe.py -q",
+    "collector_test_result": "PASS_71"
+  },
+  "output_paths_absent_at_freeze": true
+}

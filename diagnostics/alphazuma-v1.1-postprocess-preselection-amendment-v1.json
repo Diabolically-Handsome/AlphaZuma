@@ -1,0 +1,43 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-postprocess-preselection-amendment",
+  "version": 1,
+  "status": "APPLIED_AND_VERIFIED",
+  "amended_utc": "2026-08-14T00:23:30Z",
+  "reason": "Strict JSON serialization would reject an undefined median winning time if a model had zero wins on a reported subset.",
+  "correction": "Persist undefined median winning ticks as null and use a finite internal ranking sentinel for candidates with no target win.",
+  "scientific_boundary": {
+    "training_recipe_changed": false,
+    "training_process_interrupted": false,
+    "candidate_set_rule_changed": false,
+    "selection_ranking_changed": false,
+    "promotion_gate_changed": false,
+    "selection_seed_changed": false,
+    "final_blind_seed_changed": false,
+    "selection_or_blind_inference_started_before_fix": false
+  },
+  "superseded_controller": {
+    "controller_sha256": "sha256:14fe8e50b9604303faf2069e8bfde2aed2c289df6a5c5c8982c9197efe5cc628",
+    "master_preregistration_sha256": "sha256:0c3b08f51c35a278ac3281c2593b10f31238107fd3eb074638bf8f23e854df94",
+    "last_phase": "WAITING_FOR_TRAINING",
+    "last_updated_utc": "2026-08-14T00:22:37.299690+00:00",
+    "preserved_output_root": "/mnt/d/ZumaTraining/alphazuma-v1.1-frontier-postprocess-s51081301-v1.superseded-preselection-json-null-fix",
+    "selection_directory_existed": false,
+    "final_blind_directory_existed": false
+  },
+  "replacement_controller": {
+    "controller_sha256": "sha256:0f97b9d143f9d33de935311d11074ea4f68cb4b3027a412ed70b52b76ff99689",
+    "master_preregistration_sha256": "sha256:3dc8a51563c763ef46b3c3415a6e4da9b5430ab3a19b586e5e0b95b98b0ffc01",
+    "started_utc": "2026-08-14T00:23:30.351350+00:00",
+    "status": "RUNNING",
+    "phase": "WAITING_FOR_TRAINING",
+    "output_root": "/mnt/d/ZumaTraining/alphazuma-v1.1-frontier-postprocess-s51081301-v1"
+  },
+  "verification": {
+    "controller_validate_only_passed": true,
+    "zero_win_strict_json_test_passed": true,
+    "replacement_master_hash_bound_in_status": true,
+    "formal_training_processes_after_restart": 7,
+    "postprocess_controller_processes_after_restart": 1,
+    "all_checks_passed": true
+  }
+}

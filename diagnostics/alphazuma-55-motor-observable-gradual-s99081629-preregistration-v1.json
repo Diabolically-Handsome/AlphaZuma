@@ -1,0 +1,252 @@
+{
+  "schema": "zuma-rl.alphazuma-55-motor-observable-gradual-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_TRAINING",
+  "campaign_id": "alphazuma-55-motor-observable-gradual-s99081629-v1",
+  "created_utc": "2026-08-16T08:17:10.525328+00:00",
+  "objective": "Repair the demonstrated motor-observable closed-loop distribution gap without changing the 55-level environment, human actuator, formal gates, or runtime single-policy constraint.",
+  "hypothesis": {
+    "observed": "The V3 consumed-data loss and action metrics improved through the last epoch, while the frozen 156-attempt screen produced only nine wins and every win was on Jungle1.",
+    "mechanism": "The prior teacher handoff 0.5 -> 0.1 -> 0.0 moved too quickly into mostly unrecoverable student states before the classifier had fitted the teacher motor commands.",
+    "intervention": "Continue the exact frozen V3 model with a 1.0 -> 0.9 -> 0.7 -> 0.5 teacher-execution schedule and 12 optimization epochs per round.",
+    "unchanged": [
+      "included 55 levels",
+      "actor-observable simulator state",
+      "elite-human-v1 actuator limits",
+      "win-time-score-v1 reward",
+      "raw teacher intent labels",
+      "exact runtime action masks",
+      "final runtime teacher calls forbidden",
+      "one frozen policy file",
+      "formal selection and final-blind seed embargoes"
+    ]
+  },
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "teacher_evidence": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/masked-teacher-v3-fresh-probe-s99081516-v1/result.json",
+    "sha256": "sha256:415aa45c46e3021f8edb9d6b3c061954226aa497b14996a86d006fa86c30f9ec"
+  },
+  "predecessor_screen_audit": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-postprocess-s99081617-v2/screen-audit.json",
+    "sha256": "sha256:2a10d73f57b73bd8132e8512d20d72250912f23d7167cd6c0f697b6d4aedb5ad"
+  },
+  "source": {
+    "completion": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-replay-s99081616-v3/completion.json",
+      "sha256": "sha256:c8a5874a977f2a4bb3ef4ea1422cb8439df75ca3e53ad50a87c23a6eac03d109"
+    },
+    "model": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-replay-s99081616-v3/final_model.zip",
+      "sha256": "sha256:a93a219f923708a3f7de4b9d149c84d0d755dce56f97cc3edf440ecfb2b485bf"
+    },
+    "selection_rule": "exact frozen V3 final_model before this route"
+  },
+  "trainer": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_motor_observable_gradual_v2.py",
+    "sha256": "sha256:7a7da4c374c72c3dafdb96b184a4a57e43c1dd08d224a81a72e04bde193577d2"
+  },
+  "builder": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_motor_observable_gradual_v2.py",
+    "sha256": "sha256:eb07c7cac9009c806edc0f64214ce1e61a696d242eb8e102477892c19f16108e"
+  },
+  "implementation": {
+    "base_dagger_trainer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_polar_dagger_v1.py",
+      "sha256": "sha256:90037e68004aa20480153ca884791ebd04d67d9d50dead65e031aebf52cbd59f"
+    },
+    "raw_intent_collector": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_polar_intent_dagger_v1.py",
+      "sha256": "sha256:4f8dad5c8d5445261cfa1ee8e00743aa71c545f84f6ef3ebbb47631488202e01"
+    },
+    "motor_environment_adapter": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_motor_observable_replay_v2.py",
+      "sha256": "sha256:e48db81d190756fe1bbeb1d559d8724c6fd10a2aa71352e2c62118894766f451"
+    },
+    "optimizer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_settled_v3.py",
+      "sha256": "sha256:42e8c5274b4674c60b17d80470cbf29d5f4f09adc079f128f587f0e085f0a1be"
+    },
+    "feature_extractor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_features.py",
+      "sha256": "sha256:d878d7ec034bfe1d0b9c8f16bf2fcc787a05de5ac404eb4f1685c4f5a46646a0"
+    },
+    "observable_motor_wrapper": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/observable_human_speedrun.py",
+      "sha256": "sha256:1c0326c530ed797e4426965c241298b768b6689133762055cd3f9216b74258de"
+    },
+    "teacher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_teacher.py",
+      "sha256": "sha256:ce31abd1b422770d1c34f55226c550a5a19570fd6a994ab330769eb758cf5089"
+    },
+    "compatibility_adapter_predecessor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_motor_observable_gradual_v1.py",
+      "sha256": "sha256:b01572103c9ad4441a534b5970674c799c0f1f54cf75506aa4dbb3e58c34f64a"
+    }
+  },
+  "levels": [
+    "Jungle1",
+    "Jungle2",
+    "Jungle3",
+    "Jungle4",
+    "jungle6",
+    "Jungle7",
+    "Jungle8",
+    "Jungle9",
+    "Jungle10",
+    "village1",
+    "village2",
+    "village3",
+    "village4",
+    "village5",
+    "village6",
+    "village7",
+    "village8",
+    "village10",
+    "city1",
+    "city2",
+    "city3",
+    "city4",
+    "city5",
+    "city6",
+    "city7",
+    "city9",
+    "city10",
+    "Coast1",
+    "Coast2",
+    "Coast3",
+    "Coast4",
+    "Coast5",
+    "Coast6",
+    "Coast7",
+    "Coast9",
+    "Coast10",
+    "grotto1",
+    "grotto2",
+    "grotto3",
+    "grotto4",
+    "grotto5",
+    "grotto6",
+    "grotto7",
+    "grotto9",
+    "grotto10",
+    "volcano1",
+    "volcano2",
+    "volcano3",
+    "volcano4",
+    "volcano5",
+    "volcano6",
+    "volcano7",
+    "volcano8",
+    "volcano9",
+    "volcano10"
+  ],
+  "run": {
+    "id": "alphazuma55-motor-observable-gradual-v2-5080",
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-s99081629-v1",
+    "device": "cuda:1",
+    "policy_architecture": "entity_polar_intent_motor_observable_gradual",
+    "motor_observation_profile": "motor-observable-v1",
+    "learned_features_dim": 1024,
+    "model_seed": 1544002800,
+    "training_seed_base": 1544000000,
+    "training_seed_last_consumed": 1544000219,
+    "rounds": 4,
+    "teacher_execution_probabilities": [
+      1.0,
+      0.9,
+      0.7,
+      0.5
+    ],
+    "parallel_envs": 24,
+    "max_ticks": 30000,
+    "reservoir_capacity_by_verb": {
+      "wait": 256,
+      "fire": 256,
+      "swap": 192,
+      "hop": 192
+    },
+    "sample_stride_by_verb": {
+      "wait": 4,
+      "fire": 1,
+      "swap": 1,
+      "hop": 1
+    },
+    "target_batch_fraction_by_verb": {
+      "wait": 0.45,
+      "fire": 0.35,
+      "swap": 0.15,
+      "hop": 0.05
+    },
+    "batch_size": 512,
+    "capacity_eval_batch_size": 128,
+    "epochs_per_round": 12,
+    "checkpoint_interval_epochs": 3,
+    "learning_rate": 1e-05,
+    "verb_loss_weight": 2.0,
+    "max_grad_norm": 0.5,
+    "aim_loss_scope": "fire_only",
+    "aim_loss_mode": "circular_smoothed",
+    "aim_smoothing_sigma": 1.5,
+    "aim_distance_weight": 0.5,
+    "source_is_frozen_motor_v3_final_model": true,
+    "aggregate_dataset_across_rounds": true,
+    "optimize_after_each_round": true,
+    "raw_teacher_intent_labels": true,
+    "training_mask_relaxation": "unmask_only_the_teacher_target_verb",
+    "exact_action_masks_for_environment_execution": true,
+    "exact_action_masks_for_online_policy_inference": true,
+    "label_aim_must_remain_exact_mask_legal": true,
+    "final_runtime_teacher_calls_forbidden": true
+  },
+  "seed_registry": {
+    "classification": "engineering_training_only",
+    "range": [
+      1544000000,
+      1544000219
+    ],
+    "formal_selection_seed_consumption": "NONE",
+    "formal_final_blind_seed_consumption": "NONE",
+    "continuous_campaign_seed_consumption": "NONE",
+    "recovery_reuse": {
+      "range": [
+        1544000000,
+        1544000219
+      ],
+      "authorization": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-s99081628-runtime-incident-v1.json",
+        "sha256": "sha256:9371f830fc36baf2d21c95a2e56c4eb9d9094a5da227acc9f36b12265e961b8e"
+      },
+      "reason": "V1 failed before model load and environment collection"
+    }
+  },
+  "authority_boundary": {
+    "current_campaign_candidate_authority": false,
+    "formal_selection_seed_consumption": false,
+    "formal_final_blind_seed_consumption": false,
+    "continuous_campaign_seed_consumption": false,
+    "power_restore_authority": false
+  },
+  "promotion_boundary": "This route remains engineering-only until a separately frozen screen and full55 gate promote a model hash.",
+  "outputs": {
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-s99081629-v1",
+    "completion": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-s99081629-v1/completion.json",
+    "failure": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-s99081629-v1/failure.json"
+  },
+  "recovery_lineage": {
+    "predecessor_preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-s99081628-preregistration-v1.json",
+      "sha256": "sha256:e9747af431410abc5c47d048e87f6bf874cd6bf6023f04b94adbd628ca220ea0"
+    },
+    "predecessor_runtime_incident": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-s99081628-runtime-incident-v1.json",
+      "sha256": "sha256:9371f830fc36baf2d21c95a2e56c4eb9d9094a5da227acc9f36b12265e961b8e"
+    },
+    "classification": "compatibility_only_successor_before_any_seed_use",
+    "allowed_change": "add source.model_path alias in memory after validation",
+    "training_recipe_changed": false,
+    "seed_interval_changed": false
+  }
+}

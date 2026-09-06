@@ -1,0 +1,104 @@
+{
+  "schema": "zuma-rl.alphazuma-55-training-validation-audit",
+  "version": 1,
+  "status": "PASS",
+  "audited_utc": "2026-08-16T04:13:12.119561+00:00",
+  "formal_selection_authority": false,
+  "training_recipe_change_authority": false,
+  "artifacts": {
+    "master": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+      "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+    },
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-dagger-validation-s99081550-preregistration-v1.json",
+      "sha256": "sha256:7e398281131d39928be369fbeb55d1ad49991ec5da954c1017e636c05aa69cca"
+    },
+    "models_manifest": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-dagger-validation-s99081550-models-v1.json",
+      "sha256": "sha256:469a57912215d8ed68b4b92b5d647253d102afbd7fa7819ab5d0fc0b5ab9bf50"
+    },
+    "matrix_shard": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-dagger-validation-s99081550-v1/matrix-shard-00-of-01.json",
+      "sha256": "sha256:7ea9b11f56450a9aed7d0055514e841710ef9a8e8d23dff9dde89a717f87957e"
+    },
+    "auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_training_validation.py",
+      "sha256": "sha256:3621dcb64c3342e3954533d22401f258fe6c72ac49d164456455ad77ea54aa67"
+    }
+  },
+  "matrix": {
+    "levels": 55,
+    "attempts_per_model": 55,
+    "models": 4,
+    "completed_attempts": 220,
+    "seed_plan": {
+      "registry": "training_validation",
+      "base_seed": 1550001800,
+      "last_seed": 1550001854
+    },
+    "runtime": {
+      "python": "3.12.3",
+      "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "parallel_envs": 24,
+      "total_vector_transitions": 1903480,
+      "wall_seconds": 3386.4635491289955
+    }
+  },
+  "model_summaries": [
+    {
+      "model_id": "polar-intent-wide-source-final",
+      "model_sha256": "sha256:9533690041859e73e0ae8f072e4a8ff05a9e316c29a974d666878e4e5bb0b424",
+      "attempts": 55,
+      "wins": 1,
+      "losses": 54,
+      "truncations": 0,
+      "cleared_levels": 1,
+      "winning_levels": [
+        {
+          "level_id": "Jungle1",
+          "seed": 1550001800,
+          "ticks": 8139,
+          "score": 2730,
+          "trajectory_sha256": "sha256:aedaedb146fc54c847e33c6485d13404b0b09897f99b4ebbd58ec8e2a2952ae7"
+        }
+      ],
+      "median_winning_ticks": 8139
+    },
+    {
+      "model_id": "polar-intent-dagger-round-00",
+      "model_sha256": "sha256:ca3263daf92bc3486d2dc08333f1415b3a386187754e42d052e44dafa7b7d550",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "polar-intent-dagger-round-01",
+      "model_sha256": "sha256:fefd1693a5493c6dc7378ee37cffb0553ea7d642f92d5480fa330ce60828adea",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "polar-intent-dagger-round-02",
+      "model_sha256": "sha256:810c848223e794e40a51cf9fab5826a2f24a7b531657634c8ede6a53c7a8fc3e",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    }
+  ],
+  "paired_comparison": null,
+  "interpretation_boundary": "This PASS proves artifact integrity and a paired training-health signal only; it is not selection, final blind, or continuous-campaign evidence."
+}

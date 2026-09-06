@@ -1,0 +1,52 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-live-snapshot-watchdog-deployment",
+  "version": 3,
+  "created_utc": "2026-08-14T03:07:56.2576109Z",
+  "status": "PASS",
+  "classification": "read_only_operational_monitoring",
+  "supersedes": {
+    "path": "diagnostics/alphazuma-v1.1-live-snapshot-watchdog-deployment-v2.json",
+    "reason": "The live snapshot now continuously enforces the preselection output boundary and detects premature formal-evaluation artifacts."
+  },
+  "snapshot_tool": {
+    "path": "tools/snapshot_alphazuma_v11_frontier.py",
+    "sha256": "sha256:38e6c3642bd3afdb0ed958aa9d486d1ef8d7c1fa1e31ae36ed9f938a8bdc583a",
+    "writes_training_or_evaluation_artifacts": false,
+    "formal_seed_consumption": "none"
+  },
+  "tests": {
+    "path": "tests/test_snapshot_alphazuma_v11_frontier.py",
+    "sha256": "sha256:1e3166fce824797c2225ea59ebcee592215d9a9c9dcd1ad1c535d0521926f2cc",
+    "result": "12_passed",
+    "new_boundary_cases": [
+      "controller status and its atomic-write temporary file are allowed",
+      "premature selection preregistration is rejected"
+    ]
+  },
+  "production_probe": {
+    "checked_utc": "2026-08-14T03:07:31.943658Z",
+    "status": "PASS",
+    "controller_phase": "WAITING_FOR_TRAINING",
+    "running_routes": 7,
+    "failed_routes": 0,
+    "unexpected_incomplete_routes": 0,
+    "total_steps_this_run": 22168936,
+    "preselection_entries": ["controller_status.json"],
+    "preselection_unexpected_entries": [],
+    "preselection_embargo_boundary_intact": true
+  },
+  "watchdog": {
+    "id": "alphazuma-v1-1",
+    "path": "C:\\Users\\Laure\\.codex\\automations\\alphazuma-v1-1\\automation.toml",
+    "sha256": "sha256:0f6b623420601d2e87430f7e89911ca9d1f5afec40c965fb5d9c5010c51e186e",
+    "status": "ACTIVE",
+    "interval_minutes": 10,
+    "snapshot_hash_bound": true,
+    "preselection_embargo_check_bound": true,
+    "phase_eta_monitoring_bound": true,
+    "balanced_power_plan_restore_bound": true,
+    "notification_policy": "failed_runs_only"
+  },
+  "training_or_evaluation_semantics_changed": false,
+  "formal_gate_effect": "none"
+}

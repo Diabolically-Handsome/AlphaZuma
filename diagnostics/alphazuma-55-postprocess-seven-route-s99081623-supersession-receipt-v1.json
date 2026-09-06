@@ -1,0 +1,62 @@
+{
+  "schema": "zuma-rl.alphazuma-55-postprocess-supersession-receipt",
+  "version": 1,
+  "status": "SUPERSEDED_BEFORE_FORMAL_SEED_CONSUMPTION",
+  "created_utc": "2026-08-16T07:23:34.2729871+00:00",
+  "old_controller": {
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-s89081704-preregistration-v1.json",
+      "sha256": "sha256:9731aa79e9a4a7f8f93c71f1f8e1afad91a400a576b1d62031a61180cc72073b"
+    },
+    "status_snapshot": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/postprocess-s89081704-v1/controller_status.json",
+      "sha256_at_snapshot": "sha256:275a5f6cad757817e7f6bc467ac8dbeea522564167b2e3947be1b767672424e2d",
+      "status": "RUNNING",
+      "phase": "WAITING_FOR_TRAINING",
+      "updated_utc": "2026-08-16T03:22:55.094268-04:00",
+      "error": null
+    },
+    "linux_deployment_pid": 163008,
+    "linux_controller_pid": 163026,
+    "termination_signal": "SIGTERM",
+    "both_processes_absent_after_termination": true,
+    "selection_root_absent_at_supersession": true,
+    "final_blind_root_absent_at_supersession": true,
+    "continuous_root_absent_at_supersession": true
+  },
+  "new_controller": {
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-seven-route-s99081623-preregistration-v1.json",
+      "sha256": "sha256:144698dd7778b1d927a521291b11c9fe3c66befbcf48a087362be640452c2cff"
+    },
+    "implementation": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_postprocess_parallel_v4.py",
+      "sha256": "sha256:d7491f329a6eaa7fb30404258002d2f4ee0afd1ef962680af8dede189a29bd8e"
+    },
+    "builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_seven_route_postprocess_v1.py",
+      "sha256": "sha256:1e1a70530d12f70215868ec179f8352228466d2a1b8531571a94681f7ae5604c"
+    },
+    "windows_launcher_pid": 7748,
+    "linux_controller_pid": 332412,
+    "status_snapshot": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/postprocess-seven-route-s99081623-v1/controller/controller_status.json",
+      "sha256_at_snapshot": "sha256:10d6bdd179b187cc1a88cf001a70814d05661b66942f9f5bfa4b96b9952e4c79",
+      "status": "RUNNING",
+      "phase": "WAITING_FOR_TRAINING",
+      "updated_utc": "2026-08-16T03:23:13.755952-04:00",
+      "error": null,
+      "registered_training_routes": 7
+    }
+  },
+  "semantic_invariants": {
+    "formal_seed_ranges_unchanged": true,
+    "selection_matrix_unchanged": true,
+    "final_blind_matrix_unchanged": true,
+    "continuous_matrix_unchanged": true,
+    "ranking_unchanged": true,
+    "success_gates_unchanged": true,
+    "capacity_safe_evaluator_unchanged": true,
+    "only_candidate_route_count_changed_from_six_to_seven": true
+  }
+}

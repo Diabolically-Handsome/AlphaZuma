@@ -1,0 +1,149 @@
+{
+  "schema": "zuma-rl.c138a3-fruit-collection-formal-source-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_PLAN_OR_CAMPAIGN_OUTPUT",
+  "created_utc": "2026-08-10T12:35:28.3850240Z",
+  "purpose": "Acquire a source-bound, zero-global-write full-state retail window covering the ordinary-projectile fruit collection, exact +500 score transition, and complete collection animation in the preregistered c138a3 recording.",
+  "classification": "preregistered-retail-mechanism-existence-source-not-frequency-evidence",
+  "parents": {
+    "recording_ensemble_preregistration": "diagnostics/recording-c137-c138-preregistration-v1.json",
+    "recording_ensemble_preregistration_sha256": "sha256:5cd6cdcbf35b28c702314231295b4e5a95a3423e1acd5b5a01cfdd0f96a77514",
+    "recording": "D:/ZumaGolden/record-c138a3-autoplay-fruit-collect-v1/result.json",
+    "recording_sha256": "sha256:2aa4ca93902cc5f0e7de7328c1fd1ad22f99732e169f349ce7e8bf9178374797"
+  },
+  "selection_disclosure": {
+    "fixed_recording_group_completed_before_analysis": true,
+    "all_three_c138_recordings_retained": true,
+    "selected_recording": "c138a3",
+    "selection_reason": "c138a3 is the shorter of the retained recordings with an exact isolated +500 score transition following an ordinary collect_fruit shot, reducing transport time and unrelated action coverage.",
+    "selection_conditioned_mechanism_existence_only": true,
+    "frequency_or_probability_claim": false,
+    "attempt_selection_uses_feature_presence": false
+  },
+  "raw_recording": {
+    "dmo": "D:/ZumaGolden/record-c138a3-autoplay-fruit-collect-v1/input.dmo",
+    "dmo_bytes": 21732,
+    "dmo_sha256": "sha256:8d206ee20450fe5c7973e2fe476ca3eab87176eba20ab1ebb7d137c411df127b",
+    "dmo_random_seed": 403511671,
+    "dmo_length_updates": 10043,
+    "dmo_command_count": 1012,
+    "recording_status": "PASS",
+    "natural_outcome": "natural_win",
+    "process_memory_writes": 0,
+    "host_restored": true,
+    "global_trace": "D:/ZumaGolden/record-c138a3-autoplay-fruit-collect-v1/global-mtrand-calls.json",
+    "global_trace_bytes": 9709701,
+    "global_trace_sha256": "sha256:e1b9acb64c5df043d53141b9f90a85180896e6900efa132ee3ab6ef8494eda84",
+    "rng_monitor": "D:/ZumaGolden/record-c138a3-autoplay-fruit-collect-v1/rng.ndjson",
+    "rng_monitor_sha256": "sha256:5ee03eaee8299f4d5fe36d8675bd9118d90af44f5943c17f5d6a20ef15d04b86",
+    "host_pre": "D:/ZumaGolden/record-c138a3-autoplay-fruit-collect-v1/safety/host-pre.json",
+    "host_pre_sha256": "sha256:0f1dd88161454724adaa7619c8ee78601fb453d243e9b6ccc69db928819fda9a"
+  },
+  "transport_normalization": {
+    "output": "D:/ZumaGolden/diagnostics/normalized-c138a3-fruit-collection-v1.dmo",
+    "output_absent_at_freeze": true,
+    "expected_bytes": 21719,
+    "expected_sha256": "sha256:6f2d645c3109f73b77ef55c7e7e7941f7f1d2f73dccd5a71adc3051d4a360989",
+    "expected_command_count": 1011,
+    "kind": "remove_bit_identical_duplicate_startup_registry_read",
+    "removed_command_index": 0,
+    "removed_bits": 107,
+    "gameplay_input_commands_preserved": true,
+    "header_markers_length_and_random_seed_preserved": true,
+    "other_transformations_allowed": false
+  },
+  "source_bound_anchor": {
+    "framework_update": 3121,
+    "native_game_time": 109,
+    "source_order": 327,
+    "caller": 6666273,
+    "expected_output": 1300598932,
+    "pre_index": 446,
+    "pre_state_sha256": "sha256:82a04abb0676c7ab43bb6f6849cba3c2d968dc43d74148c0f317592148dcc07a",
+    "post_index": 447,
+    "post_state_sha256": "sha256:e359b79fd552b5b1692345bfa91429df501548ef42af2da485497b3d1f69d581",
+    "thread_crt_rand_state": 3534207302,
+    "monitor_framework_update": 3429,
+    "monitor_post_index": 450,
+    "monitor_post_state_sha256": "sha256:3524e284426f451844921ca725c7787bb7173763cea0596cbe56331fbd81664a",
+    "rewind_draws": 4,
+    "precall_full_state_restore_allowed_only_if_live_state_differs": true,
+    "formal_acceptance_requires_live_reference_match_and_zero_precall_write": true
+  },
+  "observed_target_before_formal_capture": {
+    "ordinary_collect_fruit_fire_update": 5230,
+    "score_transition_update": 5279,
+    "score_before": 8810,
+    "score_after": 9310,
+    "score_delta": 500,
+    "classification": "window_selection_anchor_only_not_yet_formal_mechanism_proof"
+  },
+  "fixed_window": {
+    "slowdown_update": 5200,
+    "freeze_update": 5220,
+    "trajectory_end_update": 5310,
+    "expected_inclusive_tick_count": 91,
+    "covers_preimpact_projectile": true,
+    "covers_complete_expected_collection_animation": true,
+    "trajectory_mode": "full",
+    "formal_independent_score_binding": true
+  },
+  "outputs": {
+    "base_plan_root": "D:/ZumaGolden/diagnostics/base-c138a3-fruit-collection-source-bound-plan-v1",
+    "base_plan_root_absent_at_freeze": true,
+    "finite_plan_root": "D:/ZumaGolden/diagnostics/full-state-source-bound-fruit-collection-c138a3-plan-v1-stop3151",
+    "finite_plan_root_absent_at_freeze": true,
+    "campaign_root": "D:/ZumaGolden/formal-full-state-c138a3-fruit-collection-c164-campaign-v1",
+    "campaign_root_absent_at_freeze": true
+  },
+  "campaign": {
+    "maximum_attempts": 8,
+    "nonce_stem": "c164000000000000000000000000000",
+    "nonce_stem_length": 31,
+    "attempts_are_sequential": true,
+    "stop_at_first_transport_pass": true,
+    "retain_every_started_attempt": true,
+    "retryable_failure_exactly": "source_bound_global_precall_natural_state_mismatch",
+    "any_other_failure_aborts": true,
+    "feature_presence_not_inspected_between_attempts": true
+  },
+  "formal_acceptance": {
+    "source_bound_anchor_observation_count": 1,
+    "source_bound_precall_live_reference_match": true,
+    "source_bound_precall_changed": false,
+    "source_bound_precall_memory_write_bytes": 0,
+    "source_bound_postcall_natural_state_match": true,
+    "source_bound_postcall_bounded_global_correction_applied": false,
+    "post_board_construction_process_memory_write_count": 0,
+    "external_input_event_count": 0,
+    "trajectory_start_update": 5220,
+    "trajectory_end_update": 5310,
+    "trajectory_tick_count": 91,
+    "host_pre_and_post_state_roots_equal": true
+  },
+  "frozen_tooling": {
+    "src/zuma_rl/retail_dmo_provenance.py": "sha256:f436003093e804e9a3d15f8f7b80b64f1a65697a28a18d1392d554a706380869",
+    "tools/collect_pc_golden_v4.py": "sha256:9f8b9daf566e992458becd8dde817da6dae5d46e7f7aec93d9be073c865a5fd5",
+    "tools/prepare_pc_source_bound_plan.py": "sha256:d3a866d5845a14f1e645c5326a99041a239d88f6e49f1083546a6866979f5775",
+    "tools/collect_pc_formal_window.py": "sha256:bdf7368ee6d0ced319f17b85c3b5ef4b80f4d85cbfbfbfeed9f71389da6d064e",
+    "tools/collect_pc_formal_campaign.py": "sha256:bc1bcca6ff82165ec919761e4b21851311b51b4e9fe2f75ddea924fa6128c2df",
+    "tools/collect_pc_memory_probe.py": "sha256:79464752ab35693b8f8765483894ae152a389c367f511e7e33398fc4fa2d28b0",
+    "full_suite": "PASS_1542_COLLECTED"
+  },
+  "commands": {
+    "normalize": "@'\nfrom pathlib import Path\nfrom zuma_rl.retail_dmo_provenance import normalize_duplicate_startup_read\nsrc=Path(r'D:\\ZumaGolden\\record-c138a3-autoplay-fruit-collect-v1\\input.dmo')\ndst=Path(r'D:\\ZumaGolden\\diagnostics\\normalized-c138a3-fruit-collection-v1.dmo')\nout,_=normalize_duplicate_startup_read(src.read_bytes())\nwith dst.open('xb') as stream: stream.write(out)\n'@ | .\\.venv-win\\Scripts\\python.exe -",
+    "prepare_base": ".\\.venv-win\\Scripts\\python.exe tools\\collect_pc_golden_v4.py prepare --session-root D:\\ZumaGolden\\diagnostics\\base-c138a3-fruit-collection-source-bound-plan-v1 --session-nonce c138a300000000000000000000000000 --dmo D:\\ZumaGolden\\diagnostics\\normalized-c138a3-fruit-collection-v1.dmo --prestate-dir D:\\ZumaGolden\\record-c138a3-autoplay-fruit-collect-v1\\inputs\\prestate --runtime-source-executable \"D:\\SteamLibrary\\steamapps\\common\\Zuma's Revenge\\ZumasRevenge.exe\" --direct-runtime-executable D:\\ZumaGolden\\tools\\direct-runtime\\popcapgame1.exe --changedir \"D:\\SteamLibrary\\steamapps\\common\\Zuma's Revenge\" --crt-rand-seed 147023375 --board-seed 1300598932 --source-bound-board-monitor D:\\ZumaGolden\\record-c138a3-autoplay-fruit-collect-v1\\rng.ndjson --source-bound-board-trace D:\\ZumaGolden\\record-c138a3-autoplay-fruit-collect-v1\\global-mtrand-calls.json --source-bound-board-recording-report D:\\ZumaGolden\\record-c138a3-autoplay-fruit-collect-v1\\result.json --source-bound-board-monitor-update 3429 --source-bound-board-seed 403511671 --source-bound-board-rewind-draws 4 --source-bound-board-source-order 327 --source-bound-board-framework-update 3121 --source-bound-board-caller 6666273 --source-bound-board-precall-global-restore --duration-seconds 1 --frame-budget-fps 180 --wait-until-framework-update 3400 --window-repaint-update 3150 --skip-startup-window-activation --attach-at-update 0 --allow-pre-stream-commands --startup-trace-handoff --allow-font-cache-manifest-completion-debt --maximum-hits 100000 --trace-timeout-seconds 900",
+    "prepare_finite": ".\\.venv-win\\Scripts\\python.exe tools\\prepare_pc_source_bound_plan.py --base-plan D:\\ZumaGolden\\diagnostics\\base-c138a3-fruit-collection-source-bound-plan-v1\\plan.json --host-pre D:\\ZumaGolden\\record-c138a3-autoplay-fruit-collect-v1\\safety\\host-pre.json --output-root D:\\ZumaGolden\\diagnostics\\full-state-source-bound-fruit-collection-c138a3-plan-v1-stop3151 --stop-after-update 3151",
+    "campaign": ".\\.venv-win\\Scripts\\python.exe tools\\collect_pc_formal_campaign.py --plan D:\\ZumaGolden\\diagnostics\\full-state-source-bound-fruit-collection-c138a3-plan-v1-stop3151\\plan.json --prestate D:\\ZumaGolden\\diagnostics\\full-state-source-bound-fruit-collection-c138a3-plan-v1-stop3151\\protocol\\pre-template.json --campaign-root D:\\ZumaGolden\\formal-full-state-c138a3-fruit-collection-c164-campaign-v1 --maximum-attempts 8 --nonce-stem c164000000000000000000000000000 --freeze-update 5220 --slowdown-update 5200 --trajectory-end-update 5310"
+  },
+  "decision_rule": {
+    "source_pass": "The first transport-passing retained attempt satisfies every formal_acceptance invariant; mechanism derivation occurs only afterward.",
+    "source_fail": "Any nonretryable failure or eight exact retryable transport mismatches closes c164 without changing source or Gate standards.",
+    "mechanism_claims_pending": true,
+    "simulator_diff_pending": true,
+    "pc_golden_authentication_pending": true,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

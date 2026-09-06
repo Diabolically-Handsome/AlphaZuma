@@ -1,0 +1,159 @@
+{
+  "schema": "zuma-rl.alphazuma-55-recovery-intervention-v4-probe-preregistration",
+  "version": 1,
+  "status": "DRAFT_NOT_FROZEN",
+  "created_utc": "2026-08-17T00:38:25.817636+00:00",
+  "purpose": "Test whether kinematically valid override windows plus event-level triggers and handback produce a genuinely useful, honestly accounted recovery mechanism before any recovery-focused training is authorized. Thresholds in this document are DRAFTS for the user to freeze; nothing here authorizes a probe run to consume formal authority.",
+  "correction_lineage": {
+    "v1": {
+      "failure": "Consecutive-streak triggers were too sparse and the shallow recovery boundary handed back too early: 0/12 intervention wins with 19 locally shallow recoveries.",
+      "evidence_path": "/mnt/d/ZumaTraining/alphazuma-55-recovery-intervention-probe-s99081656-v1/completion.json",
+      "evidence_sha256": "TO_BE_BOUND_BY_USER_AT_FREEZE"
+    },
+    "v2": {
+      "failure": "Handback required stable_agreement_ticks=48 consecutive clean per-tick agreements. Under the measured 15-36% recovery-phase disagreement one clean window has probability (1-p)^48, approximately 4e-4 down to 1e-8 per window, so control almost never returned: the reported 73% teacher execution fraction was mathematically forced by the handback arithmetic, not observed autonomy.",
+      "evidence_path": "/mnt/d/ZumaTraining/alphazuma-55-recovery-intervention-v2-probe-s99081657-v1/completion.json",
+      "evidence_sha256": "TO_BE_BOUND_BY_USER_AT_FREEZE"
+    },
+    "v3": {
+      "failure": "Executed the teacher only on semantic-disagreement ticks inside the V2 recovery phase. The reported teacher fraction collapses to roughly the teacher non-wait density (2.2-2.9% of ticks) while the teacher still gates every fire decision: a denominator hack, not autonomy. Its 1-tick fire overrides are also motor-invalid: through the elite-human stack (reaction_delay_ticks=12, 6-tick fire animation) a fire intent issued at tick t releases its projectile near t+18 at the cursor angle parked by the surrounding student aim intents, so the overridden button fires at the student's angle.",
+      "evidence_path": "code analysis of tools/alphazuma_55_recovery_intervention_v3.py; bind a V3 probe completion here at freeze time if one was executed",
+      "evidence_sha256": "TO_BE_BOUND_BY_USER_AT_FREEZE_OR_MARKED_NOT_RUN"
+    }
+  },
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "TO_BE_BOUND_BY_USER_AT_FREEZE"
+  },
+  "probe": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/probe_alphazuma_55_recovery_intervention_v4.py",
+    "sha256": "sha256:84086744dc37fb0b7400df2f72766d97cf3046a7f148fd676278d9a49597301c",
+    "sha256_note": "informational at DRAFT stage; recompute and re-bind when freezing"
+  },
+  "controller": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/alphazuma_55_recovery_intervention_v4.py",
+    "sha256": "sha256:a11db9433c4ae798a19a676c4869c400c4518c68577cce3ce2d343df54a894b5",
+    "sha256_note": "informational at DRAFT stage; recompute and re-bind when freezing"
+  },
+  "metrics_module": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/alphazuma_55_closed_loop_metrics_v1.py",
+    "sha256": "sha256:6ed68c05b2e4688577b2f451c98e8499883e8260f10143db625cbae9c8427f4a",
+    "sha256_note": "informational at DRAFT stage; recompute and re-bind when freezing"
+  },
+  "source": {
+    "id": "motor-v3-source-final",
+    "completion_path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-replay-s99081616-v3/completion.json",
+    "completion_sha256": "TO_BE_BOUND_BY_USER_AT_FREEZE",
+    "model_path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-replay-s99081616-v3/final_model.zip",
+    "model_sha256": "TO_BE_BOUND_BY_USER_AT_FREEZE",
+    "selection_rule": "frozen motor-observable V3 source baseline; no result-conditioned candidate substitution"
+  },
+  "teacher": {
+    "id": "curve-aware-settled-strategic-v3",
+    "construction": "deterministic CurveAwareSettledStrategicRevengeTeacher built from each environment's teacher_spec(); no checkpoint file exists"
+  },
+  "levels": [
+    "Jungle1",
+    "Jungle9",
+    "village3",
+    "village8",
+    "city1",
+    "city9",
+    "Coast1",
+    "Coast9",
+    "grotto1",
+    "grotto9",
+    "volcano1",
+    "volcano9"
+  ],
+  "level_selection_rule": "the same pre-existing fixed 12-level cross-world panel as V1/V2/V3; no level was added or removed after observing earlier outcomes",
+  "paired_probe": {
+    "modes": [
+      "student_only",
+      "recovery_intervention"
+    ],
+    "seed_registry": "engineering_and_calibration",
+    "seed_base": 1400920000,
+    "seed_last": 1400920011,
+    "paired_modes_share_identical_task_seeds": true,
+    "deterministic_student_inference": true,
+    "device": "TO_BE_FROZEN_BY_USER",
+    "parallel_envs": 12,
+    "max_ticks": 30000,
+    "controller_config": {
+      "trigger_disagreement_events_k": 3,
+      "trigger_window_events_n": 4,
+      "handback_agreement_events_m": 4,
+      "minimum_teacher_ticks": 96,
+      "maximum_teacher_ticks": 900,
+      "handoff_cooldown_ticks": 96,
+      "minimum_score_gain": 300,
+      "minimum_chain_reduction": 6,
+      "score_stall_trigger_ticks": 300,
+      "chain_growth_trigger": 4,
+      "fire_aim_disagreement_bins": 4,
+      "reaction_delay_ticks": 12,
+      "fire_animation_ticks": 6,
+      "release_margin_ticks": 4,
+      "fire_override_enabled": true,
+      "fire_lock_ticks": 22
+    },
+    "execution_rule": "when the controller decides the teacher acts (deep recovery or fire override), the teacher controls BOTH verb and aim on EVERY tick until the window closes; ALL window ticks count as teacher execution",
+    "fire_lock_rule": "a window containing a teacher fire edge cannot close before edge + reaction_delay(12) + fire_animation(6) + release_margin(4) = 22 ticks, protecting the release from POST-commit student aim: no student intent issued after the window opens can reach the slew-limited cursor before the projectile samples it",
+    "fire_override_head_limitation": "the lock does NOT retract pre-commit student aim: intents issued in the 12 ticks before the window opened are already in the reaction-delay pipeline and steer the cursor for the first 12 window ticks, leaving only ~6 teacher-driven ticks (<= ~32 bins, acceleration-limited less) before the ~t+18 release, so the FIRST override shot can release off-target; the W1 release-angle attribution records such shots as off-target teacher shots (shots_on_target_rate / release_angle_error_bins), so the probe observes this failure mode instead of hiding it",
+    "trigger_rule": "deep recovery opens when 3 of the last 4 decision-relevant events (classify_tick from the closed-loop metrics module) are disagreements, or on the V2 score-stall / chain-growth triggers; a teacher fire the student omits or mis-aims opens a bounded fire-override window",
+    "handback_rule": "4 consecutive decision-relevant agreement events plus minimum window ticks and fire-lock expiry; protected student cooldown follows",
+    "handback_probability_note": "0.75^4 ~= 0.316 per window at 25% event-level disagreement, versus V2's (1-p)^48 ~= 4e-4..1e-8 which mathematically forced the 73% teacher fraction",
+    "veto_accounting": "student fires suppressed during teacher windows are counted as student_fire_vetoes and reported in every episode row, mode summary, and completion",
+    "closed_loop_instrumentation": "both modes report the W1 metrics: decision-relevant disagreement rates, wait-inclusive aim intent error, release-angle attribution across the 18-tick wrapped commit-to-release delay, shots_on_target_rate, and honest execution fractions",
+    "runtime_student_policy_uses_teacher": false
+  },
+  "acceptance_draft": {
+    "intervention_wins_must_exceed_student_only": true,
+    "intervention_total_score_must_exceed_student_only": true,
+    "minimum_paired_score_improvements": 6,
+    "minimum_interventions": 6,
+    "minimum_recovery_successes": 1,
+    "maximum_decision_relevant_teacher_fraction": 0.6,
+    "maximum_teacher_initiated_shot_fraction": 0.6,
+    "tick_teacher_fraction_reported_for_continuity_never_gated": true,
+    "nan_fractions_fail_closed": true
+  },
+  "thresholds_to_freeze": [
+    "trigger_disagreement_events_k",
+    "trigger_window_events_n",
+    "handback_agreement_events_m",
+    "minimum_teacher_ticks",
+    "maximum_teacher_ticks",
+    "handoff_cooldown_ticks",
+    "minimum_score_gain",
+    "minimum_chain_reduction",
+    "release_margin_ticks",
+    "fire_override_enabled",
+    "maximum_decision_relevant_teacher_fraction",
+    "maximum_teacher_initiated_shot_fraction",
+    "device",
+    "run_dir",
+    "source model and completion sha256 bindings",
+    "v1/v2/v3 failure-evidence sha256 bindings",
+    "master preregistration sha256 binding",
+    "probe/controller/metrics sha256 re-binding"
+  ],
+  "interpretation_boundary": {
+    "pass_means": "the override-window mechanism is useful enough AND honestly accounted enough to freeze a separate recovery-priority DAgger training pilot",
+    "pass_does_not_mean": "the student learned from the intervention or any candidate is promotable",
+    "fail_means": "do not train on this exact V4 intervention recipe",
+    "simulator_world_record_claim": false
+  },
+  "run_dir": "TO_BE_FROZEN_BY_USER (e.g. /mnt/d/ZumaTraining/alphazuma-55-recovery-intervention-v4-probe-<seed>-v1)",
+  "authority_boundary": {
+    "classification": "draft_engineering_mechanism_probe_only",
+    "training_authority": false,
+    "candidate_authority": false,
+    "formal_selection_seed_consumption": false,
+    "formal_final_blind_seed_consumption": false,
+    "continuous_campaign_seed_consumption": false,
+    "power_change_authority": false
+  },
+  "freeze_instructions": "To freeze: bind every TO_BE_BOUND/TO_BE_FROZEN field with real paths and sha256 receipts, recompute the probe/controller/metrics hashes, set status to FROZEN_BEFORE_PROBE, then run tools/probe_alphazuma_55_recovery_intervention_v4.py with --preregistration pointing at the frozen document. A DRAFT_NOT_FROZEN document is accepted by the probe for engineering runs but is recorded as unfrozen in every receipt."
+}

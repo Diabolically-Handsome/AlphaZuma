@@ -1,0 +1,84 @@
+{
+  "schema": "zuma-rl.retail-board-reset-trace-operational-failure-receipt",
+  "version": 1,
+  "status": "FAIL_RETAINED",
+  "created_utc": "2026-08-10T10:36:00Z",
+  "run": {
+    "id": "c151a1",
+    "root": "D:/ZumaGolden/record-c151a1-idle-natural-loss-reset-trace-v1",
+    "preregistration_sha256": "sha256:8e5a4ff555ea1fa86d31f5da121d04d802b863d7d4f04f5fe9a0b55624328e38",
+    "implementation_receipt_sha256": "sha256:09ded8d7f6b1a6bf9e6b6e1f364c7181a21b6c5fc088d3cc8e3c8ebd7257d8e2",
+    "result_status": "FAILED",
+    "result_sha256": "sha256:070e612dfdb91934de0a07d68c318ed017b5d9cb3a9a50ecee2da155babcc3c0",
+    "active_board_observed": false,
+    "reset_entry_protocol_evaluated": false
+  },
+  "root_cause": {
+    "classification": "title_navigation_input_sent_before_target_foreground_activation_completed",
+    "first_failed_stage": "title_start",
+    "structured_capture_error": "CaptureError: target_window_not_foreground",
+    "observed_sequence": [
+      "The title-start click was issued at the frozen update and point, but the immediate post-input capture proved the retail target was not foreground.",
+      "The Adventure-stage frame still showed CLICK TO CONTINUE, proving the title click had not advanced the UI.",
+      "The Continue-stage frame showed the main menu, so the remaining absolute-update clicks were one screen behind and no active Board appeared."
+    ],
+    "existing_activation_gap": "send_mouse_click called ShowWindow and SetForegroundWindow but neither checked the return value nor waited until GetForegroundWindow matched the retail HWND before SendInput.",
+    "not_a_reset_candidate_failure": true,
+    "not_a_runtime_crash": true
+  },
+  "evidence": [
+    {
+      "path": "D:/ZumaGolden/record-c151a1-idle-natural-loss-reset-trace-v1/navigation-before-adventure.bmp",
+      "bytes": 1920054,
+      "sha256": "sha256:c08004481640d0261cb594077caf826dde660502935286a99305cdd63769939d",
+      "visual_state": "CLICK TO CONTINUE"
+    },
+    {
+      "path": "D:/ZumaGolden/record-c151a1-idle-natural-loss-reset-trace-v1/navigation-before-continue-game.bmp",
+      "bytes": 1920054,
+      "sha256": "sha256:d5a29c52ea927b2bdaf958c61ad4ef3e3e96e0945600ef02ae3e6d6d71da7b28",
+      "visual_state": "main menu"
+    },
+    {
+      "path": "D:/ZumaGolden/record-c151a1-idle-natural-loss-reset-trace-v1/board-global-precall-and-reset.json",
+      "bytes": 11081,
+      "sha256": "sha256:25c00629cdb02151ba92343e7dcf9f350c9421f2755eef8845cffb909c933364",
+      "status": "FAIL",
+      "failure": "source_board_anchor_not_observed",
+      "call_count": 8,
+      "source_anchor_count": 0,
+      "reset_entry_count": 0,
+      "reset_return_count": 0,
+      "process_memory_writes": 0,
+      "process_memory_mutation": false,
+      "hardware_breakpoint_restored": true,
+      "debugger_detach_error": null
+    }
+  ],
+  "preoutput_static_identity_checks_that_did_execute": {
+    "board_global_precall_instruction_hex": "e86fbcfbff",
+    "board_reset_entry_first_32_bytes_hex": "558bec6aff68285d940064a1000000005083ec205357a110509e0033c5508d45",
+    "board_reset_native_clock_zero_instruction_hex": "c786c80e000000000000",
+    "board_reset_return_instruction_hex": "c20800",
+    "all_matched_frozen_runtime": true
+  },
+  "safety": {
+    "host_pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "applied_pre_state_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526",
+    "host_end_state_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526",
+    "host_restored_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_restored_exactly": true,
+    "retail_process_remaining": false,
+    "process_memory_writes": 0,
+    "hardware_breakpoint_restored": true
+  },
+  "decision": {
+    "c151a1_remains_failed": true,
+    "same_preregistration_retry_forbidden": true,
+    "combined_reset_trace_threshold_change": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false,
+    "next_step": "Freeze a separate operational correction that waits for verified foreground ownership before every existing navigation SendInput click, preserving all c151 reset-trace identities and acceptance criteria unchanged."
+  }
+}

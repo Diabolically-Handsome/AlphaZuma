@@ -1,0 +1,30 @@
+{
+  "amendment": {
+    "remove_argument": "--skip-startup-window-activation",
+    "replacement": "use the collector's normal startup window activation before the strict replay stream",
+    "superseded_field": "shared_contract.skip_startup_window_activation",
+    "superseded_value": true,
+    "replacement_value": false
+  },
+  "cause": {
+    "error": "startup_window_activation_invalid",
+    "explanation": "The clean fixed-seed plan intentionally has no source-bound board anchor. The frozen collector requires normal startup window activation in that mode; deferring activation is valid only when the source-bound anchor owns startup synchronization.",
+    "failed_output_created": false,
+    "failed_output_root": "D:/ZumaGolden/diagnostics/clean-c201-natural-loss-fixed-seed-plan-v1"
+  },
+  "created_utc": "2026-08-10T17:38:46.521Z",
+  "id": "c201-clean-fixed-seed-plan-normal-startup-activation-amendment",
+  "invariants": {
+    "all_seed_values_unchanged": true,
+    "all_three_dmo_hashes_unchanged": true,
+    "all_three_exact_step_windows_unchanged": true,
+    "no_source_bound_anchor_or_state_restore_added": true,
+    "output_roots_absent_at_amendment": true
+  },
+  "parent": {
+    "path": "diagnostics/c201-clean-fixed-seed-pc-golden-plan-derivation-preregistration-v1.json",
+    "sha256": "sha256:8730e2dc2085497218d4649005e3e96ccf886398cc1b898d518532d29f00ef7a"
+  },
+  "status": "FROZEN_BEFORE_ANY_PLAN_OUTPUT",
+  "version": 1
+}

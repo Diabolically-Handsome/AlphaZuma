@@ -1,0 +1,73 @@
+{
+  "schema": "zuma-rl.pc-transactional-ready-smoke-execution-binding",
+  "version": 16,
+  "status": "BOUND_BEFORE_RUN_OUTPUTS",
+  "created_utc": "2026-08-05T17:43:07.871Z",
+  "id": "transactional-ready-smoke-v16-execution",
+  "session_nonce": "72677847c09547b7bb0a965457067f85",
+  "parent_preregistration": "diagnostics/transactional-ready-smoke-preregistration-v16.json",
+  "parent_preregistration_sha256": "sha256:34944cfe9c36256726645ee31b27190ea8b3499fe4d297c51af4bb9ca6335c16",
+  "preflight": {
+    "run_root_absent": true,
+    "host_pre_absent": true,
+    "host_post_absent": true,
+    "outcome_absent": true,
+    "runtime_process_count": 0,
+    "qualified_input_hashes_match": true,
+    "focused_tests": "PASS_58",
+    "native_full_suite": "PASS_1174_COLLECTED_EXIT_0",
+    "capture_fresh_host_pre_after_this_binding": true
+  },
+  "hash_recheck": {
+    "collector_plan_sha256": "sha256:5a7ba58eccd7e0d1b1008ac089cce59c167a26ba8bc359ef76f3dcd2bea8c0db",
+    "playback_dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "replay_pre_snapshot_sha256": "sha256:06d243f34ecf209c6296659fd4cc3c0a6c299c203cc8b4e342f55cc001c32842",
+    "host_restore_snapshot_sha256": "sha256:c48bd69be03fc6e2fdf1a400b571f0f0294a5fadda1c48e08c1bd6d1dd093f46",
+    "global_mtrand_source_trace_sha256": "sha256:4de39ac6a0e800323949e0095fc2fd3e924ea41a670ceb5d75a0ecb25b5c15a4",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "thread_runtime_tool_sha256": "sha256:e7edc2f002d7c5168c0a3649092936bcacb6f0e31bbeee9b431b643a29762275",
+    "global_boundary_tool_sha256": "sha256:e1cb749beeb195c58a31b507accfcf01ae2368472dcfff244c2428e56e283110",
+    "collector_sha256": "sha256:56d44a66bc52df864206909c52543189ce808220349185830d7b82eabeb61b51",
+    "strict_tracer_sha256": "sha256:6586859c0eab6d29673f2a8ca05b0c80f6b59c87b8c985cd24c50423ab72d10d"
+  },
+  "fixed_command_contract": {
+    "probe_update": 3425,
+    "slowdown_update": 3415,
+    "maximum_attempts": 3,
+    "trajectory_mode": "rng",
+    "trajectory_end_update": 3425,
+    "trace_detach_update": 1702,
+    "trace_reattach_update": 3501,
+    "global_mtrand_call_start_after_update": 1702,
+    "global_mtrand_call_end_at_update": 3121,
+    "global_mtrand_call_observe_boundary_only": true,
+    "global_mtrand_call_observe_thread_runtime": true,
+    "initial_global_mtrand_oracle": false,
+    "diagnostic_disable_source_bound_board_anchor": true,
+    "skip_repaint_guard": true,
+    "skip_frozen_snapshot": true,
+    "timeout_seconds": 900
+  },
+  "execution_rule": {
+    "retain_every_attempt": true,
+    "stop_at_first_valid_boundary_observation": true,
+    "never_retry_for_semantic_source_mismatch": true,
+    "post_verified_ready_failure_is_nonretryable": true,
+    "failed_handoff_before_v2_ready_is_retryable": true,
+    "capture_host_post": true,
+    "verify_same_host_state_root": true,
+    "semantic_result_is_quarantined": true
+  },
+  "output_absence_recheck": {
+    "run_root": true,
+    "host_pre": true,
+    "host_post": true,
+    "outcome": true
+  },
+  "non_authorizations": [
+    "pc_golden_credit",
+    "fidelity_gate_change",
+    "formal_transport_change",
+    "large_scale_training_start"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schema": "zuma-rl.c158-natural-loss-simulator-diff-implementation-receipt",
+  "version": 1,
+  "status": "PASS_BEFORE_DIFF_OUTPUT",
+  "created_utc": "2026-08-10T12:18:39.2017175Z",
+  "preregistration": "diagnostics/c161-c158-natural-loss-simulator-diff-preregistration-v1.json",
+  "preregistration_sha256": "sha256:523606698fe202d4beb20ce72921544304a4ad21565c8c62bdfde68ccc19b266",
+  "implementation": {
+    "src/zuma_rl/pc_loss_sequence.py_before": "sha256:388983e2107559e08a3181a8f847d80f23727ff16ac321587549c778b6be2537",
+    "src/zuma_rl/pc_loss_sequence.py_after": "sha256:0da3747d4931438eed86e1797303aba83306b226fea2b4d6b9b4ed1c4676c42b",
+    "tools/compare_pc_loss_sequence.py_before": "sha256:548788ad373e91fc2145727afc0d4fe8397b9699a5f76916bb5aa6d261eeae51",
+    "tools/compare_pc_loss_sequence.py_after": "sha256:661a8a1371514030ab4694607dd2e8f357209d5c22e838799668ff4b327cddc4",
+    "tests/test_pc_loss_sequence.py_after": "sha256:34dd70095d0dcb4bf387bd6c71302f0c645ba0775f1617a3d89640fd3c55cb51",
+    "simulator_loss_dynamics_modified": false,
+    "source_artifact_modified": false,
+    "comparison_tolerance_modified": false,
+    "gate_logic_modified": false
+  },
+  "implemented_contract": {
+    "source_advance_inferred_from_shared_identity_modal_float32_delta": true,
+    "natural_terminal_pretrigger_step_required_exact": true,
+    "selected_window_must_be_contiguous": true,
+    "captured_and_selected_bounds_recorded": true,
+    "all_existing_per_tick_comparisons_retained": true
+  },
+  "tests": {
+    "py_compile": "PASS",
+    "targeted_command": ".\\.venv-win\\Scripts\\python.exe -m pytest -q tests\\test_pc_loss_sequence.py",
+    "targeted_status": "PASS",
+    "targeted_test_count": 5,
+    "full_command": ".\\.venv-win\\Scripts\\python.exe -m pytest -q",
+    "full_status": "PASS",
+    "full_exit_code": 0,
+    "collected_test_count": 1536,
+    "collection_file_count": 109,
+    "warnings": 1,
+    "warning_classification": "preexisting Gymnasium render-mode spec warning"
+  },
+  "output_preflight": {
+    "path": "D:/ZumaGolden/diagnostics/jungle2-c158-u11341-u11519-natural-loss-diff-v1.json",
+    "absent": true,
+    "single_execution_authorized": true
+  },
+  "decision": {
+    "diff_execution_authorized": true,
+    "simulator_behavior_fix_authorized": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

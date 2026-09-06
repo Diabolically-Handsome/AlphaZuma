@@ -1,0 +1,58 @@
+{
+  "schema": "zuma-rl.alphazuma-55-weekend-evaluation-resume-watcher-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_ANY_CURRENT_ROUTE_ENGINEERING_GATE_RESULT",
+  "created_utc": "2026-08-16T17:23:14.9460224Z",
+  "deadline_utc": "2026-08-16T20:00:00Z",
+  "objective": "Implement the already-frozen single-postprocessor SIGCONT order without changing any candidate, seed, Gate, model, or training/evaluation semantic.",
+  "bindings": {
+    "resource_schedule": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-evaluation-resource-schedule-s99081648-v1.json",
+      "sha256": "sha256:4e60fdde646e89eddf8072af09d463dcf0f3dc02e6767f333c55eca2a92f1413"
+    },
+    "pause_receipt": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-evaluation-resource-schedule-s99081648-pause-receipt-v1.json",
+      "sha256": "sha256:09a185d36dd9f87d150e0fea71272af0d6bc05d9d37379b5efb8cceab0c330b0"
+    },
+    "watcher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/watch_alphazuma_55_weekend_evaluation_resume_order_v1.py",
+      "sha256": "sha256:856ff7e389408e727a0fd8d8154d39d445a301351ffa6c7b550fd18cc804500a"
+    }
+  },
+  "resume_order": [
+    "head-only plus all-actions factorial",
+    "head-only fire-aim",
+    "full-policy all-actions aim"
+  ],
+  "transition_rules": [
+    {
+      "predecessor": "head-only plus all-actions factorial",
+      "resume": "head-only fire-aim",
+      "pid": 404830,
+      "condition": "independent engineering audit PASS with gate_passed=false, followed by successor COMPLETE_NO_PROMOTION with formal_seed_consumption=NONE"
+    },
+    {
+      "predecessor": "head-only fire-aim",
+      "resume": "full-policy all-actions aim",
+      "pid": 393431,
+      "condition": "independent engineering audit PASS with gate_passed=false, followed by successor COMPLETE_NO_PROMOTION with formal_seed_consumption=NONE"
+    }
+  ],
+  "positive_gate_behavior": "exit without resuming any lower-priority postprocessor",
+  "error_behavior": "fail closed without sending SIGCONT; retain original error evidence",
+  "outputs": {
+    "head_only_resume_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-evaluation-resource-schedule-s99081648-resume-headonly-receipt-v1.json",
+    "all_actions_resume_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-evaluation-resource-schedule-s99081648-resume-allaim-receipt-v1.json",
+    "stdout": "/mnt/d/ZumaTraining/alphazuma-55-weekend-evaluation-resume-watcher-s99081651-v1.stdout.log",
+    "stderr": "/mnt/d/ZumaTraining/alphazuma-55-weekend-evaluation-resume-watcher-s99081651-v1.stderr.log"
+  },
+  "authority_boundary": {
+    "formal_seed_consumption": "NONE",
+    "candidate_rule_change": false,
+    "gate_change": false,
+    "attempt_matrix_change": false,
+    "training_recipe_change": false,
+    "model_byte_change": false,
+    "power_restore_authority": false
+  }
+}

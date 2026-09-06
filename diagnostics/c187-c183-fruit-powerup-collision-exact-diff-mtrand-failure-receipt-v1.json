@@ -1,0 +1,78 @@
+{
+  "schema": "zuma-rl.c183-fruit-powerup-collision-exact-diff-mtrand-failure-receipt",
+  "version": 1,
+  "status": "FAIL_CLOSED_GLOBAL_MTRAND_VISUAL_DRAW_GAP",
+  "created_utc": "2026-08-10T15:36:26.8585031Z",
+  "preregistration": {
+    "path": "diagnostics/c187-c183-fruit-powerup-collision-quiescent-boundary-diff-preregistration-v1.json",
+    "sha256": "sha256:c760b4428559c75a14841f8975a6f3d04096212055967bfa6d622993fc805d7f"
+  },
+  "failed_output": {
+    "path": "D:/ZumaGolden/diagnostics/jungle2-c183-u8213-u8260-fruit-powerup-collision-diff-v2.json",
+    "bytes": 98469,
+    "sha256": "sha256:891a95a80815f6a4c95f12d212418230d78d949de4573733a8f499e8ad1ccedf",
+    "status": "FAIL",
+    "start_update": 8213,
+    "end_update": 8260,
+    "compared_tick_count": 47,
+    "pass_tick_count": 20,
+    "failed_tick_count": 27,
+    "global_mtrand_policy": "exact_no_reconciliation"
+  },
+  "isolated_evidence": {
+    "gameplay_state_exact_before_global_rng_tick_count": 47,
+    "active_identity_exact_tick_count": 47,
+    "fired_identity_exact_tick_count": 47,
+    "staging_identity_exact_tick_count": 47,
+    "score_exact_tick_count": 47,
+    "qrand_exact_tick_count": 47,
+    "thread_crt_rand_exact_tick_count": 47,
+    "shooter_exact_without_synchronization_tick_count": 47,
+    "maximum_position_error_px": 0.000030517578125,
+    "global_mtrand_exact_through_update": 8233,
+    "global_mtrand_exact_tick_count": 20,
+    "first_mismatch": {
+      "framework_update": 8234,
+      "global_mtrand_index_pc": 410,
+      "global_mtrand_index_simulator": 396,
+      "joint_transition_exact_before_global_rng": true,
+      "inserted": 1,
+      "matches": 1,
+      "balls_exploded": 9,
+      "powerups_triggered": 1,
+      "fruits_collected": 1,
+      "score_delta_pc": 590,
+      "score_delta_simulator": 590,
+      "fruit_state_mismatches": {},
+      "curve_state_mismatches": {}
+    },
+    "source_authorized_features": [
+      "fruit_collection_animation",
+      "fruit_powerup_collision",
+      "powerup_proximity_bomb",
+      "projectile_collision",
+      "rng_pending",
+      "shot_release",
+      "swap"
+    ]
+  },
+  "interpretation": {
+    "projectile_to_staging_semantics_falsified": false,
+    "match_and_bomb_semantics_falsified": false,
+    "fruit_powerup_collision_semantics_falsified": false,
+    "fruit_collection_animation_semantics_falsified": false,
+    "exact_no_reconciliation_contract_passed": false,
+    "candidate_next_step": "run an immutable unbound comparison with only conditional external-visual MTRand reconciliation enabled, then bind every reconciled draw to an exact source-bound native call trace before certification",
+    "simulator_core_change_authorized": false
+  },
+  "decision": {
+    "failed_output_retained": true,
+    "same_output_not_reused": true,
+    "code_changed_after_failure": false,
+    "simulator_diff_credit": false,
+    "pc_golden_authentication_start": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

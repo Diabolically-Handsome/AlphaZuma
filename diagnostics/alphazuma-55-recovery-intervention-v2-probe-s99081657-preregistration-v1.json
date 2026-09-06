@@ -1,0 +1,104 @@
+{
+  "schema": "zuma-rl.alphazuma-55-recovery-intervention-v2-probe-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_PROBE",
+  "created_utc": "2026-08-16T20:33:51.5100076Z",
+  "purpose": "Test whether rolling sparse-error accumulation plus deep teacher recovery corrects the V1 mechanism failure before any recovery-focused training is authorized.",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "v1_failure_evidence": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-recovery-intervention-probe-s99081656-v1/completion.json",
+    "sha256": "sha256:7eb4e83eda11e2bfbe10b8c89e55784060926e3568d477ba5f5930b784633d78",
+    "status": "COMPLETE",
+    "decision": "FAIL",
+    "correction_boundary": "V1 had zero wins, only three paired score improvements, and nineteen locally shallow recoveries; no V1 probe data is authorized for training."
+  },
+  "probe": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/probe_alphazuma_55_recovery_intervention_v2.py",
+    "sha256": "sha256:217db6417063a9afa21a1004d152cbcc53adf6a7a6c6d1ab17232d84f86cb78d"
+  },
+  "controller": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/alphazuma_55_recovery_intervention_v2.py",
+    "sha256": "sha256:8bd2788cf0d4d6e6f828f8d7570c1620d3aa98c5094378469a252f37a188f058"
+  },
+  "source": {
+    "id": "motor-v3-source-final",
+    "completion_path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-replay-s99081616-v3/completion.json",
+    "completion_sha256": "sha256:c8a5874a977f2a4bb3ef4ea1422cb8439df75ca3e53ad50a87c23a6eac03d109",
+    "model_path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-replay-s99081616-v3/final_model.zip",
+    "model_sha256": "sha256:a93a219f923708a3f7de4b9d149c84d0d755dce56f97cc3edf440ecfb2b485bf",
+    "selection_rule": "frozen motor-observable V3 source baseline; no result-conditioned candidate substitution"
+  },
+  "levels": [
+    "Jungle1",
+    "Jungle9",
+    "village3",
+    "village8",
+    "city1",
+    "city9",
+    "Coast1",
+    "Coast9",
+    "grotto1",
+    "grotto9",
+    "volcano1",
+    "volcano9"
+  ],
+  "level_selection_rule": "the same pre-existing fixed 12-level cross-world panel as V1; no level was added or removed after observing V1 outcomes",
+  "paired_probe": {
+    "modes": [
+      "student_only",
+      "recovery_intervention"
+    ],
+    "seed_registry": "engineering_and_calibration",
+    "seed_base": 1400920000,
+    "seed_last": 1400920011,
+    "paired_modes_share_identical_task_seeds": true,
+    "deterministic_student_inference": true,
+    "device": "cuda:1",
+    "parallel_envs": 12,
+    "max_ticks": 30000,
+    "controller_config": {
+      "disagreement_window_ticks": 48,
+      "disagreements_to_trigger": 4,
+      "minimum_teacher_ticks": 300,
+      "maximum_teacher_ticks": 900,
+      "stable_agreement_ticks": 48,
+      "handoff_cooldown_ticks": 96,
+      "minimum_score_gain": 300,
+      "minimum_chain_reduction": 6,
+      "score_stall_trigger_ticks": 300,
+      "chain_growth_trigger": 4,
+      "fire_aim_disagreement_bins": 4
+    },
+    "student_state_exposure": "student executes by default while sparse semantic errors accumulate in a frozen 48-tick rolling window",
+    "teacher_execution": "bounded deep-recovery burst after four rolling disagreements or one recent disagreement paired with score stall or chain growth",
+    "handoff": "student-only protected cooldown after at least 300 teacher ticks plus stable agreement and material recovery, or after the frozen maximum",
+    "runtime_student_policy_uses_teacher": false
+  },
+  "acceptance": {
+    "intervention_wins_must_exceed_student_only": true,
+    "intervention_total_score_must_exceed_student_only": true,
+    "minimum_paired_score_improvements": 6,
+    "minimum_interventions": 6,
+    "minimum_recovery_successes": 1,
+    "maximum_teacher_execution_fraction": 0.6
+  },
+  "interpretation_boundary": {
+    "pass_means": "the corrected intervention mechanism is useful enough to freeze a separate recovery-priority DAgger training pilot",
+    "pass_does_not_mean": "the student learned from the intervention or any candidate is promotable",
+    "fail_means": "do not train on this exact V2 intervention recipe",
+    "simulator_world_record_claim": false
+  },
+  "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-recovery-intervention-v2-probe-s99081657-v1",
+  "authority_boundary": {
+    "classification": "paired_engineering_mechanism_probe_only",
+    "training_authority": false,
+    "candidate_authority": false,
+    "formal_selection_seed_consumption": false,
+    "formal_final_blind_seed_consumption": false,
+    "continuous_campaign_seed_consumption": false,
+    "power_change_authority": false
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "schema": "zuma-rl.alphazuma-55-capacity-expansion-launch-receipt",
+  "version": 1,
+  "status": "PASS",
+  "recorded_utc": "2026-08-15T05:33:37.7938122Z",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "expansion_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-capacity-expansion-s93081501-preregistration-v1.json",
+    "sha256": "sha256:b9c30b9eb795c2a2f14a12258025ea6b87870e67f2c88fd013432f5e188eb743"
+  },
+  "replicate_route": {
+    "run_id": "alphazuma55-v1-frontier-replicate-5090",
+    "windows_wsl_client_pid": 39036,
+    "wsl_main_pid": 39873,
+    "started_utc": "2026-08-15T05:31:37.196720+00:00",
+    "status_snapshot_utc": "2026-08-15T05:33:19.233379+00:00",
+    "status": "RUNNING",
+    "steps_this_run": 45072,
+    "steps_per_second": 492.7965629260088,
+    "config": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-v1-frontier-replicate-s88081501-v1/config.json",
+      "sha256": "sha256:1f5aac6ec711052eb07732b2fe3e1f11c86770fec429a971fd06546d086405cf"
+    },
+    "initialization": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-v1-frontier-replicate-s88081501-v1/initialization.json",
+      "sha256": "sha256:1b0132b79aa855e502ff6b30a27c533456f233ee9c62bed45009f9257ba76f5f"
+    },
+    "mutable_status_snapshot": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-v1-frontier-replicate-s88081501-v1/training_status.json",
+      "sha256_at_recording": "sha256:ddb45ff83d367046addd669881b0ef72768e4c173996e523283dd1366c2a77fb"
+    },
+    "worker_processes": 16,
+    "failure_receipt_exists": false
+  },
+  "throughput_comparison": {
+    "four_route_baseline_steps_per_second": 1980.152694763902,
+    "five_route_steps_per_second": 2477.316958570216,
+    "absolute_gain_steps_per_second": 497.164263806314,
+    "relative_gain_percent": 25.107370365977,
+    "existing_route_steps_per_second_after_expansion": {
+      "speed_frontier": 638.4276721489584,
+      "v11_balanced": 422.86683292194203,
+      "v1_frontier": 415.8925707193555,
+      "distilled_ppo": 507.33331985295194
+    },
+    "interpretation": "The fifth route increased aggregate training throughput by about 25 percent without materially reducing the four pre-existing route rates."
+  },
+  "hardware_snapshot": {
+    "gpu_0": {
+      "name": "NVIDIA GeForce RTX 5090",
+      "power_draw_watts": 192.47,
+      "power_limit_watts": 550.0,
+      "utilization_percent": 31,
+      "memory_used_mib": 11066,
+      "memory_total_mib": 32607,
+      "temperature_c": 43
+    },
+    "gpu_1": {
+      "name": "NVIDIA GeForce RTX 5080",
+      "power_draw_watts": 62.51,
+      "power_limit_watts": 250.0,
+      "utilization_percent": 20,
+      "memory_used_mib": 9503,
+      "memory_total_mib": 16303,
+      "temperature_c": 47
+    },
+    "power_limits_match": true,
+    "thermal_gate_pass": true
+  },
+  "postprocess_preview": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-expansion-preview-s94081501-preregistration-v1.json",
+    "sha256": "sha256:2d313b6bfb94a207d9082ef699012ad6f034d3416b7ad3f9b706d57da3b48c18",
+    "validate_only_status": "VALID",
+    "registered_routes": 5,
+    "migration_baselines": 3,
+    "levels": 55
+  },
+  "formal_boundary": {
+    "selection_root_exists": false,
+    "final_blind_root_exists": false,
+    "continuous_root_exists": false,
+    "formal_seed_consumption": false,
+    "ranking_gate_or_environment_change": false
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "schema": "zuma-rl.pc-front-insertion-render-settled-replay-divergence-audit",
+  "version": 1,
+  "id": "c71-front-insertion-render-settled-replay-divergence",
+  "created_utc": "2026-08-03T18:38:08Z",
+  "classification": "failed-fresh-two-run-visual-replay-determinism-not-pc-golden",
+  "gate_effect": "none",
+  "parent_execution_binding": {
+    "path": "diagnostics/c71-front-insertion-render-settled-bounded-arm-execution-binding-v1.json",
+    "sha256": "sha256:e93e0596361ab268e7f1fa91ec7c3d18fef924c01dc3e873fa9ff8de82253b90"
+  },
+  "session": {
+    "root": "D:/ZumaGolden/campaign-c71-natural-win-v8-front-insertion-render-settled-bounded-arm-u3569-u3710",
+    "plan_sha256": "sha256:89a75ef07dc9b5928d5cfeb48c69a2f9f512058ffc73a2239d4c9fefa8bd4907",
+    "collection_sha256": "sha256:cc9b0207d58dab94195b9d2e33ce1896d7d17b5a20aa7c9f6b5f55ad71bab9c3",
+    "collection_status": "complete",
+    "distinct_process_instances": true,
+    "run_process_ids": [
+      52208,
+      54128
+    ]
+  },
+  "transport_evidence": {
+    "status": "PASS",
+    "interpretation": "Both captures, high-rate observers, and independently recomputed render-settled maps satisfy the frozen transport contract. The failure is downstream visual replay divergence, not a missing or phase-shifted update label.",
+    "r1": {
+      "actual_arm_update": 3540,
+      "mean_poll_hz": 4979.228161614283,
+      "p99_poll_interval_ns": 204500,
+      "skipped_draw_increments": 0,
+      "frame_count": 90,
+      "assigned_update_range": [
+        3640,
+        3694
+      ],
+      "render_settled_map_sha256": "sha256:3263903e14a4727308b8cf441ce7322fb7ebdf8215dc3af28c0906e2b76d3ad1",
+      "capture_metadata_sha256": "sha256:5f22cc7a652bc30ba6a61abd33dfd6639df60a34f65457f00d78be0021a0caf5",
+      "frames_csv_sha256": "sha256:0992a702c8c1569e4a67d8e366bea5621eb5a163ae7ad99a730b096baa7ad7f5",
+      "ffv1_sha256": "sha256:3090f0339ee20a4f091e0626d10ae45f639d25924cff89abaacd6daa775ea83a",
+      "framework_poll_sha256": "sha256:03e8ebe9b70ef5e61e23076e9a7050809a6d1eef5c6167b8ec209af7ae528a3e"
+    },
+    "r2": {
+      "actual_arm_update": 3540,
+      "mean_poll_hz": 4978.5187752913735,
+      "p99_poll_interval_ns": 203900,
+      "skipped_draw_increments": 0,
+      "frame_count": 91,
+      "assigned_update_range": [
+        3642,
+        3696
+      ],
+      "render_settled_map_sha256": "sha256:a1981590fc62d0d513bda80d58f72b8cf92896319677d360c57090944d248dd6",
+      "capture_metadata_sha256": "sha256:dc3c80b4cacecb434945661f19bf89c4f7dfb5cb3b19b9e23b1f9b67b26b141d",
+      "frames_csv_sha256": "sha256:5f309212d242583539e0b2c4be47e4ec056ef3530c23b1e30f9e54371f0a265d",
+      "ffv1_sha256": "sha256:8940eaac8866ba7ab132f6eec9baf0be9f89bb87d71dd21b470ea6f189f3f70d",
+      "framework_poll_sha256": "sha256:c94226fa03f5cfe04d071612dd6fd6bea99c2b9913f11ba79f5626f69802d93c"
+    }
+  },
+  "visual_failure": {
+    "comparison": "exact_full_800x600_bgra_at_same_render_settled_update",
+    "common_update_range": [
+      3642,
+      3694
+    ],
+    "common_update_count": 53,
+    "exact_matching_update_count": 0,
+    "contiguous_exact_match_ranges": [],
+    "required_target_range": [
+      3664,
+      3684
+    ],
+    "required_target_exact_matches": 0,
+    "required_target_mismatches": 21,
+    "minimum_mismatched_pixel_count_over_common_updates": 90281,
+    "maximum_mismatched_pixel_count_over_common_updates": 118034,
+    "maximum_absolute_delta_by_bgra_channel": [
+      255,
+      254,
+      255,
+      0
+    ],
+    "external_compositor_mask": {
+      "source_session": "D:/ZumaGolden/campaign-c64-natural-win-v8-affinity1-physicalcore1-5khz-drawpoll-u4180-4380",
+      "anchor_update": 4250,
+      "pixel_count": 66,
+      "mask_sha256": "sha256:5e88cfacf441a56a5de6636fd3fe1259c9c844fc8494a992655d92e3a970530b",
+      "sequence_matcher_ratio_after_mask": 0.0,
+      "matched_collapsed_visual_count": 0
+    },
+    "analysis_tools": {
+      "capture_pair_sha256": "sha256:1e855db0625418b0709f175a0e1c92f7581666a8565b2d4b831f0a08d3658c5c",
+      "pixel_divergence_sha256": "sha256:8c3447bbc3c2b7879a95dc134f8256f682cdb0fa559f6b5a7d81ece1c9b0c5e0",
+      "visual_alignment_sha256": "sha256:08f871a8cd99d4ae51de249cf406f54ca80f6f362a2e17a064bbe6f5f0c7fc1c"
+    },
+    "rendered_checkpoints": [
+      {
+        "path": "outputs/c71-r1-u3664-seq40.png",
+        "sha256": "sha256:dff75a96e80e200c86837672b02c68e595108bc93e852d5681a50b0b58829a66"
+      },
+      {
+        "path": "outputs/c71-r2-u3664-seq37.png",
+        "sha256": "sha256:c2ca12901a019fdf665ff7c38a3a1b43aab9980fa87eddf7554c121bb5b40bb4"
+      },
+      {
+        "path": "outputs/c71-r1-u3684-seq73.png",
+        "sha256": "sha256:291499ea60b7f74b6a6d1425c96d560b29fcef5f7e1aebb3c8af17e595d881d7"
+      },
+      {
+        "path": "outputs/c71-r2-u3684-seq70.png",
+        "sha256": "sha256:9f2888ff77d09783ee1481bf1997f2b8d8b44d4201f578700508c84c1cd17295"
+      }
+    ]
+  },
+  "anchor_audit": {
+    "strict_replay_r1_sha256": "sha256:0cf5d23672cd7d28148cb6c60a013ee2634830b5dcec9440edf061b3fb484805",
+    "strict_replay_r2_sha256": "sha256:878071dfcde37414e34e7868225c09fd576a6207de796418f0dd15e823b58522",
+    "source_bound_framework_update": 3121,
+    "board_seed": 835125098,
+    "precall_expected_index": 414,
+    "precall_expected_state_sha256": "sha256:c0d2599105a0ba4ee7623f4991a704c0260548dbf7fc47b1041dbfd1e45e2422",
+    "r1_live_precall_index_before_restore": 400,
+    "r2_live_precall_index_before_restore": 396,
+    "r1_restored_precall_index": 414,
+    "r2_restored_precall_index": 414,
+    "postcall_index_each_run": 415,
+    "postcall_state_sha256_each_run": "sha256:02beb903b0e0feaf770f0856a8bb50b4abd26449659e3ac2b4de2c34482db0e1",
+    "thread_crt_restored_state_each_run": 1866098770,
+    "seed_and_post_state_match_each_run": true,
+    "gameplay_mtrand_sync_used": false,
+    "interpretation": "The frozen board constructor anchor completed correctly in both runs. The first proven difference is therefore after update 3121, but the available C71 evidence does not identify one unique downstream RNG consumer."
+  },
+  "observer_timing_hypothesis": {
+    "status": "evidence_supported_not_causally_proven",
+    "c69_exact_arm_update": 3568,
+    "c69_pair_had_exact_target_visuals": true,
+    "c71_actual_arm_update_each_run": 3540,
+    "source_global_trace": "D:/ZumaGolden/autoplay-jungle2-natural-win-v8-globaloracle-20260802-0250/global-mtrand-calls.json",
+    "source_global_trace_sha256": "sha256:4de39ac6a0e800323949e0095fc2fd3e924ea41a670ceb5d75a0ecb25b5c15a4",
+    "calls_after_c71_arm_before_c69_arm": {
+      "source_order_range": [
+        395,
+        437
+      ],
+      "framework_update_range": [
+        3542,
+        3565
+      ],
+      "call_count": 43
+    },
+    "interpretation": "The only intentional runtime difference that precedes this 43-call corridor is the earlier high-rate observer arm. A fresh late-arm retry can test this hypothesis without mutating gameplay state or changing the selected pixels."
+  },
+  "restoration": {
+    "protocol_pre_state_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526",
+    "protocol_restored_state_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526",
+    "host_pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_restored_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "game_process_remaining": false
+  },
+  "decision": {
+    "c71_status": "FAIL",
+    "may_not_be_packaged": true,
+    "may_not_be_retried_in_place": true,
+    "may_not_receive_front_insertion_gate_credit": true,
+    "next_attempt_must_use_fresh_session": true,
+    "next_attempt_only_allowed_semantic_change": "move_bounded_observer_arm_start_from_3540_to_3566_keep_deadline_3568"
+  }
+}

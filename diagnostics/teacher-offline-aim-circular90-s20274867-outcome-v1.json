@@ -1,0 +1,70 @@
+{
+  "schema": "zuma-rl.teacher-offline-circular-aim-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T10:51:15.560Z",
+  "status": "CIRCULAR_SMOOTHED_AIM_CAPACITY_FAIL",
+  "decision": "REJECT_SMOOTHED_TARGET_RETAIN_DISTANCE_SIGNAL",
+  "preregistration": {
+    "path": "diagnostics/teacher-offline-aim-circular90-s20274867-preregistration-v1.json",
+    "sha256": "sha256:285129b80dbcac4e66ad267ff2395274fc820defdd37ba025a96c220265c74d5",
+    "status": "FROZEN_BEFORE_RUN_OUTPUT"
+  },
+  "artifacts": {
+    "run_dir": "D:/ZumaTraining/screening-teacher-offline-aim-circular90-s20274867-v1",
+    "report_sha256": "sha256:948bdf4d7e675be008ec60c6b2555fee1a2ddf480f23c16d29f18d3b91382288",
+    "completion_sha256": "sha256:9742c0424d621562938bc32a27809faee81fee69a1753c9c1eb38bbbfbd2c96e",
+    "model_sha256": "sha256:8ad9ad9e937da72ddb798688019327e8e5696c5eef88bd3273539072df2bf061"
+  },
+  "acceptance_results": {
+    "pipeline": {
+      "pass": true,
+      "process_exit_code": 0,
+      "completion_receipt_status": "COMPLETE",
+      "report_status": "OFFLINE_COMPLETE"
+    },
+    "verb_retention": {
+      "pass": true,
+      "verb_accuracy": 0.9890820865345734,
+      "fire_recall": 0.9723684210526315,
+      "swap_recall": 0.9900332225913622
+    },
+    "optimization_capacity": {
+      "pass": false,
+      "fire_aim_exact_accuracy": 0.16973684210526316,
+      "required_exact_accuracy": 0.35,
+      "fire_aim_within_three_accuracy": 0.37894736842105264,
+      "required_within_three_accuracy": 0.55,
+      "fire_predicted_unique_aim_bins": 67,
+      "required_predicted_unique_aim_bins": 60,
+      "fire_aim_mean_circular_bin_error": 12.197368421052632,
+      "required_mean_error_at_most": 10.0,
+      "fire_aim_median_circular_bin_error": 7.0,
+      "fire_aim_p90_circular_bin_error": 30.0
+    },
+    "matched_categorical_comparison": {
+      "categorical_exact_accuracy": 0.2578947368421053,
+      "circular_exact_accuracy": 0.16973684210526316,
+      "categorical_mean_error": 16.219736842105263,
+      "circular_mean_error": 12.197368421052632,
+      "categorical_within_ten_accuracy": 0.5552631578947368,
+      "circular_within_ten_accuracy": 0.6223684210526316
+    },
+    "full_horizon_validation": {
+      "performed": false,
+      "reason": "preregistered_consumed_dataset_capacity_gate_failed"
+    }
+  },
+  "bounded_inference": "smoothed circular targets improved proximity and tail error but weakened exact-bin concentration; exact one-hot supervision and circular-distance shaping should be tested jointly rather than replacing one with the other",
+  "next_action": {
+    "authorized": "screen a hybrid one-hot categorical plus circular expected-distance objective on the frozen matched inputs",
+    "forbidden": "do not full-horizon evaluate this failed candidate"
+  },
+  "non_authorizations": [
+    "generalization_claim",
+    "held_out_environment_claim",
+    "large_scale_training",
+    "rl_recipe_promotion",
+    "fidelity_gate_opening",
+    "original_transfer_certification"
+  ]
+}

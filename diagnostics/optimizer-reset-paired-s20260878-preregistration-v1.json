@@ -1,0 +1,140 @@
+{
+  "schema": "zuma-rl.optimizer-reset-paired-preregistration",
+  "version": 1,
+  "created_utc": "2026-08-04T12:45:02.313Z",
+  "status": "FROZEN_BEFORE_RUN_OUTPUT",
+  "classification": "consumed_seed_supervised_to_ppo_optimizer_transition_screen",
+  "hypotheses": {
+    "null": "discarding supervised Adam moments before PPO does not reduce identity-specific policy drift",
+    "alternative": "a fresh optimizer state preserves more paired capability while leaving the full actor trainable"
+  },
+  "design": {
+    "run_dir": "/mnt/d/ZumaTraining/screening-optimizer-reset-paired-s20260878-v1",
+    "expected_run_dir_absent": true,
+    "seed_classification": {
+      "training_seed": 20260878,
+      "boundary_environment_seed": 20270878,
+      "stochastic_action_sampling_seed": 20280878,
+      "reused_from_failed_identity_confirmation": true,
+      "fresh_seed_claim_forbidden": true,
+      "purpose": "controlled same-seed optimizer-transition comparison"
+    },
+    "input_model": {
+      "path": "D:/ZumaTraining/screening-teacher-offline-polar90-s20260873-v1/refined_model.zip",
+      "sha256": "sha256:f03dee97cb5a3e2ce3abcf4324137fe6ed9b68e827765b4a7b6adfa63cafb8f7",
+      "loaded_optimizer_origin": "90_epoch_supervised_teacher_refinement"
+    },
+    "recipe": {
+      "environment": "ZumaRevenge-v0",
+      "level": "Jungle2",
+      "aim_bins": 180,
+      "factorized_actions": true,
+      "actor_observable_retail_rejection_mask": true,
+      "frame_skip": 1,
+      "max_ticks": 12000,
+      "training_time_limit_steps": 0,
+      "max_balls": 768,
+      "algorithm": "MaskablePPO",
+      "total_effective_steps": 16384,
+      "num_envs": 4,
+      "rollout_steps_per_env": 512,
+      "batch_size": 512,
+      "learning_rate": 0.00001,
+      "entropy_coef": 0.0,
+      "reset_optimizer_state": true,
+      "freeze_aim_path": false,
+      "all_policy_and_value_parameters_trainable": true
+    },
+    "boundary_evaluation": {
+      "receipt_schema_version": 3,
+      "episodes_per_boundary": 8,
+      "eval_num_envs": 4,
+      "episode_identity_protocol": "vector_env_index_and_per_env_episode_ordinal",
+      "deterministic_and_stochastic": true
+    },
+    "comparison": {
+      "tool_sha256": "sha256:c3d6d3bc02d0de6901d5d265db966dd015bda87473a10154a92c9439a17efeca",
+      "severe_regression_threshold": 5.0,
+      "deterministic_output": "D:/ZumaTraining/screening-optimizer-reset-paired-s20260878-v1/deterministic_comparison.json",
+      "stochastic_output": "D:/ZumaTraining/screening-optimizer-reset-paired-s20260878-v1/stochastic_comparison.json"
+    },
+    "resources": {
+      "cuda_visible_devices": "0",
+      "expected_cuda_device": "NVIDIA GeForce RTX 5090",
+      "rtx_5080_excluded": true,
+      "cpu_thread_budget": 8
+    }
+  },
+  "acceptance": {
+    "pipeline": {
+      "completion_receipt_status": "COMPLETE",
+      "effective_steps_exactly": 16384,
+      "optimizer_reset_receipt_status": "PASS",
+      "optimizer_state_parameter_count_after_reset": 0,
+      "model_parameters_bitwise_unchanged_by_reset": true,
+      "all_four_v3_boundary_receipts_required": true,
+      "both_identity_comparisons_required": true,
+      "failure_receipt_forbidden": true,
+      "stderr_bytes": 0
+    },
+    "replayed_precondition": {
+      "pretrain_deterministic_receipt_sha256": "sha256:4a2c6bc171ea11602baccc900d46cba8e42f8177e759b5e91182fcf77ba091d4",
+      "pretrain_stochastic_receipt_sha256": "sha256:876831fbcecf6a804d8390ab17e848cfbd2f211ce8d160b58173fa587b8c881b"
+    },
+    "deterministic_retention": {
+      "posttrain_wins_at_least": 7,
+      "posttrain_losses_plus_truncations_at_most": 1,
+      "posttrain_truncations_at_most": 1,
+      "posttrain_mean_reward_at_least_pretrain_minus": 1.0,
+      "identity_paired_reward_regressions_exceeding_5_at_most": 1
+    },
+    "stochastic_retention": {
+      "posttrain_wins_at_least": 8,
+      "posttrain_truncations": 0,
+      "posttrain_mean_reward_at_least_pretrain_minus": 1.0,
+      "identity_paired_reward_regressions_exceeding_5_at_most": 1
+    },
+    "mechanism_effect": {
+      "unreset_deterministic_severe_regressions": 3,
+      "reset_deterministic_severe_regressions_at_most": 1,
+      "unreset_posttrain_deterministic_wins": 7,
+      "reset_posttrain_deterministic_wins_at_least": 7
+    },
+    "promotion_rule": "a pass authorizes one preregistered fresh-seed 16384-step confirmation with optimizer reset; it does not authorize the 98304-step screen",
+    "rejection_rule": "if reset fails, test lower PPO epoch count before considering supervised anchoring"
+  },
+  "evidence_anchor": {
+    "unreset_identity_outcome": {
+      "path": "diagnostics/polar-ppo-identity-confirmation-s20260878-outcome-v1.json",
+      "sha256": "sha256:c17d4ee417d683bb24de9e514ed65adc1ae160311a3bc934a3affe4a81f2a351",
+      "status": "IDENTITY_CONFIRMATION_FAIL"
+    },
+    "rejected_freeze_outcome": {
+      "path": "diagnostics/aim-path-freeze-paired-s20260878-outcome-v1.json",
+      "sha256": "sha256:4b2f08280aaa645fa1ec100c62f337d678e6d1b6f48fc2358a5e5503da31a7c0",
+      "status": "AIM_PATH_FREEZE_SCREEN_FAIL"
+    },
+    "optimizer_reset_kat": {
+      "run_dir": "D:/ZumaTraining/infrastructure-optimizer-reset-s20260874-v1",
+      "completion_sha256": "sha256:fabd654d7277eeb92bd7fadff035807d8d15a190033093762153941d85db5070",
+      "reset_receipt_sha256": "sha256:eaca6a6bc3fee4d8ce4a5a4877b38a823b2d2d90ae9c87fb14cd54d9bca4219d",
+      "status": "PASS"
+    },
+    "regression": {
+      "wsl_full_pytest": "PASS_1127",
+      "process_exit_code": 0
+    }
+  },
+  "source_hashes": {
+    "train.py": "sha256:9064b95e4650deac672750fa6c587623e41f4c9a96f566ca74b050b567c4a532",
+    "boundary_evidence.py": "sha256:b0d5c7d5d5f6dfc2447e7927b97eb5872eddf62cca1f8e9d440699ee2ab7fad6",
+    "compare_ppo_boundaries.py": "sha256:c3d6d3bc02d0de6901d5d265db966dd015bda87473a10154a92c9439a17efeca",
+    "test_train_gate.py": "sha256:9e52ecbbc6e4caf6ea18fedc33c2976f8875a7b3c565bf2abd953704b823e6c1"
+  },
+  "non_authorizations": [
+    "fresh_seed_evidence",
+    "98304_step_scale_screen",
+    "large_scale_training",
+    "fidelity_gate_opening"
+  ]
+}

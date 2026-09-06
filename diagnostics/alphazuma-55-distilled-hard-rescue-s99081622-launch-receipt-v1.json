@@ -1,0 +1,67 @@
+{
+  "schema": "zuma-rl.alphazuma-55-engineering-route-launch-receipt",
+  "version": 1,
+  "status": "RUNNING_VERIFIED",
+  "created_utc": "2026-08-16T07:18:33.9321362+00:00",
+  "campaign_id": "alphazuma-55-distilled-hard-rescue-s99081622",
+  "builder": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_distilled_hard_rescue_v1.py",
+    "sha256": "sha256:1f5e20c77e2beeb5182ba73e766729c9ca7ce85c474b095d338ff1ac689e3f33"
+  },
+  "frontier_analysis": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-distilled-hard-rescue-analysis-s99081622-v1.json",
+    "sha256": "sha256:c22222e8f3908b3518fff4e18a8514302806c245fc8be285a6d5992ea50b343b"
+  },
+  "route_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-distilled-hard-rescue-s99081622-preregistration-v1.json",
+    "sha256": "sha256:e2ed54003a254a3c4212525301803e4fbf394d95114dfd9e3b706b431b75631c"
+  },
+  "validation": {
+    "status": "VALID",
+    "levels_verified": 55,
+    "observation_shape": [22833],
+    "action_nvec": [4, 180],
+    "human_speedrun_contract_unchanged": true,
+    "environment_reward_network_and_ppo_hyperparameters_unchanged": true
+  },
+  "run": {
+    "id": "alphazuma55-distilled-hard-rescue-5080",
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-distilled-hard-rescue-s99081622-v1",
+    "device": "cuda:1",
+    "windows_launcher_pid": 39584,
+    "linux_trainer_pid": 330473,
+    "episode_seed_first": 1542000000,
+    "episode_seed_last": 1545999999,
+    "source_checkpoint_steps": 30408704,
+    "config": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-distilled-hard-rescue-s99081622-v1/config.json",
+      "sha256": "sha256:3e2581e3fb9b0b96e70cebf992526b39583befcd4f00195a87626b3b1e6b39d3"
+    },
+    "initialization": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-distilled-hard-rescue-s99081622-v1/initialization.json",
+      "sha256": "sha256:e27ab09d89eb23dad5b73f979d8414c5bab45447a729256a921bf1c229dd227"
+    },
+    "launch_observation": {
+      "training_status_sha256_at_observation": "sha256:2ac43369f6146da70d290b07c012c625ea0f3cae29dbe3fec6cb0ea648297dcc",
+      "status": "RUNNING",
+      "timesteps": 54256,
+      "steps_this_run": 54256,
+      "steps_per_second": 351.17306966339356,
+      "updated_utc": "2026-08-16T03:18:26.597382-04:00",
+      "failure_receipt_absent": true
+    },
+    "launcher_logs": {
+      "stdout": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/launchers/distilled-hard-rescue-s99081622.stdout.log",
+      "stderr": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/launchers/distilled-hard-rescue-s99081622.stderr.log",
+      "stderr_bytes_at_observation": 0
+    }
+  },
+  "authority_boundary": {
+    "classification": "engineering_training_only",
+    "existing_six_route_formal_candidate_set_unchanged": true,
+    "formal_selection_seed_consumption": false,
+    "formal_final_blind_seed_consumption": false,
+    "continuous_seed_consumption": false,
+    "formal_promotion_requires_a_separate_frozen_successor_contract": true
+  }
+}

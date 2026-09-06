@@ -1,0 +1,62 @@
+{
+  "schema": "zuma-rl.pc-exact-step-golden-formal-invalidation-audit",
+  "version": 1,
+  "status": "FORMAL_INVALID_FAIL_CLOSED",
+  "created_utc": "2026-08-04T03:03:00.000Z",
+  "preregistration": {
+    "path": "diagnostics/c93-c94-exact-step-golden-preregistration-v1.json",
+    "sha256": "sha256:8757a7624ac544da1d5b59a905587637aae5c4ceb22c4f1c2c24510e07627300"
+  },
+  "execution_binding": {
+    "path": "diagnostics/c93-c94-exact-step-golden-execution-binding-v1.json",
+    "sha256": "sha256:c707adb72155a4b90977fb6ebacc06755bd6ff62bd4dbb0e32fdc847caa35262"
+  },
+  "failed_run": {
+    "run_id": "c93",
+    "output_root": "D:/ZumaGolden/formal-c93-exact-step-golden-u3900-u4399-v1",
+    "attempts_artifact": "D:/ZumaGolden/formal-c93-exact-step-golden-u3900-u4399-v1/attempts.json",
+    "attempts_sha256": "sha256:69aa8c6737b429db2ca89067bb86f4a1ff3c8a046e46fecc08ebbbb985b7cc4e",
+    "attempt_count": 3,
+    "fixed_error": "dxcam_unavailable",
+    "error_type": "CaptureError",
+    "retry_budget_exhausted": true,
+    "no_formal_trajectory_or_video_published": true
+  },
+  "external_input_guards": [
+    {
+      "attempt": 1,
+      "status": "PASS",
+      "external_event_count": 0,
+      "sha256": "sha256:8177fef0acaad22bc4800a5998ad89a7b77949a3391eebb98407cc258c3f5476"
+    },
+    {
+      "attempt": 2,
+      "status": "PASS",
+      "external_event_count": 0,
+      "sha256": "sha256:9e63c9f3c4a2cf2f1a6c1272d39c362bd0e79db91b63311b2258477c950d1476"
+    },
+    {
+      "attempt": 3,
+      "status": "PASS",
+      "external_event_count": 0,
+      "sha256": "sha256:5245bd32b21cb24b44732774ff06348cca383efe4b6d9c52ceeee48eaa55f774"
+    }
+  ],
+  "host_restoration": {
+    "pre_snapshot": "D:/ZumaGolden/diagnostics/c93-c94-host-pre-v1.json",
+    "pre_snapshot_sha256": "sha256:8702e59028941cb5d23b5ea8b6af7962ca455b8da0f4600be19848ef8d63d313",
+    "post_snapshot": "D:/ZumaGolden/diagnostics/c93-host-post-v1.json",
+    "post_snapshot_sha256": "sha256:7be5b0a22b8faae47a069d6c3b7bb1bd1ddd27817682a5f252b4fc8f9be3a6c2",
+    "pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "post_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "exact_match": true,
+    "residual_process_count": 0
+  },
+  "decision": {
+    "c93_credit": false,
+    "c94_may_run_under_old_binding": false,
+    "case_may_be_packaged": false,
+    "failed_outputs_are_retained": true,
+    "replacement_requires_new_environment_qualification_preregistration_binding_and_run_ids": true
+  }
+}

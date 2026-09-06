@@ -1,0 +1,143 @@
+{
+  "schema": "zuma-rl.pc-front-insertion-bottom-row-finite-campaign-audit",
+  "version": 1,
+  "id": "c83-c85-front-insertion-bottom-row-finite-campaign-failure",
+  "created_utc": "2026-08-03T21:05:22Z",
+  "status": "FAIL",
+  "formal_decision": "FINITE_CAMPAIGN_EXHAUSTED_WITHOUT_ACCEPTED_PC_GOLDEN",
+  "gate_status": "CLOSED",
+  "parent_preregistration": {
+    "path": "diagnostics/c83-c85-front-insertion-bottom-row-finite-stopping-preregistration-v1.json",
+    "sha256": "sha256:4e69087d5719d43aebaf31be195ee3574de85a532b9d9716af74ba49305be1ae",
+    "maximum_attempts": 3,
+    "attempt_order": [
+      "c83",
+      "c84",
+      "c85"
+    ]
+  },
+  "attempts": [
+    {
+      "campaign_id": "c83",
+      "collection_status": "complete",
+      "target_status": "FAIL",
+      "target_report": {
+        "path": "D:/ZumaGolden/diagnostics/c83-bottom-row-terminal-state-target-verification-v1.json",
+        "sha256": "sha256:bcaac484a13ea5f212528453c84a402ddec9a46fb29bbcc96123bcbc30381d32"
+      },
+      "attempt_audit": {
+        "path": "diagnostics/c83-front-insertion-bottom-row-failure-audit-v1.json",
+        "sha256": "sha256:097e79736e516013c98a69e22e45fe629923103b1684c18792f8a94223a70f86"
+      },
+      "best_observed_contract_distance": {
+        "exact_rows_0_through_598": true,
+        "final_row_pixel_mismatches": 2,
+        "required_maximum": 1
+      },
+      "gate_credit": "NONE"
+    },
+    {
+      "campaign_id": "c84",
+      "collection_status": "complete",
+      "target_status": "FAIL",
+      "target_report": {
+        "path": "D:/ZumaGolden/diagnostics/c84-bottom-row-terminal-state-target-verification-v1.json",
+        "sha256": "sha256:0aa3ef28c76d5a33fa75612613420bd6bf25cc47b676b55506c901d9243caaa2"
+      },
+      "attempt_audit": {
+        "path": "diagnostics/c84-front-insertion-bottom-row-failure-audit-v1.json",
+        "sha256": "sha256:f5a47c4bba6d13ed3cf920c9e3a3d3f1c266a3ede373a7d4645883643b67f35b"
+      },
+      "best_observed_contract_distance": {
+        "interior_pixel_mismatch_range": [
+          100453,
+          100723
+        ],
+        "final_row_pixel_mismatch_range": [
+          28,
+          31
+        ]
+      },
+      "gate_credit": "NONE"
+    },
+    {
+      "campaign_id": "c85",
+      "collection_status": "complete",
+      "target_status": "FAIL",
+      "target_report": {
+        "path": "D:/ZumaGolden/diagnostics/c85-bottom-row-terminal-state-target-verification-v1.json",
+        "sha256": "sha256:31037a127d9d92051d29783b372a0335b2e6632922dc41495a7ef0ab2dfd8392"
+      },
+      "attempt_audit": {
+        "path": "diagnostics/c85-front-insertion-bottom-row-failure-audit-v1.json",
+        "sha256": "sha256:b08a358220aa3b25e445472c139a861691aefd454b4c06f4d6d67c1088de0a65"
+      },
+      "best_observed_contract_distance": {
+        "interior_pixel_mismatch_range": [
+          56133,
+          56729
+        ],
+        "final_row_pixel_mismatches": 79
+      },
+      "gate_credit": "NONE"
+    }
+  ],
+  "acceptance_matrix": [
+    {
+      "criterion": "three_attempt_limit_respected",
+      "status": "PASS"
+    },
+    {
+      "criterion": "every_started_attempt_reported_and_immutable",
+      "status": "PASS"
+    },
+    {
+      "criterion": "all_collections_completed_without_strict_replay_boundary_failure",
+      "status": "PASS"
+    },
+    {
+      "criterion": "all_protocol_and_host_states_restored_exactly",
+      "status": "PASS"
+    },
+    {
+      "criterion": "one_attempt_passed_bottom_row_terminal_verifier",
+      "status": "FAIL"
+    },
+    {
+      "criterion": "pc_golden_package_created_and_independently_verified",
+      "status": "NOT_RUN_PRECONDITION_FAILED"
+    },
+    {
+      "criterion": "source_bound_front_insertion_mechanism_audit_passed",
+      "status": "NOT_RUN_PRECONDITION_FAILED"
+    }
+  ],
+  "integrity": {
+    "common_host_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "hidden_retries": 0,
+    "unlisted_attempts": 0,
+    "pc_golden_case_roots_created": 0,
+    "mechanism_followups_started": 0,
+    "threshold_or_reference_changes_during_campaign": 0
+  },
+  "scientific_interpretation": {
+    "c83": "gameplay_raster_exact_but_two_stable_final_row_pixels_exceeded_the_frozen_one_pixel_budget",
+    "c84_c85": "independent_runs_entered_distinct_displayed_surface_phase_branches_with_material_gameplay_raster_divergence",
+    "internal_game_state_claim": "not_retested_in_this_visual_campaign",
+    "formal_claim": "no_fresh_pc_golden_satisfies_the_preregistered_display_contract"
+  },
+  "next_method_boundary": {
+    "repeat_same_collection_recipe_without_new_mechanism": "FORBIDDEN",
+    "increase_final_row_budget_posthoc": "FORBIDDEN",
+    "reassign_frames_posthoc": "FORBIDDEN",
+    "recommended_next_step": "instrument_and_explain_displayed_surface_phase_and_bottom_scanline_transport_before_any_new_holdout",
+    "new_contract_or_timing_change_requires_fresh_preregistration_and_fresh_attempts": true,
+    "earlier_attempts_can_never_be_reclassified": true
+  },
+  "non_authorizations": [
+    "pc_golden",
+    "front_insertion",
+    "fidelity_gate_open",
+    "formal_transfer_training"
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "schema": "zuma-rl.pc-gameplay-reconciled-diff-proof-success-receipt",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T13:25:48.1104969Z",
+  "preregistration": {
+    "artifact": "diagnostics/c173-c164-fruit-collection-reconciled-diff-proof-preregistration-v1.json",
+    "artifact_sha256": "sha256:f813a54804935783b2ed6ea390dd27c75ccbebcdb68b68d4591e9580f82568a0"
+  },
+  "unbound_diff": {
+    "artifact": "D:/ZumaGolden/diagnostics/jungle2-c164-u5278-u5305-fruit-collection-diff-v2-reconciled-unbound.json",
+    "artifact_bytes": 61066,
+    "artifact_sha256": "sha256:31424276f0b1ec64e5c8219d21e655a10c3dcbe06b6d087f73566c58a128a0d9",
+    "status": "PASS",
+    "failure_count": 0,
+    "compared_tick_count": 27,
+    "pass_tick_count": 27,
+    "gameplay_state_exact_tick_count": 27,
+    "global_mtrand_exact_tick_count": 27,
+    "fruit_state_mismatches_empty_tick_count": 27,
+    "qrand_exact_tick_count": 27,
+    "thread_crt_exact_tick_count": 27,
+    "shooter_exact_tick_count": 27,
+    "synchronize_shooter": false
+  },
+  "reconciliation": {
+    "policy": "conditional_external_mtrand_reconciliation_v2",
+    "reconciled_tick_count": 2,
+    "total_reconciled_draw_count": 7,
+    "rows": [
+      {
+        "framework_update": 5279,
+        "phase": "after_gameplay_state_match",
+        "draw_count": 6
+      },
+      {
+        "framework_update": 5295,
+        "phase": "after_gameplay_state_match",
+        "draw_count": 1
+      }
+    ],
+    "update_5301_reconciled_draw_count": 0,
+    "update_5301_pending_colors_match": true
+  },
+  "proof": {
+    "artifact": "D:/ZumaGolden/diagnostics/jungle2-c164-u5278-u5305-fruit-collection-mtrand-proof-v1.json",
+    "artifact_bytes": 9221,
+    "artifact_sha256": "sha256:eaf811c352449a0a4de4e86cb26bf3a923cba88667eff34a8bf6466b2b126bf9",
+    "status": "PASS",
+    "classification": "complete-native-call-sequence-visual-omission-decomposition",
+    "trace_window_count": 1,
+    "reconciled_tick_count": 2,
+    "reconciled_draw_count": 7,
+    "native_call_count": 7,
+    "modeled_gameplay_call_count": 0,
+    "semantic_call_counts": {
+      "score_digit_transition": 6,
+      "score_digit_wobble": 1
+    },
+    "source_v2_retail_provenance_present": true,
+    "trace_v2_retail_provenance_present": true,
+    "playback_dmo_sha256": "sha256:6f2d645c3109f73b77ef55c7e7e7941f7f1d2f73dccd5a71adc3051d4a360989"
+  },
+  "bound_diff": {
+    "artifact": "D:/ZumaGolden/diagnostics/jungle2-c164-u5278-u5305-fruit-collection-diff-v3-reconciled-bound.json",
+    "artifact_bytes": 61551,
+    "artifact_sha256": "sha256:f676bc811dfda69e12d0f3f33290a75219936e748d8402a0fc8dd69e5ece94b0",
+    "proof_artifact_sha256": "sha256:eaf811c352449a0a4de4e86cb26bf3a923cba88667eff34a8bf6466b2b126bf9",
+    "reconciliation_transcript_sha256": "sha256:19d92a4bf8a41f9882fe6c9352e5e77c77e69db73ad535a9a058066f87e824c2",
+    "independent_proof_reverification": "PASS",
+    "proof_object_equals_recomputation": true,
+    "gameplay_mtrand_contract_reason": null,
+    "source_feature_proof_reason": null
+  },
+  "decision": {
+    "fruit_projectile_collision_simulator_diff_pass": true,
+    "fruit_collection_score_simulator_diff_pass": true,
+    "fruit_collection_animation_simulator_diff_pass": true,
+    "pc_golden_authentication_pending": true,
+    "suite_revision_pending": true,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

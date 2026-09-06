@@ -1,0 +1,89 @@
+{
+  "schema": "zuma-rl.c138a3-fruit-collection-formal-source-success-receipt",
+  "version": 1,
+  "status": "PASS_FORMAL_SOURCE_PENDING_MECHANISM_AUDIT_AND_PC_GOLDEN_AUTHENTICATION",
+  "created_utc": "2026-08-10T12:48:11.7270587Z",
+  "evidence_chain": {
+    "preregistration_sha256": "sha256:4750bb9cfc209df055364dd8404d156d8b61c7729690274e83d057b6a1d951e1",
+    "parent_hash_amendment_sha256": "sha256:bee3c585f52876539d7a67c57546fa4c326773d46da48e327e1486e775c5f6e6",
+    "base_plan_failure_receipt_sha256": "sha256:e8e7beadc329c42b816b413f407d287da7c9f1ef8389109354be20778b7f18cd",
+    "base_plan_execution_amendment_sha256": "sha256:aaee9c6a439190aa9f9b33a549deb15162ca781932296c0060136370eba8453c",
+    "preparation_receipt_sha256": "sha256:9a1f607c3600fb3b0925139c85c3996b5c219f9300bc71512b5b8bcf17973939"
+  },
+  "campaign": {
+    "path": "D:/ZumaGolden/formal-full-state-c138a3-fruit-collection-c164-campaign-v1/campaign.json",
+    "bytes": 1546,
+    "sha256": "sha256:37250449119fe223b29bd9c1aa7cd8e214a77894d8382a73ad84efad4d2d389b",
+    "status": "PASS",
+    "maximum_attempts": 8,
+    "attempt_count": 1,
+    "selected_attempt": 1,
+    "first_transport_pass_selected": true,
+    "feature_presence_used_for_selection": false
+  },
+  "selected_attempt": {
+    "process_id": 37880,
+    "attempt_result_sha256": "sha256:89bef9631d7811f8affa583dc44548142aeec5f2a93eb0ec812ae689c17ce45a",
+    "attempts_sha256": "sha256:4aca29c2ecfa5f4fdc1b3d13317d148799eef18ac8417bb079c7c59abde4eb55",
+    "memory_probe_sha256": "sha256:5db71850365ca198e4be8a42997d7e8d18e7478c0293d94fcd82773917140876",
+    "strict_replay_sha256": "sha256:425c4dc95e520b6709d4920184ba29368092a379845668f009edca3b690c47ae",
+    "trajectory_index_sha256": "sha256:6ea075248dc73e1023a04a72ff6352355f762cad7a8a4cb916d7563d974c3b36",
+    "external_input_guard_sha256": "sha256:183cfeae3d86c50c26ba4826281ee0d8b4a6098c633c8178e20c132ab798e661",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "normalized_dmo_sha256": "sha256:6f2d645c3109f73b77ef55c7e7e7941f7f1d2f73dccd5a71adc3051d4a360989"
+  },
+  "formal_acceptance": {
+    "independent_full_state_reader_status": "PASS",
+    "source_bound_anchor_observation_count": 1,
+    "source_bound_anchor_framework_update": 3121,
+    "source_bound_anchor_source_order": 327,
+    "source_bound_anchor_effective_seed": 1300598932,
+    "source_bound_precall_live_reference_match": true,
+    "source_bound_precall_changed": false,
+    "source_bound_precall_memory_write_bytes": 0,
+    "source_bound_precall_state_sha256": "sha256:82a04abb0676c7ab43bb6f6849cba3c2d968dc43d74148c0f317592148dcc07a",
+    "source_bound_postcall_natural_state_match": true,
+    "source_bound_postcall_state_sha256": "sha256:e359b79fd552b5b1692345bfa91429df501548ef42af2da485497b3d1f69d581",
+    "source_bound_bounded_global_correction_applied": false,
+    "post_board_construction_process_memory_write_count": 0,
+    "external_input_event_count": 0,
+    "trajectory_start_update": 5220,
+    "trajectory_end_update": 5310,
+    "trajectory_tick_count": 91,
+    "host_pre_sha256": "sha256:c9e18f5ae01cadd14ea57dc2adc25660c191316e275034132d5efd1571736206",
+    "host_post_sha256": "sha256:6bdf801cad8c4a1863362b88413f2adbafc6aa9325806f350ae80d7be7d95e30",
+    "host_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_pre_and_post_state_roots_equal": true,
+    "residual_game_process_count": 0
+  },
+  "authorized_preconstruction_transport": {
+    "board_seed_register_and_object_write_bytes": 4,
+    "thread_crt_state_write_bytes": 4,
+    "persistent_file_modified": false,
+    "classification": "exact preconstruction replay seed transport, not post-construction gameplay mutation"
+  },
+  "source_observations_before_mechanism_audit": {
+    "projectile_present_update": 5278,
+    "projectile_ball_id": 134,
+    "fruit_active_noncollecting_update": 5278,
+    "fruit_active_collecting_update": 5279,
+    "projectile_absent_update": 5279,
+    "score_before": 8810,
+    "score_after": 9310,
+    "score_delta": 500,
+    "collection_transition_update": 5279,
+    "fruit_pointer_cleared_update": 5305,
+    "collection_duration_ticks": 26,
+    "window_suffix_after_pointer_clear_ticks": 5,
+    "classification": "immutable source facts only; no feature credit before machine-derived audit"
+  },
+  "decision": {
+    "source_pass": true,
+    "mechanism_claims_pending": true,
+    "simulator_diff_pending": true,
+    "pc_golden_authentication_pending": true,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

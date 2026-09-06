@@ -1,0 +1,107 @@
+{
+  "schema": "zuma-rl.alphazuma-55-training-validation-audit",
+  "version": 1,
+  "status": "PASS",
+  "audited_utc": "2026-08-16T05:30:52.372368+00:00",
+  "formal_selection_authority": false,
+  "training_recipe_change_authority": false,
+  "artifacts": {
+    "master": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+      "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+    },
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-autonomy-validation-s99081602-preregistration-v1.json",
+      "sha256": "sha256:100928cba4d8dcae4b52413f8121ddca806a2c4e7b12c2569b3c230bf364ecb3"
+    },
+    "models_manifest": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-autonomy-validation-s99081602-models-v1.json",
+      "sha256": "sha256:f085eb991b02c909159376dbe57ccffc7d8e0f3c1685f73ae63e2445f63e5844"
+    },
+    "matrix_shard": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-autonomy-validation-s99081602-v1/matrix-shard-00-of-01.json",
+      "sha256": "sha256:c8181345790b9ccebc018c2b3baa683c4cb665fed29809e2fcef204eb76d7f8c"
+    },
+    "auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_training_validation.py",
+      "sha256": "sha256:3621dcb64c3342e3954533d22401f258fe6c72ac49d164456455ad77ea54aa67"
+    }
+  },
+  "matrix": {
+    "levels": 55,
+    "attempts_per_model": 55,
+    "models": 5,
+    "completed_attempts": 275,
+    "seed_plan": {
+      "registry": "training_validation",
+      "base_seed": 1550002000,
+      "last_seed": 1550002054
+    },
+    "runtime": {
+      "python": "3.12.3",
+      "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "parallel_envs": 24,
+      "total_vector_transitions": 2293096,
+      "wall_seconds": 4232.740556635006
+    }
+  },
+  "model_summaries": [
+    {
+      "model_id": "polar-intent-autonomy-source-final",
+      "model_sha256": "sha256:27c425e1507d40e5bdc59768b892e27d6c9f3616ce5b169a6073b380bacc6cf0",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "polar-intent-autonomy-round-00",
+      "model_sha256": "sha256:6a8cc5efae38df1ddda0ec2d486ecbd16613cf4a64665354c6ccb75b4a99befe",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "polar-intent-autonomy-round-01",
+      "model_sha256": "sha256:c5ba11c97d3c22e285717d19d71183b5e31c48a520c064ea85e30b60bc4c4fbb",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "polar-intent-autonomy-round-02",
+      "model_sha256": "sha256:fca82d6a1158ac0fcc461def48901e3f9dfd6678ebf55c287d6cb1a4dbafad86",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "polar-intent-autonomy-round-03",
+      "model_sha256": "sha256:ba5a022a194dea8bccef037ab72b0c182f7dc755377300d8d8a26bf0be92511e",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    }
+  ],
+  "paired_comparison": null,
+  "interpretation_boundary": "This PASS proves artifact integrity and a paired training-health signal only; it is not selection, final blind, or continuous-campaign evidence."
+}

@@ -1,0 +1,54 @@
+{
+  "schema": "zuma-rl.pc-front-insertion-render-settled-finite-retry-execution-binding",
+  "version": 1,
+  "id": "c76-front-insertion-u3664-u3684-finite-retry-01-execution",
+  "created_utc": "2026-08-03T19:22:39Z",
+  "status": "FROZEN_AFTER_PREPARE_BEFORE_COLLECTION",
+  "parent_preregistration": {
+    "path": "diagnostics/c76-c78-front-insertion-render-settled-finite-stopping-preregistration-v1.json",
+    "sha256": "sha256:fc654b1240946e3fc58aa94b053c52c6ca1ef439f3d0929000d120165fdf8078"
+  },
+  "finite_attempt": {
+    "attempt": 1,
+    "campaign_id": "c76",
+    "maximum_attempts": 3,
+    "prior_finite_attempts_started": 0,
+    "stop_after_first_pass": true
+  },
+  "collector_plan": {
+    "path": "D:/ZumaGolden/campaign-c76-natural-win-v8-front-insertion-finite-retry-01-u3569-u3710/plan.json",
+    "sha256": "sha256:ca8236c244d0ce01c3b19c14d1a47e4663827e757acc179b58cc0e741cdd50ce",
+    "session_nonce": "a226d748b9144ebf8e83bfe61c59cc2e"
+  },
+  "preparation_result": {
+    "status": "prepared",
+    "dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "host_pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "protocol_prestate_template_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526"
+  },
+  "recursive_plan_difference_from_c75": {
+    "reference_plan_sha256": "sha256:d1b7cc8ea86b57efce0d50db0bd6bba7e3c4e1a41a6c1f63308c8c6cac50a49d",
+    "difference_count": 1,
+    "differences": [
+      "session_nonce"
+    ],
+    "all_other_fields_byte_semantically_equal": true
+  },
+  "collection_authorization": {
+    "fresh_two_run_collection": true,
+    "arm_window": [
+      3566,
+      3568
+    ],
+    "capture_wait_update": 3569,
+    "target_update_range": [
+      3664,
+      3684
+    ],
+    "sparse_mask_sha256": "sha256:5e88cfacf441a56a5de6636fd3fe1259c9c844fc8494a992655d92e3a970530b",
+    "maximum_mask_pixel_mismatches": 66,
+    "maximum_bgr_channel_delta": 255,
+    "target_verifier_sha256": "sha256:9645734fc47bcf9e030fa66b6738905fb6667a29df2ca0c125603567d7f21261",
+    "gate_effect_before_complete_postprocessing": "none"
+  }
+}

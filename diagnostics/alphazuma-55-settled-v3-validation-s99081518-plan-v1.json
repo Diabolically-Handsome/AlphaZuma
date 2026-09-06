@@ -1,0 +1,134 @@
+{
+  "schema": "zuma-rl.alphazuma-55-settled-v3-validation-plan",
+  "version": 1,
+  "status": "FROZEN_BEFORE_TARGET_MODEL",
+  "created_utc": "2026-08-15T09:23:32.978675+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "purpose": "Paired fresh-seed engineering comparison of the V11 initialization against four precommitted V3 checkpoints and the final clone.",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "distillation_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-settled-v3-distillation-s99081517-preregistration-v1.json",
+    "sha256": "sha256:513317d72139ecd473c9601fe70ee88e2e0e968af61ac336857e227a85919bc9"
+  },
+  "original_root": "/mnt/d/SteamLibrary/steamapps/common/Zuma's Revenge",
+  "models": {
+    "baseline": {
+      "id": "v11-full55-v1",
+      "training_steps": 33772736,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1.zip",
+      "sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d"
+    },
+    "baseline_migration": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1-migration.json",
+      "sha256": "sha256:87b2c6fe7b15f7e356332fea0393cdce19db6564453969a83e50fee198b99ed7"
+    },
+    "target": {
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-distillation-s99081517-v1",
+      "expected_completion_path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-distillation-s99081517-v1/completion.json",
+      "expected_checkpoints": [
+        {
+          "id": "settled-v3-epoch-02",
+          "epoch": 2,
+          "expected_path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-distillation-s99081517-v1/epoch_02_model.zip"
+        },
+        {
+          "id": "settled-v3-epoch-04",
+          "epoch": 4,
+          "expected_path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-distillation-s99081517-v1/epoch_04_model.zip"
+        },
+        {
+          "id": "settled-v3-epoch-06",
+          "epoch": 6,
+          "expected_path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-distillation-s99081517-v1/epoch_06_model.zip"
+        },
+        {
+          "id": "settled-v3-epoch-08",
+          "epoch": 8,
+          "expected_path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-distillation-s99081517-v1/epoch_08_model.zip"
+        }
+      ],
+      "expected_final": {
+        "id": "settled-v3-final",
+        "expected_path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-distillation-s99081517-v1/final_model.zip"
+      },
+      "all_paths_must_be_absent_at_freeze": true,
+      "hashes_frozen_after_completion": true
+    }
+  },
+  "matrix": {
+    "levels": 55,
+    "attempts_per_level_per_model": 1,
+    "paired_models_share_identical_task_seeds": true,
+    "seed_registry": "training_validation",
+    "base_seed": 1550000200,
+    "last_seed": 1550000254,
+    "max_ticks": 30000,
+    "prior_reserved_or_consumed_ranges": [
+      [
+        1550000000,
+        1550000054
+      ],
+      [
+        1550000055,
+        1550000109
+      ],
+      [
+        1550000110,
+        1550000164
+      ]
+    ]
+  },
+  "execution": {
+    "device": "cuda:1",
+    "parallel_envs": 24,
+    "shard_count": 1
+  },
+  "implementation": {
+    "planner": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_settled_v3_validation_plan.py",
+      "sha256": "sha256:74bae05bebc3cb22b58e19f6db8cbed1285e426da02281fb5827025601911186"
+    },
+    "materializer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/materialize_alphazuma_55_settled_v3_validation.py",
+      "sha256": "sha256:aaa86774bd0cc0de2ed9987bf24ed06d8bdb77842857349ca6d789305850260f"
+    },
+    "contract_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_training_validation.py",
+      "sha256": "sha256:45fcdd98cda89f2a606cb24c30a82c12b877d108b232d37f7623ed71bb9a1391"
+    },
+    "evaluator": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel_v2.py",
+      "sha256": "sha256:811de7b530e6703858ae218aa9a0309724c49824d817e2f55733646ec89fd6c3"
+    },
+    "independent_auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_training_validation.py",
+      "sha256": "sha256:3621dcb64c3342e3954533d22401f258fe6c72ac49d164456455ad77ea54aa67"
+    }
+  },
+  "outputs": {
+    "run_root": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/settled-v3-validation-s99081518-v1",
+    "models_manifest": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-settled-v3-validation-s99081518-models-v1.json",
+    "preregistration": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-settled-v3-validation-s99081518-preregistration-v1.json",
+    "audit_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-settled-v3-validation-s99081518-audit-v1.json"
+  },
+  "decision_rule": {
+    "ranking": [
+      "cleared_levels_descending",
+      "wins_descending",
+      "median_winning_ticks_ascending",
+      "earlier_epoch_then_final"
+    ],
+    "evidence_scope": "engineering_checkpoint_choice_only",
+    "formal_candidate_registration_authorized": false,
+    "formal_selection_seed_consumption": false,
+    "negative_result_must_be_retained": true
+  },
+  "authority_boundary": {
+    "formal_seed_consumption": false,
+    "formal_selection_authority": false,
+    "training_recipe_change_authority": false
+  }
+}

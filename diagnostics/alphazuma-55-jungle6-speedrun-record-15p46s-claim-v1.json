@@ -1,0 +1,72 @@
+{
+  "schema": "zuma-rl.alphazuma-55-speedrun-record-claim",
+  "version": 1,
+  "level": "jungle6 (Adv 6, 'Jungle Clearing')",
+  "claim": "AI completion of jungle6 (Adv 6) in 1546 native ticks (15.46 s at 100 Hz) — numerically below the 18 s human RTA IL record (14.1 percent faster)",
+  "convention": "AI-TAS (seed_list_tas): golden-seed enumeration; simulator timing, RTA boundary audit PENDING; no original-client record claim; elite-human motor constraints active",
+  "human_reference": {
+    "source": "speedrun.com Zumas Revenge IL Adv 6",
+    "record": "0:18 RTA",
+    "binding": "the 1800-tick line is bound verbatim in the frozen prereg s99081717-v2 tier_3_beat_human_record; runner/date of the listing to be re-verified and attached at site-submission packaging time"
+  },
+  "record_run": {
+    "schema": "zuma-rl.alphazuma-55-macro-speedrun-seed-search-v1-row",
+    "level_id": "jungle6",
+    "seed": 2279979,
+    "outcome": "win",
+    "native_outcome": null,
+    "time_limit_truncated": false,
+    "ticks": 1546,
+    "score": 2350,
+    "shots": 20,
+    "macro_decisions": 137,
+    "native_ticks_consumed": 1546,
+    "win_trigger_tick": 1546,
+    "win_pending_at_termination": true,
+    "board_cleared_tick": null
+  },
+  "runner_up": {
+    "ticks": 1697,
+    "seconds": 16.97,
+    "seed": 945729,
+    "shots": 25,
+    "note": "also below the human record",
+    "row": {
+      "schema": "zuma-rl.alphazuma-55-macro-speedrun-seed-search-v1-row",
+      "level_id": "jungle6",
+      "seed": 945729,
+      "outcome": "win",
+      "native_outcome": null,
+      "time_limit_truncated": false,
+      "ticks": 1697,
+      "score": 2160,
+      "shots": 25,
+      "macro_decisions": 113,
+      "native_ticks_consumed": 1697,
+      "win_trigger_tick": 1697,
+      "win_pending_at_termination": true,
+      "board_cleared_tick": null
+    }
+  },
+  "tier_adjudication": "satisfies tier_3_beat_human_record of prereg s99081717-v2 (ANY documented win under 1800 ticks) with the verbatim caveat: 'simulator time, RTA audit pending; not an original-client record claim'",
+  "model": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle6-s99081717-v2/checkpoints/timepolish-jungle6_262120_steps.zip",
+    "sha256": "sha256:a3d74a60e1b8ba1f1ffe18bee5b4be536e92339ef0f95a9a8d4a2c0023d5b1b3",
+    "lineage": "strengthened jungle6 timepolish champion ckpt262120 (s99081717-v2 outcome: 13/16 panel, median 10761, E[t] -17% vs BC init); macro-teacher-BC -> timepolish PPO recipe"
+  },
+  "scan": {
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-record-jungle6-s99081728-v1",
+    "completion_sha256": "sha256:ac22432f461762304a98102df1659102ab1776cd7e14664a6f54ffffafc37192",
+    "seeds_scanned": 3000,
+    "wins": 2083,
+    "hold_ticks": 4,
+    "device": "cuda:1"
+  },
+  "seed_provenance": {
+    "seed_file": "/mnt/d/ZumaTraining/alphazuma-55-record-seeds-jungle6-top3000-v1.jsonl",
+    "seed_file_sha256": "sha256:4b4ae7777aee2f73ad69c5d2f7f138992f80a5589ce4456286b6666622d99a49",
+    "note": "top-3000 rows of the jungle6 golden-seed enumeration (s99081720, full 2^32 PopCapMTRandom space, per-level draw params with live check); embargoed formal ranges dropped by the search tool (--drop-embargoed)"
+  },
+  "claimed_utc": "2026-08-21T01:47:36Z",
+  "formal_seed_consumption": false
+}

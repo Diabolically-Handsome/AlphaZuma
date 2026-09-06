@@ -1,0 +1,118 @@
+{
+  "schema": "zuma-rl.fruit-bomb-temporal-geometric-analysis",
+  "version": 1,
+  "status": "PASS_DIAGNOSIS_NO_LOCATOR",
+  "created_utc": "2026-08-10T14:38:20.9647217Z",
+  "classification": "read-only-locator-diagnosis-not-certifying-original-mechanism-evidence",
+  "parents": {
+    "preregistration": {
+      "path": "diagnostics/recording-c179-fruit-bomb-telemetry-ensemble-preregistration-v1.json",
+      "sha256": "sha256:8b06653da3ac662b7a9e84c2b549c0d32b3b52a0d3dd2cf8c13b8fdc561585ef"
+    },
+    "execution_receipt": {
+      "path": "diagnostics/recording-c179-fruit-bomb-telemetry-ensemble-execution-receipt-v1.json",
+      "sha256": "sha256:4cfdc2bc2c3087a1d4d9ebebd6e46da3ec4222ff9cf35a30fe4fa69431ee281b",
+      "status": "PASS"
+    }
+  },
+  "run_fields": [
+    "id",
+    "observation_ticks",
+    "fruit_active_ticks",
+    "bomb_active_ticks",
+    "temporal_overlap_ticks",
+    "minimum_overlap_distance_px",
+    "strict_radius_ticks",
+    "trigger_decisions",
+    "preserve_decisions"
+  ],
+  "runs": [
+    ["c179a1", 1984, 639, 1345, 0, null, 0, 0, 27],
+    ["c179a2", 0, 0, 0, 0, null, 0, 0, 0],
+    ["c179a3", 1033, 641, 392, 0, null, 0, 0, 10],
+    ["c179a4", 1539, 610, 1377, 448, 519.3777895129549, 0, 0, 25]
+  ],
+  "c179a4_overlap": {
+    "fruit_point_index": 1,
+    "fruit_static_point": [716.0, 505.0],
+    "fruit_sampled_native_range": [1392, 2367],
+    "bomb_ball_id": 42,
+    "bomb_sampled_native_range": [1680, 3755],
+    "temporal_overlap_sampled_native_range": [1680, 2367],
+    "temporal_overlap_sample_count": 448,
+    "minimum_overlap_native_game_time": 1898,
+    "minimum_overlap_distance_px": 519.3777895129549,
+    "minimum_overlap_bomb_position": [444.5708312988281, 62.19135665893555],
+    "minimum_overlap_bomb_nearest_curve_waypoint": 473,
+    "full_bomb_lifetime_minimum_distance_px": 519.3777895129549,
+    "full_bomb_lifetime_waypoint_range_observed": [119, 473]
+  },
+  "installed_curve_reachability": {
+    "main_pak": [106476722, "sha256:02c7038e531c6b9d57ba114fd0e72a475ea51c7c62b1054678af38efd24a2e7d"],
+    "levels_xml_member_sha256": "sha256:2ce6f22a66402b9275eaaefc9c17de82c319fab1508921e511617787c194b409",
+    "jungle2_curve": [15422, "sha256:1dda1bad8240e95ff3ddf89f353991648b57782c23cfdc8551662168f193a773"],
+    "curve_sample_count": 3758,
+    "strict_radius_px": 108.0,
+    "treasure_points": [
+      {
+        "index": 0,
+        "point": [28.0, 105.0],
+        "unlock_percent": 60,
+        "minimum_curve_distance_px": 29.297756575430228,
+        "nearest_waypoint": 58,
+        "strict_sample_count": 233
+      },
+      {
+        "index": 1,
+        "point": [716.0, 505.0],
+        "unlock_percent": 33,
+        "minimum_curve_distance_px": 14.133870555985654,
+        "nearest_waypoint": 1156,
+        "strict_waypoint_interval": [1053, 1259],
+        "strict_sample_count": 207
+      },
+      {
+        "index": 2,
+        "point": [602.0, 366.0],
+        "unlock_percent": 84,
+        "minimum_curve_distance_px": 35.211427921962,
+        "nearest_waypoint": 3007,
+        "strict_waypoint_interval": [2908, 3106],
+        "strict_sample_count": 199
+      }
+    ],
+    "conclusion": "The native 108-pixel event is geometrically reachable on installed Jungle2, so the Gate criterion is not rejected as globally impossible. The sampled host-ball selection was outside the active fruit point's reachable waypoint interval."
+  },
+  "generation_logic_context": {
+    "retail_calibration_source": "src/zuma_rl/revenge_core.py",
+    "retail_calibration_source_sha256": "sha256:0229faec8c7b3fb05f64831bcc93565ef072184d48bb96c489b767d6c55628ad",
+    "retail_spawn_contract": {
+      "chance_denominator": 617,
+      "initial_delay_ticks": 1500,
+      "spawn_delay_ticks": 700,
+      "cooldown_ticks": 1000,
+      "unique_color": true,
+      "candidate_selection": "natural eligible colour followed by a natural eligible-ball draw"
+    },
+    "CircleShootApp_ancestor_source": {
+      "path": "external/CircleShootApp/source/CircleShoot/CurveMgr.cpp",
+      "sha256": "sha256:e0be26938bd4ec75b3494b7c0c6c11c2f6982187498806bce92e9b77d97d3fd7",
+      "use": "mechanism-development context only; not treated as byte-identical Revenge evidence"
+    }
+  },
+  "diagnosis": {
+    "primary_bottleneck": "natural proximity-bomb host-ball waypoint selection",
+    "not_primary_bottleneck_in_observed_runs": "shooter colour after strict-radius overlap",
+    "blind_preservation_failure": "Preserving a far-hosted bomb consumes most of its 2000-tick lifetime and suppresses opportunities to obtain a later naturally spawned bomb hosted near the active fruit's reachable curve interval.",
+    "next_acquisition_change": "Recycle far-hosted bombs through ordinary matching while preserving only bombs that enter a preregistered staging distance from the active fruit; retain native-tick telemetry."
+  },
+  "decision": {
+    "formal_source_selected": false,
+    "c179_closed_without_locator": true,
+    "new_controller_preregistration_required": true,
+    "telemetry_gate_credit": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

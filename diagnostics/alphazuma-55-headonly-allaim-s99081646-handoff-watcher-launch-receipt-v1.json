@@ -1,0 +1,35 @@
+{
+  "schema": "zuma-rl.alphazuma-55-engineering-handoff-watcher-launch-receipt",
+  "version": 1,
+  "status": "WAITING_FOR_FROZEN_PREDECESSOR_EXIT",
+  "observed_utc": "2026-08-16T16:38:38.3362656Z",
+  "resource_schedule": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-evaluation-resource-schedule-s99081648-v1.json",
+    "sha256": "sha256:4e60fdde646e89eddf8072af09d463dcf0f3dc02e6767f333c55eca2a92f1413"
+  },
+  "watcher": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/wait_and_launch_alphazuma_55_motor_observable_gradual_headonly_allaim_v1.sh",
+    "sha256": "sha256:430859e56db7f0f95acc6ab54b53926bd2514b6374184fece4450ea50a402d56"
+  },
+  "blocking_wsl_trainer_pid": 390568,
+  "windows_launcher_pid": 41460,
+  "wsl_watcher_pid": 410838,
+  "logs": {
+    "stdout": "/mnt/d/ZumaTraining/alphazuma-55-headonly-allaim-s99081646-watcher.stdout.log",
+    "stderr": "/mnt/d/ZumaTraining/alphazuma-55-headonly-allaim-s99081646-watcher.stderr.log"
+  },
+  "launch_envelope": {
+    "minimum_wsl_available_memory_gib": 12,
+    "required_swap_used_bytes": 0,
+    "minimum_root_available_gib": 12,
+    "gpu_power_limits_watts": [550, 250],
+    "maximum_gpu_temperature_c_exclusive": 85
+  },
+  "authority_boundary": {
+    "training_recipe_changed": false,
+    "training_seeds_changed": false,
+    "engineering_gate_changed": false,
+    "formal_seed_consumption": "NONE",
+    "power_restore_authority": false
+  }
+}

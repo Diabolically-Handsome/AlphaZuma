@@ -1,0 +1,107 @@
+{
+  "schema": "zuma-rl.pc-fruit-bomb-cycle-alignment-controller-qualification",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T14:46:13.7490321Z",
+  "classification": "qualified-natural-input-acquisition-controller-not-certifying-evidence",
+  "preregistration": {
+    "path": "diagnostics/c180-fruit-bomb-cycle-alignment-controller-preregistration-v1.json",
+    "sha256": "sha256:78af5bb8f184ad01c07c30c4f58621f28030d69439f17b77cf1055a5136ad4c4",
+    "frozen_before_implementation": true
+  },
+  "implementation": {
+    "fruit_expiry_time": "Board+0xEB8 int32, read only and nonnegative",
+    "bomb_curve_distance": "Ball+0x1C float32, read only and finite",
+    "bomb_powerup_lifetime_ticks": "Ball+0xF8 int32, read only and nonnegative",
+    "bomb_powerup_transition_ticks": "Ball+0xFC int32, read only and nonnegative",
+    "base_advance_waypoints_per_native_tick": 0.5,
+    "strict_waypoint_intervals_by_treasure_point": {
+      "0": [[0, 160], [2147, 2218]],
+      "1": [[1053, 1259]],
+      "2": [[2908, 3106]]
+    },
+    "priority_order": [
+      "strict-radius natural bomb trigger",
+      "current-cycle reachability preservation",
+      "unreachable-current-fruit ordinary projectile deferral",
+      "existing c176 behavior outside the alignment condition"
+    ],
+    "unreachable_action": "ordinary left-click projectile shot at the current rendered fruit target",
+    "unreachable_reason": "defer_fruit_for_bomb_alignment",
+    "process_memory_writes": 0,
+    "controlled_rng": false,
+    "input_transport": "Win32 SendInput",
+    "simulator_core_changed": false,
+    "fidelity_gate_policy_changed": false,
+    "training_gate_policy_changed": false
+  },
+  "post_implementation_files": [
+    {
+      "path": "tools/autoplay_live_zuma.py",
+      "bytes": 105527,
+      "sha256": "sha256:8eae77d26ef167b42de4aa93be402bf167b1536d910cc597f6167351980ae551"
+    },
+    {
+      "path": "tests/test_autoplay_live_zuma.py",
+      "bytes": 34008,
+      "sha256": "sha256:ae78744b2d7420d38954b0b9eb9e0cd0b54dbf2b8dd345d743bbe665a45e12d5"
+    },
+    {
+      "path": "tools/record_autoplay_zuma.py",
+      "bytes": 71066,
+      "sha256": "sha256:438b74c5f6fc8190c9835852a86dfba5c04e25c9b963f98c8d2564b5123d614f",
+      "unchanged_from_preregistration": true
+    }
+  ],
+  "checks": [
+    {
+      "name": "python_compile",
+      "command": "python -m py_compile tools/autoplay_live_zuma.py",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "focused_pytest",
+      "command": ".venv-win/Scripts/python.exe -m pytest tests/test_autoplay_live_zuma.py tests/test_record_autoplay_zuma.py -q",
+      "collected_tests": 110,
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "full_pytest",
+      "command": ".venv-win/Scripts/python.exe -m pytest -q",
+      "collected_tests": 1569,
+      "passed_tests": 1556,
+      "skipped_tests": 13,
+      "exit_code": 0,
+      "status": "PASS",
+      "known_warning": "Gymnasium could not test alternate render modes because the environment has no spec"
+    }
+  ],
+  "required_behavior_results": {
+    "c179a4_like_waypoint_417_shared_700_defers_current_fruit": "PASS",
+    "waypoint_800_shared_700_preserves_current_cycle": "PASS",
+    "inside_point1_interval_preserves_current_cycle": "PASS",
+    "beyond_point1_interval_defers_current_fruit": "PASS",
+    "strict_euclidean_overlap_precedes_alignment": "PASS",
+    "inactive_or_collecting_fruit_retains_c176_behavior": "PASS",
+    "bomb_timing_fields_decoded_and_negative_values_rejected": "PASS",
+    "telemetry_contains_fruit_expiry_bomb_timing_and_waypoint_fields": "PASS"
+  },
+  "formal_source_boundary": {
+    "direct_projectile_collection_is_target_mechanism_evidence": false,
+    "fresh_natural_retail_recording_required": true,
+    "later_original_same_tick_type0_explosion_and_fruit_collection_required": true,
+    "source_bound_full_state_replay_required": true,
+    "machine_mechanism_audit_required": true,
+    "exact_simulator_diff_required": true,
+    "pc_golden_authentication_required": true
+  },
+  "decision": {
+    "controller_qualified_for_fresh_natural_capture": true,
+    "controller_is_pc_golden": false,
+    "fidelity_gate_open": false,
+    "training_gate_open": false,
+    "training_start": false
+  }
+}

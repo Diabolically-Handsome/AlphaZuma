@@ -1,0 +1,262 @@
+{
+  "schema": "zuma-rl.alphazuma-55-weekend-formal-seed-registry",
+  "version": 1,
+  "status": "FROZEN_BEFORE_ANY_SUCCESSOR_FORMAL_INFERENCE",
+  "created_utc": "2026-08-16T17:12:51.999640+00:00",
+  "supersedes": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-formal-seed-registry-s99081645-v9.json",
+    "sha256": "sha256:39f52356d105cfe195f43d77ded9b8ffea8235fa939b97b890497fb551c5aa6d"
+  },
+  "campaigns": [
+    {
+      "id": "source-weekend-s81081401",
+      "master": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+        "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+      },
+      "ranges": [
+        {
+          "stage": "selection",
+          "first": 1600000000,
+          "last": 1600000219
+        },
+        {
+          "stage": "final_blind",
+          "first": 1700000000,
+          "last": 1700000439
+        },
+        {
+          "stage": "continuous_campaign_challenge",
+          "first": 1800000000,
+          "last": 1800000219
+        }
+      ]
+    },
+    {
+      "id": "polar-dagger-successor-s99081535",
+      "master": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-successor-s99081535-preregistration-v1.json",
+        "sha256": "sha256:f4fb5458301e3a9a27f7f6390394aa71da15e5978acf19b7cef3c7f1d2cb5d73"
+      },
+      "ranges": [
+        {
+          "stage": "final_blind",
+          "first": 2100000000,
+          "last": 2100000439
+        },
+        {
+          "stage": "continuous_campaign_challenge",
+          "first": 2200000000,
+          "last": 2200000219
+        }
+      ]
+    },
+    {
+      "id": "polar-wide-successor-s99081539",
+      "master": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-wide-successor-s99081539-preregistration-v1.json",
+        "sha256": "sha256:7e46187a4f027dd699f4b8e813d16aa66d8b1eb85535430bc85ef4eb909bb2fb"
+      },
+      "ranges": [
+        {
+          "stage": "final_blind",
+          "first": 2300000000,
+          "last": 2300000439
+        },
+        {
+          "stage": "continuous_campaign_challenge",
+          "first": 2400000000,
+          "last": 2400000219
+        }
+      ]
+    },
+    {
+      "id": "polar-intent-wide-successor-s99081545",
+      "master": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-wide-successor-s99081545-preregistration-v1.json",
+        "sha256": "sha256:640eea8fb92f5026949b70a47d80e9de33ff3043ce832abd88204f02e46ee090"
+      },
+      "ranges": [
+        {
+          "stage": "final_blind",
+          "first": 2500000000,
+          "last": 2500000439
+        },
+        {
+          "stage": "continuous_campaign_challenge",
+          "first": 2600000000,
+          "last": 2600000219
+        }
+      ]
+    },
+    {
+      "id": "polar-intent-dagger-successor-s99081551",
+      "master": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-dagger-successor-s99081551-preregistration-v2.json",
+        "sha256": "sha256:d0822a344b7f9b347c0912b40eebd00a8ea59dfe4f8a672b30f3c0dabde8dce1"
+      },
+      "ranges": [
+        {
+          "stage": "final_blind",
+          "first": 2700000000,
+          "last": 2700000439
+        },
+        {
+          "stage": "continuous_campaign_challenge",
+          "first": 2800000000,
+          "last": 2800000219
+        }
+      ]
+    },
+    {
+      "id": "polar-intent-autonomy-successor-s99081603",
+      "master": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-autonomy-successor-s99081603-preregistration-v1.json",
+        "sha256": "sha256:96c4edcbdf9416efbc83980221d3a0a4e260b13fd9d859029ac8d8de3f10ceec"
+      },
+      "ranges": [
+        {
+          "stage": "final_blind",
+          "first": 2900000000,
+          "last": 2900000439
+        },
+        {
+          "stage": "continuous_campaign_challenge",
+          "first": 3000000000,
+          "last": 3000000219
+        }
+      ]
+    },
+    {
+      "id": "polar-intent-replay-anchor-successor-s99081609",
+      "master": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-replay-anchor-successor-s99081609-preregistration-v1.json",
+        "sha256": "sha256:2c71d96fa924b3d7ba31287d118d3949ad6692eccc5412816163f2c13f6292f4"
+      },
+      "ranges": [
+        {
+          "stage": "final_blind",
+          "first": 3100000000,
+          "last": 3100000439
+        },
+        {
+          "stage": "continuous_campaign_challenge",
+          "first": 3200000000,
+          "last": 3200000219
+        }
+      ]
+    },
+    {
+      "id": "motor-observable-successor-s99081618",
+      "master": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-successor-s99081618-preregistration-v1.json",
+        "sha256": "sha256:fef69405434c91a9da7f3ab3f78439072a2e6b071520229169aad4185ff12a46"
+      },
+      "ranges": [
+        {
+          "stage": "final_blind",
+          "first": 3300000000,
+          "last": 3300000439
+        },
+        {
+          "stage": "continuous_campaign_challenge",
+          "first": 3400000000,
+          "last": 3400000219
+        }
+      ]
+    },
+    {
+      "id": "motor-observable-gradual-successor-s99081631",
+      "master": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-successor-s99081631-preregistration-v1.json",
+        "sha256": "sha256:d6ec0907b7d87fb13147c94deb00d12c362da7bea0f4c34238c3e0a1b2d39cf4"
+      },
+      "ranges": [
+        {
+          "stage": "final_blind",
+          "first": 3500000000,
+          "last": 3500000439
+        },
+        {
+          "stage": "continuous_campaign_challenge",
+          "first": 3600000000,
+          "last": 3600000219
+        }
+      ]
+    },
+    {
+      "id": "motor-observable-gradual-allaim-successor-s99081636-v2",
+      "master": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-allaim-successor-s99081636-preregistration-v2.json",
+        "sha256": "sha256:d43c555ec5d5b5076266a05671fd6cc36078c1332f68aa35159190f0e35b0587"
+      },
+      "ranges": [
+        {
+          "stage": "final_blind",
+          "first": 3700000000,
+          "last": 3700000439
+        },
+        {
+          "stage": "continuous_campaign_challenge",
+          "first": 3800000000,
+          "last": 3800000219
+        }
+      ]
+    },
+    {
+      "id": "motor-observable-gradual-headonly-successor-s99081644-v1",
+      "master": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-headonly-successor-s99081644-preregistration-v1.json",
+        "sha256": "sha256:fe65883da6d2edbc69cc202900914e11fa9c5b2b4c341cfb95b365b2860e3c19"
+      },
+      "ranges": [
+        {
+          "stage": "final_blind",
+          "first": 3900000000,
+          "last": 3900000439
+        },
+        {
+          "stage": "continuous_campaign_challenge",
+          "first": 4000000000,
+          "last": 4000000219
+        }
+      ]
+    },
+    {
+      "id": "motor-observable-gradual-headonly-allaim-successor-s99081649-v1",
+      "master": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-headonly-allaim-successor-s99081649-preregistration-v1.json",
+        "sha256": "sha256:d0b6199664a66466cd13c2ad5c836b00e5e045d1121d446a7ecbab77cca887fc"
+      },
+      "ranges": [
+        {
+          "stage": "final_blind",
+          "first": 4100000000,
+          "last": 4100000439
+        },
+        {
+          "stage": "continuous_campaign_challenge",
+          "first": 4200000000,
+          "last": 4200000219
+        }
+      ]
+    }
+  ],
+  "global_checks": {
+    "ranges_strictly_non_overlapping": true,
+    "all_ranges_within_uint32": true,
+    "all_policy_inference_requires_its_own_frozen_master": true,
+    "negative_promotion_result_leaves_its_ranges_unconsumed": true
+  },
+  "authority_boundary": {
+    "this_registry_does_not_authorize_policy_inference": true,
+    "this_registry_does_not_change_any_campaign_recipe": true,
+    "power_restore_authority": false
+  },
+  "implementation": {
+    "builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_formal_seed_registry_v10.py",
+      "sha256": "sha256:dddd194b0d15777d900a91c97cb06177f279d11d0ea507f46c5e96deadcad10c"
+    }
+  }
+}

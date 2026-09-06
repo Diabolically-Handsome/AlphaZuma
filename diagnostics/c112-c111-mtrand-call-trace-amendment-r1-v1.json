@@ -1,0 +1,44 @@
+{
+  "schema": "zuma-rl.pc-gameplay-mtrand-call-trace-preregistration-amendment",
+  "version": 1,
+  "id": "c112-c111-u3615-u4240-independent-call-trace-r1",
+  "status": "FROZEN_BEFORE_RETRY_OUTPUTS",
+  "parent": {
+    "artifact": "diagnostics/c112-c111-mtrand-call-trace-preregistration-v1.json",
+    "artifact_sha256": "sha256:a4e69653c545286a3a818d6486ed3a638f2d336e47b4af53b81994bf3dc0fdb0"
+  },
+  "failed_attempt": {
+    "artifact": "D:/ZumaGolden/diagnostics/c112-rng-trace-u3615-u3800-v1/attempts.json",
+    "status": "RETAINED_NOT_USABLE",
+    "attempt_count": 3,
+    "common_error": "strict_replay_failed",
+    "root_cause": "the diagnostic run retained the evidence-grade repaint path, whose wait treated the intentionally completed strict-broker handoff at update 3151 as an early tracer exit before update 3568",
+    "rng_trace_started": false,
+    "selection_information_revealed": false
+  },
+  "host_restoration_check": {
+    "pre_artifact": "D:/ZumaGolden/diagnostics/c112-trace-host-pre-v1.json",
+    "pre_artifact_sha256": "sha256:9c07e1d357cd1b0eaf0efb7893a0d23941c7c959bee3f1a01768f55e596e1e10",
+    "after_failed_artifact": "D:/ZumaGolden/diagnostics/c112-trace-host-after-failed-segment-v1.json",
+    "after_failed_artifact_sha256": "sha256:2fc60f47396b56fcf99352aa3da2629bb5f3c731c38d20683203ee62d2f5c5de",
+    "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "exact_match": true
+  },
+  "single_protocol_change": {
+    "add_flags": [
+      "--skip-repaint-guard",
+      "--skip-frozen-snapshot"
+    ],
+    "reason": "the C112 outputs are explicitly diagnostic memory and call trajectories; the formal C111 source already owns the lossless visual and external-input evidence",
+    "state_or_rng_mutation_added": false,
+    "dmo_changed": false,
+    "segment_boundaries_changed": false
+  },
+  "retry_outputs": [
+    "D:/ZumaGolden/diagnostics/c112-rng-trace-u3615-u3800-r1-v1",
+    "D:/ZumaGolden/diagnostics/c112-rng-trace-u3800-u4013-r1-v1",
+    "D:/ZumaGolden/diagnostics/c112-rng-trace-u4013-u4240-r1-v1"
+  ],
+  "acceptance_contract": "unchanged_from_parent",
+  "retry_output_paths_absent_at_freeze": true
+}

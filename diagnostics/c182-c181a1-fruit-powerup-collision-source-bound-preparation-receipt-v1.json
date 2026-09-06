@@ -1,0 +1,75 @@
+{
+  "schema": "zuma-rl.c181a1-fruit-powerup-collision-source-bound-preparation-receipt",
+  "version": 1,
+  "status": "PASS_BEFORE_FORMAL_CAMPAIGN_OUTPUT",
+  "created_utc": "2026-08-10T15:12:38.0088758Z",
+  "preregistration": {
+    "path": "diagnostics/c182-c181a1-fruit-powerup-collision-formal-source-preregistration-v1.json",
+    "sha256": "sha256:0931c2d930ff4d09ae3171b55efa90ff90d4928ff15eb712bc14984819625520"
+  },
+  "normalized_dmo": {
+    "path": "D:/ZumaGolden/diagnostics/normalized-c181a1-fruit-powerup-collision-v1.dmo",
+    "bytes": 22079,
+    "sha256": "sha256:413ff5b6470f695dc703b99064762a3d5749434530e620833291925c56339e77",
+    "command_count": 1254,
+    "random_seed": 428260796,
+    "length_updates": 12977,
+    "sole_permitted_normalization_exact": true,
+    "gameplay_input_commands_preserved": true
+  },
+  "base_plan": {
+    "path": "D:/ZumaGolden/diagnostics/base-c181a1-fruit-powerup-collision-source-bound-plan-v1/plan.json",
+    "bytes": 12722,
+    "sha256": "sha256:9a5b12e6bf1ccb96777aab34c68523d0dfc89fb51add334e5b41defa1d341fda",
+    "source_bound_framework_update": 3136,
+    "source_order": 311,
+    "pre_index": 445,
+    "pre_state_sha256": "sha256:7d66994cb7fd7c8217c471f2218a8c2d11dd67228de5656be12bede52644a2fb",
+    "rewind_draws": 8,
+    "expected_output": 2088163177,
+    "thread_crt_state": 689787496,
+    "allow_source_bound_board_global_correction": false
+  },
+  "finite_plan": {
+    "root": "D:/ZumaGolden/diagnostics/full-state-source-bound-fruit-powerup-c181a1-plan-v1-stop3166",
+    "plan_bytes": 12946,
+    "plan_sha256": "sha256:a0452ac0d2d77f58b192539fdb37c3d59683d044cd5831472003248f5f4b3ccd",
+    "preparation_report_bytes": 1462,
+    "preparation_report_sha256": "sha256:303f0b5b0704e9810a2357b6a07fceaf7cff3bf59cd686b683b025ecf1442e7f",
+    "transport_normalization_bytes": 2772,
+    "transport_normalization_sha256": "sha256:ddb15a55c1ac6eff0032eb20b99d2dd88ecf546eef90367374870903ba1289e3",
+    "pre_template_bytes": 16965,
+    "pre_template_sha256": "sha256:a8b3e672835da84bbbeaf5a89beb7a6f72294c5a6fc5e10bc0cb63a8e1db4cec",
+    "pre_template_state_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526",
+    "host_pre_sha256": "sha256:4dd948ea12b304e31eafa12eaf3312eb9952204b8f6a26fc1845c471eb988106",
+    "host_pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "source_bound_command_broker_stop_after_update": 3166,
+    "global_precall_state_sha256": "sha256:7d66994cb7fd7c8217c471f2218a8c2d11dd67228de5656be12bede52644a2fb",
+    "base_blackout_endpoints_removed": true
+  },
+  "static_transport_validation": {
+    "status": "PASS",
+    "source_anchor_loader_validation": "PASS",
+    "source_dmo_sha256": "sha256:f0feb5419ce82831fa9a884e403d1295952016fbb7a7e08972cffb85bfc5eabd",
+    "playback_dmo_sha256": "sha256:413ff5b6470f695dc703b99064762a3d5749434530e620833291925c56339e77",
+    "recording_natural_outcome": true,
+    "recording_process_memory_writes": 0,
+    "recording_host_restored_exactly": true,
+    "collector_prestate_matched": true,
+    "collector_board_seed_mutation": false,
+    "gameplay_input_commands_preserved": true
+  },
+  "formal_campaign": {
+    "path": "D:/ZumaGolden/formal-full-state-c181a1-fruit-powerup-c182-campaign-v1",
+    "absent_at_receipt": true,
+    "maximum_attempts": 8,
+    "feature_presence_not_inspected": true
+  },
+  "authorization": {
+    "may_execute_frozen_formal_campaign_once": true,
+    "pc_source_credit_before_campaign_and_mechanism_pass": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

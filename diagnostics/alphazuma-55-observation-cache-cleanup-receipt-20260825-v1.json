@@ -1,0 +1,43 @@
+{
+  "schema": "zuma-rl.alphazuma-55-storage-cleanup",
+  "version": 1,
+  "created_local": "2026-08-25T20:55:00-04:00",
+  "operator": "Claude (班长)",
+  "authorization": {
+    "authority": "总设计师",
+    "form": "interactive approval, 2026-08-25",
+    "decision": "批准删除(推荐) — 13 个可再生观测缓存(~616GB)",
+    "context": "D: drive at 99.3% (13GB free of 2TB); chairman requested cleanup of unneeded training files"
+  },
+  "action": "deleted derived observation-cache .npy files only; all receipt sidecars, episodes_manifest.json, merge_summary.json, episodes/*.npz, replay.npz, models, and scan receipts retained in place",
+  "regeneration_guarantee": "Each deleted cache is deterministically rebuildable: its retained observations_cache/*.receipt.json (or replay.observations.receipt.json) pins the extractor tool (C:/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_macro_decisions_v1.py, sha256:a64a3726d57d68e2481ce3f4ee39a60f792cf1d600abc4b7927556215d701a82) and every source episode NPZ by sha256 with row offsets. Source episodes are untouched (multi-hardlinked across collection dirs).",
+  "deleted_files": [
+    {"path": "D:/ZumaTraining/alphazuma-55-macro-merged-jungle9-beta05r3-s99081768-v1/observations_cache/decision_observations_8b4cc2ab50e9ba97.npy", "size_gb": 95.7},
+    {"path": "D:/ZumaTraining/alphazuma-55-macro-merged-jungle9-beta05r2-s99081763-v1/observations_cache/decision_observations_39a232687e4bc651.npy", "size_gb": 72.7},
+    {"path": "D:/ZumaTraining/alphazuma-55-macro-merged-jungle7-beta05r2-s99081757-v1/observations_cache/decision_observations_fac8b10ce801b4ef.npy", "size_gb": 55.5},
+    {"path": "D:/ZumaTraining/alphazuma-55-macro-merged-jungle9-beta05-s99081746-v1/observations_cache/decision_observations_c64017ffcf223350.npy", "size_gb": 49.1},
+    {"path": "D:/ZumaTraining/alphazuma-55-macro-merged-jungle9-r1-s99081738-v1/observations_cache/decision_observations_afbc9bf3f8751d41.npy", "size_gb": 38.0},
+    {"path": "D:/ZumaTraining/alphazuma-55-macro-merged-jungle7-beta05-s99081753-v1/observations_cache/decision_observations_588c8539fc7303e6.npy", "size_gb": 38.0},
+    {"path": "D:/ZumaTraining/alphazuma-55-macro-decisions-jungle9-240-s99081733-v1/observations_cache/decision_observations_213f489647d882ea.npy", "size_gb": 26.7},
+    {"path": "D:/ZumaTraining/alphazuma-55-macro-decisions-jungle9-widelag-s99081765-v1/observations_cache/decision_observations_3047ce883cd46f1c.npy", "size_gb": 26.4},
+    {"path": "D:/ZumaTraining/alphazuma-55-macro-decisions-jungle10-240-s99081736-v1/observations_cache/decision_observations_7a5441a53fa3eeb0.npy", "size_gb": 20.0},
+    {"path": "D:/ZumaTraining/alphazuma-55-macro-decisions-jungle8-240-s99081745-v1/observations_cache/decision_observations_b01d97d0ec32f507.npy", "size_gb": 18.0},
+    {"path": "D:/ZumaTraining/alphazuma-55-macro-decisions-jungle7-240-s99081743-v1/observations_cache/decision_observations_d055076e6c687f77.npy", "size_gb": 17.1},
+    {"path": "D:/ZumaTraining/alphazuma-55-coverage-replay-v4-merged-s99081667/replay.observations.npy", "size_gb": 90.5},
+    {"path": "D:/ZumaTraining/alphazuma-55-coverage-replay-v4-r020-b300k/replay.observations.npy", "size_gb": 68.2}
+  ],
+  "total_freed_gb_approx": 616,
+  "disk_state": {"before": "D: 1.99TB used / 13GB free (99.3%)", "after": "D: 1.3TB used / 629GB free (67%)"},
+  "protections_honored": [
+    "Zero contact with record evidence: all 31 record-critical artifacts (champion checkpoints, record-scan completion receipts, golden/record seed JSONLs) verified present before and untouched",
+    "Zero contact with episodes/*.npz (hardlinked sources), episodes_manifest.json, merge_summary.json, replay.npz, replay.manifest/dataset/completion.json",
+    "All 13 cache .receipt.json sidecars retained in place (verified 13/13 after deletion)",
+    "No model .zip, no D:/ZumaGolden content, no diagnostics/cases/sources/tools touched"
+  ],
+  "survey_warnings_for_future_cleanups": [
+    "Receipts cite D:-drive paths in three spellings (/mnt/d/..., D:\\..., D:/...); reference-matching must normalize all three or record evidence will be misjudged as unreferenced — canonical record claims use /mnt/d/ exclusively",
+    "Superseded-looking artifacts can hold standing records: J8 14.63s belongs to old alphazuma-55-macro-bc49 + old scan s99081714; J3 9.88s belongs to unpolished BC s99081726 — never prune by 'keep newest'",
+    "SteamLibrary path contains apostrophe+space (Zuma's Revenge) — shell quoting hazard for any scripted pass"
+  ],
+  "related_survey": "protect-list built 2026-08-25 from full read of Documents/祖玛/diagnostics (980 files); D: composition at time of action: SteamLibrary 989GB, ZumaTraining 651GB, ZumaGolden ~多GB量级 forensics tree, topaz 30GB, ra2-master 13GB, neuroserver 11GB"
+}

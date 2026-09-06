@@ -1,0 +1,15 @@
+{
+  "schema": "zuma-rl.pc-mechanism-audit-plan",
+  "version": 1,
+  "cases": [
+    {
+      "id": "c109-natural-match3-match4",
+      "manifest_path": "sources/c109-u3429-u4240-source-v1.json",
+      "memory_probe_path": "formal-c109-exact-step-golden-u3429-u4240-v1/attempt-02/memory-probe.json",
+      "window": {
+        "start_update": 3429,
+        "end_update": 4240
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "zuma-rl.alphazuma-55-independent-audit-watcher-launch-receipt",
+  "version": 1,
+  "recorded_utc": "2026-08-16T07:33:14.5821639+00:00",
+  "status": "PASS",
+  "plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-seven-route-audit-watcher-s99081626-plan-v1.json",
+    "sha256": "sha256:c413c2c29bd2737265e7491c581e371322bd2113447d115b362b43578910e9b6"
+  },
+  "watcher": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/watch_alphazuma_55_independent_audit_v1.py",
+    "sha256": "sha256:8492c911030b02b8f24602ff3b36a1014cfc0cbef259a1df251b0537cc244e04"
+  },
+  "windows_launcher_pid": 28032,
+  "linux_pid": 333088,
+  "status_snapshot": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/postprocess-seven-route-audit-watcher-s99081626-v1/watcher_status.json",
+    "sha256": "sha256:49a24379818be173fdd6d143e53f555c1ff8ec1fcba28e35e15f1cef3dd79ea7",
+    "status": "RUNNING",
+    "phase": "WAITING_FOR_CONTROLLER",
+    "error": null
+  },
+  "formal_seed_consumption": "NONE_BY_WATCHER",
+  "hardware_restoration_authority": false
+}

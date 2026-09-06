@@ -1,0 +1,109 @@
+{
+  "schema": "zuma-rl.optimizer-reset-ppoepoch1-lr-screen-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T13:52:27.853Z",
+  "status": "PPO_EPOCH1_LR5E6_MECHANISM_SCREEN_PASS",
+  "decision": "AUTHORIZE_FRESH_NONOVERLAPPING_CONFIRMATION",
+  "preregistration": {
+    "path": "diagnostics/optimizer-reset-ppoepoch1-lr5e6-paired-s20260882-preregistration-v1.json",
+    "sha256": "sha256:c7f0ec56a0616ca7ecebb771a5b31c189021321c2c5a7c5c1304552e1a7d8d7c",
+    "status": "FROZEN_BEFORE_RUN_OUTPUT"
+  },
+  "artifacts": {
+    "run_dir": "D:/ZumaTraining/screening-optimizer-reset-ppoepoch1-lr5e6-paired-s20260882-v1",
+    "config_sha256": "sha256:691c80deb9323c38e348a772e44ed16d163943be741e922a0be929ad3779b526",
+    "completion_sha256": "sha256:0b5550beedba7782ec3d6c5b238683de3d5bcef35c7a37f2b1af50b71ff882d5",
+    "optimizer_reset_sha256": "sha256:eaca6a6bc3fee4d8ce4a5a4877b38a823b2d2d90ae9c87fb14cd54d9bca4219d",
+    "pretrain_deterministic_sha256": "sha256:f1a6f5f33f303c3105645f443c13e5f58a6dd44e761060bb7255e17cbf510c40",
+    "pretrain_stochastic_sha256": "sha256:a1548fc87009f61b467fc388f998563f276ac47fa90466ba4ed4799cdea1a0c0",
+    "posttrain_deterministic_sha256": "sha256:0e7b644769c721d6eeee45c52814830bb1a8a05e7334d27501703a95b4175d6a",
+    "posttrain_stochastic_sha256": "sha256:c7bf0c519fa515b4b912ad1ce0742537785f17852931fd050b8d02f8eab7c8a7",
+    "deterministic_comparison_sha256": "sha256:e0c1a9763870b3c68c1ea94d4ca6eb57c174be757235d5451c1995ef5a824871",
+    "stochastic_comparison_sha256": "sha256:d0a4f7677cf6ba8747662faa3a101bde17e932eda20c83d250a2934b68de85b0",
+    "final_model_sha256": "sha256:f4b52fa9c0c6d7d9fcb5a508789f3cd5f643b0ed82021672a333539bb65fbfbe",
+    "stdout_sha256": "sha256:62649b8e17abed52fd79b3c48231383820db28645876e0a5c88622aacc9a20b2",
+    "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "acceptance_results": {
+    "pipeline": {
+      "pass": true,
+      "completion_status": "COMPLETE",
+      "effective_steps": 16384,
+      "optimizer_reset_status": "PASS",
+      "boundary_receipt_version": 4,
+      "comparison_version": 2,
+      "outcome_source": "terminal_info",
+      "identity_sets_match": true,
+      "failure_receipt_present": false,
+      "stderr_bytes": 0
+    },
+    "baseline_reproduction": {
+      "pass": true,
+      "deterministic_rewards_lengths_and_pairing_keys_exact": true,
+      "stochastic_rewards_lengths_and_pairing_keys_exact": true,
+      "deterministic_mean_reward": 32.066425,
+      "stochastic_mean_reward": 36.2383125
+    },
+    "precondition": {
+      "pass": true,
+      "deterministic_wins": 6,
+      "required_wins": 6
+    },
+    "deterministic_retention": {
+      "pass": true,
+      "pretrain_wins": 6,
+      "posttrain_wins": 8,
+      "posttrain_losses": 0,
+      "posttrain_truncations": 0,
+      "pretrain_mean_reward": 32.066425,
+      "posttrain_mean_reward": 35.016525,
+      "mean_reward_delta": 2.950099999999999,
+      "paired_regressions_exceeding_5": 2,
+      "allowed_paired_regressions_exceeding_5": 2
+    },
+    "stochastic_retention": {
+      "pass": true,
+      "pretrain_wins": 8,
+      "posttrain_wins": 8,
+      "posttrain_losses": 0,
+      "posttrain_truncations": 0,
+      "pretrain_mean_reward": 36.2383125,
+      "posttrain_mean_reward": 39.6631,
+      "mean_reward_delta": 3.4247875000000008,
+      "paired_regressions_exceeding_5": 2,
+      "allowed_paired_regressions_exceeding_5": 2
+    },
+    "one_factor_effect": {
+      "pass": true,
+      "lr1e5_stochastic_severe_regressions": 3,
+      "lr5e6_stochastic_severe_regressions": 2,
+      "deterministic_retention_remained_pass": true
+    },
+    "overall": {
+      "pass": true,
+      "post_hoc_override_applied": false
+    }
+  },
+  "consumed_dataset_drift_audit": {
+    "classification": "diagnostic_only_not_certification_evidence",
+    "report_sha256": "sha256:b0a91c3e3c7fd7339875a475d55f7e5ae1a94cdd63bc3f7d91264344405403c2",
+    "completion_sha256": "sha256:1079734d71b644d6abbc15bb598ac21ee9c973af45d6c686544584cbc01a8ce9",
+    "verb_accuracy": 0.9753336029114436,
+    "fire_aim_exact_accuracy": 0.656578947368421,
+    "fire_aim_mean_circular_bin_error": 9.411842105263158,
+    "fire_predicted_unique_aim_bins": 159,
+    "teacher_fire_aim_exact_accuracy": 0.6618421052631579,
+    "teacher_fire_aim_mean_circular_bin_error": 9.453947368421053
+  },
+  "bounded_inference": "on the consumed hard control streams, halving the one-epoch learning rate passes both deterministic and stochastic retention while preserving the teacher's verb and aim capability; generalization remains unestablished until the exact recipe passes fresh nonoverlapping seeds",
+  "next_action": {
+    "authorized": "freeze and run one 16384-step confirmation using fresh nonoverlapping training vector, boundary vector, and stochastic action seeds",
+    "forbidden": "do not launch the 98304-step scale screen before fresh confirmation passes"
+  },
+  "non_authorizations": [
+    "98304_step_scale_screen",
+    "large_scale_training",
+    "fidelity_gate_opening",
+    "original_transfer_certification"
+  ]
+}

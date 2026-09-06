@@ -1,0 +1,125 @@
+{
+  "controls": {
+    "code_changed_during_campaign": false,
+    "existing_artifact_modified_or_deleted": false,
+    "preregistration": {
+      "path": "diagnostics/c219-current-runtime-training-gate-rebind-preregistration-v1.json",
+      "sha256": "sha256:bc2d9b935c2f22e4cbed70ef8f7ec5bf5809818a0f466e4c881a46467719ba92"
+    },
+    "training_run_directory_created": false,
+    "training_started": false,
+    "training_steps_executed": 0
+  },
+  "created_utc": "2026-08-10T18:53:00.960Z",
+  "environment_contract": {
+    "artifact": "D:/ZumaGolden/training/contracts/jungle2-training-environment-v13.json",
+    "artifact_bytes": 4921,
+    "artifact_sha256": "sha256:bcbeb5e6b53f977aa6884baa7c670a660ac4d26800965301a4a294dff07c6974",
+    "contract_fingerprint": "sha256:104706d984381694ea2007e3a76656f0d6b8796bf170728c2b19e6082a4ff898",
+    "deterministic_kat_aggregate_sha256": "sha256:c99ee004e24e4ae1505404c12e66205ed93440bb632c51b5f8a4d4d9f3cfc02a",
+    "independent_live_validation_reason": null,
+    "independent_live_validation_seconds": 6.066,
+    "status": "PASS"
+  },
+  "fidelity_gate": {
+    "all_four_lanes_pass": true,
+    "artifact": "D:/ZumaGolden/diagnostics/fidelity-gate-c218-candidate-v28-report.json",
+    "artifact_bytes": 92475,
+    "artifact_sha256": "sha256:a08d64bfd13bdbfdcb74c65163aa9e9b6a004e9d8c8fc5ff35376d252655c7d1",
+    "evidence_count": 97,
+    "missing_requirement_count": 0,
+    "policy": "original-transfer-jungle2-v4",
+    "reasons": [],
+    "rejected_evidence_count": 0,
+    "status": "OPEN"
+  },
+  "fixed_training_request": {
+    "aim_bins": 180,
+    "batch_size": 512,
+    "device": "cuda",
+    "environment": "revenge",
+    "initial_model_sha256": "sha256:32e1e841962833b3c74ce743598df1c87e21c9c9c931092152e8bc2700081f64",
+    "learning_rate": 0.000005,
+    "level": "Jungle2",
+    "num_envs": 4,
+    "planned_effective_steps": 98304,
+    "ppo_epochs": 1,
+    "reward_scale": 0.01,
+    "rollout_steps": 512,
+    "seed": 20260950,
+    "teacher_kl_coef": 1000.0
+  },
+  "id": "c219-current-runtime-training-gate-rebind-v1",
+  "launch_preflight": {
+    "actual_terminal_message": "Transfer training refused: --run-dir must not already exist: /mnt/d/ZumaGolden/training",
+    "elapsed_seconds": 506.5,
+    "entrypoint": ".venv/bin/zuma-train",
+    "expected_process_exit_code": 1,
+    "expected_sentinel_reached": true,
+    "fidelity_suite_accepted": true,
+    "gate_or_recipe_failure_before_sentinel": false,
+    "intentional_existing_run_dir": "/mnt/d/ZumaGolden/training",
+    "new_run_dir_required_for_launch": true,
+    "offline_recipe_field_mismatches": [],
+    "planned_effective_steps": 98304,
+    "training_environment_created": false,
+    "training_gate_suite_accepted": true,
+    "training_runtime_loaded_by_entrypoint": false,
+    "training_steps_executed": 0
+  },
+  "model_migration": {
+    "artifact": "D:/ZumaGolden/training/reports/fruit-actor-model-migration-v7.json",
+    "artifact_bytes": 3823,
+    "artifact_sha256": "sha256:80dbe41aca16bb129fe337378a0f4480eff99b0268dd7767a23d12d4e9edd0b6",
+    "checks": {
+      "current_actor_interface_compatible": true,
+      "fruit_columns_trainable": true,
+      "fruit_columns_zero_initialized": true,
+      "transformed_state_dict_exact": true
+    },
+    "current_environment_smoke": "PASS",
+    "functional_preservation": "PASS",
+    "independent_live_validation_reason": null,
+    "independent_live_validation_seconds": 32.348,
+    "migrated_model_sha256": "sha256:32e1e841962833b3c74ce743598df1c87e21c9c9c931092152e8bc2700081f64",
+    "source_model_sha256": "sha256:f03dee97cb5a3e2ce3abcf4324137fe6ed9b68e827765b4a7b6adfa63cafb8f7",
+    "status": "PASS"
+  },
+  "readiness": {
+    "bounded_original_transfer_state_policy_training_launchable": true,
+    "fidelity_gate_open": true,
+    "original_game_deployment_authorized": false,
+    "state_policy_training_only": true,
+    "training_gate_open": true,
+    "visual_policy_training_authorized": false
+  },
+  "runtime": {
+    "cuda_available": true,
+    "cuda_runtime": "13.0",
+    "device": "NVIDIA GeForce RTX 5090",
+    "python_environment": "/mnt/c/Users/Laure/Documents/祖玛/.venv",
+    "torch": "2.12.1+cu130",
+    "zuma_game_process_present_after_preflight": false,
+    "zuma_training_process_present_after_preflight": false
+  },
+  "schema": "zuma-rl.current-runtime-training-gate-rebind-success-receipt",
+  "status": "PASS_BOTH_GATES_OPEN_AND_TRANSFER_TRAINING_LAUNCHABLE",
+  "training_gate": {
+    "artifact": "D:/ZumaGolden/training/reports/training-gate-v3-candidate-v9-report.json",
+    "artifact_bytes": 9678,
+    "artifact_sha256": "sha256:137f831422e6f40ee51425a184554d767f489ff4265cc3a1b773e9ba537b1999",
+    "authorized_effective_steps": 98304,
+    "authorized_training_seed": 20260950,
+    "evidence_count": 6,
+    "execution_elapsed_seconds": 275.1,
+    "policy": "jungle2-transfer-bootstrap-v3",
+    "reasons": [],
+    "recipe_sha256": "sha256:dde6a9ee9c8b7e08f20589e633d1a6a947849bc0831054d8b5019f6f84a4c9c0",
+    "stage": "state-policy-bootstrap-98304-v3",
+    "status": "OPEN",
+    "suite": "D:/ZumaGolden/training/suites/training-gate-v3-candidate-v9.json",
+    "suite_bytes": 1484,
+    "suite_sha256": "sha256:bedff8521857d36414689fce5682049d8dd9dca10ab010fcc64a86a76b0f8e17"
+  },
+  "version": 1
+}

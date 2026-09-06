@@ -1,0 +1,55 @@
+{
+  "schema": "zuma-rl.inference-loader-incident-amendment",
+  "version": 1,
+  "status": "FROZEN_BEFORE_RECOVERY_INFERENCE",
+  "created_utc": "2026-08-16T19:35:30.110718+00:00",
+  "campaign_id": "alphazuma-55-motor-observable-gradual-headonly-allaim-postprocess-s99081647-v1",
+  "frozen_plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-headonly-allaim-postprocess-s99081647-plan-v1.json",
+    "sha256": "sha256:307b328db15dccb14317c5b27a81ebc84b62f16e409bba845dc0ae9012e6af81"
+  },
+  "incident": {
+    "classification": "INFERENCE_ONLY_OPTIMIZER_STATE_COMPATIBILITY",
+    "error": "loaded state dict contains a parameter group that doesn't match the size of optimizer's group",
+    "cause": "action-head-only checkpoints archive a two-parameter optimizer group while a fresh inference model constructs the full-policy optimizer group",
+    "policy_weights_loaded_before_failure": true,
+    "screen_attempts_consumed": 0,
+    "formal_seed_consumption": "NONE"
+  },
+  "original_failure_evidence": {
+    "failure_json_sha256": "sha256:4a085ebdb48a80e09136d64929b57454df7b9071242de09152fa020e28e04e82",
+    "controller_status_sha256": "sha256:f4a80be5eff8c22cd486baf551a6e2bb22cc93cc6e99e3824e1bef6d600b7563",
+    "screen_manifest_sha256": "sha256:46a54a58c66aef0cf3850fcb80bb7cc4040901e3f84b2a7acca652294a96b678",
+    "screen_preregistration_sha256": "sha256:1bb4e70d40a19776fff4716122dd8e60927399459e897838ccb5262157de87ed",
+    "validate_stderr_sha256": "sha256:f1c347fcb0c008195c642724344ce93ea77dec5d4b2a749d769b439b3b565864"
+  },
+  "correction": {
+    "startup_hook": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/inference_optimizer_compat/sitecustomize.py",
+      "sha256": "sha256:b27a5d28f8f37f746dda695be28f69d426d1a4919101fbed32d80df9648c98c2"
+    },
+    "scope": "ignore only the exact optimizer parameter-group-size mismatch during inference model loading",
+    "all_policy_modules_and_tensors_remain_strict": true,
+    "checkpoint_bytes_modified": false,
+    "candidate_manifest_modified": false,
+    "seeds_modified": false,
+    "ranking_modified": false,
+    "gate_modified": false,
+    "environment_modified": false
+  },
+  "known_answer_test": {
+    "status": "PASS",
+    "source_model_policy_tensors_exact": true,
+    "source_model_tensor_count": 63,
+    "source_model_loaded_tensor_digest": "sha256:fa886cdf3e854eb5add5e6fe8a11bb03b0836517545bd251fcca217a100ad251",
+    "headonly_model_policy_tensors_exact": true,
+    "headonly_model_tensor_count": 63,
+    "headonly_model_loaded_tensor_digest": "sha256:624b8e98424d2f4faf69b2617d4467d0ad8ccbcb31d20bda4d36c9a72fe0e8da"
+  },
+  "authority_boundary": {
+    "engineering_training_validation_only": true,
+    "formal_selection_seed_consumption": false,
+    "formal_final_blind_seed_consumption": false,
+    "continuous_campaign_seed_consumption": false
+  }
+}

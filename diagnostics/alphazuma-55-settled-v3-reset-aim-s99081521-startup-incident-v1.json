@@ -1,0 +1,37 @@
+{
+  "schema": "zuma-rl.alphazuma-55-engineering-startup-incident",
+  "version": 1,
+  "status": "FAILED_BEFORE_RUN_INITIALIZATION",
+  "recorded_utc": "2026-08-15T10:28:31.9227010Z",
+  "route": "alphazuma55-settled-v3-reset-aim-5090",
+  "preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-settled-v3-reset-aim-s99081521-preregistration-v1.json",
+    "sha256": "sha256:5667c41dce40ffb732dc700dbca81a8102aa97a5fd12a01cd99309ce37671cac"
+  },
+  "trainer": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_settled_v3_reset_aim.py",
+    "sha256": "sha256:448965090c00d051267dd76bc1ebbf2dc5c92ce322f8e9d500e60d270307009f"
+  },
+  "exit_code": 1,
+  "error_type": "KeyError",
+  "error": "'load'",
+  "traceback_site": "original_descriptor = MaskablePPO.__dict__[\"load\"]",
+  "root_cause": "MaskablePPO inherits load; the frozen wrapper incorrectly required a class-local descriptor.",
+  "evidence": {
+    "run_dir_exists_after_exit": false,
+    "config_exists_after_exit": false,
+    "training_status_exists_after_exit": false,
+    "failure_json_exists_after_exit": false,
+    "legacy_run_distillation_entered": false,
+    "environment_collection_started": false,
+    "training_seed_consumption": false,
+    "formal_seed_consumption": false
+  },
+  "recovery_boundary": {
+    "do_not_modify_failed_trainer": true,
+    "do_not_modify_failed_preregistration": true,
+    "new_trainer_and_new_preregistration_required": true,
+    "new_run_directory_required": true,
+    "reuse_failed_training_seed_range": false
+  }
+}

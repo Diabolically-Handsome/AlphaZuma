@@ -1,0 +1,73 @@
+{
+ "schema": "zuma-rl.alphazuma-55-speedrun-record-claim",
+ "version": 2,
+ "supersedes": "alphazuma-55-jungle1-speedrun-record-5p57s-claim-v1.json",
+ "claim": "AI completion of Jungle1 (Adv 1) in 530 native ticks (5.30 s at 100 Hz) \u2014 numerically below the 6 s human RTA IL record",
+ "convention": "AI-TAS (seed_list_tas): golden-seed enumeration; simulator timing, RTA boundary audit PENDING; no original-client record claim; elite-human motor constraints active",
+ "record_run": {
+  "schema": "zuma-rl.alphazuma-55-macro-speedrun-seed-search-v1-row",
+  "level_id": "Jungle1",
+  "seed": 12525811,
+  "outcome": "win",
+  "native_outcome": null,
+  "time_limit_truncated": false,
+  "ticks": 530,
+  "score": 2500,
+  "shots": 9,
+  "macro_decisions": 15,
+  "native_ticks_consumed": 530,
+  "win_trigger_tick": 530,
+  "win_pending_at_termination": true,
+  "board_cleared_tick": null
+ },
+ "sub_six_second_runs": [
+  {
+   "ticks": 530,
+   "seconds": 5.3,
+   "seed": 12525811,
+   "shots": 9,
+   "run_dir": "alphazuma-55-record-full-a-s99081708-v1"
+  },
+  {
+   "ticks": 557,
+   "seconds": 5.57,
+   "seed": 4752474,
+   "shots": 10,
+   "run_dir": "alphazuma-55-record-full-a-s99081708-v1"
+  },
+  {
+   "ticks": 594,
+   "seconds": 5.94,
+   "seed": 14998979,
+   "shots": 10,
+   "run_dir": "alphazuma-55-record-full-a-s99081708-v1"
+  },
+  {
+   "ticks": 596,
+   "seconds": 5.96,
+   "seed": 25098071,
+   "shots": 11,
+   "run_dir": "alphazuma-55-record-full-b-s99081709-v1"
+  }
+ ],
+ "model": {
+  "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle1-s99081706-v1/checkpoints/timepolish-jungle1_1572720_steps.zip",
+  "sha256": "sha256:611b3cbda00587c6d70bbd3f3458daa394036b76ea2b7ede8b964a8da7bb7e12"
+ },
+ "scan_completions": {
+  "alphazuma-55-record-full-a-s99081708-v1": "sha256:71327f11b980e7bbaef53d61200f6b0c0def284a2b6895213d2aee41b9ce51bd",
+  "alphazuma-55-record-full-b-s99081709-v1": "sha256:2484bf4b70774fc6e1d4871047bec98bfcd1b1565d8c78298d7b3c020ed727ee",
+  "alphazuma-55-record-attempt-jungle1-s99081707-v1": "sha256:eed1580d07e81a12f92969311bbe7f05d3e0f75fe22980c1e1386db04404fa85"
+ },
+ "baseline_control": "same golden seeds with the pre-polish BC model: fastest 7.74 s (isolates the PPO time-polish contribution)",
+ "progression_seconds": [
+  15.65,
+  8.91,
+  7.74,
+  6.77,
+  5.57,
+  5.3
+ ],
+ "claimed_utc": "2026-08-20T03:24:04.123318+00:00",
+ "formal_seed_consumption": false
+}

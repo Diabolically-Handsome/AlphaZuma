@@ -1,0 +1,47 @@
+{
+  "schema": "alphazuma-55-level-park-verdict",
+  "version": 1,
+  "written_utc": "2026-08-21T20:05:39Z",
+  "level": "Jungle9",
+  "verdict": "PARKED_AFTER_FIVE_DISTINCT_ATTACKS",
+  "attack_history": [
+    {
+      "attack": "bc49 40-ep BC (campaign batch)",
+      "result": "1/8 panorama"
+    },
+    {
+      "attack": "strengthened 240-ep BC (s99081735; 104k decisions, offline calibration healthy)",
+      "result": "0/16 panel - ALL active losses, median death 5330, 80 on-target shots"
+    },
+    {
+      "attack": "plain DAgger aggregate (s99081739; 148k decisions)",
+      "result": "0/16 AND collapsed toward never-fire (3 shots median) - receipted as data poison"
+    },
+    {
+      "attack": "beta-0.5 mixed DAgger aggregate (s99081747; 192k decisions incl. 158/160-win corridor data)",
+      "result": "0/16 but the BEST failure yet: median death 6577 (+23% survival), dies at the doorstep of the teacher's 6821 mean finish"
+    },
+    {
+      "attack": "hold-8 re-eval of the beta BC (training-cadence asymmetry test)",
+      "result": "0/16 - asymmetry hypothesis FALSIFIED"
+    }
+  ],
+  "controls": [
+    "teacher-through-macro wins 240/240 collection seeds AND 3/3 probed panel seeds (5764/6323/6713 ticks) - the level and panel are fully winnable at teacher decision quality"
+  ],
+  "diagnosis": "Jungle9's ~434 macro decisions per episode (2x Jungle3) compound small decision errors into deep-chain crises; imitation closes the gap monotonically (5330 -> 6577 median survival) but has not crossed the finish line. The remaining deficit is genuine decision quality under compounding pressure - not perception, not calibration, not cadence, not panel pathology.",
+  "levers_for_reopening": [
+    "iterated beta-DAgger (round 2 driven by the beta BC, same 0.5 mix) - the +23% survival slope suggests possible convergence in 1-3 more rounds (~2h each)",
+    "hold-4 collection (align collection cadence with eval; untested variable)",
+    "curriculum spawn anchoring (AlphaDiablo course-A analog: train on states initialized along teacher trajectories)",
+    "a from-BC PPO polish once ANY BC posts nonzero panel wins (win-gradient exists on random seeds: beta driving won 158/160 with half-teacher help)"
+  ],
+  "evidence": {
+    "dagger_verdict": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-jungle9-dagger-r1-verdict-s99081737-v1.json",
+    "teacher_control_addendum": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-jungle9-dagger-r1-verdict-s99081737-v1-addendum-teacher-panel-control.json",
+    "beta_bc": "/mnt/d/ZumaTraining/alphazuma-55-macro-bc-jungle9-beta05-s99081747-v1/completion.json",
+    "beta_baseline_hold4": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-baselines/jungle9-beta05bc",
+    "beta_baseline_hold8": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-baselines/jungle9-beta05bc-hold8"
+  },
+  "formal_seed_consumption": false
+}

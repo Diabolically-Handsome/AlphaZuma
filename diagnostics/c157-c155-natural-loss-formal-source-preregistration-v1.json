@@ -1,0 +1,127 @@
+{
+  "schema": "zuma-rl.c155-natural-loss-formal-source-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_FORMAL_SOURCE_OUTPUT",
+  "created_utc": "2026-08-10T11:41:01.2037284Z",
+  "purpose": "Collect exactly one immutable, source-bound, formal full-state retail window that spans the native natural-loss transition from a live final chain through terminal suction and empty-chain completion, while stopping before the known Board replacement at update 11856.",
+  "classification": "preregistered-formal-read-only-retail-mechanism-source",
+  "parents": {
+    "c155_success_receipt": "diagnostics/c155a1-natural-loss-target-write-v4-success-receipt-v1.json",
+    "c155_success_receipt_sha256": "sha256:f276965c76d54e4f48fa6e8cdd1032e5b8b6d22622d7d60df2925dfcdeb209a9",
+    "c156_preregistration": "diagnostics/c156-c155-transport-source-bound-replay-preregistration-v1.json",
+    "c156_preregistration_sha256": "sha256:65bad45bb5b0e6b12e7be62d4c27aac5c5e57acdf0e1e35f57b76ba09810cee1",
+    "c156_amendment": "diagnostics/c156-c155-transport-source-bound-replay-preregistration-amendment-v1.json",
+    "c156_amendment_sha256": "sha256:00f9c1dba0792c45b7f34a451f2676589854d9dfe6442a60ceea6e45fc06f2db",
+    "c156_prepared_plan_receipt": "diagnostics/c156-c155-transport-source-bound-prepared-plan-receipt-v1.json",
+    "c156_prepared_plan_receipt_sha256": "sha256:36687e9a134bafc04a64975b134342e845f7e138ed1aef34a290b08f5ad383b5"
+  },
+  "fixed_inputs": {
+    "plan": "D:/ZumaGolden/diagnostics/full-state-source-bound-natural-loss-c155-plan-v1-stop3182/plan.json",
+    "plan_bytes": 12991,
+    "plan_sha256": "sha256:9e75c425106c7cb9a9d1c878eed4decabbf9203c5459d3ac1bcb0f5d14dfc538",
+    "prestate": "D:/ZumaGolden/diagnostics/full-state-source-bound-natural-loss-c155-plan-v1-stop3182/protocol/pre-template.json",
+    "prestate_sha256": "sha256:be6b5ca9997b78499dd1031d914ba0587bc84df9509c5fceac232e09f0329065",
+    "transport_provenance": "D:/ZumaGolden/diagnostics/full-state-source-bound-natural-loss-c155-plan-v1-stop3182/inputs/input.transport.normalization.json",
+    "transport_provenance_sha256": "sha256:7a0294b821c34f6a8a4d77388c781ab505e73e0c9b62075845b6dafff67b3a25",
+    "playback_dmo_sha256": "sha256:a5306095efb020c747530b0b546c8a8af1267a71ea48395e225f9b9a7c6516cf",
+    "raw_recording_dmo_sha256": "sha256:fe550425c3a7a0977b2bf1b3be45ab8281f26fb44b5bd71a0fede87c8d508e41",
+    "recording_natural_outcome": "natural_loss",
+    "direct_runtime": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+    "direct_runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20"
+  },
+  "localization_evidence": {
+    "root": "D:/ZumaGolden/diagnostics/c156-c155-natural-loss-localization-u11780-u11920-v1",
+    "attempts_sha256": "sha256:ff7c58dd3fc2a25acb0ed2d5026c738bd5dc5b2120acf98e9a38807dcc6c336a",
+    "memory_probe_sha256": "sha256:02037d7e53ca3ca329a22700f9cf3d6af481d5b29fd2c2b28d7075a0d7442041",
+    "strict_replay_sha256": "sha256:8a56dd71fe088bae30b610d1037b5a897b1c6be030b3796158094bf407c8444e",
+    "external_input_guard_sha256": "sha256:ee83e62743c555027c477f4c46a4bc6b58743b4ff24e30ba9c00856eb039af19",
+    "trajectory_index_sha256": "sha256:15b29aa6fe1ac68c3ebbf56b57163b265c89152d3c4adb0a4b6fcadfa06284b9",
+    "observed_update_11780": {
+      "chain_ball_count": 0,
+      "pending_ball_count": 1,
+      "score": 7950,
+      "score_target": 9650
+    },
+    "observed_update_11830": {
+      "chain_ball_count": 0,
+      "pending_ball_count": 1,
+      "score": 7950,
+      "score_target": 9650
+    },
+    "known_board_replacement_update": 11856,
+    "replacement_observation": "pending_ball_count changes from 1 to 10 and score_target changes from 9650 through 0 to 9616",
+    "window_selection_rule": "Start well before the prior trigger estimate, retain the known empty-chain state through update 11830, and stop 26 updates before Board replacement."
+  },
+  "formal_window": {
+    "output_root": "D:/ZumaGolden/formal-full-state-c155-natural-loss-u11200-u11830-v1",
+    "output_root_absent_at_freeze": true,
+    "host_pre_output": "D:/ZumaGolden/diagnostics/c157-natural-loss-host-pre-v1.json",
+    "host_pre_output_absent_at_freeze": true,
+    "host_post_output": "D:/ZumaGolden/diagnostics/c157-natural-loss-host-post-v1.json",
+    "host_post_output_absent_at_freeze": true,
+    "session_nonce": "c1570000000000000000000000000001",
+    "maximum_attempts": 1,
+    "slowdown_update": 11180,
+    "freeze_update": 11200,
+    "trajectory_end_update": 11830,
+    "expected_inclusive_tick_count": 631,
+    "trajectory_mode": "full",
+    "formal_full_state_evidence": true,
+    "formal_independent_score_binding": true,
+    "diagnostic_int32_mutation": null,
+    "external_input_event_count": 0,
+    "retain_started_attempt_on_failure": true
+  },
+  "fixed_command": ".\\.venv-win\\Scripts\\python.exe tools\\collect_pc_formal_window.py --plan D:\\ZumaGolden\\diagnostics\\full-state-source-bound-natural-loss-c155-plan-v1-stop3182\\plan.json --prestate D:\\ZumaGolden\\diagnostics\\full-state-source-bound-natural-loss-c155-plan-v1-stop3182\\protocol\\pre-template.json --output-root D:\\ZumaGolden\\formal-full-state-c155-natural-loss-u11200-u11830-v1 --host-pre-output D:\\ZumaGolden\\diagnostics\\c157-natural-loss-host-pre-v1.json --host-post-output D:\\ZumaGolden\\diagnostics\\c157-natural-loss-host-post-v1.json --session-nonce c1570000000000000000000000000001 --freeze-update 11200 --slowdown-update 11180 --trajectory-end-update 11830",
+  "prederived_code": {
+    "tools/collect_pc_formal_window.py": "sha256:bdf7368ee6d0ced319f17b85c3b5ef4b80f4d85cbfbfbeed9f71389da6d064e",
+    "tools/collect_pc_memory_probe.py": "sha256:79464752ab35693b8f8765483894ae152a389c367f511e7e33398fc4fa2d28b0",
+    "src/zuma_rl/pc_mechanism_audit.py": "sha256:78dc15bf624d0c75cb456d41e0b65003706617c728dc0333387359a9aca2a360"
+  },
+  "source_acceptance": {
+    "exactly_one_attempt": true,
+    "attempt_status": "PASS",
+    "strict_replay_status": "PASS",
+    "strict_failure_count": 0,
+    "last_framework_update": 11830,
+    "source_bound_anchor_observation_count": 1,
+    "source_bound_anchor_exact": true,
+    "source_bound_precall_global_restore_exact": true,
+    "source_bound_global_correction_applied": false,
+    "post_board_construction_process_memory_write_bytes": 0,
+    "transport_provenance_classification": "certifying-retail-recording-transport-normalization",
+    "transport_recording_outcome": "natural_loss",
+    "transport_recording_process_memory_writes": 0,
+    "external_input_guard_status": "PASS",
+    "external_input_event_count": 0,
+    "formal_full_state_evidence": true,
+    "trajectory_first_update": 11200,
+    "trajectory_last_update": 11830,
+    "trajectory_tick_count": 631,
+    "host_pre_and_post_state_roots_equal": true
+  },
+  "post_source_mechanism_derivation": {
+    "timing": "Only after the immutable source attempt has completed.",
+    "function": "zuma_rl.pc_mechanism_audit.derive_native_mechanism_features",
+    "required_feature": "natural_loss",
+    "required_native_transition_facts": [
+      "A live last chain ball exists before loss.",
+      "The native runtime loss flag transitions from active to inactive.",
+      "The native terminal field transitions from 0 to -1.",
+      "The final active chain ball is removed at the curve end during the loss sequence.",
+      "The chain subsequently reaches zero balls before Board replacement."
+    ],
+    "feature_presence_is_not_source_collection_acceptance": true,
+    "no_window_or_threshold_change_after_output": true
+  },
+  "decision_rule": {
+    "formal_source_pass": "Every fixed source_acceptance invariant passes on the sole attempt; the host state is restored exactly.",
+    "mechanism_candidate_pass": "After formal-source completion, the frozen derivation emits a natural_loss proof containing all required transition facts within updates 11200 through 11830.",
+    "failure": "Retain all outputs, identify the first failed frozen invariant, and do not rerun or weaken this preregistration.",
+    "same_preregistration_retry_forbidden": true,
+    "feature_credit_before_pc_source_packaging_and_mechanism_audit": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

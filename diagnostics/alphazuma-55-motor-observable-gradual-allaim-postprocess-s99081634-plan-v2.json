@@ -1,0 +1,739 @@
+{
+  "schema": "zuma-rl.alphazuma-55-motor-observable-postprocess-plan",
+  "version": 1,
+  "status": "FROZEN_DURING_TRAINING_BEFORE_CHECKPOINT_INFERENCE",
+  "created_utc": "2026-08-16T14:28:57.417267+00:00",
+  "campaign_id": "alphazuma-55-motor-observable-gradual-allaim-postprocess-s99081634-v2",
+  "objective": "Screen the frozen all-actions checkpoints and apply the unchanged 35-win/35-level Gate while accepting only the evaluator's canonical max-tick timeout representation.",
+  "hypotheses": {
+    "primary": "supervising queued aim targets on every actor tick reduces closed-loop motor drift",
+    "negative_result_is_valid": true
+  },
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "training_route": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-allaim-s99081633-preregistration-v1.json",
+    "sha256": "sha256:502c0ab5566a66fa33ff33df80b10b101c5ea1b75dc4e21ff07f5996965730e1"
+  },
+  "environment_template": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-wide-validation-s99081544-preregistration-v1.json",
+    "sha256": "sha256:38485e9bd6f3f21f7e4250c53b699a251a86581fbbeea4e72fb1ef2e89b99787"
+  },
+  "expected_training_completion": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-allaim-s99081633-v1/completion.json",
+  "expected_training_failure": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-allaim-s99081633-v1/failure.json",
+  "original_root": "/mnt/d/SteamLibrary/steamapps/common/Zuma's Revenge",
+  "screen_levels": [
+    {
+      "id": "Jungle1",
+      "display_name": "Shipwrecked!",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle1\\Jungle1"
+      ]
+    },
+    {
+      "id": "Jungle9",
+      "display_name": "Creeper Copse",
+      "curve_count": 2,
+      "curve_names": [
+        "Jungle9\\Jungle9-1",
+        "Jungle9\\Jungle9-2"
+      ]
+    },
+    {
+      "id": "village3",
+      "display_name": "Lilypad Leap",
+      "curve_count": 1,
+      "curve_names": [
+        "Village3\\Village3v3"
+      ]
+    },
+    {
+      "id": "village8",
+      "display_name": "Vines of Vengeance",
+      "curve_count": 1,
+      "curve_names": [
+        "Village8"
+      ]
+    },
+    {
+      "id": "city1",
+      "display_name": "Ancient Cistern",
+      "curve_count": 1,
+      "curve_names": [
+        "city1"
+      ]
+    },
+    {
+      "id": "city9",
+      "display_name": "Ghosts of the Past",
+      "curve_count": 1,
+      "curve_names": [
+        "city9\\city9"
+      ]
+    },
+    {
+      "id": "Coast1",
+      "display_name": "Swamp Spin",
+      "curve_count": 1,
+      "curve_names": [
+        "coast1"
+      ]
+    },
+    {
+      "id": "Coast9",
+      "display_name": "Tide Pools",
+      "curve_count": 1,
+      "curve_names": [
+        "coast9"
+      ]
+    },
+    {
+      "id": "grotto1",
+      "display_name": "Coral Catch",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto1\\grotto1"
+      ]
+    },
+    {
+      "id": "grotto9",
+      "display_name": "The Deep",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto9\\grotto9"
+      ]
+    },
+    {
+      "id": "volcano1",
+      "display_name": "Flowing Tiki Rage",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano1\\Volcano1"
+      ]
+    },
+    {
+      "id": "volcano9",
+      "display_name": "Searing Visage",
+      "curve_count": 2,
+      "curve_names": [
+        "volcano9\\volcano9-1",
+        "Volcano9\\Volcano9-2"
+      ]
+    }
+  ],
+  "full55_levels": [
+    {
+      "id": "Jungle1",
+      "display_name": "Shipwrecked!",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle1\\Jungle1"
+      ]
+    },
+    {
+      "id": "Jungle2",
+      "display_name": "Castaway",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle2\\Jungle2"
+      ]
+    },
+    {
+      "id": "Jungle3",
+      "display_name": "Echo Beach",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle3\\Jungle3"
+      ]
+    },
+    {
+      "id": "Jungle4",
+      "display_name": "Bones of an Idol",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle4\\Jungle4"
+      ]
+    },
+    {
+      "id": "jungle6",
+      "display_name": "Jungle Clearing",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle6\\Jungle6"
+      ]
+    },
+    {
+      "id": "Jungle7",
+      "display_name": "Sand Trap",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle7\\Jungle7"
+      ]
+    },
+    {
+      "id": "Jungle8",
+      "display_name": "Nasal Passage",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle8\\Jungle8"
+      ]
+    },
+    {
+      "id": "Jungle9",
+      "display_name": "Creeper Copse",
+      "curve_count": 2,
+      "curve_names": [
+        "Jungle9\\Jungle9-1",
+        "Jungle9\\Jungle9-2"
+      ]
+    },
+    {
+      "id": "Jungle10",
+      "display_name": "Darkness Falls",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle10\\Jungle10"
+      ]
+    },
+    {
+      "id": "village1",
+      "display_name": "Watering Hole",
+      "curve_count": 1,
+      "curve_names": [
+        "Village1"
+      ]
+    },
+    {
+      "id": "village2",
+      "display_name": "Overgrown Plaza",
+      "curve_count": 1,
+      "curve_names": [
+        "Village2"
+      ]
+    },
+    {
+      "id": "village3",
+      "display_name": "Lilypad Leap",
+      "curve_count": 1,
+      "curve_names": [
+        "Village3\\Village3v3"
+      ]
+    },
+    {
+      "id": "village4",
+      "display_name": "Sandspirals",
+      "curve_count": 1,
+      "curve_names": [
+        "Village4v2"
+      ]
+    },
+    {
+      "id": "village5",
+      "display_name": "Abandoned Well",
+      "curve_count": 1,
+      "curve_names": [
+        "Village5"
+      ]
+    },
+    {
+      "id": "village6",
+      "display_name": "Face Your Fear",
+      "curve_count": 2,
+      "curve_names": [
+        "Village6-1",
+        "Village6-2"
+      ]
+    },
+    {
+      "id": "village7",
+      "display_name": "Seven Sides (minus one)",
+      "curve_count": 1,
+      "curve_names": [
+        "Village7"
+      ]
+    },
+    {
+      "id": "village8",
+      "display_name": "Vines of Vengeance",
+      "curve_count": 1,
+      "curve_names": [
+        "Village8"
+      ]
+    },
+    {
+      "id": "village10",
+      "display_name": "The Horseshoe",
+      "curve_count": 1,
+      "curve_names": [
+        "Village10\\Village10v2"
+      ]
+    },
+    {
+      "id": "city1",
+      "display_name": "Ancient Cistern",
+      "curve_count": 1,
+      "curve_names": [
+        "city1"
+      ]
+    },
+    {
+      "id": "city2",
+      "display_name": "Blossom Grove",
+      "curve_count": 1,
+      "curve_names": [
+        "city2\\city2"
+      ]
+    },
+    {
+      "id": "city3",
+      "display_name": "Empty Cistern",
+      "curve_count": 1,
+      "curve_names": [
+        "city3\\city3-4"
+      ]
+    },
+    {
+      "id": "city4",
+      "display_name": "Ancestral Tongue",
+      "curve_count": 2,
+      "curve_names": [
+        "city4\\city4-1v2",
+        "city4\\city4-2v2"
+      ]
+    },
+    {
+      "id": "city5",
+      "display_name": "Mossy Square",
+      "curve_count": 1,
+      "curve_names": [
+        "city5\\city5"
+      ]
+    },
+    {
+      "id": "city6",
+      "display_name": "Mosaic Mayhem",
+      "curve_count": 1,
+      "curve_names": [
+        "city6\\city6"
+      ]
+    },
+    {
+      "id": "city7",
+      "display_name": "Strange Smile",
+      "curve_count": 1,
+      "curve_names": [
+        "city7\\city7-2"
+      ]
+    },
+    {
+      "id": "city9",
+      "display_name": "Ghosts of the Past",
+      "curve_count": 1,
+      "curve_names": [
+        "city9\\city9"
+      ]
+    },
+    {
+      "id": "city10",
+      "display_name": "Double Danger",
+      "curve_count": 2,
+      "curve_names": [
+        "city10\\city10-1",
+        "city10\\city10-2"
+      ]
+    },
+    {
+      "id": "Coast1",
+      "display_name": "Swamp Spin",
+      "curve_count": 1,
+      "curve_names": [
+        "coast1"
+      ]
+    },
+    {
+      "id": "Coast2",
+      "display_name": "Deadmarsh",
+      "curve_count": 1,
+      "curve_names": [
+        "coast2"
+      ]
+    },
+    {
+      "id": "Coast3",
+      "display_name": "Stagnant Ponds",
+      "curve_count": 1,
+      "curve_names": [
+        "coast3"
+      ]
+    },
+    {
+      "id": "Coast4",
+      "display_name": "Brackish Pool",
+      "curve_count": 1,
+      "curve_names": [
+        "coast4"
+      ]
+    },
+    {
+      "id": "Coast5",
+      "display_name": "Justified and Ancient",
+      "curve_count": 1,
+      "curve_names": [
+        "coast5"
+      ]
+    },
+    {
+      "id": "Coast6",
+      "display_name": "Ancient Inlay",
+      "curve_count": 1,
+      "curve_names": [
+        "coast6"
+      ]
+    },
+    {
+      "id": "Coast7",
+      "display_name": "Secret Circle",
+      "curve_count": 1,
+      "curve_names": [
+        "coast7"
+      ]
+    },
+    {
+      "id": "Coast9",
+      "display_name": "Tide Pools",
+      "curve_count": 1,
+      "curve_names": [
+        "coast9"
+      ]
+    },
+    {
+      "id": "Coast10",
+      "display_name": "Skull Coral",
+      "curve_count": 2,
+      "curve_names": [
+        "coast10-1",
+        "coast10-2"
+      ]
+    },
+    {
+      "id": "grotto1",
+      "display_name": "Coral Catch",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto1\\grotto1"
+      ]
+    },
+    {
+      "id": "grotto2",
+      "display_name": "Wave Babies",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto2\\grotto2-2"
+      ]
+    },
+    {
+      "id": "grotto3",
+      "display_name": "Submergathon",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto3\\grotto3"
+      ]
+    },
+    {
+      "id": "grotto4",
+      "display_name": "Anglers Cove",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto4\\grotto4"
+      ]
+    },
+    {
+      "id": "grotto5",
+      "display_name": "Coelacanth Cave",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto5\\grotto5"
+      ]
+    },
+    {
+      "id": "grotto6",
+      "display_name": "Ocean Floor",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto6\\grotto6"
+      ]
+    },
+    {
+      "id": "grotto7",
+      "display_name": "Smugglers Depth",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto7\\grotto7"
+      ]
+    },
+    {
+      "id": "grotto9",
+      "display_name": "The Deep",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto9\\grotto9"
+      ]
+    },
+    {
+      "id": "grotto10",
+      "display_name": "Shark Den",
+      "curve_count": 2,
+      "curve_names": [
+        "grotto10\\grotto10-1",
+        "grotto10\\grotto10-2"
+      ]
+    },
+    {
+      "id": "volcano1",
+      "display_name": "Flowing Tiki Rage",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano1\\Volcano1"
+      ]
+    },
+    {
+      "id": "volcano2",
+      "display_name": "Subterran Solaris",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano2/Volcano2-3"
+      ]
+    },
+    {
+      "id": "volcano3",
+      "display_name": "Reflection in Magma",
+      "curve_count": 1,
+      "curve_names": [
+        "volcano3\\volcano3"
+      ]
+    },
+    {
+      "id": "volcano4",
+      "display_name": "Obsidian Isle",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano4\\Volcano4"
+      ]
+    },
+    {
+      "id": "volcano5",
+      "display_name": "Underworld Remnants",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano5\\Volcano5-2"
+      ]
+    },
+    {
+      "id": "volcano6",
+      "display_name": "Thermal Vortex",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano6\\Volcano6"
+      ]
+    },
+    {
+      "id": "volcano7",
+      "display_name": "Molten Dais",
+      "curve_count": 1,
+      "curve_names": [
+        "volcano7\\volcano7-2"
+      ]
+    },
+    {
+      "id": "volcano8",
+      "display_name": "Basaltic Approach",
+      "curve_count": 1,
+      "curve_names": [
+        "volcano8\\volcano8-3"
+      ]
+    },
+    {
+      "id": "volcano9",
+      "display_name": "Searing Visage",
+      "curve_count": 2,
+      "curve_names": [
+        "volcano9\\volcano9-1",
+        "Volcano9\\Volcano9-2"
+      ]
+    },
+    {
+      "id": "volcano10",
+      "display_name": "Descent into Anguish",
+      "curve_count": 1,
+      "curve_names": [
+        "volcano10\\volcano10-4"
+      ]
+    }
+  ],
+  "candidate_inventory": {
+    "baseline": "frozen base epoch-10 model",
+    "motor_checkpoints": "all 3 rounds x all 4 per-epoch checkpoints in chronological order; final_model aliases are excluded",
+    "expected_motor_checkpoints": 12,
+    "expected_total_candidates": 13,
+    "checkpoint_inclusion_is_metric_independent": true
+  },
+  "screen": {
+    "registry": "training_validation",
+    "base_seed": 1550002800,
+    "last_seed": 1550002811,
+    "expected_levels": 12,
+    "expected_candidates": 17,
+    "expected_attempts": 204,
+    "attempts_per_level_per_model": 1,
+    "ranking": [
+      "wins_desc",
+      "cleared_levels_desc",
+      "total_score_desc",
+      "median_winning_ticks_asc",
+      "pre_frozen_candidate_order"
+    ],
+    "select_top": 5
+  },
+  "full55_gate": {
+    "registry": "training_validation",
+    "base_seed": 1550002900,
+    "last_seed": 1550002954,
+    "expected_levels": 55,
+    "maximum_candidates": 5,
+    "maximum_expected_attempts": 275,
+    "attempts_per_level_per_model": 1,
+    "minimum_wins": 35,
+    "minimum_cleared_levels": 35,
+    "baseline_is_not_promotable": true,
+    "formal_promotion_requires_separate_frozen_successor": true
+  },
+  "execution": {
+    "devices": [
+      "cuda:0",
+      "cuda:1"
+    ],
+    "parallel_envs_per_shard": 24,
+    "paired_models_share_identical_task_seeds": true,
+    "capacity_overflow_semantics": "explicit_fail_closed_loss"
+  },
+  "deadline_utc": "2026-08-17T13:00:00+00:00",
+  "implementation": {
+    "builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_motor_observable_gradual_allaim_postprocess_plan_v2.py",
+      "sha256": "sha256:225b9ac54f1c9afbd377337d2e6315b533f05bddea70ea4541556860c8a6463a"
+    },
+    "controller": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_motor_observable_gradual_allaim_postprocess_v2.py",
+      "sha256": "sha256:7115b39982c2c8fc7e5228077be6197b071878e7acd6c720845d7846ce5ca61f"
+    },
+    "evaluator": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_alphazuma_55_motor_observable.py",
+      "sha256": "sha256:ca792c154864aa5dbfc3ad19460dee2ef9ea55aedecf69ba8e7b40b50f8d4fca"
+    },
+    "auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_motor_observable_gradual_allaim_postprocess_v2.py",
+      "sha256": "sha256:c2ba4bc1c3ca28576b860a46fb20c61d863afc21d71056a15ad7b2b717f1e031"
+    },
+    "capacity_safe_evaluator_dependency": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel_v2.py",
+      "sha256": "sha256:811de7b530e6703858ae218aa9a0309724c49824d817e2f55733646ec89fd6c3"
+    },
+    "base_evaluator_dependency": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel.py",
+      "sha256": "sha256:d0011f9ad5c6837315007a7fb31e128fb315e4baddb45959c5f3b98d11a6a7e3"
+    },
+    "motor_observation_wrapper": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/observable_human_speedrun.py",
+      "sha256": "sha256:1c0326c530ed797e4426965c241298b768b6689133762055cd3f9216b74258de"
+    },
+    "v1_controller_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_motor_observable_postprocess_v1.py",
+      "sha256": "sha256:c9df46eb9e8cbe4576fce64c582a058029112248d74a0dbc81f9249408546da3"
+    },
+    "v1_auditor_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_motor_observable_postprocess_v1.py",
+      "sha256": "sha256:5519e99babb15f71fe7a65bfd64e1adee83a809bcb4340541c61e6676026d5a7"
+    },
+    "gradual_training_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_motor_observable_gradual_allaim_v1.py",
+      "sha256": "sha256:4e55d406a65be0a7ea1d0e4302b736cf1b3fb1dd48e85e4f5d04633f21cf1b3a"
+    },
+    "timeout_compatible_matrix_auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_motor_observable_timeout_recovery_v1.py",
+      "sha256": "sha256:8c5698afdf1cf0e8410512514249f7b58f83085415a4c821e09409886126e346"
+    }
+  },
+  "outputs": {
+    "output_root": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-allaim-postprocess-s99081634-v2",
+    "independent_audit_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-allaim-postprocess-s99081634-independent-audit-v2.json"
+  },
+  "authority_boundary": {
+    "classification": "engineering_training_validation_only",
+    "formal_selection_seed_consumption": false,
+    "formal_final_blind_seed_consumption": false,
+    "continuous_campaign_seed_consumption": false
+  },
+  "training_route_launch_receipt": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-allaim-s99081633-launch-receipt-v1.json",
+    "sha256": "sha256:922fe12d9784b4919e9c40d147ce047a89a0f64b2321cda5411d0418315a079a"
+  },
+  "template_lineage": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-postprocess-s99081630-plan-v1.json",
+    "sha256": "sha256:e8e8f1b7bf4c9a73e353d6c278523e005790565753d42ad293ce1c47be2cbe67"
+  },
+  "candidate_inventory_rule": {
+    "source_baseline_included": true,
+    "source_baseline_promotable": false,
+    "round_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "checkpoint_epochs": [
+      3,
+      6,
+      9,
+      12
+    ],
+    "final_model_duplicate_excluded": true,
+    "expected_candidates": 17,
+    "frozen_before_checkpoint_inference": true
+  },
+  "fresh_seed_disclosure": {
+    "classification": "unused_training_validation_ranges",
+    "screen": [
+      1550002800,
+      1550002811
+    ],
+    "full55_gate": [
+      1550002900,
+      1550002954
+    ],
+    "frozen_before_training_completion": true,
+    "formal_seed_consumption": "NONE"
+  },
+  "training_route_independent_prereg_audit": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-allaim-s99081633-independent-prereg-audit-v1.json",
+    "sha256": "sha256:61be913b30601f2e529cc8112dd18aab8b434d82a7364a794e1ff756c5d99b6d"
+  },
+  "timeout_reader_correction": {
+    "classification": "PRE_EVALUATION_READER_CONTRACT_CORRECTION",
+    "incident": "The predecessor reader rejected evaluator rows with outcome=null and time_limit_truncated=true at max_ticks.",
+    "canonical_timeout_tuple": {
+      "outcome": null,
+      "time_limit_truncated": true,
+      "ticks_equals_max_ticks": true
+    },
+    "ranking_classification": "non_win",
+    "inference_already_consumed": false,
+    "seed_ranges_changed": false,
+    "promotion_gate_changed": false,
+    "candidate_rule_changed": false,
+    "evaluation_environment_changed": false,
+    "formal_seed_consumption": "NONE"
+  }
+}

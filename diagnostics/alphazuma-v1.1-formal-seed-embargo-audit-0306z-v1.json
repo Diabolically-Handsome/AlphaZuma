@@ -1,0 +1,62 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-formal-seed-embargo-audit",
+  "version": 1,
+  "created_utc": "2026-08-14T03:06:39.0459318Z",
+  "status": "PASS",
+  "classification": "preselection_execution_boundary_audit",
+  "master_preregistration": {
+    "path": "diagnostics/alphazuma-v1.1-frontier-postprocess-s51081301-preregistration-v1.json",
+    "sha256": "sha256:3dc8a51563c763ef46b3c3415a6e4da9b5430ab3a19b586e5e0b95b98b0ffc01"
+  },
+  "frozen_matrices": {
+    "selection": {
+      "seed_base": 910000000,
+      "last_seed": 910000031,
+      "unique_seeds_per_model": 32,
+      "candidate_models": 15,
+      "required_records": 480
+    },
+    "final_blind": {
+      "seed_base": 1010000000,
+      "last_seed": 1010000271,
+      "unique_seeds_per_model": 272,
+      "paired_models": 2,
+      "required_records": 544
+    }
+  },
+  "controller_snapshot": {
+    "path": "D:\\ZumaTraining\\alphazuma-v1.1-formal-seed-embargo-audit-s63081301-v1\\controller_status.json",
+    "sha256": "sha256:ba886d392c5084e4cbb16e63fb39b94b3ec6cfdadfa5f145c743889335e40d89",
+    "bytes": 27472,
+    "status": "RUNNING",
+    "phase": "WAITING_FOR_TRAINING",
+    "error": null
+  },
+  "postprocess_output_inventory_at_2026_08_14T03_06_18Z": {
+    "root": "D:\\ZumaTraining\\alphazuma-v1.1-frontier-postprocess-s51081301-v1",
+    "file_count": 1,
+    "directory_count": 0,
+    "only_file": "controller_status.json",
+    "selection_preregistration_exists": false,
+    "selection_evaluation_directory_exists": false,
+    "final_blind_preregistration_exists": false,
+    "final_blind_evaluation_directory_exists": false,
+    "final_report_exists": false
+  },
+  "process_inventory": {
+    "controller_processes": 1,
+    "evaluator_processes": 0,
+    "summarizer_processes": 0,
+    "controller_pid": 2103
+  },
+  "conclusion": {
+    "selection_execution_started": false,
+    "final_blind_execution_started": false,
+    "formal_evaluation_artifacts_materialized": false,
+    "preselection_seed_embargo_intact": true,
+    "blind_claim_made": false
+  },
+  "training_or_evaluation_semantics_changed": false,
+  "formal_seed_consumption": "none",
+  "formal_gate_effect": "none"
+}

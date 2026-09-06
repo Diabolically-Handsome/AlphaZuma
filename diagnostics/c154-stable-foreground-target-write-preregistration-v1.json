@@ -1,0 +1,96 @@
+{
+  "schema": "zuma-rl.retail-target-write-stable-foreground-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_IMPLEMENTATION_AND_OUTPUT",
+  "created_utc": "2026-08-10T10:51:30.2939347Z",
+  "purpose": "Execute the unchanged c153 Board score-target write observation only after each navigation click target has remained continuously foreground long enough for the retail focus messages to be processed.",
+  "classification": "operational-focus-stability-correction-no-trace-threshold-change",
+  "predecessor": {
+    "c153_preregistration_sha256": "sha256:c3d867cd7808d4d7f0477b70b3c7e859ceaa1e49f1140ee60b4995ad44a2b426",
+    "c153_implementation_receipt_sha256": "sha256:3bb1fa71a70a332f1515b8e427d2cf8b5aa13b42fe54cdd1ee38e04db1d2130b",
+    "c153_failure_receipt_sha256": "sha256:2d2c8195c95e5444f851ee408dc75b0ad95457906c3ebe4d89a6c22d45657e28",
+    "c153_output_retained": true,
+    "finding": "A freshly acquired retail foreground HWND was lost before the click became effective; instantaneous equality did not provide a focus-message settle interval."
+  },
+  "frozen_focus_stability_correction": {
+    "exact_target_hwnd_required": true,
+    "continuous_foreground_seconds_before_sendinput": 0.15,
+    "poll_interval_seconds_maximum": 0.01,
+    "stability_timeout_seconds": 2.0,
+    "on_any_foreground_loss": [
+      "reset the stability timer",
+      "reacquire the exact target HWND using the already tested acquisition helper",
+      "start a new continuous 150 ms interval"
+    ],
+    "maximum_acquisition_plus_stability_seconds": 4.0,
+    "fail_before_sendinput_if_stability_unavailable": true,
+    "receipt_fields": [
+      "continuous_required_seconds",
+      "continuous_observed_seconds",
+      "foreground_loss_count",
+      "reacquisition_count",
+      "foreground_after_hex",
+      "verified"
+    ],
+    "navigation_updates_points_and_click_count_unchanged": true,
+    "additional_keyboard_inputs": 0,
+    "additional_mouse_inputs": 0,
+    "process_memory_writes": 0
+  },
+  "target_write_trace_contract_unchanged": {
+    "breakpoint_kind": "board_global_precall_and_target_write",
+    "source_call_address": "0x0065B81C",
+    "watched_address_formula": "source_board_address+0x108",
+    "watch_access": "four_byte_write_only",
+    "source_anchor_count": 1,
+    "complete_on_same_board_positive_target_different_from_source": true,
+    "maximum_target_write_events": 16,
+    "post_eip_code_window_stack_register_capture": true,
+    "maximum_simultaneous_hardware_breakpoints": 1,
+    "process_memory_writes": 0
+  },
+  "preimplementation_code": {
+    "tools/autoplay_live_zuma.py": "sha256:8cfa18256a4e699c5fe131db6e1e4b815ec4698c2150c7508ad40435884703f2",
+    "tests/test_autoplay_live_zuma.py": "sha256:5983077f4b4f747fd7595599f19f88e2ba786215a4e3bc2daa7d913209f745c0",
+    "tools/trace_popcap_gameplay_mtrand.py": "sha256:3509c1a2a07efb83e98303942bf7d7bfdda0f26f01c6f5855982e9ff061544f3",
+    "tools/record_autoplay_zuma.py": "sha256:aebee6245a460c5c270e7033532668597156907862a446ebdcbe63d2a9cc31e1"
+  },
+  "tooling_acceptance": {
+    "already_foreground_must_still_accumulate_150ms": true,
+    "single_loss_resets_timer_and_reacquires": true,
+    "multiple_losses_counted": true,
+    "continuous_interval_passes": true,
+    "timeout_fails_closed_before_input": true,
+    "focused_and_integration_tests_pass": true
+  },
+  "run": {
+    "id": "c154a1",
+    "output_root": "D:/ZumaGolden/record-c154a1-idle-natural-loss-target-write-v1-stable-foreground",
+    "output_root_absent_at_freeze": true,
+    "maximum_started_attempts": 1,
+    "runtime_executable": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "changedir": "D:/SteamLibrary/steamapps/common/Zuma's Revenge",
+    "prestate_dir": "D:/ZumaGolden/session-20260728-203153/native-windowed-record-001-prestate-reconstructed",
+    "expected_score_target": 9650,
+    "minimum_entry_score": 7000,
+    "maximum_gameplay_seconds": 180.0,
+    "expected_outcome": "natural_loss",
+    "gameplay_policy": "idle",
+    "fruit_policy": "ignore",
+    "mtrand_trace_kind": "board_global_precall_and_target_write",
+    "navigation_updates": [1622, 2422, 3108],
+    "navigation_points": [[400.0, 533.0], [633.0, 281.0], [399.0, 456.0]],
+    "prelaunch_cursor_screen_point": [100, 100],
+    "retail_process_count_at_freeze": 0,
+    "host_state_restore_required": true
+  },
+  "decision_rule": {
+    "pass": "Retain c154a1 and freeze an exact writer/call-path semantic protocol from the observed target-write event before formal source recording.",
+    "fail": "Retain c154a1 and localize the first operational or structural failure without retry-selection or threshold weakening.",
+    "c154a1_may_receive_fidelity_credit": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

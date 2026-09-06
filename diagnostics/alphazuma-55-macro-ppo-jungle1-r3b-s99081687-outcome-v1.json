@@ -1,0 +1,29 @@
+{
+ "schema": "zuma-rl.alphazuma-55-macro-ppo-run-outcome",
+ "version": 1,
+ "run_id": "macro-ppo-jungle1-r3b",
+ "preregistration": {
+  "path": "/mnt/c/Users/Laure/Documents/\u7956\u739b/diagnostics/alphazuma-55-macro-ppo-jungle1-r3b-s99081687-preregistration-v1.json",
+  "sha256": "sha256:89a52a73d27235a3a1598749c577eb4f323fbe35e119152a309c31663c5ed81c"
+ },
+ "status": "STOPPED_BY_PREREGISTERED_CLAUSE_2",
+ "decision": "FAIL",
+ "stopped_utc": "2026-08-18T14:15:12.374184+00:00",
+ "reason": "Early-stop clause 2 fired: zero new training wins across two consecutive checkpoints (0 wins / 1,881 episodes) while eval score rose (0 -> 40). Win-era checkpoint init did NOT avoid the collapse: behavioral output degraded to 1-2 shots per eval episode. Supports the value-head-shock hypothesis: the stale cap-10-calibrated value head, not the policy init, drives the dismantling; the fresh-value-head r4 design (jungle2-r4, running) is the direct test.",
+ "evidence": [
+  {
+   "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-r3b-s99081687-v1/eval-ckpt1M/completion.json",
+   "sha256": "sha256:fe0708d5e0d1af127a39ef619703c39c15ec713b1455d52695eb16122413b6fe"
+  },
+  {
+   "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-r3b-s99081687-v1/eval-ckpt2M/completion.json",
+   "sha256": "sha256:fc38b699d893a60a8abe179280c5d8389fa4b7eefec3f8b45555cf1ea442c70a"
+  },
+  {
+   "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-r3b-s99081687-v1/training_status.json",
+   "sha256": "sha256:1d4df4b7e3912e636f361d700960df5cbcef7a2946e8dc849990fdde35320976"
+  }
+ ],
+ "successor": "jungle1-r4 (BC transplant init + cap 1.0), gated on jungle2-r4 checkpoint-1 verdict",
+ "formal_seed_consumption": false
+}

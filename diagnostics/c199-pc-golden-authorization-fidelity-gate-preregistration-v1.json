@@ -1,0 +1,284 @@
+{
+  "schema": "zuma-rl.pc-golden-authorization-fidelity-gate-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_CHANGE",
+  "created_utc": "2026-08-10T16:57:06.1141347Z",
+  "id": "c199-pc-golden-authorization-fidelity-gate-v1",
+  "purpose": "Authorize the completed natural-loss, ordinary-fruit, and bomb-fruit retail evidence chains through an explicit immutable Fidelity suite revision, without changing the frozen v4 Gate requirements or verifier semantics.",
+  "baseline": {
+    "suite": {
+      "artifact": "D:/ZumaGolden/diagnostics/fidelity-suite-c133-candidate-v22.json",
+      "artifact_bytes": 24103,
+      "artifact_sha256": "sha256:fc24ae3cac9976480efac0e4fa49824bf45b56c3905ac01bc65154d29f5ab12e",
+      "policy": "original-transfer-jungle2-v4",
+      "evidence_count": 88
+    },
+    "gate_report": {
+      "artifact": "D:/ZumaGolden/diagnostics/fidelity-gate-c133-candidate-v25-report.json",
+      "artifact_bytes": 79910,
+      "artifact_sha256": "sha256:25b1c82b407bd844a0df6b7245d6f7e51db6f32ea2d630fdbda3fa5b9dd44f44",
+      "status": "CLOSED",
+      "missing_certifying_features": [
+        "fruit_collection_animation",
+        "fruit_collection_score",
+        "fruit_powerup_collision",
+        "fruit_projectile_collision",
+        "natural_loss"
+      ]
+    },
+    "live_full_suite_recheck": {
+      "status": "TIMEOUT_WITHOUT_OUTPUT",
+      "timeout_seconds": 124,
+      "mutation": false,
+      "use_as_decision_evidence": false,
+      "reason": "The complete 88-entry verifier exceeded the command timeout; the immutable prior report is the frozen baseline and the final candidate must be recomputed without a short timeout."
+    }
+  },
+  "fixed_runtime": {
+    "original_root": "D:/SteamLibrary/steamapps/common/Zuma's Revenge",
+    "evidence_root": "D:/ZumaGolden",
+    "runtime_artifact": "tools/direct-runtime/popcapgame1.exe",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20"
+  },
+  "fixed_code_before_change": {
+    "revision_builder": {
+      "artifact": "tools/build_transfer_fidelity_revision.py",
+      "artifact_bytes": 13258,
+      "artifact_sha256": "sha256:2f8b84c94bd66cd7995930c21d6b86523eb45e9830967c58d09d3ae162656ef8"
+    },
+    "fidelity_gate": {
+      "artifact": "src/zuma_rl/fidelity_gate.py",
+      "artifact_bytes": 162800,
+      "artifact_sha256": "sha256:a47d1b5f2ac4b455a6c8e40142a3006ef64509121bd4ee3c4daad38e3b8a90e1",
+      "must_not_change": true
+    },
+    "fidelity_gate_tests": {
+      "artifact": "tests/test_fidelity_gate.py",
+      "artifact_bytes": 82731,
+      "artifact_sha256": "sha256:70a8226703e2b4b0f71bc4c36252eec4fa824ee9bda3db0efc0b0ec67c7be5d3",
+      "must_not_change": true
+    },
+    "revision_builder_test": {
+      "artifact": "tests/test_build_transfer_fidelity_revision.py",
+      "absent_before_change": true
+    }
+  },
+  "fixed_evidence": {
+    "natural_loss": {
+      "source": {
+        "artifact": "sources/c158-u11200-u11830-source-bound-natural-loss-v1.json",
+        "artifact_bytes": 2020,
+        "artifact_sha256": "sha256:706b8e9d18cf8bdbed2b7d9b9adab052258638ed8955a8199e2cb578f89f23b1",
+        "verification_status": "PASS",
+        "source_fingerprint": "sha256:0feed280a4662b83a1b9072664f54b17b492495e8a81d926df43e35e00218edf",
+        "tick_count": 631
+      },
+      "mechanism_audit": {
+        "artifact": "diagnostics/pc-mechanism-c158-natural-loss-live-v1.json",
+        "artifact_bytes": 6845,
+        "artifact_sha256": "sha256:148cdcabf8ad633cfdc73bf53952888bc1e136f18a825bae6d6426949b218b26",
+        "authorized_features": ["natural_loss"],
+        "source_fingerprint_exact": true
+      },
+      "simulator_diff": {
+        "artifact": "diagnostics/jungle2-c158-u11341-u11519-natural-loss-diff-v3.json",
+        "artifact_bytes": 2752,
+        "artifact_sha256": "sha256:7c2911a81b9535e392d0b69d751ce81cdde9cb6996021af48449f77dae376269",
+        "status": "PASS",
+        "derived_authorized_features": ["natural_loss"]
+      }
+    },
+    "ordinary_fruit": {
+      "source": {
+        "artifact": "sources/c164-u5220-u5310-source-bound-fruit-collection-v1.json",
+        "artifact_bytes": 2057,
+        "artifact_sha256": "sha256:6d487216e83c5651bfaa05abb2425596b0a9dde2aeb7490fcefb198174f411d7",
+        "verification_status": "PASS",
+        "source_fingerprint": "sha256:db96fbd062d501abc869294428da6594ebfb0e257a8a39af79ff9b16907f6df5",
+        "tick_count": 91
+      },
+      "mechanism_audit": {
+        "artifact": "diagnostics/pc-mechanism-c164-fruit-collection-live-v1.json",
+        "artifact_bytes": 8817,
+        "artifact_sha256": "sha256:026ce409fcdd0c69ed044c14653dd2101d8778f4401c5099b6f9037f21ceef9c",
+        "authorized_features": [
+          "fruit_collection_animation",
+          "fruit_collection_score",
+          "fruit_projectile_collision"
+        ],
+        "source_fingerprint_exact": true
+      },
+      "simulator_diff": {
+        "artifact": "diagnostics/jungle2-c164-u5278-u5305-fruit-collection-diff-v3-reconciled-bound.json",
+        "artifact_bytes": 61551,
+        "artifact_sha256": "sha256:f676bc811dfda69e12d0f3f33290a75219936e748d8402a0fc8dd69e5ece94b0",
+        "status": "PASS",
+        "derived_authorized_features": [
+          "fruit_collection_animation",
+          "fruit_collection_score",
+          "fruit_projectile_collision"
+        ],
+        "source_feature_proof_validation_reason": null
+      }
+    },
+    "bomb_fruit": {
+      "source": {
+        "artifact": "sources/c183-u8120-u8270-source-bound-fruit-powerup-collision-v1.json",
+        "artifact_bytes": 2053,
+        "artifact_sha256": "sha256:814d71f96b2ecf587c1bc3d3215fc2cb5b85f54450ab28f23b8b41a5be0d96f6",
+        "verification_status": "PASS",
+        "source_fingerprint": "sha256:73d85b5a2d5ce714b50be47d6345f2c9265a7a8f6e455837979320003dd177a3",
+        "tick_count": 151
+      },
+      "mechanism_audit": {
+        "artifact": "diagnostics/pc-mechanism-c185-fruit-powerup-collision-live-v2.json",
+        "artifact_bytes": 9659,
+        "artifact_sha256": "sha256:7ac2bbc222761d0a52d29ada93fe93b114dfa23d418d24f8d3b8407300ff5f29",
+        "authorized_features": [
+          "fruit_collection_animation",
+          "fruit_powerup_collision",
+          "powerup_proximity_bomb"
+        ],
+        "source_fingerprint_exact": true
+      },
+      "simulator_diff": {
+        "artifact": "diagnostics/jungle2-c183-u8213-u8260-fruit-powerup-collision-diff-v6-reconciled-bound.json",
+        "artifact_bytes": 113044,
+        "artifact_sha256": "sha256:6bdab2ad7e7aed609d7b883e676d30889e2e58ffd99b07d891575890ca0279ad",
+        "status": "PASS",
+        "derived_authorized_features": [
+          "fruit_collection_animation",
+          "fruit_powerup_collision",
+          "powerup_proximity_bomb"
+        ],
+        "source_feature_proof_validation_reason": null
+      },
+      "proof_success_receipt": {
+        "artifact": "diagnostics/c198-c183-fruit-powerup-collision-mtrand-proof-derivation-binding-success-receipt-v1.json",
+        "artifact_bytes": 3468,
+        "artifact_sha256": "sha256:730cece8b2ae3ec45a1e08bde7ff496574f40b6627035bc829cfc74b47c72275"
+      }
+    }
+  },
+  "planned_registry_additions": [
+    {
+      "id": "a16-audit-c158-natural-loss",
+      "kind": "audit",
+      "path": "diagnostics/pc-mechanism-c158-natural-loss-live-v1.json",
+      "features": ["pc_mechanism_coverage"]
+    },
+    {
+      "id": "a17-audit-c164-fruit-collection",
+      "kind": "audit",
+      "path": "diagnostics/pc-mechanism-c164-fruit-collection-live-v1.json",
+      "features": ["pc_mechanism_coverage"]
+    },
+    {
+      "id": "a18-audit-c185-fruit-powerup-collision",
+      "kind": "audit",
+      "path": "diagnostics/pc-mechanism-c185-fruit-powerup-collision-live-v2.json",
+      "features": ["pc_mechanism_coverage"]
+    },
+    {
+      "id": "p8-pc-source-c158-natural-loss",
+      "kind": "pc_source",
+      "path": "sources/c158-u11200-u11830-source-bound-natural-loss-v1.json",
+      "features": ["natural_loss", "source_authenticity"]
+    },
+    {
+      "id": "p9-pc-source-c164-fruit-collection",
+      "kind": "pc_source",
+      "path": "sources/c164-u5220-u5310-source-bound-fruit-collection-v1.json",
+      "features": [
+        "fruit_collection_animation",
+        "fruit_collection_score",
+        "fruit_projectile_collision",
+        "source_authenticity"
+      ]
+    },
+    {
+      "id": "p10-pc-source-c183-fruit-powerup-collision",
+      "kind": "pc_source",
+      "path": "sources/c183-u8120-u8270-source-bound-fruit-powerup-collision-v1.json",
+      "features": [
+        "fruit_collection_animation",
+        "fruit_powerup_collision",
+        "powerup_proximity_bomb",
+        "source_authenticity"
+      ]
+    },
+    {
+      "id": "q12-sim-c158-natural-loss",
+      "kind": "simulator_diff",
+      "path": "diagnostics/jungle2-c158-u11341-u11519-natural-loss-diff-v3.json",
+      "features": ["natural_loss"]
+    },
+    {
+      "id": "q13-sim-c164-fruit-collection",
+      "kind": "simulator_diff",
+      "path": "diagnostics/jungle2-c164-u5278-u5305-fruit-collection-diff-v3-reconciled-bound.json",
+      "features": [
+        "fruit_collection_animation",
+        "fruit_collection_score",
+        "fruit_projectile_collision"
+      ]
+    },
+    {
+      "id": "q14-sim-c183-fruit-powerup-collision",
+      "kind": "simulator_diff",
+      "path": "diagnostics/jungle2-c183-u8213-u8260-fruit-powerup-collision-diff-v6-reconciled-bound.json",
+      "features": [
+        "fruit_collection_animation",
+        "fruit_powerup_collision",
+        "powerup_proximity_bomb"
+      ]
+    }
+  ],
+  "allowed_changes": {
+    "modify": ["tools/build_transfer_fidelity_revision.py"],
+    "create": [
+      "tests/test_build_transfer_fidelity_revision.py",
+      "D:/ZumaGolden/diagnostics/fidelity-suite-c199-candidate-v23.json",
+      "D:/ZumaGolden/diagnostics/fidelity-gate-c199-candidate-v26-report.json",
+      "diagnostics/c199-pc-golden-authorization-fidelity-gate-success-receipt-v1.json",
+      "diagnostics/c199-pc-golden-authorization-fidelity-gate-failure-receipt-v1.json"
+    ],
+    "forbidden": [
+      "changing src/zuma_rl/fidelity_gate.py",
+      "changing original-transfer-jungle2-v4 requirements",
+      "modifying any fixed evidence artifact",
+      "training",
+      "reclassifying failed or contaminated traces"
+    ]
+  },
+  "outputs": {
+    "candidate_suite": "D:/ZumaGolden/diagnostics/fidelity-suite-c199-candidate-v23.json",
+    "candidate_suite_absent_at_freeze": true,
+    "expected_evidence_count": 97,
+    "gate_report": "D:/ZumaGolden/diagnostics/fidelity-gate-c199-candidate-v26-report.json",
+    "gate_report_absent_at_freeze": true
+  },
+  "acceptance": {
+    "registry_matches_all_nine_planned_entries_exactly": true,
+    "all_registry_features_unique_and_sorted": true,
+    "targeted_revision_builder_tests_pass": true,
+    "full_test_suite_passes": true,
+    "fidelity_gate_code_hash_unchanged": true,
+    "all_fixed_evidence_hashes_unchanged": true,
+    "candidate_policy": "original-transfer-jungle2-v4",
+    "candidate_evidence_count": 97,
+    "candidate_suite_content_addressed": true,
+    "live_gate_status": "OPEN",
+    "live_gate_reasons": [],
+    "all_requirements_pass": true,
+    "unsupported_feature_claim_count": 0,
+    "rejected_evidence_count": 0,
+    "missing_certifying_feature_count": 0,
+    "training_gate_change": false,
+    "training_start": false
+  },
+  "decision_rule": {
+    "pass": "Create the immutable c199 success receipt and then separately preregister the Training Gate binding to this exact OPEN Fidelity suite and report.",
+    "fail": "Retain the candidate and failure report, grant no Fidelity or training authorization, diagnose the exact failed invariant, and preregister any change before retrying."
+  }
+}

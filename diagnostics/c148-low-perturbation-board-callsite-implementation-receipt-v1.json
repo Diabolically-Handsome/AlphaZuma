@@ -1,0 +1,50 @@
+{
+  "schema": "zuma-rl.pc-low-perturbation-board-callsite-implementation-receipt",
+  "version": 1,
+  "status": "PASS_BEFORE_DIAGNOSTIC_OUTPUT",
+  "created_utc": "2026-08-10T09:54:26.4004971Z",
+  "preregistration_sha256": "sha256:131e5dbbb574024f1856eea2df777042f209008f5099190c715eaba9e893cf9a",
+  "implementation": {
+    "trace_popcap_gameplay_mtrand": {
+      "path": "tools/trace_popcap_gameplay_mtrand.py",
+      "bytes": 49518,
+      "sha256": "sha256:20dff67af2a47e25b0e5cf8ffc4f6a00a9a2a64aafaac4099f6ecee03f338394"
+    },
+    "record_autoplay_zuma": {
+      "path": "tools/record_autoplay_zuma.py",
+      "bytes": 54146,
+      "sha256": "sha256:0b6fe561ff07e97d532e32fa6e9393807ac24256a8fd0d614a0de1f52215fd8e"
+    },
+    "test_record_autoplay_zuma": {
+      "path": "tests/test_record_autoplay_zuma.py",
+      "bytes": 7979,
+      "sha256": "sha256:7e8e78f997f01498fb7220a21aa24791adc2d9db577df333e4e7f5993523f0df"
+    }
+  },
+  "implemented_contract": {
+    "breakpoint_kind": "board_global_precall",
+    "hardware_breakpoint_address": 6666268,
+    "semantic_caller": 6666273,
+    "expected_instruction_hex": "e86fbcfbff",
+    "global_wrapper_address": 6386832,
+    "main_thread_only": true,
+    "automatic_stop_reason": "source_board_anchor",
+    "maximum_call_guard": 64,
+    "candidate_requires_live_positive_below_target_board": true,
+    "source_candidate_count_required": 1,
+    "process_memory_writes_required": 0,
+    "process_memory_mutation_required": false,
+    "derived_monitor_row_count": 1,
+    "derived_monitor_state_source": "exact callsite pre-state digest and index",
+    "polling_or_rewind_inference": false,
+    "legacy_modes_changed": false
+  },
+  "verification": {
+    "py_compile": "PASS",
+    "pytest_command": ".venv-win/Scripts/python.exe -m pytest tests/test_record_autoplay_zuma.py tests/test_trace_popcap_global_rng_calls.py tests/test_popcap_global_mtrand_restore.py tests/test_popcap_thread_crt_restore.py -q",
+    "pytest_result": "PASS_40",
+    "diagnostic_output_root_absent": true,
+    "residual_retail_process_count": 0
+  },
+  "diagnostic_command": ".\\.venv-win\\Scripts\\python.exe tools\\record_autoplay_zuma.py --output-root D:\\ZumaGolden\\record-c148a1-idle-natural-loss-board-callsite-v1 --runtime-executable D:\\ZumaGolden\\tools\\direct-runtime\\popcapgame1.exe --changedir \"D:\\SteamLibrary\\steamapps\\common\\Zuma's Revenge\" --prestate-dir D:\\ZumaGolden\\session-20260728-203153\\native-windowed-record-001-prestate-reconstructed --expected-score-target 9650 --minimum-entry-score 7000 --maximum-gameplay-seconds 180 --expected-outcome natural_loss --gameplay-policy idle --fruit-policy ignore --gameplay-mtrand-trace --mtrand-trace-kind board_global_precall --title-start-update 1622 --adventure-update 2422 --continue-game-update 3108 --title-start-point 400 533 --adventure-point 633 281 --continue-game-point 399 456 --prelaunch-cursor-screen-point 100 100"
+}

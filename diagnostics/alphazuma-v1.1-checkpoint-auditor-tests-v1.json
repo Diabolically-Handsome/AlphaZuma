@@ -1,0 +1,29 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-checkpoint-auditor-test-receipt",
+  "version": 1,
+  "created_utc": "2026-08-14T00:56:41.0513936Z",
+  "status": "PASS",
+  "classification": "infrastructure_validation_only",
+  "auditor": {
+    "path": "tools/audit_alphazuma_v11_checkpoints.py",
+    "sha256": "sha256:f690cf732d147c8bc5ad777261ea9a016a4babcc8895fc9861443e5be2a800d4"
+  },
+  "tests": {
+    "path": "tests/test_audit_alphazuma_v11_checkpoints.py",
+    "sha256": "sha256:247509b0648c32d445669e3f5fd0ab9a788710913195b51c2cd519a63e3c064f",
+    "command": "TMPDIR=/tmp TEMP=/tmp PYTHONPATH=src:. .venv/bin/python -m pytest -q tests/test_audit_alphazuma_v11_checkpoints.py",
+    "passed": 3,
+    "failed": 0,
+    "coverage": [
+      "strict checkpoint timestep parsing",
+      "latest stable checkpoint selection",
+      "rejection when no stable checkpoint exists"
+    ]
+  },
+  "static_checks": {
+    "auditor_ast_parse": "PASS",
+    "test_ast_parse": "PASS",
+    "cli_help": "PASS"
+  },
+  "formal_gate_effect": "none"
+}

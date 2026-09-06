@@ -1,0 +1,85 @@
+{
+  "schema": "zuma-rl.teacher-policy-anchor-kat-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T14:24:56.382Z",
+  "status": "TEACHER_POLICY_ANCHOR_KAT_PASS",
+  "scope": "infrastructure_and_coefficient_calibration_not_recipe_evidence",
+  "checks": {
+    "cuda_device": "NVIDIA GeForce RTX 5090",
+    "cpu_affinity": "0-7",
+    "optimizer_reset_status": "PASS",
+    "initial_teacher_policy_bitwise_equal_to_current": true,
+    "teacher_requires_grad_all_false": true,
+    "teacher_optimizer_membership": false,
+    "teacher_bitwise_unchanged_after_training": true,
+    "current_policy_bitwise_changed": true,
+    "teacher_detached_before_model_save": true,
+    "standard_maskable_ppo_reload": "PASS",
+    "completion_receipts": "PASS_4_OF_4",
+    "failure_receipts_present": false,
+    "stderr_bytes_each_run": 0,
+    "wsl_targeted_pytest": "PASS_53",
+    "wsl_full_pytest": "PASS_1134"
+  },
+  "calibration": {
+    "coefficient_1_512_steps": {
+      "run_dir": "D:/ZumaTraining/infrastructure-teacher-anchor-c1-s20260874-v1",
+      "train_calls": 1,
+      "minibatches": 4,
+      "samples": 512,
+      "mean_forward_kl": 0.000012412915736503827,
+      "max_sample_forward_kl": 0.00011196197010576725,
+      "verification_sha256": "sha256:9f6fe682dde87c5e4d96432240471dd08df3a9f2289c286b2ff71bf0c09a976d"
+    },
+    "coefficient_10_512_steps": {
+      "run_dir": "D:/ZumaTraining/infrastructure-teacher-anchor-c10-s20260874-v1",
+      "train_calls": 1,
+      "minibatches": 4,
+      "samples": 512,
+      "mean_forward_kl": 0.000011969088006380524,
+      "max_sample_forward_kl": 0.00010964600369334221,
+      "verification_sha256": "sha256:7ba37f87b63a8f70a53452f9da97d07a764d70f411139059efe4465ff411167a"
+    },
+    "coefficient_10_4096_steps": {
+      "run_dir": "D:/ZumaTraining/infrastructure-teacher-anchor-c10-4k-s20260874-v1",
+      "train_calls": 2,
+      "minibatches": 8,
+      "samples": 4096,
+      "mean_forward_kl": 0.000025945633751689456,
+      "max_sample_forward_kl": 0.0002517674583941698,
+      "verification_sha256": "sha256:9650e455754bedae6489892a5ba0ca48faeb696709c146d754fb68598c56e29b"
+    },
+    "coefficient_100_4096_steps": {
+      "run_dir": "D:/ZumaTraining/infrastructure-teacher-anchor-c100-4k-s20260874-v1",
+      "train_calls": 2,
+      "minibatches": 8,
+      "samples": 4096,
+      "mean_forward_kl": 0.000006660449969331239,
+      "max_sample_forward_kl": 0.00008237455040216446,
+      "mean_kl_reduction_vs_coefficient_10": 0.7432862511012655,
+      "verification_sha256": "sha256:c8cecdee739bedf42ec7e4fe0f9eb6df146e35768aecf0499f7284b00e4d8687"
+    },
+    "selected_coefficient": 100.0,
+    "selection_reason": "the representative two-update run showed a clear 74.3 percent KL reduction while the current policy still changed bitwise"
+  },
+  "selected_run_artifacts": {
+    "config_sha256": "sha256:d1195ca36f1162918b135ef1dca720cac63dd9e47743f10000afef145fc1b3d5",
+    "completion_sha256": "sha256:aca3ddcf806413933fd039b948d9931c9078e414ca212194e04daec31a7b857e",
+    "installation_sha256": "sha256:5746393f8b673d23f72252a7dac9d759b07cf208773519061e1080a2b7695f96",
+    "verification_sha256": "sha256:c8cecdee739bedf42ec7e4fe0f9eb6df146e35768aecf0499f7284b00e4d8687",
+    "final_model_sha256": "sha256:6f52bca6e4e96f59054220fe975511598a0e097be766b1ab756747bf0c86751e"
+  },
+  "source_hashes": {
+    "train.py": "sha256:94d14cb9cf5da4e46989cab00ef501d0852bc8e08488d1e7fd955bd7185f0f84",
+    "teacher_anchor.py": "sha256:52611e4833422f81a148281dad8982d1d0908410f4c52842bd11f15c58d5a601",
+    "boundary_evidence.py": "sha256:27c1a103c53d57e0f3983714fce58ca144ab927a84dfd3770c4273c2590826f6",
+    "test_train_gate.py": "sha256:7a3ed78d243b3d05e4041b036f7e0e68f415e547b14f0e43fe3f62da885383dc"
+  },
+  "non_authorizations": [
+    "recipe_promotion",
+    "98304_step_scale_screen",
+    "large_scale_training",
+    "fidelity_gate_opening",
+    "original_transfer_certification"
+  ]
+}

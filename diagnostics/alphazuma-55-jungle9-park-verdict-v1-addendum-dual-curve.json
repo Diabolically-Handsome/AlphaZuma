@@ -1,0 +1,13 @@
+{
+  "schema": "alphazuma-55-verdict-addendum",
+  "version": 1,
+  "amends": {
+    "path": "diagnostics/alphazuma-55-jungle9-park-verdict-v1.json",
+    "sha256": "sha256:5e0da7d4fbbf2ebc0a5765f8b8cb322bdc7ffc162e5d299226b096c4c075f097"
+  },
+  "field": "diagnosis",
+  "written_utc": "2026-08-22T18:38:19Z",
+  "finding": "STRUCTURAL ROOT CAUSE IDENTIFIED: Jungle9 (Creeper Copse) is the jungle zone's ONLY dual-curve level (catalog curve_count 2: Jungle9-1 + Jungle9-2). Every symptom follows: teacher mean 6821 ticks (1.6-2.2x the single-curve levels - two chains to clear), ~434 decisions/ep, and the active-loss pattern (fights well on one chain while the other creeps in) is an ATTENTION-ALLOCATION failure. The crisis space is the PRODUCT of two chain states, so corridor data covers it linearly while it grows quadratically - explaining the slow (+23%/round) imitation convergence. The teacher is curve-aware by construction; the student must learn dual-chain scheduling from data. Distinct from the hop-blocked dual-POSITION levels: Jungle9 is macro-reachable (teacher wins without hop).",
+  "reopened": "beta round 2 launched at user request (driver = the best-surviving beta BC, poison r1 excluded, per-merge weight recomputation), collector s99081762, seeds 1555000000+",
+  "formal_seed_consumption": false
+}

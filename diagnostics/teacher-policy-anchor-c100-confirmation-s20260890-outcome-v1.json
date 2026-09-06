@@ -1,0 +1,84 @@
+{
+  "schema": "zuma-rl.teacher-policy-anchor-confirmation-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T14:48:28.044Z",
+  "status": "FRESH_CONFIRMATION_INVALID_PRECONDITION_FAIL",
+  "classification": "fresh_nonoverlapping_vector_seed_anchored_recipe_confirmation",
+  "preregistration": {
+    "path": "diagnostics/teacher-policy-anchor-c100-confirmation-s20260890-preregistration-v1.json",
+    "sha256": "sha256:26881b0e21f47cbbb9db20a1278e3326777174b26fe9e578c14198db6eb4e561"
+  },
+  "run": {
+    "path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260890-v1",
+    "training_base_seed": 20260890,
+    "boundary_base_seed": 20270890,
+    "stochastic_action_sampling_seed": 20280890,
+    "effective_steps": 16384,
+    "process_exit_expected": 0,
+    "stderr_bytes": 0
+  },
+  "pipeline": {
+    "status": "PASS",
+    "completion_status": "COMPLETE",
+    "optimizer_reset_status": "PASS",
+    "teacher_anchor_installation_status": "INSTALLED",
+    "teacher_anchor_verification_status": "PASS",
+    "teacher_policy_bitwise_unchanged": true,
+    "teacher_requires_grad_all_false": true,
+    "current_policy_bitwise_changed": true,
+    "teacher_detached_before_model_save": true,
+    "teacher_anchor_train_calls": 8,
+    "teacher_anchor_minibatches": 32,
+    "teacher_anchor_samples": 16384,
+    "teacher_anchor_mean_forward_kl": 0.000006693606096064286,
+    "teacher_anchor_max_sample_forward_kl": 0.00021377834491431713,
+    "all_four_boundary_receipts_present": true,
+    "both_identity_comparisons_present": true
+  },
+  "precondition": {
+    "status": "FAIL",
+    "required_pretrain_deterministic_wins_at_least": 6,
+    "observed_pretrain_deterministic_wins": 5,
+    "episodes": 8,
+    "reason": "the independently seeded initial teacher produced only five deterministic wins, so the frozen strong-teacher confirmation population was not established"
+  },
+  "retention_observations_non_authoritative": {
+    "reason": "reported for mechanism diagnosis only; the failed preregistered precondition forbids promotion even though the retention checks themselves pass",
+    "deterministic": {
+      "pretrain": {"wins": 5, "losses": 1, "truncations": 2, "mean_reward": 29.26635},
+      "posttrain": {"wins": 5, "losses": 1, "truncations": 2, "mean_reward": 29.26635},
+      "mean_reward_delta": 0.0,
+      "paired_reward_regressions_exceeding_5": 0,
+      "trajectory_level_identity": "all_eight_rewards_lengths_and_terminal_outcomes_identical"
+    },
+    "stochastic": {
+      "pretrain": {"wins": 8, "losses": 0, "truncations": 0, "mean_reward": 32.826925},
+      "posttrain": {"wins": 8, "losses": 0, "truncations": 0, "mean_reward": 33.91255},
+      "mean_reward_delta": 1.085625,
+      "paired_reward_regressions_exceeding_5": 0
+    }
+  },
+  "decision": {
+    "promotion_authorized": false,
+    "reserved_20260894_scale_screen_authorized": false,
+    "large_scale_training_authorized": false,
+    "interpretation": "the anchor mechanism remains supported, but this eight-episode fresh block cannot certify it because the initial teacher missed the frozen baseline-strength precondition",
+    "next_action": "replace the underpowered conditional eight-episode confirmation with one independently frozen larger paired boundary design; do not select a new block based on observed teacher wins"
+  },
+  "artifacts": {
+    "config": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260890-v1/config.json", "sha256": "sha256:44585d895e22a4dfa2e8aea8474a9c606d37ecf85bc59607476d7ce8c51c6578"},
+    "completion": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260890-v1/completion.json", "sha256": "sha256:4ccf5b88cfa307c8a899362443cd50db586d7a315ab4cd0c8d7f74ec84c1ef25"},
+    "optimizer_state_reset": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260890-v1/optimizer_state_reset.json", "sha256": "sha256:eaca6a6bc3fee4d8ce4a5a4877b38a823b2d2d90ae9c87fb14cd54d9bca4219d"},
+    "teacher_policy_anchor": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260890-v1/teacher_policy_anchor.json", "sha256": "sha256:5746393f8b673d23f72252a7dac9d759b07cf208773519061e1080a2b7695f96"},
+    "teacher_policy_anchor_verification": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260890-v1/teacher_policy_anchor_verification.json", "sha256": "sha256:2b8cf34f0a1fc939dc8e186e127a0f1198c267009ed7b47cc37da336c6a60f8f"},
+    "deterministic_pretrain": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260890-v1/pretrain_evaluation.json", "sha256": "sha256:08f232795d0d159a63c4c3e784f9e8a90c1c5f8eff9541de5c506a8c2a6183f2"},
+    "deterministic_posttrain": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260890-v1/posttrain_evaluation.json", "sha256": "sha256:94cdaecfc41845e850ec3c3042333c3c6731aff7569d863cacd12679bc469d60"},
+    "stochastic_pretrain": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260890-v1/pretrain_evaluation_stochastic.json", "sha256": "sha256:c0c44a452a2fe43ba4faa5dca86e06a3d7b014e231433fda1a37969ef0a67d21"},
+    "stochastic_posttrain": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260890-v1/posttrain_evaluation_stochastic.json", "sha256": "sha256:54996c4feb73a30171e9519ea2115890df4bb0c277331b4f9df57bcab7165ae1"},
+    "deterministic_comparison": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260890-v1/deterministic_comparison.json", "sha256": "sha256:2bed236211e6eafa2053224228e6542ea43ec54bd9394bb7354c5d9511fbeb4a"},
+    "stochastic_comparison": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260890-v1/stochastic_comparison.json", "sha256": "sha256:7e194b60e914d88ad7f34195e3396abd82a1dcb042413ba43072a26face913d4"},
+    "final_model": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260890-v1/final_model.zip", "sha256": "sha256:3bb9bbc892554ac6079c2b3170899db5e3a4e2d0635424858b8e9df21e8440c5"},
+    "stdout": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260890-v1.stdout.log", "sha256": "sha256:1a1a99f8543c84a743a1d31912439e4245b01a108d90ece54b7f0246d49daeb0"},
+    "stderr": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260890-v1.stderr.log", "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"}
+  }
+}

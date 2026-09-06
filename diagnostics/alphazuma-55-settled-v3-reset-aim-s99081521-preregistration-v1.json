@@ -1,0 +1,218 @@
+{
+  "schema": "zuma-rl.alphazuma-55-settled-v3-distillation-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_TRAINING",
+  "created_utc": "2026-08-15T10:17:55.376927+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "objective": "Remove the inherited confidently-wrong aim prior while retaining the feature extractor and verb head, then clone the same 55/55 V3 teacher.",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "trainer": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_settled_v3_reset_aim.py",
+    "sha256": "sha256:448965090c00d051267dd76bc1ebbf2dc5c92ce322f8e9d500e60d270307009f"
+  },
+  "implementation": {
+    "legacy_distillation_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55.py",
+      "sha256": "sha256:13ac1883fc9dc9541193dbca0da3b94fa91c7476e07873d22bec51a7a330b38a"
+    },
+    "behavior_clone_batch_primitive": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/pretrain_maskable_ppo_teacher.py",
+      "sha256": "sha256:a8d271e3b70198cd324f8e9bd41f59f50c1874451400cf188156c146187e59c9"
+    },
+    "settled_teacher_v3": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_settled_strategic_teacher_v3.py",
+      "sha256": "sha256:32181d24b6dee736f18afb588ce5baea32d96ac055da06be621c2a36f45369a3"
+    },
+    "settled_teacher_v1": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_settled_strategic_teacher.py",
+      "sha256": "sha256:1af7b00963df88a953fb8ae517efc422f8a1193677c62bf2dea6430997ae4fae"
+    },
+    "strategic_teacher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_strategic_teacher.py",
+      "sha256": "sha256:d342e7185638d9cf4771b19efad2ae93362d092ebce9b5208fd156bb66e64746"
+    },
+    "geometric_teacher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_teacher.py",
+      "sha256": "sha256:ce31abd1b422770d1c34f55226c550a5a19570fd6a994ab330769eb758cf5089"
+    },
+    "exact_mask_evaluator": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_alphazuma_55_masked_teacher_v3.py",
+      "sha256": "sha256:7c067196aac0896c0aa576ab50ffa82405e708460056d7172ff89162fc71c099"
+    },
+    "environment": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_env.py",
+      "sha256": "sha256:d95407a7127ecc4e580aef041426d012edf5ea8dfa2fa8c4405c398445b1132e"
+    },
+    "core": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_core.py",
+      "sha256": "sha256:7718ae186c173127ac82e488413857dc6c82d2e41c1dfb5e94ca553a1a3abff6"
+    },
+    "features": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_features.py",
+      "sha256": "sha256:d878d7ec034bfe1d0b9c8f16bf2fcc787a05de5ac404eb4f1685c4f5a46646a0"
+    },
+    "scope": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/alphazuma_55.py",
+      "sha256": "sha256:ba316c4537fd62d4c34cfc1c40d722d5d9b5f38ba954e691acea83ab51837649"
+    },
+    "base_settled_v3_distiller": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_settled_v3.py",
+      "sha256": "sha256:42e8c5274b4674c60b17d80470cbf29d5f4f09adc079f128f587f0e085f0a1be"
+    },
+    "variant_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_settled_v3_reset_aim.py",
+      "sha256": "sha256:d23451a990e3d6ef5e36f0365e50d9db78e22b51974b2b77957218ce757c3370"
+    },
+    "prior_high_fidelity_completion": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-high-fidelity-s99081519-v1/completion.json",
+      "sha256": "sha256:2777dd559726b1656999b15227b39bb036db8bb030c05e22c969ad337e394687"
+    }
+  },
+  "teacher_evidence": {
+    "unmasked_fresh_55": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/settled-teacher-v3-fresh-probe-s99081514-v1/result.json",
+      "sha256": "sha256:4ddefd33fcaa753fd9fa9d288fc95271a889416e1b7ea984f176e8daa0ef622c"
+    },
+    "exact_mask_fresh_55": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/masked-teacher-v3-fresh-probe-s99081516-v1/result.json",
+      "sha256": "sha256:415aa45c46e3021f8edb9d6b3c061954226aa497b14996a86d006fa86c30f9ec"
+    },
+    "classification": "engineering_only_not_formal_blind"
+  },
+  "source_migration_receipt": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1-migration.json",
+    "sha256": "sha256:87b2c6fe7b15f7e356332fea0393cdce19db6564453969a83e50fee198b99ed7"
+  },
+  "student_source_model": {
+    "id": "v11-full55-v1",
+    "training_steps": 33772736,
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1.zip",
+    "sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d"
+  },
+  "levels": [
+    "Jungle1",
+    "Jungle2",
+    "Jungle3",
+    "Jungle4",
+    "jungle6",
+    "Jungle7",
+    "Jungle8",
+    "Jungle9",
+    "Jungle10",
+    "village1",
+    "village2",
+    "village3",
+    "village4",
+    "village5",
+    "village6",
+    "village7",
+    "village8",
+    "village10",
+    "city1",
+    "city2",
+    "city3",
+    "city4",
+    "city5",
+    "city6",
+    "city7",
+    "city9",
+    "city10",
+    "Coast1",
+    "Coast2",
+    "Coast3",
+    "Coast4",
+    "Coast5",
+    "Coast6",
+    "Coast7",
+    "Coast9",
+    "Coast10",
+    "grotto1",
+    "grotto2",
+    "grotto3",
+    "grotto4",
+    "grotto5",
+    "grotto6",
+    "grotto7",
+    "grotto9",
+    "grotto10",
+    "volcano1",
+    "volcano2",
+    "volcano3",
+    "volcano4",
+    "volcano5",
+    "volcano6",
+    "volcano7",
+    "volcano8",
+    "volcano9",
+    "volcano10"
+  ],
+  "run": {
+    "id": "alphazuma55-settled-v3-reset-aim-5090",
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-reset-aim-s99081521-v1",
+    "device": "cuda:0",
+    "model_seed": 991521,
+    "training_seed_base": 1542000200,
+    "training_seed_last_consumed": 1542000254,
+    "rounds": 1,
+    "parallel_envs": 24,
+    "max_ticks": 30000,
+    "reservoir_capacity_by_verb": {
+      "wait": 256,
+      "fire": 256,
+      "swap": 192,
+      "hop": 192
+    },
+    "sample_stride_by_verb": {
+      "wait": 4,
+      "fire": 1,
+      "swap": 1,
+      "hop": 1
+    },
+    "target_batch_fraction_by_verb": {
+      "wait": 0.7,
+      "fire": 0.22,
+      "swap": 0.07,
+      "hop": 0.01
+    },
+    "batch_size": 512,
+    "epochs_per_round": 24,
+    "checkpoint_interval_epochs": 4,
+    "learning_rate": 3e-05,
+    "verb_loss_weight": 1.0,
+    "max_grad_norm": 1.0,
+    "aim_loss_scope": "all_actions",
+    "aim_loss_mode": "circular_smoothed",
+    "aim_smoothing_sigma": 1.5,
+    "aim_distance_weight": 0.5,
+    "teacher_execution_probability": 1.0,
+    "exact_action_masks_before_every_decision": true,
+    "masked_verb_fallback": "wait_with_teacher_aim",
+    "verb_balanced_optimization": true,
+    "final_runtime_teacher_calls_forbidden": true,
+    "aim_head_reset": {
+      "enabled": true,
+      "rows": "aim_component_only",
+      "weight": "zero",
+      "bias": "zero",
+      "verb_head_unchanged": true,
+      "feature_extractor_unchanged_before_training": true
+    }
+  },
+  "authority_boundary": {
+    "classification": "engineering_training_only",
+    "formal_selection_seed_consumption": false,
+    "formal_final_blind_seed_consumption": false,
+    "continuous_campaign_seed_consumption": false,
+    "formal_candidate_registration_authorized": false
+  },
+  "development_disclosure": {
+    "selection_conditioned_on_prior_training_metrics": true,
+    "prior_epoch": 24,
+    "prior_mean_loss": 9.832658863067627,
+    "prior_mean_aim_within_one_accuracy": 0.1223828125,
+    "formal_evidence": false
+  }
+}

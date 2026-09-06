@@ -1,0 +1,85 @@
+{
+  "schema": "zuma-rl.alphazuma-55-evaluation-capacity-remediation-preregistration",
+  "version": 1,
+  "status": "FROZEN_DURING_RECOVERY_BEFORE_RECOVERY_RESULT",
+  "created_utc": "2026-08-15T06:59:34.4780329Z",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "question": "Can exact actor-observation capacity overflow be recorded fail-closed per policy/seed attempt while preserving the 768-ball actor interface, sibling attempts, all rankings, all gates, and every formal seed matrix?",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "trigger_incident": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-horizon-probe-s99081501-incident-v1.json",
+    "sha256": "sha256:f4724400052048a9658cb3fd04a2186cd969ecf1a1496f66697477aa031f1702"
+  },
+  "frozen_implementation": {
+    "evaluator": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel_v2.py",
+      "sha256": "sha256:811de7b530e6703858ae218aa9a0309724c49824d817e2f55733646ec89fd6c3"
+    },
+    "postprocess_controller": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_postprocess_parallel_v3.py",
+      "sha256": "sha256:dfc243c145eb4a0c5b06f231c5bf9244ec29768800a171ab752eb8a8600f0ff8"
+    },
+    "postprocess_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_postprocess_parallel_v3.py",
+      "sha256": "sha256:d7558403946d49fd3ca9fe7941797a7f532cd2214a22ede2ccf757e09e4c8fdc"
+    },
+    "tests": [
+      {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/tests/test_evaluate_zero_shot_multilevel_v2.py",
+        "sha256": "sha256:15b2aa78cbbfd73a24ce8fa9b356f09f6fcda03fe30be6501b6a01bfb07a99d1"
+      },
+      {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/tests/test_run_alphazuma_55_postprocess_parallel_v3.py",
+        "sha256": "sha256:319a8ee4f33edb64e04b6c8036d69307936a7ea436ebf8b6bb8963077c72ed2d"
+      },
+      {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/tests/test_build_alphazuma_55_postprocess_parallel_v3.py",
+        "sha256": "sha256:2f8f46b8357b850d5c5dd3f9f9e6e884d36504cfb74902c7ddf950f9ecafe898"
+      }
+    ],
+    "unit_test_result_before_freeze": "7 passed"
+  },
+  "integration_recovery": {
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-horizon-probe-recovery-s99081502-preregistration-v1.json",
+      "sha256": "sha256:e1877c86366f58f4a9852ad67d4f98bd7693ba888b59fcea6684b16d3b328d4f"
+    },
+    "output_root": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/horizon-probe-recovery-s99081502-v1",
+    "seed_reuse": [1400400000, 1400400016],
+    "seed_classification": "already_consumed_engineering_recovery",
+    "required_before_promotion": [
+      "shard status COMPLETE with no shard error",
+      "all 17 preregistered attempts and seeds are present exactly once",
+      "at least one exact observation-capacity overflow is retained as outcome loss and not truncation",
+      "all sibling attempts complete despite an overflow",
+      "every non-capacity exception remains fatal in unit tests",
+      "no selection, final-blind, or continuous seed has been consumed"
+    ]
+  },
+  "unchanged_semantics": {
+    "actor_observation_shape": [22833],
+    "max_balls": 768,
+    "silent_ball_truncation": false,
+    "training_recipes": "unchanged",
+    "candidate_rules": "unchanged",
+    "capability_ranking": "unchanged",
+    "speed_ranking": "unchanged",
+    "success_gates": "unchanged",
+    "selection_seed_range": [1600000000, 1600000219],
+    "final_blind_seed_range": [1700000000, 1700000439],
+    "continuous_seed_range": [1800000000, 1800000219]
+  },
+  "promotion_decision": {
+    "if_all_requirements_pass": "supersede only the still-waiting postprocess deployment with a V3 controller/V2 evaluator contract before any formal seed is consumed",
+    "if_any_requirement_fails": "do not deploy this remediation; preserve outputs and diagnose without consuming formal seeds"
+  },
+  "authority_boundary": {
+    "formal_seed_consumption_before_freeze": false,
+    "may_not_edit_bound_files_after_freeze": true,
+    "may_not_resize_existing_model_observation_space": true,
+    "may_not_change_training_or_selection_semantics": true
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "schema": "zuma-rl.pc-front-insertion-render-settled-preregistration",
+  "version": 1,
+  "id": "c70-front-insertion-u3664-u3684-render-settled-holdout",
+  "created_utc": "2026-08-03T18:15:24Z",
+  "status": "FROZEN_BEFORE_PREPARE_AND_COLLECTION",
+  "classification": "fresh-certification-attempt-after-consumed-method-pilot",
+  "gate_effect": "none_until_pc_golden_and_source_bound_mechanism_audit_both_pass",
+  "consumed_method_pilot": {
+    "artifact": "diagnostics/c69-render-settled-pilot-audit-v1.json",
+    "sha256": "sha256:d39b2754585ea63aa480a1a434a7ce18c6d0ac3e395bccd3bfe33662c3ef9ef3",
+    "use": "method_and_threshold_design_only",
+    "certification_reuse_forbidden": true
+  },
+  "fresh_outputs": {
+    "session_root": "D:/ZumaGolden/campaign-c70-natural-win-v8-front-insertion-render-settled-u3569-u3710",
+    "session_nonce": "71684dd5a0e34ac997713316ffa57db9",
+    "case_root": "D:/ZumaGolden/cases/jungle2-natural-front-insertion-c70-render-settled-provenance-v1",
+    "case_id": "jungle2_natural_front_insertion_c70_render_settled_provenance_v1",
+    "verified_absent_at_freeze": true
+  },
+  "immutable_identity": {
+    "source_dmo": "D:/ZumaGolden/campaign-c69-natural-win-v8-front-insertion-u3569-u3710/inputs/input.dmo",
+    "dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "prestate_source": "D:/ZumaGolden/campaign-c69-natural-win-v8-front-insertion-u3569-u3710/inputs/prestate",
+    "protocol_prestate_template_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdf0880394f9c521c6c4ee8b526",
+    "required_host_pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "runtime_source_executable": "D:/SteamLibrary/steamapps/common/Zuma's Revenge/ZumasRevenge.exe",
+    "direct_runtime_executable": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "changedir": "D:/SteamLibrary/steamapps/common/Zuma's Revenge",
+    "source_global_seed": 23557968,
+    "crt_rand_seed": 147023375,
+    "source_board_output": 835125098
+  },
+  "collection": {
+    "duration_seconds": 0.55,
+    "frame_budget_fps": 180,
+    "window_repaint_update": 3568,
+    "wait_until_framework_update": 3569,
+    "framework_state_diagnostic": true,
+    "framework_state_poll_diagnostic": true,
+    "framework_state_poll_arm_update": 3568,
+    "framework_state_poll_target_hz": 5000,
+    "startup_process_affinity_mask": 1,
+    "framework_state_poll_affinity_mask": 4,
+    "inter_run_cooldown_seconds": 0.0,
+    "skip_startup_window_activation": true,
+    "effect_free_repaint_corridor": {
+      "previous_effectful_update": 3567,
+      "next_effectful_update": 3621
+    }
+  },
+  "strict_replay": {
+    "attach_at_update": 0,
+    "allow_pre_stream_commands": true,
+    "startup_trace_handoff": true,
+    "allow_font_cache_manifest_completion_debt": true,
+    "detach_at_update": 3150,
+    "reattach_at_update": 10373,
+    "allow_post_blackout_attach_stabilization": true,
+    "allow_blackout_file_write_order_rebase": true,
+    "blackout_allowed_offset_pairs": [
+      [
+        0,
+        0
+      ],
+      [
+        4,
+        2
+      ]
+    ],
+    "maximum_hits": 100000,
+    "timeout_seconds": 900.0,
+    "source_bound_board": {
+      "monitor": "D:/ZumaGolden/autoplay-jungle2-natural-win-v8-globaloracle-20260802-0250/rng.ndjson",
+      "trace": "D:/ZumaGolden/autoplay-jungle2-natural-win-v8-globaloracle-20260802-0250/global-mtrand-calls.json",
+      "recording_report": "D:/ZumaGolden/autoplay-jungle2-natural-win-v8-globaloracle-20260802-0250/result.json",
+      "monitor_update": 3429,
+      "seed": 23557968,
+      "rewind_draws": 6,
+      "source_order": 309,
+      "framework_update": 3121,
+      "caller": 6666273,
+      "precall_global_restore": true
+    }
+  },
+  "render_settle_derivation": {
+    "method": "latest_observed_draw_before_present_minus_fixed_delay",
+    "render_settle_delay_ns": 400000,
+    "minimum_mean_poll_hz_each_run": 4000.0,
+    "maximum_p99_poll_interval_ns_each_run": 300000,
+    "maximum_skipped_draw_increments_each_run": 0,
+    "require_disjoint_physical_cores": true,
+    "require_capture_interval_fully_observed": true,
+    "calibration_preregistration_sha256": "sha256:e28cf5ce21428cc64fca82e822d818bb9797e743511f58d660efeaf703b5d8cb",
+    "calibration_execution_binding_sha256": "sha256:8fabe40f33cc8cc0e0bc03e807ed9a9a796845dbfee4ef7ad88757d5642174e6",
+    "calibration_independent_holdout_report_sha256": "sha256:2c01c7f14c7e636db2fd06d904a9beb927de0f09e828d9bba85dd9e0c98481dd"
+  },
+  "packaging": {
+    "level_id": "Jungle2",
+    "observed_score": 7950,
+    "required_update_range": [
+      3664,
+      3684
+    ],
+    "minimum_ticks": 21,
+    "select_exact_required_range": true,
+    "allow_idle_input_window": true,
+    "comparison": "exact_full_800x600_bgra",
+    "excluded_bottom_rows": 0,
+    "minimum_independent_runs": 2,
+    "retail_recording_dmo": "D:/ZumaGolden/cases/jungle2-natural-entry-c66-render-holdout-provenance-v2/evidence/input-recording.dmo",
+    "retail_recording_report": "D:/ZumaGolden/cases/jungle2-natural-entry-c66-render-holdout-provenance-v2/evidence/input-recording-report.json",
+    "require_certifying_dmo_provenance": true
+  },
+  "frozen_tools": {
+    "collector_sha256": "sha256:b8cb5f0264897fc25e736cd3af4dced1bce0e1c20e77f14cfb3ad8953bc68371",
+    "render_settled_builder_sha256": "sha256:9551c7899cc02235b2b1f61a34c117302778f02f42199d23edd2d6d36557c7d0",
+    "render_settle_module_sha256": "sha256:c2e4b402832131d3dd0b0fb2b74b8d8b5b0fdba7f0be18dae400f091a50ce146",
+    "packager_sha256": "sha256:e0fc21d01060a9dfde73a81e9c5b382d71de022e3a59239bd851402ba3f8ecda",
+    "verifier_sha256": "sha256:57e802c7a649959ee205eaae920d0e4d5afde959ff2e554351bb3075b50429e3",
+    "pc_golden_schema_sha256": "sha256:7c0204b167bb4e4c66d285e3bd74c81168a881348887bb7a20aadeca3ef9a13c",
+    "full_test_result": "1060 passed, 1 skipped"
+  },
+  "acceptance": {
+    "collection_status": "complete",
+    "require_distinct_process_instances": true,
+    "require_exact_protocol_restore": true,
+    "require_exact_host_restore": true,
+    "require_both_raw_capture_timelines_to_contain_updates_3664_through_3684": true,
+    "require_both_render_settled_maps_to_recompute_byte_exactly": true,
+    "require_exact_full_frame_match_for_every_update_3664_through_3684": true,
+    "require_selected_update_range_exactly_3664_through_3684": true,
+    "require_pc_golden_verifier_status": "PASS",
+    "require_all_pc_golden_checks_pass": true,
+    "require_source_bound_front_insertion_mechanism_audit": "PASS"
+  },
+  "decision_rules": {
+    "no_posthoc_delay_threshold_target_or_pixel_mask_change": true,
+    "no_c69_frames_or_processes_may_enter_c70_case": true,
+    "failed_or_missed_c70_session_is_immutable": true,
+    "infrastructure_retry_requires_new_frozen_binding": true,
+    "front_insertion_gate_credit_only_after_both_visual_and_mechanism_evidence_pass": true
+  }
+}

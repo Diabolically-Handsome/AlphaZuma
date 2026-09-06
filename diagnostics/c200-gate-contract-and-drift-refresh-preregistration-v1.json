@@ -1,0 +1,115 @@
+{
+  "schema": "zuma-rl.gate-contract-and-drift-refresh-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_IMPLEMENTATION_AND_OUTPUTS",
+  "created_utc": "2026-08-10T17:20:41.7963810Z",
+  "id": "c200-c199-fidelity-gate-root-cause-correction",
+  "purpose": "Correct two fail-closed Fidelity Gate contract defects and immutably refresh five reports whose frozen source data remains valid but whose derived proof or implementation fingerprint is stale.",
+  "parent_failure": {
+    "candidate_report": "D:/ZumaGolden/diagnostics/fidelity-gate-c199-candidate-v26-report.json",
+    "candidate_report_sha256": "sha256:c4c717bf17e8882c597c9a8474615f89bfbbd428329bf18ef3a1d937231d6759",
+    "failure_receipt": "diagnostics/c199-pc-golden-authorization-fidelity-gate-failure-receipt-v1.json",
+    "failure_receipt_sha256": "sha256:3b3a64ca410d621f7e3c419db82c370b91897a2e1ff83682f552123e77042c0c",
+    "rejected_evidence_count": 8,
+    "missing_required_feature_count": 12
+  },
+  "root_cause_classification": {
+    "stale_derived_reports": [
+      "a11 c126 mechanism audit: immutable source still passes; current derivation adds explicit powerup score-composition fields",
+      "a13 c131 mechanism audit: immutable source still passes; current derivation adds explicit powerup score-composition fields",
+      "a7 c35 mechanism audit: immutable source still passes; current derivation adds rng_pending and current proof semantics",
+      "q7 c126 simulator source proofs: frozen differential and MTRand proof remain unchanged; native feature proof rows require current recomputation",
+      "q8 c131 simulator source proofs: frozen differential and MTRand proof remain unchanged; native feature proof rows require current recomputation",
+      "actor audit: frozen report predates the current implementation fingerprint"
+    ],
+    "gate_contract_defects": [
+      "q12 c158 copies every simulator entity from an immutable native source frame, but version 1 labels the terminal native entity injected and is therefore rejected by the generic synthetic-state guard",
+      "q14 c183 has a complete independently verified native call-sequence proof, but the Gate rejects maximum_draws_per_tick above 64 before reading that proof"
+    ]
+  },
+  "frozen_inputs": {
+    "implementation": {
+      "src/zuma_rl/fidelity_gate.py": "sha256:a47d1b5f2ac4b455a6c8e40142a3006ef64509121bd4ee3c4daad38e3b8a90e1",
+      "src/zuma_rl/pc_loss_sequence.py": "sha256:0da3747d4931438eed86e1797303aba83306b226fea2b4d6b9b4ed1c4676c42b",
+      "tools/compare_pc_loss_sequence.py": "sha256:661a8a1371514030ab4694607dd2e8f357209d5c22e838799668ff4b327cddc4",
+      "tools/build_transfer_fidelity_revision.py": "sha256:b673b533a59d492ce556b814545979992932e19a74171b801323592d58060882"
+    },
+    "tests": {
+      "tests/test_fidelity_gate.py": "sha256:70a8226703e2b4b0f71bc4c36252eec4fa824ee9bda3db0efc0b0ec67c7be5d3",
+      "tests/test_pc_loss_sequence.py": "sha256:34dd70095d0dcb4bf387bd6c71302f0c645ba0775f1617a3d89640fd3c55cb51"
+    },
+    "refresh_tools": {
+      "src/zuma_rl/pc_mechanism_audit.py": "sha256:656895a45cc546238e6c7051272eef325b1853527bacde1c76586b5f138abad4",
+      "src/zuma_rl/actor_audit.py": "sha256:2cf7195b12262f0ffcf9f92e7c76637df4580220031d65dcb75d98a3a3a4a80c",
+      "tools/compare_pc_gameplay_trajectory.py": "sha256:96ef141bee133f7c866f41183b2e0f41a420eab6345b77e5d5bc6a9ecd8ee8c8",
+      "tools/bind_pc_mtrand_reconciliation_proof.py": "sha256:e6dccde3970daf4934d08be700a5dfdc9887905938ac605822eac90677af5e45"
+    },
+    "mtrand_proofs": {
+      "c126": "sha256:203c9e217d1da3b1a4192076e775283b548fc42e45a33a4fa3092da82c8341a6",
+      "c131": "sha256:a63b0853c6b8a8b0aa2bc2fb5b400310d5cba46ee893737452a08e3ca8c9302d"
+    }
+  },
+  "loss_v2_contract": {
+    "schema": "zuma-rl.pc-loss-simulator-diff",
+    "version": 2,
+    "classification": "exact_immutable_native_frame_reconstruction",
+    "requirements": [
+      "the trajectory artifact is relative to and confined under the evidence root",
+      "the trajectory SHA-256 is recomputed before use",
+      "the selected source window is contiguous and matches the report boundaries",
+      "the source terminal ball and every other initial entity are copied from the same immutable native frame",
+      "the terminal ball is excluded only from curve-fit estimation because its source position is already in the skull-entry pretrigger state",
+      "one float32 source-observed advance reaches the installed decoded curve end exactly",
+      "the natural-loss oracle and every simulator tick are recomputed live from the bound trajectory and installed assets",
+      "the recomputed report must be semantically identical to the submitted report",
+      "process_memory_writes equals zero and source_artifact_modified is false"
+    ],
+    "legacy_rule": "version 1 reports containing injected_* fields remain noncertifying and are not grandfathered"
+  },
+  "mtrand_gate_contract": {
+    "exact_or_unbound_maximum_draws_per_tick": 64,
+    "independently_bound_maximum_draws_per_tick": 2048,
+    "bound_only_requirements": [
+      "policy version is 3, 4, or 5 and uses conditional_external_mtrand_reconciliation_v2",
+      "every reconciliation row has exact gameplay state before shared-RNG reconciliation",
+      "all row and tick totals recompute exactly",
+      "the external proof artifact hash is recomputed",
+      "the proof is independently recomputed from a complete native call sequence",
+      "the proof transcript hash and tick/draw totals bind exactly to the differential"
+    ],
+    "fail_closed_limit": "values above 2048 are rejected even with a proof"
+  },
+  "planned_outputs_absent_at_freeze": {
+    "D:/ZumaGolden/diagnostics/pc-mechanism-c126-natural-win-live-v6-current.json": true,
+    "D:/ZumaGolden/diagnostics/pc-mechanism-c131b1-reverse-live-v4-current.json": true,
+    "D:/ZumaGolden/diagnostics/pc-mechanism-c35-natural-shot-v2-current.json": true,
+    "D:/ZumaGolden/diagnostics/jungle2-c126-u7222-u7248-powerup-proximity-bomb-diff-v13-nosync-unbound-current.json": true,
+    "D:/ZumaGolden/diagnostics/jungle2-c126-u7222-u7248-powerup-proximity-bomb-diff-v14-nosync-bound-current.json": true,
+    "D:/ZumaGolden/diagnostics/jungle2-c131b1-u5060-u5098-powerup-reverse-diff-v8-nosync-unbound-current.json": true,
+    "D:/ZumaGolden/diagnostics/jungle2-c131b1-u5060-u5098-powerup-reverse-diff-v9-nosync-bound-current.json": true,
+    "D:/ZumaGolden/diagnostics/jungle2-c158-u11341-u11519-natural-loss-diff-v4-source-bound.json": true,
+    "diagnostics/actor-audit-jungle2-current-v12.json": true,
+    "D:/ZumaGolden/diagnostics/fidelity-suite-c200-candidate-v24.json": true,
+    "D:/ZumaGolden/diagnostics/fidelity-gate-c200-candidate-v27-report.json": true
+  },
+  "fixed_refresh_commands": {
+    "c126_mechanism": ".venv-win/Scripts/python.exe -m zuma_rl.pc_mechanism_audit D:/ZumaGolden/diagnostics/pc-mechanism-c126-natural-win-plan-v1.json --evidence-root D:/ZumaGolden --original-root D:/SteamLibrary/steamapps/common/Zuma's Revenge --level Jungle2 --compact --output D:/ZumaGolden/diagnostics/pc-mechanism-c126-natural-win-live-v6-current.json",
+    "c131_mechanism": ".venv-win/Scripts/python.exe -m zuma_rl.pc_mechanism_audit D:/ZumaGolden/diagnostics/pc-mechanism-c131b1-reverse-plan-v1.json --evidence-root D:/ZumaGolden --original-root D:/SteamLibrary/steamapps/common/Zuma's Revenge --level Jungle2 --compact --output D:/ZumaGolden/diagnostics/pc-mechanism-c131b1-reverse-live-v4-current.json",
+    "c35_mechanism": ".venv-win/Scripts/python.exe -m zuma_rl.pc_mechanism_audit diagnostics/pc-mechanism-plan-c35-natural-shot-v1.json --evidence-root D:/ZumaGolden --original-root D:/SteamLibrary/steamapps/common/Zuma's Revenge --level Jungle2 --compact --output D:/ZumaGolden/diagnostics/pc-mechanism-c35-natural-shot-v2-current.json",
+    "actor": ".venv-win/Scripts/python.exe -m zuma_rl.actor_audit --root D:/SteamLibrary/steamapps/common/Zuma's Revenge --level Jungle2 --compact --output diagnostics/actor-audit-jungle2-current-v12.json",
+    "natural_loss": ".venv-win/Scripts/python.exe tools/compare_pc_loss_sequence.py --trajectory D:/ZumaGolden/formal-full-state-c155-natural-loss-c158-campaign-v1/attempt-01/source/attempt-01/trajectory/index.json --root D:/SteamLibrary/steamapps/common/Zuma's Revenge --level Jungle2 --curve-index 0 --start-update 11341 --end-update 11519 --trigger-ball-id 176 --decoded-curve-end 3757 --expected-trigger-update 11343 --expected-chain-empty-update 11519 --expected-pending-count 1 --expected-pretrigger-advance 0.125 --evidence-root D:/ZumaGolden --output D:/ZumaGolden/diagnostics/jungle2-c158-u11341-u11519-natural-loss-diff-v4-source-bound.json"
+  },
+  "acceptance": {
+    "targeted_tests": "all new loss-v2, MTRand cap, mechanism-proof, actor, and builder tests pass",
+    "full_suite": "pass with only preexisting documented skips and warning",
+    "historical_outputs": "all predecessor reports remain byte-identical",
+    "refresh_semantics": "q7 and q8 change only recomputed source feature proof rows plus their immutable proof rebinding; reconciliation transcript hashes remain unchanged",
+    "candidate_gate": "run once after all hashes and suite entries are frozen; retain OPEN or CLOSED output without amendment"
+  },
+  "decision_rule": {
+    "pass": "freeze a c200 success receipt and proceed to preregister three clean same-DMO PC Golden pairs; do not start training",
+    "fail": "retain every output and classify the exact failed sub-contract before any new candidate",
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

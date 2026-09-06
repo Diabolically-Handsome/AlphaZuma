@@ -1,0 +1,286 @@
+{
+  "schema": "zuma-rl.alphazuma-55-polar-dagger-plan",
+  "version": 1,
+  "status": "FROZEN_BEFORE_SOURCE_RESULT_INSPECTION",
+  "created_utc": "2026-08-15T19:38:13.715751+00:00",
+  "campaign_id": "alphazuma-55-polar-dagger-s99081533-v1",
+  "objective": "Continue the fresh full55 polar student with one teacher-only anchor round followed by mixed and student-only DAgger rounds.",
+  "hypotheses": {
+    "null": "fire-only polar DAgger does not improve student-visited-state coverage over the one-pass polar source",
+    "alternative": "the frozen teacher-to-student execution schedule repairs compounding imitation error without wait-policy collapse"
+  },
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "source": {
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-distillation-s99081531-preregistration-v1.json",
+      "sha256": "sha256:5fe64c70ab0f083d8e65c92ab6d7330093e66b376ed92d1e0d7530ff0c0a0c8a"
+    },
+    "expected_completion": "/mnt/d/ZumaTraining/alphazuma-55-polar-distillation-s99081531-v1/completion.json",
+    "expected_failure": "/mnt/d/ZumaTraining/alphazuma-55-polar-distillation-s99081531-v1/failure.json",
+    "selection_rule": "exact frozen final_model only; no metric-conditioned checkpoint choice"
+  },
+  "teacher_evidence": {
+    "exact_mask_fresh_55": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/masked-teacher-v3-fresh-probe-s99081516-v1/result.json",
+      "sha256": "sha256:415aa45c46e3021f8edb9d6b3c061954226aa497b14996a86d006fa86c30f9ec"
+    },
+    "classification": "engineering_teacher_not_formal_blind"
+  },
+  "levels": [
+    "Jungle1",
+    "Jungle2",
+    "Jungle3",
+    "Jungle4",
+    "jungle6",
+    "Jungle7",
+    "Jungle8",
+    "Jungle9",
+    "Jungle10",
+    "village1",
+    "village2",
+    "village3",
+    "village4",
+    "village5",
+    "village6",
+    "village7",
+    "village8",
+    "village10",
+    "city1",
+    "city2",
+    "city3",
+    "city4",
+    "city5",
+    "city6",
+    "city7",
+    "city9",
+    "city10",
+    "Coast1",
+    "Coast2",
+    "Coast3",
+    "Coast4",
+    "Coast5",
+    "Coast6",
+    "Coast7",
+    "Coast9",
+    "Coast10",
+    "grotto1",
+    "grotto2",
+    "grotto3",
+    "grotto4",
+    "grotto5",
+    "grotto6",
+    "grotto7",
+    "grotto9",
+    "grotto10",
+    "volcano1",
+    "volcano2",
+    "volcano3",
+    "volcano4",
+    "volcano5",
+    "volcano6",
+    "volcano7",
+    "volcano8",
+    "volcano9",
+    "volcano10"
+  ],
+  "original_root": "/mnt/d/SteamLibrary/steamapps/common/Zuma's Revenge",
+  "run": {
+    "id": "alphazuma55-polar-dagger-5090",
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-polar-dagger-s99081533-v1",
+    "device": "cuda:0",
+    "policy_architecture": "entity_polar",
+    "model_seed": 1542001500,
+    "training_seed_base": 1542001200,
+    "training_seed_last_consumed": 1542001364,
+    "rounds": 3,
+    "teacher_execution_probabilities": [
+      1.0,
+      0.5,
+      0.0
+    ],
+    "parallel_envs": 24,
+    "max_ticks": 30000,
+    "reservoir_capacity_by_verb": {
+      "wait": 256,
+      "fire": 256,
+      "swap": 192,
+      "hop": 192
+    },
+    "sample_stride_by_verb": {
+      "wait": 4,
+      "fire": 1,
+      "swap": 1,
+      "hop": 1
+    },
+    "target_batch_fraction_by_verb": {
+      "wait": 0.45,
+      "fire": 0.35,
+      "swap": 0.15,
+      "hop": 0.05
+    },
+    "batch_size": 256,
+    "capacity_eval_batch_size": 128,
+    "epochs_per_round": 12,
+    "checkpoint_interval_epochs": 4,
+    "learning_rate": 2e-05,
+    "verb_loss_weight": 2.0,
+    "max_grad_norm": 0.5,
+    "aim_loss_scope": "fire_only",
+    "aim_loss_mode": "categorical",
+    "aim_smoothing_sigma": 1.5,
+    "aim_distance_weight": 0.0,
+    "exact_action_masks_before_every_decision": true,
+    "masked_verb_fallback": "wait_with_teacher_aim",
+    "verb_balanced_optimization": true,
+    "aggregate_dataset_across_rounds": true,
+    "optimize_after_each_round": true,
+    "final_runtime_teacher_calls_forbidden": true
+  },
+  "frozen_engineering_validation": {
+    "registry": "training_validation",
+    "base_seed": 1550001200,
+    "last_seed": 1550001254,
+    "level_order": [
+      "Jungle1",
+      "Jungle2",
+      "Jungle3",
+      "Jungle4",
+      "jungle6",
+      "Jungle7",
+      "Jungle8",
+      "Jungle9",
+      "Jungle10",
+      "village1",
+      "village2",
+      "village3",
+      "village4",
+      "village5",
+      "village6",
+      "village7",
+      "village8",
+      "village10",
+      "city1",
+      "city2",
+      "city3",
+      "city4",
+      "city5",
+      "city6",
+      "city7",
+      "city9",
+      "city10",
+      "Coast1",
+      "Coast2",
+      "Coast3",
+      "Coast4",
+      "Coast5",
+      "Coast6",
+      "Coast7",
+      "Coast9",
+      "Coast10",
+      "grotto1",
+      "grotto2",
+      "grotto3",
+      "grotto4",
+      "grotto5",
+      "grotto6",
+      "grotto7",
+      "grotto9",
+      "grotto10",
+      "volcano1",
+      "volcano2",
+      "volcano3",
+      "volcano4",
+      "volcano5",
+      "volcano6",
+      "volcano7",
+      "volcano8",
+      "volcano9",
+      "volcano10"
+    ],
+    "attempts_per_level_per_model": 1,
+    "models": [
+      "source-final",
+      "dagger-round-00",
+      "dagger-round-01",
+      "dagger-round-02"
+    ],
+    "ranking": [
+      "wins_desc",
+      "level_coverage_desc",
+      "total_score_desc",
+      "median_winning_ticks_asc",
+      "earlier_round_first"
+    ],
+    "promotion_rule": "engineering evidence only; a separate preregistered campaign is required before any formal candidate promotion"
+  },
+  "implementation": {
+    "builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_polar_dagger_plan.py",
+      "sha256": "sha256:d8303b24381ec0b1c7931f3343280489bdeb556dbd811620bccbf308f571c4fa"
+    },
+    "trainer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_polar_dagger_v1.py",
+      "sha256": "sha256:90037e68004aa20480153ca884791ebd04d67d9d50dead65e031aebf52cbd59f"
+    },
+    "materializer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/materialize_alphazuma_55_polar_dagger.py",
+      "sha256": "sha256:45966887838d5e0abfe0e4e9b3873d9307ba72eef0f4e1f9ff2e09d244ac43fe"
+    },
+    "watcher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/watch_alphazuma_55_polar_dagger.py",
+      "sha256": "sha256:17ebe198d9f6b88e84e3095fb8420405373dfb42dfc71b02b286dff3c6d62b0d"
+    }
+  },
+  "implementation_dependencies": {
+    "legacy_distillation_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55.py",
+      "sha256": "sha256:13ac1883fc9dc9541193dbca0da3b94fa91c7476e07873d22bec51a7a330b38a"
+    },
+    "settled_v3_distillation_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_settled_v3.py",
+      "sha256": "sha256:42e8c5274b4674c60b17d80470cbf29d5f4f09adc079f128f587f0e085f0a1be"
+    },
+    "polar_distillation_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_polar_v1.py",
+      "sha256": "sha256:9b5a4cc441cac232e7f8df1486e8c774acaa0ac7f7d54951c244b4940390d875"
+    },
+    "behavior_clone_batch_primitive": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/pretrain_maskable_ppo_teacher.py",
+      "sha256": "sha256:a8d271e3b70198cd324f8e9bd41f59f50c1874451400cf188156c146187e59c9"
+    },
+    "settled_teacher_v3": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_settled_strategic_teacher_v3.py",
+      "sha256": "sha256:32181d24b6dee736f18afb588ce5baea32d96ac055da06be621c2a36f45369a3"
+    },
+    "environment": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_env.py",
+      "sha256": "sha256:d95407a7127ecc4e580aef041426d012edf5ea8dfa2fa8c4405c398445b1132e"
+    },
+    "core": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_core.py",
+      "sha256": "sha256:7718ae186c173127ac82e488413857dc6c82d2e41c1dfb5e94ca553a1a3abff6"
+    },
+    "features": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_features.py",
+      "sha256": "sha256:d878d7ec034bfe1d0b9c8f16bf2fcc787a05de5ac404eb4f1685c4f5a46646a0"
+    },
+    "scope": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/alphazuma_55.py",
+      "sha256": "sha256:ba316c4537fd62d4c34cfc1c40d722d5d9b5f38ba954e691acea83ab51837649"
+    }
+  },
+  "outputs": {
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-polar-dagger-s99081533-v1",
+    "preregistration": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-dagger-s99081533-preregistration-v1.json",
+    "status_root": "/mnt/d/ZumaTraining/alphazuma-55-polar-dagger-s99081533-watch-v1"
+  },
+  "authority_boundary": {
+    "current_campaign_candidate_authority": false,
+    "formal_selection_seed_consumption": false,
+    "formal_final_blind_seed_consumption": false,
+    "continuous_campaign_seed_consumption": false
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "schema": "zuma-rl.pc-capture-campaign",
+  "version": 1,
+  "policy": "original-transfer-jungle2-v1",
+  "prestate_path": "session-20260728-203153/native-windowed-record-001-prestate-reconstructed",
+  "direct_runtime_path": "tools/direct-runtime/popcapgame1.exe",
+  "direct_runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+  "sources": [
+    {
+      "id": "seed-23775218-clean",
+      "path": "session-20260728-203153/clean-level1-001/input.dmo",
+      "sha256": "sha256:044fe875b5c77e2a8b5a0f2193a7e9f90c4cb719481a1704d19651bb50ebc10a",
+      "random_seed": 23775218,
+      "length_updates": 8942,
+      "classification": "diagnostic_only",
+      "exclusion_reason": "The retail recorder emitted a bit-identical duplicate startup registry_read before the first D3D sync. Unmodified playback deterministically loses the command boundary at bit 221 under both the current and source ScreenMode host states; removing either duplicate is a diagnostic transformation, not certifying evidence."
+    },
+    {
+      "id": "seed-36311796-accepted",
+      "path": "cases/jungle2-shot-u7693-7770-v4-memory-curve-bound/input.dmo",
+      "sha256": "sha256:e43c645a18d74c5320a0687446f38cd9c46fff4eb8c0ff1a2b9c265b78a18b12",
+      "random_seed": 36311796,
+      "length_updates": 17967,
+      "classification": "accepted_existing",
+      "exclusion_reason": null
+    },
+    {
+      "id": "seed-5909046-pilot-diagnostic",
+      "path": "session-20260728-203153/pilot-level1-navigation/input.dmo",
+      "sha256": "sha256:8f7b62446cb3aad11ff21f0bc8556ede02117d8398f758baccb4826c8e08b421",
+      "random_seed": 5909046,
+      "length_updates": 407286,
+      "classification": "diagnostic_only",
+      "exclusion_reason": "The pilot deactivates at update 145 and cannot reach its later activation command during deterministic playback; it is parser/navigation evidence only."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "c1-existing-shot",
+      "status": "existing",
+      "candidate_features": [
+        "deterministic_replay",
+        "input_cadence",
+        "shot_release"
+      ],
+      "source_id": "seed-36311796-accepted",
+      "window": null,
+      "blocker": null
+    },
+    {
+      "id": "c2-clean-long-shot-tail",
+      "status": "requires_recording",
+      "candidate_features": [
+        "front_insertion",
+        "long_horizon_drift",
+        "match3",
+        "projectile_collision"
+      ],
+      "source_id": null,
+      "window": null,
+      "blocker": "A new unmodified replayable DMO is required. The former seed-23775218 source contains a recorder-generated duplicate startup registry_read and is diagnostic-only."
+    },
+    {
+      "id": "c3-new-third-seed",
+      "status": "requires_recording",
+      "candidate_features": [
+        "back_insertion",
+        "match4",
+        "rng_rejection",
+        "rollback_chain"
+      ],
+      "source_id": null,
+      "window": null,
+      "blocker": "A new clean replayable DMO is required for the third certifying random seed; the existing seed-5909046 pilot is focus-deadlocked and diagnostic-only."
+    },
+    {
+      "id": "c4-existing-gap-tunnel-candidate",
+      "status": "existing",
+      "candidate_features": [
+        "gap_shot",
+        "tunnel_collision"
+      ],
+      "source_id": "seed-36311796-accepted",
+      "window": null,
+      "blocker": null
+    },
+    {
+      "id": "c5-existing-reverse-candidate",
+      "status": "existing",
+      "candidate_features": [
+        "powerup_reverse",
+        "powerup_spawn"
+      ],
+      "source_id": "seed-36311796-accepted",
+      "window": null,
+      "blocker": null
+    },
+    {
+      "id": "c6-new-slow-bomb",
+      "status": "requires_recording",
+      "candidate_features": [
+        "powerup_proximity_bomb",
+        "powerup_slow"
+      ],
+      "source_id": null,
+      "window": null,
+      "blocker": "No existing unmodified replay contains machine-verifiable slow and proximity-bomb physical effects."
+    },
+    {
+      "id": "c7-new-natural-win",
+      "status": "requires_recording",
+      "candidate_features": [
+        "natural_win",
+        "zuma_transition"
+      ],
+      "source_id": null,
+      "window": null,
+      "blocker": "No existing unmodified replay reaches a natural Jungle2 Zuma transition and win."
+    },
+    {
+      "id": "c8-new-natural-loss",
+      "status": "requires_recording",
+      "candidate_features": [
+        "natural_loss"
+      ],
+      "source_id": null,
+      "window": null,
+      "blocker": "The existing loss trajectory was memory-injected; a natural unmodified loss DMO is required."
+    }
+  ]
+}

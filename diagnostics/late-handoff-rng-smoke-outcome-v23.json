@@ -1,0 +1,60 @@
+{
+  "schema": "zuma-rl.pc-late-handoff-rng-smoke-outcome",
+  "version": 23,
+  "status": "FAIL_NO_PRE_BOUNDARY_TRACE_EVENT_AFTER_UPDATE_3009",
+  "created_utc": "2026-08-05T19:41:05.672Z",
+  "id": "late-handoff-rng-smoke-v23-outcome",
+  "parent_preregistration": {"path": "diagnostics/late-handoff-rng-smoke-preregistration-v23.json", "sha256": "sha256:2c593747bed5292c79c0aac8f7d8d303251eff61af16dbcf6d6f7b8ace792a23"},
+  "execution_binding": {"path": "diagnostics/late-handoff-rng-smoke-execution-binding-v23.json", "sha256": "sha256:62a639c6024e40c178c20f0151e0b438341bfb326a7f11379cae4f00c1be14ba", "session_nonce": "3bbb4e2116264ba6b73a920ea6a2dadb"},
+  "execution": {
+    "run_root": "D:/ZumaGolden/diagnostics/late-handoff-rng-smoke-e01-v23",
+    "attempt_count": 3,
+    "selected_attempt": null,
+    "attempt_01": "global_mtrand_call_sync_exited_before_ready:exit=2",
+    "attempt_02": "trace_exited_before_global_mtrand_call_sync_ready:exit=1",
+    "attempt_03": "global_mtrand_call_sync_exited_before_ready:exit=2",
+    "all_attempts_pre_handoff_infrastructure": true,
+    "attempts_sha256": "sha256:3a8df8a2ce4ba1ef3167492b8abde089d7e7186131ec513c81e7ac7a3909dbf6"
+  },
+  "root_cause": {
+    "classification": "sparse_trace_event_boundary_not_numeric_off_by_one",
+    "requested_detach_update": 3119,
+    "last_observed_pre_boundary_command_update": 3009,
+    "next_observed_command_update": 3121,
+    "observed_handoff_main_thread_suspended_update_attempt_01": 3121,
+    "observed_detached_after_update_attempt_01": 3121,
+    "observed_handoff_main_thread_suspended_update_attempt_03": 3121,
+    "observed_detached_after_update_attempt_03": 3121,
+    "source_boundary_update": 3121,
+    "detail": "The detach threshold is evaluated only at trace-visible command events. There is no eligible event from update 3010 through 3120, so any requested threshold from 3009 through 3120 detaches at the source-boundary event itself.",
+    "latest_proven_pre_boundary_requested_detach_update": 3008,
+    "expected_actual_handoff_update_for_3008": 3009,
+    "attempt_01_trace_sha256": "sha256:aa9e2dd92e60260cc489f75dfb904b95124055b148f57aed97272e33090ed4a8",
+    "attempt_03_trace_sha256": "sha256:e4154a9ab788c97b90683eab0ad58e746fb15424a62eb18717c8eb09bf337194"
+  },
+  "attempt_02_incident": {
+    "classification": "independent_pre_handoff_startup_infrastructure_failure",
+    "error": "post-bypass worker yield resume count mismatch: 2",
+    "semantic_result_available": false,
+    "effect_on_parameter_root_cause": "none; attempts 1 and 3 independently reproduced the 3009-to-3121 event gap"
+  },
+  "semantic_result": {"available": false, "pc_golden_credit": false},
+  "host_safety": {
+    "canonical_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_pre_sha256": "sha256:a9e2cec2fb412b2bf56d222f5af9d09ca117e9696f800201bc78228d2a00085c",
+    "host_post_sha256": "sha256:a4d11a82231cd59f57cf10bd0de660e10cc23db22f1da3bc8456a6a89c789b64",
+    "pre_state_root_match": true,
+    "post_state_root_match": true,
+    "residual_retail_process_count": 0
+  },
+  "decision": {
+    "requested_update_3119_qualified": false,
+    "next_action": "Freeze a fresh smoke at requested detach and source-start update 3008, expected to hand off at the trace-visible update-3009 event while retaining 112 framework updates before the source boundary.",
+    "reuse_v23_output_root": false,
+    "pc_golden_credit": false,
+    "fidelity_gate_change": false,
+    "formal_transport_change": false,
+    "large_scale_training_start": false
+  },
+  "non_authorizations": ["pc_golden_credit", "fidelity_gate_change", "formal_transport_change", "large_scale_training_start"]
+}

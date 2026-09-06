@@ -1,0 +1,99 @@
+{
+  "schema": "zuma-rl.alphazuma-55-teacher-pipeline-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_TEACHER_SELECTION",
+  "created_utc": "2026-08-15T02:18:10.2712867Z",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "master_preregistration": {
+    "path": "diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "calibration": {
+    "path": "diagnostics/alphazuma-55-lilypad-calibration-v1.json",
+    "sha256": "sha256:c0e37b520a468865b29c88848acfbe695aeeb7d0719e36fbecb3398aafad1cbe"
+  },
+  "engineering_matrix": {
+    "preregistration": {
+      "path": "diagnostics/alphazuma-55-engineering-baseline-s82081402-preregistration-v1.json",
+      "sha256": "sha256:c6c00d29dfebeafa347aa7995608d53c73b5b8d29eba7d9a056ff72568b9c6f8"
+    },
+    "models_manifest": {
+      "path": "diagnostics/alphazuma-55-engineering-baseline-s82081402-models-v1.json",
+      "sha256": "sha256:0397b0123b2eadf3dfdcbff62fc2975997c5398878d5914ad432b76060a56b8b"
+    },
+    "output_root": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering-baseline-s82081402-v1",
+    "required_complete_shards": 2
+  },
+  "implementation": {
+    "controller": {
+      "path": "tools/run_alphazuma_55_teacher_pipeline.py",
+      "sha256": "sha256:ecdd81082c3d62785f85aadd3fbfd1e1286d43a5393a54c9950a290dcc06d793"
+    },
+    "teacher_selector": {
+      "path": "tools/select_alphazuma_55_teachers.py",
+      "sha256": "sha256:731e194fa01a173ba389ee18c5db0ae4417717df7683f8be6ca099c837b50e4b"
+    },
+    "distillation_builder": {
+      "path": "tools/build_alphazuma_55_distillation.py",
+      "sha256": "sha256:cb73e0989e21aefb5a4f4e35967a9b38718516f785832480661e4bfcb06b186f"
+    },
+    "distiller": {
+      "path": "tools/distill_alphazuma_55.py",
+      "sha256": "sha256:13ac1883fc9dc9541193dbca0da3b94fa91c7476e07873d22bec51a7a330b38a"
+    },
+    "ppo_route_builder": {
+      "path": "tools/build_alphazuma_55_training_route.py",
+      "sha256": "sha256:89d500c0a7c5bd6e76b1317b806a492584c040d71cd4ba27373dc0bb7c66678c"
+    },
+    "ppo_launcher": {
+      "path": "tools/train_alphazuma_55.py",
+      "sha256": "sha256:1482663c72b2b7f09fa4ba2cd1ff2d29c294b443e190e05e5e03184a2d90406d"
+    }
+  },
+  "source_receipts": {
+    "speed-essence-full55": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/speed-essence-full55-v1-migration.json",
+      "sha256": "sha256:03efd9ac215cdcc34d75f438294b5c3511546325799945b567febe99ad3db334"
+    },
+    "v1-full55": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v1-full55-v1-migration.json",
+      "sha256": "sha256:b7daf631fbc27b8544f95f3435e5055a9cce095e276d108447f7c3f5adb188cc"
+    },
+    "v11-full55": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1-migration.json",
+      "sha256": "sha256:87b2c6fe7b15f7e356332fea0393cdce19db6564453969a83e50fee198b99ed7"
+    }
+  },
+  "selection_and_training_rule": {
+    "student_source_ranking": [
+      "engineering level coverage descending",
+      "engineering wins descending",
+      "total engineering score descending",
+      "median winning ticks ascending",
+      "model sha256 ascending"
+    ],
+    "per_level_teacher_ranking": [
+      "engineering wins descending",
+      "best engineering score descending",
+      "median winning ticks ascending",
+      "model sha256 ascending"
+    ],
+    "unproven_level_fallback": "actor-observable geometric teacher",
+    "dual_position_override": "geometric teacher may override only with a currently legal hop action",
+    "distillation_rounds": 2,
+    "distillation_training_seed_first": 1520000000,
+    "distillation_training_seed_last": 1520000109,
+    "distilled_ppo_seed_namespace_first": 1530000000,
+    "distilled_ppo_seed_namespace_last": 1533999999,
+    "selection_final_and_continuous_seeds_forbidden": true,
+    "final_runtime_teacher_calls_forbidden": true
+  },
+  "outputs": {
+    "teacher_map": "diagnostics/alphazuma-55-teacher-map-s85081501-v1.json",
+    "distillation_preregistration": "diagnostics/alphazuma-55-specialist-distillation-s85081501-preregistration-v1.json",
+    "distillation_run_dir": "/mnt/d/ZumaTraining/alphazuma-55-specialist-distillation-s85081501-v1",
+    "distilled_ppo_preregistration": "diagnostics/alphazuma-55-distilled-ppo-s86081501-preregistration-v1.json",
+    "distilled_ppo_run_dir": "/mnt/d/ZumaTraining/alphazuma-55-distilled-ppo-s86081501-v1",
+    "controller_output_root": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/teacher-pipeline-s85081501-v1"
+  }
+}

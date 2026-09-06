@@ -1,0 +1,57 @@
+{
+  "schema": "zuma-rl.alphazuma-55-horizon-probe-recovery-outcome",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-15T07:15:59.037370+00:00",
+  "classification": "engineering_recovery_not_fresh_or_formal_evidence",
+  "preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-horizon-probe-recovery-s99081502-preregistration-v1.json",
+    "sha256": "sha256:e1877c86366f58f4a9852ad67d4f98bd7693ba888b59fcea6684b16d3b328d4f"
+  },
+  "remediation_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-evaluation-capacity-remediation-s99081503-preregistration-v1.json",
+    "sha256": "sha256:9b79bb2b1a4fa6ddc089ba6c121292026d302163b7f30c620f16fa8a30b73237"
+  },
+  "result": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/horizon-probe-recovery-s99081502-v1/shard-00-of-01.json",
+    "sha256": "sha256:af92893e8245d8992fdd858ea8a630db2aeedd1c3e2363ad1dc44ef09da0735a"
+  },
+  "matrix_integrity": {
+    "levels": 17,
+    "attempts": 17,
+    "seed_range": [
+      1400400000,
+      1400400016
+    ],
+    "all_siblings_completed": true
+  },
+  "capacity_recovery": {
+    "overflow_attempts": 1,
+    "non_overflow_sibling_attempts": 16,
+    "all_overflows_are_explicit_losses": true,
+    "overflow_records": [
+      {
+        "level_id": "volcano8",
+        "seed": 1400400016,
+        "ticks": 27795,
+        "visible_balls_at_failure": 769,
+        "capacity_limit_balls": 768,
+        "trajectory_sha256": "sha256:25719edde4e36bf7757f02e3f714d0f4d6098af90a0e9f02ce2cd328d1c01f19"
+      }
+    ]
+  },
+  "horizon_probe": {
+    "wins": 1,
+    "wins_after_12000_ticks": 0,
+    "late_win_records": []
+  },
+  "promotion": {
+    "capacity_safe_postprocess_authorized": true,
+    "training_recipe_change_authorized": false,
+    "formal_seed_consumption_authorized_only_after_waiting_deployment_supersession": true
+  },
+  "auditor": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_horizon_probe_recovery.py",
+    "sha256": "sha256:d864ccde213112d0470d16ee16400b8c4583371986d59fe8b9e0935244da5b0c"
+  }
+}

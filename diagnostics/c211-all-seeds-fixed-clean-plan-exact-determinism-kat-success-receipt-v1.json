@@ -1,0 +1,37 @@
+{
+  "comparison": {
+    "full_800x600_bgra_bmp_exact": true,
+    "full_800x600_rgb24_exact": true,
+    "independent_process_instances": true,
+    "normalized_gameplay_and_rng_exact": true,
+    "render_state_exact": true,
+    "retained_tick_count": 10,
+    "same_protocol": true,
+    "status": "PASS"
+  },
+  "created_utc": "2026-08-10T18:01:26.350Z",
+  "decision": {
+    "formal_target_windows_may_be_preregistered": true,
+    "kat_has_pc_golden_credit": false,
+    "kat_has_mechanism_credit": false
+  },
+  "id": "c211-all-seeds-fixed-clean-plan-exact-determinism-kat-success",
+  "preregistration": {
+    "path": "diagnostics/c211-all-seeds-fixed-clean-plan-exact-determinism-kat-preregistration-v1.json",
+    "sha256": "sha256:c82b09eea25b798926cc47c861ac186b3cf75a7f427b6b6b306289b7c2de9c58"
+  },
+  "runs": {
+    "kat_a": {
+      "attempts_sha256": "sha256:ef7098befcc05c61bf20b88116a7f3281f064d09ed4bb1a051277fe5dc2d7e02",
+      "memory_probe_sha256": "sha256:99efe4cc4fe075d13b1112d9487a236275eb09e51d0175f8f238fc65b24fd67d",
+      "trajectory_index_sha256": "sha256:7ccdfbd0398d6f77d9651b91a83a14649b0a2b7c64d11bdea902182576a1e4c7"
+    },
+    "kat_b": {
+      "attempts_sha256": "sha256:c42c0e34881b5779956c051c9435328089dce8e6c20671512cb300405c8de834",
+      "memory_probe_sha256": "sha256:dc500b1b8420250bbca4a86bba9873bb319d86c28118998aa2441b84f037f244",
+      "trajectory_index_sha256": "sha256:7f2e66fbcc834f09058fcad5ce40f0c1f4b9be023c2e0a2a4fe45f141f459012"
+    }
+  },
+  "status": "PASS",
+  "version": 1
+}

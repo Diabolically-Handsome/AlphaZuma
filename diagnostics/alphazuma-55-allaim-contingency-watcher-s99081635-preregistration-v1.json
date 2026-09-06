@@ -1,0 +1,72 @@
+{
+  "schema": "zuma-rl.alphazuma-55-allaim-contingency-watcher-preregistration",
+  "version": 1,
+  "status": "FROZEN_AFTER_FALLBACK_TRIGGER_BEFORE_CONTINGENCY_LAUNCH",
+  "campaign_id": "alphazuma-55-allaim-contingency-watcher-s99081635-v1",
+  "created_utc": "2026-08-16T10:01:12.6005464Z",
+  "objective": "Preserve the current gradual route and its frozen engineering evaluation, then launch the independently preregistered all-actions aim-supervision contingency only after an independently audited no-promotion result and safe resource release.",
+  "trigger_evidence": {
+    "training_status": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-s99081629-v1/training_status.json",
+      "sha256_at_trigger": "sha256:c4e6ba87f0bb33a9d4731646422c89375d17af8cbd782b92b3b7c0274b074a37"
+    },
+    "round_index": 2,
+    "teacher_execution_probability": 0.7,
+    "completed_levels": 48,
+    "wins": 22,
+    "losses": 26,
+    "first_24_wins": 17,
+    "second_24_wins": 5,
+    "interpretation": "closed-loop degradation is material and the predeclared all-actions fallback is eligible, but the current route and its evaluation retain priority until their audited decision"
+  },
+  "current_engineering_decision": {
+    "plan": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-postprocess-s99081630-plan-v1.json",
+      "sha256": "sha256:e8e8f1b7bf4c9a73e353d6c278523e005790565753d42ad293ce1c47be2cbe67"
+    },
+    "required_terminal_status": "COMPLETE",
+    "required_independent_audit_status": "PASS",
+    "launch_fallback_only_when_gate_passed": false,
+    "on_gate_pass": "do not launch fallback; leave the existing formal successor in authority",
+    "on_error": "preserve evidence and stop without launching fallback"
+  },
+  "fallback_route": {
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-allaim-s99081633-preregistration-v1.json",
+      "sha256": "sha256:502c0ab5566a66fa33ff33df80b10b101c5ea1b75dc4e21ff07f5996965730e1"
+    },
+    "independent_preregistration_audit": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-allaim-s99081633-independent-prereg-audit-v1.json",
+      "sha256": "sha256:61be913b30601f2e529cc8112dd18aab8b434d82a7364a794e1ff756c5d99b6d"
+    },
+    "sole_recipe_change": "aim_loss_scope fire_only -> all_actions",
+    "run_dir_must_be_absent_before_launch": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-allaim-s99081633-v1"
+  },
+  "resource_gate": {
+    "current_gradual_trainer_absent": true,
+    "current_gradual_postprocess_absent": true,
+    "minimum_wsl_available_memory_bytes": 37580963840,
+    "maximum_wsl_swap_used_bytes": 0,
+    "minimum_wsl_root_free_bytes": 12884901888,
+    "rtx_5090_limit_watts": 550,
+    "rtx_5080_limit_watts": 250
+  },
+  "implementation": {
+    "watcher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_allaim_contingency_watcher_v1.py",
+      "sha256": "sha256:be362013d68442baa9971436919d274d1b0c5c91bf0d679597e85a75f3d4285f"
+    },
+    "launcher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/launch_alphazuma_55_allaim_contingency_watcher_v1.sh",
+      "sha256": "sha256:78f7ba866efe11ab88cc981fce5cdfb74bbda9879514efa5f73b5282b71be9fc"
+    }
+  },
+  "authority_boundary": {
+    "engineering_only": true,
+    "formal_selection_seed_consumption": "NONE",
+    "formal_final_blind_seed_consumption": "NONE",
+    "continuous_campaign_seed_consumption": "NONE",
+    "formal_candidate_authority": false,
+    "power_restore_authority": false
+  }
+}

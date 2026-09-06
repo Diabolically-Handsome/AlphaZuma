@@ -1,0 +1,300 @@
+{
+  "schema": "zuma-rl.alphazuma-55-weekend-master-preregistration",
+  "version": 1,
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "created_utc": "2026-08-15T00:58:00Z",
+  "deadline_utc": "2026-08-17T15:00:00Z",
+  "deadline_local": "2026-08-17 11:00 America/Toronto",
+  "status_at_registration": "ENVIRONMENT_IMPLEMENTATION",
+  "objective": {
+    "one_frozen_policy_file": true,
+    "runtime_model_switching_forbidden": true,
+    "per_level_weight_routing_forbidden": true,
+    "simulator_state_policy": true,
+    "visual_frontend_in_scope": false,
+    "original_client_world_record_claim": false,
+    "target": "Learn all 55 non-boss, non-moving-frog Adventure levels with one policy and test it on unconsumed seeds."
+  },
+  "retail_provenance": {
+    "root": "D:\\SteamLibrary\\steamapps\\common\\Zuma's Revenge",
+    "executable": {
+      "path": "ZumasRevenge.exe",
+      "bytes": 8588312,
+      "sha256": "sha256:db85b891ba662a463d23251a376081386b47437c29248b21e2c10335a6f3eb50"
+    },
+    "main_pak": {
+      "path": "main.pak",
+      "bytes": 106476722,
+      "sha256": "sha256:02c7038e531c6b9d57ba114fd0e72a475ea51c7c62b1054678af38efd24a2e7d"
+    },
+    "levels_xml": {
+      "archive_member": "levels\\levels.xml",
+      "bytes": 109055,
+      "sha256": "sha256:2ce6f22a66402b9275eaaefc9c17de82c319fab1508921e511617787c194b409"
+    }
+  },
+  "scope": {
+    "retail_ordinary_adventure_level_count": 60,
+    "included_level_count": 55,
+    "excluded_moving_frog_level_count": 5,
+    "excluded_bosses": "all story boss definitions, including multipart final-boss definitions",
+    "included_levels_in_adventure_order": [
+      "Jungle1",
+      "Jungle2",
+      "Jungle3",
+      "Jungle4",
+      "jungle6",
+      "Jungle7",
+      "Jungle8",
+      "Jungle9",
+      "Jungle10",
+      "village1",
+      "village2",
+      "village3",
+      "village4",
+      "village5",
+      "village6",
+      "village7",
+      "village8",
+      "village10",
+      "city1",
+      "city2",
+      "city3",
+      "city4",
+      "city5",
+      "city6",
+      "city7",
+      "city9",
+      "city10",
+      "Coast1",
+      "Coast2",
+      "Coast3",
+      "Coast4",
+      "Coast5",
+      "Coast6",
+      "Coast7",
+      "Coast9",
+      "Coast10",
+      "grotto1",
+      "grotto2",
+      "grotto3",
+      "grotto4",
+      "grotto5",
+      "grotto6",
+      "grotto7",
+      "grotto9",
+      "grotto10",
+      "volcano1",
+      "volcano2",
+      "volcano3",
+      "volcano4",
+      "volcano5",
+      "volcano6",
+      "volcano7",
+      "volcano8",
+      "volcano9",
+      "volcano10"
+    ],
+    "excluded_moving_frog_levels": [
+      "Jungle5",
+      "village9",
+      "city8",
+      "Coast8",
+      "grotto8"
+    ],
+    "included_dual_position_levels": [
+      "village3",
+      "city3",
+      "Coast3",
+      "Coast10",
+      "grotto3",
+      "volcano3"
+    ],
+    "notes": [
+      "Dual-position frog stages remain in scope.",
+      "Dual-curve stages are ordinary stages and are not excluded.",
+      "Moving horizontal or vertical frog stages and every boss are outside this campaign."
+    ]
+  },
+  "environment_contract": {
+    "maximum_color_channels": 6,
+    "observation_space_identical_across_all_55_levels": true,
+    "action_verbs": [
+      "wait",
+      "fire",
+      "swap",
+      "hop"
+    ],
+    "hop_masked_on_single_position_levels": true,
+    "maximum_curves": 2,
+    "all_retail_frog_positions_retained": true,
+    "dynamic_active_frog_position_observable": true,
+    "allow_partial_level_forbidden_in_formal_training_and_evaluation": true,
+    "moving_frog_and_boss_fail_closed": true,
+    "required_environment_gate": [
+      "All 55 levels load, reset, and step without partial-level semantics.",
+      "The same observation and action spaces are reported for all 55 levels.",
+      "Seeded trajectories are deterministic under repeated action sequences.",
+      "Four-, five-, and six-color levels expose six fixed color channels with inactive channels zeroed.",
+      "Hop is impossible on 49 single-position levels and available on the six dual-position levels only when valid.",
+      "The migrated legacy policy preserves its ordinary-level action logits and deterministic actions when hop is masked.",
+      "A separate calibration receipt binds the dual-position transition timing before formal training."
+    ]
+  },
+  "frozen_starting_models": [
+    {
+      "role": "v1_baseline",
+      "id": "alphazuma-v1-published-champion-adaptive-mid-13631488",
+      "training_steps": 13631488,
+      "path": "/mnt/d/ZumaTraining/overnight-v11-adaptive-recovery-s43081301-v1/checkpoints/adaptive-5090-recovery_13631488_steps.zip",
+      "sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579"
+    },
+    {
+      "role": "v11_baseline",
+      "id": "alphazuma-v1.1-selected-fixed-final-33772736",
+      "training_steps": 33772736,
+      "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-frontier-fixed-oom-recovery-s47081302-v1/final_model.zip",
+      "sha256": "sha256:c3ffb855f0a7d3f8521bc81224172e992cd59249154f0c0a3251636d63f6ba91"
+    },
+    {
+      "role": "speed_essence_baseline",
+      "id": "essence-v1-speed-fixed-5090-final-7813504",
+      "training_steps": 21444992,
+      "path": "/mnt/d/ZumaTraining/alphazuma-speed-essence-v1-speed-fixed-s72081401-v1/final_model.zip",
+      "sha256": "sha256:e425e60f199766bd4fc0dcd0f7bf65a15094f9863a6bc071682ed5c287ccef3d"
+    }
+  ],
+  "teacher_student_contract": {
+    "specialist_teachers_may_generate_training_labels": true,
+    "teacher_identity_may_not_be_visible_to_final_selection_or_final_blind": true,
+    "final_policy_must_be_one_student_checkpoint": true,
+    "final_runtime_may_not_call_teachers": true,
+    "allowed_methods": [
+      "policy-weight migration",
+      "specialist teacher rollouts",
+      "behavior cloning or distillation",
+      "DAgger-style correction on training seeds",
+      "PPO fine-tuning on registered training seeds"
+    ]
+  },
+  "seed_registry": {
+    "engineering_and_calibration": {
+      "first": 1400000000,
+      "last": 1400999999,
+      "may_be_consumed_before_environment_gate": true
+    },
+    "training": {
+      "first": 1500000000,
+      "last": 1549999999,
+      "route_subranges_must_be_frozen_before_each_route_starts": true
+    },
+    "training_validation": {
+      "first": 1550000000,
+      "last": 1599999999,
+      "not_formal_blind": true
+    },
+    "selection": {
+      "first": 1600000000,
+      "last": 1600000219,
+      "matrix": "55 levels x 4 paired attempts per candidate",
+      "embargo_until_all_candidate_hashes_are_frozen": true
+    },
+    "final_blind": {
+      "first": 1700000000,
+      "last": 1700000439,
+      "matrix": "55 levels x 8 paired attempts per finalist",
+      "embargo_until_selection_report_is_frozen": true
+    },
+    "continuous_campaign_challenge": {
+      "first": 1800000000,
+      "last": 1800000219,
+      "matrix": "4 frozen campaigns x 55 levels, one attempt per level",
+      "embargo_until_finalist_hash_is_frozen": true
+    },
+    "overlap_with_prior_selection_or_final_blind_seeds": false
+  },
+  "candidate_and_selection_rules": {
+    "route_preregistrations_required_before_training": true,
+    "maximum_training_routes": 6,
+    "candidate_sources": [
+      "each successfully migrated frozen starting model",
+      "the time-midpoint checkpoint from each completed registered route",
+      "the final checkpoint from each completed registered route"
+    ],
+    "failed_routes_are_reported_and_not_replaced_post_hoc": true,
+    "selection_ranking_lexicographic": [
+      "number of levels with at least one win out of four",
+      "minimum wins in any one level",
+      "total wins",
+      "paired median winning ticks",
+      "model sha256 ascending as deterministic tie break"
+    ],
+    "speed_ranking_reported_separately": true,
+    "selection_may_not_read_final_blind_or_continuous_campaign_seeds": true
+  },
+  "success_gates": {
+    "single_policy_capability_gate": {
+      "required_level_coverage": "55/55 levels with at least one win in eight final-blind attempts",
+      "required_minimum_wins_per_level": 1,
+      "required_total_wins": 220,
+      "attempts_total": 440,
+      "meaning": "The one frozen state policy has demonstrated the ability to clear every included level on unconsumed seeds."
+    },
+    "continuous_full_game_gate": {
+      "required": "At least one of four frozen 55-level campaigns clears all 55 levels consecutively with no retry and no model change.",
+      "reported_separately": true,
+      "meaning": "Only this gate supports a continuous Full Game Single Policy completion claim."
+    },
+    "speed_reporting": {
+      "best_seed_speed_reported_separately": true,
+      "median_winning_time_reported": true,
+      "failure_penalty_cannot_be_hidden": true
+    }
+  },
+  "schedule": {
+    "environment_and_migration_gate_target_utc": "2026-08-15T06:00:00Z",
+    "formal_training_stop_utc": "2026-08-17T09:30:00Z",
+    "selection_target_end_utc": "2026-08-17T11:30:00Z",
+    "final_blind_target_end_utc": "2026-08-17T14:00:00Z",
+    "independent_audit_and_restore_deadline_utc": "2026-08-17T15:00:00Z"
+  },
+  "hardware_contract": {
+    "gpu_0": {
+      "name": "NVIDIA GeForce RTX 5090",
+      "training_power_limit_watts": 550,
+      "pre_campaign_power_limit_watts": 600
+    },
+    "gpu_1": {
+      "name": "NVIDIA GeForce RTX 5080",
+      "training_power_limit_watts": 250,
+      "pre_campaign_power_limit_watts": 400
+    },
+    "power_guard": {
+      "script": "tools/manage_alphazuma_55_power.ps1",
+      "script_sha256": "sha256:4e507c3256615c70875665a5b04aa4924519f9261dd85fd95165858708e1d67f",
+      "heartbeat": "D:\\ZumaTraining\\alphazuma-55-weekend-s81081401-v1\\hardware\\gpu-power-guard.json",
+      "automatic_restore_at_deadline": true
+    },
+    "windows_training_power_plan": "High performance 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c",
+    "windows_restore_power_plan": "Balanced 381b4222-f694-41f0-9685-ff5bb260df2e",
+    "thermal_warning_c": 82,
+    "thermal_failure_c": 88,
+    "wsl_root_free_failure_gib": 12,
+    "d_drive_free_failure_gib": 100,
+    "historical_wsl_data_mutation_forbidden": true
+  },
+  "base_source_hashes_before_55_level_implementation": {
+    "src/zuma_rl/original_data.py": "sha256:d562b4855943a57d2b38cfb1916db3618fb501a434e682b0e79c665b1840762a",
+    "src/zuma_rl/revenge_core.py": "sha256:2652b12d396d47f70875323ab7157c64d68d5067ff762cc723a2aba99329dae3",
+    "src/zuma_rl/revenge_env.py": "sha256:8c4e49e31725a5c47b3dd4933c6e3b9195bcbddc717e5390bf4e5a56f0d6e8d0",
+    "src/zuma_rl/revenge_features.py": "sha256:863e956fa99f25aff2c56700ea4ea7b2acd601cfd032136078e424a5204a3a08",
+    "src/zuma_rl/model_migration.py": "sha256:1dd5675cb0cf16644dcaf2ff11dc18d13e2006fc0105068abf7f4b85c121d33c"
+  },
+  "audit_contract": {
+    "strict_json_receipts": true,
+    "all_model_and_artifact_sha256_values_required": true,
+    "independent_final_audit_required": true,
+    "negative_result_reported_without_changing_gates": true,
+    "power_limits_and_windows_power_plan_restored_after_final_audit_or_deadline": true
+  }
+}

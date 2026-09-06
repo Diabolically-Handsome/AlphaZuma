@@ -1,0 +1,58 @@
+{
+  "schema": "zuma-rl.pc-render-settled-pilot-audit",
+  "version": 1,
+  "id": "c69-front-insertion-render-settled-consumed-pilot",
+  "created_utc": "2026-08-03T18:14:31Z",
+  "classification": "consumed-design-only-not-pc-golden-not-gate-evidence",
+  "gate_effect": "none",
+  "source_session": {
+    "root": "D:/ZumaGolden/campaign-c69-natural-win-v8-front-insertion-u3569-u3710",
+    "collection_sha256": "sha256:4e7357ce801c3369582342d9266a519d80d877c0b6e0dc5f8f6adbc611e5971d",
+    "r1_render_settled_update_sha256": "sha256:fcae9911cace240fd110b6fb123a21160a80f921dc5f30b96a4165c69e5e1339",
+    "r2_render_settled_update_sha256": "sha256:d53112403d4ec3f72aaa2412d3c401addaf1a00cdeba810a3094b0bef6097e5a"
+  },
+  "calibration": {
+    "render_settle_delay_ns": 400000,
+    "preregistration_sha256": "sha256:e28cf5ce21428cc64fca82e822d818bb9797e743511f58d660efeaf703b5d8cb",
+    "execution_binding_sha256": "sha256:8fabe40f33cc8cc0e0bc03e807ed9a9a796845dbfee4ef7ad88757d5642174e6",
+    "independent_holdout_report_sha256": "sha256:2c01c7f14c7e636db2fd06d904a9beb927de0f09e828d9bba85dd9e0c98481dd"
+  },
+  "comparison": {
+    "legacy_longest_exact_update_count": 9,
+    "render_settled_longest_exact_range": [
+      3640,
+      3689
+    ],
+    "render_settled_longest_exact_update_count": 50,
+    "required_update_range": [
+      3664,
+      3684
+    ],
+    "required_update_count": 21,
+    "required_range_exact_full_frame_matches": 21,
+    "required_end_sequences": {
+      "r1": 72,
+      "r2": 76
+    }
+  },
+  "diagnostic_package": {
+    "case_root": "D:/ZumaGolden/cases/jungle2-natural-front-insertion-c69-render-settled-diagnostic-v1",
+    "manifest_sha256": "sha256:d036855306569142e44c26235d48a5603d39ad5448ca70be1b6b97aea5f1cbdb",
+    "selected_update_range": [
+      3664,
+      3684
+    ],
+    "native_tick_count": 21,
+    "full_frame_comparison": true,
+    "strict_verifier_status": "PASS",
+    "strict_verifier_check_count": 15,
+    "strict_verifier_failed_check_count": 0,
+    "certifying_retail_dmo_provenance_check": "PASS",
+    "replay_source_recomputation_check": "PASS"
+  },
+  "interpretation": {
+    "supported": "The frozen render-settle derivation is implementable and restores complete exact target coverage on consumed C69 data.",
+    "not_supported": "C69 cannot certify front_insertion because the integration and exact-range packaging choices were implemented after inspecting C69.",
+    "next_step": "Freeze all C70 choices and evaluate one fresh independently launched two-run session without amendments."
+  }
+}

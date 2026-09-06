@@ -1,0 +1,211 @@
+{
+  "schema": "zuma-rl.zero-shot-multilevel-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_EVALUATION",
+  "frozen_utc": "2026-08-13T00:54:37.2533380Z",
+  "objective": "measure how far the strongest completed AlphaZuma V1 Jungle2 policy transfers without training or adaptation to every other fidelity-safe, observation-compatible ordinary campaign level",
+  "interpretation": {
+    "evaluation_class": "exploratory zero-shot generalization challenge",
+    "not_training": true,
+    "not_original_client_visual_control": true,
+    "no_target_level_was_used_to_select_or_update_the_model": true,
+    "result_does_not_extend_the_Jungle2_PC_Golden_scope": true
+  },
+  "model": {
+    "id": "step-2621440-final",
+    "training_steps": 2621440,
+    "path": "/mnt/d/ZumaTraining/human-speedrun-v1-jungle2-s20261010-2621k-v1/final_model.zip",
+    "sha256": "sha256:aeb6385c6df3faa0e720b43dd52853284807a25eaf2e4d0da4dcdc0769c4f5b6",
+    "selection_rule": "selected before multilevel evaluation because it had the highest Jungle2 blind win count, 26 of 32, among all 11 frozen V1 snapshots",
+    "selection_evidence": {
+      "path": "/mnt/d/ZumaTraining/human-speedrun-v1-jungle2-blind-s20300812-n32-v1/blind_evaluation.json",
+      "sha256": "sha256:8af20964e41d18ad967a5432784b5f4acef75bc1ab94f6a5b1801b0ed25405e9"
+    }
+  },
+  "campaign_inventory": {
+    "ordinary_campaign_levels": 60,
+    "model_and_environment_compatible_levels": 17,
+    "excluded_trained_level": "Jungle2",
+    "frozen_zero_shot_levels": 16,
+    "excluded_incompatible_levels": 43,
+    "exclusion_rule": "exclude before policy inference if the fidelity-safe environment rejects the original mechanic or if the frozen model observation/action space differs",
+    "incompatible_breakdown": {
+      "unsupported_moving_or_multiple_frog_mechanics": 11,
+      "observation_shape_incompatible_due_to_additional_ball_colors": 32
+    },
+    "partial_level_escape_hatch_used": false
+  },
+  "levels": [
+    {
+      "id": "Jungle1",
+      "display_name": "Shipwrecked!",
+      "curve_count": 1,
+      "curve_names": ["Jungle1\\Jungle1"]
+    },
+    {
+      "id": "Jungle3",
+      "display_name": "Echo Beach",
+      "curve_count": 1,
+      "curve_names": ["Jungle3\\Jungle3"]
+    },
+    {
+      "id": "Jungle4",
+      "display_name": "Bones of an Idol",
+      "curve_count": 1,
+      "curve_names": ["Jungle4\\Jungle4"]
+    },
+    {
+      "id": "jungle6",
+      "display_name": "Jungle Clearing",
+      "curve_count": 1,
+      "curve_names": ["Jungle6\\Jungle6"]
+    },
+    {
+      "id": "Jungle7",
+      "display_name": "Sand Trap",
+      "curve_count": 1,
+      "curve_names": ["Jungle7\\Jungle7"]
+    },
+    {
+      "id": "Jungle8",
+      "display_name": "Nasal Passage",
+      "curve_count": 1,
+      "curve_names": ["Jungle8\\Jungle8"]
+    },
+    {
+      "id": "Jungle9",
+      "display_name": "Creeper Copse",
+      "curve_count": 2,
+      "curve_names": ["Jungle9\\Jungle9-1", "Jungle9\\Jungle9-2"]
+    },
+    {
+      "id": "Jungle10",
+      "display_name": "Darkness Falls",
+      "curve_count": 1,
+      "curve_names": ["Jungle10\\Jungle10"]
+    },
+    {
+      "id": "village1",
+      "display_name": "Watering Hole",
+      "curve_count": 1,
+      "curve_names": ["Village1"]
+    },
+    {
+      "id": "village2",
+      "display_name": "Overgrown Plaza",
+      "curve_count": 1,
+      "curve_names": ["Village2"]
+    },
+    {
+      "id": "village4",
+      "display_name": "Sandspirals",
+      "curve_count": 1,
+      "curve_names": ["Village4v2"]
+    },
+    {
+      "id": "village5",
+      "display_name": "Abandoned Well",
+      "curve_count": 1,
+      "curve_names": ["Village5"]
+    },
+    {
+      "id": "village6",
+      "display_name": "Face Your Fear",
+      "curve_count": 2,
+      "curve_names": ["Village6-1", "Village6-2"]
+    },
+    {
+      "id": "village7",
+      "display_name": "Seven Sides (minus one)",
+      "curve_count": 1,
+      "curve_names": ["Village7"]
+    },
+    {
+      "id": "village8",
+      "display_name": "Vines of Vengeance",
+      "curve_count": 1,
+      "curve_names": ["Village8"]
+    },
+    {
+      "id": "village10",
+      "display_name": "The Horseshoe",
+      "curve_count": 1,
+      "curve_names": ["Village10\\Village10v2"]
+    }
+  ],
+  "attempts_per_level": 16,
+  "total_attempts": 256,
+  "seed_plan": {
+    "base_seed": 20310812,
+    "last_seed": 20311067,
+    "derivation": "base_seed + frozen_level_index * attempts_per_level + attempt_index",
+    "workspace_and_training_json_log_search_before_freeze": "NO_MATCH",
+    "all_seeds_frozen_before_policy_inference": true
+  },
+  "environment": {
+    "profile_mode": "tutorials_completed",
+    "hard": false,
+    "curve_index": 0,
+    "native_tick_hz": 100,
+    "base_config": {
+      "aim_bins": 180,
+      "action_mode": "factorized",
+      "frame_skip": 1,
+      "max_ticks": 12000,
+      "max_balls": 768,
+      "max_projectiles": 32,
+      "max_curves": 2,
+      "score_reward_scale": 0.01,
+      "step_penalty": -0.0001,
+      "win_reward": 10.0,
+      "loss_reward": -10.0,
+      "privileged_debug": false,
+      "render_width": 400,
+      "render_height": 300
+    },
+    "input_profile": {
+      "profile_id": "elite-human-v1",
+      "reaction_delay_ticks": 12,
+      "max_aim_speed_degrees_per_second": 1080.0,
+      "max_aim_acceleration_degrees_per_second_squared": 18000.0,
+      "min_button_interval_ticks": 5
+    },
+    "reward_profile": {
+      "profile_id": "win-time-score-v1",
+      "win_reward": 10.0,
+      "failure_reward": -10.0,
+      "time_penalty_per_native_tick": -0.0001,
+      "score_progress_reward_cap": 0.01
+    },
+    "action_selection": "deterministic_argmax_with_actor_observable_masks",
+    "time_limit_seconds_per_attempt": 120.0
+  },
+  "execution": {
+    "output_root": "/mnt/d/ZumaTraining/zero-shot-v1-multilevel-final-s20310812-n16-v1",
+    "shard_count": 2,
+    "devices": ["cuda:0", "cuda:1"],
+    "parallel_envs_per_shard": 24,
+    "start_method": "forkserver",
+    "level_sharding": "two contiguous frozen level ranges",
+    "task_order": "level order, then attempt index",
+    "early_stop": false,
+    "target_wall_clock_seconds": 3600,
+    "retain_partial_results_if_budget_expires": true
+  },
+  "reporting": {
+    "all_attempts_must_be_reported": true,
+    "level_cleared": "at least one terminal win among 16 attempts",
+    "level_reliably_cleared": "at least 12 terminal wins among 16 attempts",
+    "level_perfect": "16 terminal wins among 16 attempts",
+    "rank_levels_by": [
+      "wins_descending",
+      "best_ticks_ascending",
+      "frozen_level_order"
+    ],
+    "no_posthoc_level_seed_or_time_limit_changes": true
+  },
+  "evaluator": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel.py",
+    "sha256": "sha256:ce8251b07af3afa543aeebe0798277f9963f3d4dc1b62778a538c8e5632afdb4"
+  }
+}

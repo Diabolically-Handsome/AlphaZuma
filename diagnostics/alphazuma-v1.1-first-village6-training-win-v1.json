@@ -1,0 +1,145 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-training-flow-milestone",
+  "version": 1,
+  "status": "TRAINING_FLOW_MILESTONE",
+  "created_utc": "2026-08-14T01:55:09.5356180+00:00",
+  "classification": "non_iid_moving_policy_training_diagnostic_only",
+  "scope": {
+    "formal_selection_seed_consumed": false,
+    "formal_final_blind_seed_consumed": false,
+    "performance_claim_allowed": false,
+    "recipe_change_authorized": false
+  },
+  "baseline_context": {
+    "source": "diagnostics/alphazuma-v1.1-frontier-postprocess-s51081301-preregistration-v1.json",
+    "baseline_model_id": "baseline-v1",
+    "baseline_model_sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579",
+    "previously_zero_win_level_ids": [
+      "Jungle7",
+      "village6",
+      "village10"
+    ]
+  },
+  "snapshot": {
+    "evidence_root": "D:\\ZumaTraining\\alphazuma-v1.1-first-village6-training-win-s55081301-v1",
+    "source_count": 7,
+    "total_steps_this_run": 14253368,
+    "oldest_source_updated_utc": "2026-08-14T01:54:39.107714+00:00",
+    "newest_source_updated_utc": "2026-08-14T01:55:07.442052+00:00"
+  },
+  "aggregate": [
+    {
+      "level": "Jungle7",
+      "episodes": 257,
+      "wins": 4,
+      "losses": 241,
+      "truncations": 12,
+      "routes_with_win": 2
+    },
+    {
+      "level": "village6",
+      "episodes": 345,
+      "wins": 1,
+      "losses": 344,
+      "truncations": 0,
+      "routes_with_win": 1
+    },
+    {
+      "level": "village10",
+      "episodes": 384,
+      "wins": 0,
+      "losses": 370,
+      "truncations": 14,
+      "routes_with_win": 0
+    }
+  ],
+  "winning_routes": [
+    {
+      "run": "alphazuma-v1.1-frontier-fixed-oom-recovery-s47081302-v1",
+      "level": "Jungle7",
+      "episodes": 53,
+      "wins": 3,
+      "losses": 48,
+      "truncations": 2
+    },
+    {
+      "run": "alphazuma-v1.1-frontier-fixed-oom-recovery-s47081302-v1",
+      "level": "village6",
+      "episodes": 71,
+      "wins": 1,
+      "losses": 70,
+      "truncations": 0
+    },
+    {
+      "run": "alphazuma-v1.1-ultradense-zero-win-5090-c-s50081301-v1",
+      "level": "Jungle7",
+      "episodes": 38,
+      "wins": 1,
+      "losses": 33,
+      "truncations": 4
+    }
+  ],
+  "sources": [
+    {
+      "run": "alphazuma-v1.1-frontier-adaptive-oom-recovery-s47081301-v1",
+      "snapshot_path": "D:\\ZumaTraining\\alphazuma-v1.1-first-village6-training-win-s55081301-v1\\status-snapshots\\alphazuma-v1.1-frontier-adaptive-oom-recovery-s47081301-v1.training_status.json",
+      "snapshot_sha256": "sha256:4e4d9d200c032c6ccf86152cb469448088633e0c374c3092f222566ce8baab40",
+      "updated_utc": "2026-08-14T01:54:39.107714+00:00",
+      "steps_this_run": 3296800
+    },
+    {
+      "run": "alphazuma-v1.1-frontier-fixed-oom-recovery-s47081302-v1",
+      "snapshot_path": "D:\\ZumaTraining\\alphazuma-v1.1-first-village6-training-win-s55081301-v1\\status-snapshots\\alphazuma-v1.1-frontier-fixed-oom-recovery-s47081302-v1.training_status.json",
+      "snapshot_sha256": "sha256:5e16b8a3f978e9b4cf85b0296f495680595b640a16a1ac3f132509d3aee4dc2d",
+      "updated_utc": "2026-08-14T01:54:48.975501+00:00",
+      "steps_this_run": 3398672
+    },
+    {
+      "run": "alphazuma-v1.1-memdense-adaptive-5090-a-s48081301-v1",
+      "snapshot_path": "D:\\ZumaTraining\\alphazuma-v1.1-first-village6-training-win-s55081301-v1\\status-snapshots\\alphazuma-v1.1-memdense-adaptive-5090-a-s48081301-v1.training_status.json",
+      "snapshot_sha256": "sha256:f117d2ae8402f9de636c7abd93256e7610567e10af1bc5c2fb4b2910aaa52a68",
+      "updated_utc": "2026-08-14T01:55:06.470840+00:00",
+      "steps_this_run": 1773584
+    },
+    {
+      "run": "alphazuma-v1.1-memdense-fixed-5090-b-s48081302-v1",
+      "snapshot_path": "D:\\ZumaTraining\\alphazuma-v1.1-first-village6-training-win-s55081301-v1\\status-snapshots\\alphazuma-v1.1-memdense-fixed-5090-b-s48081302-v1.training_status.json",
+      "snapshot_sha256": "sha256:2149124ec18b5c6f4d485bf48f8f5b3ed1306805a969ccbc6b7d39ee5a9e8f15",
+      "updated_utc": "2026-08-14T01:54:50.428975+00:00",
+      "steps_this_run": 1679376
+    },
+    {
+      "run": "alphazuma-v1.1-memdense-adaptive-5080-a-s48081303-v1",
+      "snapshot_path": "D:\\ZumaTraining\\alphazuma-v1.1-first-village6-training-win-s55081301-v1\\status-snapshots\\alphazuma-v1.1-memdense-adaptive-5080-a-s48081303-v1.training_status.json",
+      "snapshot_sha256": "sha256:977aed44b9cedbda7355c22f25d0a40d71bbc5f9472685e84a893ff45ef0022d",
+      "updated_utc": "2026-08-14T01:54:58.729053+00:00",
+      "steps_this_run": 1716240
+    },
+    {
+      "run": "alphazuma-v1.1-memdense-fixed-5080-b-s48081304-v1",
+      "snapshot_path": "D:\\ZumaTraining\\alphazuma-v1.1-first-village6-training-win-s55081301-v1\\status-snapshots\\alphazuma-v1.1-memdense-fixed-5080-b-s48081304-v1.training_status.json",
+      "snapshot_sha256": "sha256:fc38f5ca568ef8644d717e5d1899994c9a38476721affcbd8296b96f90c97d6b",
+      "updated_utc": "2026-08-14T01:55:07.442052+00:00",
+      "steps_this_run": 1650704
+    },
+    {
+      "run": "alphazuma-v1.1-ultradense-zero-win-5090-c-s50081301-v1",
+      "snapshot_path": "D:\\ZumaTraining\\alphazuma-v1.1-first-village6-training-win-s55081301-v1\\status-snapshots\\alphazuma-v1.1-ultradense-zero-win-5090-c-s50081301-v1.training_status.json",
+      "snapshot_sha256": "sha256:01d3fce7d0ac74c07dc25eeb9dce89a0f88ec02a4a6e8eba7c6039f785fb38d1",
+      "updated_utc": "2026-08-14T01:55:00.247997+00:00",
+      "steps_this_run": 737992
+    }
+  ],
+  "integrity_expectations": {
+    "source_count_equals_seven": true,
+    "all_snapshot_hashes_must_revalidate": true,
+    "each_level_episodes_equal_wins_plus_losses_plus_truncations": true,
+    "total_steps_equals_sum_of_source_steps": true
+  },
+  "interpretation": {
+    "positive_signal": "The fixed broad-frontier route produced the first observed live-training win on two-curve village6 after already producing Jungle7 wins.",
+    "remaining_unsolved_signal": "village10 remains at zero live-training wins in this snapshot.",
+    "formal_gate_effect": "none",
+    "decision": "Continue the frozen seven-route recipe and defer all model claims to frozen selection and final blind evaluation."
+  }
+}

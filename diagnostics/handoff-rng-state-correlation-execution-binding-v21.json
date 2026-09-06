@@ -1,0 +1,72 @@
+{
+  "schema": "zuma-rl.pc-handoff-rng-state-correlation-execution-binding",
+  "version": 21,
+  "status": "BOUND_BEFORE_RUN_OUTPUTS",
+  "created_utc": "2026-08-05T18:48:40.369Z",
+  "id": "handoff-rng-state-correlation-v21-execution",
+  "session_nonce": "191963fd19234baeb8d7ef427b7a3198",
+  "parent_preregistration": "diagnostics/handoff-rng-state-correlation-preregistration-v21.json",
+  "parent_preregistration_sha256": "sha256:ee77c282e67455f3e1095ea8ab800a3be266beb01e5e5f5e81de2f1121047ac3",
+  "trigger_outcome": "diagnostics/handoff-rng-state-smoke-outcome-v20.json",
+  "trigger_outcome_sha256": "sha256:d1121f8dcc1d810a322d36d89c079e948b76ead601182058c817f4d9997d8b3e",
+  "preflight": {
+    "all_40_run_roots_absent": true,
+    "all_42_host_outputs_absent": true,
+    "outcome_absent": true,
+    "runtime_process_count": 0,
+    "input_and_tool_hashes_match": true,
+    "focused_tests": "PASS_62",
+    "native_full_suite": "PASS_1164_SKIPPED_12_EXIT_0",
+    "capture_fresh_host_pre_after_this_binding": true
+  },
+  "hash_recheck": {
+    "collector_plan_sha256": "sha256:5a7ba58eccd7e0d1b1008ac089cce59c167a26ba8bc359ef76f3dcd2bea8c0db",
+    "playback_dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "replay_pre_snapshot_sha256": "sha256:06d243f34ecf209c6296659fd4cc3c0a6c299c203cc8b4e342f55cc001c32842",
+    "host_restore_snapshot_sha256": "sha256:c48bd69be03fc6e2fdf1a400b571f0f0294a5fadda1c48e08c1bd6d1dd093f46",
+    "global_mtrand_source_trace_sha256": "sha256:4de39ac6a0e800323949e0095fc2fd3e924ea41a670ceb5d75a0ecb25b5c15a4",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "global_boundary_tool_sha256": "sha256:fb09e111f26a23c3ac1114fedb0598913fc8ec08f98ff554f5a187454118a16b",
+    "collector_sha256": "sha256:82710b324e65ed41a54a647243c22007ce7a3d76ed9143137df0309404cbb794",
+    "synchronizer_test_sha256": "sha256:8b341974b3e662305099c304a41fa6a6f88601684c017c31ff72c990d945f8a1",
+    "collector_test_sha256": "sha256:4da8a61a626bb5678b720592f2fc081a23edfd78ea90a3ddfd06d362026fb2cf",
+    "thread_runtime_test_sha256": "sha256:75f4c68d5ee26bd9ce7a6ca20ca7d6cf4f21977974b230d6724df1204ff18fbd"
+  },
+  "fixed_command_contract": {
+    "probe_update": 3425,
+    "slowdown_update": 3415,
+    "maximum_attempts": 3,
+    "trajectory_mode": "rng",
+    "trajectory_end_update": 3425,
+    "trace_detach_update": 1702,
+    "trace_reattach_update": 3501,
+    "global_mtrand_call_start_after_update": 1702,
+    "global_mtrand_call_end_at_update": 3121,
+    "global_mtrand_call_observe_boundary_only": true,
+    "global_mtrand_call_observe_thread_runtime": true,
+    "global_mtrand_call_observe_handoff_thread_runtime": true,
+    "global_mtrand_call_observe_handoff_rng_state": true,
+    "diagnostic_disable_source_bound_board_anchor": true,
+    "skip_repaint_guard": true,
+    "skip_frozen_snapshot": true,
+    "timeout_seconds": 900
+  },
+  "fixed_execution_order": ["r01", "r02", "r03", "r04", "r05", "r06", "r07", "r08", "r09", "r10", "r11", "r12", "r13", "r14", "r15", "r16", "r17", "r18", "r19", "r20", "r21", "r22", "r23", "r24", "r25", "r26", "r27", "r28", "r29", "r30", "r31", "r32", "r33", "r34", "r35", "r36", "r37", "r38", "r39", "r40"],
+  "stage_rule": {
+    "always_execute_r01_through_r20": true,
+    "evaluate_frozen_transition_once_after_r20": true,
+    "execute_r21_through_r40_unless_stage_one_stop_rule_passes": true,
+    "never_extend_beyond_r40": true
+  },
+  "execution_rule": {
+    "retain_every_attempt": true,
+    "stop_at_first_valid_boundary_observation_per_root": true,
+    "never_retry_for_semantic_exact_deficit_or_surplus": true,
+    "post_verified_ready_failure_is_nonretryable": true,
+    "capture_host_snapshot_after_every_root": true,
+    "verify_same_host_state_root_after_every_root": true,
+    "do_not_change_analysis_after_outputs": true
+  },
+  "output_absence_recheck": {"all_40_run_roots": true, "all_42_host_outputs": true, "outcome": true},
+  "non_authorizations": ["pc_golden_credit", "fidelity_gate_change", "formal_transport_change", "large_scale_training_start"]
+}

@@ -1,0 +1,65 @@
+{
+  "schema": "zuma-rl.teacher-offline-polar-aim-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T11:06:10.027Z",
+  "status": "POLAR_CAPACITY_PASS",
+  "decision": "FREEZE_CANDIDATE_AUTHORIZE_FRESH_FULL_HORIZON_EVALUATION",
+  "preregistration": {
+    "path": "diagnostics/teacher-offline-polar90-s20260873-preregistration-v1.json",
+    "sha256": "sha256:596b9ca7aa95950c8004faa6510ab265204f28cb5c8d1ccff7043307f6ec5e29",
+    "status": "FROZEN_BEFORE_RUN_OUTPUT"
+  },
+  "artifacts": {
+    "run_dir": "D:/ZumaTraining/screening-teacher-offline-polar90-s20260873-v1",
+    "report_sha256": "sha256:a6a75707e4f51291bd84293d7b36e6e7496ff98b2cf825adeef485f07c9c1279",
+    "completion_sha256": "sha256:37894cf203d501d38af05faa6f87374d7b5682ddd85e533b96e988720adbfc52",
+    "model_sha256": "sha256:f03dee97cb5a3e2ce3abcf4324137fe6ed9b68e827765b4a7b6adfa63cafb8f7"
+  },
+  "acceptance_results": {
+    "pipeline": {
+      "pass": true,
+      "process_exit_code": 0,
+      "completion_receipt_status": "COMPLETE",
+      "report_status": "OFFLINE_COMPLETE",
+      "policy_architecture": "entity_polar",
+      "policy_parameter_count": 321188
+    },
+    "verb_capacity": {
+      "pass": true,
+      "verb_accuracy": 0.9753336029114436,
+      "fire_recall": 0.9513157894736842,
+      "swap_recall": 0.9601328903654485,
+      "confusion_expected_rows_predicted_columns": [
+        [1111, 0, 0],
+        [3, 723, 34],
+        [0, 24, 578]
+      ]
+    },
+    "aim_capacity": {
+      "pass": true,
+      "fire_aim_exact_accuracy": 0.6618421052631579,
+      "required_exact_accuracy": 0.35,
+      "fire_aim_within_three_accuracy": 0.7631578947368421,
+      "required_within_three_accuracy": 0.55,
+      "fire_predicted_unique_aim_bins": 160,
+      "required_predicted_unique_aim_bins": 120,
+      "fire_aim_mean_circular_bin_error": 9.453947368421053,
+      "required_mean_error_at_most": 10.0,
+      "fire_aim_median_circular_bin_error": 0.0,
+      "fire_aim_p90_circular_bin_error": 43.10000000000002
+    }
+  },
+  "bounded_inference": "the direct actor-visible polar basis removes the generic head's circular-coordinate bottleneck on the consumed dataset; no environment generalization claim is made until fresh full-horizon evaluation",
+  "next_action": {
+    "authorized": "one preregistered full-horizon evaluation of the frozen model on fresh environment seeds",
+    "forbidden": "do not update this model before that evaluation and do not claim large-scale RL readiness from consumed-dataset metrics"
+  },
+  "non_authorizations": [
+    "generalization_claim",
+    "held_out_environment_claim",
+    "large_scale_training",
+    "rl_recipe_promotion",
+    "fidelity_gate_opening",
+    "original_transfer_certification"
+  ]
+}

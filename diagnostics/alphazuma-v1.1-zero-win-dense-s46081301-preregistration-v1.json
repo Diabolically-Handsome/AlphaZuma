@@ -1,0 +1,219 @@
+{
+  "schema": "zuma-rl.overnight-multilevel-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_TRAINING",
+  "frozen_utc": "2026-08-13T23:29:00Z",
+  "id": "alphazuma-v1.1-zero-win-dense-s46081301-v1",
+  "objective": "Move both GPUs into the preregistered 65 to 90 percent operating band with two independent compute-dense routes whose useful work is concentrated on the three frozen-blind zero-win levels while retaining Jungle2 as the generalist anchor.",
+  "scope": {
+    "release_line": "AlphaZuma V1.1",
+    "candidate_eligible": true,
+    "zero_win_specialist": true,
+    "state_policy": true,
+    "single_frog_control_contract_only": true,
+    "two_curve_levels_included": ["village6"],
+    "architecture_changed": false,
+    "reward_changed": false,
+    "human_input_limits_changed": false,
+    "optimizer_reset_for_recipe_change": true,
+    "existing_six_routes_continue_in_parallel": true
+  },
+  "trainer": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/train_overnight_multilevel.py",
+    "sha256": "sha256:2886a72a7348e492f4d34f4ef9733eee1668df24e17cc896ace0094267d371ba",
+    "load_evidence_before_addition": {
+      "sample_count_per_gpu": 50,
+      "gpu0_average_percent": 49.3,
+      "gpu1_average_percent": 61.0,
+      "combined_interval_steps_per_second": 2701.0,
+      "host_free_memory_gib": 50.9,
+      "host_cpu_observed_percent_range": [27.4, 39.2],
+      "gpu0_max_temperature_c": 45,
+      "gpu1_max_temperature_c": 58,
+      "all_six_stderr_empty": true
+    }
+  },
+  "initial_model": {
+    "id": "alphazuma-v1-published-champion-adaptive-mid-13631488",
+    "training_steps": 13631488,
+    "path": "/mnt/d/ZumaTraining/overnight-v11-adaptive-recovery-s43081301-v1/checkpoints/adaptive-5090-recovery_13631488_steps.zip",
+    "sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579"
+  },
+  "levels": [
+    {
+      "id": "Jungle2",
+      "display_name": "Castaway",
+      "curve_count": 1,
+      "curve_names": ["Jungle2\\Jungle2"]
+    },
+    {
+      "id": "Jungle7",
+      "display_name": "Sand Trap",
+      "curve_count": 1,
+      "curve_names": ["Jungle7\\Jungle7"]
+    },
+    {
+      "id": "village6",
+      "display_name": "Face Your Fear",
+      "curve_count": 2,
+      "curve_names": ["Village6-1", "Village6-2"]
+    },
+    {
+      "id": "village10",
+      "display_name": "The Horseshoe",
+      "curve_count": 1,
+      "curve_names": ["Village10\\Village10v2"]
+    }
+  ],
+  "environment": {
+    "profile_mode": "tutorials_completed",
+    "hard": false,
+    "curve_index": 0,
+    "base_config": {
+      "aim_bins": 180,
+      "action_mode": "factorized",
+      "frame_skip": 1,
+      "max_ticks": 12000,
+      "max_balls": 768,
+      "max_projectiles": 32,
+      "max_curves": 2,
+      "score_reward_scale": 0.01,
+      "step_penalty": -0.0001,
+      "win_reward": 10,
+      "loss_reward": -10,
+      "privileged_debug": false,
+      "render_width": 400,
+      "render_height": 300
+    },
+    "input_profile": {
+      "profile_id": "elite-human-v1",
+      "reaction_delay_ticks": 12,
+      "max_aim_speed_degrees_per_second": 1080,
+      "max_aim_acceleration_degrees_per_second_squared": 18000,
+      "min_button_interval_ticks": 5
+    },
+    "reward_profile": {
+      "profile_id": "win-time-score-v1",
+      "win_reward": 10,
+      "failure_reward": -10,
+      "time_penalty_per_native_tick": -0.0001,
+      "score_progress_reward_cap": 0.01
+    }
+  },
+  "runs": [
+    {
+      "id": "zero-win-dense-adaptive-5090-c",
+      "description": "Independent zero-win specialist on RTX 5090 with adaptive sampling and a Jungle2 retention anchor.",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-v1.1-zero-win-dense-adaptive-5090-c-s46081301-v1",
+      "device": "cuda:0",
+      "seed": 46081301,
+      "episode_seed_base": 894000000,
+      "episode_seed_stride": 250000,
+      "total_steps": 60000000,
+      "num_envs": 32,
+      "rollout_steps": 256,
+      "batch_size": 512,
+      "ppo_epochs": 10,
+      "learning_rate": 0.000005,
+      "entropy_coef": 0,
+      "checkpoint_every": 1048576,
+      "initial_weights": {
+        "Jungle2": 2.5,
+        "Jungle7": 7,
+        "village6": 8,
+        "village10": 8
+      },
+      "adaptive": {
+        "enabled": true,
+        "update_every_steps": 262144,
+        "rolling_episodes": 64,
+        "minimum_episodes": 4,
+        "minimum_weight": 1,
+        "maximum_weight": 9,
+        "anchor_level": "Jungle2"
+      }
+    },
+    {
+      "id": "zero-win-dense-adaptive-5080-c",
+      "description": "Independent zero-win specialist on RTX 5080 with adaptive sampling and a Jungle2 retention anchor.",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-v1.1-zero-win-dense-adaptive-5080-c-s46081302-v1",
+      "device": "cuda:1",
+      "seed": 46081302,
+      "episode_seed_base": 902000000,
+      "episode_seed_stride": 250000,
+      "total_steps": 60000000,
+      "num_envs": 32,
+      "rollout_steps": 256,
+      "batch_size": 512,
+      "ppo_epochs": 10,
+      "learning_rate": 0.000005,
+      "entropy_coef": 0,
+      "checkpoint_every": 1048576,
+      "initial_weights": {
+        "Jungle2": 2.5,
+        "Jungle7": 7,
+        "village6": 8,
+        "village10": 8
+      },
+      "adaptive": {
+        "enabled": true,
+        "update_every_steps": 262144,
+        "rolling_episodes": 64,
+        "minimum_episodes": 4,
+        "minimum_weight": 1,
+        "maximum_weight": 9,
+        "anchor_level": "Jungle2"
+      }
+    }
+  ],
+  "seed_isolation": {
+    "zero_win_5090_c_episode_range": [894000000, 901999999],
+    "zero_win_5080_c_episode_range": [902000000, 909999999],
+    "prior_dense_ranges_end_at": 887999999,
+    "calibration_ranges": [[890000000, 891599999], [892000000, 892799999]],
+    "selection_seed_base_reserved": 910000000,
+    "final_blind_seed_base_reserved": 1010000000,
+    "no_overlap": true
+  },
+  "load_control": {
+    "target_average_gpu_utilization_percent": 80,
+    "acceptable_operating_band_percent": [65, 90],
+    "maximum_gpu_temperature_c": 82,
+    "minimum_host_free_memory_gib": 16,
+    "maximum_host_cpu_percent": 90,
+    "training_quality_has_priority_over_cosmetic_utilization": true
+  },
+  "future_selection_rule": {
+    "selection_seeds_must_remain_unconsumed_until_candidate_set_is_frozen": true,
+    "specialists_must_pass_Jungle2_retention_before_promotion": true,
+    "ranking": [
+      "require Jungle2 retention before promotion",
+      "zero-win target levels cleared descending",
+      "zero-win target wins descending",
+      "all 16 target levels cleared descending",
+      "all target wins descending"
+    ],
+    "final_blind_seeds_must_not_be_used_for_model_selection": true
+  },
+  "schedule": {
+    "training_stop_utc": "2026-08-14T12:00:00Z",
+    "training_stop_local": "2026-08-14T08:00:00-04:00",
+    "reserved_for_selection_and_reporting_seconds": 9000,
+    "goal_end_utc": "2026-08-14T14:30:00Z",
+    "goal_end_local": "2026-08-14T10:30:00-04:00"
+  },
+  "implementation": {
+    "revenge_core": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_core.py",
+      "sha256": "sha256:2652b12d396d47f70875323ab7157c64d68d5067ff762cc723a2aba99329dae3"
+    },
+    "revenge_env": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_env.py",
+      "sha256": "sha256:8c4e49e31725a5c47b3dd4933c6e3b9195bcbddc717e5390bf4e5a56f0d6e8d0"
+    },
+    "human_speedrun": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/human_speedrun.py",
+      "sha256": "sha256:d2df69821ce5f5e837a962cfc6efdafaf152baf06a30fb8c6d2c04ddec6517dd"
+    }
+  }
+}

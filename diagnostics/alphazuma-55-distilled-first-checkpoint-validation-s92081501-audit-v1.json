@@ -1,0 +1,186 @@
+{
+  "schema": "zuma-rl.alphazuma-55-training-validation-audit",
+  "version": 1,
+  "status": "PASS",
+  "audited_utc": "2026-08-15T04:51:22.590291+00:00",
+  "formal_selection_authority": false,
+  "training_recipe_change_authority": false,
+  "artifacts": {
+    "master": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+      "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+    },
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-distilled-first-checkpoint-validation-s92081501-preregistration-v1.json",
+      "sha256": "sha256:ef14dbcd6d4c52f0054df58b55124a806fca6ed13e12d587e6f7d972d5adde73"
+    },
+    "models_manifest": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-distilled-first-checkpoint-validation-s92081501-models-v1.json",
+      "sha256": "sha256:06b121d12511ff1c48d4019bef04d38b9ffef4398132631a78316a6da3ce8fbe"
+    },
+    "matrix_shard": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-distilled-first-checkpoint-validation-s92081501-v1/matrix-shard-00-of-01.json",
+      "sha256": "sha256:03cec966ee93cd22d4ae894825628b3dbd1a7cc0f78961d946a2a28407ef3431"
+    },
+    "auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_training_validation.py",
+      "sha256": "sha256:3621dcb64c3342e3954533d22401f258fe6c72ac49d164456455ad77ea54aa67"
+    }
+  },
+  "matrix": {
+    "levels": 55,
+    "attempts_per_model": 55,
+    "models": 2,
+    "completed_attempts": 110,
+    "seed_plan": {
+      "registry": "training_validation",
+      "base_seed": 1550000000,
+      "last_seed": 1550000054
+    },
+    "runtime": {
+      "python": "3.12.3",
+      "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "parallel_envs": 55,
+      "total_vector_transitions": 1183270,
+      "wall_seconds": 979.4413060869992
+    }
+  },
+  "model_summaries": [
+    {
+      "model_id": "distilled-source",
+      "model_sha256": "sha256:36d8bf8882a949d69f06f7ba5c456ef076b6a4bd7268505c996ba627050ccb82",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "distilled-ppo-1048576",
+      "model_sha256": "sha256:2ef8e2d4f4865c13056c27e71bd203f454f883a9b226583050156b6ae9ce4bc8",
+      "attempts": 55,
+      "wins": 13,
+      "losses": 18,
+      "truncations": 24,
+      "cleared_levels": 13,
+      "winning_levels": [
+        {
+          "level_id": "Jungle1",
+          "seed": 1550000000,
+          "ticks": 5668,
+          "score": 2620,
+          "trajectory_sha256": "sha256:90fc5efefb6aafb3483e37ba0512e4f0f9c20fbf50db47689cfb78e8b3eae8f3"
+        },
+        {
+          "level_id": "Jungle2",
+          "seed": 1550000001,
+          "ticks": 3458,
+          "score": 2420,
+          "trajectory_sha256": "sha256:da5333139cc7fd3400ae3a6788a72a07dcbfbd502d8b52e96837169c74fb0bb8"
+        },
+        {
+          "level_id": "Jungle3",
+          "seed": 1550000002,
+          "ticks": 3612,
+          "score": 2990,
+          "trajectory_sha256": "sha256:37f3e3070000e1637931858c881d0d4f6ed2b51bff5c514513d0c078e313385f"
+        },
+        {
+          "level_id": "Jungle4",
+          "seed": 1550000003,
+          "ticks": 2856,
+          "score": 2960,
+          "trajectory_sha256": "sha256:cbdc2ea68b7083fc447190fe39934c9614439164aa65f72376484aff2713ffb3"
+        },
+        {
+          "level_id": "jungle6",
+          "seed": 1550000004,
+          "ticks": 2707,
+          "score": 2930,
+          "trajectory_sha256": "sha256:2e1a221dcb7121d0bc00e873707b45d1ab8422b22d7e01e776b64d2b4ae1555d"
+        },
+        {
+          "level_id": "Jungle8",
+          "seed": 1550000006,
+          "ticks": 5200,
+          "score": 3660,
+          "trajectory_sha256": "sha256:3532d408924ccdaf478cbca43c6e0793ff3221e87601342d59ad7a5870149802"
+        },
+        {
+          "level_id": "Jungle10",
+          "seed": 1550000008,
+          "ticks": 5259,
+          "score": 4320,
+          "trajectory_sha256": "sha256:8b0578d8fbd1ac716550f9d3d2268e680e0c0e0246d52fae1c79c0cad559fd82"
+        },
+        {
+          "level_id": "village1",
+          "seed": 1550000009,
+          "ticks": 3015,
+          "score": 2990,
+          "trajectory_sha256": "sha256:56aeefde7ea9a95def9cfa42e0762d173a4ceec2e8fa2a1f2428b1a310fdd712"
+        },
+        {
+          "level_id": "village2",
+          "seed": 1550000010,
+          "ticks": 3037,
+          "score": 3530,
+          "trajectory_sha256": "sha256:474d2179f1394f8fed6cfa10460176fed6d95c4b21f163af5509dd5ca1a88914"
+        },
+        {
+          "level_id": "village4",
+          "seed": 1550000012,
+          "ticks": 4642,
+          "score": 3990,
+          "trajectory_sha256": "sha256:dfa5c3323bc512244feec82b93477becba2312601d568c96f5c5159199c70de9"
+        },
+        {
+          "level_id": "village7",
+          "seed": 1550000015,
+          "ticks": 11490,
+          "score": 11110,
+          "trajectory_sha256": "sha256:624cf0ade424a7b0481e00f8b5e153900c5dfe11a61e7f8840295bf4905415c2"
+        },
+        {
+          "level_id": "village8",
+          "seed": 1550000016,
+          "ticks": 7657,
+          "score": 5950,
+          "trajectory_sha256": "sha256:5c9d0fcc22d63908c22c8028283716d7e74fa7573b82cc312909231f04f55811"
+        },
+        {
+          "level_id": "city5",
+          "seed": 1550000022,
+          "ticks": 9562,
+          "score": 5650,
+          "trajectory_sha256": "sha256:8676d876ca051330b40e360425447cc1b3ee7d7dd58015b9b4c538d7e528501a"
+        }
+      ],
+      "median_winning_ticks": 4642
+    }
+  ],
+  "paired_comparison": {
+    "baseline_model_id": "distilled-source",
+    "candidate_model_id": "distilled-ppo-1048576",
+    "wins_delta": 13,
+    "cleared_levels_delta": 13,
+    "candidate_only_winning_levels": [
+      "Jungle1",
+      "Jungle10",
+      "Jungle2",
+      "Jungle3",
+      "Jungle4",
+      "Jungle8",
+      "city5",
+      "jungle6",
+      "village1",
+      "village2",
+      "village4",
+      "village7",
+      "village8"
+    ]
+  },
+  "interpretation_boundary": "This PASS proves artifact integrity and a paired training-health signal only; it is not selection, final blind, or continuous-campaign evidence."
+}

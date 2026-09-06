@@ -1,0 +1,923 @@
+{
+  "schema": "zuma-rl.alphazuma-55-teacher-map",
+  "version": 1,
+  "status": "FROZEN",
+  "created_utc": "2026-08-15T02:38:15.043210+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "source_stage": "engineering",
+  "preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-engineering-baseline-s82081402-preregistration-v1.json",
+    "sha256": "sha256:c6c00d29dfebeafa347aa7995608d53c73b5b8d29eba7d9a056ff72568b9c6f8"
+  },
+  "models_manifest": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-engineering-baseline-s82081402-models-v1.json",
+    "sha256": "sha256:0397b0123b2eadf3dfdcbff62fc2975997c5398878d5914ad432b76060a56b8b"
+  },
+  "shards": [
+    {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering-baseline-s82081402-v1/matrix-shard-00-of-02.json",
+      "sha256": "sha256:989fead6e9837c84ce21f9c056efbc89f4ce497d297ca46c0e1e48f1afcd3742",
+      "index": 0
+    },
+    {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering-baseline-s82081402-v1/matrix-shard-01-of-02.json",
+      "sha256": "sha256:222ac898fd7ca534501e692255b2e59997ca10a83ca1f2aa82521b30a504402e",
+      "index": 1
+    }
+  ],
+  "selection_rule": [
+    "engineering wins descending",
+    "best score descending",
+    "median winning ticks ascending",
+    "model sha256 ascending"
+  ],
+  "teacher_proven_level_count": 17,
+  "teacher_unproven_level_count": 38,
+  "model_selection_counts": {
+    "speed-essence-full55": 17,
+    "v1-full55": 21,
+    "v11-full55": 17
+  },
+  "levels": [
+    {
+      "level_id": "Jungle1",
+      "display_name": "Shipwrecked!",
+      "teacher_model": {
+        "id": "v11-full55",
+        "training_steps": 33772736,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1.zip",
+        "sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d"
+      },
+      "selection_basis": "engineering_win",
+      "engineering_wins": 1,
+      "engineering_attempts": 1,
+      "best_ticks": 9003,
+      "best_score": 4140,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "Jungle2",
+      "display_name": "Castaway",
+      "teacher_model": {
+        "id": "v11-full55",
+        "training_steps": 33772736,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1.zip",
+        "sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d"
+      },
+      "selection_basis": "engineering_win",
+      "engineering_wins": 1,
+      "engineering_attempts": 1,
+      "best_ticks": 1836,
+      "best_score": 1870,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "Jungle3",
+      "display_name": "Echo Beach",
+      "teacher_model": {
+        "id": "v11-full55",
+        "training_steps": 33772736,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1.zip",
+        "sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d"
+      },
+      "selection_basis": "engineering_win",
+      "engineering_wins": 1,
+      "engineering_attempts": 1,
+      "best_ticks": 5070,
+      "best_score": 3940,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "Jungle4",
+      "display_name": "Bones of an Idol",
+      "teacher_model": {
+        "id": "v11-full55",
+        "training_steps": 33772736,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1.zip",
+        "sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d"
+      },
+      "selection_basis": "engineering_win",
+      "engineering_wins": 1,
+      "engineering_attempts": 1,
+      "best_ticks": 2187,
+      "best_score": 2790,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "jungle6",
+      "display_name": "Jungle Clearing",
+      "teacher_model": {
+        "id": "v11-full55",
+        "training_steps": 33772736,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1.zip",
+        "sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d"
+      },
+      "selection_basis": "engineering_win",
+      "engineering_wins": 1,
+      "engineering_attempts": 1,
+      "best_ticks": 4717,
+      "best_score": 3420,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "Jungle7",
+      "display_name": "Sand Trap",
+      "teacher_model": {
+        "id": "speed-essence-full55",
+        "training_steps": 7813504,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/speed-essence-full55-v1.zip",
+        "sha256": "sha256:cfa2d352dacb5b5b1bddccd8445ae19693cd1bd1a7fa2a0e0d967e4addbf9094"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 5650,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "Jungle8",
+      "display_name": "Nasal Passage",
+      "teacher_model": {
+        "id": "speed-essence-full55",
+        "training_steps": 7813504,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/speed-essence-full55-v1.zip",
+        "sha256": "sha256:cfa2d352dacb5b5b1bddccd8445ae19693cd1bd1a7fa2a0e0d967e4addbf9094"
+      },
+      "selection_basis": "engineering_win",
+      "engineering_wins": 1,
+      "engineering_attempts": 1,
+      "best_ticks": 4606,
+      "best_score": 5590,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "Jungle9",
+      "display_name": "Creeper Copse",
+      "teacher_model": {
+        "id": "v11-full55",
+        "training_steps": 33772736,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1.zip",
+        "sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d"
+      },
+      "selection_basis": "engineering_win",
+      "engineering_wins": 1,
+      "engineering_attempts": 1,
+      "best_ticks": 8074,
+      "best_score": 6990,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "Jungle10",
+      "display_name": "Darkness Falls",
+      "teacher_model": {
+        "id": "v1-full55",
+        "training_steps": 13631488,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v1-full55-v1.zip",
+        "sha256": "sha256:aa590502630e22bd4601bbca43befa519c532183a1268e3c453796e82a6dc0e7"
+      },
+      "selection_basis": "engineering_win",
+      "engineering_wins": 1,
+      "engineering_attempts": 1,
+      "best_ticks": 4808,
+      "best_score": 6020,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "village1",
+      "display_name": "Watering Hole",
+      "teacher_model": {
+        "id": "v1-full55",
+        "training_steps": 13631488,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v1-full55-v1.zip",
+        "sha256": "sha256:aa590502630e22bd4601bbca43befa519c532183a1268e3c453796e82a6dc0e7"
+      },
+      "selection_basis": "engineering_win",
+      "engineering_wins": 1,
+      "engineering_attempts": 1,
+      "best_ticks": 9922,
+      "best_score": 10740,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "village2",
+      "display_name": "Overgrown Plaza",
+      "teacher_model": {
+        "id": "speed-essence-full55",
+        "training_steps": 7813504,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/speed-essence-full55-v1.zip",
+        "sha256": "sha256:cfa2d352dacb5b5b1bddccd8445ae19693cd1bd1a7fa2a0e0d967e4addbf9094"
+      },
+      "selection_basis": "engineering_win",
+      "engineering_wins": 1,
+      "engineering_attempts": 1,
+      "best_ticks": 4847,
+      "best_score": 6400,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "village3",
+      "display_name": "Lilypad Leap",
+      "teacher_model": {
+        "id": "speed-essence-full55",
+        "training_steps": 7813504,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/speed-essence-full55-v1.zip",
+        "sha256": "sha256:cfa2d352dacb5b5b1bddccd8445ae19693cd1bd1a7fa2a0e0d967e4addbf9094"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 2150,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "village4",
+      "display_name": "Sandspirals",
+      "teacher_model": {
+        "id": "v1-full55",
+        "training_steps": 13631488,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v1-full55-v1.zip",
+        "sha256": "sha256:aa590502630e22bd4601bbca43befa519c532183a1268e3c453796e82a6dc0e7"
+      },
+      "selection_basis": "engineering_win",
+      "engineering_wins": 1,
+      "engineering_attempts": 1,
+      "best_ticks": 8009,
+      "best_score": 9630,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "village5",
+      "display_name": "Abandoned Well",
+      "teacher_model": {
+        "id": "speed-essence-full55",
+        "training_steps": 7813504,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/speed-essence-full55-v1.zip",
+        "sha256": "sha256:cfa2d352dacb5b5b1bddccd8445ae19693cd1bd1a7fa2a0e0d967e4addbf9094"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 11730,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "village6",
+      "display_name": "Face Your Fear",
+      "teacher_model": {
+        "id": "speed-essence-full55",
+        "training_steps": 7813504,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/speed-essence-full55-v1.zip",
+        "sha256": "sha256:cfa2d352dacb5b5b1bddccd8445ae19693cd1bd1a7fa2a0e0d967e4addbf9094"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 5780,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "village7",
+      "display_name": "Seven Sides (minus one)",
+      "teacher_model": {
+        "id": "v11-full55",
+        "training_steps": 33772736,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1.zip",
+        "sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d"
+      },
+      "selection_basis": "engineering_win",
+      "engineering_wins": 1,
+      "engineering_attempts": 1,
+      "best_ticks": 6557,
+      "best_score": 6420,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "village8",
+      "display_name": "Vines of Vengeance",
+      "teacher_model": {
+        "id": "speed-essence-full55",
+        "training_steps": 7813504,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/speed-essence-full55-v1.zip",
+        "sha256": "sha256:cfa2d352dacb5b5b1bddccd8445ae19693cd1bd1a7fa2a0e0d967e4addbf9094"
+      },
+      "selection_basis": "engineering_win",
+      "engineering_wins": 1,
+      "engineering_attempts": 1,
+      "best_ticks": 8997,
+      "best_score": 9120,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "village10",
+      "display_name": "The Horseshoe",
+      "teacher_model": {
+        "id": "v1-full55",
+        "training_steps": 13631488,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v1-full55-v1.zip",
+        "sha256": "sha256:aa590502630e22bd4601bbca43befa519c532183a1268e3c453796e82a6dc0e7"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 6170,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "city1",
+      "display_name": "Ancient Cistern",
+      "teacher_model": {
+        "id": "speed-essence-full55",
+        "training_steps": 7813504,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/speed-essence-full55-v1.zip",
+        "sha256": "sha256:cfa2d352dacb5b5b1bddccd8445ae19693cd1bd1a7fa2a0e0d967e4addbf9094"
+      },
+      "selection_basis": "engineering_win",
+      "engineering_wins": 1,
+      "engineering_attempts": 1,
+      "best_ticks": 7223,
+      "best_score": 8620,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "city2",
+      "display_name": "Blossom Grove",
+      "teacher_model": {
+        "id": "v1-full55",
+        "training_steps": 13631488,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v1-full55-v1.zip",
+        "sha256": "sha256:aa590502630e22bd4601bbca43befa519c532183a1268e3c453796e82a6dc0e7"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 3460,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "city3",
+      "display_name": "Empty Cistern",
+      "teacher_model": {
+        "id": "speed-essence-full55",
+        "training_steps": 7813504,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/speed-essence-full55-v1.zip",
+        "sha256": "sha256:cfa2d352dacb5b5b1bddccd8445ae19693cd1bd1a7fa2a0e0d967e4addbf9094"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 3290,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "city4",
+      "display_name": "Ancestral Tongue",
+      "teacher_model": {
+        "id": "v11-full55",
+        "training_steps": 33772736,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1.zip",
+        "sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 2590,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "city5",
+      "display_name": "Mossy Square",
+      "teacher_model": {
+        "id": "v11-full55",
+        "training_steps": 33772736,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1.zip",
+        "sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d"
+      },
+      "selection_basis": "engineering_win",
+      "engineering_wins": 1,
+      "engineering_attempts": 1,
+      "best_ticks": 10341,
+      "best_score": 14470,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "city6",
+      "display_name": "Mosaic Mayhem",
+      "teacher_model": {
+        "id": "speed-essence-full55",
+        "training_steps": 7813504,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/speed-essence-full55-v1.zip",
+        "sha256": "sha256:cfa2d352dacb5b5b1bddccd8445ae19693cd1bd1a7fa2a0e0d967e4addbf9094"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 7740,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "city7",
+      "display_name": "Strange Smile",
+      "teacher_model": {
+        "id": "v11-full55",
+        "training_steps": 33772736,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1.zip",
+        "sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 8800,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "city9",
+      "display_name": "Ghosts of the Past",
+      "teacher_model": {
+        "id": "v1-full55",
+        "training_steps": 13631488,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v1-full55-v1.zip",
+        "sha256": "sha256:aa590502630e22bd4601bbca43befa519c532183a1268e3c453796e82a6dc0e7"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 10440,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "city10",
+      "display_name": "Double Danger",
+      "teacher_model": {
+        "id": "v1-full55",
+        "training_steps": 13631488,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v1-full55-v1.zip",
+        "sha256": "sha256:aa590502630e22bd4601bbca43befa519c532183a1268e3c453796e82a6dc0e7"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 4950,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "Coast1",
+      "display_name": "Swamp Spin",
+      "teacher_model": {
+        "id": "v11-full55",
+        "training_steps": 33772736,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1.zip",
+        "sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 5360,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "Coast2",
+      "display_name": "Deadmarsh",
+      "teacher_model": {
+        "id": "v1-full55",
+        "training_steps": 13631488,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v1-full55-v1.zip",
+        "sha256": "sha256:aa590502630e22bd4601bbca43befa519c532183a1268e3c453796e82a6dc0e7"
+      },
+      "selection_basis": "engineering_win",
+      "engineering_wins": 1,
+      "engineering_attempts": 1,
+      "best_ticks": 4818,
+      "best_score": 5320,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "Coast3",
+      "display_name": "Stagnant Ponds",
+      "teacher_model": {
+        "id": "v1-full55",
+        "training_steps": 13631488,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v1-full55-v1.zip",
+        "sha256": "sha256:aa590502630e22bd4601bbca43befa519c532183a1268e3c453796e82a6dc0e7"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 1370,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "Coast4",
+      "display_name": "Brackish Pool",
+      "teacher_model": {
+        "id": "v1-full55",
+        "training_steps": 13631488,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v1-full55-v1.zip",
+        "sha256": "sha256:aa590502630e22bd4601bbca43befa519c532183a1268e3c453796e82a6dc0e7"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 1330,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "Coast5",
+      "display_name": "Justified and Ancient",
+      "teacher_model": {
+        "id": "v11-full55",
+        "training_steps": 33772736,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1.zip",
+        "sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 7710,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "Coast6",
+      "display_name": "Ancient Inlay",
+      "teacher_model": {
+        "id": "v11-full55",
+        "training_steps": 33772736,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1.zip",
+        "sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 8460,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "Coast7",
+      "display_name": "Secret Circle",
+      "teacher_model": {
+        "id": "speed-essence-full55",
+        "training_steps": 7813504,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/speed-essence-full55-v1.zip",
+        "sha256": "sha256:cfa2d352dacb5b5b1bddccd8445ae19693cd1bd1a7fa2a0e0d967e4addbf9094"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 8180,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "Coast9",
+      "display_name": "Tide Pools",
+      "teacher_model": {
+        "id": "v11-full55",
+        "training_steps": 33772736,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1.zip",
+        "sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 4080,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "Coast10",
+      "display_name": "Skull Coral",
+      "teacher_model": {
+        "id": "speed-essence-full55",
+        "training_steps": 7813504,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/speed-essence-full55-v1.zip",
+        "sha256": "sha256:cfa2d352dacb5b5b1bddccd8445ae19693cd1bd1a7fa2a0e0d967e4addbf9094"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 1150,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "grotto1",
+      "display_name": "Coral Catch",
+      "teacher_model": {
+        "id": "v11-full55",
+        "training_steps": 33772736,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1.zip",
+        "sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d"
+      },
+      "selection_basis": "engineering_win",
+      "engineering_wins": 1,
+      "engineering_attempts": 1,
+      "best_ticks": 8012,
+      "best_score": 4750,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "grotto2",
+      "display_name": "Wave Babies",
+      "teacher_model": {
+        "id": "v1-full55",
+        "training_steps": 13631488,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v1-full55-v1.zip",
+        "sha256": "sha256:aa590502630e22bd4601bbca43befa519c532183a1268e3c453796e82a6dc0e7"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 8190,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "grotto3",
+      "display_name": "Submergathon",
+      "teacher_model": {
+        "id": "v11-full55",
+        "training_steps": 33772736,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1.zip",
+        "sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 1960,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "grotto4",
+      "display_name": "Anglers Cove",
+      "teacher_model": {
+        "id": "v1-full55",
+        "training_steps": 13631488,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v1-full55-v1.zip",
+        "sha256": "sha256:aa590502630e22bd4601bbca43befa519c532183a1268e3c453796e82a6dc0e7"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 60,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "grotto5",
+      "display_name": "Coelacanth Cave",
+      "teacher_model": {
+        "id": "v1-full55",
+        "training_steps": 13631488,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v1-full55-v1.zip",
+        "sha256": "sha256:aa590502630e22bd4601bbca43befa519c532183a1268e3c453796e82a6dc0e7"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 3090,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "grotto6",
+      "display_name": "Ocean Floor",
+      "teacher_model": {
+        "id": "speed-essence-full55",
+        "training_steps": 7813504,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/speed-essence-full55-v1.zip",
+        "sha256": "sha256:cfa2d352dacb5b5b1bddccd8445ae19693cd1bd1a7fa2a0e0d967e4addbf9094"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 6690,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "grotto7",
+      "display_name": "Smugglers Depth",
+      "teacher_model": {
+        "id": "v1-full55",
+        "training_steps": 13631488,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v1-full55-v1.zip",
+        "sha256": "sha256:aa590502630e22bd4601bbca43befa519c532183a1268e3c453796e82a6dc0e7"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 11490,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "grotto9",
+      "display_name": "The Deep",
+      "teacher_model": {
+        "id": "speed-essence-full55",
+        "training_steps": 7813504,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/speed-essence-full55-v1.zip",
+        "sha256": "sha256:cfa2d352dacb5b5b1bddccd8445ae19693cd1bd1a7fa2a0e0d967e4addbf9094"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 1480,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "grotto10",
+      "display_name": "Shark Den",
+      "teacher_model": {
+        "id": "speed-essence-full55",
+        "training_steps": 7813504,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/speed-essence-full55-v1.zip",
+        "sha256": "sha256:cfa2d352dacb5b5b1bddccd8445ae19693cd1bd1a7fa2a0e0d967e4addbf9094"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 9250,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "volcano1",
+      "display_name": "Flowing Tiki Rage",
+      "teacher_model": {
+        "id": "v1-full55",
+        "training_steps": 13631488,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v1-full55-v1.zip",
+        "sha256": "sha256:aa590502630e22bd4601bbca43befa519c532183a1268e3c453796e82a6dc0e7"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 2770,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "volcano2",
+      "display_name": "Subterran Solaris",
+      "teacher_model": {
+        "id": "v1-full55",
+        "training_steps": 13631488,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v1-full55-v1.zip",
+        "sha256": "sha256:aa590502630e22bd4601bbca43befa519c532183a1268e3c453796e82a6dc0e7"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 3030,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "volcano3",
+      "display_name": "Reflection in Magma",
+      "teacher_model": {
+        "id": "v1-full55",
+        "training_steps": 13631488,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v1-full55-v1.zip",
+        "sha256": "sha256:aa590502630e22bd4601bbca43befa519c532183a1268e3c453796e82a6dc0e7"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 4480,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "volcano4",
+      "display_name": "Obsidian Isle",
+      "teacher_model": {
+        "id": "v1-full55",
+        "training_steps": 13631488,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v1-full55-v1.zip",
+        "sha256": "sha256:aa590502630e22bd4601bbca43befa519c532183a1268e3c453796e82a6dc0e7"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 3440,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "volcano5",
+      "display_name": "Underworld Remnants",
+      "teacher_model": {
+        "id": "v1-full55",
+        "training_steps": 13631488,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v1-full55-v1.zip",
+        "sha256": "sha256:aa590502630e22bd4601bbca43befa519c532183a1268e3c453796e82a6dc0e7"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 7700,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "volcano6",
+      "display_name": "Thermal Vortex",
+      "teacher_model": {
+        "id": "speed-essence-full55",
+        "training_steps": 7813504,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/speed-essence-full55-v1.zip",
+        "sha256": "sha256:cfa2d352dacb5b5b1bddccd8445ae19693cd1bd1a7fa2a0e0d967e4addbf9094"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 10960,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "volcano7",
+      "display_name": "Molten Dais",
+      "teacher_model": {
+        "id": "v1-full55",
+        "training_steps": 13631488,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v1-full55-v1.zip",
+        "sha256": "sha256:aa590502630e22bd4601bbca43befa519c532183a1268e3c453796e82a6dc0e7"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 5790,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "volcano8",
+      "display_name": "Basaltic Approach",
+      "teacher_model": {
+        "id": "v11-full55",
+        "training_steps": 33772736,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1.zip",
+        "sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 5560,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "volcano9",
+      "display_name": "Searing Visage",
+      "teacher_model": {
+        "id": "speed-essence-full55",
+        "training_steps": 7813504,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/speed-essence-full55-v1.zip",
+        "sha256": "sha256:cfa2d352dacb5b5b1bddccd8445ae19693cd1bd1a7fa2a0e0d967e4addbf9094"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 4200,
+      "geometric_teacher_hop_override_allowed": true
+    },
+    {
+      "level_id": "volcano10",
+      "display_name": "Descent into Anguish",
+      "teacher_model": {
+        "id": "v1-full55",
+        "training_steps": 13631488,
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v1-full55-v1.zip",
+        "sha256": "sha256:aa590502630e22bd4601bbca43befa519c532183a1268e3c453796e82a6dc0e7"
+      },
+      "selection_basis": "best_engineering_score",
+      "engineering_wins": 0,
+      "engineering_attempts": 1,
+      "best_ticks": null,
+      "best_score": 6180,
+      "geometric_teacher_hop_override_allowed": true
+    }
+  ]
+}

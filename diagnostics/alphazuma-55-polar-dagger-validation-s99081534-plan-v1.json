@@ -1,0 +1,104 @@
+{
+  "schema": "zuma-rl.alphazuma-55-polar-dagger-validation-plan",
+  "version": 1,
+  "status": "FROZEN_DURING_TARGET_TRAINING",
+  "created_utc": "2026-08-15T19:43:31.353040+00:00",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "training_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-dagger-s99081533-preregistration-v1.json",
+    "sha256": "sha256:a011bc5a92af9255b2eff8814871030fce16c110c1c306296d6f27b183f1e6a1"
+  },
+  "dagger_plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-dagger-s99081533-plan-v1.json",
+    "sha256": "sha256:cc88352c6ff6f8e23284dd4c967f9db41c0facb0ee8a02fa409e4fedaed6afba"
+  },
+  "target": {
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-polar-dagger-s99081533-v1",
+    "expected_completion": "/mnt/d/ZumaTraining/alphazuma-55-polar-dagger-s99081533-v1/completion.json",
+    "expected_failure": "/mnt/d/ZumaTraining/alphazuma-55-polar-dagger-s99081533-v1/failure.json",
+    "round_indices": [
+      0,
+      1,
+      2
+    ],
+    "round_model_paths": [
+      "/mnt/d/ZumaTraining/alphazuma-55-polar-dagger-s99081533-v1/round_00/final_model.zip",
+      "/mnt/d/ZumaTraining/alphazuma-55-polar-dagger-s99081533-v1/round_01/final_model.zip",
+      "/mnt/d/ZumaTraining/alphazuma-55-polar-dagger-s99081533-v1/round_02/final_model.zip"
+    ]
+  },
+  "matrix": {
+    "registry": "training_validation",
+    "base_seed": 1550001200,
+    "last_seed": 1550001254,
+    "levels": 55,
+    "models": 4,
+    "expected_attempts": 220,
+    "max_ticks": 30000,
+    "paired_models_share_identical_task_seeds": true
+  },
+  "execution": {
+    "device": "cuda:0",
+    "parallel_envs": 24,
+    "shard_count": 1
+  },
+  "original_root": "/mnt/d/SteamLibrary/steamapps/common/Zuma's Revenge",
+  "wait_for_engineering_slot": {
+    "prior_polar_audit": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-validation-s99081532-audit-v1.json",
+    "required_status": "PASS",
+    "reason": "serialize the two 24-env engineering matrices"
+  },
+  "outputs": {
+    "run_root": "/mnt/d/ZumaTraining/alphazuma-55-polar-dagger-validation-s99081534-v1",
+    "models_manifest": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-dagger-validation-s99081534-models-v1.json",
+    "evaluation_preregistration": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-dagger-validation-s99081534-preregistration-v1.json",
+    "audit_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-dagger-validation-s99081534-audit-v1.json",
+    "status_root": "/mnt/d/ZumaTraining/alphazuma-55-polar-dagger-validation-s99081534-watch-v1"
+  },
+  "implementation": {
+    "planner": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_polar_dagger_validation_plan.py",
+      "sha256": "sha256:ffbb1a7018b1203caaeeb8f1bc84565b1a1a402b2eeb182a5043ba87047c8450"
+    },
+    "materializer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/materialize_alphazuma_55_polar_dagger_validation.py",
+      "sha256": "sha256:7c31ee8b8b2e83c7e2dfc0eba120ae0fe6a4cb24ed520954f219b5189cb2463d"
+    },
+    "watcher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/watch_alphazuma_55_polar_dagger_validation.py",
+      "sha256": "sha256:7a03e3d5227008fc08eb62a670d2ed8e9da896f06a1a8ec70f4d99d239e7ca57"
+    },
+    "contract_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_training_validation.py",
+      "sha256": "sha256:45fcdd98cda89f2a606cb24c30a82c12b877d108b232d37f7623ed71bb9a1391"
+    },
+    "evaluator": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel_v2.py",
+      "sha256": "sha256:811de7b530e6703858ae218aa9a0309724c49824d817e2f55733646ec89fd6c3"
+    },
+    "independent_auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_training_validation.py",
+      "sha256": "sha256:3621dcb64c3342e3954533d22401f258fe6c72ac49d164456455ad77ea54aa67"
+    }
+  },
+  "decision_rule": {
+    "ranking": [
+      "wins_desc",
+      "level_coverage_desc",
+      "total_score_desc",
+      "median_winning_ticks_asc",
+      "earlier_round_first"
+    ],
+    "negative_results_retained": true,
+    "current_campaign_candidate_promotion": false
+  },
+  "authority_boundary": {
+    "classification": "engineering_validation_only",
+    "current_campaign_candidate_authority": false,
+    "formal_seed_consumption": false,
+    "training_recipe_change_authority": false
+  }
+}

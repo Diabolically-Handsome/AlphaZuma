@@ -1,0 +1,48 @@
+{
+  "schema": "zuma-rl.pc-front-insertion-terminal-state-execution-binding",
+  "version": 1,
+  "id": "c82-front-insertion-terminal-state-retry-03-execution-binding",
+  "created_utc": "2026-08-03T20:32:28Z",
+  "status": "FROZEN_AFTER_PREPARE_BEFORE_COLLECTION",
+  "classification": "fresh-attempt-3-of-3-terminal-state-holdout",
+  "gate_effect": "none_until_complete_acceptance",
+  "parent": {
+    "preregistration": {
+      "path": "diagnostics/c80-c82-front-insertion-terminal-state-finite-stopping-preregistration-v1.json",
+      "sha256": "sha256:c70d042b5d688b0021ed8618219dfb6c3254615480954112f7852dac6a026772"
+    },
+    "prior_attempt_failure": {
+      "path": "diagnostics/c81-front-insertion-terminal-state-failure-audit-v1.json",
+      "sha256": "sha256:a7fbd5418f51a81bb94a07b26c32c5f460101544552dbad63f74d32c21fd2d37"
+    }
+  },
+  "session": {
+    "root": "D:/ZumaGolden/campaign-c82-natural-win-v8-front-insertion-terminal-state-retry-03-u3569-u3710",
+    "nonce": "acbf5934429d4d8c8c9aa50c9dc4bc6d",
+    "plan": "D:/ZumaGolden/campaign-c82-natural-win-v8-front-insertion-terminal-state-retry-03-u3569-u3710/plan.json",
+    "plan_sha256": "sha256:f7e78d2bddf1bc70bdeaa5afe06d7636c5fa3565cac341e5e5aa1cad19c4a8d4",
+    "protocol_pre_template_sha256": "sha256:c25cafd2fca739f31e22e18a9569cb8c0f5c711ca2776b022bca2630bfda123f",
+    "host_pre_snapshot_sha256": "sha256:d657f763a1473bec607bc001c9839ed3241c75687d0323f752bcdc8dfea980eb"
+  },
+  "reference_plan_comparison": {
+    "reference_plan": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/plan.json",
+    "reference_plan_sha256": "sha256:5a7ba58eccd7e0d1b1008ac089cce59c167a26ba8bc359ef76f3dcd2bea8c0db",
+    "recursive_difference_count": 1,
+    "recursive_differences": [
+      {
+        "path": "session_nonce",
+        "reference": "30180590748c4ce1a755832239ac3431",
+        "observed": "acbf5934429d4d8c8c9aa50c9dc4bc6d"
+      }
+    ],
+    "status": "PASS"
+  },
+  "prepared_state": {
+    "host_pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "protocol_prestate_template_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526",
+    "dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20"
+  },
+  "frozen_next_action": "collect_c82_once_then_build_maps_and_run_terminal_verifier",
+  "in_place_retry_forbidden": true
+}

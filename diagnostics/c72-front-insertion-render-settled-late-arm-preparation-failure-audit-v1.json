@@ -1,0 +1,43 @@
+{
+  "schema": "zuma-rl.pc-front-insertion-render-settled-preparation-failure-audit",
+  "version": 1,
+  "id": "c72-front-insertion-late-arm-plan-difference-failure",
+  "created_utc": "2026-08-03T18:40:29Z",
+  "classification": "invalidated-before-collection-plan-contract-mismatch",
+  "gate_effect": "none",
+  "parent_preregistration": {
+    "path": "diagnostics/c72-front-insertion-render-settled-late-arm-preregistration-v1.json",
+    "sha256": "sha256:18b970fd23e7551b2ecf2b3223827697d9106043cf6b1853569226020dcc4e0d"
+  },
+  "prepared_session": {
+    "root": "D:/ZumaGolden/campaign-c72-natural-win-v8-front-insertion-render-settled-late-arm-u3569-u3710",
+    "plan_sha256": "sha256:16ba21e764badf8cbd0ed36be578fd91db16096e136887e493f1c565083a61b2",
+    "session_nonce": "cc7127eee86a4ce098c8436ad6c5a734",
+    "preparation_status": "prepared",
+    "collection_started": false,
+    "game_process_launched": false,
+    "capture_artifacts_created": false
+  },
+  "recursive_plan_difference_from_c71": {
+    "expected_difference_count": 2,
+    "observed_difference_count": 3,
+    "expected_differences": [
+      "session_nonce",
+      "capture.framework_state_poll_arm_update:3540->3566"
+    ],
+    "unexpected_difference": "trace.maximum_hits:100000->6000",
+    "cause": "The prepare invocation omitted the explicit frozen maximum-hits value and accepted the current parser default."
+  },
+  "restoration": {
+    "required_host_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "prepare_did_not_apply_protocol_state": true,
+    "game_process_remaining": false
+  },
+  "decision": {
+    "c72_status": "INVALIDATED",
+    "may_not_be_collected": true,
+    "may_not_be_reprepared_in_place": true,
+    "may_not_receive_gate_credit": true,
+    "next_attempt_requires_fresh_session_and_explicit_maximum_hits_100000": true
+  }
+}

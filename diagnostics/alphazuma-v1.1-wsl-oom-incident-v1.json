@@ -1,0 +1,98 @@
+{
+  "schema": "zuma-rl.training-incident",
+  "version": 1,
+  "status": "PRESERVED_BEFORE_RECOVERY",
+  "id": "alphazuma-v1.1-wsl-oom-incident-v1",
+  "observed_utc": "2026-08-13T23:33:56.4897478Z",
+  "summary": "The seventh and eighth concurrent V1.1 routes pushed WSL past its implicit 65,582,876 kB memory ceiling. The Linux global OOM killer terminated systemd and a Python training process, after which every WSL-backed trainer exited without writing a completion or failure receipt.",
+  "root_cause_evidence": {
+    "wsl_memtotal_kb_before_reconfiguration": 65582876,
+    "wsl_swap_total_kb": 16777216,
+    "kernel": "6.6.87.2-microsoft-standard-WSL2",
+    "dmesg_markers": [
+      "python invoked oom-killer",
+      "oom-kill:constraint=CONSTRAINT_NONE",
+      "Out of memory: Killed process 5035 (python)"
+    ],
+    "gpu_residency_after_exit_mib": {
+      "cuda_0": 0,
+      "cuda_1_desktop_only": 2464
+    },
+    "live_training_processes_after_exit": 0,
+    "all_launch_stderr_files_empty": true
+  },
+  "affected_runs": [
+    {
+      "run_id": "frontier-adaptive-5090",
+      "last_status_utc": "2026-08-13T23:33:26.904536+00:00",
+      "last_internal_timesteps": 16861072,
+      "last_intact_checkpoint_timesteps": 16777216,
+      "last_intact_checkpoint": "/mnt/d/ZumaTraining/alphazuma-v1.1-frontier-adaptive-s44081301-v1/checkpoints/frontier-adaptive-5090_16777216_steps.zip",
+      "last_intact_checkpoint_sha256": "sha256:7823840418e94525543983d0b05f0660af9c107734909caea936eeb15e042b8d",
+      "uncheckpointed_steps_excluded": 83856
+    },
+    {
+      "run_id": "frontier-fixed-5080",
+      "last_status_utc": "2026-08-13T23:33:23.507506+00:00",
+      "last_internal_timesteps": 16615840,
+      "last_intact_checkpoint_timesteps": 15728640,
+      "last_intact_checkpoint": "/mnt/d/ZumaTraining/alphazuma-v1.1-frontier-fixed-s44081302-v1/checkpoints/frontier-fixed-5080_15728640_steps.zip",
+      "last_intact_checkpoint_sha256": "sha256:cbd3653264ed73884fb6a56926030c00600fb5f3866f1e0945d14e3ffe4f86f2",
+      "uncheckpointed_steps_excluded": 887200
+    },
+    {
+      "run_id": "frontier-dense-adaptive-5090-a",
+      "last_status_utc": "2026-08-13T23:33:14.381433+00:00",
+      "uncheckpointed_steps_excluded": 327712,
+      "checkpoint_available": false
+    },
+    {
+      "run_id": "frontier-dense-fixed-5090-b",
+      "last_status_utc": "2026-08-13T23:33:23.039824+00:00",
+      "uncheckpointed_steps_excluded": 203904,
+      "checkpoint_available": false
+    },
+    {
+      "run_id": "frontier-dense-adaptive-5080-a",
+      "last_status_utc": "2026-08-13T23:33:04.849640+00:00",
+      "uncheckpointed_steps_excluded": 384992,
+      "checkpoint_available": false
+    },
+    {
+      "run_id": "frontier-dense-fixed-5080-b",
+      "last_status_utc": "2026-08-13T23:32:59.582901+00:00",
+      "uncheckpointed_steps_excluded": 219136,
+      "checkpoint_available": false
+    },
+    {
+      "run_id": "zero-win-dense-adaptive-5090-c",
+      "last_status_utc": "2026-08-13T23:33:25.038220+00:00",
+      "uncheckpointed_steps_excluded": 16320,
+      "checkpoint_available": false
+    },
+    {
+      "run_id": "zero-win-dense-adaptive-5080-c",
+      "last_status_utc": null,
+      "uncheckpointed_steps_excluded": 0,
+      "checkpoint_available": false
+    }
+  ],
+  "integrity": {
+    "published_v1_unchanged": true,
+    "no_crashed_run_has_completion_json": true,
+    "no_crashed_dense_run_reached_first_checkpoint": true,
+    "original_output_directories_preserved_read_only": true,
+    "recovery_must_use_new_output_directories": true,
+    "recovery_must_use_new_disjoint_episode_seed_ranges": true
+  },
+  "recovery_decision": {
+    "increase_wsl_memory_limit_from_gib": 62.5,
+    "increase_wsl_memory_limit_to_gib": 96,
+    "keep_wsl_processors": 48,
+    "keep_swap_gib": 16,
+    "resume_only_the_two_main_routes_from_intact_checkpoints": true,
+    "replace_memory_heavy_32_environment_dense_routes_with_16_environment_compute_dense_routes": true,
+    "target_gpu_utilization_percent": 80,
+    "minimum_host_free_memory_gib": 16
+  }
+}

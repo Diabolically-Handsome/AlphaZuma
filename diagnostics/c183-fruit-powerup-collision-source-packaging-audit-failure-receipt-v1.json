@@ -1,0 +1,82 @@
+{
+  "schema": "zuma-rl.c182-fruit-powerup-collision-source-packaging-audit-failure-receipt",
+  "version": 1,
+  "status": "FAIL_REQUIRED_MECHANISM_PROOFS_NOT_EMITTED_RETAIN_ALL_OUTPUTS",
+  "created_utc": "2026-08-10T15:26:39.1157084Z",
+  "preregistration": {
+    "path": "diagnostics/c183-fruit-powerup-collision-source-packaging-audit-preregistration-v1.json",
+    "sha256": "sha256:e1027442207dfd85877558f8a06869bacdfbf81d5b7e2970cd02fb1a12ace195"
+  },
+  "source": {
+    "path": "D:/ZumaGolden/sources/c183-u8120-u8270-source-bound-fruit-powerup-collision-v1.json",
+    "bytes": 2053,
+    "sha256": "sha256:814d71f96b2ecf587c1bc3d3215fc2cb5b85f54450ab28f23b8b41a5be0d96f6",
+    "verifier_status": "PASS",
+    "source_fingerprint": "sha256:73d85b5a2d5ce714b50be47d6345f2c9265a7a8f6e455837979320003dd177a3",
+    "tick_count": 151,
+    "dmo_sha256": "sha256:413ff5b6470f695dc703b99064762a3d5749434530e620833291925c56339e77",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061"
+  },
+  "mechanism": {
+    "plan_path": "D:/ZumaGolden/diagnostics/pc-mechanism-c183-fruit-powerup-collision-plan-v1.json",
+    "plan_bytes": 452,
+    "plan_sha256": "sha256:190baba6b99719d9315da386a7e7836b2cace87fa7c1939a13908327d99ab005",
+    "audit_path": "D:/ZumaGolden/diagnostics/pc-mechanism-c183-fruit-powerup-collision-live-v1.json",
+    "audit_bytes": 4399,
+    "audit_sha256": "sha256:6c63cea0944ce09f576a4e40da7fe80765c85998790b53938581df2437428b57",
+    "generic_audit_status": "PASS",
+    "audit_fingerprint": "sha256:07dd3d7183f18671be05195764ab789b9165385cb6dc5bf9abc05d41d746c6fe",
+    "authorized_features": [
+      "projectile_collision",
+      "rng_pending",
+      "shot_release",
+      "swap"
+    ],
+    "required_features_missing": [
+      "powerup_proximity_bomb",
+      "fruit_powerup_collision",
+      "fruit_collection_animation"
+    ],
+    "forbidden_features_emitted": []
+  },
+  "diagnosis": {
+    "source_transition_present": true,
+    "framework_update": 8234,
+    "powerup_type": 0,
+    "unique_trigger_ball_id": 87,
+    "direct_match_ids": [
+      87,
+      225,
+      227
+    ],
+    "newly_exploding_ball_ids": [
+      28,
+      29,
+      30,
+      71,
+      87,
+      215,
+      217,
+      225,
+      227
+    ],
+    "base_explosion_score_delta": 90,
+    "simultaneous_expected_fruit_score_delta": 500,
+    "observed_total_score_delta": 590,
+    "validator_rejection": "powerup_trigger_score_delta_mismatch",
+    "root_cause": "The frozen powerup verifier requires the whole same-tick score delta to equal 10 times the newly exploding ball count. It has no contract for an independently proven simultaneous fruit collection, so the exact 90 plus 500 retail co-event is rejected before the fruit proof can consume the bomb proof.",
+    "classification": "mechanism-audit compositionality gap; not a source replay, source authenticity, or retail transition failure"
+  },
+  "decision": {
+    "c183_feature_credit": false,
+    "failed_outputs_immutable": true,
+    "standards_lowered": false,
+    "validator_extension_requires_new_preregistration_and_tests": true,
+    "simulator_diff_start": false,
+    "pc_golden_authentication_start": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

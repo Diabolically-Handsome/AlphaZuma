@@ -1,0 +1,54 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-live-snapshot-watchdog-deployment",
+  "version": 2,
+  "created_utc": "2026-08-14T02:54:16.0163343Z",
+  "status": "PASS",
+  "classification": "read_only_operational_monitoring",
+  "supersedes": {
+    "path": "diagnostics/alphazuma-v1.1-live-snapshot-watchdog-deployment-v1.json",
+    "reason": "Completed routes are now excluded from running-route staleness so staggered stop-time completion cannot trigger a false stale warning."
+  },
+  "snapshot_tool": {
+    "path": "tools/snapshot_alphazuma_v11_frontier.py",
+    "sha256": "sha256:6d389ef479c140828484621ba31f4c6332dd90c37420bf35ce2e3ad6a5a3e045",
+    "writes_training_or_evaluation_artifacts": false,
+    "formal_seed_consumption": "none"
+  },
+  "tests": {
+    "path": "tests/test_snapshot_alphazuma_v11_frontier.py",
+    "sha256": "sha256:be335121090857841b0dc31f350435e26fe9e85b227e7a807106a9bfbdac4b93",
+    "result": "10_passed",
+    "new_transition_cases": [
+      "completed route age does not drive running-route staleness",
+      "non-running route without completion or failure receipt is unexpected"
+    ]
+  },
+  "production_probe": {
+    "checked_utc": "2026-08-14T02:53:53.226139Z",
+    "status": "PASS",
+    "controller_status": "RUNNING",
+    "controller_phase": "WAITING_FOR_TRAINING",
+    "training_routes": 7,
+    "running_routes": 7,
+    "completed_routes": 0,
+    "failed_routes": 0,
+    "unexpected_incomplete_routes": 0,
+    "total_steps_this_run": 20660216,
+    "max_running_status_age_seconds": 29.205851,
+    "formal_seed_consumption": "none"
+  },
+  "watchdog": {
+    "id": "alphazuma-v1-1",
+    "path": "C:\\Users\\Laure\\.codex\\automations\\alphazuma-v1-1\\automation.toml",
+    "sha256": "sha256:570c1d9b01a2dd7d640323cb2b1686ce730bd45eea3b4327524bd3c027af9760",
+    "status": "ACTIVE",
+    "interval_minutes": 10,
+    "new_snapshot_hash_bound": true,
+    "old_snapshot_hash_absent": true,
+    "phase_eta_monitoring_bound": true,
+    "balanced_power_plan_restore_bound": true,
+    "notification_policy": "failed_runs_only"
+  },
+  "training_or_evaluation_semantics_changed": false,
+  "formal_gate_effect": "none"
+}

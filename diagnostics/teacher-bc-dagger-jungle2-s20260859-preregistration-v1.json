@@ -1,0 +1,108 @@
+{
+  "schema": "zuma-rl.teacher-bc-dagger-screening-preregistration",
+  "version": 1,
+  "created_utc": "2026-08-04T09:53:54.833Z",
+  "status": "FROZEN_BEFORE_RUN_OUTPUT",
+  "classification": "closed_gate_actor_policy_distribution_shift_screen",
+  "hypotheses": {
+    "null": "aggregating teacher labels on states visited by the cloned entity policy does not produce a held-out full-horizon Jungle2 win",
+    "alternative": "entity-aware behavior cloning followed by mixed-policy DAgger corrects swap and aim errors strongly enough to produce at least one held-out full-horizon Jungle2 win"
+  },
+  "design": {
+    "run_dir": "/mnt/d/ZumaTraining/screening-teacher-bc-dagger-s20260859-v1",
+    "expected_run_dir_absent": true,
+    "algorithm": "maskable_ppo_actor_behavior_cloning_with_dagger",
+    "policy_architecture": "entity_attention",
+    "level": "Jungle2",
+    "profile_mode": "tutorials_completed",
+    "aim_bins": 180,
+    "max_ticks": 12000,
+    "max_balls": 768,
+    "frame_skip": 1,
+    "training_episodes": 4,
+    "training_seed": 20271859,
+    "validation_episodes": 2,
+    "validation_seed": 20272859,
+    "model_seed": 20260859,
+    "batch_size": 256,
+    "initial_epochs": 30,
+    "wait_sample_stride": 16,
+    "swap_sample_repeat": 2,
+    "learning_rate": 0.0001,
+    "verb_loss_weight": 10.0,
+    "max_grad_norm": 0.5,
+    "dagger": {
+      "rounds": 2,
+      "episodes_per_round": 1,
+      "epochs_per_round": 15,
+      "seed": 20273859,
+      "max_steps_per_episode": 4000,
+      "teacher_action_probability": 0.5,
+      "state_label": "actor_observable_teacher_action",
+      "rollout_action": "fixed_seed_mixture_of_teacher_and_deterministic_masked_policy"
+    },
+    "resources": {
+      "cuda_visible_devices": "0",
+      "expected_cuda_device": "NVIDIA GeForce RTX 5090",
+      "rtx_5080_excluded": true,
+      "cpu_thread_limit": 8
+    }
+  },
+  "acceptance": {
+    "pipeline": {
+      "process_exit_code": 0,
+      "completion_receipt_status": "COMPLETE",
+      "model_artifact_required": true,
+      "all_dagger_rounds_required": true
+    },
+    "aggregated_dataset": {
+      "verb_accuracy_at_least": 0.9,
+      "fire_recall_at_least": 0.65,
+      "swap_recall_at_least": 0.65
+    },
+    "held_out_full_horizon": {
+      "wins_at_least": 1,
+      "validation_episodes": 2,
+      "at_least_one_episode_with_nonzero_swap": true,
+      "max_ticks": 12000
+    },
+    "promotion_rule": "a pass authorizes a fresh-seed DAgger confirmation screen only; it does not authorize large-scale RL or original-game transfer",
+    "rejection_rule": "if the pipeline completes but either the dataset discrimination gate or held-out full-horizon gate fails, reject this exact DAgger recipe"
+  },
+  "evidence_anchor": {
+    "teacher_capacity": {
+      "path": "diagnostics/actor-observable-teacher-jungle2-s20271840-v1.json",
+      "sha256": "sha256:3b867b1dbca7f4bc81bec2203178061489a3b1ed5ec8f8f0ab9d68307b105a8e",
+      "result": "16_of_16_wins"
+    },
+    "entity_overfit_diagnostic": {
+      "path": "D:/ZumaTraining/diagnostic-teacher-bc-entity-verb-overfit-s20260857-v1/report.json",
+      "sha256": "sha256:7fa0240486375e48aa26388d29cec469294a686fefb0affb3a7342b15a4a13bf",
+      "result": "offline_swap_recall_0.839_but_held_out_distribution_shift_failure"
+    },
+    "dagger_infrastructure_smoke": {
+      "path": "D:/ZumaTraining/infrastructure-teacher-bc-dagger-s20260858-v1/report.json",
+      "sha256": "sha256:e30d806f65ef7892c686a775ad152db8792a3c283f3870c9e2b729d34d25bfbb",
+      "completion_sha256": "sha256:12d081e0342f00cdac080f08ccb2c4c5c9f5d8a683cad0600455d9a1ae7919d9",
+      "result": "pipeline_complete_but_three_dagger_epochs_failed_to_learn_swap"
+    },
+    "regression": {
+      "wsl_targeted_pytest": "PASS_56"
+    }
+  },
+  "source_hashes": {
+    "pretrain_maskable_ppo_teacher.py": "sha256:803c26e4bf50f0bd0c4af015dd8397eaa7d6d43b577c8bec4dbe676ddef2f619",
+    "revenge_features.py": "sha256:6de7d8116c4e7c919d1704fa7cf532c8da06b207087e1fd64f5af005c66d57b0",
+    "revenge_teacher.py": "sha256:9a7d343f824e29b0074053440a93ec4456e7584c433342fff850afd89bb1f3a5",
+    "revenge_env.py": "sha256:ff18c84e8b73459994aa738fe3a767c019de452a898d8506531978a12c40b849",
+    "test_revenge_env.py": "sha256:0060f7d2b0fb403b7a54c0491cf3776151856181bbc5ccf10088dcd4d92dc8cd"
+  },
+  "non_authorizations": [
+    "large_scale_training",
+    "rl_recipe_promotion",
+    "fidelity_gate_opening",
+    "original_game_deployment",
+    "original_transfer_certification",
+    "visual_policy_training"
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "schema": "zuma-rl.pc-late-handoff-rng-smoke-outcome",
+  "version": 24,
+  "status": "PASS_UPDATE_3009_LATE_HANDOFF_INFRASTRUCTURE_QUALIFIED_SEMANTIC_RESULT_QUARANTINED",
+  "created_utc": "2026-08-05T19:44:25.835Z",
+  "id": "late-handoff-rng-smoke-v24-outcome",
+  "parent_preregistration": {"path": "diagnostics/late-handoff-rng-smoke-preregistration-v24.json", "sha256": "sha256:3b7807a16c725c619244cc6e6b4419ff9b57ef5ccff18cfb53db49280b6ae9a9"},
+  "execution_binding": {"path": "diagnostics/late-handoff-rng-smoke-execution-binding-v24.json", "sha256": "sha256:0823f12a63fcf7c118aca9af02200a2c823cb17c94652ad811116929117e2911", "session_nonce": "695f35b44aad460984882bc097a7871e"},
+  "execution": {
+    "run_root": "D:/ZumaGolden/diagnostics/late-handoff-rng-smoke-e01-v24",
+    "attempt_count": 1,
+    "selected_attempt": 1,
+    "collector_status": "PASS",
+    "observer_status": "PASS",
+    "attempts_sha256": "sha256:95279651613a4927867ca1dd734e94561515bd11e9760c48bec7f063f5209455",
+    "memory_probe_sha256": "sha256:89cb8f6ae162fc93b2867b5c9b39be15cab5dce011278f36b7d5ee246d3adb87",
+    "observer_sha256": "sha256:9529a45c48b3d089e7f6befc0de0ff60e0d9f764f85a01f594afd6b478ef1d81",
+    "ready_sha256": "sha256:d32cee0d7ea2ed12caafc5c6e7aad43e732e40ee1b6ae9554a06bfd807c047cf",
+    "trace_sha256": "sha256:f99263077bc2bb2863b7840b1ba7479ad075378e19a66e5b5e50ffb26fd1687a"
+  },
+  "handoff_contract": {
+    "requested_detach_update": 3008,
+    "observed_trace_progress_update": 3009,
+    "observed_handoff_main_thread_suspended_update": 3009,
+    "observed_detached_after_update": 3009,
+    "source_boundary_update": 3121,
+    "framework_update_margin_before_boundary": 112,
+    "handoff_precedes_boundary": true,
+    "ready_version": 2,
+    "ready_handoff_verified": true,
+    "handoff_main_thread_resumed": true
+  },
+  "tool_acceptance": {
+    "handoff_rng_state_ready_bound": true,
+    "handoff_rng_read_count": 1,
+    "handoff_rng_read_bytes": 2500,
+    "handoff_rng_write_count": 0,
+    "handoff_rng_memory_mutation": false,
+    "observer_process_memory_writes": 0,
+    "observer_process_memory_mutation": false,
+    "state_correction_count": 0,
+    "hardware_breakpoint_restored": true,
+    "debugger_detach_error": null,
+    "persistent_file_modified": false
+  },
+  "quarantined_semantic_observation": {
+    "handoff_draw_count": 1562,
+    "handoff_index": 314,
+    "boundary_live_pre_draw_count": 1662,
+    "boundary_live_pre_index": 414,
+    "handoff_to_boundary_draw_increment": 100,
+    "semantic_class": "EXACT",
+    "single_run_exact_rate_credit": false,
+    "pc_golden_credit": false
+  },
+  "host_safety": {
+    "canonical_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_pre_sha256": "sha256:3afb359ae07259e0ac81ff031b8a6c13af7321c7a74d1c4065b905e343501d85",
+    "host_post_sha256": "sha256:4edb92c70746cda0b29b91a844440efd61f7ff3d047e82608d9091d5033ba4df",
+    "pre_state_root_match": true,
+    "post_state_root_match": true,
+    "residual_retail_process_count": 0
+  },
+  "decision": {
+    "requested_update_3008_infrastructure_qualified": true,
+    "next_action": "Freeze a fresh fixed replication series comparing the update-3009 handoff source-exact rate against the consumed update-1702 baseline; no semantic threshold may be selected from this smoke.",
+    "pc_golden_credit": false,
+    "fidelity_gate_change": false,
+    "formal_transport_change": false,
+    "large_scale_training_start": false
+  },
+  "non_authorizations": ["pc_golden_credit", "fidelity_gate_change", "formal_transport_change", "large_scale_training_start"]
+}

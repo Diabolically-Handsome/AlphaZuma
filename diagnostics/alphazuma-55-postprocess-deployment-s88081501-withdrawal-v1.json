@@ -1,0 +1,27 @@
+{
+  "schema": "zuma-rl.alphazuma-55-postprocess-deployment-withdrawal",
+  "version": 1,
+  "status": "WITHDRAWN_BEFORE_DISTILLED_ROUTE",
+  "withdrawn_utc": "2026-08-15T02:49:00Z",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "preregistration": {
+    "path": "diagnostics/alphazuma-55-postprocess-deployment-s88081501-preregistration-v1.json",
+    "sha256": "sha256:9a3ea284d69ab40c41a6e855f41799bd45c09225ddddab9ee3061287fe5eb1e9"
+  },
+  "last_status": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/postprocess-deployment-s88081501-v1/deployment_status.json",
+    "sha256": "sha256:829f769bf1a7e6cb9c6ebbb75cd88f3970d5780fd18ba27856b797e686d9d60c",
+    "stage": "WAITING_FOR_DISTILLED_ROUTE"
+  },
+  "reason": "Preflight found that localized powercfg.exe output is GBK bytes under WSL. The V1 deployer requested text-mode UTF-8 decoding and would falsely fail only after a successful independent audit and power restoration.",
+  "scope": {
+    "distilled_route_preregistration_existed": false,
+    "formal_postprocess_preregistration_existed": false,
+    "selection_seeds_consumed": false,
+    "final_blind_seeds_consumed": false,
+    "continuous_seeds_consumed": false,
+    "training_processes_changed": false,
+    "power_guards_changed": false
+  },
+  "recovery": "Replace only the deployer with a hash-frozen V2 that extracts the ASCII GUID from raw powercfg bytes; preserve all training and formal evaluation semantics."
+}

@@ -1,0 +1,34 @@
+{
+  "schema": "zuma-rl.alphazuma-55-macro-ppo-run-outcome",
+  "version": 1,
+  "run_id": "timepolish-jungle8",
+  "preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-timepolish-jungle8-s99081724-preregistration-v1.json",
+    "sha256": "sha256:ef5282417622f3e0d2c73994329431ce86e1f6b22b6e6df0df58e2ff13f6417e"
+  },
+  "status": "STOPPED_BY_WIN_RATE_FLOOR_CLAUSE",
+  "decision": "FAIL_NO_POLISH_GAIN_CONFIRMED",
+  "stopped_utc": "2026-08-20T22:53:26Z",
+  "reason": "Quantized relative floor clause fired: two consecutive checkpoints below 0.745 - ckpt262120: 11/16 median 6680 E[t] 9716; ckpt524240: 11/16 median 6771 E[t] 9849. Init baseline on the same panel: 13/16 median 6901 E[t] 8494. NO checkpoint reached the floor, and both were worse than the init on expected time, so the preregistered fallback applies: CHAMPION FOR JUNGLE8 REMAINS THE BC INIT, unchanged. Unlike v1 (mis-calibrated fixed 0.90 floor), this verdict is under an honestly calibrated one-seed-dip floor: the timepolish recipe genuinely does not improve this Jungle8 BC init through 524k steps.",
+  "kill_note": "trainer stopped by SIGTERM per clause at ~22:5xZ (exit 143); a third checkpoint (786360) written moments before the kill is VOID for champion selection - it postdates the clause-firing evidence and its eval was cancelled",
+  "champion": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-bc49/Jungle8/final_model.zip",
+    "sha256": "sha256:6b812ab239610461e9fe18236af3652b80399c2221dee63e54843a3c41b7d579"
+  },
+  "evidence": [
+    {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle8-s99081724-v1/eval16-ckpt8262120",
+      "note": "16 per-seed completions, 11/16 median 6680"
+    },
+    {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle8-s99081724-v1/eval16-ckpt8524240",
+      "note": "16 per-seed completions, 11/16 median 6771"
+    },
+    {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle8-s99081711-v1/eval16-init-baseline",
+      "note": "init baseline 13/16 median 6901 (bound in prereg lineage.init_baseline_panel16)"
+    }
+  ],
+  "interpretation": "Two clean strikes on the same recipe (v1 partial, this one clean) mark Jungle8 as timepolish-resistant from this init. The BC init's own quality is the bottleneck hypothesis (13/16, median 6901 vs teacher-through-macro 3092): next levers are a better init (more/cleaner teacher decisions on Jungle8, or DAgger round at the macro level), not more PPO from this one. Jungle8's AI-TAS best stands at 14.63 s (vs human 8 s) from the earlier record scan.",
+  "formal_seed_consumption": false
+}

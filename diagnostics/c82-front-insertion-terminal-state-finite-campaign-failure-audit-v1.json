@@ -1,0 +1,117 @@
+{
+  "schema": "zuma-rl.pc-front-insertion-terminal-state-finite-campaign-failure-audit",
+  "version": 1,
+  "id": "c80-c82-front-insertion-terminal-state-finite-campaign-exhausted",
+  "created_utc": "2026-08-03T20:38:44Z",
+  "classification": "failed-bounded-campaign-not-pc-golden",
+  "gate_effect": "none",
+  "parent": {
+    "path": "diagnostics/c80-c82-front-insertion-terminal-state-finite-stopping-preregistration-v1.json",
+    "sha256": "sha256:c70d042b5d688b0021ed8618219dfb6c3254615480954112f7852dac6a026772"
+  },
+  "attempts": [
+    {
+      "id": "c80",
+      "status": "FAIL_NO_MATCHING_TARGET_FRAME_PAIRS",
+      "audit": "diagnostics/c80-front-insertion-terminal-state-failure-audit-v1.json",
+      "selected_update_count": 0
+    },
+    {
+      "id": "c81",
+      "status": "FAIL_NO_MATCHING_TARGET_FRAME_PAIRS",
+      "audit": "diagnostics/c81-front-insertion-terminal-state-failure-audit-v1.json",
+      "selected_update_count": 0
+    },
+    {
+      "id": "c82",
+      "status": "FAIL_STRICT_FULL_FRAME_AND_TERMINAL_MASK_DELTA",
+      "execution_binding": {
+        "path": "diagnostics/c82-front-insertion-terminal-state-execution-binding-v1.json",
+        "sha256": "sha256:bc456636a0f0be04f5f1a5fec8af5bd0c17cda7ba11b32abd361d04547e9775c"
+      },
+      "session_root": "D:/ZumaGolden/campaign-c82-natural-win-v8-front-insertion-terminal-state-retry-03-u3569-u3710",
+      "collection": {
+        "sha256": "sha256:11291b4378bf50030de251fa30222d481274ca936856ff24a427232a7698c430",
+        "status": "complete",
+        "distinct_process_ids": [
+          51452,
+          54880
+        ],
+        "host_and_protocol_state_restored": true
+      },
+      "render_maps": {
+        "r1_sha256": "sha256:49d9be6206673e1f4bf0e9b9440eaaf171052d041df47512c842855f50486bdf",
+        "r2_sha256": "sha256:c6be480d4fa70d08359db5ad91f8a843a38705ea682e25a027e194c1468ed4d7"
+      },
+      "terminal_report": {
+        "path": "D:/ZumaGolden/diagnostics/c82-render-settled-terminal-state-target-verification-v1.json",
+        "sha256": "sha256:c5347393d1597e3f21a434af10953129e582662abb66d8c9fbcbeea1c1b8efbb",
+        "status": "FAIL",
+        "selected_update_count": 21,
+        "full_frame_exact_update_count": 0,
+        "failed_criteria": [
+          "all_selected_pairs_full_frame_exact",
+          "terminal_reference_bounded_frozen_mask_delta"
+        ]
+      }
+    }
+  ],
+  "c82_failure_localization": {
+    "required_update_range": [
+      3664,
+      3684
+    ],
+    "all_21_updates_exact_outside_frozen_c65_c66_mask": true,
+    "all_21_updates_have_exact_alpha": true,
+    "mismatch_coordinate_set_stable": true,
+    "mismatch_coordinates_xy": [
+      [
+        799,
+        599
+      ]
+    ],
+    "coordinate_role": "bottom_right_pixel_of_final_native_raster_row",
+    "r1_bgra_each_update": [
+      141,
+      141,
+      141,
+      255
+    ],
+    "r2_bgra_each_update": [
+      20,
+      20,
+      20,
+      255
+    ],
+    "maximum_bgr_channel_delta": 121,
+    "terminal_update_3684": {
+      "post_insertion_reference_exact_outside_frozen_mask": true,
+      "r2_reference_full_frame_exact": true,
+      "r1_only_difference_from_reference": [
+        799,
+        599
+      ]
+    },
+    "bounded_interpretation": "C82 proves the complete gameplay viewport above the final raster row and the native post-insertion terminal state are repeatable. It does not satisfy the preregistered full-frame requirement and therefore receives no credit."
+  },
+  "restoration": {
+    "host_postcheck": {
+      "path": "D:/ZumaGolden/diagnostics/c82-host-postcheck-v1.json",
+      "sha256": "sha256:220bcb2bfdf9673b1cbab870202ca80724318dce7fe3ff5a2e276e5a3dd3042f",
+      "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061"
+    },
+    "game_process_remaining": false
+  },
+  "finite_stopping_accounting": {
+    "attempts_consumed": 3,
+    "attempts_remaining": 0,
+    "campaign_status": "FAIL_NO_PREREGISTERED_COMPLETE_PASS",
+    "additional_sampling_under_this_preregistration_forbidden": true
+  },
+  "decision": {
+    "c82_may_not_be_packaged": true,
+    "front_insertion_gate_credit": "NOT_GRANTED",
+    "fidelity_gate_status": "CLOSED",
+    "next_method_step": "Use C82 only to preregister a fresh holdout under the existing PC Golden exact_except_bounded_bottom_raster_edge contract: exclude exactly one final raster row, allow exactly one mismatched edge pixel, and keep every pixel above that row exact."
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "alphazuma-55-level-park-verdict",
+  "version": 1,
+  "written_utc": "2026-08-21T22:12:39Z",
+  "level": "Jungle8",
+  "verdict": "PARKED_HUMAN_LINE_STANDS_AI_TAS_BEST_UNCHANGED",
+  "summary": "Rescan of the top-3000 golden seeds with the strengthened redo BC (panel E[t] 7285, -14.2% vs old): fastest 1522 ticks = 15.22 s - SLOWER than the old BC's standing 14.63 s tail despite the better expected time and steadier win rate (2473/3000). The mean-tail tradeoff (Jungle3 lesson) reproduced on a BC-vs-BC comparison: consistency and tail sharpness are separate axes. Jungle8's AI-TAS best REMAINS 14.63 s (old bc49 BC); the 8 s human line stands at 1.83x - the campaign's widest unbroken gap.",
+  "best_this_scan": {
+    "ticks": 1522,
+    "seconds_simulator": 15.22,
+    "seed": 473160,
+    "shots": 19
+  },
+  "standing_ai_tas_best": {
+    "seconds_simulator": 14.63,
+    "model": "old bc49 Jungle8 BC",
+    "note": "from the earlier record scan"
+  },
+  "human_reference": {
+    "record": "0:08 RTA",
+    "source": "speedrun.com IL Adv 8",
+    "note": "runner/date to bind if a claim ever nears"
+  },
+  "full_run_champion": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-bc-jungle8-240-s99081751-v1/final_model.zip",
+    "note": "the redo BC is the EXPECTED-TIME champion for any future full-game chaining (E[t] 7285); the record title stays with the old BC's 14.63 s tail"
+  },
+  "polish_history": "three polish attempts, three clause stops (s99081711, s99081724, s99081752) - Jungle8 is the campaign's standing counterexample to 'polish always helps'",
+  "levers_for_reopening": [
+    "warm-critic resume from r3's ckpt524240 under a floor recomputed from its own 12/16 (the Jungle3-round-2 maneuver; receipted in the r3 outcome)",
+    "deep scan ranks 3001-100000 with the old BC (its tail is the sharp one)",
+    "iterated beta-DAgger toward a stronger init (the J7 slope suggests it, but J8's BCs already win - the gap is pure speed)"
+  ],
+  "scan": {
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-record-jungle8-redo-s99081755-v1",
+    "completion_sha256": "sha256:ae19536409978c58dad6b583ee8aee4cde9d25f4003eb122812b515c25e972bf"
+  },
+  "formal_seed_consumption": false
+}

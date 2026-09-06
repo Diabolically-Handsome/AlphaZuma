@@ -1,0 +1,43 @@
+{
+  "schema": "zuma-rl.alphazuma-55-allaim-prereg-independent-audit",
+  "version": 1,
+  "status": "PASS",
+  "audited_utc": "2026-08-16T09:39:41.731961+00:00",
+  "auditor": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_motor_observable_gradual_allaim_prereg_v1.py",
+    "sha256": "sha256:76ca6510aa6b06d16df60d1023f97d14d945d9830c3ae8ba420f79f7625cd2d3"
+  },
+  "base": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-s99081629-preregistration-v1.json",
+    "sha256": "sha256:11dd10f8537dfa12deb94c41ad3be3998a4204efec93a53fa97b8a04f21d0076"
+  },
+  "candidate": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-allaim-s99081633-preregistration-v1.json",
+    "sha256": "sha256:502c0ab5566a66fa33ff33df80b10b101c5ea1b75dc4e21ff07f5996965730e1"
+  },
+  "verified_runtime_bindings": {
+    "trainer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_motor_observable_gradual_allaim_v1.py",
+      "sha256": "sha256:4e55d406a65be0a7ea1d0e4302b736cf1b3fb1dd48e85e4f5d04633f21cf1b3a"
+    },
+    "builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_motor_observable_gradual_allaim_v1.py",
+      "sha256": "sha256:37254db4f8e68966fa5b5dc96d94e4cb368ac80d78ce5939e63cf6825e9a8663"
+    }
+  },
+  "allowed_recipe_delta": {
+    "aim_loss_scope": [
+      "fire_only",
+      "all_actions"
+    ],
+    "training_seed_range": [
+      1546000000,
+      1546000219
+    ],
+    "run_identity_and_output_paths": true
+  },
+  "all_other_recipe_fields_byte_equivalent_after_normalization": true,
+  "run_directory_absent": true,
+  "formal_seed_consumption": "NONE",
+  "formal_candidate_authority": false
+}

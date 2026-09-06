@@ -1,0 +1,43 @@
+{
+  "schema": "zuma-rl.retail-natural-loss-persistent-mature-anchor-implementation-receipt",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T09:21:14.3454614Z",
+  "preregistration_sha256": "sha256:b9b574b02a2942f474a2350e733a73f5e53efd59d8888885a356b659c92f60bf",
+  "implementation": [
+    {
+      "path": "tools/autoplay_live_zuma.py",
+      "bytes": 62918,
+      "sha256": "sha256:bbfdb8fb47e5220aa564e4c1c849523acf1dc6b31aa1de8b57c55553cb8851c5"
+    },
+    {
+      "path": "tools/record_autoplay_zuma.py",
+      "bytes": 47839,
+      "sha256": "sha256:857eee5dabbfe78739a9e399a0377e7e85e37a6b2cf3aee5578d0be7248b91f4"
+    },
+    {
+      "path": "src/zuma_rl/retail_dmo_provenance.py",
+      "bytes": 45217,
+      "sha256": "sha256:3ac202e1f8c6a41a5983474aaefbb0206f79158fd71febdb7aba12028242d06b"
+    }
+  ],
+  "verification": {
+    "test_files": [
+      "tests/test_autoplay_live_zuma.py",
+      "tests/test_record_autoplay_zuma.py",
+      "tests/test_retail_dmo_provenance.py"
+    ],
+    "passed": 72,
+    "failed": 0
+  },
+  "frozen_delta": {
+    "persistent_mature_below_target_anchor": true,
+    "anchor_native_game_time_minimum": 1000,
+    "anchor_positive_target_required": true,
+    "anchor_score_below_target_required": true,
+    "low_clock_snapshot_cannot_overwrite_anchor": true,
+    "v2_loss_contract_changed": false,
+    "retail_ui_exit_changed": false,
+    "process_memory_writes": 0
+  }
+}

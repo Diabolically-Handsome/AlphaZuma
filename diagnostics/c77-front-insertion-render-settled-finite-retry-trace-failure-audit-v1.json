@@ -1,0 +1,67 @@
+{
+  "schema": "zuma-rl.pc-front-insertion-render-settled-finite-retry-failure-audit",
+  "version": 1,
+  "id": "c77-front-insertion-finite-retry-02-pre-capture-trace-boundary-failure",
+  "created_utc": "2026-08-03T19:30:23Z",
+  "classification": "failed-started-finite-attempt-pre-capture-trace-invalid-not-pc-golden",
+  "gate_effect": "none",
+  "parent_chain": {
+    "preregistration": {
+      "path": "diagnostics/c76-c78-front-insertion-render-settled-finite-stopping-preregistration-v1.json",
+      "sha256": "sha256:fc654b1240946e3fc58aa94b053c52c6ca1ef439f3d0929000d120165fdf8078"
+    },
+    "execution_binding": {
+      "path": "diagnostics/c77-front-insertion-render-settled-finite-retry-execution-binding-v1.json",
+      "sha256": "sha256:e0a5641554d9d1cd604f457d6e1fdedbc099ce76aacbbf88e1a235a6f779036a"
+    }
+  },
+  "session": {
+    "root": "D:/ZumaGolden/campaign-c77-natural-win-v8-front-insertion-finite-retry-02-u3569-u3710",
+    "plan_sha256": "sha256:bb8a3b6d3187324af51f667d9b54804c8b2897f1e3bd595d432427ad3c45261c",
+    "session_nonce": "983c791f97c643589d4b561082727fc3",
+    "collection_status": "failed",
+    "collection_failure": {
+      "path": "D:/ZumaGolden/campaign-c77-natural-win-v8-front-insertion-finite-retry-02-u3569-u3710/collection-failure.json",
+      "sha256": "sha256:3fc5436d5fe1b3cb691902b886f97277e3a66031f8a860662bc2ece349fe7777",
+      "failure_code": "trace_exited_before_capture"
+    }
+  },
+  "strict_trace_failure": {
+    "artifact": "D:/ZumaGolden/campaign-c77-natural-win-v8-front-insertion-finite-retry-02-u3569-u3710/run-r1/strict-replay.json",
+    "sha256": "sha256:35c114dd51a77b55717e3d7eb77e5aa3d3b3d5bd1fa2575ec594c0dc87b21537",
+    "failure_count": 1,
+    "last_update": 246,
+    "last_command_order": 36,
+    "boundary_failure": "command start is absent from the offline DMO: 911",
+    "first_divergent_observation": {
+      "framework_update": 245,
+      "command_bit_position": 794,
+      "observed_thread_role": "non_main_worker_before_expected_main_service_broker_hold"
+    },
+    "capture_started": false,
+    "source_bound_board_anchor_reached": false,
+    "target_window_reached": false,
+    "interpretation": "The fail-closed strict tracer observed an unregistered startup scheduling branch before capture and rejected it. No target visual data exists, so this is infrastructure invalidity rather than evidence about front insertion fidelity."
+  },
+  "restoration": {
+    "host_restored_artifact": "D:/ZumaGolden/campaign-c77-natural-win-v8-front-insertion-finite-retry-02-u3569-u3710/safety/host-restored.json",
+    "host_restored_artifact_sha256": "sha256:ac153a346a7182955888af5b46165b9d2d7c033dbb90b3d8ac3b4752f152a62b",
+    "host_restored_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "required_host_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "game_process_remaining": false
+  },
+  "finite_stopping_accounting": {
+    "c77_counts_as_started_attempt": true,
+    "attempts_consumed": 2,
+    "attempts_remaining": 1,
+    "next_authorized_attempt": "c78",
+    "c77_may_not_be_retried_in_place": true,
+    "target_report_was_not_created": true
+  },
+  "decision": {
+    "c77_status": "FAIL_PRE_CAPTURE_TRACE",
+    "may_not_be_packaged": true,
+    "may_not_receive_front_insertion_gate_credit": true,
+    "advance_to_preregistered_c78": true
+  }
+}

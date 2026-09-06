@@ -1,0 +1,30 @@
+{
+  "schema": "zuma-rl.alphazuma-55-motor-successor-independent-audit",
+  "version": 1,
+  "status": "PASS",
+  "audited_utc": "2026-08-16T09:01:10.936851+00:00",
+  "controller_result": "COMPLETE_NO_PROMOTION",
+  "engineering_gate_passed": false,
+  "single_policy_capability_gate": false,
+  "continuous_full_game_gate": false,
+  "goal_gates_passed": false,
+  "formal_seed_consumption": "NONE",
+  "artifacts": {
+    "master": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-successor-s99081618-preregistration-v1.json",
+      "sha256": "sha256:fef69405434c91a9da7f3ab3f78439072a2e6b071520229169aad4185ff12a46"
+    },
+    "controller_report": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-successor-s99081618-v1/controller/final_report.json",
+      "sha256": "sha256:42c5d7142158e2db811bfea33434711f63b570eee177efedad5c69770659f371"
+    },
+    "promotion_decision": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-successor-s99081618-v1/controller/promotion-decision.json",
+      "sha256": "sha256:94b948c830c191883812148e871d56165040dcce90fdfab11a08a0b59c631419"
+    },
+    "auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_motor_observable_successor_v1.py",
+      "sha256": "sha256:ede1646441c47707e7239ff87aad3b5f58965bc167553f554811164e3b8c0aa5"
+    }
+  }
+}

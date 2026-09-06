@@ -1,0 +1,54 @@
+{
+  "schema": "zuma-rl.pc-targeted-capture-preregistration",
+  "version": 1,
+  "id": "c67-front-insertion-u3664-u3684",
+  "created_utc_date": "2026-08-03",
+  "status": "frozen_before_prepare",
+  "scope": {
+    "policy": "original-transfer-jungle2-v1",
+    "level_id": "Jungle2",
+    "hard": false,
+    "profile_mode": "tutorials_completed"
+  },
+  "source": {
+    "diagnostic_only": true,
+    "trajectory_index": "memory-followup-c35-natural-long-u3429-u5476-v1/attempt-01/trajectory/index.json",
+    "trajectory_index_sha256": "sha256:2047169b55e091eba3b1a6f231b6353670651c39b26fd233e0451e9bdae81cbc",
+    "replay_dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "raw_retail_recording_dmo_sha256": "sha256:f3923ec4a8fbbcbeeb93914dd81d2e84ea6cf11e21d13d9b7f1c31ba2272ec41"
+  },
+  "candidate_navigation": {
+    "feature": "front_insertion",
+    "collision_update": 3664,
+    "insertion_update": 3684,
+    "gate_effect": "none_until_new_pc_golden_and_live_mechanism_audit_pass"
+  },
+  "collection": {
+    "session_root": "D:/ZumaGolden/campaign-c67-natural-win-v8-front-insertion-u3600-u3720",
+    "session_nonce": "c67f1a0b94e04feea7a8fd8ea6b03684",
+    "window_repaint_update": 3170,
+    "wait_until_framework_update": 3600,
+    "duration_seconds": 1.2,
+    "frame_budget_fps": 180,
+    "startup_process_affinity_mask": 1,
+    "framework_state_poll_affinity_mask": 4,
+    "framework_state_poll_arm_update": 3595,
+    "framework_state_poll_target_hz": 5000,
+    "inter_run_cooldown_seconds": 0.0
+  },
+  "packaging": {
+    "required_update_range": [
+      3664,
+      3684
+    ],
+    "minimum_ticks": 21,
+    "allow_idle_input_window": true,
+    "selection_conditioned": true
+  },
+  "tooling": {
+    "collector_sha256": "sha256:b8cb5f0264897fc25e736cd3af4dced1bce0e1c20e77f14cfb3ad8953bc68371",
+    "packager_sha256": "sha256:264ec4ac7193a136d6f840a5ec6b141c00d6d9427cf211e460a6a4aef935ffaf",
+    "trajectory_parser_sha256": "sha256:82495ea5a737360ae5f0ca538ae8a7a619006a998b1bbecbc3130abfe092cbad",
+    "mechanism_auditor_sha256": "sha256:cc5f59b5b4237254b76efa42cd083fbd9447bd2f7a972f6a9cad581e47c24545"
+  }
+}

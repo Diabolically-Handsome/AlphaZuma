@@ -1,0 +1,65 @@
+{
+  "schema": "zuma-rl.zero-shot-models-manifest",
+  "version": 1,
+  "status": "FROZEN",
+  "created_utc": "2026-08-16T03:35:02.994260+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "stage": "training_validation",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "models": [
+    {
+      "id": "polar-intent-replay-anchor-source-wide-final",
+      "training_steps": 1287818,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-wide-s99081540-v1/final_model.zip",
+      "sha256": "sha256:9533690041859e73e0ae8f072e4a8ff05a9e316c29a974d666878e4e5bb0b424"
+    },
+    {
+      "id": "polar-intent-replay-anchor-source-dagger-final",
+      "training_steps": 848699,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-dagger-s99081549-v1/final_model.zip",
+      "sha256": "sha256:27c425e1507d40e5bdc59768b892e27d6c9f3616ce5b169a6073b380bacc6cf0"
+    },
+    {
+      "id": "polar-intent-replay-anchor-round-00",
+      "training_steps": 2493954,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-replay-anchor-s99081607-v1/round_00/final_model.zip",
+      "sha256": "sha256:141f3ca7126caf504642d92fb88c56224b03e9c9d13b1afab9e1fb48956274fc"
+    },
+    {
+      "id": "polar-intent-replay-anchor-round-01",
+      "training_steps": 2742832,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-replay-anchor-s99081607-v1/round_01/final_model.zip",
+      "sha256": "sha256:4c379a7b5db2d86a6324371b1f3d5cf16f92efea0bced5a9844a7cbc42f4fc19"
+    },
+    {
+      "id": "polar-intent-replay-anchor-round-02",
+      "training_steps": 2971511,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-replay-anchor-s99081607-v1/round_02/final_model.zip",
+      "sha256": "sha256:2685ab0af8f1820cfd3d639f46f4980084f1cedb4d10fb88a0ed94dc4c3a640e"
+    }
+  ],
+  "purpose": "Paired early-health diagnostic only; it cannot select the formal finalist.",
+  "builder": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_training_validation.py",
+    "sha256": "sha256:45fcdd98cda89f2a606cb24c30a82c12b877d108b232d37f7623ed71bb9a1391"
+  },
+  "polar_intent_replay_anchor_validation_plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-replay-anchor-validation-s99081608-plan-v1.json",
+    "sha256": "sha256:0bedcc7c32eef2ab3959f3e31bba27d7bc86dff23d3a32b3157a323cea9a7f1f"
+  },
+  "training_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-replay-anchor-s99081607-preregistration-v1.json",
+    "sha256": "sha256:b27d4a9a9fc0ae8f99b8a9b9d5fb7e6cb34292b6d4e6f2217be6cda74c4cc6bc"
+  },
+  "target_completion": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-replay-anchor-s99081607-v1/completion.json",
+    "sha256": "sha256:4699a95fe3a06240bee06f01cbdf3487c40359a4e9ba6198b04146b1a845ad0c"
+  },
+  "comparison_unanchored_dagger_completion": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-dagger-s99081549-v1/completion.json",
+    "sha256": "sha256:8cba46149613b3a20ab9ee4147bd97cb31c6b33c6b72846c584e78d10f734278"
+  }
+}

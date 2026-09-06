@@ -1,0 +1,71 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-early-behavior-drift-probe-preregistration",
+  "version": 1,
+  "created_utc": "2026-08-14T00:47:00Z",
+  "status": "FROZEN_BEFORE_COLLECTION",
+  "classification": "post_hoc_training_health_diagnostic_only",
+  "purpose": "Collect actor-visible V1.1 observations under an independent seed namespace and verify that early training produces measurable policy behavior drift. This probe is excluded from candidate selection and final blind certification.",
+  "seed_isolation": {
+    "audit_method": "Exact JSON seed-key search across the workspace and D:/ZumaTraining before freezing this file.",
+    "result": "NO_SEED_KEY_MATCH",
+    "formal_selection_range": [910000000, 910000031],
+    "formal_final_range": [1010000000, 1010000271],
+    "probe_seed_ranges": {
+      "Jungle2": [1200000000, 1200000001],
+      "Jungle7": [1200001000, 1200001001],
+      "village6": [1200002000, 1200002001],
+      "village10": [1200003000, 1200003001]
+    }
+  },
+  "environment_source": {
+    "preregistration": "diagnostics/alphazuma-v1.1-ultradense-zero-win-s50081301-preregistration-v1.json",
+    "sha256": "sha256:45706c5a370f666ab9ab7ce306ed1bbc6d0c32a7c24f174f0d3d1986a317f7ae",
+    "levels": ["Jungle2", "Jungle7", "village6", "village10"],
+    "observation_width": 21220,
+    "action_nvec": [3, 180],
+    "human_input_profile": "elite-human-v1",
+    "reward_profile": "win-time-score-v1"
+  },
+  "collector_policy": {
+    "id": "alphazuma-v1-published-champion-adaptive-mid-13631488",
+    "path": "/mnt/d/ZumaTraining/overnight-v11-adaptive-recovery-s43081301-v1/checkpoints/adaptive-5090-recovery_13631488_steps.zip",
+    "sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579",
+    "deterministic": true
+  },
+  "collection": {
+    "episodes_per_level": 2,
+    "sample_stride": 32,
+    "maximum_samples": 2048,
+    "device": "cpu",
+    "stored_arrays": ["observations", "actions", "action_masks"],
+    "dataset_dtype_contract": {
+      "observations": "float32",
+      "actions": "int64",
+      "action_masks": "bool"
+    }
+  },
+  "collector": {
+    "path": "tools/collect_alphazuma_v11_behavior_probe.py",
+    "sha256": "sha256:7cab4387936b01504c18f9b6ec655f9029456eca7b9ef3daeb85d7d7e7aea895"
+  },
+  "comparisons": [
+    {
+      "id": "frontier-adaptive-early",
+      "reference": "/mnt/d/ZumaTraining/alphazuma-v1.1-frontier-adaptive-s44081301-v1/checkpoints/frontier-adaptive-5090_16777216_steps.zip",
+      "candidate_glob": "/mnt/d/ZumaTraining/alphazuma-v1.1-frontier-adaptive-oom-recovery-s47081301-v1/checkpoints/*.zip",
+      "candidate_resolution": "latest checkpoint available at probe execution"
+    },
+    {
+      "id": "memdense-adaptive-early",
+      "reference": "/mnt/d/ZumaTraining/overnight-v11-adaptive-recovery-s43081301-v1/checkpoints/adaptive-5090-recovery_13631488_steps.zip",
+      "candidate_glob": "/mnt/d/ZumaTraining/alphazuma-v1.1-memdense-adaptive-5090-a-s48081301-v1/checkpoints/*.zip",
+      "candidate_resolution": "latest checkpoint available at probe execution"
+    }
+  ],
+  "output_root": "/mnt/d/ZumaTraining/alphazuma-v1.1-early-behavior-drift-probe-s52081301-v1",
+  "interpretation_limits": [
+    "The probe may demonstrate behavior drift but cannot demonstrate improvement.",
+    "Probe observations and seeds must never be used for formal candidate selection or final blind evaluation.",
+    "All formal Gate decisions remain exclusively bound to the master postprocess preregistration."
+  ]
+}

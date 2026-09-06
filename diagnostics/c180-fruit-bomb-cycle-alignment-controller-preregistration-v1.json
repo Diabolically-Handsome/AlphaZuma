@@ -1,0 +1,106 @@
+{
+  "schema": "zuma-rl.pc-fruit-bomb-cycle-alignment-controller-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_IMPLEMENTATION",
+  "created_utc": "2026-08-10T14:40:39.5248822Z",
+  "objective": "Use only ordinary retail shots to align a naturally hosted proximity bomb with a later fruit cycle when the current fruit is provably unreachable within the shared remaining lifetime budget.",
+  "parents": {
+    "preservation_controller_qualification": {
+      "path": "diagnostics/c176-fruit-powerup-collision-preservation-controller-qualification-v1.json",
+      "sha256": "sha256:6ac4e71852e997724739963ebefb2204cc4e15d444c323c553941f93351a05d7"
+    },
+    "native_tick_telemetry_qualification": {
+      "path": "diagnostics/c178-fruit-bomb-native-tick-telemetry-qualification-v1.json",
+      "sha256": "sha256:26ee33158a2ea69eef564014fc0f79e339851a2c446a91b1e4cd13a318cefa5a"
+    },
+    "temporal_geometric_diagnosis": {
+      "path": "diagnostics/c179-fruit-bomb-temporal-geometric-analysis-v1.json",
+      "sha256": "sha256:04f6557a16d5bbe8b57d692f7de29a4a3097b976aa320be0d992fae8df8d210a",
+      "status": "PASS_DIAGNOSIS_NO_LOCATOR"
+    }
+  },
+  "new_read_only_fields": {
+    "fruit_expiry_time": "Board+0xEB8 int32",
+    "bomb_curve_distance": "Ball+0x1C float32",
+    "bomb_powerup_lifetime_ticks": "Ball+0xF8 int32",
+    "bomb_powerup_transition_ticks": "Ball+0xFC int32",
+    "process_memory_writes": 0
+  },
+  "installed_jungle2_geometry": {
+    "curve_sha256": "sha256:1dda1bad8240e95ff3ddf89f353991648b57782c23cfdc8551662168f193a773",
+    "base_advance_waypoints_per_native_tick": 0.5,
+    "strict_radius_px": 108.0,
+    "strict_waypoint_intervals_by_treasure_point": {
+      "0": [[0, 160], [2147, 2218]],
+      "1": [[1053, 1259]],
+      "2": [[2908, 3106]]
+    }
+  },
+  "cycle_alignment_contract": {
+    "applies_when": "fruit_policy bomb, fruit active and not collecting, at least one active type-0 bomb, and no c174 strict-radius trigger recommendation is available",
+    "fruit_remaining_ticks": "max(0, fruit_expiry_time - native_game_time)",
+    "shared_remaining_ticks_per_bomb": "min(fruit_remaining_ticks, bomb_powerup_lifetime_ticks)",
+    "forward_waypoint_budget_per_bomb": "0.5 * shared_remaining_ticks",
+    "required_forward_waypoints": "minimum nonnegative distance from bomb curve_distance to the start of a current point strict interval; zero inside an interval; no forward interval means infinity",
+    "reachable_current_cycle": "at least one bomb has required_forward_waypoints <= forward_waypoint_budget",
+    "reachable_action": "retain the qualified c176 bomb-preservation behavior unchanged",
+    "unreachable_action": "ordinary left-click projectile shot at the current rendered fruit target, reason defer_fruit_for_bomb_alignment",
+    "unreachable_action_purpose": "clear the current fruit so the naturally retained bomb can continue along the curve toward a later naturally scheduled fruit cycle",
+    "direct_collection_is_target_mechanism_evidence": false,
+    "future_powerup_or_fruit_state_mutation": false,
+    "controlled_rng": false,
+    "input_transport": "Win32 SendInput"
+  },
+  "priority_order": [
+    "strict-radius natural bomb trigger",
+    "current-cycle reachability preservation",
+    "unreachable-current-fruit ordinary projectile deferral",
+    "existing c176 behavior outside the alignment condition"
+  ],
+  "implementation_surface": {
+    "files": [
+      {
+        "path": "tools/autoplay_live_zuma.py",
+        "pre_bytes": 98781,
+        "pre_sha256": "sha256:2daec658fde375c2fa51f55c46c7d73db018474abd3e33b9a544587ed99a5e34"
+      },
+      {
+        "path": "tests/test_autoplay_live_zuma.py",
+        "pre_bytes": 28228,
+        "pre_sha256": "sha256:539e2adcb5af1550737da1f201d9d2624e2df99f64c91696e71043a121d94886"
+      }
+    ],
+    "record_wrapper_unchanged_sha256": "sha256:438b74c5f6fc8190c9835852a86dfba5c04e25c9b963f98c8d2564b5123d614f",
+    "simulator_core_change": false,
+    "fidelity_gate_policy_change": false,
+    "training_gate_policy_change": false
+  },
+  "qualification": {
+    "required_tests": [
+      "c179a4-like waypoint 417 with 700 shared ticks defers current fruit",
+      "waypoint 800 with 700 shared ticks remains preservable for point 1",
+      "bomb already inside point 1 strict interval remains preservable",
+      "bomb beyond point 1 interval is unreachable by forward advance",
+      "strict Euclidean overlap still triggers before cycle alignment",
+      "inactive or collecting fruit retains c176 behavior",
+      "fruit expiry and bomb lifetime fields are decoded and validated",
+      "telemetry includes the new timing and waypoint fields"
+    ],
+    "focused_test_command": ".venv-win/Scripts/python.exe -m pytest tests/test_autoplay_live_zuma.py tests/test_record_autoplay_zuma.py -q",
+    "full_suite_required_before_fresh_capture": true
+  },
+  "formal_source_rules": {
+    "earlier_projectile_collections_may_only_be_acquisition_history": true,
+    "target_event_requires_later_original_same-tick type-0 explosion and fruit collection": true,
+    "fresh_natural_retail_recording_required": true,
+    "source_bound_full_state_replay_required": true,
+    "machine_mechanism_audit_required": true,
+    "exact_simulator_diff_required": true,
+    "pc_golden_authentication_required": true
+  },
+  "decision": {
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

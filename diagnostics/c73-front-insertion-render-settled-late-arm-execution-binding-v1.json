@@ -1,0 +1,45 @@
+{
+  "schema": "zuma-rl.pc-front-insertion-render-settled-late-arm-execution-binding",
+  "version": 1,
+  "id": "c73-front-insertion-u3664-u3684-render-settled-late-arm-execution",
+  "created_utc": "2026-08-03T18:41:29Z",
+  "status": "FROZEN_AFTER_PREPARE_BEFORE_COLLECTION",
+  "parent_preregistration": {
+    "path": "diagnostics/c73-front-insertion-render-settled-late-arm-retry-preregistration-v1.json",
+    "sha256": "sha256:ed6f6e78b67e896985bc23211493aa54c867a92815741512b39ced1a52ca5a60"
+  },
+  "collector_plan": {
+    "path": "D:/ZumaGolden/campaign-c73-natural-win-v8-front-insertion-render-settled-late-arm-u3569-u3710/plan.json",
+    "sha256": "sha256:993e77599421c269b9a8a53190fd7a88ef565770cd5c2c0221f872cb519375d6",
+    "session_nonce": "c2a58f4ec7714cd1ac3cf9947458ce40"
+  },
+  "preparation_result": {
+    "status": "prepared",
+    "dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "host_pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "protocol_prestate_template_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526"
+  },
+  "recursive_plan_difference_from_c71": {
+    "difference_count": 2,
+    "differences": [
+      "session_nonce",
+      "capture.framework_state_poll_arm_update:3540->3566"
+    ],
+    "all_other_fields_byte_semantically_equal": true,
+    "trace_maximum_hits": 100000
+  },
+  "collection_authorization": {
+    "fresh_two_run_collection": true,
+    "arm_window": [
+      3566,
+      3568
+    ],
+    "capture_wait_update": 3569,
+    "target_update_range": [
+      3664,
+      3684
+    ],
+    "gameplay_state_synchronization_after_anchor": false,
+    "gate_effect_before_complete_postprocessing": "none"
+  }
+}

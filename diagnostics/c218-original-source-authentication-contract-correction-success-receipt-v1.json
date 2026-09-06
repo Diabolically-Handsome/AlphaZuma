@@ -1,0 +1,111 @@
+{
+  "contract": {
+    "generic_pc_source_same_dmo_pc_golden_requirement_preserved": true,
+    "mechanism_audit_source_fingerprint_binding_required": true,
+    "original_transfer_policy_requirements_changed": false,
+    "simulator_diff_required_independently": true,
+    "source_bound_self_authentication_basis": "verified_source_bound_natural_recording_provenance",
+    "source_bound_verifier_recomputes_natural_recording_provenance": true
+  },
+  "controls": {
+    "preregistration": {
+      "path": "diagnostics/c218-original-source-authentication-contract-correction-preregistration-v1.json",
+      "sha256": "sha256:e9acc9b57b8ef55b5124346be2eb88ee89005c7ee4519ddd65021505f5202220"
+    },
+    "training_started": false
+  },
+  "created_utc": "2026-08-10T18:30:41.920Z",
+  "fidelity_gate": {
+    "all_requirement_count": 31,
+    "all_requirements_pass": true,
+    "artifact": "D:/ZumaGolden/diagnostics/fidelity-gate-c218-candidate-v28-report.json",
+    "artifact_bytes": 92475,
+    "artifact_sha256": "sha256:a08d64bfd13bdbfdcb74c65163aa9e9b6a004e9d8c8fc5ff35376d252655c7d1",
+    "evidence_count": 97,
+    "execution_elapsed_seconds": 372.3,
+    "lanes": {
+      "distribution": "PASS",
+      "dynamics": "PASS",
+      "interface": "PASS",
+      "source_authenticity": "PASS"
+    },
+    "missing_requirement_count": 0,
+    "policy": "original-transfer-jungle2-v4",
+    "reasons": [],
+    "rejected_evidence_count": 0,
+    "status": "OPEN",
+    "unsupported_feature_claim_count": 0
+  },
+  "fixed_inputs": {
+    "baseline_gate_report": {
+      "path": "D:/ZumaGolden/diagnostics/fidelity-gate-c200-candidate-v27-report.json",
+      "sha256": "sha256:2531c36cf52d5cc58876283e213da477b064fca22c48b01cb50bd77e4616bb82"
+    },
+    "candidate_suite": {
+      "path": "D:/ZumaGolden/diagnostics/fidelity-suite-c200-candidate-v24.json",
+      "sha256": "sha256:0bfb00323d7544626b1d19452e64e55c88bacc496ecee0ba2303c7cb0ea29712"
+    },
+    "failed_long_horizon_pair": {
+      "path": "diagnostics/c212-c213-natural-loss-exact-step-comparison-failure-receipt-v1.json",
+      "sha256": "sha256:b16777a1c5928ad6fc10a075cd3d7f5920b4f9a1fccf65fc76ff5fddff313b8c"
+    }
+  },
+  "id": "c218-original-source-authentication-contract-correction-v1",
+  "original_source_authentication": {
+    "basis_counts": {
+      "same_dmo_verified_pc_golden_recording_provenance": 1,
+      "verified_pc_golden_recording_provenance": 8,
+      "verified_source_bound_natural_recording_provenance": 8
+    },
+    "original_source_case_count": 17,
+    "target_sources": {
+      "p10-pc-source-c183-fruit-powerup-collision": {
+        "authenticated": true,
+        "features": [
+          "fruit_collection_animation",
+          "fruit_powerup_collision",
+          "powerup_proximity_bomb",
+          "source_authenticity"
+        ]
+      },
+      "p8-pc-source-c158-natural-loss": {
+        "authenticated": true,
+        "features": [
+          "natural_loss",
+          "source_authenticity"
+        ]
+      },
+      "p9-pc-source-c164-fruit-collection": {
+        "authenticated": true,
+        "features": [
+          "fruit_collection_animation",
+          "fruit_collection_score",
+          "fruit_projectile_collision",
+          "source_authenticity"
+        ]
+      }
+    }
+  },
+  "qualified_implementation": {
+    "docs/FIDELITY_SUITE.md_before_status_refresh": "sha256:4e15a63011bf28a068cabffff4853db853de64b4ed00b099f178a1facba449d1",
+    "src/zuma_rl/fidelity_gate.py": "sha256:793a667f21026c5c6b6b5047d8f34376227db393c01c8ce7c53bf94976a80139",
+    "src/zuma_rl/pc_source.py_unchanged": "sha256:7971e5f9cd02f9d7888427f42f87227e6ba1ee121cfdea8128568d3abf80163f",
+    "tests/test_fidelity_gate.py": "sha256:740ccdea2a4c7a1863ebee78944982a8382c5b6a429e490203def0f919bb9e04"
+  },
+  "schema": "zuma-rl.original-source-authentication-contract-correction-success-receipt",
+  "status": "PASS_FIDELITY_GATE_OPEN",
+  "tests": {
+    "full": {
+      "collected_test_count": 1614,
+      "documented_skip_count": 13,
+      "preexisting_warning_count": 1,
+      "status": "PASS"
+    },
+    "targeted": {
+      "command": ".venv-win/Scripts/python.exe -m pytest -q tests/test_fidelity_gate.py tests/test_pc_source.py",
+      "test_count": 55,
+      "status": "PASS"
+    }
+  },
+  "version": 1
+}

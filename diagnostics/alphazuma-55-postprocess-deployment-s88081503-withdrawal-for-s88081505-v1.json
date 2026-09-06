@@ -1,0 +1,58 @@
+{
+  "schema": "zuma-rl.alphazuma-55-waiting-postprocess-withdrawal",
+  "version": 1,
+  "status": "PASS",
+  "withdrawn_utc": "2026-08-15T17:59:56.281292+00:00",
+  "reason": "Superseded before formal seeds by the preregistered 6-route capacity expansion.",
+  "capacity_expansion": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-capacity-expansion-s96081501-preregistration-v1.json",
+    "sha256": "sha256:982786bd9e8539937f4afe2e5c9b78c05e23cea3ad3b71db4559004bbd85fb0d"
+  },
+  "withdrawal_builder": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/freeze_alphazuma_55_waiting_postprocess_withdrawal.py",
+    "sha256": "sha256:59592f8a2eee9d48d78e52fd92c6d30622849abfdbfc91eba668fc66a166aa83"
+  },
+  "withdrawn_deployment": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-deployment-s88081503-preregistration-v1.json",
+    "sha256": "sha256:beb1876545ecf80db4b1e3424b4e5ccade6cec179952350bd7d4e676a2ad6122"
+  },
+  "milestone_controller": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/distilled-milestone-controller-s92081502-v1/controller_status.json",
+    "sha256": "sha256:68c42f4dcc290280d46115b01c113a69b32debdd7c65e23bfdb18784d65ff9f7",
+    "status": "COMPLETE"
+  },
+  "preconditions": {
+    "old_controller_phase": "WAITING_FOR_TRAINING",
+    "old_formal_roots_absent": true,
+    "new_expansion_artifacts_absent": true,
+    "formal_seed_consumption": false
+  },
+  "processes": {
+    "old_controller_absent": true,
+    "old_deployer_absent": true,
+    "matches": {
+      "deployer": [],
+      "controller": []
+    }
+  },
+  "old_status_artifacts": {
+    "controller": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/postprocess-s89081702-v1/controller_status.json",
+      "sha256": "sha256:7da4c937d808cd50c0f94acf488cf10db88482646a9e67fedfb8daaddaeae57a"
+    },
+    "deployment": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/postprocess-deployment-s88081503-v1/deployment_status.json",
+      "sha256": "sha256:14d028868fae8da84fd790562fbb0fa9159edc3fc83c614d35942616872d9124",
+      "status": "FAILED",
+      "stage": "FAILED"
+    }
+  },
+  "power_state": {
+    "restoration_requested": false,
+    "gpu_power_limits_watts": {
+      "0": 550.0,
+      "1": 250.0
+    },
+    "active_windows_power_plan": "GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  ()"
+  }
+}

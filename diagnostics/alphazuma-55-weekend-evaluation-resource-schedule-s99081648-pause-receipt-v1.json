@@ -1,0 +1,32 @@
+{
+  "schema": "zuma-rl.alphazuma-55-evaluation-controller-suspension-receipt",
+  "version": 1,
+  "status": "PASS",
+  "observed_utc": "2026-08-16T16:25:23.843054+00:00",
+  "schedule": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-evaluation-resource-schedule-s99081648-v1.json",
+    "sha256": "sha256:4e60fdde646e89eddf8072af09d463dcf0f3dc02e6767f333c55eca2a92f1413"
+  },
+  "controllers": [
+    {
+      "route": "full-policy all-actions aim",
+      "pid": 393431,
+      "signal": "SIGSTOP",
+      "verified_process_state": "Ts+",
+      "pre_stop_phase": "WAITING_FOR_TRAINING",
+      "formal_seed_consumption": "NONE"
+    },
+    {
+      "route": "head-only fire-aim",
+      "pid": 404830,
+      "signal": "SIGSTOP",
+      "verified_process_state": "Ts+",
+      "pre_stop_phase": "WAITING_FOR_TRAINING",
+      "formal_seed_consumption": "NONE"
+    }
+  ],
+  "trainers_unchanged": true,
+  "formal_successor_controllers_unchanged": true,
+  "model_or_recipe_change": false,
+  "resume_required": true
+}

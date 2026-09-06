@@ -1,0 +1,93 @@
+{
+  "schema": "zuma-rl.alphazuma-55-headonly-allaim-postprocess-prereg-audit",
+  "version": 1,
+  "status": "PASS",
+  "audited_utc": "2026-08-16T17:12:47.876993+00:00",
+  "plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-headonly-allaim-postprocess-s99081647-plan-v1.json",
+    "sha256": "sha256:307b328db15dccb14317c5b27a81ebc84b62f16e409bba845dc0ae9012e6af81"
+  },
+  "auditor": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_motor_observable_gradual_headonly_allaim_postprocess_prereg_v1.py",
+    "sha256": "sha256:178a9c4d8570a61fa5a50bf11ee1b1222564c969f5e482608323072c3c751f22"
+  },
+  "predecessor_timeout_recovery": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-postprocess-s99081630-timeout-recovery-audit-v1.json",
+    "sha256": "sha256:e2f73963847962ca7de39e1bcf3d7ad6eed604145caf57e78d77d32223818ff6",
+    "result": "COMPLETE_NO_PROMOTION"
+  },
+  "implementation": {
+    "builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_motor_observable_gradual_headonly_allaim_postprocess_plan_v1.py",
+      "sha256": "sha256:fbc9d989103ca80a518301f0c022456997ff5c2060a58843a5f769c74b825e58"
+    },
+    "controller": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_motor_observable_gradual_headonly_allaim_postprocess_v1.py",
+      "sha256": "sha256:8319c507cd79c5cca930801b5f3e954e3700979464782c31e8186b5d7482a129"
+    },
+    "evaluator": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_alphazuma_55_motor_observable.py",
+      "sha256": "sha256:ca792c154864aa5dbfc3ad19460dee2ef9ea55aedecf69ba8e7b40b50f8d4fca"
+    },
+    "auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_motor_observable_gradual_headonly_allaim_postprocess_v1.py",
+      "sha256": "sha256:222d4d62376d6325789d1a523b000511f7581d3460b27084ce94b4c262afffac"
+    },
+    "capacity_safe_evaluator_dependency": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel_v2.py",
+      "sha256": "sha256:811de7b530e6703858ae218aa9a0309724c49824d817e2f55733646ec89fd6c3"
+    },
+    "base_evaluator_dependency": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel.py",
+      "sha256": "sha256:d0011f9ad5c6837315007a7fb31e128fb315e4baddb45959c5f3b98d11a6a7e3"
+    },
+    "motor_observation_wrapper": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/observable_human_speedrun.py",
+      "sha256": "sha256:1c0326c530ed797e4426965c241298b768b6689133762055cd3f9216b74258de"
+    },
+    "v1_controller_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_motor_observable_postprocess_v1.py",
+      "sha256": "sha256:c9df46eb9e8cbe4576fce64c582a058029112248d74a0dbc81f9249408546da3"
+    },
+    "v1_auditor_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_motor_observable_postprocess_v1.py",
+      "sha256": "sha256:5519e99babb15f71fe7a65bfd64e1adee83a809bcb4340541c61e6676026d5a7"
+    },
+    "gradual_training_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_motor_observable_gradual_headonly_allaim_v1.py",
+      "sha256": "sha256:a1087452f49bb1fdc516394e1e9f07a6e8955490ddfd5025798dbdd2710ec372"
+    },
+    "timeout_compatible_matrix_auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_motor_observable_timeout_recovery_v1.py",
+      "sha256": "sha256:8c5698afdf1cf0e8410512514249f7b58f83085415a4c821e09409886126e346"
+    },
+    "preregistration_auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_motor_observable_gradual_headonly_allaim_postprocess_prereg_v1.py",
+      "sha256": "sha256:178a9c4d8570a61fa5a50bf11ee1b1222564c969f5e482608323072c3c751f22"
+    }
+  },
+  "matrix": {
+    "screen_candidates": 17,
+    "screen_attempts": 204,
+    "screen_seed_range": [
+      1550005000,
+      1550005011
+    ],
+    "maximum_gate_candidates": 5,
+    "maximum_gate_attempts": 275,
+    "gate_seed_range": [
+      1550005100,
+      1550005154
+    ],
+    "minimum_wins": 35,
+    "minimum_cleared_levels": 35
+  },
+  "factorial_contract": {
+    "variant": "action_head_only_all_actions_aim_v1",
+    "optimizer_parameter_scope": "action_net_only",
+    "aim_loss_scope": "all_actions"
+  },
+  "output_root_absent_before_audit": true,
+  "formal_seed_consumption": "NONE",
+  "formal_candidate_authority": false
+}

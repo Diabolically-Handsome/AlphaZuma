@@ -1,0 +1,225 @@
+{
+  "schema": "zuma-rl.overnight-multilevel-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_TRAINING",
+  "frozen_utc": "2026-08-13T03:08:47Z",
+  "objective": "fine-tune the strongest stable AlphaZuma V1 policy across Jungle2 plus all 16 fidelity-safe observation-compatible transfer levels, compare adaptive versus uniform curricula, and select on isolated seeds before a paired morning blind evaluation",
+  "scope": {
+    "state_policy": true,
+    "single_frog_control_contract_only": true,
+    "two_curve_levels_included": ["Jungle9", "village6"],
+    "moving_or_multiple_frog_training_included": false,
+    "partial_level_escape_hatch_used": false,
+    "original_client_visual_control": false,
+    "pc_golden_scope_expanded": false
+  },
+  "trainer": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/train_overnight_multilevel.py",
+    "sha256": "sha256:6cfe0f37fbe0ae26769a80d733261526ba1370f0164b65aac7de5aee4c2e0278",
+    "launcher_path": "/mnt/c/Users/Laure/Documents/祖玛/tools/launch_overnight_multilevel.sh",
+    "launcher_sha256": "sha256:e4cb78191ac0c05691e7d8d751e7cc4792a55056c2c0578ceb14feace3c279e1",
+    "dual_gpu_smoke": {
+      "preregistration": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/overnight-multilevel-smoke-s310200001-preregistration-v1.json",
+      "preregistration_sha256": "sha256:28c5feed7d65251386a8e13262c133e3a078ff6ff3c2f67b41991de4e4f386cd",
+      "cuda_0_steps": 65536,
+      "cuda_0_steps_per_second": 829.38,
+      "cuda_1_steps": 65536,
+      "cuda_1_steps_per_second": 757.35,
+      "both_complete": true,
+      "stderr_empty": true
+    }
+  },
+  "initial_model": {
+    "id": "step-2621440-final",
+    "training_steps": 2621440,
+    "path": "/mnt/d/ZumaTraining/human-speedrun-v1-jungle2-s20261010-2621k-v1/final_model.zip",
+    "sha256": "sha256:aeb6385c6df3faa0e720b43dd52853284807a25eaf2e4d0da4dcdc0769c4f5b6",
+    "selection_rule": "strongest stable V1 snapshot selected before this experiment by the prior 26-of-32 Jungle2 blind win count",
+    "prior_blind_evidence": {
+      "path": "/mnt/d/ZumaTraining/human-speedrun-v1-jungle2-blind-s20300812-n32-v1/blind_evaluation.json",
+      "sha256": "sha256:8af20964e41d18ad967a5432784b5f4acef75bc1ab94f6a5b1801b0ed25405e9"
+    },
+    "prior_zero_shot_evidence": {
+      "path": "/mnt/d/ZumaTraining/zero-shot-v1-multilevel-final-s20310812-n16-v1/aggregate.json",
+      "sha256": "sha256:632114ff4f202bd1e840aa5a07bfec30cbb41f456679955b114460e4f23719fb",
+      "target_levels_cleared": 10,
+      "target_wins": 40,
+      "target_attempts": 256
+    }
+  },
+  "levels": [
+    {"id":"Jungle1","display_name":"Shipwrecked!","curve_count":1,"curve_names":["Jungle1\\Jungle1"]},
+    {"id":"Jungle2","display_name":"Castaway","curve_count":1,"curve_names":["Jungle2\\Jungle2"]},
+    {"id":"Jungle3","display_name":"Echo Beach","curve_count":1,"curve_names":["Jungle3\\Jungle3"]},
+    {"id":"Jungle4","display_name":"Bones of an Idol","curve_count":1,"curve_names":["Jungle4\\Jungle4"]},
+    {"id":"jungle6","display_name":"Jungle Clearing","curve_count":1,"curve_names":["Jungle6\\Jungle6"]},
+    {"id":"Jungle7","display_name":"Sand Trap","curve_count":1,"curve_names":["Jungle7\\Jungle7"]},
+    {"id":"Jungle8","display_name":"Nasal Passage","curve_count":1,"curve_names":["Jungle8\\Jungle8"]},
+    {"id":"Jungle9","display_name":"Creeper Copse","curve_count":2,"curve_names":["Jungle9\\Jungle9-1","Jungle9\\Jungle9-2"]},
+    {"id":"Jungle10","display_name":"Darkness Falls","curve_count":1,"curve_names":["Jungle10\\Jungle10"]},
+    {"id":"village1","display_name":"Watering Hole","curve_count":1,"curve_names":["Village1"]},
+    {"id":"village2","display_name":"Overgrown Plaza","curve_count":1,"curve_names":["Village2"]},
+    {"id":"village4","display_name":"Sandspirals","curve_count":1,"curve_names":["Village4v2"]},
+    {"id":"village5","display_name":"Abandoned Well","curve_count":1,"curve_names":["Village5"]},
+    {"id":"village6","display_name":"Face Your Fear","curve_count":2,"curve_names":["Village6-1","Village6-2"]},
+    {"id":"village7","display_name":"Seven Sides (minus one)","curve_count":1,"curve_names":["Village7"]},
+    {"id":"village8","display_name":"Vines of Vengeance","curve_count":1,"curve_names":["Village8"]},
+    {"id":"village10","display_name":"The Horseshoe","curve_count":1,"curve_names":["Village10\\Village10v2"]}
+  ],
+  "environment": {
+    "profile_mode": "tutorials_completed",
+    "hard": false,
+    "curve_index": 0,
+    "base_config": {
+      "aim_bins": 180,
+      "action_mode": "factorized",
+      "frame_skip": 1,
+      "max_ticks": 12000,
+      "max_balls": 768,
+      "max_projectiles": 32,
+      "max_curves": 2,
+      "score_reward_scale": 0.01,
+      "step_penalty": -0.0001,
+      "win_reward": 10.0,
+      "loss_reward": -10.0,
+      "privileged_debug": false,
+      "render_width": 400,
+      "render_height": 300
+    },
+    "input_profile": {
+      "profile_id": "elite-human-v1",
+      "reaction_delay_ticks": 12,
+      "max_aim_speed_degrees_per_second": 1080.0,
+      "max_aim_acceleration_degrees_per_second_squared": 18000.0,
+      "min_button_interval_ticks": 5
+    },
+    "reward_profile": {
+      "profile_id": "win-time-score-v1",
+      "win_reward": 10.0,
+      "failure_reward": -10.0,
+      "time_penalty_per_native_tick": -0.0001,
+      "score_progress_reward_cap": 0.01
+    }
+  },
+  "runs": [
+    {
+      "id": "adaptive-5090",
+      "description": "difficulty-adaptive curriculum with a protected Jungle2 anchor and zero-shot-informed initial weights",
+      "run_dir": "/mnt/d/ZumaTraining/overnight-v11-adaptive-s42081301-v1",
+      "device": "cuda:0",
+      "seed": 42081301,
+      "episode_seed_base": 410000000,
+      "episode_seed_stride": 1000000,
+      "total_steps": 50000000,
+      "num_envs": 16,
+      "rollout_steps": 256,
+      "batch_size": 512,
+      "ppo_epochs": 1,
+      "learning_rate": 0.000005,
+      "entropy_coef": 0.0,
+      "checkpoint_every": 1048576,
+      "initial_weights": {
+        "Jungle1":1.0,"Jungle2":2.5,"Jungle3":1.0,"Jungle4":1.0,
+        "jungle6":1.0,"Jungle7":3.5,"Jungle8":1.5,"Jungle9":3.5,
+        "Jungle10":1.0,"village1":2.5,"village2":3.5,"village4":2.5,
+        "village5":3.5,"village6":3.5,"village7":2.5,"village8":2.5,
+        "village10":3.5
+      },
+      "adaptive": {
+        "enabled": true,
+        "update_every_steps": 262144,
+        "rolling_episodes": 64,
+        "minimum_episodes": 4,
+        "minimum_weight": 1.0,
+        "maximum_weight": 4.0,
+        "anchor_level": "Jungle2"
+      }
+    },
+    {
+      "id": "uniform-5080",
+      "description": "uniform 17-level sampling control with otherwise identical PPO settings",
+      "run_dir": "/mnt/d/ZumaTraining/overnight-v11-uniform-s42081302-v1",
+      "device": "cuda:1",
+      "seed": 42081302,
+      "episode_seed_base": 510000000,
+      "episode_seed_stride": 1000000,
+      "total_steps": 50000000,
+      "num_envs": 16,
+      "rollout_steps": 256,
+      "batch_size": 512,
+      "ppo_epochs": 1,
+      "learning_rate": 0.000005,
+      "entropy_coef": 0.0,
+      "checkpoint_every": 1048576,
+      "initial_weights": {
+        "Jungle1":1.0,"Jungle2":1.0,"Jungle3":1.0,"Jungle4":1.0,
+        "jungle6":1.0,"Jungle7":1.0,"Jungle8":1.0,"Jungle9":1.0,
+        "Jungle10":1.0,"village1":1.0,"village2":1.0,"village4":1.0,
+        "village5":1.0,"village6":1.0,"village7":1.0,"village8":1.0,
+        "village10":1.0
+      },
+      "adaptive": {
+        "enabled": false,
+        "update_every_steps": 262144,
+        "rolling_episodes": 64,
+        "minimum_episodes": 4,
+        "minimum_weight": 1.0,
+        "maximum_weight": 4.0,
+        "anchor_level": "Jungle2"
+      }
+    }
+  ],
+  "seed_isolation": {
+    "workspace_and_training_log_exact_search_before_freeze": "NO_EXACT_MATCH",
+    "adaptive_training_episode_range": [410000000, 425999999],
+    "uniform_training_episode_range": [510000000, 525999999],
+    "selection_seed_base": 610000000,
+    "selection_seeds_per_level": 4,
+    "selection_total_seeds_per_model": 68,
+    "morning_blind_target_seed_base": 710000000,
+    "morning_blind_target_seeds_per_level": 16,
+    "morning_blind_jungle2_seed_base": 720000000,
+    "morning_blind_jungle2_seeds": 32,
+    "no_overlap": true,
+    "selection_and_blind_seeds_frozen_before_training": true
+  },
+  "model_selection": {
+    "candidate_rule_frozen_before_training": true,
+    "candidates": "initial baseline plus, for each run, final model and checkpoint nearest one-half of actual final timesteps",
+    "expected_candidates": 5,
+    "selection_matrix": "17 levels x 4 seeds x 5 candidates = 340 attempts",
+    "ranking": [
+      "prefer Jungle2 retention of at least 3 wins in 4",
+      "target levels cleared descending",
+      "target wins descending",
+      "Village wins descending",
+      "two-curve wins descending",
+      "median winning ticks ascending"
+    ],
+    "selection_results_are_not_blind_claims": true
+  },
+  "morning_blind": {
+    "models": "selected overnight candidate paired against the unchanged initial baseline on identical frozen seeds",
+    "target_attempts_per_model": 256,
+    "jungle2_attempts_per_model": 32,
+    "total_attempts": 576,
+    "success_gates": {
+      "target_levels_cleared_at_least": 14,
+      "target_wins_at_least": 77,
+      "target_win_rate_at_least": 0.30,
+      "village_wins_at_least": 20,
+      "village_win_rate_at_least": 0.15,
+      "jungle2_wins_at_least": 24,
+      "Jungle9_wins_at_least": 4,
+      "village6_wins_at_least": 4
+    },
+    "report_all_results_even_if_every_gate_fails": true
+  },
+  "schedule": {
+    "training_stop_utc": "2026-08-13T13:30:00Z",
+    "training_stop_local": "2026-08-13T09:30:00-04:00",
+    "reserved_for_selection_blind_and_reporting_seconds": 7200,
+    "goal_end_utc": "2026-08-13T15:30:00Z",
+    "goal_end_local": "2026-08-13T11:30:00-04:00"
+  }
+}

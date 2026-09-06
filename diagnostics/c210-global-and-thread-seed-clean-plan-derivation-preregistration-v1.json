@@ -1,0 +1,57 @@
+{
+  "acceptance": {
+    "complete_source_mtrand_state_copy_forbidden": true,
+    "global_mtrand_reconstructed_only_from_one_32_bit_dmo_seed": true,
+    "process_object_restore_forbidden": true,
+    "source_bound_anchor_forbidden": true,
+    "thread_crt_state_write_size_bytes": 4,
+    "writes_share_existing_board_seed_breakpoint": true
+  },
+  "created_utc": "2026-08-10T17:57:25.648Z",
+  "failure_evidence": {
+    "path": "diagnostics/c209-thread-crt-fixed-clean-plan-determinism-kat-failure-receipt-v1.json",
+    "status": "KAT_REJECTED"
+  },
+  "id": "c210-global-and-thread-seed-clean-plan-derivation",
+  "non_authorizations": ["pc_golden_credit", "fidelity_gate_open", "training_gate_open", "training_start"],
+  "plans": [
+    {
+      "board_seed": 1853292490,
+      "dmo_sha256": "sha256:a5306095efb020c747530b0b546c8a8af1267a71ea48395e225f9b9a7c6516cf",
+      "global_rng_seed": 415356078,
+      "id": "natural_loss",
+      "output_absent_at_freeze": true,
+      "output_root": "D:/ZumaGolden/diagnostics/clean-c210-natural-loss-all-seeds-fixed-plan-v1",
+      "parent_plan_sha256": "sha256:642ff8a14320ebc055ac8eed004cc2483ee3b573178c8b5130af9cff6abf25e7",
+      "session_nonce": "c2100000000000000000000000000001",
+      "thread_crt_rng_seed": 1020014204
+    },
+    {
+      "board_seed": 1300598932,
+      "dmo_sha256": "sha256:6f2d645c3109f73b77ef55c7e7e7941f7f1d2f73dccd5a71adc3051d4a360989",
+      "global_rng_seed": 403511671,
+      "id": "fruit_collection",
+      "output_absent_at_freeze": true,
+      "output_root": "D:/ZumaGolden/diagnostics/clean-c210-fruit-collection-all-seeds-fixed-plan-v1",
+      "parent_plan_sha256": "sha256:83609e201b6533eb0ad4cc87cd0bbe537108ed28e87124a8350f1f570694e32f",
+      "session_nonce": "c2100000000000000000000000000002",
+      "thread_crt_rng_seed": 3534207302
+    },
+    {
+      "board_seed": 2088163177,
+      "dmo_sha256": "sha256:413ff5b6470f695dc703b99064762a3d5749434530e620833291925c56339e77",
+      "global_rng_seed": 428260796,
+      "id": "fruit_powerup_collision",
+      "output_absent_at_freeze": true,
+      "output_root": "D:/ZumaGolden/diagnostics/clean-c210-fruit-powerup-all-seeds-fixed-plan-v1",
+      "parent_plan_sha256": "sha256:4229700b747d0736ac35062015af23accd8eeeeb187cd281f6847ebf69d5f1c2",
+      "session_nonce": "c2100000000000000000000000000003",
+      "thread_crt_rng_seed": 689787496
+    }
+  ],
+  "status": "FROZEN_BEFORE_PLAN_OUTPUTS",
+  "tooling": {
+    "collect_pc_golden_v4_sha256": "sha256:9f8b9daf566e992458becd8dde817da6dae5d46e7f7aec93d9be073c865a5fd5"
+  },
+  "version": 1
+}

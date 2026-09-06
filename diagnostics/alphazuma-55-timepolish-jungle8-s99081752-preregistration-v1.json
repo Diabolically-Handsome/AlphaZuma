@@ -1,0 +1,702 @@
+{
+  "schema": "zuma-rl.overnight-multilevel-preregistration-v2",
+  "version": 2,
+  "status": "FROZEN_BEFORE_TRAINING",
+  "draft_utc": "2026-08-21T17:21:20Z",
+  "frozen_utc": "2026-08-21T17:21:20Z",
+  "draft_note": "TIME-POLISH batch-3 preregistration (Jungle8, THIRD polish attempt lineage-wise but FIRST from a strengthened init): the s99081711 fixed-floor run and the s99081724 honest-floor rematch both confirmed NO polish gain from the old 40-ep bc49 init (13/16, median 6901, E[t] 8494). The strengthened 240-ep redo (240/240 teacher wins, 70,455 decisions) produced a BC at 14/16 median 6374 E[t] 7285 - ALREADY beating the old init by 14.2% on E[t] before any polish - measured BEFORE this freeze.",
+  "freeze_note": "Frozen right after the redo baseline; optimizer knobs byte-identical to the campaign champion recipe; schedule clock-derived in-generator.",
+  "objective": "TIME-POLISH PPO on Jungle8 from the strengthened 240-ep BC (14/16 = 0.875, median 6374, E[t] 7285) toward the teacher-through-macro reference (mean 3996 ticks over the collection's 240 wins, hold 8). Both prior Jungle8 polish attempts started from the WEAKER old init and found nothing; this run tests the campaign hypothesis that init quality was the bottleneck (jungle8 rematch outcome receipt).",
+  "lineage": {
+    "recipe_validation": {
+      "role": "the receipt this campaign's premise stands on: the SAME recipe (same trainer/delegate bytes, same reward profile, same optimizer knobs, same stagnation clause) achieved tier_1 on Jungle1 and was concluded by its preregistered stagnation clause",
+      "preregistration_path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-timepolish-jungle1-s99081706-preregistration-v1.json",
+      "preregistration_sha256": "sha256:08da87aa979757e1338962631c59f0f67d8feba73ba400773c81f9715c96f69c",
+      "outcome_path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-timepolish-jungle1-s99081706-outcome-v1.json",
+      "outcome_sha256": "sha256:480371f272702e930083f8c76e016f48bce07cbedf1ef4ce956c27868f3cff7b",
+      "summary": "status CONCLUDED_BY_STAGNATION_CLAUSE, decision SUCCESS_TIER_1: stagnation clause (b) fired after three flat checkpoint evals against the best median 3058 at checkpoint 1572720; champion median 3058 < teacher 3134 at 16/16 win rate. The champion later set the Jungle1 AI record (530 ticks) on the golden-seed rescan."
+    },
+    "floor_lesson": {
+      "role": "the receipt behind this document's ONE STRUCTURAL IMPROVEMENT: the timepolish-jungle8 run was stopped by a FIXED 0.90 win-rate floor that its own post-hoc init baseline (13/16 = 0.8125 on the same panel) shows was mis-calibrated for the level-panel pair - the breach was partially inherited from the init, not caused by training",
+      "preregistration_path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-timepolish-jungle8-s99081711-preregistration-v1.json",
+      "preregistration_sha256": "sha256:04a6f4bedefc110b4e2ba358843213045ddfc1f16e3de63480a8b94cb5945cd7",
+      "outcome_path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-timepolish-jungle8-s99081711-outcome-v1.json",
+      "outcome_sha256": "sha256:0d98f0ed98515a6e25891c5d41f5b4a5d66bb918b7d65c2153d89dd50eaadaf4",
+      "lesson_applied": "clause (a)'s floor is max(0.50, measured_init_rate - 0.05), the init baseline was measured BEFORE training on the exact panel with the exact instrument (lineage.init_baseline_panel16), and the baseline receipts are bound at freeze - both halves of the outcome's lesson_for_successors, adopted verbatim"
+    },
+    "init_baseline_panel16": {
+      "instrument": "tools/probe_alphazuma_55_macro_native_eval_v1.py (identical sha to implementation.macro_native_eval_probe)",
+      "panel": "seeds 1494001000..1494001015, level Jungle8, hold_ticks 4, stack 0,4,8, deterministic",
+      "measured_utc": "2026-08-21T17:21:20Z",
+      "wins": "14/16",
+      "median_winning_ticks": 6374.5,
+      "fastest_win_ticks": 3249,
+      "expected_time": 7285,
+      "receipts": [
+        {
+          "receipt": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-baselines/jungle8-240bc/seed-1494001000/completion.json",
+          "sha256": "sha256:9b0ac8dad3348233477b6fbac2c221a809ac6c29386c5a1c7e4fea03d94cc729",
+          "outcome": "loss",
+          "ticks": 9413
+        },
+        {
+          "receipt": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-baselines/jungle8-240bc/seed-1494001001/completion.json",
+          "sha256": "sha256:3c5e5c2e7e0cd8b8345e91132219f7b8c4ea451a91707e54fb9d76c19c8ce50f",
+          "outcome": "win",
+          "ticks": 12914
+        },
+        {
+          "receipt": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-baselines/jungle8-240bc/seed-1494001002/completion.json",
+          "sha256": "sha256:ffc54dc9a1c875bb014dbfd6cc0ba0dc693a82e28182c1971c7d38025de724f4",
+          "outcome": "win",
+          "ticks": 8069
+        },
+        {
+          "receipt": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-baselines/jungle8-240bc/seed-1494001003/completion.json",
+          "sha256": "sha256:d4f49d1b02caafcdb1cbcbe8b7d29e591f1eff4184a562202cc2285b7ce69855",
+          "outcome": "win",
+          "ticks": 7646
+        },
+        {
+          "receipt": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-baselines/jungle8-240bc/seed-1494001004/completion.json",
+          "sha256": "sha256:df56be9953b17f1a916a78b7e87e8d5e62948517f22db505912ae91f82bd84a8",
+          "outcome": "win",
+          "ticks": 9757
+        },
+        {
+          "receipt": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-baselines/jungle8-240bc/seed-1494001005/completion.json",
+          "sha256": "sha256:efa4bc364b04215b01c0066c6fb8b4bc4f1d82412d5d881823f26de070f6b128",
+          "outcome": "loss",
+          "ticks": 8691
+        },
+        {
+          "receipt": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-baselines/jungle8-240bc/seed-1494001006/completion.json",
+          "sha256": "sha256:4aac19937ebeb4ac007d2d2d892de98d168de27cbd314e7a11df62978ecc9735",
+          "outcome": "win",
+          "ticks": 3287
+        },
+        {
+          "receipt": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-baselines/jungle8-240bc/seed-1494001007/completion.json",
+          "sha256": "sha256:bb28c02a60399629163a4fbc74a845da306fe82e0c3a3df57cfa1abc8069260f",
+          "outcome": "win",
+          "ticks": 4897
+        },
+        {
+          "receipt": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-baselines/jungle8-240bc/seed-1494001008/completion.json",
+          "sha256": "sha256:90764d94daf39a1e17c73be2ff104e5a69f662f55f5a791a93e663a8fa8a3fdc",
+          "outcome": "win",
+          "ticks": 9144
+        },
+        {
+          "receipt": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-baselines/jungle8-240bc/seed-1494001009/completion.json",
+          "sha256": "sha256:765e946a920871f449b37b16db54b268001c44a873448b90a7329dd5e477f770",
+          "outcome": "win",
+          "ticks": 4066
+        },
+        {
+          "receipt": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-baselines/jungle8-240bc/seed-1494001010/completion.json",
+          "sha256": "sha256:45e956afb8ec42c9832cd058740fc9afcabb929b84e347b8f1d450d081f9ddf0",
+          "outcome": "win",
+          "ticks": 4946
+        },
+        {
+          "receipt": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-baselines/jungle8-240bc/seed-1494001011/completion.json",
+          "sha256": "sha256:9d839f512a222fde6df7948d81dbb2063d62789f0cc804c2f72f5f5df94c7765",
+          "outcome": "win",
+          "ticks": 10340
+        },
+        {
+          "receipt": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-baselines/jungle8-240bc/seed-1494001012/completion.json",
+          "sha256": "sha256:4c63b60a03bd94a7786865a371dd03ef25f9049bad35ea5ceb6f94510faf3f4c",
+          "outcome": "win",
+          "ticks": 5103
+        },
+        {
+          "receipt": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-baselines/jungle8-240bc/seed-1494001013/completion.json",
+          "sha256": "sha256:869f4d38c2452deeba915280d3c9600744dcc9919de7f9f1fdaf0d80ffa8ee56",
+          "outcome": "win",
+          "ticks": 4553
+        },
+        {
+          "receipt": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-baselines/jungle8-240bc/seed-1494001014/completion.json",
+          "sha256": "sha256:553cc73b1d3a826f689163bf285b77333c41e6f6945af13e6788eff63d9e3854",
+          "outcome": "win",
+          "ticks": 9545
+        },
+        {
+          "receipt": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-baselines/jungle8-240bc/seed-1494001015/completion.json",
+          "sha256": "sha256:28f2183bc68b6a7b4ccd97458ac83d9a9e9114ad74a6a7b70f1b18ad454b2fc1",
+          "outcome": "win",
+          "ticks": 3249
+        }
+      ]
+    },
+    "bc_champion_training": {
+      "role": "DIRECT model ancestor: the bc49 panorama BC student whose final_model.zip is this run's initial_model",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-bc49/jungle6",
+      "completion_path": "/mnt/d/ZumaTraining/alphazuma-55-macro-bc49/jungle6/completion.json",
+      "completion_sha256": "sha256:69737aa72b390295353446ec4660b4134c88a16114c960c720dd518fc45e16b6",
+      "final_model_sha256": "sha256:5df67ef452d8ebbb59e6afd802ff0c7ef071b73b39052fb8c34dde3bb39ba036",
+      "summary": "behavior cloning of teacher macro decisions (curve-aware-settled-strategic-v3) on jungle6, 20 epochs, inverse-frequency verb class weights [1.0, 3.7, 8.3] ('invfreq', the Jungle1 sweep-champion recipe), aim head polar-identity init (identity scale 5.0), model_seed 99081705; dataset: 40 jungle6 teacher-win episodes (12796 decisions) from the full49 collection s99081698, manifest sha256:67ca237bef7ec855c8f8e156d03e411cdb313d3dce79984d0a5a37ded4b8903e, episode seeds within [1495000004, 1495001915]; final holdout verb accuracy 0.615, aim within-3 accuracy 0.503 (fire decisions 0.789); final_model.zip 31470799 bytes, bitwise the epoch-20 checkpoint (round_trip.bitwise_state_dict_equal true)"
+    },
+    "bc_champion_panorama_eval8": {
+      "role": "the bc49 panorama gate receipts for this level: 4/8 held-out wins at hold 8; prior to the init baseline panel above this was the level's only autonomous win evidence, and it is kept bound for continuity with the bc49 gate",
+      "run_dir_pattern": "/mnt/d/ZumaTraining/alphazuma-55-macro-bc49/jungle6/eval8/seed-<seed>",
+      "receipts": [
+        {
+          "seed": 1495002000,
+          "outcome": "win",
+          "ticks": 8420,
+          "completion_sha256": "sha256:12dd75cc4afb63020ee40d99eab739cab0c25d533e566785fc4f118a379e7ac2"
+        },
+        {
+          "seed": 1495002001,
+          "outcome": "win",
+          "ticks": 7830,
+          "completion_sha256": "sha256:0de6e319764b6af2c3b3f3487b84e7d8d94ffa6c8cc847a605cbb826ae874362"
+        },
+        {
+          "seed": 1495002002,
+          "outcome": "loss",
+          "ticks": 4208,
+          "completion_sha256": "sha256:8afca4ffe14ec0c155d90980106a342b4e5b339b2dd389b8ad11e22f09194079"
+        },
+        {
+          "seed": 1495002003,
+          "outcome": "loss",
+          "ticks": 10273,
+          "completion_sha256": "sha256:7dbd40fc6229feed052300fc9167b970b57621a5c2def80519307c5c80da5cf1"
+        },
+        {
+          "seed": 1495002004,
+          "outcome": "loss",
+          "ticks": 7913,
+          "completion_sha256": "sha256:cd542b6cc9c2dd46b5898756a574b3a11e3c77ac00e0076ce91693d15b9826dc"
+        },
+        {
+          "seed": 1495002005,
+          "outcome": "win",
+          "ticks": 10180,
+          "completion_sha256": "sha256:d23e03160147e282512e896c974cf723fc3d36706896da20f1f45f4ef4eab74a"
+        },
+        {
+          "seed": 1495002006,
+          "outcome": "loss",
+          "ticks": 10957,
+          "completion_sha256": "sha256:f603487f3b4dc5f6e0cb08cb6d82598b43e868b390a6fac07451d7fd3625669e"
+        },
+        {
+          "seed": 1495002007,
+          "outcome": "win",
+          "ticks": 2881,
+          "completion_sha256": "sha256:86fef227a542d3ce5ac2cc6aecb31f43d3ad84daa99bd0999762dd6e068099de"
+        }
+      ],
+      "summary": "4/8 wins; win ticks [2881, 7830, 8420, 10180], median 8125.0, fastest 2881; hold_ticks 8, deterministic masked predict, max_ticks 30000; every receipt's source.model_sha256 equals initial_model.sha256 bitwise",
+      "protocol_deltas_note": "the panorama gate used its own seed block 1495002000..1495002007 at hold 8; this document's panel evidence is lineage.init_baseline_panel16 (exact panel seeds, hold 4), which SUPERSEDES the caveat the Jungle4 pattern had to carry ('the checkpoint panel has NO baseline receipt for this init') - the panel baseline now exists by construction, and on this level it reads HIGHER than the panorama sample (0.75 vs 0.50)"
+    },
+    "teacher_reference": {
+      "value_native_ticks_mean": 3996,
+      "source": "the 240-episode collection: mean native ticks over its 240 wins (hold 8, same stacked macro composition)",
+      "note": "collection hold 8 vs eval hold 4 - fair-to-generous bar"
+    },
+    "exploration_era_reference": {
+      "role": "the five failed exploration-era PPO runs and their eight consumed training ranges are bound, receipt by receipt, inside the Jungle1 pattern lineage; they are NOT re-listed here because this document's premise stands on the timepolish-jungle1 SUCCESS receipt (recipe_validation), not on the contrast with the failures; none of them trained jungle6",
+      "bound_via": "lineage.recipe_validation.preregistration_sha256 (the timepolish-jungle1 preregistration), sections lineage.exploration_era_ppo_failures and lineage.pattern_document"
+    },
+    "pattern_document": {
+      "role": "structural base of this document: the timepolish-jungle4 preregistration (itself the proven copy of the validated Jungle1 recipe); its Jungle4-specific evidence is replaced by jungle6 evidence, its machinery (trainer/delegate/composition/reward/stagnation clause) is kept byte-identical, and its fixed 0.90 win-rate floor is replaced by the measured-relative floor per lineage.floor_lesson",
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-timepolish-jungle4-s99081710-preregistration-v1.json",
+      "sha256": "sha256:9601110d9c292d191cab6e0a8102aecef2bb841e08d4374f4b237d3353107545"
+    },
+    "catalog_source": {
+      "role": "source of the levels[] catalog entry (id, display_name, curve_count, curve_names), carried verbatim from the frozen 49-level exploration-era preregistration; the catalog id is LOWERCASE jungle6 while its curve archive name is capitalized Jungle6\\Jungle6 - both carried exactly as frozen",
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-macro-ppo-s99081680-preregistration-v1.json",
+      "sha256": "sha256:fcd2f536c9a0596cdd7b23180d38fd16ff51917a009f157c65ed5259cc2068fa"
+    },
+    "strengthened_init_route": {
+      "adopted_from": "diagnostics/alphazuma-55-timepolish-jungle8-s99081724-outcome-v1.json (this level's own rematch verdict: better init, not more PPO)",
+      "gate": "the redo must beat the OLD init (13/16, median 6901), not merely 8/16; measured 14/16 median 6374",
+      "collection": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-decisions-jungle8-240-s99081745-v1",
+        "completion_sha256": "sha256:d639abb66ab2355a4f9600433f635a003578268511e84d5e836ea133cce4d145",
+        "episodes": 240,
+        "teacher_wins": 240,
+        "decisions": 70455,
+        "seed_reservation": [
+          1544000000,
+          1544999999
+        ]
+      },
+      "bc_training": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-bc-jungle8-240-s99081751-v1",
+        "completion_sha256": "sha256:abdffd7210825db4aa77df411a6bfb88c459e571af67addab8fa54b9a9e7f194",
+        "recipe": "distill v1, epochs 20, lr 3e-4, batch 512, holdout 0.2, features 2048, verb weights 1.0/3.7/8.3, seeds 99081751",
+        "calibration": "fire_ratio 1.23, fire_recall 0.80, aim_within3_fire 0.72"
+      }
+    }
+  },
+  "reward_resolution": {
+    "how_the_validator_resolves_it": "carried verbatim from the pattern document (the resolution path is unchanged): v2._configs_v2 hands environment.reward_profile to v2._reward_config_v2; each of profile_id, win_reward, failure_reward, time_penalty_per_native_tick present in the mapping OVERRIDES the v2 defaults; score_progress_reward_cap is owned by TrainerV2Config (trainer_v2.score_progress_reward_cap, here 1.0). profile_id is a label checked only for non-emptiness; the id win-time5x-score-truncation-neutral-v3 is REUSED because the profile it names is bitwise the same profile.",
+    "ordering_guarantees": "the composed training wrapper is DenseShapingObservableHumanSpeedrunWrapper; its _validate_reward_ordering enforces minimum win return > maximum terminated-failure return: (10 + (-0.0005 x 12000)) = +4.0 > (-10 + 1.0) = -9.0, satisfied with margin 13.0 at jungle6's max_ticks 12000 (identical arithmetic to the pattern: jungle levels are not in the long-horizon prefix list). The base-wrapper one-second dominance rule is deliberately dropped by the v2 dense-shaping mixin, exactly as documented in the pattern.",
+    "magnitude_rationale": "5x clock signal, unchanged from the validated recipe. At the measured panel median (11991 ticks, hold 4, max_ticks 30000) the time term costs ~-6.0 against +10; at the training horizon the worst POSSIBLE win costs -6.0, still netting +4.0, so winning strictly dominates everything and the residual gradient on winning episodes is the clock. A 500-tick speedup is worth +0.25 per episode, the same well-posed polish signal that took Jungle1 from median 3833 to 3058."
+  },
+  "hold_ticks_decision": {
+    "training": 8,
+    "training_source": "ParkSettleActionConfig.hold_ticks default (src/zuma_rl/park_settle_action_wrapper.py); NO existing configuration path can set it for training (v2b's _make_env passes no park_settle_config; neither TrainerV2Config nor the CLI exposes a hold_ticks knob), and this campaign forbids editing frozen tools - so TRAINING RUNS AT hold_ticks 8, exactly as in the pattern document, and the asymmetry is preregistered rather than papered over.",
+    "evaluation": 4,
+    "evaluation_source": "carried from the Jungle1 paired 2k-seed hold A/B (hold 4 ~90 ticks faster at the median, win rate within noise on identical seeds) and validated in practice by every timepolish checkpoint eval to date; ADDITIONALLY, this document's own init baseline was measured at hold 4 on the exact panel (lineage.init_baseline_panel16), so for THIS level the hold-4 evaluation of a hold-8-trained policy is directly receipted at init: 12/16 wins.",
+    "asymmetry_note": "train at 8, evaluate at 4. HONEST CAVEAT: the A/B receipt is Jungle1 evidence; no jungle6 hold A/B exists. The init baseline receipts the hold-4 transfer for the INIT model only; if the hold-4 eval win rate collapses under training while telemetry stays healthy, that is a transfer failure and early_stop_rules clause (a) catches it - same guard, same clause, as preregistered in the pattern."
+  },
+  "early_stop_rules": {
+    "checkpoint_grid_note": "checkpoint_every 262144 with 40 envs -> SB3 CheckpointCallback save_freq = 262144 // 40 = 6553 vec-steps, i.e. checkpoints on a 262,120-macro-step grid: 7 checkpoints inside the 2M budget (262120, 524240, 786360, 1048480, 1310600, 1572720, 1834840); each checkpoint gets the 16-seed eval below before the next checkpoint lands. The Jungle1 champion emerged at checkpoint 1572720, inside this grid.",
+    "checkpoint_eval_protocol": "16-seed held-out panel, seeds 1494001000..1494001015, level Jungle8, hold_ticks 4, stack lags 0,4,8, deterministic masked predict, via tools/probe_alphazuma_55_macro_native_eval_v1.py (sha256:f36c6af8ebb481f21736f9a4fb79538463a27b69edb450b51d428193a290c23d) run ONE SEED PER INVOCATION at the probe's default max_ticks 30000 into eval16-ckpt<N>/seed-<seed> run dirs - the protocol is bit-for-bit the init-baseline protocol (lineage.init_baseline_panel16) and matches every eval16-* receipt already in this campaign; eval device chosen at eval time so as not to preempt training (this run holds cuda:1); metrics recorded: wins/16, median winning ticks over the wins, shots_on_target_rate",
+    "clause_a_win_rate_floor": {
+      "floor_formula": "max(0.50, (init_wins - 1)/16 - 0.005) with init_wins = 14 -> floor = 0.8075",
+      "quantization_rationale": "one-seed-dip tolerance (batch-3 standard): 13/16 passes; 12/16 or fewer at two consecutive checkpoints stops the run.",
+      "clause": "if the 16-seed eval win rate is below 0.8075 (i.e. 12/16 or fewer wins) at TWO CONSECUTIVE checkpoints, STOP the run and keep the best earlier checkpoint",
+      "best_checkpoint_rule": "best = lowest E[t] = median/win_rate among checkpoints at-or-above the floor; the redo BC init (14/16, median 6374.5, E[t] 7285) is the fallback champion; the OLD bc49 init (E[t] 8494) is historical reference only"
+    },
+    "clause_b_stagnation_success": {
+      "clause": "if the median winning ticks of the 16-seed eval fails to improve on the best median observed so far at THREE CONSECUTIVE checkpoint evals, CONCLUDE THE RUN SUCCESSFULLY with the best checkpoint",
+      "best_checkpoint_rule": "best = lowest median winning ticks among checkpoints whose 16-seed win rate is >= the clause (a) floor (0.70)",
+      "rationale": "time-polish saturates; three flat checkpoints (~786k steps) is the preregistered definition of converged. This clause is not a hypothesis: it fired on Jungle1 exactly as designed and banked the champion. UNCHANGED from the pattern document except that its best rule references the relative floor."
+    }
+  },
+  "trainer": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/train_overnight_multilevel_v2.py",
+    "sha256": "sha256:d1338514c4483068af9caecf7b00ebdedb98067a60f90e0fd0ef127457f7cef3",
+    "note": "v2 owns validation, PPO construction, the learn loop, receipts, and checkpointing; the v2b delegate below only rebinds the env factories (stack UNDER macro) and injects --init-model. Bytes identical to the pattern document's."
+  },
+  "delegate": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/train_overnight_multilevel_v2b.py",
+    "sha256": "sha256:0dc69a8e426f28ce1e460ebebb92d6bdb7d0203896e4197fc55465796244db80",
+    "cli": {
+      "stack_lags": "0,4,8",
+      "init_model": "/mnt/d/ZumaTraining/alphazuma-55-macro-bc-jungle8-240-s99081751-v1/final_model.zip"
+    },
+    "composition_order": [
+      "RevengeEnv (per-level max_ticks)",
+      "DenseShapingObservableHumanSpeedrunWrapper",
+      "TruncationNeutralRewardWrapper",
+      "ObservationStackWrapper(0,4,8)",
+      "ParkSettleActionWrapper (hold_ticks 8, wrapper default - see hold_ticks_decision)"
+    ],
+    "stack_position_rationale": "the ring buffer advances every NATIVE tick a macro consumes, so the policy sees true frame(t-4)/frame(t-8) context at each macro decision point - identical to the bc49 student's training layout (its completion records the same composition, stack lags 0/4/8 and stacked dim 68712)",
+    "init_model_note": "--init-model re-injects the same path this document binds as initial_model; v2b's inject_init_model records the (identical) replacement in the run receipts. The CLI injection and initial_model below MUST agree, and do (verified at this freeze)."
+  },
+  "implementation": {
+    "park_settle_action_wrapper": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/park_settle_action_wrapper.py",
+      "sha256": "sha256:c641739ca100ff21cf9f056d9785141e759ba6e6bb6ab2bd51a58c264647363a"
+    },
+    "observation_stack_wrapper": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/observation_stack_wrapper.py",
+      "sha256": "sha256:d348fcf2e40b8a1f2e8b5045350b88d7e81ac285cdd03bbdde76f16887afa2fd"
+    },
+    "macro_native_eval_probe": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/probe_alphazuma_55_macro_native_eval_v1.py",
+      "sha256": "sha256:f36c6af8ebb481f21736f9a4fb79538463a27b69edb450b51d428193a290c23d",
+      "note": "THE preregistered checkpoint-eval instrument AND the instrument that produced the init baseline receipts - instrument identity is what makes the relative floor comparison exact"
+    },
+    "speedrun_seed_search": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/search_alphazuma_55_macro_speedrun_seeds_v1.py",
+      "sha256": "sha256:d76c5f5e1dd967fd837c81a841e11a30bf86441023ff055fc199723ac6a972b3",
+      "note": "bound for tier_2/tier_3 record searches over wider seed sets; NOT the checkpoint-eval instrument in this document (see early_stop_rules.checkpoint_eval_protocol)"
+    }
+  },
+  "initial_model": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-bc-jungle8-240-s99081751-v1/final_model.zip",
+    "sha256": "sha256:8904336e8321035e0dcf90988fa7a08d3a9177e24af02fcd5db23060d2bdc537",
+    "selection_rule": "the strengthened 240-ep Jungle8 redo BC (s99081751): 14/16 median 6374 - beats the old bc49 init on both axes; the old init is receipted twice as unpolishable material",
+    "interface": "macro-native MultiDiscrete([3, 180]) over stacked Box(68712) (3 x 22904 motor-observable frames, lags 0/4/8)",
+    "space_check_note": "macro-native by construction; adjudicated by the --validate-only launch gate.",
+    "value_head_note": "critic untrained (BC); early checkpoints may be warm-up dominated, tolerated by the one-seed-dip floor"
+  },
+  "trainer_v2": {
+    "gamma": 0.999,
+    "gae_lambda": 0.95,
+    "score_progress_reward_cap": 1.0,
+    "reward_alignment": "cap 1.0 and the 5x time term carried unchanged from the validated recipe. Arithmetic at jungle6's max_ticks 12000: worst win = 10 - 6.0 = +4.0; best truncation (truncation-neutral) = about -6.0 + 1.0 = -5.0; best terminated failure = -10 + 1.0 - time < -9.0. Ordering: every win > every truncation > every terminated failure; on winning episodes the clock is the dominant residual signal, which is the entire point of this run.",
+    "default_max_ticks": 12000,
+    "long_horizon_max_ticks": 24000,
+    "long_horizon_level_prefixes": [
+      "coast",
+      "grotto",
+      "volcano"
+    ],
+    "use_park_settle_wrapper": true,
+    "use_motor_observable": true,
+    "discounting_note": "gamma applies PER MACRO STEP; the macro reward is the undiscounted per-tick sum over the ticks the macro consumed, so 0.999 per macro is roughly 0.999^(1/40) per native tick; truncation is reward-neutral (v2 wrapper), so a timed-out episode bootstraps instead of paying -10"
+  },
+  "levels_scope": {
+    "rule": "SINGLE-LEVEL time-polish sprint: exactly one level, Jungle8 (capital catalog id); catalog entry from the frozen 49-level lineage",
+    "count": 1
+  },
+  "levels": [
+    {
+      "id": "Jungle8",
+      "display_name": "Nasal Passage",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle8\\Jungle8"
+      ]
+    }
+  ],
+  "environment": {
+    "profile_mode": "tutorials_completed",
+    "hard": false,
+    "curve_index": 0,
+    "base_config": {
+      "aim_bins": 180,
+      "action_mode": "factorized",
+      "frame_skip": 1,
+      "max_ticks": 12000,
+      "max_balls": 768,
+      "max_projectiles": 32,
+      "max_curves": 2,
+      "actor_interface": "full55-v1"
+    },
+    "input_profile": {
+      "profile_id": "elite-human-v1",
+      "reaction_delay_ticks": 12,
+      "max_aim_speed_degrees_per_second": 1080.0,
+      "max_aim_acceleration_degrees_per_second_squared": 18000.0,
+      "min_button_interval_ticks": 5
+    },
+    "reward_profile": {
+      "profile_id": "win-time5x-score-truncation-neutral-v3",
+      "win_reward": 10.0,
+      "failure_reward": -10.0,
+      "time_penalty_per_native_tick": -0.0005
+    },
+    "reward_note": "profile_id REUSED from the pattern document because the profile is bitwise identical (same three overrides, same cap ownership); the validator accepts any non-empty id (see reward_resolution). score_progress_reward_cap is owned by trainer_v2 and is 1.0 for this run; time-limit truncation pays NO terminal penalty (v2 TruncationNeutralRewardWrapper)."
+  },
+  "runs": [
+    {
+      "id": "timepolish-jungle8-r3",
+      "description": "TIME-POLISH from the strengthened Jungle8 redo BC (14/16), cuda:0, 40 workers, byte-identical champion recipe; queued on cuda:0 behind the jungle9 beta aggregate distill.",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle8-s99081752-v1",
+      "device": "cuda:0",
+      "seed": 99081752,
+      "episode_seed_base": 1546000000,
+      "episode_seed_stride": 100000,
+      "total_steps": 2000000,
+      "num_envs": 40,
+      "rollout_steps": 256,
+      "batch_size": 1024,
+      "ppo_epochs": 2,
+      "learning_rate": 1e-05,
+      "entropy_coef": 0.005,
+      "checkpoint_every": 262144,
+      "checkpoint_note": "one macro step is one policy timestep (~20-70 native ticks); with 40 envs the callback grid floors to 262,120 steps (7 checkpoints in the 2M budget). At the observed timepolish throughput the 2M budget fits well inside the 4.5-h window; the v2 callback stops at schedule.training_stop_utc regardless.",
+      "budget_note": "total_steps 2M is the TRIMMED budget carried from the pattern: the identical Jungle1 recipe produced its champion at 1.57M steps and its stagnation clause spent the remainder proving flatness; 2M covers the champion region plus the three-checkpoint stagnation window. If the median is still improving at checkpoint 1834840 the run ends at the budget with the best checkpoint per clause (b)'s best rule - that outcome is reported as budget-capped, not stagnation-concluded.",
+      "initial_weights": {
+        "Jungle8": 1.0
+      },
+      "adaptive": {
+        "enabled": false,
+        "update_every_steps": 262144,
+        "rolling_episodes": 64,
+        "minimum_episodes": 4,
+        "minimum_weight": 1.0,
+        "maximum_weight": 4.0,
+        "anchor_level": "Jungle8"
+      }
+    }
+  ],
+  "evaluation_cadence": {
+    "panel": "single trained level: Jungle8",
+    "heldout_seed_panel": [
+      1494001000,
+      1494001015
+    ],
+    "when": "per checkpoint (~262k-step grid), student_only, deterministic masked predict, hold_ticks 4 (see hold_ticks_decision), one seed per invocation, on whichever device does not preempt training",
+    "instrument": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/probe_alphazuma_55_macro_native_eval_v1.py",
+      "sha256": "sha256:f36c6af8ebb481f21736f9a4fb79538463a27b69edb450b51d428193a290c23d",
+      "invocation": "--model-path <checkpoint zip> --levels Jungle8 --seed-base <seed> --hold-ticks 4 --stack-lags 0,4,8 --run-dir <run_dir>/eval16-ckpt<N>/seed-<seed>, once per panel seed 1494001000..1494001015; max_ticks left at the probe default 30000",
+      "instrument_delta_note": "DELTA from the pattern document, which bound the speedrun seed-search tool for checkpoint evals: this document binds the macro-native probe run per-seed because (a) that is what every eval16-* receipt in the timepolish campaign actually is (jungle1/jungle4/jungle8 run dirs, config sha-verified), and (b) the relative win-rate floor requires the checkpoint evals and the init baseline to share one instrument bit for bit. The search tool remains bound in implementation for tier_2/tier_3 record searches."
+    },
+    "telemetry": "wins/16, median winning ticks over wins, per-win tick list, shots, shots_on_target_rate (wrapper fidelity, expect ~1.0); score is recorded only as a liveness diagnostic, never a success metric",
+    "final_adjudication": "the best checkpoint per early_stop_rules is the run's candidate; any tier_2/tier_3 attempt additionally cites the specific eval/search receipt of the qualifying win"
+  },
+  "success_criteria_tiers": {
+    "scope_note": "STUDENT_ONLY tiers on engineering seeds; SPEEDRUN objective; win-rate qualifiers RELATIVE to the measured init (14/16 = 0.875).",
+    "tier_0_sanity": "shots_on_target_rate >= 0.95 every eval; win rate never below floor 0.8075 at the adjudicated best checkpoint",
+    "tier_1_beat_teacher_time": "median < 3996 at win rate >= 0.875 on the best checkpoint's panel; init median 6374.5 -> ~1.6x speedup demanded",
+    "tier_2_any_win_under_1p5x_teacher": "ANY documented win under 5994 ticks; init fastest 3249 already meets it - the TRAINED policy must reproduce such a win",
+    "tier_3_sub_human_record_material": "a golden-seed scan win under the Adv 8 human line 8 s = 800 ticks (speedrun.com; runner/date to re-verify at claim time); current Jungle8 AI-TAS best is 14.63 s from the old BC - the gap is large, tier_3 is a stretch"
+  },
+  "seed_isolation": {
+    "training_episode_range": [
+      1546000000,
+      1549999999
+    ],
+    "training_range_rule": "episode_seed_base 1546000000 + 40 workers x stride 100000 = [1546000000, 1549999999]; max 1549999999 is 50,000,001 below the 1600000000 embargo floor; starts where the jungle7 beta reservation ends, disjoint from EVERY prior range",
+    "prior_training_ranges": [
+      {
+        "run": "macro-ppo-5090 (s99081680, run 1)",
+        "range": [
+          1460000000,
+          1462399999
+        ]
+      },
+      {
+        "run": "macro-ppo-5090-r2 (s99081682, run 2)",
+        "range": [
+          1463000000,
+          1465399999
+        ]
+      },
+      {
+        "run": "macro-ppo-jungle1 (s99081683)",
+        "range": [
+          1466000000,
+          1469999999
+        ]
+      },
+      {
+        "run": "macro-ppo-jungle2 (s99081684)",
+        "range": [
+          1474000000,
+          1477999999
+        ]
+      },
+      {
+        "run": "macro-ppo-jungle1-r3 (s99081685)",
+        "range": [
+          1478000000,
+          1481999999
+        ]
+      },
+      {
+        "run": "macro-ppo-jungle2-r3 (s99081686)",
+        "range": [
+          1482000000,
+          1485999999
+        ]
+      },
+      {
+        "run": "macro-ppo-jungle1-r3b (s99081687)",
+        "range": [
+          1486000000,
+          1489999999
+        ]
+      },
+      {
+        "run": "macro-ppo-jungle2-r4 (s99081688)",
+        "range": [
+          1490000000,
+          1493999999
+        ]
+      },
+      {
+        "run": "timepolish-jungle1 (s99081706)",
+        "range": [
+          1498000000,
+          1501999999
+        ]
+      },
+      {
+        "run": "timepolish-jungle4 (s99081710)",
+        "range": [
+          1502000000,
+          1505999999
+        ]
+      },
+      {
+        "run": "timepolish-jungle8 (s99081711)",
+        "range": [
+          1506000000,
+          1509999999
+        ]
+      },
+      {
+        "run": "timepolish-jungle6 v1 aborted launch (s99081717)",
+        "range": [
+          1514000000,
+          1517999999
+        ],
+        "note": "reserved by prereg v1; only ~40 macro steps of experience drawn before the wall-clock clause fired"
+      },
+      {
+        "run": "timepolish-jungle6 v2 (s99081717 amended)",
+        "range": [
+          1518000000,
+          1521999999
+        ]
+      },
+      {
+        "run": "timepolish-jungle8 rematch (s99081724)",
+        "range": [
+          1522000000,
+          1525999999
+        ]
+      },
+      {
+        "run": "jungle3 240-ep teacher collection (s99081725)",
+        "range": [
+          1526000000,
+          1526999999
+        ],
+        "note": "collection seeds, not training seeds; reserved to keep the block ledger contiguous"
+      },
+      {
+        "run": "timepolish-jungle3 round 2 (s99081731)",
+        "range": [
+          1531000000,
+          1534999999
+        ]
+      },
+      {
+        "run": "jungle9 240-ep teacher collection (s99081733)",
+        "range": [
+          1535000000,
+          1535999999
+        ]
+      },
+      {
+        "run": "jungle10 240-ep teacher collection (s99081736)",
+        "range": [
+          1536000000,
+          1536999999
+        ]
+      },
+      {
+        "run": "jungle9 macro DAgger r1 (s99081737)",
+        "range": [
+          1537000000,
+          1537999999
+        ]
+      },
+      {
+        "run": "jungle10 timepolish (s99081741 v2)",
+        "range": [
+          1538000000,
+          1541999999
+        ]
+      },
+      {
+        "run": "jungle9 beta05 DAgger (s99081742)",
+        "range": [
+          1542000000,
+          1542999999
+        ]
+      },
+      {
+        "run": "jungle7 240-ep collection (s99081743)",
+        "range": [
+          1543000000,
+          1543999999
+        ]
+      },
+      {
+        "run": "jungle8 240-ep redo collection (s99081745)",
+        "range": [
+          1544000000,
+          1544999999
+        ]
+      },
+      {
+        "run": "jungle7 beta05 DAgger (s99081748)",
+        "range": [
+          1545000000,
+          1545999999
+        ]
+      }
+    ],
+    "prior_training_ranges_note": "the eight exploration-era PPO ranges sit inside the reserved macro_ppo_engineering block [1460000000, 1493999999]; the three timepolish ranges [1498000000, 1509999999] were consumed by the campaign this document extends (jungle1 validated the recipe; jungle4/jungle8 are batch-1). No prior run trained jungle6.",
+    "sibling_reservation": {
+      "run": "timepolish-jungle2 (s99081716), frozen in the same pass as this document",
+      "range": [
+        1510000000,
+        1513999999
+      ],
+      "note": "disjoint by construction: the sibling's range ends at 1513999999, this document's begins at 1514000000. The sibling runs FIRST in the batch-2 sequence; by this document's launch window its range is consumed training seed space."
+    },
+    "golden_era_test_and_search_blocks": [
+      {
+        "use": "macro decisions collection s99081689 (BC dataset, Jungle1/Jungle2 teacher episodes)",
+        "range": [
+          1494000000,
+          1494000079
+        ]
+      },
+      {
+        "use": "held-out eval panel (this document's checkpoint panel AND init-baseline panel; EVAL-ONLY, never in any training or dataset range)",
+        "range": [
+          1494001000,
+          1494001015
+        ],
+        "note": "deliberately reused as the checkpoint panel so results are comparable across the timepolish campaign; this document's init baseline receipts live on it (lineage.init_baseline_panel16)"
+      },
+      {
+        "use": "full49 decisions collection s99081698 (bc49 dataset source, incl. the 40 jungle6 teacher episodes)",
+        "range": [
+          1495000000,
+          1495001959
+        ]
+      },
+      {
+        "use": "bc49 panorama eval8 gate (the 4/8 receipts bound in lineage)",
+        "range": [
+          1495002000,
+          1495002007
+        ]
+      },
+      {
+        "use": "10k speedrun tail search s99081699 (Jungle1)",
+        "range": [
+          1496000000,
+          1496009999
+        ]
+      },
+      {
+        "use": "hold A/B s99081702 + s99081703 (paired, same seeds, Jungle1)",
+        "range": [
+          1496100000,
+          1496101999
+        ]
+      },
+      {
+        "use": "rta-big search s99081705 (Jungle1)",
+        "range": [
+          1497000000,
+          1497059999
+        ]
+      }
+    ],
+    "golden_tas_seed_list_check": "the golden/TAS lanes play raw 32-bit seeds that live outside the 1.4-1.5e9 engineering namespace by construction but COULD collide with a training range by chance; RESCANNED at this freeze against BOTH batch-2 training ranges [1510000000, 1513999999] and [1514000000, 1517999999]: golden top-100k (top_k.jsonl sha256:1a885e349ddf7a10ef6dcd4dbe91a43f6bee6c16fda963df38a0180cf5f74328, 100000 seeds) 0 collisions; record-attempt list (alphazuma-55-record-attempt-seeds-v1.jsonl sha256:14b110ed044892e745180e243bd5f9d234cf8dc30e74e4e5d090f434951c31ad, 2009 seeds) 0 collisions; golden-half-a (sha256:a4d1c0ffaff2186ffd392c1377cecafbeab66c0012362b6cdfa079393612b417, 48000 seeds) 0 collisions; golden-half-b (sha256:df52261e233d513e958ccce5c6bfd86e747405a7eeedf6dd36fd1afdc4ba8cff, 50000 seeds) 0 collisions. All list hashes are UNCHANGED from the pattern document's scan. The probe-v4 eval block [1400920000, 1400920999] (source of the teacher_reference episode), the macro_decisions_collection_v1 reservation [1494000000, 1495999999], the teacher collection [1543004000, 1543004999] and dagger [1543005000, 1543005999] blocks are likewise all disjoint from both batch-2 training ranges.",
+    "eval_panel_seed_base": 1494001000,
+    "embargoed_formal_ranges_untouched": [
+      [
+        1600000000,
+        1600000219
+      ],
+      [
+        1700000000,
+        1700000439
+      ],
+      [
+        1800000000,
+        1800000219
+      ]
+    ],
+    "no_overlap": true
+  },
+  "schedule": {
+    "latest_launch_utc": "2026-08-21T21:25:00Z",
+    "training_stop_utc": "2026-08-22T00:00:00Z",
+    "goal_end_utc": "2026-08-22T01:00:00Z",
+    "freeze_arithmetic": "frozen_utc 2026-08-21T17:21:20Z (system clock in-generator); launch waits on the cuda:0 queue (J3 deep scan tail -> jungle9 beta aggregate distill), expected ~+2 h = 2026-08-21T19:25:00Z; latest_launch_utc = expected + 2 h; training_stop_utc = expected launch + 4.5 h on the grid = 2026-08-22T00:00:00Z; goal_end +60 min.",
+    "latest_launch_clause": "if the launch gate has not fired by latest_launch_utc (2026-08-21T21:25:00Z), the launcher ABORTS WITHOUT TRAINING and this document is void pending refreeze.",
+    "concurrent_runs_note": "may run alongside the jungle10 record scan (cuda:1) and CPU baselines - established envelope"
+  },
+  "authority": {
+    "formal_seed_consumption": false,
+    "formal_candidate_authority": false,
+    "engineering_run": true,
+    "note": "any candidate this run produces must pass a separately preregistered formal evaluation on embargoed seeds before any autonomy or record claim; tier_3 language carries the simulator-time caveat verbatim wherever it is repeated"
+  }
+}

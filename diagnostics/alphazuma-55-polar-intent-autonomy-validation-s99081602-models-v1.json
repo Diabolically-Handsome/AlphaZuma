@@ -1,0 +1,61 @@
+{
+  "schema": "zuma-rl.zero-shot-models-manifest",
+  "version": 1,
+  "status": "FROZEN",
+  "created_utc": "2026-08-16T04:13:23.021787+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "stage": "training_validation",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "models": [
+    {
+      "id": "polar-intent-autonomy-source-final",
+      "training_steps": 848699,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-dagger-s99081549-v1/final_model.zip",
+      "sha256": "sha256:27c425e1507d40e5bdc59768b892e27d6c9f3616ce5b169a6073b380bacc6cf0"
+    },
+    {
+      "id": "polar-intent-autonomy-round-00",
+      "training_steps": 1075664,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-autonomy-s99081601-v1/round_00/final_model.zip",
+      "sha256": "sha256:6a8cc5efae38df1ddda0ec2d486ecbd16613cf4a64665354c6ccb75b4a99befe"
+    },
+    {
+      "id": "polar-intent-autonomy-round-01",
+      "training_steps": 1320533,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-autonomy-s99081601-v1/round_01/final_model.zip",
+      "sha256": "sha256:c5ba11c97d3c22e285717d19d71183b5e31c48a520c064ea85e30b60bc4c4fbb"
+    },
+    {
+      "id": "polar-intent-autonomy-round-02",
+      "training_steps": 1559447,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-autonomy-s99081601-v1/round_02/final_model.zip",
+      "sha256": "sha256:fca82d6a1158ac0fcc461def48901e3f9dfd6678ebf55c287d6cb1a4dbafad86"
+    },
+    {
+      "id": "polar-intent-autonomy-round-03",
+      "training_steps": 1792300,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-autonomy-s99081601-v1/round_03/final_model.zip",
+      "sha256": "sha256:ba5a022a194dea8bccef037ab72b0c182f7dc755377300d8d8a26bf0be92511e"
+    }
+  ],
+  "purpose": "Paired early-health diagnostic only; it cannot select the formal finalist.",
+  "builder": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_training_validation.py",
+    "sha256": "sha256:45fcdd98cda89f2a606cb24c30a82c12b877d108b232d37f7623ed71bb9a1391"
+  },
+  "polar_intent_autonomy_validation_plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-autonomy-validation-s99081602-plan-v1.json",
+    "sha256": "sha256:22c6525d6173e944b3a63640c18199df291cc60a57eda671094b7c5e2e3fd3e7"
+  },
+  "training_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-autonomy-s99081601-preregistration-v1.json",
+    "sha256": "sha256:3377cab7d9debb8dd368ba665b35e17d58846b605ec4018cbd00df5b66831ab3"
+  },
+  "target_completion": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-autonomy-s99081601-v1/completion.json",
+    "sha256": "sha256:38fcee7a916a547e5c25bf35f5ead63aeced06c5701cdf50cd8d190f23880a89"
+  }
+}

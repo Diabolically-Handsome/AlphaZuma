@@ -1,0 +1,35 @@
+{
+  "schema": "zuma-rl.retail-natural-loss-clock-reset-implementation-receipt",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T08:48:52.2280035Z",
+  "preregistration_sha256": "sha256:c8c639fb34262f0f85f20fc22b5869a65144bd254becddc7bdd17dfb3ef63a37",
+  "implementation": [
+    {
+      "path": "tools/autoplay_live_zuma.py",
+      "bytes": 50199,
+      "sha256": "sha256:8dd41a12b2f0810aa2d29fbd8ae7b184fa1a7c318a19d6222fce1422c25952b9"
+    },
+    {
+      "path": "tools/record_autoplay_zuma.py",
+      "bytes": 47674,
+      "sha256": "sha256:9a06889595302190584d665207253be4285b34f014b2297de70488f6b30559f8"
+    },
+    {
+      "path": "src/zuma_rl/retail_dmo_provenance.py",
+      "bytes": 41807,
+      "sha256": "sha256:a8dd13a41c3aac3a764e8f50d3033824f2b9fe0c0bd1a811dda20368dd83d8ab"
+    }
+  ],
+  "verification": {
+    "passed": 70,
+    "failed": 0
+  },
+  "frozen_delta": {
+    "replacement_score_target_must_be_positive": true,
+    "replacement_ball_population_must_be_positive": true,
+    "runtime_flag_157_not_used_as_activity_evidence": true,
+    "replacement_runtime_flag_observed_false": true,
+    "retail_ui_exit_from_replacement_board": true
+  }
+}

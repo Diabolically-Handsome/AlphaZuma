@@ -1,0 +1,110 @@
+{
+  "schema": "zuma-rl.overnight-multilevel-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_TRAINING",
+  "frozen_utc": "2026-08-13T03:02:06Z",
+  "purpose": "short dual-GPU implementation and throughput smoke; not model selection evidence",
+  "trainer": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/train_overnight_multilevel.py",
+    "sha256": "sha256:6cfe0f37fbe0ae26769a80d733261526ba1370f0164b65aac7de5aee4c2e0278"
+  },
+  "initial_model": {
+    "id": "step-2621440-final",
+    "path": "/mnt/d/ZumaTraining/human-speedrun-v1-jungle2-s20261010-2621k-v1/final_model.zip",
+    "sha256": "sha256:aeb6385c6df3faa0e720b43dd52853284807a25eaf2e4d0da4dcdc0769c4f5b6"
+  },
+  "levels": [
+    {"id":"Jungle1","display_name":"Shipwrecked!","curve_count":1,"curve_names":["Jungle1\\Jungle1"]},
+    {"id":"Jungle2","display_name":"Castaway","curve_count":1,"curve_names":["Jungle2\\Jungle2"]},
+    {"id":"Jungle3","display_name":"Echo Beach","curve_count":1,"curve_names":["Jungle3\\Jungle3"]},
+    {"id":"Jungle4","display_name":"Bones of an Idol","curve_count":1,"curve_names":["Jungle4\\Jungle4"]},
+    {"id":"jungle6","display_name":"Jungle Clearing","curve_count":1,"curve_names":["Jungle6\\Jungle6"]},
+    {"id":"Jungle7","display_name":"Sand Trap","curve_count":1,"curve_names":["Jungle7\\Jungle7"]},
+    {"id":"Jungle8","display_name":"Nasal Passage","curve_count":1,"curve_names":["Jungle8\\Jungle8"]},
+    {"id":"Jungle9","display_name":"Creeper Copse","curve_count":2,"curve_names":["Jungle9\\Jungle9-1","Jungle9\\Jungle9-2"]},
+    {"id":"Jungle10","display_name":"Darkness Falls","curve_count":1,"curve_names":["Jungle10\\Jungle10"]},
+    {"id":"village1","display_name":"Watering Hole","curve_count":1,"curve_names":["Village1"]},
+    {"id":"village2","display_name":"Overgrown Plaza","curve_count":1,"curve_names":["Village2"]},
+    {"id":"village4","display_name":"Sandspirals","curve_count":1,"curve_names":["Village4v2"]},
+    {"id":"village5","display_name":"Abandoned Well","curve_count":1,"curve_names":["Village5"]},
+    {"id":"village6","display_name":"Face Your Fear","curve_count":2,"curve_names":["Village6-1","Village6-2"]},
+    {"id":"village7","display_name":"Seven Sides (minus one)","curve_count":1,"curve_names":["Village7"]},
+    {"id":"village8","display_name":"Vines of Vengeance","curve_count":1,"curve_names":["Village8"]},
+    {"id":"village10","display_name":"The Horseshoe","curve_count":1,"curve_names":["Village10\\Village10v2"]}
+  ],
+  "environment": {
+    "profile_mode": "tutorials_completed",
+    "base_config": {
+      "aim_bins": 180,
+      "action_mode": "factorized",
+      "frame_skip": 1,
+      "max_ticks": 12000,
+      "max_balls": 768,
+      "max_projectiles": 32,
+      "max_curves": 2,
+      "score_reward_scale": 0.01,
+      "step_penalty": -0.0001,
+      "win_reward": 10.0,
+      "loss_reward": -10.0,
+      "privileged_debug": false,
+      "render_width": 400,
+      "render_height": 300
+    },
+    "input_profile": {
+      "profile_id": "elite-human-v1",
+      "reaction_delay_ticks": 12,
+      "max_aim_speed_degrees_per_second": 1080.0,
+      "max_aim_acceleration_degrees_per_second_squared": 18000.0,
+      "min_button_interval_ticks": 5
+    },
+    "reward_profile": {
+      "profile_id": "win-time-score-v1",
+      "win_reward": 10.0,
+      "failure_reward": -10.0,
+      "time_penalty_per_native_tick": -0.0001,
+      "score_progress_reward_cap": 0.01
+    }
+  },
+  "runs": [
+    {
+      "id": "smoke-5090",
+      "run_dir": "/mnt/d/ZumaTraining/overnight-multilevel-smoke-a-s310200001-v1",
+      "device": "cuda:0",
+      "seed": 310200001,
+      "episode_seed_base": 310300000,
+      "episode_seed_stride": 1000000,
+      "total_steps": 65536,
+      "num_envs": 16,
+      "rollout_steps": 256,
+      "batch_size": 512,
+      "ppo_epochs": 1,
+      "learning_rate": 0.000005,
+      "entropy_coef": 0.0,
+      "checkpoint_every": 65536,
+      "initial_weights": {"Jungle1":1,"Jungle2":1,"Jungle3":1,"Jungle4":1,"jungle6":1,"Jungle7":1,"Jungle8":1,"Jungle9":1,"Jungle10":1,"village1":1,"village2":1,"village4":1,"village5":1,"village6":1,"village7":1,"village8":1,"village10":1},
+      "adaptive": {"enabled":false,"update_every_steps":65536,"rolling_episodes":64,"minimum_episodes":4,"minimum_weight":1.0,"maximum_weight":4.0,"anchor_level":"Jungle2"}
+    },
+    {
+      "id": "smoke-5080",
+      "run_dir": "/mnt/d/ZumaTraining/overnight-multilevel-smoke-b-s310200002-v1",
+      "device": "cuda:1",
+      "seed": 310200002,
+      "episode_seed_base": 330300000,
+      "episode_seed_stride": 1000000,
+      "total_steps": 65536,
+      "num_envs": 16,
+      "rollout_steps": 256,
+      "batch_size": 512,
+      "ppo_epochs": 1,
+      "learning_rate": 0.000005,
+      "entropy_coef": 0.0,
+      "checkpoint_every": 65536,
+      "initial_weights": {"Jungle1":1,"Jungle2":1,"Jungle3":1,"Jungle4":1,"jungle6":1,"Jungle7":1,"Jungle8":1,"Jungle9":1,"Jungle10":1,"village1":1,"village2":1,"village4":1,"village5":1,"village6":1,"village7":1,"village8":1,"village10":1},
+      "adaptive": {"enabled":false,"update_every_steps":65536,"rolling_episodes":64,"minimum_episodes":4,"minimum_weight":1.0,"maximum_weight":4.0,"anchor_level":"Jungle2"}
+    }
+  ],
+  "schedule": {
+    "training_stop_utc": "2026-08-13T03:20:00Z",
+    "goal_end_utc": "2026-08-13T03:30:00Z"
+  }
+}

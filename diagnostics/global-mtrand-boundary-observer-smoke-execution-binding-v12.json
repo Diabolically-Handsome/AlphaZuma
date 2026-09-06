@@ -1,0 +1,71 @@
+{
+  "schema": "zuma-rl.pc-global-mtrand-boundary-observer-live-smoke-execution-binding",
+  "version": 12,
+  "status": "BOUND_BEFORE_RUN_OUTPUT",
+  "created_utc": "2026-08-04T21:49:34.772Z",
+  "id": "global-mtrand-boundary-observer-smoke-v12-execution",
+  "session_nonce": "45bac4c3d93c4128bebd8728f44a5fd5",
+  "parent_preregistration": "diagnostics/global-mtrand-boundary-observer-smoke-preregistration-v12.json",
+  "parent_preregistration_sha256": "sha256:8e47ddc2a608797f1fb509b28c3311a130512b5c8c7064c5b1d1453ab9859e5c",
+  "trigger_outcome": "diagnostics/startup-global-mtrand-no-bias-controls-outcome-v11.json",
+  "trigger_outcome_sha256": "sha256:7526d00f7f872a7af120dd209d4e9711c75cd73fa6cc9aaf929e48894d3176c9",
+  "hash_recheck": {
+    "collector_plan_sha256": "sha256:5a7ba58eccd7e0d1b1008ac089cce59c167a26ba8bc359ef76f3dcd2bea8c0db",
+    "playback_dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "replay_pre_snapshot_sha256": "sha256:06d243f34ecf209c6296659fd4cc3c0a6c299c203cc8b4e342f55cc001c32842",
+    "host_restore_snapshot_sha256": "sha256:c48bd69be03fc6e2fdf1a400b571f0f0294a5fadda1c48e08c1bd6d1dd093f46",
+    "global_mtrand_source_trace_sha256": "sha256:4de39ac6a0e800323949e0095fc2fd3e924ea41a670ceb5d75a0ecb25b5c15a4",
+    "global_boundary_tool_sha256": "sha256:3d4b3a0285bbc26a0fc2ccce539652ada90d6af9b5be892ec3882b1f3bfbf8af",
+    "collector_sha256": "sha256:e6d3d45f19661b62ec7d50f996146192e2e6d582ff5f85b487300f481cd749d6",
+    "global_boundary_test_sha256": "sha256:ab5d29f0c18e7b1090ccbbd36345f077bbf8699df41c518aeddcd812c0541e2d",
+    "collector_test_sha256": "sha256:9a96e8a6cf7c7bc96eb145629164f20d7437b7485efd28f9a2f7b3b9a1601d20"
+  },
+  "preflight": {
+    "python_compile": "PASS",
+    "focused_tests": "PASS_60",
+    "native_full_suite": "PASS_1168_COLLECTED_EXIT_0",
+    "read_only_policy_unit_test": "PASS_NO_READBACK_OR_WRITE_CALL",
+    "natural_mismatch_receipt_test": "PASS_PRESERVED_WITH_ZERO_WRITES",
+    "runtime_process_count": 0,
+    "host_state_after_v11": "PASS_STATE_ROOT_MATCH"
+  },
+  "fixed_command_contract": {
+    "output_root": "D:/ZumaGolden/diagnostics/global-mtrand-boundary-observer-smoke-e01-v12",
+    "probe_update": 3425,
+    "slowdown_update": 3415,
+    "maximum_attempts": 3,
+    "trajectory_mode": "rng",
+    "trajectory_end_update": 3425,
+    "trace_detach_update": 1702,
+    "trace_reattach_update": 3501,
+    "global_mtrand_call_start_after_update": 1702,
+    "global_mtrand_call_end_at_update": 3121,
+    "global_mtrand_call_observe_boundary_only": true,
+    "global_mtrand_seed": 23557968,
+    "maximum_draws": 100000,
+    "initial_global_mtrand_oracle": false,
+    "diagnostic_disable_source_bound_board_anchor": true,
+    "skip_repaint_guard": true,
+    "skip_frozen_snapshot": true,
+    "outer_timeout_seconds": 900
+  },
+  "execution_rule": {
+    "capture_fresh_host_pre_after_this_binding": true,
+    "retain_every_attempt": true,
+    "post_handoff_failure_is_nonretryable": true,
+    "do_not_change_thresholds_after_output": true,
+    "semantic_result_is_quarantined_from_recipe_selection": true
+  },
+  "output_absence_recheck": {
+    "run_root": true,
+    "host_pre": true,
+    "host_post": true,
+    "outcome": true
+  },
+  "non_authorizations": [
+    "pc_golden_credit",
+    "fidelity_gate_change",
+    "formal_transport_change",
+    "large_scale_training_start"
+  ]
+}

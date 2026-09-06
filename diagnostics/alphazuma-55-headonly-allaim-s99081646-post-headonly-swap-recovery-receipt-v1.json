@@ -1,0 +1,48 @@
+{
+  "schema": "zuma-rl.alphazuma-55-bounded-swap-recovery-receipt",
+  "version": 1,
+  "status": "PASS",
+  "trigger": {
+    "head_only_trainer_pid": 401221,
+    "head_only_trainer_exited": true,
+    "combined_trainer_pid": 410838,
+    "combined_trainer_alive": true,
+    "combined_postprocess_pid": 430561,
+    "combined_postprocess_phase": "WAITING_FOR_TRAINING"
+  },
+  "safety_preconditions": {
+    "single_swap_device": "/dev/sdc",
+    "minimum_available_memory_kib": 20971520,
+    "maximum_swap_used_kib": 2097152,
+    "observed_available_memory_kib": 31160448,
+    "observed_swap_used_kib": 173308,
+    "all_preconditions_passed": true
+  },
+  "before": {
+    "observed_local": "2026-08-16T14:06:49.327382885-04:00",
+    "memory_total_bytes": 101237669888,
+    "memory_available_bytes": 31908204544,
+    "swap_total_bytes": 17179869184,
+    "swap_used_bytes": 177467392,
+    "device": "/dev/sdc",
+    "priority": -2
+  },
+  "operation": [
+    "swapoff /dev/sdc",
+    "swapon /dev/sdc"
+  ],
+  "after": {
+    "observed_local": "2026-08-16T14:06:51.669232964-04:00",
+    "memory_total_bytes": 101237669888,
+    "memory_available_bytes": 31199940608,
+    "swap_total_bytes": 17179869184,
+    "swap_used_bytes": 0,
+    "device": "/dev/sdc",
+    "priority": -2
+  },
+  "preflight_note": "An earlier PowerShell quoting attempt expanded Bash command substitutions on Windows and failed before WSL swap commands executed; it made no state change.",
+  "training_or_evaluation_semantics_changed": false,
+  "trainer_or_evaluator_signaled": false,
+  "historical_data_touched": false,
+  "power_restore_authority": false
+}

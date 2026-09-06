@@ -1,0 +1,135 @@
+{
+  "schema": "zuma-rl.paired-multimodel-level-video",
+  "version": 1,
+  "status": "COMPLETE",
+  "source": {
+    "aggregate": "/mnt/d/ZumaTraining/overnight-v11-recovery-postprocess-s43081301-v1/morning-target-evaluation/aggregate.json",
+    "aggregate_sha256": "sha256:b82e017511d39540f17e28ab50bfa451cdac9804f2b67b7764762eb94d8621c8",
+    "preregistration": "/mnt/d/ZumaTraining/overnight-v11-recovery-postprocess-s43081301-v1/morning-target-preregistration.json",
+    "preregistration_sha256": "sha256:55543e20ecae3fac92072d8c40fcb65c686183cd292128d7504aa76eb0a4d3ad",
+    "models_manifest": "/mnt/d/ZumaTraining/overnight-v11-recovery-postprocess-s43081301-v1/morning-blind-models-manifest.json",
+    "models_manifest_sha256": "sha256:5f9c76008d70e6ce8c156916d6a1b214ad34509399a3142f44d4158e382408e0"
+  },
+  "selection": {
+    "rule": "fastest winning formal blind attempt for level across frozen models",
+    "requested_level_id": "Jungle4",
+    "requested_model_id": null
+  },
+  "candidate": {
+    "model_id": "baseline-v1",
+    "training_steps": 2621440,
+    "model_sha256": "sha256:aeb6385c6df3faa0e720b43dd52853284807a25eaf2e4d0da4dcdc0769c4f5b6",
+    "seed": 710000033,
+    "outcome": "win",
+    "native_outcome": null,
+    "time_limit_truncated": false,
+    "ticks": 1697,
+    "seconds": 16.97,
+    "score": 2350,
+    "reward": 9.840300000000001,
+    "decisions": 1697,
+    "desired_action_counts": {
+      "wait": 1609,
+      "fire": 49,
+      "swap": 39
+    },
+    "executed_action_counts": {
+      "wait": 1609,
+      "fire": 49,
+      "swap": 39
+    },
+    "trajectory_sha256": "sha256:87ac0a81b7efa2d4a4631fe94dfc7f985adb99020dc78e9b97de28cd43a93ae4",
+    "level_id": "Jungle4",
+    "display_name": "Bones of an Idol",
+    "curve_count": 1,
+    "attempt_index": 1
+  },
+  "model": {
+    "path": "/mnt/d/ZumaTraining/human-speedrun-v1-jungle2-s20261010-2621k-v1/final_model.zip",
+    "sha256": "sha256:aeb6385c6df3faa0e720b43dd52853284807a25eaf2e4d0da4dcdc0769c4f5b6",
+    "device": "cuda:0"
+  },
+  "verification": {
+    "identity_fields": [
+      "outcome",
+      "ticks",
+      "score",
+      "trajectory_sha256",
+      "decisions",
+      "desired_action_counts",
+      "executed_action_counts"
+    ],
+    "pre_render_matches_formal_attempt": true,
+    "rendered_matches_formal_attempt": true,
+    "pre_render": {
+      "model_id": "baseline-v1",
+      "training_steps": 2621440,
+      "model_sha256": "sha256:aeb6385c6df3faa0e720b43dd52853284807a25eaf2e4d0da4dcdc0769c4f5b6",
+      "seed": 710000033,
+      "outcome": "win",
+      "native_outcome": null,
+      "time_limit_truncated": false,
+      "ticks": 1697,
+      "seconds": 16.97,
+      "score": 2350,
+      "reward": 9.840300000000001,
+      "decisions": 1697,
+      "desired_action_counts": {
+        "wait": 1609,
+        "fire": 49,
+        "swap": 39
+      },
+      "executed_action_counts": {
+        "wait": 1609,
+        "fire": 49,
+        "swap": 39
+      },
+      "trajectory_sha256": "sha256:87ac0a81b7efa2d4a4631fe94dfc7f985adb99020dc78e9b97de28cd43a93ae4",
+      "qualifies_sub_12": false
+    },
+    "rendered": {
+      "model_id": "baseline-v1",
+      "training_steps": 2621440,
+      "model_sha256": "sha256:aeb6385c6df3faa0e720b43dd52853284807a25eaf2e4d0da4dcdc0769c4f5b6",
+      "seed": 710000033,
+      "outcome": "win",
+      "native_outcome": null,
+      "time_limit_truncated": false,
+      "ticks": 1697,
+      "seconds": 16.97,
+      "score": 2350,
+      "reward": 9.840300000000001,
+      "decisions": 1697,
+      "desired_action_counts": {
+        "wait": 1609,
+        "fire": 49,
+        "swap": 39
+      },
+      "executed_action_counts": {
+        "wait": 1609,
+        "fire": 49,
+        "swap": 39
+      },
+      "trajectory_sha256": "sha256:87ac0a81b7efa2d4a4631fe94dfc7f985adb99020dc78e9b97de28cd43a93ae4",
+      "qualifies_sub_12": false
+    }
+  },
+  "video": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/outputs/aispeedrun-alpha-v1/adv4-bones-of-an-idol-16.97s.mp4",
+    "sha256": "sha256:e0b90281609b3088c4e249acc8cdc610d3cf55dc18419f6d34dc92434e937559",
+    "bytes": 1208431,
+    "codec": "h264/libx264",
+    "pixel_format": "yuv420p",
+    "width": 800,
+    "height": 736,
+    "fps": 50,
+    "frame_stride_native_ticks": 2,
+    "gameplay_frame_count": 850,
+    "frame_count": 950,
+    "decoded_frame_count": 950,
+    "duration_seconds": 19.0,
+    "final_hold_seconds": 2.0,
+    "poster": "/mnt/c/Users/Laure/Documents/祖玛/outputs/aispeedrun-alpha-v1/adv4-bones-of-an-idol-16.97s-poster.png",
+    "poster_sha256": "sha256:75f27c21dccd76c7cd1f7f8a6738d5e95f31f0468248a718d9d1bee4b43b161c"
+  }
+}

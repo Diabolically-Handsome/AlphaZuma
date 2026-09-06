@@ -1,0 +1,67 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-formal-portfolio-load-window",
+  "version": 1,
+  "created_utc": "2026-08-14T03:31:56.1537241Z",
+  "status": "PASS",
+  "classification": "live_operational_monitoring_only",
+  "window": {
+    "start_utc": "2026-08-14T03:21:43.7408448Z",
+    "end_utc": "2026-08-14T03:31:56.1537241Z",
+    "duration_seconds": 612.413,
+    "samples_per_gpu": 60,
+    "sampling_interval_seconds": 10,
+    "power_plan": "High performance"
+  },
+  "training": {
+    "steps_before": 23728984,
+    "steps_after": 24849512,
+    "step_delta": 1120528,
+    "steps_per_second": 1829.694,
+    "running_routes": 7,
+    "error_routes": 0,
+    "maximum_status_age_seconds": 39.159
+  },
+  "controller": {
+    "observed_phases": ["WAITING_FOR_TRAINING"],
+    "formal_seed_embargo_intact": true
+  },
+  "gpus": [
+    {
+      "index": 0,
+      "model": "NVIDIA GeForce RTX 5090",
+      "utilization_percent": {"mean": 75.5, "min": 33.0, "max": 92.0},
+      "temperature_celsius": {"max": 52.0}
+    },
+    {
+      "index": 1,
+      "model": "NVIDIA GeForce RTX 5080",
+      "utilization_percent": {"mean": 70.37, "min": 17.0, "max": 95.0},
+      "temperature_celsius": {"max": 59.0}
+    }
+  ],
+  "health_contract": {
+    "accepted_sustained_mean_utilization_percent": [65.0, 90.0],
+    "gpu0_mean_inside_band": true,
+    "gpu1_mean_inside_band": true,
+    "aggregate_mean_utilization_percent": 72.935,
+    "all_routes_running": true,
+    "no_training_errors": true,
+    "temperature_safe": true,
+    "violations": []
+  },
+  "projection": {
+    "training_stop_utc": "2026-08-14T12:00:00Z",
+    "remaining_seconds_at_window_end": 30483.8462759,
+    "projected_additional_steps_at_observed_rate": 55776111,
+    "projected_total_v11_steps_at_stop": 80625623,
+    "projection_is_not_a_guarantee": true
+  },
+  "decision": {
+    "retain_current_seven_route_portfolio": true,
+    "retain_temporary_high_performance_plan": true,
+    "change_frozen_training_recipe": false,
+    "add_filler_gpu_work": false
+  },
+  "formal_seed_consumption": "none",
+  "formal_gate_effect": "none"
+}

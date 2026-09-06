@@ -1,0 +1,286 @@
+{
+  "schema": "zuma-rl.fidelity-gate-suite",
+  "version": 1,
+  "policy": "original-transfer-jungle2-v2",
+  "evidence": [
+    {
+      "id": "a4-audit-c5-powerup-spawn",
+      "kind": "audit",
+      "path": "diagnostics/pc-mechanism-c5-powerup-spawn-v1.json",
+      "sha256": "sha256:33f5cee4fad865f24ce5a2811451712559878dd25da90aaa111cf1fc18fc4593",
+      "features": [
+        "pc_mechanism_coverage"
+      ]
+    },
+    {
+      "id": "a4-pc-jungle2-natural-entry-c23-v4",
+      "kind": "pc_golden",
+      "path": "cases/jungle2-natural-entry-c23-provenance-v1/manifest.json",
+      "sha256": "sha256:dddd1d770f4b995a0cb992a40d69d2ef62db6f2f7d0b66fe5df6041128eab868",
+      "features": [
+        "deterministic_replay"
+      ]
+    },
+    {
+      "id": "a5-pc-jungle2-natural-entry-c32-v4",
+      "kind": "pc_golden",
+      "path": "cases/jungle2-natural-entry-c32-provenance-v1/manifest.json",
+      "sha256": "sha256:8bd89c6c225fb7f382d887ad0e1c1c3497f796636f439b13e6186abdf28e5b74",
+      "features": [
+        "deterministic_replay"
+      ]
+    },
+    {
+      "id": "a5b-pc-jungle2-natural-entry-c31-v4",
+      "kind": "pc_golden",
+      "path": "cases/jungle2-natural-entry-c31-provenance-v1/manifest.json",
+      "sha256": "sha256:dc53163f2ddc8377259c2a97e0798b0d037ca0843aada5126dc6efe39a3e6c39",
+      "features": [
+        "deterministic_replay"
+      ]
+    },
+    {
+      "id": "a6-pc-jungle2-natural-entry-c35-v4",
+      "kind": "pc_golden",
+      "path": "cases/jungle2-natural-entry-c35-third-seed-provenance-v1/manifest.json",
+      "sha256": "sha256:24a8548361ef2daea15711f5b1996bf92d5b8ede1471817bfc30a477b494f2e1",
+      "features": [
+        "deterministic_replay",
+        "input_cadence",
+        "projectile_collision",
+        "shot_release"
+      ]
+    },
+    {
+      "id": "a6b-pc-jungle2-natural-entry-c66-v4",
+      "kind": "pc_golden",
+      "path": "cases/jungle2-natural-entry-c66-render-holdout-provenance-v2/manifest.json",
+      "sha256": "sha256:b1a5f85c145efaf04496b24bf806acfe6e309819f7bbccea203133713f17b9ed",
+      "features": [
+        "deterministic_replay"
+      ]
+    },
+    {
+      "id": "a6c-pc-jungle2-front-insertion-c91-c92-v5",
+      "kind": "pc_golden",
+      "path": "cases/jungle2-natural-front-insertion-c91-c92-exact-step-v1/manifest.json",
+      "sha256": "sha256:5b1685882984d00414c26e65a6c83f665845452ff68eb49599e423e7e54363bc",
+      "features": [
+        "deterministic_replay",
+        "front_insertion"
+      ]
+    },
+    {
+      "id": "a6d-audit-c91-front-insertion",
+      "kind": "audit",
+      "path": "diagnostics/pc-mechanism-c91-front-insertion-v1.json",
+      "sha256": "sha256:990e262d1fce742c52d78a8e7d1f36e1afca8072d4bada38db770013b750472a",
+      "features": [
+        "pc_mechanism_coverage"
+      ]
+    },
+    {
+      "id": "a6e-pc-jungle2-natural-c105-c106-v5",
+      "kind": "pc_golden",
+      "path": "cases/jungle2-natural-mechanisms-c105-c106-u3900-u3949-exact-step-v1/manifest.json",
+      "sha256": "sha256:6e089670314975fb5826ec4a93ca3cef79f93a25bc7bb597843d0527523826a6",
+      "features": [
+        "deterministic_replay"
+      ]
+    },
+    {
+      "id": "a6f-pc-jungle2-natural-c107-c108-v5",
+      "kind": "pc_golden",
+      "path": "cases/jungle2-natural-mechanisms-c107-c108-u4700-u4749-exact-step-v1/manifest.json",
+      "sha256": "sha256:f40fd7a18c57e6c5e30bacf8d0718bbfc3591d87f15a727d3d945c2960bd0000",
+      "features": [
+        "back_insertion",
+        "deterministic_replay"
+      ]
+    },
+    {
+      "id": "a6g-audit-c107-c108-back-insertion",
+      "kind": "audit",
+      "path": "diagnostics/pc-mechanism-c107-c108-u4700-u4749-v1.json",
+      "sha256": "sha256:ca2467a2155139b83daad2a2acc615f6fbce01d75403c4869f72735762a43493",
+      "features": [
+        "pc_mechanism_coverage"
+      ]
+    },
+    {
+      "id": "a7-audit-c35-natural-shot",
+      "kind": "audit",
+      "path": "diagnostics/pc-mechanism-c35-natural-shot-v1.json",
+      "sha256": "sha256:ab9d19386e97c524a1fd7c8bec48422619f6c963c31790391a4e2da74afc713f",
+      "features": [
+        "pc_mechanism_coverage"
+      ]
+    },
+    {
+      "id": "a8-audit-c109-natural-matches",
+      "kind": "audit",
+      "path": "diagnostics/pc-mechanism-c109-source-v1.json",
+      "sha256": "sha256:68bad24768f7890026f8f1066a45220ffc174b781d479d516f6eaa17382d4872",
+      "features": [
+        "pc_mechanism_coverage"
+      ]
+    },
+    {
+      "id": "b-diag-gameplay-shot3-match",
+      "kind": "diagnostic",
+      "path": "diagnostics/memory-trajectory-20260730-u9910-u10110-shot3-match/attempt-01/gameplay-diff-v1.json",
+      "sha256": "sha256:61bb130c85d8702c06c934132267bc34384f15d65fa7175b3d45a0647e31bc89",
+      "features": [
+        "match3",
+        "match4",
+        "projectile_collision",
+        "rollback_chain",
+        "shot_release"
+      ]
+    },
+    {
+      "id": "c-diag-loss-injected",
+      "kind": "diagnostic",
+      "path": "diagnostics/memory-trajectory-20260730-u11190-u11420-synth-loss-full-v4/attempt-01/loss-simulator-diff-v1.json",
+      "sha256": "sha256:2cd8ed7a4764537e9fb68d41b79c3e4b46a2ad6e1e72a6d439a159b9b57c5101",
+      "features": [
+        "natural_loss"
+      ]
+    },
+    {
+      "id": "d-sim-merge-back",
+      "kind": "simulator_diff",
+      "path": "diagnostics/memory-trajectory-20260730-u7738-u7800-v2/attempt-01/simulator-merge-diff-v4.json",
+      "sha256": "sha256:52a7e922290df2e020536f63ad60287611ffd1ddb0e853b09899044052554b6e",
+      "features": [
+        "back_insertion"
+      ]
+    },
+    {
+      "id": "d2-sim-merge-front-c91",
+      "kind": "simulator_diff",
+      "path": "diagnostics/simulator-merge-diff-front-c91-u3664-u3684-v1.json",
+      "sha256": "sha256:cd85d25c143c83ffcb715208dd83de949270f5559bcf3af7d4a1dd4d9f871e9f",
+      "features": [
+        "front_insertion"
+      ]
+    },
+    {
+      "id": "d3-sim-natural-match3",
+      "kind": "simulator_diff",
+      "path": "diagnostics/legacy-v1-u9954-u10014-natural-match3-merge-diff-v1.json",
+      "sha256": "sha256:2106770a07d1565ef1e794f10e68d8d01e247ce1a5a90dcc587b195fa2d31a6c",
+      "features": [
+        "match3"
+      ]
+    },
+    {
+      "id": "d4-sim-natural-match4-rollback",
+      "kind": "simulator_diff",
+      "path": "diagnostics/legacy-v1-u9976-u10110-natural-match4-rollback-gameplay-diff-v1.json",
+      "sha256": "sha256:99579eb55e70c466753b2e4e2a1194083e4f913b0731e1923f9a9bf5cf7ba832",
+      "features": [
+        "match4",
+        "rollback_chain"
+      ]
+    },
+    {
+      "id": "g-sim-powerup-spawn",
+      "kind": "simulator_diff",
+      "path": "memory-followup-c5-existing-reverse-u9539-u9600-v2/attempt-01/powerup-spawn-core-diff-v2.json",
+      "sha256": "sha256:82eed0d60bddb45c4c00fdfa6dcc159f54ac8518db164f1b32388d66872fd9d8",
+      "features": [
+        "powerup_spawn"
+      ]
+    },
+    {
+      "id": "h-sim-rng-7737",
+      "kind": "simulator_diff",
+      "path": "diagnostics/memory-trajectory-20260730-u7737-u7755-rng-v1/attempt-01/rng-gameplay-diff-v1.json",
+      "sha256": "sha256:38ffa10e82e7e105daefc1a65cfb6fdf8c4d1d5aaab36e3029ab685afa8190b6",
+      "features": [
+        "rng_pending"
+      ]
+    },
+    {
+      "id": "i-sim-rng-9425",
+      "kind": "simulator_diff",
+      "path": "diagnostics/memory-trajectory-20260730-u9425-u9460-rng-v1/attempt-01/rng-gameplay-diff-v1.json",
+      "sha256": "sha256:1333735e2448e87a766096f174a01f408ba67f4288bb3c6923df7dae84a958bc",
+      "features": [
+        "rng_pending"
+      ]
+    },
+    {
+      "id": "j-sim-rng-9910",
+      "kind": "simulator_diff",
+      "path": "diagnostics/memory-trajectory-20260730-u9910-u9942-rng-v1/attempt-01/rng-gameplay-diff-v1.json",
+      "sha256": "sha256:dee0f789d6f4030f759d009dd34558a94a8fcfb5eb84a39107193ca74d3f3f81",
+      "features": [
+        "rng_pending"
+      ]
+    },
+    {
+      "id": "k-sim-swap",
+      "kind": "simulator_diff",
+      "path": "diagnostics/memory-trajectory-20260730-u7148-u7160-swap-full-barrier-v2/attempt-01/swap-gameplay-diff-v2.json",
+      "sha256": "sha256:fe79880464119db38e7a713539d8d0ea1075fed679c4eca39effcfc27ac22d58",
+      "features": [
+        "input_cadence"
+      ]
+    },
+    {
+      "id": "l-audit-actor-hidden-state",
+      "kind": "audit",
+      "path": "diagnostics/actor-audit-jungle2-v3.json",
+      "sha256": "sha256:747c1eac6f79a76255fdc44fb95a147bad296f21dc1744f6f7a479df39f0a1b9",
+      "features": [
+        "actor_no_hidden_state"
+      ]
+    },
+    {
+      "id": "m-sim-shot-hit-u11190",
+      "kind": "simulator_diff",
+      "path": "diagnostics/jungle2-u11190-u11360-gameplay-diff-v1.json",
+      "sha256": "sha256:77b15d3f79b8b71952da10777ad8b9819f640f05a071ae994dde6d207272e841",
+      "features": [
+        "input_cadence",
+        "projectile_collision",
+        "shot_release"
+      ]
+    },
+    {
+      "id": "n-sim-c35-natural-shot-bounded",
+      "kind": "simulator_diff",
+      "path": "diagnostics/jungle2-c35-u3445-u3479-gameplay-diff-v1.json",
+      "sha256": "sha256:bda7d924986b50fb7c3e1c2c4a7fdedabe14feebb9767094955d2396e7506556",
+      "features": [
+        "input_cadence",
+        "projectile_collision",
+        "shot_release"
+      ]
+    },
+    {
+      "id": "o-pc-source-c109-long-horizon",
+      "kind": "pc_source",
+      "path": "sources/c109-u3429-u4240-source-v1.json",
+      "sha256": "sha256:2e41068b63571df1cc36f0a21bc5329d135bd14804f6a043a17e355c4d1303a3",
+      "features": [
+        "long_horizon_drift",
+        "match3",
+        "match4",
+        "source_authenticity"
+      ]
+    },
+    {
+      "id": "p-pc-source-c110-long-horizon",
+      "kind": "pc_source",
+      "path": "sources/c110-u3429-u4240-source-v1.json",
+      "sha256": "sha256:3d5dfa584f66e4a17cf13771f4fcdd48fc1d25ac5dc9d905842eb0313c056ffa",
+      "features": [
+        "long_horizon_drift",
+        "source_authenticity"
+      ]
+    }
+  ]
+}

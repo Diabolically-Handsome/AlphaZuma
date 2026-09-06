@@ -1,0 +1,52 @@
+{
+  "schema": "zuma-rl.actor-observable-teacher-benchmark-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T09:12:20.425Z",
+  "status": "TEACHER_CAPACITY_PASS",
+  "decision": {
+    "actor_observation_capacity_supported": true,
+    "behavior_cloning_feasibility_screen_authorized": true,
+    "large_scale_training_authorized": false,
+    "reason": "the observation-only teacher won every full-horizon episode and exceeded all frozen reliability and speed criteria"
+  },
+  "evidence": {
+    "preregistration": {
+      "path": "diagnostics/actor-observable-teacher-jungle2-s20271840-preregistration-v1.json",
+      "sha256": "sha256:7694ba743588612e35e87994f29f61a78764bc0e43f9f1a1505b35256781f018"
+    },
+    "benchmark": {
+      "path": "diagnostics/actor-observable-teacher-jungle2-s20271840-v1.json",
+      "sha256": "sha256:3b867b1dbca7f4bc81bec2203178061489a3b1ed5ec8f8f0ab9d68307b105a8e"
+    }
+  },
+  "results": {
+    "wins": 16,
+    "episodes": 16,
+    "losses": 0,
+    "truncations": 0,
+    "mean_reward": 35.81221249999992,
+    "mean_score": 2599.375,
+    "mean_ticks": 1815.375,
+    "preregistered_acceptance": {
+      "report_status": "PASS",
+      "wins": "PASS_16_OF_15_REQUIRED",
+      "losses": "PASS_0_OF_1_ALLOWED",
+      "mean_ticks": "PASS_1815.375_VS_3000_MAX",
+      "actor_observable_contract": "PASS",
+      "behavior_cloning_feasibility_screen": "AUTHORIZED"
+    }
+  },
+  "diagnostics": {
+    "formal_significance_claim": false,
+    "supported": [
+      "the current actor observation contains sufficient dynamic information for reliable Jungle2 completion",
+      "the factorized 180-bin action interface can express a compact winning policy",
+      "the remaining failure lies in policy optimization or function approximation rather than simulator solvability"
+    ],
+    "unresolved": [
+      "whether the current padded MLP can imitate the geometric teacher",
+      "whether RL fine-tuning preserves a cloned winning policy",
+      "whether an entity-aware feature extractor is needed for generalization"
+    ]
+  }
+}

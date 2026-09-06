@@ -1,0 +1,83 @@
+{
+  "schema": "zuma-rl.pc-gameplay-mtrand-call-trace-preregistration-amendment",
+  "version": 1,
+  "id": "c113-c111-u3615-fixed-startup-residual-call-trace-r2",
+  "status": "FROZEN_BEFORE_RETRY_OUTPUTS",
+  "created_utc": "2026-08-09T09:59:59.157Z",
+  "parent": {
+    "artifact": "diagnostics/c113-c111-crt-bound-mtrand-call-trace-amendment-r1-v1.json",
+    "artifact_sha256": "sha256:0572080eb7b0bee057453c07b3d62ed9ea927ee27005c648cbbaf65963446b48"
+  },
+  "r1_status": {
+    "retry_outputs_started": false,
+    "reason_not_run": "the retained original C113 attempt-03 trajectory proved that restoring only the update-3615 CRT word was too late to undo earlier CRT-dependent shooter-colour state",
+    "formal_c111_update_3648_current_color_id": 1,
+    "failed_c113_attempt_03_update_3648_current_color_id": 3,
+    "formal_c111_update_3648_global_mtrand_index": 538,
+    "failed_c113_attempt_03_update_3648_global_mtrand_index": 538,
+    "conclusion": "global MTRand parity alone is insufficient; full compact-state overlap remains mandatory"
+  },
+  "selection_disclosure": {
+    "first_segment_caller_addresses_were_revealed_by_failed_c113": true,
+    "segment_boundaries_changed": false,
+    "target_updates_changed": false,
+    "startup_seed_was_fixed_before_c113_outputs": true,
+    "startup_seed_source": "formal C111 strict-command replay retail EAX observation",
+    "startup_seed": 316978734
+  },
+  "protocol_replacement": {
+    "remove_arguments": [
+      "--diagnostic-thread-crt-state-source",
+      "--diagnostic-thread-crt-state-source-update"
+    ],
+    "add_arguments": {
+      "--diagnostic-startup-crt-seed": 316978734
+    },
+    "mutation_timing": "initial retail srand call before any CRT-dependent gameplay construction",
+    "mutation_kind": "WOW64 EAX process-context override",
+    "process_memory_write_bytes": 0,
+    "persistent_file_modified": false,
+    "formal_evidence_eligible": false,
+    "strict_command_broker_preserved": true,
+    "playback_dmo_unchanged": true,
+    "global_mtrand_not_overridden": true,
+    "board_mtrand_not_overridden": true,
+    "thread_crt_not_late_restored": true
+  },
+  "fixed_inputs_added": {
+    "startup_seed_source_probe": {
+      "path": "D:/ZumaGolden/formal-full-state-c111-natural-u3615-u4240-v1/attempt-01/memory-probe.json",
+      "sha256": "sha256:c5d21728b17ee7ca8c229019996f5dd72325b9769cd0b2dee6c3c2bb3fda2b2b",
+      "json_path": "strict_command_replay.startup_seed",
+      "value": 316978734
+    }
+  },
+  "tooling": {
+    "collector_sha256": "sha256:d015d65b76eed0e88eddf0a5f6afb88c7c8474f62e27b44dc81d77670c41cbb2",
+    "call_tracer_sha256": "sha256:26c78837b5fb1929e74ca0a9fbf8d256fe05c33123d5c18c85df7ea0bd6c9bbf",
+    "collector_test_sha256": "sha256:70446c6670c2f8ad2549cea38d75c8f3279930831a9443fceaae1a9123d15887",
+    "call_tracer_test_sha256": "sha256:69e00301da4aca2708b335fd61712452588decd0c2d499a2df7c9a089bd5773b",
+    "focused_test_command": ".venv-win/Scripts/python.exe -m pytest tests/test_collect_pc_memory_probe.py tests/test_trace_popcap_global_rng_calls.py -q",
+    "focused_test_result": "PASS_75"
+  },
+  "retry_outputs": [
+    "D:/ZumaGolden/diagnostics/c113-fixed-startup-rng-trace-u3648-u3710-r2-v1",
+    "D:/ZumaGolden/diagnostics/c113-fixed-startup-rng-trace-u3768-u3910-r2-v1",
+    "D:/ZumaGolden/diagnostics/c113-fixed-startup-rng-trace-u4058-u4130-r2-v1",
+    "D:/ZumaGolden/diagnostics/c113-fixed-startup-rng-trace-u4184-u4240-r2-v1"
+  ],
+  "acceptance_contract": {
+    "inherits_parent_except_superseded_mutation_contract": true,
+    "each_diagnostic_startup_binding_must_pass": true,
+    "each_startup_seed_must_equal_316978734": true,
+    "each_startup_override_count_must_equal_one": true,
+    "each_startup_override_must_be_process_context_only": true,
+    "each_startup_override_process_memory_write_count_must_equal_zero": true,
+    "each_trace_stop_reason_must_be_stop_requested": true,
+    "every_overlapping_compact_state_must_equal_formal_c111": true,
+    "any_compact_state_mismatch_rejects_all_r2_outputs": true,
+    "all_sixteen_v9_rows_and_all_38_draws_must_map_exactly": true,
+    "unknown_callers_fail_closed": true
+  },
+  "retry_output_paths_absent_at_freeze": true
+}

@@ -1,0 +1,85 @@
+{
+  "schema": "zuma-rl.retail-fruit-bomb-telemetry-recording-ensemble-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_FIRST_PROCESS_LAUNCH",
+  "created_utc": "2026-08-10T14:25:01.3410749Z",
+  "purpose": "Run a fixed four-recording natural-retail diagnostic ensemble to distinguish fruit/bomb temporal non-overlap, geometric non-overlap, and strict-radius overlap without changing c176 action selection.",
+  "classification": "candidate-recording-with-read-only-locator-telemetry-not-pc-golden",
+  "parents": {
+    "action_controller_qualification": {
+      "path": "diagnostics/c176-fruit-powerup-collision-preservation-controller-qualification-v1.json",
+      "sha256": "sha256:6ac4e71852e997724739963ebefb2204cc4e15d444c323c553941f93351a05d7"
+    },
+    "telemetry_preregistration": {
+      "path": "diagnostics/c178-fruit-bomb-native-tick-telemetry-preregistration-v1.json",
+      "sha256": "sha256:1e82c4f13eb6f230ea02e513f5b4a98397a8b18f2a75dfe44398dd5a075b8201"
+    },
+    "telemetry_qualification": {
+      "path": "diagnostics/c178-fruit-bomb-native-tick-telemetry-qualification-v1.json",
+      "sha256": "sha256:26ee33158a2ea69eef564014fc0f79e339851a2c446a91b1e4cd13a318cefa5a",
+      "status": "PASS"
+    }
+  },
+  "frozen_tooling": {
+    "live_controller": [98781, "sha256:2daec658fde375c2fa51f55c46c7d73db018474abd3e33b9a544587ed99a5e34"],
+    "record_controller": [71066, "sha256:438b74c5f6fc8190c9835852a86dfba5c04e25c9b963f98c8d2564b5123d614f"],
+    "focused_tests": [101, "PASS"],
+    "full_tests": [1560, "PASS"]
+  },
+  "retail_contract": {
+    "runtime_executable": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "changedir": "D:/SteamLibrary/steamapps/common/Zuma's Revenge",
+    "prestate_dir": "D:/ZumaGolden/session-20260728-203153/native-windowed-record-001-prestate-reconstructed",
+    "expected_score_target": 9650,
+    "minimum_entry_score": 7000,
+    "maximum_gameplay_seconds": 180.0,
+    "expected_outcome": "natural_win",
+    "gameplay_policy": "autoplay",
+    "fruit_policy": "bomb",
+    "navigation_updates": [1622, 2422, 3108],
+    "navigation_points": [[400.0, 533.0], [633.0, 281.0], [399.0, 456.0]],
+    "prelaunch_cursor_screen_point": [100, 100],
+    "rng_monitor_stop_native_time": 500,
+    "gameplay_mtrand_trace": true,
+    "mtrand_trace_kind": "global_wrapper_entry",
+    "controlled_crt_rand_seed": null,
+    "offline_dmo_seed_edit": false,
+    "process_memory_writes_required": 0,
+    "host_state_exact_restore_required": true
+  },
+  "ensemble": {
+    "attempt_count": 4,
+    "run_order": ["c179a1", "c179a2", "c179a3", "c179a4"],
+    "output_roots": [
+      "D:/ZumaGolden/record-c179a1-fruit-bomb-telemetry-v1",
+      "D:/ZumaGolden/record-c179a2-fruit-bomb-telemetry-v1",
+      "D:/ZumaGolden/record-c179a3-fruit-bomb-telemetry-v1",
+      "D:/ZumaGolden/record-c179a4-fruit-bomb-telemetry-v1"
+    ],
+    "all_output_roots_absent_at_freeze": true,
+    "attempts_sequential": true,
+    "all_attempts_execute_before_telemetry_analysis": true,
+    "no_early_stop_on_overlap_or_trigger": true,
+    "no_retry_or_replacement": true,
+    "retain_every_started_attempt": true
+  },
+  "analysis_order_after_execution_receipt": [
+    "count fruit-active native ticks",
+    "count bomb-active native ticks",
+    "count temporal-overlap native ticks",
+    "compute minimum static-point distance during temporal overlap",
+    "count strict-radius native ticks",
+    "count trigger decisions and +500-compatible score intervals"
+  ],
+  "decision_rules": {
+    "strict_radius_or_trigger_found": "Use only the earliest frozen-order integrity-passing run as a locator for separately preregistered formal source-bound replay.",
+    "temporal_overlap_without_strict_radius": "Revise geometry/path acquisition only after retaining the full distance distribution.",
+    "no_temporal_overlap": "Revise powerup/fruit lifetime synchronization only after retaining the full tick counts.",
+    "telemetry_itself_gets_gate_credit": false,
+    "frequency_claim": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

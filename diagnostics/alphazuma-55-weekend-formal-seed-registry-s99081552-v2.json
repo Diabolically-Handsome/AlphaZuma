@@ -1,0 +1,79 @@
+{
+  "schema": "zuma-rl.alphazuma-55-weekend-formal-seed-registry",
+  "version": 1,
+  "status": "FROZEN_BEFORE_ANY_SUCCESSOR_FORMAL_INFERENCE",
+  "created_utc": "2026-08-15T23:01:00Z",
+  "supersedes": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-formal-seed-registry-s99081546-v1.json",
+    "sha256": "sha256:a5930a8bd9437210991118050f1e94d572c6e78647ffbd7d8c9ff293960ecefa"
+  },
+  "campaigns": [
+    {
+      "id": "source-weekend-s81081401",
+      "master": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+        "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+      },
+      "ranges": [
+        {"stage": "selection", "first": 1600000000, "last": 1600000219},
+        {"stage": "final_blind", "first": 1700000000, "last": 1700000439},
+        {"stage": "continuous_campaign_challenge", "first": 1800000000, "last": 1800000219}
+      ]
+    },
+    {
+      "id": "polar-dagger-successor-s99081535",
+      "master": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-successor-s99081535-preregistration-v1.json",
+        "sha256": "sha256:f4fb5458301e3a9a27f7f6390394aa71da15e5978acf19b7cef3c7f1d2cb5d73"
+      },
+      "ranges": [
+        {"stage": "final_blind", "first": 2100000000, "last": 2100000439},
+        {"stage": "continuous_campaign_challenge", "first": 2200000000, "last": 2200000219}
+      ]
+    },
+    {
+      "id": "polar-wide-successor-s99081539",
+      "master": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-wide-successor-s99081539-preregistration-v1.json",
+        "sha256": "sha256:7e46187a4f027dd699f4b8e813d16aa66d8b1eb85535430bc85ef4eb909bb2fb"
+      },
+      "ranges": [
+        {"stage": "final_blind", "first": 2300000000, "last": 2300000439},
+        {"stage": "continuous_campaign_challenge", "first": 2400000000, "last": 2400000219}
+      ]
+    },
+    {
+      "id": "polar-intent-wide-successor-s99081545",
+      "master": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-wide-successor-s99081545-preregistration-v1.json",
+        "sha256": "sha256:640eea8fb92f5026949b70a47d80e9de33ff3043ce832abd88204f02e46ee090"
+      },
+      "ranges": [
+        {"stage": "final_blind", "first": 2500000000, "last": 2500000439},
+        {"stage": "continuous_campaign_challenge", "first": 2600000000, "last": 2600000219}
+      ]
+    },
+    {
+      "id": "polar-intent-dagger-successor-s99081551",
+      "master": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-dagger-successor-s99081551-preregistration-v2.json",
+        "sha256": "sha256:d0822a344b7f9b347c0912b40eebd00a8ea59dfe4f8a672b30f3c0dabde8dce1"
+      },
+      "ranges": [
+        {"stage": "final_blind", "first": 2700000000, "last": 2700000439},
+        {"stage": "continuous_campaign_challenge", "first": 2800000000, "last": 2800000219}
+      ]
+    }
+  ],
+  "global_checks": {
+    "ranges_strictly_non_overlapping": true,
+    "all_ranges_within_uint32": true,
+    "all_policy_inference_requires_its_own_frozen_master": true,
+    "negative_promotion_result_leaves_its_ranges_unconsumed": true
+  },
+  "authority_boundary": {
+    "this_registry_does_not_authorize_policy_inference": true,
+    "this_registry_does_not_change_any_campaign_recipe": true,
+    "power_restore_authority": false
+  }
+}

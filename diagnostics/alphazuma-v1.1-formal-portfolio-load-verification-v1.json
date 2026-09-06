@@ -1,0 +1,72 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-formal-portfolio-load-verification",
+  "version": 1,
+  "status": "PASS",
+  "verified_utc": "2026-08-14T00:18:25Z",
+  "purpose": "Verify the steady-state hardware operating point after the disposable ultradense smoke was replaced by the candidate-eligible zero-win specialist.",
+  "formal_routes_running": [
+    "frontier-adaptive-5090-oom-recovery",
+    "frontier-fixed-5080-oom-recovery",
+    "memdense-adaptive-5090-a",
+    "memdense-fixed-5090-b",
+    "memdense-adaptive-5080-a",
+    "memdense-fixed-5080-b",
+    "ultradense-zero-win-5090-c"
+  ],
+  "sampling": {
+    "samples_per_gpu": 30,
+    "interval_seconds": 1,
+    "calibration_route_present": false,
+    "formal_routes_only": true
+  },
+  "gpu": [
+    {
+      "index": 0,
+      "name": "NVIDIA GeForce RTX 5090",
+      "average_utilization_percent": 76.6,
+      "p50_utilization_percent": 78,
+      "p95_utilization_percent": 88,
+      "maximum_utilization_percent": 90,
+      "average_power_watts": 232.8,
+      "maximum_temperature_c": 52,
+      "average_memory_mib": 10329
+    },
+    {
+      "index": 1,
+      "name": "NVIDIA GeForce RTX 5080",
+      "average_utilization_percent": 70.3,
+      "p50_utilization_percent": 79,
+      "p95_utilization_percent": 92,
+      "maximum_utilization_percent": 93,
+      "average_power_watts": 138.9,
+      "maximum_temperature_c": 59,
+      "average_memory_mib": 9494
+    }
+  ],
+  "wsl_memory": {
+    "total_gib": 94,
+    "available_gib": 46,
+    "swap_total_gib": 16,
+    "swap_used_gib": 0
+  },
+  "frozen_operating_contract": {
+    "target_average_gpu_utilization_percent": 80,
+    "acceptable_operating_band_percent": [65, 90],
+    "maximum_gpu_temperature_c": 82,
+    "minimum_wsl_mem_available_gib": 24,
+    "swap_must_remain_unused": true
+  },
+  "validation": {
+    "both_gpu_averages_in_operating_band": true,
+    "both_gpu_temperatures_below_limit": true,
+    "wsl_available_memory_above_floor": true,
+    "swap_unused": true,
+    "all_checks_passed": true
+  },
+  "ultradense_initialization": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-ultradense-zero-win-5090-c-s50081301-v1/initialization.json",
+    "policy_copied_bitwise": true,
+    "optimizer_state_reset": true,
+    "source_model_sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579"
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "schema": "zuma-rl.alphazuma-55-single-policy-goal-audit-plan",
+  "version": 1,
+  "status": "FROZEN_BEFORE_GOAL_COMPLETION",
+  "campaign_id": "alphazuma-55-single-policy-goal-audit-s99081553",
+  "created_utc": "2026-08-15T23:03:00Z",
+  "objective": "Prove one frozen neural policy can play all 55 included ordinary levels and clear at least one continuous 55-level campaign before the user deadline.",
+  "deadline_utc": "2026-08-17T15:00:00Z",
+  "deadline_local": "2026-08-17 11:00 America/Toronto",
+  "supersedes": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-single-policy-goal-audit-s99081547-preregistration-v1.json",
+    "sha256": "sha256:4d43cc7de0b05dbde10628ee5194677c1996b7e0288e30cb5b09e670c3c0e5bc"
+  },
+  "requirements": {
+    "one_frozen_neural_policy": true,
+    "included_levels": 55,
+    "final_blind_attempts": 440,
+    "minimum_final_blind_total_wins": 220,
+    "minimum_win_per_level": 1,
+    "continuous_campaigns": 4,
+    "continuous_attempts": 220,
+    "minimum_complete_continuous_55_level_campaigns": 1
+  },
+  "selection": {
+    "campaign_priority": [
+      "polar-intent-dagger-successor-s99081551",
+      "polar-intent-wide-successor-s99081545",
+      "polar-wide-successor-s99081539",
+      "polar-dagger-successor-s99081535",
+      "source-weekend-s81081401"
+    ],
+    "higher_priority_must_be_terminal_before_lower_selection": true,
+    "rationale": "Prefer the raw-intent DAgger repair, then the raw-intent teacher-only repair, then the wider effective-label control, original DAgger successor, and six-route PPO source fallback. A lower-priority PASS cannot be frozen while a higher-priority campaign remains unresolved before the deadline."
+  },
+  "formal_seed_registry": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-formal-seed-registry-s99081552-v2.json",
+    "sha256": "sha256:35c517a9b8788bbeb9852fdb956ff4eead68bf5d5084e97468c44ea3bb6fcb14"
+  },
+  "campaigns": [
+    {
+      "id": "polar-intent-dagger-successor-s99081551",
+      "kind": "configured_successor_v3",
+      "seed_registry_campaign_id": "polar-intent-dagger-successor-s99081551",
+      "campaign_master": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-dagger-successor-s99081551-preregistration-v2.json",
+        "sha256": "sha256:d0822a344b7f9b347c0912b40eebd00a8ea59dfe4f8a672b30f3c0dabde8dce1"
+      },
+      "audit_input": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-dagger-successor-s99081551-preregistration-v2.json",
+        "sha256": "sha256:d0822a344b7f9b347c0912b40eebd00a8ea59dfe4f8a672b30f3c0dabde8dce1"
+      },
+      "independent_auditor": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_configured_successor_result_v3.py",
+        "sha256": "sha256:40f4c72bbd405ee3518a931c84943a2357045d8c45c2136c552b7e5ca43763dd"
+      },
+      "independent_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-dagger-successor-s99081551-independent-audit-v1.json"
+    },
+    {
+      "id": "polar-intent-wide-successor-s99081545",
+      "kind": "configured_successor",
+      "seed_registry_campaign_id": "polar-intent-wide-successor-s99081545",
+      "campaign_master": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-wide-successor-s99081545-preregistration-v1.json",
+        "sha256": "sha256:640eea8fb92f5026949b70a47d80e9de33ff3043ce832abd88204f02e46ee090"
+      },
+      "audit_input": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-wide-successor-s99081545-preregistration-v1.json",
+        "sha256": "sha256:640eea8fb92f5026949b70a47d80e9de33ff3043ce832abd88204f02e46ee090"
+      },
+      "independent_auditor": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_configured_successor_result.py",
+        "sha256": "sha256:d664b80ac6d2c951802f20d2ba36d37f5626980791fee80c7e0bd1fe65dfcc63"
+      },
+      "independent_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-wide-successor-s99081545-independent-audit-v1.json"
+    },
+    {
+      "id": "polar-wide-successor-s99081539",
+      "kind": "configured_successor",
+      "seed_registry_campaign_id": "polar-wide-successor-s99081539",
+      "campaign_master": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-wide-successor-s99081539-preregistration-v1.json",
+        "sha256": "sha256:7e46187a4f027dd699f4b8e813d16aa66d8b1eb85535430bc85ef4eb909bb2fb"
+      },
+      "audit_input": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-wide-successor-s99081539-preregistration-v1.json",
+        "sha256": "sha256:7e46187a4f027dd699f4b8e813d16aa66d8b1eb85535430bc85ef4eb909bb2fb"
+      },
+      "independent_auditor": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_configured_successor_result.py",
+        "sha256": "sha256:d664b80ac6d2c951802f20d2ba36d37f5626980791fee80c7e0bd1fe65dfcc63"
+      },
+      "independent_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-wide-successor-s99081539-independent-audit-v1.json"
+    },
+    {
+      "id": "polar-dagger-successor-s99081535",
+      "kind": "successor",
+      "seed_registry_campaign_id": "polar-dagger-successor-s99081535",
+      "campaign_master": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-successor-s99081535-preregistration-v1.json",
+        "sha256": "sha256:f4fb5458301e3a9a27f7f6390394aa71da15e5978acf19b7cef3c7f1d2cb5d73"
+      },
+      "audit_input": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-successor-s99081535-preregistration-v1.json",
+        "sha256": "sha256:f4fb5458301e3a9a27f7f6390394aa71da15e5978acf19b7cef3c7f1d2cb5d73"
+      },
+      "independent_auditor": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_successor_result.py",
+        "sha256": "sha256:05501e416f100cc1fc967a9b374cb701e9cb2ab646062a7353dfa9f84476928c"
+      },
+      "independent_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-successor-s99081535-independent-audit-v1.json"
+    },
+    {
+      "id": "source-weekend-s81081401",
+      "kind": "source",
+      "seed_registry_campaign_id": "source-weekend-s81081401",
+      "campaign_master": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+        "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+      },
+      "audit_input": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-s89081704-preregistration-v1.json",
+        "sha256": "sha256:9731aa79e9a4a7f8f93c71f1f8e1afad91a400a576b1d62031a61180cc72073b"
+      },
+      "independent_auditor": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_result.py",
+        "sha256": "sha256:dd5aa209149e97cf8461b21453a4a548b681a6e630114c65cd245e631036602c"
+      },
+      "independent_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-independent-final-audit-s89081704-v1.json"
+    }
+  ],
+  "implementation": {
+    "goal_auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_single_policy_goal_v2.py",
+      "sha256": "sha256:1054b43a3fe63facb55175d77a5acb82ecce74579aec9cc9ab6f1bcbbc6e81e7"
+    }
+  },
+  "outputs": {
+    "goal_independent_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-single-policy-goal-independent-audit-s99081553-v2.json"
+  },
+  "authority_boundary": {
+    "this_plan_does_not_authorize_policy_inference": true,
+    "this_plan_does_not_change_any_training_or_gate_semantics": true,
+    "no_promotion_pass_is_not_goal_success": true,
+    "power_restore_remains_a_separate_required_finalization_step": true
+  }
+}

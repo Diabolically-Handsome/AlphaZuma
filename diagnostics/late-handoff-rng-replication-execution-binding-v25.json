@@ -1,0 +1,18 @@
+{
+  "schema": "zuma-rl.pc-late-handoff-rng-replication-execution-binding",
+  "version": 25,
+  "status": "BOUND_BEFORE_RUN_OUTPUTS",
+  "created_utc": "2026-08-05T19:46:35.734Z",
+  "id": "late-handoff-rng-replication-v25-execution",
+  "session_nonce": "d515b956c449464ebb84d6b2b97f5126",
+  "parent_preregistration": "diagnostics/late-handoff-rng-replication-preregistration-v25.json",
+  "parent_preregistration_sha256": "sha256:3d6a5a9ac41afbf2c9522f7aa399119acadf222e1837c776d7a0b80977d99af8",
+  "trigger_outcome": "diagnostics/late-handoff-rng-smoke-outcome-v24.json",
+  "trigger_outcome_sha256": "sha256:e7a74adaaea56a5e650b5ec656c7c0107751df1d753aed3ab61bb320aaebd212",
+  "preflight": {"all_20_run_roots_absent": true, "all_22_host_outputs_absent": true, "outcome_absent": true, "runtime_process_count": 0, "input_and_tool_hashes_match": true},
+  "fixed_command_contract": {"probe_update": 3425, "slowdown_update": 3415, "maximum_attempts": 3, "trajectory_mode": "rng", "trajectory_end_update": 3425, "trace_detach_update": 3008, "trace_reattach_update": 3501, "global_mtrand_call_start_after_update": 3008, "global_mtrand_call_end_at_update": 3121, "global_mtrand_call_observe_boundary_only": true, "global_mtrand_call_observe_thread_runtime": true, "global_mtrand_call_observe_handoff_thread_runtime": true, "global_mtrand_call_observe_handoff_rng_state": true, "diagnostic_disable_source_bound_board_anchor": true, "skip_repaint_guard": true, "skip_frozen_snapshot": true, "timeout_seconds": 900},
+  "fixed_execution_order": ["l01", "l02", "l03", "l04", "l05", "l06", "l07", "l08", "l09", "l10", "l11", "l12", "l13", "l14", "l15", "l16", "l17", "l18", "l19", "l20"],
+  "execution_rule": {"retain_every_attempt": true, "stop_at_first_valid_observation_per_root": true, "never_retry_for_semantic_result": true, "post_verified_ready_failure_is_nonretryable": true, "capture_host_snapshot_after_every_root": true, "verify_same_host_state_root_after_every_root": true, "run_all_twenty_even_after_any_semantic_failure": true},
+  "output_absence_recheck": {"all_20_run_roots": true, "all_22_host_outputs": true, "outcome": true},
+  "non_authorizations": ["pc_golden_credit", "fidelity_gate_change", "formal_transport_change", "large_scale_training_start"]
+}

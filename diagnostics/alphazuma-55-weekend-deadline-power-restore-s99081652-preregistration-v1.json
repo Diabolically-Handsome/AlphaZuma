@@ -1,0 +1,36 @@
+{
+  "schema": "zuma-rl.alphazuma-55-weekend-deadline-power-restore-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_DEADLINE",
+  "created_utc": "2026-08-16T19:08:55.1760234Z",
+  "deadline_utc": "2026-08-16T20:00:00Z",
+  "objective": "Restore temporary AlphaZuma power settings at the user deadline without stopping or changing any training or evaluation process.",
+  "watcher": {
+    "path": "C:\\Users\\Laure\\Documents\\祖玛\\tools\\restore_alphazuma_55_weekend_power_at_deadline_v1.ps1",
+    "sha256": "sha256:82c53ec8f4cd76baff47106d26d52f5c91ce6408efe8576950465ce866355b40"
+  },
+  "observed_before_launch": {
+    "gpu_power_limits_watts": [
+      550.0,
+      250.0
+    ],
+    "active_power_scheme_guid": "8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c"
+  },
+  "restore_contract": {
+    "gpu_power_limits_watts": [
+      600.0,
+      400.0
+    ],
+    "active_power_scheme_guid": "381b4222-f694-41f0-9685-ff5bb260df2e",
+    "verify_after_write": true,
+    "execute_regardless_of_gate_result": true
+  },
+  "receipt": "C:\\Users\\Laure\\Documents\\祖玛\\diagnostics\\alphazuma-55-weekend-deadline-power-restore-s99081652-receipt-v1.json",
+  "authority_boundary": {
+    "stop_or_signal_training": false,
+    "stop_or_signal_evaluation": false,
+    "model_or_recipe_change": false,
+    "seed_consumption": "NONE",
+    "historical_data_touch": false
+  }
+}

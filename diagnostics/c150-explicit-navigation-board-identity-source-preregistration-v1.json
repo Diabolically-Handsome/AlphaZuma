@@ -1,0 +1,110 @@
+{
+  "schema": "zuma-rl.retail-board-identity-source-explicit-navigation-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_OUTPUT",
+  "created_utc": "2026-08-10T10:11:59.5719208Z",
+  "purpose": "Execute the already implemented and tested v3 Board-identity natural-loss protocol with the three previously frozen navigation points explicitly present in the invocation.",
+  "classification": "operational-command-correction-no-threshold-change",
+  "predecessor": {
+    "c149_preregistration_sha256": "sha256:cbc44aee91df92f0b98549758889e31e17681ae0306258766ae271d317b6e685",
+    "c149_implementation_receipt_sha256": "sha256:1d8d614998613a401c6a27c352099487a424a9ecb715dd156b9eccbea9a29bd5",
+    "c149_failure_receipt_sha256": "sha256:18faac8fc7c9872e8f91103e1d040f7205328229796dbde373cb8a0f0adea143",
+    "c149_output_retained": true,
+    "c149_failure": "The invocation omitted all three frozen point flags, selected the parser defaults, and never entered an active Board.",
+    "v3_protocol_evaluated_in_c149": false
+  },
+  "frozen_v3_contract_unchanged": {
+    "receipt_kind": "natural_loss_board_identity_replacement_transition_v3",
+    "mature_below_target_old_board_required": true,
+    "old_and_replacement_board_addresses_positive_and_different": true,
+    "post_reset_native_game_time_maximum": 1000,
+    "minimum_native_game_time_reset": 1000,
+    "replacement_positive_target": true,
+    "replacement_curve_plan_exhausted": false,
+    "replacement_combined_ball_population_positive": true,
+    "minimum_replacement_snapshots": 2,
+    "minimum_replacement_native_game_time_advance": 5,
+    "same_replacement_address_through_confirmation": true,
+    "zero_target_observation_required": false,
+    "gameplay_policy": "idle",
+    "action_count": 0,
+    "swap_count": 0,
+    "fruit_shot_count": 0,
+    "process_memory_writes": 0
+  },
+  "run": {
+    "id": "c150a1",
+    "output_root": "D:/ZumaGolden/record-c150a1-idle-natural-loss-board-identity-v3-explicit-nav",
+    "output_root_absent_at_freeze": true,
+    "maximum_started_attempts": 1,
+    "runtime_executable": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "changedir": "D:/SteamLibrary/steamapps/common/Zuma's Revenge",
+    "prestate_dir": "D:/ZumaGolden/session-20260728-203153/native-windowed-record-001-prestate-reconstructed",
+    "expected_score_target": 9650,
+    "minimum_entry_score": 7000,
+    "maximum_gameplay_seconds": 180.0,
+    "expected_outcome": "natural_loss",
+    "gameplay_policy": "idle",
+    "fruit_policy": "ignore",
+    "mtrand_trace_kind": "board_global_precall",
+    "controlled_crt_rand_seed": null,
+    "rng_poll_monitor_disabled": true,
+    "navigation": [
+      {
+        "stage": "title_start",
+        "framework_update": 1622,
+        "logical_point": [400.0, 533.0],
+        "required_cli": ["--title-start-point", "400", "533"]
+      },
+      {
+        "stage": "adventure",
+        "framework_update": 2422,
+        "logical_point": [633.0, 281.0],
+        "required_cli": ["--adventure-point", "633", "281"]
+      },
+      {
+        "stage": "continue_game",
+        "framework_update": 3108,
+        "logical_point": [399.0, 456.0],
+        "required_cli": ["--continue-game-point", "399", "456"]
+      }
+    ],
+    "prelaunch_cursor_screen_point": [100, 100],
+    "host_state_restore_required": true
+  },
+  "preflight": {
+    "command_must_contain_all_six_point_values": true,
+    "output_root_must_remain_absent": true,
+    "no_retail_process_may_be_running": true,
+    "implementation_hashes": {
+      "tools/autoplay_live_zuma.py": "sha256:f7f84bf2ce6f00821f7c368491b95f0e5d2f1d9065da7436111954699f872034",
+      "src/zuma_rl/retail_dmo_provenance.py": "sha256:9e34fb036e01ad328f4f88be0deedb88f1d319a0fc953d80952ee069e7d807a2"
+    },
+    "integration_tests_passed": 168
+  },
+  "post_recording_diagnostic": {
+    "recording_status_must_be_pass": true,
+    "terminal_receipt_kind_must_be_v3": true,
+    "normalize_only_the_known_duplicate_startup_registry_read": true,
+    "finite_stop_must_be_an_exact_DMO_command_boundary_after_the_source_anchor": true,
+    "run_one_strict_source_bound_diagnostic": true,
+    "required_strict_success": {
+      "global_precall_changed": false,
+      "global_precall_bytes_written": 0,
+      "global_precall_process_memory_mutation": false,
+      "global_postcall_natural_state_match": true,
+      "global_postcall_bytes_written": 0,
+      "strict_trace_status": "PASS",
+      "host_state_restored": true
+    }
+  },
+  "decision_rule": {
+    "pass": "Freeze a separate confirmatory source ensemble before formal natural-loss replay or Gate credit.",
+    "fail": "Retain c150a1 and localize its first failed invariant; do not retry-select or relax v3.",
+    "c150a1_may_receive_fidelity_credit": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

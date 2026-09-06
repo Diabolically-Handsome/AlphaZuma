@@ -1,0 +1,91 @@
+{
+  "schema": "zuma-rl.c183-fruit-powerup-collision-quiescent-boundary-diff-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_DIFF_OUTPUT",
+  "created_utc": "2026-08-10T15:35:31.1609334Z",
+  "purpose": "Repeat the frozen c186 exact-no-reconciliation comparison with the only authorized change: expand the selected start from transient insertion-staging update 8233 to quiescent free-projectile update 8213.",
+  "classification": "preregistered-boundary-correction-no-simulator-or-source-change",
+  "parents": {
+    "c186_preregistration": "diagnostics/c186-c183-fruit-powerup-collision-simulator-diff-preregistration-v1.json",
+    "c186_preregistration_sha256": "sha256:977d831a543e58299db32e8927e28a5c82e725477ec0c4c99453c7a5b89db918",
+    "c186_boundary_failure": "diagnostics/c186-c183-fruit-powerup-collision-simulator-diff-boundary-failure-receipt-v1.json",
+    "c186_boundary_failure_sha256": "sha256:e26b1ec418d0ff5a5045de9df006ab7b25c4ffe78219cfdaf5e258b15c4be399",
+    "c185_mechanism_success_sha256": "sha256:4988f9f9a3e46f7f251d4340072792a030b6a3e0fe6fdb5106433a338b084739"
+  },
+  "immutable_source": {
+    "trajectory": "D:/ZumaGolden/formal-full-state-c181a1-fruit-powerup-c182-campaign-v1/attempt-01/source/attempt-01/trajectory/index.json",
+    "trajectory_sha256": "sha256:64e8439227c20cd5f4909f8cdfafc6cd69d87496af411dc4aa284c9c1174f7f4",
+    "dmo": "D:/ZumaGolden/diagnostics/full-state-source-bound-fruit-powerup-c181a1-plan-v1-stop3166/inputs/input.dmo",
+    "dmo_sha256": "sha256:413ff5b6470f695dc703b99064762a3d5749434530e620833291925c56339e77",
+    "source_proof_start_update": 8120,
+    "source_proof_end_update": 8270,
+    "selected_start_update": 8213,
+    "selected_end_update": 8260,
+    "selected_source_frame_count": 48,
+    "expected_compared_transition_count": 47,
+    "start_boundary": {
+      "active_chain_present": true,
+      "free_projectile_count": 1,
+      "free_projectile_ball_id": 224,
+      "insertion_staging_projectile_count": 0
+    }
+  },
+  "only_change_from_c186": {
+    "start_update_before": 8233,
+    "start_update_after": 8213,
+    "reason": "restore a supported quiescent free-projectile boundary and naturally replay the staging transition at 8214",
+    "end_update_unchanged": true,
+    "tolerances_unchanged": true,
+    "synchronize_shooter_unchanged_false": true,
+    "reconcile_external_visual_mtrand_unchanged_false": true,
+    "code_unchanged": true
+  },
+  "output": {
+    "path": "D:/ZumaGolden/diagnostics/jungle2-c183-u8213-u8260-fruit-powerup-collision-diff-v2.json",
+    "absent_at_freeze": true,
+    "schema": "zuma-rl.pc-gameplay-simulator-diff",
+    "version": 5
+  },
+  "fixed_command": ".\\.venv-win\\Scripts\\python.exe tools\\compare_pc_gameplay_trajectory.py D:\\ZumaGolden\\formal-full-state-c181a1-fruit-powerup-c182-campaign-v1\\attempt-01\\source\\attempt-01\\trajectory\\index.json --dmo D:\\ZumaGolden\\diagnostics\\full-state-source-bound-fruit-powerup-c181a1-plan-v1-stop3166\\inputs\\input.dmo --original-root \"D:\\SteamLibrary\\steamapps\\common\\Zuma's Revenge\" --level-id Jungle2 --curve-index 0 --start-update 8213 --end-update 8260 --no-synchronize-shooter --source-feature-proofs --source-proof-start-update 8120 --source-proof-end-update 8270 --evidence-root D:\\ZumaGolden --waypoint-tolerance 0.0001 --position-tolerance 0.001 --progress-tolerance 0.000001 --output D:\\ZumaGolden\\diagnostics\\jungle2-c183-u8213-u8260-fruit-powerup-collision-diff-v2.json",
+  "acceptance": {
+    "status": "PASS",
+    "start_update": 8213,
+    "end_update": 8260,
+    "compared_tick_count": 47,
+    "initial_free_projectile_state_restored": true,
+    "fruit_runtime_state_restored": true,
+    "powerup_manager_state_restored": true,
+    "all_tick_statuses_pass": true,
+    "all_fruit_state_mismatches_empty": true,
+    "all_powerup_chain_and_projectile_state_mismatches_empty": true,
+    "all_global_mtrand_states_exact_without_reconciliation": true,
+    "all_qrand_and_thread_crt_states_exact": true,
+    "all_shooter_states_exact_without_synchronization": true,
+    "required_source_authorized_features": [
+      "powerup_proximity_bomb",
+      "fruit_powerup_collision",
+      "fruit_collection_animation"
+    ],
+    "staging_transition_update": 8214,
+    "joint_powerup_and_collection_update": 8234,
+    "joint_tick_fruits_collected": 1,
+    "joint_tick_score_delta": 590,
+    "joint_tick_powerups_triggered": 1,
+    "animation_clear_update": 8260
+  },
+  "frozen_code": {
+    "tools/compare_pc_gameplay_trajectory.py": "sha256:96ef141bee133f7c866f41183b2e0f41a420eab6345b77e5d5bc6a9ecd8ee8c8",
+    "src/zuma_rl/pc_gameplay_diff.py": "sha256:0b8cd75dd7d93180269f255d946b4959ddb7b65cd23ed0303662d5e0db4fa971",
+    "src/zuma_rl/revenge_core.py": "sha256:0229faec8c7b3fb05f64831bcc93565ef072184d48bb96c489b767d6c55628ad",
+    "src/zuma_rl/pc_memory_trajectory.py": "sha256:ce77027b57c1a4ff686cf923703128afe9fe7c674a6ebc87e6919c987ce9dae8",
+    "src/zuma_rl/pc_mechanism_audit.py": "sha256:656895a45cc546238e6c7051272eef325b1853527bacde1c76586b5f138abad4"
+  },
+  "decision_rule": {
+    "pass": "Freeze the exclusively created v2 output and a success receipt only if every acceptance invariant passes.",
+    "failure": "Retain the output or exception and diagnose the first exact mismatch without changing the source or broad simulator recipe.",
+    "pc_golden_authentication_pending": true,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

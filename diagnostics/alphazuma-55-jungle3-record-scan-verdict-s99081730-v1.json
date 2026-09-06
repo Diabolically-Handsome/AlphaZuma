@@ -1,0 +1,62 @@
+{
+  "schema": "alphazuma-55-record-scan-verdict",
+  "version": 1,
+  "written_utc": "2026-08-21T03:52:32Z",
+  "level": "Jungle3 (Adv 3, 'Echo Beach')",
+  "verdict": "HUMAN_RECORD_NOT_BROKEN",
+  "summary": "Golden record scan (top-3000 enumerated seeds, champion = the 240-ep BC init) completed: fastest win 1179 ticks = 11.79 s vs the 7.00 s human RTA IL record (gap 1.68x). Win rate 2946/3000 (98.2%). The J2 analogy used when this scan was queued was FLAWED: J2's 707-tick tail came from a successfully TIME-POLISHED champion, while this champion is the raw BC whose polish run died at 1.03M steps (infrastructure) with its median still above the init. The receipted lever applies: POLISH ROUND 2, then rescan.",
+  "best": {
+    "ticks": 1179,
+    "seconds_simulator": 11.79,
+    "seed": 963914,
+    "shots": 16
+  },
+  "top_5": [
+    {
+      "seed": 963914,
+      "ticks": 1179,
+      "shots": 16,
+      "score": 2130
+    },
+    {
+      "seed": 670964,
+      "ticks": 1290,
+      "shots": 19,
+      "score": 2250
+    },
+    {
+      "seed": 1678799,
+      "ticks": 1388,
+      "shots": 20,
+      "score": 2720
+    },
+    {
+      "seed": 3095661,
+      "ticks": 1559,
+      "shots": 24,
+      "score": 2260
+    },
+    {
+      "seed": 4340528,
+      "ticks": 1608,
+      "shots": 23,
+      "score": 2060
+    }
+  ],
+  "human_reference": {
+    "source": "speedrun.com REST API (level n93mmg2d 'Adv 3', Any% 1st)",
+    "record": "0:07 RTA",
+    "runner": "LookingForDreams",
+    "date": "2023-06-25",
+    "caveat": "simulator-tick timing vs RTA video timing audit still pending (campaign-wide caveat)"
+  },
+  "convention": "AI-TAS (seed_list_tas); elite-human-v1 motor constraints active; hold_ticks 4",
+  "champion_model_sha256": "sha256:d97178f5f8d6510c6a694c81c81ab2b8ad57676b8c1373a60f4d9c46a330785f",
+  "scan": {
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-record-jungle3-s99081730-v1",
+    "completion_sha256": "sha256:86988fab405d6860a976ec26fbd3fed8e74345c601f4d7ba778a38834095aef8",
+    "seed_file_sha256": "sha256:6ba942418dc58805d3c3eee63e09e43874031deb90c620075935e28ab576f396"
+  },
+  "next_lever": "polish round 2 from ckpt786360 (warm critic; prereg s99081731), then rescan the same seed file",
+  "formal_seed_consumption": false
+}

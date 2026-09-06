@@ -1,0 +1,165 @@
+{
+  "schema": "zuma-rl.pil-particle-mtrand-reconciliation-verifier-extension-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_IMPLEMENTATION",
+  "created_utc": "2026-08-10T16:15:23.7447266Z",
+  "id": "c194-pil-particle-mtrand-reconciliation-verifier-extension-v1",
+  "purpose": "Extend the fail-closed native MTRand reconciliation verifier to recognize the exact retail PIL particle-emitter visual call families discovered in the contaminated c193 forensic corpus, without granting c193 certification credit and without changing immutable legacy proof semantics.",
+  "parents": {
+    "c190_unbound_gameplay_success_receipt": {
+      "artifact": "diagnostics/c190-c183-fruit-powerup-collision-reconciliation-2048-success-receipt-v1.json",
+      "artifact_bytes": 2927,
+      "artifact_sha256": "sha256:55cc26feeb4924792e0ce880f6a72ebec9016247eecc1878cf897d500cb9fbc1"
+    },
+    "c193_contamination_failure_receipt": {
+      "artifact": "diagnostics/c193-c183-fruit-powerup-collision-external-input-contamination-forensic-failure-receipt-v1.json",
+      "artifact_bytes": 5916,
+      "artifact_sha256": "sha256:88535dcf7dd9952c5898c0eabbd11074208b1de826a2390b35220eec6264beb0"
+    },
+    "retail_runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "c193_trace_sha256": "sha256:3b1f70903302b358415008fcb59db659c2f170bf3a97b89dbc90a2538d6b62a2",
+    "c193_trace_use": "forensic_hypothesis_and_qualification_only_not_certification"
+  },
+  "baseline": {
+    "module": {
+      "artifact": "src/zuma_rl/pc_mtrand_reconciliation.py",
+      "artifact_bytes": 62368,
+      "artifact_sha256": "sha256:d9781e7626b1f981aa82ce220dd96e55ac074722d83873ba8990617aec4e3ac7"
+    },
+    "tests": {
+      "artifact": "tests/test_pc_mtrand_reconciliation.py",
+      "artifact_bytes": 5670,
+      "artifact_sha256": "sha256:0ba2d3d5cdd3e4f4587c7744ad7392f1380096977126f11ced362433e49c40b1"
+    },
+    "immutable_legacy_bound_diff": {
+      "artifact": "D:/ZumaGolden/diagnostics/jungle2-c164-u5278-u5305-fruit-collection-diff-v3-reconciled-bound.json",
+      "artifact_bytes": 61551,
+      "artifact_sha256": "sha256:f676bc811dfda69e12d0f3f33290a75219936e748d8402a0fc8dd69e5ece94b0"
+    },
+    "immutable_legacy_proof": {
+      "artifact": "D:/ZumaGolden/diagnostics/jungle2-c164-u5278-u5305-fruit-collection-mtrand-proof-v1.json",
+      "artifact_bytes": 9221,
+      "artifact_sha256": "sha256:eaf811c352449a0a4de4e86cb26bf3a923cba88667eff34a8bf6466b2b126bf9"
+    }
+  },
+  "frozen_dynamic_contract": {
+    "new_scope": "omitted_visual",
+    "new_semantic": "pil_particle_emitter_update",
+    "primary_stack_marker": "0x00901e46",
+    "particle_movable_stack_marker_pair": [
+      "0x009022ec",
+      "0x0090dcd5"
+    ],
+    "nested_emitter_stack_markers": [
+      "0x0090934d",
+      "0x009145bb",
+      "0x00906f86"
+    ],
+    "primary_direct_callers": [
+      "0x00907084",
+      "0x0090715d",
+      "0x00907222",
+      "0x0090739c",
+      "0x009073ab",
+      "0x00907458",
+      "0x00907462",
+      "0x009074ee"
+    ],
+    "mixed_primary_or_nested_direct_caller": "0x00909626",
+    "nested_direct_callers": [
+      "0x0090972f",
+      "0x0090973e"
+    ],
+    "generic_compat_caller": "0x0040ae62",
+    "generic_compat_acceptance": "require primary_stack_marker or both particle_movable_stack_marker_pair addresses; preserve the existing shadow-canopy stack rule independently",
+    "direct_primary_acceptance": "require primary_stack_marker",
+    "direct_mixed_acceptance": "require primary_stack_marker or all nested_emitter_stack_markers",
+    "direct_nested_acceptance": "require all nested_emitter_stack_markers",
+    "caller_only_classification_forbidden": true,
+    "partial_marker_classification_forbidden": true,
+    "unknown_caller_classification_forbidden": true
+  },
+  "frozen_static_contract": {
+    "all_new_direct_calls_target": "0x00617490",
+    "new_direct_call_sites_verified_only_when_pil_surface_is_observed": true,
+    "legacy_verified_call_sites_serialization_must_remain_unchanged": true,
+    "conditional_static_surface_key": "pil_particle_emitter",
+    "rtti_names": {
+      "emitter": {
+        "virtual_address": "0x009f0d18",
+        "ascii_nul": ".?AVEmitter@PIL@@"
+      },
+      "particle": {
+        "virtual_address": "0x009f0dd4",
+        "ascii_nul": ".?AVParticle@PIL@@"
+      },
+      "movable_object": {
+        "virtual_address": "0x009f0cf8",
+        "ascii_nul": ".?AVMovableObject@PIL@@"
+      }
+    },
+    "complete_object_locator_and_vtable_bindings": {
+      "emitter": {
+        "locator_slot": "0x00994ce8",
+        "locator": "0x009a56f0",
+        "vtable": "0x00994cec",
+        "slot_19_function": "0x0090796f"
+      },
+      "particle": {
+        "locator_slot": "0x00994d88",
+        "locator": "0x009a58dc",
+        "vtable": "0x00994d8c",
+        "slot_8_update_function": "0x0090dca4"
+      },
+      "movable_object": {
+        "locator_slot": "0x00994e10",
+        "locator": "0x009a59bc",
+        "vtable": "0x00994e14",
+        "slot_8_update_function": "0x009021f3"
+      }
+    },
+    "key_native_edges": {
+      "primary_helper_call": "0x00901e41_to_0x00465fe0_return_0x00901e46",
+      "particle_to_movable_update": "0x0090dcd0_to_0x009021f3_return_0x0090dcd5",
+      "emitter_to_randomized_initializer": "0x00906f81_to_0x0090963d_return_0x00906f86"
+    },
+    "runtime_hash_must_be_checked_before_static_semantics": true
+  },
+  "legacy_compatibility_contract": {
+    "new_static_surface_absent_when_no_pil_particle_stack_is_observed": true,
+    "new_headless_scope_name_absent_when_new_semantic_count_is_zero": true,
+    "existing_classifier_results_unchanged": true,
+    "immutable_c164_proof_must_reverify_by_full_object_equality": true,
+    "immutable_c164_proof_and_diff_files_must_not_be_modified": true
+  },
+  "qualification_acceptance": {
+    "c193_forensic_partition": {
+      "score_digit_transition": 14,
+      "pi_effect_particle_update": 9,
+      "shadow_canopy_animation": 2,
+      "pil_particle_emitter_update": 3562,
+      "modeled_gameplay": 0,
+      "unclassified": 0,
+      "total": 3587
+    },
+    "c193_new_direct_pil_calls": 1059,
+    "c193_generic_pil_calls": 2503,
+    "positive_and_negative_dynamic_marker_tests_required": true,
+    "conditional_static_surface_tests_required": true,
+    "runtime_static_surface_live_check_required": true,
+    "python_compile_required": true,
+    "targeted_test_suite_required": true,
+    "full_test_suite_required": true,
+    "legacy_c164_byte_semantic_reverification_required": true,
+    "candidate_proof_from_c193_may_be_derived_only_as_noncertifying_forensic_qualification": true
+  },
+  "post_qualification_decision_rule": {
+    "pass": "Freeze a new c195 confirmatory collection with a new output root and require zero external input events before any proof can be bound to c190.",
+    "fail": "Retain the failed candidate and tests, make no Gate change, diagnose the exact mismatch, and preregister any revision before editing.",
+    "c193_proof_binding_for_certification_forbidden": true,
+    "pc_golden_credit": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

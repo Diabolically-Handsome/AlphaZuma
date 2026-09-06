@@ -1,0 +1,97 @@
+{
+  "comparison": {
+    "first_memory_difference": {
+      "c212": 20,
+      "c213": 19,
+      "normalized_path": "/board_color_counts/0",
+      "update": 11341
+    },
+    "first_render_difference": {
+      "c212": 2,
+      "c213": 3,
+      "normalized_path": "/next_ball/color_id",
+      "update": 11341
+    },
+    "first_visual_difference": {
+      "c212_bmp_sha256": "sha256:da6103c54f719ad9273865af7ff8bc78d6513a3a034cf59a6a12c8763980d465",
+      "c212_rgb24_sha256": "sha256:a95d343890f1fc6eda390c3c4693e14de1cd19fccb38b2dba65fc443f294c196",
+      "c213_bmp_sha256": "sha256:2661422561073cfd6144ba0f2c0bed56ef8114fea5e4ca154dc1dace02573258",
+      "c213_rgb24_sha256": "sha256:fd8badc4455efd719a8a8471ac99d8ad516bd2405755de311ab75da8e512f1eb",
+      "update": 11341
+    },
+    "independent_process_instances": true,
+    "memory_exact": false,
+    "pixels_exact": false,
+    "protocol_exact": true,
+    "render_state_exact": false,
+    "status": "FAIL"
+  },
+  "created_utc": "2026-08-10T18:13:45.273Z",
+  "decision": {
+    "failed_runs_reusable_as_pc_golden": false,
+    "failed_runs_retained": true,
+    "next_action": "audit and correct the Fidelity Gate original-source authentication contract; do not retry long-horizon exact cross-process pixel reproduction with startup seeds or affinity controls",
+    "training_authorized": false
+  },
+  "id": "c212-c213-natural-loss-exact-step-comparison-failure",
+  "inputs": {
+    "execution_binding_sha256": "sha256:500055d2582d0aad0b098f14d0b941daa46de20a77e69a04bf2690f251c3516f",
+    "plan_sha256": "sha256:0a09ebf16b4f967891145b9b9718e4e3d0937aefd025a6c313d27e37d0aa060c",
+    "preregistration_sha256": "sha256:ebbdcb4253439d7618a474f557447f6464ff371da08251b2dee17a1a6e79f3d6"
+  },
+  "packaging": {
+    "case_output_created": false,
+    "formal_comparator_status": "FAIL",
+    "status": "REJECTED_BEFORE_PACKAGE_OUTPUT"
+  },
+  "root_cause": {
+    "classification": "asynchronous_shared_rng_schedule_after_seed_breakpoint",
+    "complete_source_state_restore_required_for_exactness": "not_authorized_and_not_an_original_engine_invariant",
+    "global_and_thread_seeds_fixed_at_board_construction": true,
+    "interpretation": "Independent retail processes consume shared global and CRT RNG from asynchronously scheduled code after the fixed Board seed breakpoint. Identical startup seeds therefore do not imply a stable long-horizon original-game trajectory.",
+    "prior_falsified_remedies_not_to_repeat": [
+      "single_logical_processor_affinity",
+      "initial_global_seed_only",
+      "global_plus_thread_plus_board_seed_only",
+      "posthoc_process_selection"
+    ],
+    "retained_first_update": {
+      "c212_global_mtrand_index": 280,
+      "c212_thread_crt_rand_state": 1020014204,
+      "c213_global_mtrand_index": 407,
+      "c213_thread_crt_rand_state": 3527905494,
+      "update": 11341
+    }
+  },
+  "runs": {
+    "c212": {
+      "attempts_sha256": "sha256:bb26fa18233934357a082b83ef1ef9fcaf4a219b59a5b2247b99964ad2f1f5d5",
+      "external_input_event_count": 0,
+      "external_input_guard_sha256": "sha256:36241c597401ed281932752706a1c83f7258f23aecd4ab78b20da234daa9f127",
+      "memory_probe_sha256": "sha256:b4ef0e56f9956e171b820e9136208b4c075b3ebdc2b3db8c4068579b73563437",
+      "process_creation_filetime_100ns": 134308586328084428,
+      "process_id": 57704,
+      "status": "PASS_SOURCE_ONLY",
+      "trajectory_index_sha256": "sha256:d3061e52095a143e70e9f5d14cdf8b4118ad0f48f821db193394bc986defb837"
+    },
+    "c213": {
+      "attempts_sha256": "sha256:bc11aeb929f9163e5a4a4facaa2e51043ec2ff90f7e662017c8de6d30f359855",
+      "external_input_event_count": 0,
+      "external_input_guard_sha256": "sha256:e27437fd02fa9e3e78f51aa915ababfd0ed4c15f9d9a0f075d78ac3c6a8d2d2f",
+      "memory_probe_sha256": "sha256:fa4861785c4583a882229e16e676a36e0b1120426f3cf4c3b4164a9b1f565f0c",
+      "process_creation_filetime_100ns": 134308588059127012,
+      "process_id": 20608,
+      "status": "PASS_SOURCE_ONLY",
+      "trajectory_index_sha256": "sha256:b456675c7a01d0272460d7742e10c6a5747b714751729543c507f11309bdb0a5"
+    }
+  },
+  "schema": "zuma-rl.pc-exact-step-comparison-failure-receipt",
+  "state_transaction": {
+    "c212_post_matches_host_pre": true,
+    "c213_post_matches_host_pre": true,
+    "host_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "residual_game_process_count": 0
+  },
+  "status": "FORMAL_PAIR_REJECTED",
+  "version": 1
+}

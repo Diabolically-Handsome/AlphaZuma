@@ -1,0 +1,239 @@
+{
+  "schema": "zuma-rl.alphazuma-55-training-validation-audit",
+  "version": 1,
+  "status": "PASS",
+  "audited_utc": "2026-08-15T21:07:35.323576+00:00",
+  "formal_selection_authority": false,
+  "training_recipe_change_authority": false,
+  "artifacts": {
+    "master": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+      "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+    },
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-settled-v3-reset-aim-v2-validation-s99081524-preregistration-v1.json",
+      "sha256": "sha256:da19a8d6e32224c49ea3457a075b3620b37059afe66a0fc35acc827f3e5e0ac6"
+    },
+    "models_manifest": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-settled-v3-reset-aim-v2-validation-s99081524-models-v1.json",
+      "sha256": "sha256:a8377419e40ba7c7672e2de9220ddaa6846e6a757b9227bdcfa3986928277c60"
+    },
+    "matrix_shard": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-reset-aim-v2-validation-s99081524-v1/matrix-shard-00-of-01.json",
+      "sha256": "sha256:c60d2a924cef0acf71c29e352ac547b34da10bfb1f96491c56aa557d20e8e66e"
+    },
+    "auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_training_validation.py",
+      "sha256": "sha256:3621dcb64c3342e3954533d22401f258fe6c72ac49d164456455ad77ea54aa67"
+    }
+  },
+  "matrix": {
+    "levels": 55,
+    "attempts_per_model": 55,
+    "models": 8,
+    "completed_attempts": 440,
+    "seed_plan": {
+      "registry": "training_validation",
+      "base_seed": 1550000500,
+      "last_seed": 1550000554
+    },
+    "runtime": {
+      "python": "3.12.3",
+      "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "parallel_envs": 24,
+      "total_vector_transitions": 4147460,
+      "wall_seconds": 12054.128237318997
+    }
+  },
+  "model_summaries": [
+    {
+      "model_id": "v11-full55-v1",
+      "model_sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d",
+      "attempts": 55,
+      "wins": 14,
+      "losses": 23,
+      "truncations": 18,
+      "cleared_levels": 14,
+      "winning_levels": [
+        {
+          "level_id": "Jungle1",
+          "seed": 1550000500,
+          "ticks": 4645,
+          "score": 3720,
+          "trajectory_sha256": "sha256:76e260d54d0e9d85131a6c7e061af609c56c3b7d647afee147d4fb461a274134"
+        },
+        {
+          "level_id": "Jungle2",
+          "seed": 1550000501,
+          "ticks": 2202,
+          "score": 2190,
+          "trajectory_sha256": "sha256:200e1892a2ebc7fa1841988315d42a03e1e2390d16a11011e813e421b4004d53"
+        },
+        {
+          "level_id": "Jungle3",
+          "seed": 1550000502,
+          "ticks": 7867,
+          "score": 5500,
+          "trajectory_sha256": "sha256:fd62314c51590ce8a900eef684bde3a4cd57c3dd2623042d91c17d3fa62ed666"
+        },
+        {
+          "level_id": "Jungle4",
+          "seed": 1550000503,
+          "ticks": 2497,
+          "score": 2330,
+          "trajectory_sha256": "sha256:471f7fe7f7c6f13a4e81d91682fcdb0fdd7f8b9e5b34da3d528da99e42ff7c03"
+        },
+        {
+          "level_id": "jungle6",
+          "seed": 1550000504,
+          "ticks": 4713,
+          "score": 3600,
+          "trajectory_sha256": "sha256:ef69ba396af42d0d2f92c4dc09bacd191d00f5d5c7e2f74ae789147d4df94201"
+        },
+        {
+          "level_id": "Jungle7",
+          "seed": 1550000505,
+          "ticks": 9025,
+          "score": 6290,
+          "trajectory_sha256": "sha256:818cfd456eab479c31f73a1cdb9e6cad25b2bc6fccdbc9b1bdb87f0ff0a94fd4"
+        },
+        {
+          "level_id": "Jungle8",
+          "seed": 1550000506,
+          "ticks": 2427,
+          "score": 2750,
+          "trajectory_sha256": "sha256:3384917bd3cb6dd7727a715da67ebde4a437d51851f52bb9019158fb185646da"
+        },
+        {
+          "level_id": "Jungle9",
+          "seed": 1550000507,
+          "ticks": 9531,
+          "score": 7010,
+          "trajectory_sha256": "sha256:499c438a8837ec9177070c6eb0f412e20a990304865bb89d0b4414603ae30794"
+        },
+        {
+          "level_id": "Jungle10",
+          "seed": 1550000508,
+          "ticks": 4202,
+          "score": 4420,
+          "trajectory_sha256": "sha256:126a46b964ebe5231877ec120b17cac3c905bf5f59027e8b18576698302952aa"
+        },
+        {
+          "level_id": "village1",
+          "seed": 1550000509,
+          "ticks": 8236,
+          "score": 6470,
+          "trajectory_sha256": "sha256:1bf566d7addbd65d8cf7709ea8a7a102ef01c2ee794eeeca99c27ad6164eaf77"
+        },
+        {
+          "level_id": "village2",
+          "seed": 1550000510,
+          "ticks": 7256,
+          "score": 6800,
+          "trajectory_sha256": "sha256:eb197f952d7965aa96d96d2cc2e2a55ad738dd68f82673e86f156969cad7e6c9"
+        },
+        {
+          "level_id": "village7",
+          "seed": 1550000515,
+          "ticks": 8942,
+          "score": 11540,
+          "trajectory_sha256": "sha256:3d6ecc49c2068fd7b635cb364317a60c1a73e9ac57b0bbc04df932e42c251063"
+        },
+        {
+          "level_id": "city2",
+          "seed": 1550000519,
+          "ticks": 7263,
+          "score": 4500,
+          "trajectory_sha256": "sha256:ed624ebb9452b026385c829bdeb0b3af47a69182167393f5627b00e805141995"
+        },
+        {
+          "level_id": "city5",
+          "seed": 1550000522,
+          "ticks": 7246,
+          "score": 5120,
+          "trajectory_sha256": "sha256:8899ffdb6edf006a6669f09748f2e8d586d85fd18e4ffc42c01c1ca4525b98d5"
+        }
+      ],
+      "median_winning_ticks": 7251.0
+    },
+    {
+      "model_id": "settled-v3-reset-aim-v2-epoch-04",
+      "model_sha256": "sha256:8aa2060280ff97f5e2c5325e9fbe08d44c2b37854d090b565e810425257d8716",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "settled-v3-reset-aim-v2-epoch-08",
+      "model_sha256": "sha256:9355ee6089bbc5fa9fb3d06beaffcdfd99936a2a2acc3a509d96480d0200b668",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "settled-v3-reset-aim-v2-epoch-12",
+      "model_sha256": "sha256:eb068320f8fae00e665431eebf15a881e6c6da9eba540823929ae77d5d151bde",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "settled-v3-reset-aim-v2-epoch-16",
+      "model_sha256": "sha256:0047468bb029191e9bf2290d9dc00e654d245d7c608bbba59ffd3039de009c49",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "settled-v3-reset-aim-v2-epoch-20",
+      "model_sha256": "sha256:a432e0b67d0d60dbf842128b96fd9422b84254e22e1f9497f73eb4d3570e7e6d",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "settled-v3-reset-aim-v2-epoch-24",
+      "model_sha256": "sha256:6426afecb3cf2a74f048afff69a42d0285a36cd9bcf63cb2e8e44e3753b6d584",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "settled-v3-reset-aim-v2-final",
+      "model_sha256": "sha256:826b0daa8cf2e3fb7cf1c9dc9f7ba57d426e881b52bdec8de533614e79f03c69",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    }
+  ],
+  "paired_comparison": null,
+  "interpretation_boundary": "This PASS proves artifact integrity and a paired training-health signal only; it is not selection, final blind, or continuous-campaign evidence."
+}

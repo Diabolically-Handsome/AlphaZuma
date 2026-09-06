@@ -1,0 +1,77 @@
+{
+  "schema": "zuma-rl.alphazuma-55-macro-ppo-run-outcome",
+  "version": 1,
+  "run_id": "timepolish-jungle10",
+  "preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-timepolish-jungle10-s99081741-preregistration-v2.json",
+    "sha256": "sha256:ee903ab8f067236901852647a12c531f38228cf1baf38d279512e0ce92d5e9e9"
+  },
+  "status": "COMPLETE_FULL_BUDGET",
+  "decision": "SUCCESS_POLISH_GAIN_CHAMPION_CKPT1572720",
+  "completed_utc": "2026-08-21T15:39:00Z",
+  "reason": "Full 2M budget completed. Champion = ckpt1572720: 13/16, median 5867, E[t] 7221 vs the init's 9086 (-20.5%) - a large polish in the Jungle1/Jungle2/jungle6 class. The run survived one floor strike (524k at 6/16) that 786k's 9/16 = 0.5625 reset by clearing the 0.5575 quantized floor by exactly the designed one-seed margin; the late run then compounded (9 -> 14 -> 12 -> 13 -> 13 -> 15 wins). The final model holds the series' best panel rate (15/16) and is runner-up on E[t] (7376).",
+  "checkpoint_grid": [
+    {
+      "checkpoint": 262120,
+      "wins": "10/16",
+      "median": 9012,
+      "expected_time": 14419
+    },
+    {
+      "checkpoint": 524240,
+      "wins": "6/16",
+      "median": 6344,
+      "expected_time": 16917,
+      "note": "floor breach (strike one; 786k reset the counter)"
+    },
+    {
+      "checkpoint": 786360,
+      "wins": "9/16",
+      "median": 7016,
+      "expected_time": 12473
+    },
+    {
+      "checkpoint": 1048480,
+      "wins": "14/16",
+      "median": 8318,
+      "expected_time": 9506
+    },
+    {
+      "checkpoint": 1310600,
+      "wins": "12/16",
+      "median": 6573,
+      "expected_time": 8764
+    },
+    {
+      "checkpoint": 1572720,
+      "wins": "13/16",
+      "median": 5867,
+      "expected_time": 7221,
+      "champion": true
+    },
+    {
+      "checkpoint": 1834840,
+      "wins": "13/16",
+      "median": 7455,
+      "expected_time": 9175
+    },
+    {
+      "checkpoint": "final_2M",
+      "wins": "15/16",
+      "median": 6915,
+      "expected_time": 7376,
+      "note": "best panel win rate of the series; runner-up on E[t]"
+    }
+  ],
+  "init_baseline": {
+    "wins": "10/16",
+    "median": 5679,
+    "expected_time": 9086
+  },
+  "champion": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle10-s99081741-v1/checkpoints/timepolish-jungle10_1572720_steps.zip",
+    "sha256": "sha256:510d16c3a5e41d07c1c71a3f5ae746fb406b0f5036dcc57fae84279330495bb5"
+  },
+  "record_scan_plan": "golden enumeration + top-3000 scan vs the Adv 10 human line 25 s = 2500 ticks (speedrun.com REST API: runner Leshik_Doshik, 2021-03-23). Per the Jungle3 mean-tail-tradeoff lesson, BOTH the E[t] champion (ckpt1572720) and the final model (peak win rate) are scan candidates; the champion's ordinary-panel fastest is already 2657 - INSIDE the human line before golden seeds.",
+  "formal_seed_consumption": false
+}

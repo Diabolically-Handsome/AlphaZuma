@@ -1,0 +1,126 @@
+{
+  "schema": "zuma-rl.teacher-bc-dagger-relational-aim-refinement-preregistration",
+  "version": 1,
+  "created_utc": "2026-08-04T10:27:36.926Z",
+  "status": "FROZEN_BEFORE_RUN_OUTPUT",
+  "classification": "failure_conditioned_matched_staged_optimization_screen",
+  "hypotheses": {
+    "null": "a low-verb-weight final refinement stage does not materially learn fire aim or produce a held-out Jungle2 win",
+    "alternative": "after relational DAgger stabilizes verb choice, reducing verb dominance allows the shared network to learn fire aim and complete at least one held-out Jungle2 episode"
+  },
+  "design": {
+    "run_dir": "/mnt/d/ZumaTraining/screening-teacher-bc-dagger-relational-refine-s20260859-v1",
+    "expected_run_dir_absent": true,
+    "matched_control": "/mnt/d/ZumaTraining/screening-teacher-bc-dagger-relational-s20260859-v1",
+    "only_training_difference": "append_30_aggregated_dataset_epochs_with_verb_loss_weight_1",
+    "reporting_only_changes": [
+      "fire_aim_error_quantiles",
+      "fire_aim_unique_bin_counts",
+      "compressed_dataset_artifact"
+    ],
+    "common_recipe": {
+      "algorithm": "maskable_ppo_actor_behavior_cloning_with_dagger",
+      "policy_architecture": "entity_relational",
+      "level": "Jungle2",
+      "profile_mode": "tutorials_completed",
+      "aim_bins": 180,
+      "max_ticks": 12000,
+      "max_balls": 768,
+      "frame_skip": 1,
+      "training_episodes": 4,
+      "training_seed": 20271859,
+      "validation_episodes": 2,
+      "validation_seed": 20272859,
+      "model_seed": 20260859,
+      "batch_size": 256,
+      "initial_epochs": 30,
+      "wait_sample_stride": 16,
+      "swap_sample_repeat": 2,
+      "learning_rate": 0.0001,
+      "initial_and_dagger_verb_loss_weight": 10.0,
+      "aim_loss_scope": "fire_only",
+      "max_grad_norm": 0.5,
+      "dagger_rounds": 2,
+      "dagger_episodes_per_round": 1,
+      "dagger_epochs_per_round": 15,
+      "dagger_seed": 20273859,
+      "dagger_max_steps": 4000,
+      "dagger_teacher_action_probability": 0.5
+    },
+    "intervention": {
+      "final_refinement_epochs": 30,
+      "final_refinement_verb_loss_weight": 1.0,
+      "dataset": "same_aggregated_teacher_and_dagger_actor_observations",
+      "new_environment_steps": 0
+    },
+    "resources": {
+      "cuda_visible_devices": "0",
+      "expected_cuda_device": "NVIDIA GeForce RTX 5090",
+      "rtx_5080_excluded": true,
+      "cpu_thread_limit": 8
+    }
+  },
+  "acceptance": {
+    "pipeline": {
+      "process_exit_code": 0,
+      "completion_receipt_status": "COMPLETE",
+      "all_dagger_rounds_required": true,
+      "dataset_artifact_required": true
+    },
+    "verb_retention": {
+      "verb_accuracy_at_least": 0.9,
+      "fire_recall_at_least": 0.65,
+      "swap_recall_at_least": 0.65
+    },
+    "aim_learning": {
+      "fire_aim_exact_accuracy_at_least": 0.1,
+      "fire_aim_within_three_accuracy_at_least": 0.2,
+      "fire_predicted_unique_aim_bins_at_least": 20
+    },
+    "held_out_full_horizon": {
+      "wins_at_least": 1,
+      "validation_episodes": 2,
+      "mean_score_greater_than_matched_control": true
+    },
+    "promotion_rule": "a pass authorizes a fresh-seed staged-relational DAgger confirmation only",
+    "rejection_rule": "if verb retention, aim learning, or held-out completion fails, reject this exact staged recipe"
+  },
+  "evidence_anchor": {
+    "matched_relational_control": {
+      "report": "D:/ZumaTraining/screening-teacher-bc-dagger-relational-s20260859-v1/report.json",
+      "report_sha256": "sha256:d74c352ee4ffaedb1175438027209ea2cb3d99a660bc57c2be9fa891ca708a75",
+      "outcome": "diagnostics/teacher-bc-dagger-relational-s20260859-outcome-v1.json",
+      "outcome_sha256": "sha256:ab01c40cb11152cbab3c87aa81b9242acb99e875de88afdb5404f0b6e1cbb8db",
+      "verb_accuracy": 0.9712899312575819,
+      "fire_aim_exact_accuracy": 0.030263157894736843,
+      "held_out_wins": 0,
+      "held_out_mean_score": 5405.0
+    },
+    "refinement_infrastructure_smoke": {
+      "report": "D:/ZumaTraining/infrastructure-teacher-bc-aim-refinement-s20260863-v1/report.json",
+      "report_sha256": "sha256:3631537fcfdb9f794cfd7eaff6a0fa33a0c81b5edfcc93122c4ed990bc331d45",
+      "completion_sha256": "sha256:52c88ba85a5ee739602bc36ea9d8d20b2be68b688ab57fd31f2dc06ca14ed05c",
+      "dataset_sha256": "sha256:1ae6d94bdfb938cd7628960c437b7a9b07e21a1edaa24e97bc0fbf5a1d57436c",
+      "result": "refinement_metrics_and_dataset_receipt_complete"
+    },
+    "regression": {
+      "wsl_targeted_pytest": "PASS_57"
+    }
+  },
+  "source_hashes": {
+    "pretrain_maskable_ppo_teacher.py": "sha256:b10269c21799ec84c7e032e6d55480e8f4329e9e823c0649a5124f8ec22bef06",
+    "revenge_features.py": "sha256:c51e80b1385fa24052d368585c63fd3e7a8c7230e9d35f88acfc2a98a12c8fc4",
+    "revenge_teacher.py": "sha256:9a7d343f824e29b0074053440a93ec4456e7584c433342fff850afd89bb1f3a5",
+    "revenge_env.py": "sha256:ff18c84e8b73459994aa738fe3a767c019de452a898d8506531978a12c40b849",
+    "test_revenge_env.py": "sha256:3612b7b882a20c022adae0f9ff2e9d552261c1b5cb40b9444bf254d4a3b1aa0d"
+  },
+  "non_authorizations": [
+    "fresh_seed_generalization_claim",
+    "large_scale_training",
+    "rl_recipe_promotion",
+    "fidelity_gate_opening",
+    "original_game_deployment",
+    "original_transfer_certification",
+    "visual_policy_training"
+  ]
+}

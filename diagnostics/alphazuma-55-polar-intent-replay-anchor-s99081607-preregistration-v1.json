@@ -1,0 +1,318 @@
+{
+  "schema": "zuma-rl.alphazuma-55-polar-intent-replay-anchor-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_TRAINING",
+  "created_utc": "2026-08-16T01:19:20.072486+00:00",
+  "campaign_id": "alphazuma-55-polar-intent-replay-anchor-s99081607-v1",
+  "objective": "Prevent clean-trajectory catastrophic forgetting by retaining two fresh 55/55 teacher anchor passes in every DAgger update while gradually exposing the policy to its own states.",
+  "decision_evidence_available_before_freeze": {
+    "clean_source": {
+      "teacher_passes": 3,
+      "attempts": 165,
+      "wins": 162,
+      "retained_samples": 118385,
+      "classification": "consumed training evidence"
+    },
+    "unanchored_dagger_final": {
+      "pure_student_wins": 0,
+      "pure_student_attempts": 55,
+      "offline_verb_accuracy": 0.891568253968254,
+      "offline_fire_aim_within_three_accuracy": 0.7260813923726644,
+      "classification": "consumed training evidence"
+    },
+    "unanchored_autonomy_round_00": {
+      "wins": 0,
+      "attempts": 55,
+      "retained_samples": 18868,
+      "observed_before_freeze": true,
+      "classification": "consumed training evidence"
+    },
+    "implementation_finding": "the inherited DAgger runtime initializes aggregate_dataset as empty and therefore does not replay the original clean teacher dataset"
+  },
+  "hypotheses": {
+    "alternative": "persistent clean teacher replay plus student-state DAgger improves autonomous wins without forgetting nominal play",
+    "null": "action representation or objective mismatch dominates, so replay anchoring does not recover autonomous wins"
+  },
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "materialization_plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-replay-anchor-s99081607-plan-v1.json",
+    "sha256": "sha256:7ed5e0d5f2bce1680c005de514771ab9a2934a190fc7a33f244db9c78a22489a"
+  },
+  "trainer": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_polar_intent_replay_anchor_v1.py",
+    "sha256": "sha256:f520c4af363ae4ef680300cb929782e06b851bfaa8f99cf253a83f321dec0deb"
+  },
+  "implementation": {
+    "legacy_distillation_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55.py",
+      "sha256": "sha256:13ac1883fc9dc9541193dbca0da3b94fa91c7476e07873d22bec51a7a330b38a"
+    },
+    "settled_v3_distillation_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_settled_v3.py",
+      "sha256": "sha256:42e8c5274b4674c60b17d80470cbf29d5f4f09adc079f128f587f0e085f0a1be"
+    },
+    "polar_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_polar_v1.py",
+      "sha256": "sha256:9b5a4cc441cac232e7f8df1486e8c774acaa0ac7f7d54951c244b4940390d875"
+    },
+    "polar_dagger_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_polar_dagger_v1.py",
+      "sha256": "sha256:90037e68004aa20480153ca884791ebd04d67d9d50dead65e031aebf52cbd59f"
+    },
+    "raw_intent_dagger_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_polar_intent_dagger_v1.py",
+      "sha256": "sha256:4f8dad5c8d5445261cfa1ee8e00743aa71c545f84f6ef3ebbb47631488202e01"
+    },
+    "raw_intent_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_polar_intent_wide_v1.py",
+      "sha256": "sha256:186fa0eb1a015ac9ba2f089b36269c41b994661a6c4f0f09090bcb2aab0a7fd2"
+    },
+    "behavior_clone_batch_primitive": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/pretrain_maskable_ppo_teacher.py",
+      "sha256": "sha256:a8d271e3b70198cd324f8e9bd41f59f50c1874451400cf188156c146187e59c9"
+    },
+    "settled_teacher_v3": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_settled_strategic_teacher_v3.py",
+      "sha256": "sha256:32181d24b6dee736f18afb588ce5baea32d96ac055da06be621c2a36f45369a3"
+    },
+    "environment": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_env.py",
+      "sha256": "sha256:d95407a7127ecc4e580aef041426d012edf5ea8dfa2fa8c4405c398445b1132e"
+    },
+    "core": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_core.py",
+      "sha256": "sha256:7718ae186c173127ac82e488413857dc6c82d2e41c1dfb5e94ca553a1a3abff6"
+    },
+    "features": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_features.py",
+      "sha256": "sha256:d878d7ec034bfe1d0b9c8f16bf2fcc787a05de5ac404eb4f1685c4f5a46646a0"
+    },
+    "scope": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/alphazuma_55.py",
+      "sha256": "sha256:ba316c4537fd62d4c34cfc1c40d722d5d9b5f38ba954e691acea83ab51837649"
+    }
+  },
+  "source": {
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-wide-s99081540-preregistration-v1.json",
+      "sha256": "sha256:7365b0b5d77c9edeea0025bffc5670c42163900153159f61cea0f6f2d4d0c712"
+    },
+    "completion_path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-wide-s99081540-v1/completion.json",
+    "completion_sha256": "sha256:3565942394dade186548bc56cddc30e5506c47b6e46cf27174a3db370db16c86",
+    "model_path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-wide-s99081540-v1/final_model.zip",
+    "model_sha256": "sha256:9533690041859e73e0ae8f072e4a8ff05a9e316c29a974d666878e4e5bb0b424",
+    "selection_rule": "exact frozen raw-intent-wide final_model only; no metric-conditioned checkpoint selection"
+  },
+  "teacher_evidence": {
+    "exact_mask_fresh_55": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/masked-teacher-v3-fresh-probe-s99081516-v1/result.json",
+      "sha256": "sha256:415aa45c46e3021f8edb9d6b3c061954226aa497b14996a86d006fa86c30f9ec"
+    },
+    "classification": "engineering_teacher_not_formal_blind"
+  },
+  "levels": [
+    "Jungle1",
+    "Jungle2",
+    "Jungle3",
+    "Jungle4",
+    "jungle6",
+    "Jungle7",
+    "Jungle8",
+    "Jungle9",
+    "Jungle10",
+    "village1",
+    "village2",
+    "village3",
+    "village4",
+    "village5",
+    "village6",
+    "village7",
+    "village8",
+    "village10",
+    "city1",
+    "city2",
+    "city3",
+    "city4",
+    "city5",
+    "city6",
+    "city7",
+    "city9",
+    "city10",
+    "Coast1",
+    "Coast2",
+    "Coast3",
+    "Coast4",
+    "Coast5",
+    "Coast6",
+    "Coast7",
+    "Coast9",
+    "Coast10",
+    "grotto1",
+    "grotto2",
+    "grotto3",
+    "grotto4",
+    "grotto5",
+    "grotto6",
+    "grotto7",
+    "grotto9",
+    "grotto10",
+    "volcano1",
+    "volcano2",
+    "volcano3",
+    "volcano4",
+    "volcano5",
+    "volcano6",
+    "volcano7",
+    "volcano8",
+    "volcano9",
+    "volcano10"
+  ],
+  "run": {
+    "id": "alphazuma55-polar-intent-replay-anchor-5080",
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-replay-anchor-s99081607-v1",
+    "device": "cuda:1",
+    "policy_architecture": "entity_polar_intent_wide_replay_anchor",
+    "learned_features_dim": 1024,
+    "model_seed": 1542006500,
+    "anchor_seed_base": 1542006000,
+    "anchor_seed_last_consumed": 1542006109,
+    "student_seed_base": 1542006110,
+    "student_seed_last_consumed": 1542006274,
+    "anchor_teacher_passes": 2,
+    "student_rounds": 3,
+    "teacher_execution_probabilities": [
+      0.5,
+      0.1,
+      0.0
+    ],
+    "parallel_envs": 24,
+    "max_ticks": 30000,
+    "reservoir_capacity_by_verb": {
+      "wait": 256,
+      "fire": 256,
+      "swap": 192,
+      "hop": 192
+    },
+    "sample_stride_by_verb": {
+      "wait": 4,
+      "fire": 1,
+      "swap": 1,
+      "hop": 1
+    },
+    "target_batch_fraction_by_verb": {
+      "wait": 0.45,
+      "fire": 0.35,
+      "swap": 0.15,
+      "hop": 0.05
+    },
+    "batch_size": 512,
+    "capacity_eval_batch_size": 128,
+    "epochs_per_round": 12,
+    "checkpoint_interval_epochs": 6,
+    "learning_rate": 1e-05,
+    "verb_loss_weight": 2.0,
+    "max_grad_norm": 0.5,
+    "aim_loss_scope": "fire_only",
+    "aim_loss_mode": "categorical",
+    "aim_smoothing_sigma": 1.5,
+    "aim_distance_weight": 0.0,
+    "source_is_frozen_raw_intent_wide_final_model": true,
+    "teacher_anchor_replayed_every_round": true,
+    "aggregate_student_states_across_rounds": true,
+    "raw_teacher_intent_labels": true,
+    "training_mask_relaxation": "unmask_only_the_teacher_target_verb",
+    "exact_action_masks_for_environment_execution": true,
+    "exact_action_masks_for_online_policy_inference": true,
+    "label_aim_must_remain_exact_mask_legal": true,
+    "final_runtime_teacher_calls_forbidden": true
+  },
+  "frozen_engineering_validation": {
+    "registry": "training_validation",
+    "base_seed": 1550002200,
+    "last_seed": 1550002254,
+    "level_order": [
+      "Jungle1",
+      "Jungle2",
+      "Jungle3",
+      "Jungle4",
+      "jungle6",
+      "Jungle7",
+      "Jungle8",
+      "Jungle9",
+      "Jungle10",
+      "village1",
+      "village2",
+      "village3",
+      "village4",
+      "village5",
+      "village6",
+      "village7",
+      "village8",
+      "village10",
+      "city1",
+      "city2",
+      "city3",
+      "city4",
+      "city5",
+      "city6",
+      "city7",
+      "city9",
+      "city10",
+      "Coast1",
+      "Coast2",
+      "Coast3",
+      "Coast4",
+      "Coast5",
+      "Coast6",
+      "Coast7",
+      "Coast9",
+      "Coast10",
+      "grotto1",
+      "grotto2",
+      "grotto3",
+      "grotto4",
+      "grotto5",
+      "grotto6",
+      "grotto7",
+      "grotto9",
+      "grotto10",
+      "volcano1",
+      "volcano2",
+      "volcano3",
+      "volcano4",
+      "volcano5",
+      "volcano6",
+      "volcano7",
+      "volcano8",
+      "volcano9",
+      "volcano10"
+    ],
+    "attempts_per_level_per_model": 1,
+    "models": [
+      "source-intent-wide-final",
+      "source-unanchored-dagger-final",
+      "replay-anchor-round-00",
+      "replay-anchor-round-01",
+      "replay-anchor-round-02"
+    ],
+    "expected_attempts": 275,
+    "ranking": [
+      "wins_desc",
+      "level_coverage_desc",
+      "total_score_desc",
+      "median_winning_ticks_asc",
+      "earlier_round_first"
+    ],
+    "promotion_rule": "engineering evidence only; minimum 35 wins and 35-level coverage, followed by a separately frozen successor"
+  },
+  "authority_boundary": {
+    "classification": "replay_anchored_engineering_training_only",
+    "current_campaign_candidate_authority": false,
+    "formal_selection_seed_consumption": false,
+    "formal_final_blind_seed_consumption": false,
+    "continuous_campaign_seed_consumption": false
+  }
+}

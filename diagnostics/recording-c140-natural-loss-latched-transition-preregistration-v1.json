@@ -1,0 +1,83 @@
+{
+  "schema": "zuma-rl.retail-natural-loss-latched-transition-recording-preregistration",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T08:17:08.1759739Z",
+  "purpose": "Correct only the c139 replacement-Board loading-state race by latching a verified native-clock reset until the replacement Board becomes active and populated.",
+  "classification": "second-control-correction-preregistered-before-implementation",
+  "parent_preregistration": {
+    "path": "diagnostics/recording-c139-natural-loss-transition-preregistration-v1.json",
+    "sha256": "sha256:cf532b4576d08849e6f323dab825bf9ceed5d2b532cf32d65d954ac5f182176b"
+  },
+  "completed_c139_observations": {
+    "c139a1": {
+      "result_sha256": "sha256:4f99b73e7260626be9d52ef78c8637c826021a1e76c6d21cdc51c4ae896c4024",
+      "dmo_sha256": "sha256:175e61d6774b51c249b067a0dd118523a7fef094802ddc133dd0e96f34af3272",
+      "outcome": "timeout",
+      "status": "INCOMPLETE"
+    },
+    "c139a2": {
+      "result_sha256": "sha256:36444b4ee7901a03bd79cb84b6ba0132dc7cb8d10e424030c5b5456dc3a2831b",
+      "dmo_sha256": "sha256:8a1128ab7086da46b8f16c98322a418dd1049064a8be986a6067d6e475a6f43e",
+      "outcome": "timeout",
+      "status": "INCOMPLETE"
+    },
+    "c139a3": {
+      "result_sha256": "sha256:2d8fcc546595253b3e29a522e958fef18c8e3e2d44b57d2f42b61096ad5f2b7b",
+      "dmo_sha256": "sha256:f202c111d9c1209b434f2097212cf087e8aedeee67c251af074725df8852bec1",
+      "outcome": "natural_win",
+      "status": "INCOMPLETE"
+    }
+  },
+  "frozen_pre_patch_implementation": {
+    "live_controller_sha256": "sha256:e1ab0d987a1a3788ad3436f0bf1b5aa821d05c81b065724662617229336a63f7",
+    "record_controller_sha256": "sha256:c21e448fd7d7538f623b6579e4eb626bc2d1ec0ac27a02e381a6d0d9a3ecf390",
+    "provenance_validator_sha256": "sha256:bd7d2acb863130950111be101b12d0637d42ca14d8b51af5c6ecd621b09415f7"
+  },
+  "single_authorized_change": {
+    "name": "latched_restart_candidate",
+    "clock_reset_criteria_unchanged": true,
+    "old_board_receipt_is_retained_after_clock_reset": true,
+    "candidate_survives_readable_replacement_loading_states": true,
+    "candidate_expires_if_replacement_native_game_time_exceeds_1000_without_becoming_active": true,
+    "natural_win_detection_remains_higher_priority": true,
+    "candidate_creation_is_logged_to_autoplay_ndjson": true,
+    "loss_receipt_schema_unchanged": "natural_loss_restart_transition_v1",
+    "provenance_contract_unchanged": true,
+    "exit_contract_unchanged": "retail_ui_from_replacement_board"
+  },
+  "retail_contract": {
+    "runtime_executable": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "changedir": "D:/SteamLibrary/steamapps/common/Zuma's Revenge",
+    "prestate_dir": "D:/ZumaGolden/session-20260728-203153/native-windowed-record-001-prestate-reconstructed",
+    "expected_score_target": 9650,
+    "minimum_entry_score": 7000,
+    "maximum_gameplay_seconds": 180.0,
+    "rng_monitor_stop_native_time": 500,
+    "mtrand_trace_kind": "global_wrapper_entry",
+    "navigation_updates": [1622, 2422, 3108],
+    "navigation_points": [[400.0, 533.0], [633.0, 281.0], [399.0, 456.0]],
+    "prelaunch_cursor_screen_point": [100, 100],
+    "process_memory_writes_required": 0,
+    "host_state_restore_required": true
+  },
+  "run_order": ["c140a1", "c140a2", "c140a3"],
+  "runs": [
+    {"id": "c140a1", "output_root": "D:/ZumaGolden/record-c140a1-idle-natural-loss-latched-v1"},
+    {"id": "c140a2", "output_root": "D:/ZumaGolden/record-c140a2-idle-natural-loss-latched-v1"},
+    {"id": "c140a3", "output_root": "D:/ZumaGolden/record-c140a3-idle-natural-loss-latched-v1"}
+  ],
+  "common_run_arguments": {
+    "expected_outcome": "natural_loss",
+    "gameplay_policy": "idle",
+    "fruit_policy": "ignore"
+  },
+  "decision_rules": {
+    "every_declared_run_executes_in_order": true,
+    "no_retry_or_replacement_under_this_preregistration": true,
+    "natural_win_is_retained_as_an_expected_outcome_mismatch": true,
+    "first_passing_run_by_frozen_order_is_primary": true,
+    "no_feature_credit_before_two-run_formal_replay": true
+  }
+}

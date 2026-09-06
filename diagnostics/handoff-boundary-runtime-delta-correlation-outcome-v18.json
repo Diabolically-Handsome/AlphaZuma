@@ -1,0 +1,1902 @@
+{
+  "schema": "zuma-rl.pc-handoff-boundary-runtime-delta-correlation-outcome",
+  "version": 18,
+  "status": "INSUFFICIENT_MODE_REPLICATION_9_EXACT_0_DEFICIT_1_OUTSIDE_MODE_SURPLUS",
+  "created_utc": "2026-08-05T18:24:46.679Z",
+  "id": "handoff-boundary-runtime-delta-correlation-v18-outcome",
+  "evidence_classification": "diagnostic_thread_factor_localization_no_pc_golden_credit",
+  "authority": {
+    "preregistration_sha256": "sha256:951abe996e822a6016b662cba247f1dbdcd9b1365562b659ca8bc3249a76bd99",
+    "execution_binding_sha256": "sha256:65e7797b672515d38170bb165edc795be01ee6de82dd93f5de096456cd76121c",
+    "session_nonce": "531643f2ee5247549d1dd491c8edcce3"
+  },
+  "fixed_hashes": {
+    "all_match": true,
+    "sha256": {
+      "preregistration": "sha256:951abe996e822a6016b662cba247f1dbdcd9b1365562b659ca8bc3249a76bd99",
+      "execution_binding": "sha256:65e7797b672515d38170bb165edc795be01ee6de82dd93f5de096456cd76121c",
+      "trigger": "sha256:55d597681a28674ef9bb83733859f391fd90ab58d6e2b0e9dc1a891d415fc46a",
+      "plan": "sha256:5a7ba58eccd7e0d1b1008ac089cce59c167a26ba8bc359ef76f3dcd2bea8c0db",
+      "dmo": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+      "pre": "sha256:06d243f34ecf209c6296659fd4cc3c0a6c299c203cc8b4e342f55cc001c32842",
+      "host_restore": "sha256:c48bd69be03fc6e2fdf1a400b571f0f0294a5fadda1c48e08c1bd6d1dd093f46",
+      "source_trace": "sha256:4de39ac6a0e800323949e0095fc2fd3e924ea41a670ceb5d75a0ecb25b5c15a4",
+      "runtime": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+      "thread_tool": "sha256:89a992457b6d2e9e0629a1dc63dd3b7973f67ad384cfa48a3791329a927c829d",
+      "boundary_tool": "sha256:86a57143fa3908c5e7fb08350d97ce22775f3252d934cd492d690a938c14a371",
+      "collector": "sha256:91196a6cc3bde9fb79f3705db09bd0634dd773bf6ef2c5e8f2cc45a88b927ab0"
+    }
+  },
+  "validity": {
+    "valid_runs": 10,
+    "required": 10,
+    "all_contracts_pass": true,
+    "contract_checks": [
+      "observer_and_draw_reconstruction",
+      "transactional_ready_v2",
+      "complete_thread_snapshots",
+      "delta_identity_and_positive_main",
+      "zero_read_write_and_mutation",
+      "clean_debugger_restore"
+    ]
+  },
+  "results": {
+    "mode_counts": {
+      "EXACT": 9,
+      "DEFICIT": 0,
+      "OUTSIDE_FROZEN_MODE_SURPLUS": 1
+    },
+    "exact_rate": 0.9,
+    "exact_rate_wilson95_descriptive_only": [
+      0.5958499732047615,
+      0.9821237869049271
+    ],
+    "infrastructure_retries": 1,
+    "retry_run": "d08",
+    "retry_reason": "main-thread handoff expected suspend count 1, observed 0",
+    "retry_ready_published": false,
+    "semantic_retries": 0
+  },
+  "decision": {
+    "rule_result": "INSUFFICIENT_MODE_REPLICATION",
+    "minimum_each_mode": 3,
+    "exact_pass": true,
+    "deficit_pass": false,
+    "surplus_not_relabelled": true,
+    "worker_selection_evaluated": false,
+    "primary_candidate": null,
+    "next": "Do not synchronize a worker; broaden causal scheduler telemetry under a new frozen protocol."
+  },
+  "runs": [
+    {
+      "run": "d01",
+      "attempts": [
+        {
+          "id": "attempt-01",
+          "observer": true,
+          "ready": true,
+          "probe": true,
+          "status": "PASS",
+          "observer_sha256": "sha256:11f7c5f718d00455b7194136a749f920554324738df55fb84b2e0727bf29344e",
+          "failure": null,
+          "exception": null,
+          "ready_published": true,
+          "selected": true
+        }
+      ],
+      "selected": "attempt-01",
+      "contract_pass": true,
+      "artifact_sha256": {
+        "observer": "sha256:11f7c5f718d00455b7194136a749f920554324738df55fb84b2e0727bf29344e",
+        "ready": "sha256:8fb847b7719f0d6ed5881736ce95933160b6442c9f8e37123d896799221e2911",
+        "memory_probe": "sha256:8b4458751f7d801c96bb81c322ddd2eccb899a994db38a6b39da9de3e2ad5a51"
+      },
+      "semantic": {
+        "mode": "EXACT",
+        "expected_draw": 1662,
+        "live_draw": 1662,
+        "signed_deficit": 0,
+        "live_index": 414,
+        "state_match": true,
+        "state_sha256": "sha256:c0d2599105a0ba4ee7623f4991a704c0260548dbf7fc47b1041dbfd1e45e2422"
+      },
+      "delta": {
+        "elapsed_ns": 14163930900,
+        "handoff_capture_ns": 45729200,
+        "boundary_capture_ns": 45760100,
+        "main_cycle": 2606087736,
+        "main_kernel100ns": 468750,
+        "main_user100ns": 6562500,
+        "ready_threads": 86,
+        "boundary_threads": 88,
+        "persistent": 86,
+        "created": 2,
+        "exited": 0
+      }
+    },
+    {
+      "run": "d02",
+      "attempts": [
+        {
+          "id": "attempt-01",
+          "observer": true,
+          "ready": true,
+          "probe": true,
+          "status": "PASS",
+          "observer_sha256": "sha256:f5b317dc47776039356802a1ce6966eac559a7defb26047587977a2968911149",
+          "failure": null,
+          "exception": null,
+          "ready_published": true,
+          "selected": true
+        }
+      ],
+      "selected": "attempt-01",
+      "contract_pass": true,
+      "artifact_sha256": {
+        "observer": "sha256:f5b317dc47776039356802a1ce6966eac559a7defb26047587977a2968911149",
+        "ready": "sha256:5c15761466b6d635784a95889bcb948fd8cbf6546eea52ed305b0aca85930a5c",
+        "memory_probe": "sha256:c468db31bfb76daa37b5a17891d2af7c1b5bf9153f910a937772d084b5af57ba"
+      },
+      "semantic": {
+        "mode": "EXACT",
+        "expected_draw": 1662,
+        "live_draw": 1662,
+        "signed_deficit": 0,
+        "live_index": 414,
+        "state_match": true,
+        "state_sha256": "sha256:c0d2599105a0ba4ee7623f4991a704c0260548dbf7fc47b1041dbfd1e45e2422"
+      },
+      "delta": {
+        "elapsed_ns": 14163083000,
+        "handoff_capture_ns": 57767700,
+        "boundary_capture_ns": 59850500,
+        "main_cycle": 3371883388,
+        "main_kernel100ns": 937500,
+        "main_user100ns": 6250000,
+        "ready_threads": 86,
+        "boundary_threads": 88,
+        "persistent": 86,
+        "created": 2,
+        "exited": 0
+      }
+    },
+    {
+      "run": "d03",
+      "attempts": [
+        {
+          "id": "attempt-01",
+          "observer": true,
+          "ready": true,
+          "probe": true,
+          "status": "PASS",
+          "observer_sha256": "sha256:a25b8d451f2980800b19bd0d426128e5b8bc39c14bbb5fe335d91b8d319e6415",
+          "failure": null,
+          "exception": null,
+          "ready_published": true,
+          "selected": true
+        }
+      ],
+      "selected": "attempt-01",
+      "contract_pass": true,
+      "artifact_sha256": {
+        "observer": "sha256:a25b8d451f2980800b19bd0d426128e5b8bc39c14bbb5fe335d91b8d319e6415",
+        "ready": "sha256:cece2a6b8bc319b871213e177f11810d3be73635ad1565032a93d781015eb63a",
+        "memory_probe": "sha256:a51ec205cb4574730b1a83a19fccc3d9ac59b36061f43f2250ee4a43c154978c"
+      },
+      "semantic": {
+        "mode": "EXACT",
+        "expected_draw": 1662,
+        "live_draw": 1662,
+        "signed_deficit": 0,
+        "live_index": 414,
+        "state_match": true,
+        "state_sha256": "sha256:c0d2599105a0ba4ee7623f4991a704c0260548dbf7fc47b1041dbfd1e45e2422"
+      },
+      "delta": {
+        "elapsed_ns": 14158029700,
+        "handoff_capture_ns": 53658000,
+        "boundary_capture_ns": 54127400,
+        "main_cycle": 3256019366,
+        "main_kernel100ns": 1875000,
+        "main_user100ns": 6875000,
+        "ready_threads": 86,
+        "boundary_threads": 88,
+        "persistent": 86,
+        "created": 2,
+        "exited": 0
+      }
+    },
+    {
+      "run": "d04",
+      "attempts": [
+        {
+          "id": "attempt-01",
+          "observer": true,
+          "ready": true,
+          "probe": true,
+          "status": "PASS",
+          "observer_sha256": "sha256:7098faf100703ef4318c093719a3e566b4738f299526b10dcf1a187b6e3d9212",
+          "failure": null,
+          "exception": null,
+          "ready_published": true,
+          "selected": true
+        }
+      ],
+      "selected": "attempt-01",
+      "contract_pass": true,
+      "artifact_sha256": {
+        "observer": "sha256:7098faf100703ef4318c093719a3e566b4738f299526b10dcf1a187b6e3d9212",
+        "ready": "sha256:3f8fa7092401188ac338c8138f13b03460fb4e8ecf9aa0de453dcc9a65e0f0ca",
+        "memory_probe": "sha256:0ea2e8998e183fbd59bf34960e83289bd44524a25d1e98703bebb963b438a01d"
+      },
+      "semantic": {
+        "mode": "EXACT",
+        "expected_draw": 1662,
+        "live_draw": 1662,
+        "signed_deficit": 0,
+        "live_index": 414,
+        "state_match": true,
+        "state_sha256": "sha256:c0d2599105a0ba4ee7623f4991a704c0260548dbf7fc47b1041dbfd1e45e2422"
+      },
+      "delta": {
+        "elapsed_ns": 14159803400,
+        "handoff_capture_ns": 57153900,
+        "boundary_capture_ns": 58379600,
+        "main_cycle": 2574712544,
+        "main_kernel100ns": 937500,
+        "main_user100ns": 4375000,
+        "ready_threads": 86,
+        "boundary_threads": 88,
+        "persistent": 86,
+        "created": 2,
+        "exited": 0
+      }
+    },
+    {
+      "run": "d05",
+      "attempts": [
+        {
+          "id": "attempt-01",
+          "observer": true,
+          "ready": true,
+          "probe": true,
+          "status": "PASS",
+          "observer_sha256": "sha256:42cf7a5d615f8be649b52a49155feb19ed5b80742e6e798f8792ac529822e79a",
+          "failure": null,
+          "exception": null,
+          "ready_published": true,
+          "selected": true
+        }
+      ],
+      "selected": "attempt-01",
+      "contract_pass": true,
+      "artifact_sha256": {
+        "observer": "sha256:42cf7a5d615f8be649b52a49155feb19ed5b80742e6e798f8792ac529822e79a",
+        "ready": "sha256:68af1a5796d65e5c4dc7717587bdf364cf6a11fd46826d1ae10fd21a15c353ab",
+        "memory_probe": "sha256:ad81a6755a6be08aa7e8d1a511f021125d95648940ce24e27138d71b2732e4cb"
+      },
+      "semantic": {
+        "mode": "EXACT",
+        "expected_draw": 1662,
+        "live_draw": 1662,
+        "signed_deficit": 0,
+        "live_index": 414,
+        "state_match": true,
+        "state_sha256": "sha256:c0d2599105a0ba4ee7623f4991a704c0260548dbf7fc47b1041dbfd1e45e2422"
+      },
+      "delta": {
+        "elapsed_ns": 14146029100,
+        "handoff_capture_ns": 44245800,
+        "boundary_capture_ns": 46651100,
+        "main_cycle": 2712726017,
+        "main_kernel100ns": 625000,
+        "main_user100ns": 6875000,
+        "ready_threads": 86,
+        "boundary_threads": 88,
+        "persistent": 86,
+        "created": 2,
+        "exited": 0
+      }
+    },
+    {
+      "run": "d06",
+      "attempts": [
+        {
+          "id": "attempt-01",
+          "observer": true,
+          "ready": true,
+          "probe": true,
+          "status": "PASS",
+          "observer_sha256": "sha256:e7c574f6ebe8a95ffb1a2c5aa14525697f5c7c142abf7bf9002891208d95ff2f",
+          "failure": null,
+          "exception": null,
+          "ready_published": true,
+          "selected": true
+        }
+      ],
+      "selected": "attempt-01",
+      "contract_pass": true,
+      "artifact_sha256": {
+        "observer": "sha256:e7c574f6ebe8a95ffb1a2c5aa14525697f5c7c142abf7bf9002891208d95ff2f",
+        "ready": "sha256:9c3672f39c4bc06b6992e7af1edfbae0865917a037a8b1c0711e3747d09563da",
+        "memory_probe": "sha256:2e55bd0c79559c623a4a384e7f3581cfea26b85a8583b9c157e7ab9ea110effe"
+      },
+      "semantic": {
+        "mode": "EXACT",
+        "expected_draw": 1662,
+        "live_draw": 1662,
+        "signed_deficit": 0,
+        "live_index": 414,
+        "state_match": true,
+        "state_sha256": "sha256:c0d2599105a0ba4ee7623f4991a704c0260548dbf7fc47b1041dbfd1e45e2422"
+      },
+      "delta": {
+        "elapsed_ns": 14165695900,
+        "handoff_capture_ns": 53362100,
+        "boundary_capture_ns": 53529800,
+        "main_cycle": 2747790141,
+        "main_kernel100ns": 625000,
+        "main_user100ns": 6562500,
+        "ready_threads": 86,
+        "boundary_threads": 88,
+        "persistent": 86,
+        "created": 2,
+        "exited": 0
+      }
+    },
+    {
+      "run": "d07",
+      "attempts": [
+        {
+          "id": "attempt-01",
+          "observer": true,
+          "ready": true,
+          "probe": true,
+          "status": "PASS",
+          "observer_sha256": "sha256:aa0ac5611a9168dd84397cc7fbee5396847431d3535eb3e0b4667868e5f01247",
+          "failure": null,
+          "exception": null,
+          "ready_published": true,
+          "selected": true
+        }
+      ],
+      "selected": "attempt-01",
+      "contract_pass": true,
+      "artifact_sha256": {
+        "observer": "sha256:aa0ac5611a9168dd84397cc7fbee5396847431d3535eb3e0b4667868e5f01247",
+        "ready": "sha256:54c22aefeb179ea28c95cfee0a6c34a47a2fa8c7fcff113a1b2be58c7dc66508",
+        "memory_probe": "sha256:442b810e15c7cc718bdd15f4bce922df6e3bdac6e96f8832416eff016054bfce"
+      },
+      "semantic": {
+        "mode": "EXACT",
+        "expected_draw": 1662,
+        "live_draw": 1662,
+        "signed_deficit": 0,
+        "live_index": 414,
+        "state_match": true,
+        "state_sha256": "sha256:c0d2599105a0ba4ee7623f4991a704c0260548dbf7fc47b1041dbfd1e45e2422"
+      },
+      "delta": {
+        "elapsed_ns": 14156858200,
+        "handoff_capture_ns": 44632500,
+        "boundary_capture_ns": 45606800,
+        "main_cycle": 2718061982,
+        "main_kernel100ns": 1093750,
+        "main_user100ns": 5937500,
+        "ready_threads": 86,
+        "boundary_threads": 88,
+        "persistent": 86,
+        "created": 2,
+        "exited": 0
+      }
+    },
+    {
+      "run": "d08",
+      "attempts": [
+        {
+          "id": "attempt-01",
+          "observer": true,
+          "ready": false,
+          "probe": false,
+          "status": "FAIL",
+          "observer_sha256": "sha256:5516a3fcef9798f508d6c901f93dec2395f118e3e79fe9f5a006947244502c76",
+          "failure": "synchronizer_exception",
+          "exception": "RuntimeError: main-thread handoff expected suspend count 1, observed 0",
+          "ready_published": false
+        },
+        {
+          "id": "attempt-02",
+          "observer": true,
+          "ready": true,
+          "probe": true,
+          "status": "PASS",
+          "observer_sha256": "sha256:6f2c3b4ba225620310bf127ec1a5e10ac1058062fb0ea3888b6391df1e013710",
+          "failure": null,
+          "exception": null,
+          "ready_published": true,
+          "selected": true
+        }
+      ],
+      "selected": "attempt-02",
+      "contract_pass": true,
+      "artifact_sha256": {
+        "observer": "sha256:6f2c3b4ba225620310bf127ec1a5e10ac1058062fb0ea3888b6391df1e013710",
+        "ready": "sha256:ef901ad506babf7c5978ec1ea4b7e1a5424b716047e4910c9f7295e30d7eb5ea",
+        "memory_probe": "sha256:3db23242c1d09301f15d51a86c39eaa5066d918b5a42801b992e0207498baaa9"
+      },
+      "semantic": {
+        "mode": "EXACT",
+        "expected_draw": 1662,
+        "live_draw": 1662,
+        "signed_deficit": 0,
+        "live_index": 414,
+        "state_match": true,
+        "state_sha256": "sha256:c0d2599105a0ba4ee7623f4991a704c0260548dbf7fc47b1041dbfd1e45e2422"
+      },
+      "delta": {
+        "elapsed_ns": 14169660600,
+        "handoff_capture_ns": 46590700,
+        "boundary_capture_ns": 46702100,
+        "main_cycle": 2716430453,
+        "main_kernel100ns": 0,
+        "main_user100ns": 5781250,
+        "ready_threads": 85,
+        "boundary_threads": 87,
+        "persistent": 85,
+        "created": 2,
+        "exited": 0
+      }
+    },
+    {
+      "run": "d09",
+      "attempts": [
+        {
+          "id": "attempt-01",
+          "observer": true,
+          "ready": true,
+          "probe": true,
+          "status": "PASS",
+          "observer_sha256": "sha256:6384566e626a94d9a2f839991483d61a30cee3c740776fc2b8c302a35cc1adcf",
+          "failure": null,
+          "exception": null,
+          "ready_published": true,
+          "selected": true
+        }
+      ],
+      "selected": "attempt-01",
+      "contract_pass": true,
+      "artifact_sha256": {
+        "observer": "sha256:6384566e626a94d9a2f839991483d61a30cee3c740776fc2b8c302a35cc1adcf",
+        "ready": "sha256:af0f196bed4b5109f53d635577a2a10aa6d120a6769964f0b67136e56009f3a0",
+        "memory_probe": "sha256:70dfec07ef5fa66a78403fff1c73723d2137f10bd340b3cd9c3e7bb8e2a157de"
+      },
+      "semantic": {
+        "mode": "EXACT",
+        "expected_draw": 1662,
+        "live_draw": 1662,
+        "signed_deficit": 0,
+        "live_index": 414,
+        "state_match": true,
+        "state_sha256": "sha256:c0d2599105a0ba4ee7623f4991a704c0260548dbf7fc47b1041dbfd1e45e2422"
+      },
+      "delta": {
+        "elapsed_ns": 14149094800,
+        "handoff_capture_ns": 44744200,
+        "boundary_capture_ns": 45400100,
+        "main_cycle": 3295627505,
+        "main_kernel100ns": 1562500,
+        "main_user100ns": 6718750,
+        "ready_threads": 85,
+        "boundary_threads": 87,
+        "persistent": 85,
+        "created": 2,
+        "exited": 0
+      }
+    },
+    {
+      "run": "d10",
+      "attempts": [
+        {
+          "id": "attempt-01",
+          "observer": true,
+          "ready": true,
+          "probe": true,
+          "status": "PASS",
+          "observer_sha256": "sha256:5a9b3aa067ce56aa910381685abdb34835299d5fb9dab69c5ba5779118012a50",
+          "failure": null,
+          "exception": null,
+          "ready_published": true,
+          "selected": true
+        }
+      ],
+      "selected": "attempt-01",
+      "contract_pass": true,
+      "artifact_sha256": {
+        "observer": "sha256:5a9b3aa067ce56aa910381685abdb34835299d5fb9dab69c5ba5779118012a50",
+        "ready": "sha256:605092011155588bd154fe1cfefa2153ca6fdd668c4657591517a199ce190ceb",
+        "memory_probe": "sha256:72b33224e10ef61cb3d1cc383ab3e40dbb8fa3488e7f11df96a66ea41caeeaff"
+      },
+      "semantic": {
+        "mode": "OUTSIDE_FROZEN_MODE_SURPLUS",
+        "expected_draw": 1662,
+        "live_draw": 1676,
+        "signed_deficit": -14,
+        "live_index": 428,
+        "state_match": false,
+        "state_sha256": "sha256:0abcd3c5469f35b80eede6c795132b0068fa826cc9cfc41f642f88b6c491b7c0"
+      },
+      "delta": {
+        "elapsed_ns": 14167870200,
+        "handoff_capture_ns": 45338400,
+        "boundary_capture_ns": 46719200,
+        "main_cycle": 2640377825,
+        "main_kernel100ns": 625000,
+        "main_user100ns": 5937500,
+        "ready_threads": 85,
+        "boundary_threads": 87,
+        "persistent": 85,
+        "created": 2,
+        "exited": 0
+      }
+    }
+  ],
+  "group_statistics": {
+    "run_order": [
+      "d01",
+      "d02",
+      "d03",
+      "d04",
+      "d05",
+      "d06",
+      "d07",
+      "d08",
+      "d09",
+      "d10"
+    ],
+    "group_count": 9,
+    "raw_aggregate_metrics_retained": true,
+    "groups": [
+      {
+        "address": "0x00000000005024f0",
+        "presence": 10,
+        "positive_runs": 0,
+        "columns": [
+          "cycle",
+          "kernel100ns",
+          "user100ns",
+          "cycle_over_main",
+          "ready",
+          "boundary",
+          "persistent",
+          "created",
+          "exited"
+        ],
+        "rows": [
+          [
+            0,
+            0,
+            0,
+            0.0,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0.0,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0.0,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0.0,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0.0,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0.0,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0.0,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0.0,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0.0,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0.0,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        ],
+        "ratio_summary": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "exact_ratio_range": [
+          0.0,
+          0.0
+        ],
+        "deficit_ratio_range": null,
+        "separator_evaluated": false
+      },
+      {
+        "address": "0x00000000008d0c57",
+        "presence": 10,
+        "positive_runs": 10,
+        "columns": [
+          "cycle",
+          "kernel100ns",
+          "user100ns",
+          "cycle_over_main",
+          "ready",
+          "boundary",
+          "persistent",
+          "created",
+          "exited"
+        ],
+        "rows": [
+          [
+            14945931,
+            0,
+            0,
+            0.005735006843223179,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            12160938,
+            0,
+            0,
+            0.003606571343267343,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            11844194,
+            0,
+            0,
+            0.0036376300840466193,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            14748243,
+            0,
+            0,
+            0.005728112458366925,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            14121597,
+            156250,
+            0,
+            0.005205684949937206,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            14775416,
+            0,
+            0,
+            0.005377199582870183,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            14359227,
+            0,
+            0,
+            0.005282891668803747,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            14741048,
+            0,
+            0,
+            0.005426624482036757,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            12076659,
+            0,
+            0,
+            0.003664449025770587,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            14625237,
+            0,
+            0,
+            0.005539069773092038,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        ],
+        "ratio_summary": [
+          0.003606571343267343,
+          0.005735006843223179,
+          0.004920324021141459
+        ],
+        "exact_ratio_range": [
+          0.003606571343267343,
+          0.005735006843223179
+        ],
+        "deficit_ratio_range": null,
+        "separator_evaluated": false
+      },
+      {
+        "address": "0x00000000598c2f60",
+        "presence": 10,
+        "positive_runs": 10,
+        "columns": [
+          "cycle",
+          "kernel100ns",
+          "user100ns",
+          "cycle_over_main",
+          "ready",
+          "boundary",
+          "persistent",
+          "created",
+          "exited"
+        ],
+        "rows": [
+          [
+            5814469,
+            0,
+            0,
+            0.002231110226904502,
+            3,
+            3,
+            3,
+            0,
+            0
+          ],
+          [
+            5134683,
+            0,
+            0,
+            0.0015227937651324257,
+            3,
+            3,
+            3,
+            0,
+            0
+          ],
+          [
+            4750467,
+            0,
+            312500,
+            0.001458979958659128,
+            3,
+            3,
+            3,
+            0,
+            0
+          ],
+          [
+            4994896,
+            0,
+            0,
+            0.0019399820036764461,
+            3,
+            3,
+            3,
+            0,
+            0
+          ],
+          [
+            4849917,
+            0,
+            0,
+            0.001787838863787474,
+            3,
+            3,
+            3,
+            0,
+            0
+          ],
+          [
+            5997391,
+            0,
+            0,
+            0.0021826233781512064,
+            3,
+            3,
+            3,
+            0,
+            0
+          ],
+          [
+            5247715,
+            0,
+            0,
+            0.0019306826094299125,
+            3,
+            3,
+            3,
+            0,
+            0
+          ],
+          [
+            4946970,
+            0,
+            0,
+            0.0018211288989698276,
+            3,
+            3,
+            3,
+            0,
+            0
+          ],
+          [
+            4760051,
+            0,
+            0,
+            0.0014443534631199165,
+            3,
+            3,
+            3,
+            0,
+            0
+          ],
+          [
+            5387111,
+            0,
+            0,
+            0.0020402803526802077,
+            3,
+            3,
+            3,
+            0,
+            0
+          ]
+        ],
+        "ratio_summary": [
+          0.0014443534631199165,
+          0.002231110226904502,
+          0.0018359773520511048
+        ],
+        "exact_ratio_range": [
+          0.0014443534631199165,
+          0.002231110226904502
+        ],
+        "deficit_ratio_range": null,
+        "separator_evaluated": false
+      },
+      {
+        "address": "0x00000000598dcc20",
+        "presence": 10,
+        "positive_runs": 10,
+        "columns": [
+          "cycle",
+          "kernel100ns",
+          "user100ns",
+          "cycle_over_main",
+          "ready",
+          "boundary",
+          "persistent",
+          "created",
+          "exited"
+        ],
+        "rows": [
+          [
+            200337043,
+            937500,
+            312500,
+            0.07687271622999572,
+            2,
+            2,
+            2,
+            0,
+            0
+          ],
+          [
+            209074316,
+            937500,
+            156250,
+            0.06200520360344087,
+            2,
+            2,
+            2,
+            0,
+            0
+          ],
+          [
+            191534666,
+            156250,
+            312500,
+            0.05882479324295272,
+            2,
+            2,
+            2,
+            0,
+            0
+          ],
+          [
+            209418188,
+            156250,
+            156250,
+            0.08133653152388572,
+            2,
+            2,
+            2,
+            0,
+            0
+          ],
+          [
+            221030777,
+            312500,
+            625000,
+            0.08147921154397952,
+            2,
+            2,
+            2,
+            0,
+            0
+          ],
+          [
+            222065997,
+            312500,
+            468750,
+            0.08081621434131203,
+            2,
+            2,
+            2,
+            0,
+            0
+          ],
+          [
+            214523729,
+            312500,
+            312500,
+            0.07892525277961082,
+            2,
+            2,
+            2,
+            0,
+            0
+          ],
+          [
+            205112641,
+            468750,
+            468750,
+            0.07550815106400958,
+            2,
+            2,
+            2,
+            0,
+            0
+          ],
+          [
+            230929845,
+            0,
+            312500,
+            0.07007158565391328,
+            2,
+            2,
+            2,
+            0,
+            0
+          ],
+          [
+            200161267,
+            0,
+            156250,
+            0.0758078124671419,
+            2,
+            2,
+            2,
+            0,
+            0
+          ]
+        ],
+        "ratio_summary": [
+          0.05882479324295272,
+          0.08147921154397952,
+          0.07416474724502423
+        ],
+        "exact_ratio_range": [
+          0.05882479324295272,
+          0.08147921154397952
+        ],
+        "deficit_ratio_range": null,
+        "separator_evaluated": false
+      },
+      {
+        "address": "0x0000000061d5abe8",
+        "presence": 10,
+        "positive_runs": 10,
+        "columns": [
+          "cycle",
+          "kernel100ns",
+          "user100ns",
+          "cycle_over_main",
+          "ready",
+          "boundary",
+          "persistent",
+          "created",
+          "exited"
+        ],
+        "rows": [
+          [
+            2729982114,
+            3593750,
+            3906250,
+            1.0475403710660032,
+            67,
+            67,
+            67,
+            0,
+            0
+          ],
+          [
+            2741936497,
+            1718750,
+            4375000,
+            0.8131765489750086,
+            67,
+            67,
+            67,
+            0,
+            0
+          ],
+          [
+            2643524014,
+            3593750,
+            3437500,
+            0.8118882957528454,
+            67,
+            67,
+            67,
+            0,
+            0
+          ],
+          [
+            2708793509,
+            2656250,
+            4218750,
+            1.0520760911009102,
+            67,
+            67,
+            67,
+            0,
+            0
+          ],
+          [
+            2726347559,
+            2187500,
+            5000000,
+            1.005021348235921,
+            67,
+            67,
+            67,
+            0,
+            0
+          ],
+          [
+            2775494874,
+            2187500,
+            4687500,
+            1.0100825505509374,
+            67,
+            67,
+            67,
+            0,
+            0
+          ],
+          [
+            2747680722,
+            2812500,
+            4375000,
+            1.0108970068365424,
+            67,
+            67,
+            67,
+            0,
+            0
+          ],
+          [
+            2741244720,
+            3593750,
+            3593750,
+            1.0091348802884297,
+            67,
+            67,
+            67,
+            0,
+            0
+          ],
+          [
+            2727630408,
+            4687500,
+            2968750,
+            0.8276513058170997,
+            67,
+            67,
+            67,
+            0,
+            0
+          ],
+          [
+            2708049056,
+            3750000,
+            4531250,
+            1.0256293740839912,
+            67,
+            67,
+            67,
+            0,
+            0
+          ]
+        ],
+        "ratio_summary": [
+          0.8118882957528454,
+          1.0520760911009102,
+          0.9613097772707688
+        ],
+        "exact_ratio_range": [
+          0.8118882957528454,
+          1.0520760911009102
+        ],
+        "deficit_ratio_range": null,
+        "separator_evaluated": false
+      },
+      {
+        "address": "0x0000000075e58b60",
+        "presence": 10,
+        "positive_runs": 10,
+        "columns": [
+          "cycle",
+          "kernel100ns",
+          "user100ns",
+          "cycle_over_main",
+          "ready",
+          "boundary",
+          "persistent",
+          "created",
+          "exited"
+        ],
+        "rows": [
+          [
+            1626757,
+            0,
+            0,
+            0.0006242142110291563,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1505737,
+            0,
+            0,
+            0.00044655666484750927,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1639537,
+            0,
+            0,
+            0.0005035403097169417,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            2908431,
+            0,
+            0,
+            0.0011296138696250512,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            2930398,
+            0,
+            0,
+            0.001080241049643754,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1459807,
+            0,
+            0,
+            0.0005312658263883042,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            2381622,
+            0,
+            0,
+            0.0008762206365314593,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1397900,
+            0,
+            0,
+            0.0005146091623498671,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            2442331,
+            0,
+            0,
+            0.0007410822358699788,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1409483,
+            0,
+            0,
+            0.0005338186780143861,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        ],
+        "ratio_summary": [
+          0.00044655666484750927,
+          0.0011296138696250512,
+          0.0006981162644016408
+        ],
+        "exact_ratio_range": [
+          0.00044655666484750927,
+          0.0011296138696250512
+        ],
+        "deficit_ratio_range": null,
+        "separator_evaluated": false
+      },
+      {
+        "address": "0x0000000075e58d10",
+        "presence": 10,
+        "positive_runs": 10,
+        "columns": [
+          "cycle",
+          "kernel100ns",
+          "user100ns",
+          "cycle_over_main",
+          "ready",
+          "boundary",
+          "persistent",
+          "created",
+          "exited"
+        ],
+        "rows": [
+          [
+            95392689,
+            312500,
+            312500,
+            0.03660379030309055,
+            2,
+            2,
+            2,
+            0,
+            0
+          ],
+          [
+            114978873,
+            0,
+            0,
+            0.03409930290270169,
+            2,
+            2,
+            2,
+            0,
+            0
+          ],
+          [
+            134784714,
+            625000,
+            0,
+            0.04139555047105945,
+            2,
+            2,
+            2,
+            0,
+            0
+          ],
+          [
+            104834907,
+            156250,
+            312500,
+            0.040717130634370345,
+            2,
+            2,
+            2,
+            0,
+            0
+          ],
+          [
+            90085876,
+            781250,
+            468750,
+            0.03320861577448424,
+            2,
+            2,
+            2,
+            0,
+            0
+          ],
+          [
+            90539585,
+            0,
+            0,
+            0.03294996355400345,
+            2,
+            2,
+            2,
+            0,
+            0
+          ],
+          [
+            89998008,
+            0,
+            0,
+            0.03311109481534995,
+            2,
+            2,
+            2,
+            0,
+            0
+          ],
+          [
+            106080641,
+            312500,
+            312500,
+            0.03905148423102294,
+            2,
+            2,
+            2,
+            0,
+            0
+          ],
+          [
+            95556056,
+            0,
+            0,
+            0.02899479867036733,
+            2,
+            2,
+            2,
+            0,
+            0
+          ],
+          [
+            96364832,
+            0,
+            0,
+            0.03649660707175497,
+            2,
+            2,
+            2,
+            0,
+            0
+          ]
+        ],
+        "ratio_summary": [
+          0.02899479867036733,
+          0.04139555047105945,
+          0.03566283384282049
+        ],
+        "exact_ratio_range": [
+          0.02899479867036733,
+          0.04139555047105945
+        ],
+        "deficit_ratio_range": null,
+        "separator_evaluated": false
+      },
+      {
+        "address": "0x0000000075f0f960",
+        "presence": 10,
+        "positive_runs": 9,
+        "columns": [
+          "cycle",
+          "kernel100ns",
+          "user100ns",
+          "cycle_over_main",
+          "ready",
+          "boundary",
+          "persistent",
+          "created",
+          "exited"
+        ],
+        "rows": [
+          [
+            26361,
+            0,
+            0,
+            1.0115162139729281e-05,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            38342,
+            0,
+            0,
+            1.1371093121563195e-05,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            48727,
+            0,
+            0,
+            1.4965205830412742e-05,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            23165,
+            0,
+            0,
+            8.997120884031394e-06,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            26360,
+            0,
+            0,
+            9.717162675039143e-06,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            51123,
+            156250,
+            0,
+            1.8605132625373956e-05,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            38742,
+            0,
+            0,
+            1.4253538093157436e-05,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            25961,
+            0,
+            0,
+            9.557027300783245e-06,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            46331,
+            0,
+            0,
+            1.4058324227998577e-05,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0.0,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        ],
+        "ratio_summary": [
+          0.0,
+          1.8605132625373956e-05,
+          1.1163976689808897e-05
+        ],
+        "exact_ratio_range": [
+          8.997120884031394e-06,
+          1.8605132625373956e-05
+        ],
+        "deficit_ratio_range": null,
+        "separator_evaluated": false
+      },
+      {
+        "address": "0x00000000770668e0",
+        "presence": 10,
+        "positive_runs": 10,
+        "columns": [
+          "cycle",
+          "kernel100ns",
+          "user100ns",
+          "cycle_over_main",
+          "ready",
+          "boundary",
+          "persistent",
+          "created",
+          "exited"
+        ],
+        "rows": [
+          [
+            5482161,
+            0,
+            0,
+            0.0021035980194643762,
+            7,
+            9,
+            7,
+            2,
+            0
+          ],
+          [
+            4243628,
+            0,
+            0,
+            0.001258533440125006,
+            7,
+            9,
+            7,
+            2,
+            0
+          ],
+          [
+            4235638,
+            0,
+            0,
+            0.001300863884358113,
+            7,
+            9,
+            7,
+            2,
+            0
+          ],
+          [
+            4214068,
+            0,
+            0,
+            0.0016367139740784981,
+            7,
+            9,
+            7,
+            2,
+            0
+          ],
+          [
+            4183311,
+            0,
+            0,
+            0.0015421059752382654,
+            7,
+            9,
+            7,
+            2,
+            0
+          ],
+          [
+            5890751,
+            0,
+            0,
+            0.0021438140097031523,
+            7,
+            9,
+            7,
+            2,
+            0
+          ],
+          [
+            4155349,
+            0,
+            0,
+            0.001528791112019608,
+            7,
+            9,
+            7,
+            2,
+            0
+          ],
+          [
+            3607370,
+            156250,
+            0,
+            0.0013279817254353244,
+            6,
+            8,
+            6,
+            2,
+            0
+          ],
+          [
+            4110215,
+            0,
+            0,
+            0.0012471721982427136,
+            6,
+            8,
+            6,
+            2,
+            0
+          ],
+          [
+            4984912,
+            0,
+            0,
+            0.0018879540468796354,
+            6,
+            8,
+            6,
+            2,
+            0
+          ]
+        ],
+        "ratio_summary": [
+          0.0012471721982427136,
+          0.0021438140097031523,
+          0.0015977528385544692
+        ],
+        "exact_ratio_range": [
+          0.0012471721982427136,
+          0.0021438140097031523
+        ],
+        "deficit_ratio_range": null,
+        "separator_evaluated": false
+      }
+    ]
+  },
+  "host_integrity": {
+    "expected_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "snapshot_count": 12,
+    "all_roots_match": true,
+    "all_nonces_match": true,
+    "runtime_process_count": 0,
+    "snapshots": [
+      {
+        "file": "handoff-boundary-runtime-delta-correlation-host-pre-v18.json",
+        "sha256": "sha256:2cb0c9a91760bda37b48415ec209826046d7608a12419e5de1c74405477fa452",
+        "phase": "handoff-boundary-runtime-delta-correlation-host-pre-v18"
+      },
+      {
+        "file": "handoff-boundary-runtime-delta-correlation-host-after-d01-v18.json",
+        "sha256": "sha256:e88e2da126f298506a6ec5d79996b39c49e0d7a6ee5c1129eb96694295c9d47e",
+        "phase": "handoff-boundary-runtime-delta-correlation-host-after-d01-v18"
+      },
+      {
+        "file": "handoff-boundary-runtime-delta-correlation-host-after-d02-v18.json",
+        "sha256": "sha256:48a1959da1101ddf5e7e66c353f26f6a18089f5480621ea7bcf97d7d1334ffe4",
+        "phase": "handoff-boundary-runtime-delta-correlation-host-after-d02-v18"
+      },
+      {
+        "file": "handoff-boundary-runtime-delta-correlation-host-after-d03-v18.json",
+        "sha256": "sha256:3d46895489c012bb1f12ca0a6ca1b6b678071c34eec7c39d9ba4e162410c5c44",
+        "phase": "handoff-boundary-runtime-delta-correlation-host-after-d03-v18"
+      },
+      {
+        "file": "handoff-boundary-runtime-delta-correlation-host-after-d04-v18.json",
+        "sha256": "sha256:b832f8407522ed232295ea89cc44934cd45b135b1dcb8d6fc957b93dd29a64ae",
+        "phase": "handoff-boundary-runtime-delta-correlation-host-after-d04-v18"
+      },
+      {
+        "file": "handoff-boundary-runtime-delta-correlation-host-after-d05-v18.json",
+        "sha256": "sha256:f4cff9f0d02cb7a45bd5e5653acfc1c897dbaa54d57c2c1174b0196faf77d98b",
+        "phase": "handoff-boundary-runtime-delta-correlation-host-after-d05-v18"
+      },
+      {
+        "file": "handoff-boundary-runtime-delta-correlation-host-after-d06-v18.json",
+        "sha256": "sha256:03a7880f17500d4fad4db4713d9036a15caed035d1f7ef748a89814ea2a8cf9c",
+        "phase": "handoff-boundary-runtime-delta-correlation-host-after-d06-v18"
+      },
+      {
+        "file": "handoff-boundary-runtime-delta-correlation-host-after-d07-v18.json",
+        "sha256": "sha256:e0218b6ca39872073b9fdf5abde93312fd6f0f4f28edab5c2d82af9352eb8293",
+        "phase": "handoff-boundary-runtime-delta-correlation-host-after-d07-v18"
+      },
+      {
+        "file": "handoff-boundary-runtime-delta-correlation-host-after-d08-v18.json",
+        "sha256": "sha256:e12221ab97622b73a2535482fca7d8140a8cad01f92cb18ae06fb900e42fb6cf",
+        "phase": "handoff-boundary-runtime-delta-correlation-host-after-d08-v18"
+      },
+      {
+        "file": "handoff-boundary-runtime-delta-correlation-host-after-d09-v18.json",
+        "sha256": "sha256:72fe64752b5132425c7ff98eb23900a8a0f66426a5f38a230baf70e96737ba2e",
+        "phase": "handoff-boundary-runtime-delta-correlation-host-after-d09-v18"
+      },
+      {
+        "file": "handoff-boundary-runtime-delta-correlation-host-after-d10-v18.json",
+        "sha256": "sha256:134f521062ea918607373b036c97b7dd7ae509d37a84f99b00ad1666f69c7916",
+        "phase": "handoff-boundary-runtime-delta-correlation-host-after-d10-v18"
+      },
+      {
+        "file": "handoff-boundary-runtime-delta-correlation-host-post-v18.json",
+        "sha256": "sha256:fb10b8576b97545faf0e6b0019d1208b7673e0c22dcbc8415ef9dec451039c79",
+        "phase": "handoff-boundary-runtime-delta-correlation-host-post-v18"
+      }
+    ]
+  },
+  "operational_note": {
+    "run": "d08",
+    "mistyped_nonce_snapshot_rejected_before_output": true,
+    "correct_snapshot_captured_once": true,
+    "state_mutation": false,
+    "semantic_run_repeated": false
+  },
+  "conclusion": {
+    "descriptive": "9/10 selected natural boundaries exactly matched draw 1662 and source state; one valid run was 14 draws ahead.",
+    "pc_golden_credit": false,
+    "fidelity_gate_change": false,
+    "transport_change": false,
+    "large_scale_training_start": false
+  },
+  "non_authorizations": [
+    "pc_golden_credit",
+    "fidelity_gate_change",
+    "formal_transport_change",
+    "large_scale_training_start"
+  ]
+}
+

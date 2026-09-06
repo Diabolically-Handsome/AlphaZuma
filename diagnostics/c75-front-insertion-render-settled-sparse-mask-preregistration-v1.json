@@ -1,0 +1,110 @@
+{
+  "schema": "zuma-rl.pc-front-insertion-render-settled-sparse-mask-preregistration",
+  "version": 1,
+  "id": "c75-front-insertion-u3664-u3684-render-settled-sparse-mask-holdout",
+  "created_utc": "2026-08-03T19:06:46Z",
+  "status": "FROZEN_BEFORE_PREPARE_AND_COLLECTION",
+  "classification": "fresh-independent-target-holdout-after-consumed-c74-method-design",
+  "gate_effect": "none_until_pc_golden_and_source_bound_mechanism_audit_both_pass",
+  "consumed_design_evidence": {
+    "c74_failure_audit": {
+      "path": "diagnostics/c74-front-insertion-render-settled-visual-acceptance-failure-audit-v1.json",
+      "sha256": "sha256:7bad7905b8f2077cc6a7ba4756e6d0eacaafc5099ac5a6fa0aa11d95a2eca808"
+    },
+    "c74_sparse_target_report": {
+      "path": "D:/ZumaGolden/diagnostics/c74-render-settled-sparse-target-verification-v1.json",
+      "sha256": "sha256:cb60e121b0052ff54cff071e038a3090d09eb9d8034db478f27283e1f2b9fa5e",
+      "status": "FAIL"
+    },
+    "use": "threshold_and_method_design_only",
+    "c74_data_reuse_for_c75_acceptance_forbidden": true
+  },
+  "fresh_outputs": {
+    "session_root": "D:/ZumaGolden/campaign-c75-natural-win-v8-front-insertion-sparse-mask-u3569-u3710",
+    "session_nonce": "cbb8fdac78e041f98a04cd730fed8a41",
+    "case_root": "D:/ZumaGolden/cases/jungle2-natural-front-insertion-c75-sparse-mask-provenance-v1",
+    "case_id": "jungle2_natural_front_insertion_c75_sparse_mask_provenance_v1",
+    "target_report": "D:/ZumaGolden/diagnostics/c75-render-settled-sparse-target-verification-v1.json",
+    "verified_absent_at_freeze": true
+  },
+  "frozen_collection_recipe": {
+    "reference_plan": "D:/ZumaGolden/campaign-c74-natural-win-v8-front-insertion-render-settled-late-arm-u3569-u3710/plan.json",
+    "reference_plan_sha256": "sha256:828bdc4364f0f6a6bed83495b9c13bb8576682254868d71eb395468cad2ac227",
+    "only_allowed_recursive_plan_difference": "session_nonce",
+    "required_plan_difference_count": 1,
+    "required_host_pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "framework_state_poll_arm_window": [
+      3566,
+      3568
+    ],
+    "capture_wait_update": 3569,
+    "render_settle_delay_ns": 400000,
+    "gameplay_mtrand_sync": null,
+    "maximum_hits": 100000
+  },
+  "frozen_sparse_mask_calibration": {
+    "preregistration": {
+      "path": "diagnostics/c65-render-transport-preregistration-v1.json",
+      "sha256": "sha256:e28cf5ce21428cc64fca82e822d818bb9797e743511f58d660efeaf703b5d8cb"
+    },
+    "execution_binding": {
+      "path": "diagnostics/c66-render-transport-execution-binding-v1.json",
+      "sha256": "sha256:8fabe40f33cc8cc0e0bc03e807ed9a9a796845dbfee4ef7ad88757d5642174e6"
+    },
+    "independent_holdout": {
+      "path": "D:/ZumaGolden/diagnostics/c66-render-transport-holdout-v1.json",
+      "sha256": "sha256:2c01c7f14c7e636db2fd06d904a9beb927de0f09e828d9bba85dd9e0c98481dd",
+      "required_status": "PASS"
+    },
+    "width": 800,
+    "height": 600,
+    "pixel_count": 66,
+    "mask_sha256": "sha256:5e88cfacf441a56a5de6636fd3fe1259c9c844fc8494a992655d92e3a970530b",
+    "maximum_mask_pixel_mismatches_each_update": 66,
+    "maximum_bgr_channel_delta_each_update": 3,
+    "require_exact_alpha_inside_mask": true,
+    "require_exact_bgra_outside_mask": true,
+    "arbitrary_or_derived_from_c75_mask_forbidden": true
+  },
+  "frozen_target_contract": {
+    "required_update_range": [
+      3664,
+      3684
+    ],
+    "required_update_count": 21,
+    "require_a_render_settled_candidate_in_each_run_for_every_update": true,
+    "require_monotonic_frame_pair_for_every_update": true,
+    "missing_update_or_event_bracket_substitution_forbidden": true,
+    "posthoc_range_threshold_mask_or_settle_delay_change_forbidden": true
+  },
+  "frozen_target_verifier": {
+    "path": "tools/verify_pc_render_settled_target.py",
+    "sha256": "sha256:ce52edccce714dc9f7b7a86ef990afcf3ca717cd7faa183b571d2972bcd3fe03",
+    "required_report_status": "PASS",
+    "arguments": {
+      "target_start": 3664,
+      "target_end": 3684,
+      "maximum_mask_pixel_mismatches": 66,
+      "maximum_bgr_channel_delta": 3
+    }
+  },
+  "acceptance": {
+    "require_both_strict_replays_complete_without_boundary_failures": true,
+    "require_actual_arm_update_inside_3566_through_3568_each_run": true,
+    "require_poll_quality_contract_each_run": true,
+    "require_distinct_process_instances": true,
+    "require_exact_protocol_and_host_restore": true,
+    "require_all_21_target_updates_pass_frozen_sparse_mask_contract": true,
+    "require_pc_golden_packager_to_independently_recompute_sparse_mask_contract": true,
+    "require_pc_golden_verifier_status": "PASS",
+    "require_source_bound_front_insertion_mechanism_audit": "PASS"
+  },
+  "decision_rules": {
+    "failed_missed_or_incomplete_c75_session_is_immutable": true,
+    "c75_may_not_be_retried_in_place": true,
+    "front_insertion_gate_credit_only_after_all_acceptance_requirements_pass": true,
+    "core_pc_golden_per_tick_presentation_requirement_remains_unchanged": true
+  }
+}

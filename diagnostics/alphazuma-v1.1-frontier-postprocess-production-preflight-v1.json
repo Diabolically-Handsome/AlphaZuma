@@ -1,0 +1,36 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-frontier-postprocess-production-preflight",
+  "version": 1,
+  "status": "VALID",
+  "created_utc": "2026-08-14T02:00:20.2751080+00:00",
+  "mode": "validate_only",
+  "master_preregistration": {
+    "path": "diagnostics/alphazuma-v1.1-frontier-postprocess-s51081301-preregistration-v1.json",
+    "sha256": "sha256:3dc8a51563c763ef46b3c3415a6e4da9b5430ab3a19b586e5e0b95b98b0ffc01"
+  },
+  "frozen_identities_revalidated": {
+    "controller_sha256": "sha256:0f97b9d143f9d33de935311d11074ea4f68cb4b3027a412ed70b52b76ff99689",
+    "evaluator_sha256": "sha256:d0011f9ad5c6837315007a7fb31e128fb315e4baddb45959c5f3b98d11a6a7e3",
+    "summarizer_sha256": "sha256:e7096d86aa06cb26abc781977ec4448a7715a6bcb7023d0596870b3baf7e00a6",
+    "baseline_model_sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579",
+    "training_preregistrations": 7
+  },
+  "portfolio": {
+    "formal_routes": 7,
+    "candidate_count": 15,
+    "selection_levels": 8,
+    "selection_attempts_per_level_per_model": 4,
+    "selection_unique_seeds": 32,
+    "selection_total_attempt_records": 480,
+    "final_blind_levels": 17,
+    "final_blind_attempts_per_level_per_model": 16,
+    "final_blind_unique_seeds": 272,
+    "final_blind_models": 2,
+    "final_blind_total_attempt_records": 544
+  },
+  "validation_command": "TMPDIR=/tmp TEMP=/tmp .venv/bin/python tools/run_alphazuma_v11_frontier_postprocess.py --master-preregistration diagnostics/alphazuma-v1.1-frontier-postprocess-s51081301-preregistration-v1.json --original-root /mnt/d/SteamLibrary/steamapps/common/Zuma*Revenge --output-root /mnt/d/ZumaTraining/alphazuma-v1.1-frontier-postprocess-validate-only-unused --validate-only",
+  "output_root_created": false,
+  "policy_inference_performed": false,
+  "formal_seed_consumption": "none",
+  "training_or_evaluation_semantics_changed": false
+}

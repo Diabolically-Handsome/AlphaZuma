@@ -1,0 +1,180 @@
+{
+ "schema": "zuma-rl.alphazuma-55-macro-ppo-run-outcome",
+ "version": 1,
+ "run_id": "macro-ppo-jungle1",
+ "preregistration": {
+  "path": "/mnt/c/Users/Laure/Documents/\u7956\u739b/diagnostics/alphazuma-55-macro-ppo-jungle1-s99081683-preregistration-v1.json",
+  "sha256": "sha256:6f9097d6494f798d45300a7e5f9abb3d5dc52b59432b9b7f34f22711f55ae100"
+ },
+ "status": "COMPLETED_FULL_BUDGET",
+ "decision": "FAIL",
+ "decision_detail": "tier_1 (any autonomous Jungle1 win at any checkpoint eval) NOT reached: 0/8 wins on the final 8-seed eval of the final model and 0/1 at every per-checkpoint eval (eval-ckpt1M..9M). tier_0 fidelity HELD throughout: shots_on_target_rate 1.0 on all 9 per-checkpoint evals and all 8 final-eval seeds, and the policy fired 24-61 shots/episode (no fire collapse; the early-stop rule never triggered).",
+ "completed_utc": "2026-08-18T09:44:00.921524+00:00",
+ "completed_honestly": "ran the full preregistered 10M-step budget with no early stop: actual_steps 10,004,480, stop_reason REQUESTED_TIMESTEPS_REACHED at 2026-08-18T09:44:00Z, ahead of the 2026-08-18T11:05:00Z wall-clock backstop",
+ "reason": "reward misalignment (score-shaping farm attractor), per the run-3 draft lineage: score_progress_reward_cap 10.0 lets a shaped truncation return rival the +10 win bonus, so the policy farmed score without finishing. The policy is mechanically healthy (fires well, shots_on_target_rate 1.0 everywhere) but training wins effectively froze while score climbed; every eval is winless. The successor lowers the cap to 1.0 so finishing strictly dominates farming in return space.",
+ "training_status_summary": {
+  "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/training_status.json",
+  "sha256": "sha256:2de3b1540ac9f739f61e2a53ea465c46401ba3f9fb63dc8e6377ce14b9b41820",
+  "timesteps": 10004480,
+  "episodes": 8728,
+  "wins": 17,
+  "losses": 5302,
+  "truncations": 3409,
+  "observed_win_rate": 0.0019477543538038496,
+  "recent_win_rate": 0.0,
+  "recent_episodes_window": 64,
+  "stall_description": "the cumulative training win counter ended at 17 over 8,728 episodes (observed_win_rate ~0.0019) with recent_win_rate 0.0 over the final 64-episode window; the r3 draft (draft_utc 2026-08-18T05:26:24Z) recorded the counter frozen at 16 over 1,700+ episodes mid-run, so exactly one further win occurred in the remaining ~4.3 hours of training. The exact timestep at which the counter froze is NOT derivable from the on-disk artifacts: curriculum_history.jsonl holds only the training_start and training_end rows (wins {} -> {Jungle1: 17}) and the tensorboard log has no win-count scalar (tags are time/fps, rollout/*, train/* only)."
+ },
+ "evidence": {
+  "final_8seed_eval_summary": {
+   "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-final-8seed/summary.json",
+   "sha256": "sha256:a9ce3e434e7e3b88d957f6a72fc3003506c204e99421a9cd631851e13578cf42"
+  },
+  "final_8seed_completions": [
+   {
+    "seed": 1400920000,
+    "outcome": "loss",
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-final-8seed/seed-1400920000/completion.json",
+    "sha256": "sha256:f70b9fc0ba1bdc18f2e32b126a1929fda6a74e7ef12aa377b5d9b86d831265fe"
+   },
+   {
+    "seed": 1400920001,
+    "outcome": "loss",
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-final-8seed/seed-1400920001/completion.json",
+    "sha256": "sha256:29bb00272402bff5f3559ff9c4ac841285068f712c4486e5824f0652d75eff73"
+   },
+   {
+    "seed": 1400920002,
+    "outcome": "loss",
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-final-8seed/seed-1400920002/completion.json",
+    "sha256": "sha256:f7ed6ec49a80d9d46b7cb0a862dfb7b1ea6286706283e58d5ea4b16d438590f4"
+   },
+   {
+    "seed": 1400920003,
+    "outcome": "loss",
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-final-8seed/seed-1400920003/completion.json",
+    "sha256": "sha256:9014322f884bd47456ae093e2aaac22bd5a6d3b7e70d9de5bc7d6daf3ec29713"
+   },
+   {
+    "seed": 1400920004,
+    "outcome": "loss",
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-final-8seed/seed-1400920004/completion.json",
+    "sha256": "sha256:44e1105ca81e12ae3dba80284de30688e5b0a967e2622264803180907ec8f34a"
+   },
+   {
+    "seed": 1400920005,
+    "outcome": "loss",
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-final-8seed/seed-1400920005/completion.json",
+    "sha256": "sha256:ed48f0f0652638221e6ebb32d984cca221f05287f20b5721b3067747b4dc71b2"
+   },
+   {
+    "seed": 1400920006,
+    "outcome": "loss",
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-final-8seed/seed-1400920006/completion.json",
+    "sha256": "sha256:fde69ee0e28417130e76919c6b21c5d71f103d449eb1fe075425c06b43ecbf72"
+   },
+   {
+    "seed": 1400920007,
+    "outcome": "loss",
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-final-8seed/seed-1400920007/completion.json",
+    "sha256": "sha256:d5e2fff69e5368ac2398dbc72e1da19ce4a1ea15872f0cbd4232d39777c75481"
+   }
+  ],
+  "per_checkpoint_eval_completions": [
+   {
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-ckpt1M",
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-ckpt1M/completion.json",
+    "sha256": "sha256:6b891f5a5cb48bc0100f2d0014bafa0f540a503722b9bc9c5ea8dbbc55804fff",
+    "wins": 0,
+    "attempts": 1,
+    "shots_on_target_rate": 1.0
+   },
+   {
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-ckpt2M",
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-ckpt2M/completion.json",
+    "sha256": "sha256:98fb5fd88122ff0ce4fd762c0356ae4e59b7a99023a44226f9d41951e3624a5f",
+    "wins": 0,
+    "attempts": 1,
+    "shots_on_target_rate": 1.0
+   },
+   {
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-ckpt3M",
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-ckpt3M/completion.json",
+    "sha256": "sha256:fc7484ba19fbbdf862ef72d4952aed3138efe39c6259291373f68ad22b8608b9",
+    "wins": 0,
+    "attempts": 1,
+    "shots_on_target_rate": 1.0
+   },
+   {
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-ckpt4M",
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-ckpt4M/completion.json",
+    "sha256": "sha256:de23f48f8d331388453ef5e695aa86b2213e07db8e04139bfb4fddeb0e398b57",
+    "wins": 0,
+    "attempts": 1,
+    "shots_on_target_rate": 1.0
+   },
+   {
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-ckpt5M",
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-ckpt5M/completion.json",
+    "sha256": "sha256:85185d2af3cf97939ffd3ca9aa68d7463a40804574a2612cd770d55959b5a065",
+    "wins": 0,
+    "attempts": 1,
+    "shots_on_target_rate": 1.0
+   },
+   {
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-ckpt6M",
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-ckpt6M/completion.json",
+    "sha256": "sha256:bab2cc9434936f6e310d8d39f4768daa10cf41e953e786ce1abcee1699c587d8",
+    "wins": 0,
+    "attempts": 1,
+    "shots_on_target_rate": 1.0
+   },
+   {
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-ckpt7M",
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-ckpt7M/completion.json",
+    "sha256": "sha256:2dada9c063df5586d2130fe76625b542a73281796adb7a5e1c28272b9d6b165d",
+    "wins": 0,
+    "attempts": 1,
+    "shots_on_target_rate": 1.0
+   },
+   {
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-ckpt8M",
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-ckpt8M/completion.json",
+    "sha256": "sha256:fdbb87c62a729e266d6b7c4f2471b61e3773367c210860a94108c3444b7e83de",
+    "wins": 0,
+    "attempts": 1,
+    "shots_on_target_rate": 1.0
+   },
+   {
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-ckpt9M",
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/eval-ckpt9M/completion.json",
+    "sha256": "sha256:36b09628748c028a66ecd6d499b2c0023ead2088c517b85453a22f712abf99c2",
+    "wins": 0,
+    "attempts": 1,
+    "shots_on_target_rate": 1.0
+   }
+  ],
+  "training_completion": {
+   "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/completion.json",
+   "sha256": "sha256:b5189809e04789765410814fe695da5995b68393549d2482873e04914ae68e5d",
+   "status": "COMPLETE",
+   "stop_reason": "REQUESTED_TIMESTEPS_REACHED",
+   "actual_steps": 10004480
+  },
+  "final_model": {
+   "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-s99081683-v1/final_model.zip",
+   "sha256": "sha256:5bd94570c446075cd3b22d8530b0314bfe1372a5c629721aae30300e24cfea83"
+  }
+ },
+ "successor": {
+  "run_id": "macro-ppo-jungle1-r3",
+  "seed": 99081685,
+  "draft_preregistration": {
+   "path": "/mnt/c/Users/Laure/Documents/\u7956\u739b/diagnostics/alphazuma-55-macro-ppo-jungle1-r3-s99081685-DRAFT-preregistration.json",
+   "sha256": "sha256:e84f5802ee1467015e8d57aef3183416ac12aaa0af4cc525e8d073c0bd994c98"
+  },
+  "frozen_preregistration_path": "/mnt/c/Users/Laure/Documents/\u7956\u739b/diagnostics/alphazuma-55-macro-ppo-jungle1-r3-s99081685-preregistration-v1.json",
+  "note": "frozen in the same conclusion pass as this receipt; the frozen document binds this receipt's sha256 in its lineage, so only the draft sha256 can be bound here"
+ },
+ "formal_seed_consumption": false
+}

@@ -1,0 +1,33 @@
+{
+  "schema": "zuma-rl.alphazuma-55-waiting-switch-supersession-prestop",
+  "version": 1,
+  "status": "PASS",
+  "recorded_utc": "2026-08-15T07:25:41.173213+00:00",
+  "superseder": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/supersede_alphazuma_55_waiting_switch.py",
+    "sha256": "sha256:68d18829784f57d7d44f73e1f3aecba55f821ebf3b36ba85ff7a4c68e5090630"
+  },
+  "old_switch": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-switch-s98081501-preregistration-v1.json",
+    "sha256": "sha256:93e194a39350e957cf7f3cb555cefc358c1e9f90f3d9de6db9afb14755e07087"
+  },
+  "new_switch": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-switch-capacity-safe-s99081505-preregistration-v1.json",
+    "sha256": "sha256:c868e3c03812dc6614b3d0b8cd291c907dad4ecedba171ffb996b9878263ed93"
+  },
+  "old_switch_status": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/postprocess-switch-s98081501-v1/controller_status.json",
+    "sha256": "sha256:723d337f4219b6bad826ac5ed5d01e59822d8a5e8068c06fae389e1292ce1301"
+  },
+  "formal_controller_status": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/postprocess-s89081702-v1/controller_status.json",
+    "sha256": "sha256:5b8ddf28aae04b2c63bd8d15b48861e7e43892af983feae5eb592022e834674e"
+  },
+  "formal_controller_phase": "WAITING_FOR_TRAINING",
+  "formal_seed_consumption": false,
+  "prospective_outputs_absent": true,
+  "old_process": {
+    "pid": 43007,
+    "command": ".venv/bin/python tools/switch_alphazuma_55_waiting_deployment.py --preregistration diagnostics/alphazuma-55-postprocess-switch-s98081501-preregistration-v1.json"
+  }
+}

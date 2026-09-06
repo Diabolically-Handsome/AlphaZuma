@@ -1,0 +1,159 @@
+{
+  "schema": "zuma-rl.alphazuma-55-dagger-source-selection-plan",
+  "version": 1,
+  "status": "FROZEN_BEFORE_POLAR_CANDIDATE_OUTCOMES",
+  "created_utc": "2026-08-15T12:48:41.601104+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "objective": "Choose the polar source for a student-visited exact-teacher DAgger repair without adapting the choice rule to candidate outcomes.",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "polar_probe": {
+    "plan": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-reanchor-probe-s99081527-plan-v1.json",
+      "sha256": "sha256:46022eab6f4adb4220a99b8e32923efee2969aed9375acc09b4bd76eaa25536c"
+    },
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-reanchor-probe-s99081527-preregistration-v1.json",
+      "sha256": "sha256:86a5c862bb1bfe5053c4c2d0779c62d7c24510ad70d84fe60e9745dc6403c7e8"
+    },
+    "models_manifest": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-reanchor-probe-s99081527-models-v1.json",
+      "sha256": "sha256:490e4b888d84bcfa9a2795288ab91738d99b9956e5f2b792b482bb7b41b1961d"
+    },
+    "expected_matrix_path": "/mnt/d/ZumaTraining/alphazuma-55-polar-reanchor-probe-s99081527-v1/matrix-shard-00-of-01.json",
+    "expected_models_in_order": [
+      {
+        "id": "settled-v3-multiseed-final",
+        "sha256": "sha256:ced0d6196fa27317e198d6c7a946fd21c9ed18d4d9574a02ea93ab8b4bcd116c"
+      },
+      {
+        "id": "polar-reset-identity-scale-5",
+        "sha256": "sha256:65ffe5d4db7962c2692114fc3d05100eea3f5497318952701393ccb7a7696d24"
+      },
+      {
+        "id": "polar-additive-identity-scale-1",
+        "sha256": "sha256:97ada7f7eadf8be03036a4036c64a1d27052b7dd1e21bb00ce2e3b2f66b18905"
+      },
+      {
+        "id": "polar-additive-identity-scale-2",
+        "sha256": "sha256:0df656ad28f88ca7c1c4f745889bbe192b9eb127ca8c19ab60aca1286cc0b4a7"
+      }
+    ],
+    "expected_levels_in_order": [
+      "Jungle2",
+      "Jungle9",
+      "village6",
+      "city4",
+      "city10",
+      "Coast10",
+      "grotto10",
+      "volcano1",
+      "volcano5",
+      "volcano8",
+      "volcano9",
+      "volcano10"
+    ],
+    "expected_attempts": 48
+  },
+  "freeze_boundary_evidence": {
+    "matrix_sha256_at_freeze": "sha256:69331589fe37ec6d04686e01a38632ffa67c2a48e56367ce1a5e22342ced15d9",
+    "matrix_status_at_freeze": "RUNNING",
+    "completed_attempts_at_freeze": 12,
+    "completed_model_ids_at_freeze": [
+      "settled-v3-multiseed-final"
+    ],
+    "source_attempts_completed_at_freeze": 12,
+    "candidate_attempts_completed_at_freeze": 0,
+    "candidate_outcomes_observed_before_rule_freeze": false
+  },
+  "ranking": {
+    "scope": "all_12_paired_probe_attempts_per_model",
+    "ordered_keys": [
+      {
+        "metric": "wins",
+        "direction": "descending"
+      },
+      {
+        "metric": "total_score",
+        "direction": "descending"
+      },
+      {
+        "metric": "median_winning_ticks",
+        "direction": "ascending",
+        "no_wins_value": "positive_infinity"
+      },
+      {
+        "metric": "model_sha256",
+        "direction": "ascending"
+      }
+    ],
+    "selection_count": 1,
+    "all_models_eligible": true,
+    "no_manual_override": true
+  },
+  "dagger_recipe": {
+    "rounds": 2,
+    "parallel_envs": 24,
+    "max_ticks": 30000,
+    "teacher_execution_probabilities": [
+      0.25,
+      0.1
+    ],
+    "training_seed_base": 1542000700,
+    "training_seed_last_consumed": 1542000809,
+    "reservoir_capacity_by_verb": {
+      "wait": 128,
+      "fire": 192,
+      "swap": 128,
+      "hop": 96
+    },
+    "sample_stride_by_verb": {
+      "wait": 4,
+      "fire": 1,
+      "swap": 1,
+      "hop": 1
+    },
+    "target_batch_fraction_by_verb": {
+      "wait": 0.6,
+      "fire": 0.3,
+      "swap": 0.08,
+      "hop": 0.02
+    },
+    "batch_size": 512,
+    "epochs_per_round": 12,
+    "checkpoint_interval_epochs": 4,
+    "learning_rate": 2e-05,
+    "verb_loss_weight": 1.0,
+    "max_grad_norm": 1.0,
+    "aim_loss_scope": "all_actions",
+    "aim_loss_mode": "circular_smoothed",
+    "aim_smoothing_sigma": 1.5,
+    "aim_distance_weight": 0.5,
+    "device": "cuda:0",
+    "model_seed": 991529,
+    "dataset_aggregation": "student_visited_states_labeled_by_exact_masked_teacher",
+    "optimize_after_each_round": true,
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-dagger-s99081529-v1"
+  },
+  "reserved_validation": {
+    "base_seed": 1550000800,
+    "last_seed": 1550000854,
+    "attempts_per_level": 1,
+    "levels": 55,
+    "formal_seed_consumption": false
+  },
+  "planned_outputs": {
+    "independent_probe_audit": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-reanchor-probe-s99081527-independent-audit-v1.json",
+    "source_selection_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-dagger-s99081529-source-selection-v1.json",
+    "dagger_preregistration": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-dagger-s99081529-preregistration-v1.json"
+  },
+  "authority_boundary": {
+    "classification": "posthoc_engineering_only",
+    "formal_candidate_registration_authorized": false,
+    "formal_selection_seed_consumption": false,
+    "formal_final_blind_seed_consumption": false,
+    "continuous_campaign_seed_consumption": false
+  }
+}

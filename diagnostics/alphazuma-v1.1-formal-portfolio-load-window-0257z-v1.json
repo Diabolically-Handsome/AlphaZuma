@@ -1,0 +1,73 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-formal-portfolio-load-window",
+  "version": 1,
+  "created_utc": "2026-08-14T03:03:01.3853797Z",
+  "status": "PASS",
+  "classification": "live_operational_monitoring_only",
+  "window": {
+    "start_utc": "2026-08-14T02:57:36.1527461Z",
+    "end_utc": "2026-08-14T03:03:01.3853797Z",
+    "duration_seconds": 325.233,
+    "samples_per_gpu": 300,
+    "sampling_interval_seconds": 1,
+    "power_plan": "High performance"
+  },
+  "training": {
+    "steps_before": 21070376,
+    "steps_after": 21663736,
+    "step_delta": 593360,
+    "steps_per_second": 1824.417,
+    "running_routes": 7,
+    "error_routes": 0,
+    "maximum_status_age_seconds": 27.2
+  },
+  "gpus": [
+    {
+      "index": 0,
+      "model": "NVIDIA GeForce RTX 5090",
+      "utilization_percent": {"mean": 74.99, "median": 79.0, "p10": 50.0, "p90": 88.0, "min": 21.0, "max": 92.0},
+      "power_watts": {"mean": 233.55, "median": 237.94, "p10": 171.02, "p90": 278.48, "min": 111.08, "max": 304.16},
+      "temperature_celsius": {"mean": 50.39, "median": 51.0, "p10": 49.0, "p90": 51.0, "min": 47.0, "max": 52.0},
+      "memory_mib": 10329
+    },
+    {
+      "index": 1,
+      "model": "NVIDIA GeForce RTX 5080",
+      "utilization_percent": {"mean": 69.67, "median": 75.0, "p10": 35.0, "p90": 87.0, "min": 5.0, "max": 94.0},
+      "power_watts": {"mean": 139.61, "median": 144.11, "p10": 108.28, "p90": 160.21, "min": 66.17, "max": 181.07},
+      "temperature_celsius": {"mean": 55.71, "median": 56.0, "p10": 53.0, "p90": 58.0, "min": 51.0, "max": 59.0},
+      "memory_mib": 9557
+    }
+  ],
+  "health_contract": {
+    "accepted_sustained_mean_utilization_percent": [65.0, 90.0],
+    "gpu0_mean_inside_band": true,
+    "gpu1_mean_inside_band": true,
+    "aggregate_mean_utilization_percent": 72.33,
+    "aggregate_median_utilization_percent": 77.0,
+    "all_routes_running": true,
+    "no_training_errors": true,
+    "temperature_safe": true
+  },
+  "projection": {
+    "training_stop_utc": "2026-08-14T12:00:00Z",
+    "remaining_seconds_at_window_end": 32218.6146203,
+    "projected_additional_steps_at_observed_rate": 58780188,
+    "projected_total_v11_steps_at_stop": 80443924,
+    "projection_is_not_a_guarantee": true
+  },
+  "comparison": {
+    "prior_five_minute_window_steps_per_second": 1793.3172,
+    "current_steps_per_second": 1824.417,
+    "observed_delta_percent": 1.734,
+    "strict_causal_power_plan_claim": false,
+    "reason": "The windows are sequential and the training portfolio advances between them."
+  },
+  "decision": {
+    "retain_temporary_high_performance_plan": true,
+    "change_frozen_training_recipe": false,
+    "add_filler_gpu_work": false
+  },
+  "formal_seed_consumption": "none",
+  "formal_gate_effect": "none"
+}

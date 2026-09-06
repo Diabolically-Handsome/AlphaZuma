@@ -1,0 +1,45 @@
+{
+  "schema": "zuma-rl.alphazuma-55-resource-pressure-observation",
+  "version": 1,
+  "status": "OBSERVED_STABLE_SMALL_SWAP_NO_INTERVENTION",
+  "route_context": [
+    "alphazuma-55-motor-observable-gradual-headonly-s99081642-v1",
+    "alphazuma-55-motor-observable-gradual-headonly-allaim-s99081646-v1"
+  ],
+  "cause_context": "Both frozen routes simultaneously retained 24 collection workers plus accumulated DAgger samples.",
+  "samples": [
+    {
+      "observed_local": "2026-08-16T13:47:53.523788490-04:00",
+      "memory_total_bytes": 101237669888,
+      "memory_available_bytes": 3450322944,
+      "swap_total_bytes": 17179869184,
+      "swap_used_bytes": 177467392,
+      "head_only_pid": 401221,
+      "head_only_rss_kib": 15155364,
+      "combined_pid": 410838,
+      "combined_rss_kib": 8983136
+    },
+    {
+      "observed_local": "2026-08-16T13:48:20.751590336-04:00",
+      "memory_total_bytes": 101237669888,
+      "memory_available_bytes": 3692269568,
+      "swap_total_bytes": 17179869184,
+      "swap_used_bytes": 177467392,
+      "head_only_pid": 401221,
+      "head_only_rss_kib": 15193380,
+      "combined_pid": 410838,
+      "combined_rss_kib": 8986208
+    }
+  ],
+  "assessment": {
+    "swap_growth_between_samples_bytes": 0,
+    "oom_or_process_exit": false,
+    "training_progress_alive": true,
+    "immediate_swap_cycle_safe": false,
+    "reason_no_intervention": "Available memory is below a conservative swapoff safety margin while both frozen collection batches are active."
+  },
+  "next_action": "Continue read-only monitoring; after the head-only route exits, cycle only the active WSL swap device if swap remains used and available memory safely exceeds used swap plus reserve.",
+  "training_or_evaluation_semantics_changed": false,
+  "historical_data_touched": false,
+  "power_restore_authority": false
+}

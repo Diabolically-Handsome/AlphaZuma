@@ -1,0 +1,57 @@
+{
+  "schema": "zuma-rl.retail-fruit-powerup-collision-acquisition-failure-receipt",
+  "version": 1,
+  "status": "CLOSED_NO_LOCATOR_CANDIDATE",
+  "created_utc": "2026-08-10T13:59:44.0000000Z",
+  "classification": "retained-acquisition-failure-not-original-mechanism-falsification",
+  "parents": {
+    "preregistration": {
+      "path": "diagnostics/recording-c175-fruit-powerup-collision-ensemble-preregistration-v1.json",
+      "sha256": "sha256:0ab6c0c59f0d2bd0a65e014709eab5afd9b486a92942407e68977a563c8beec5"
+    },
+    "execution_receipt": {
+      "path": "diagnostics/recording-c175-fruit-powerup-collision-ensemble-execution-receipt-v1.json",
+      "sha256": "sha256:16436e6a18bfbc8ef5d427927cc5278b06b2e7decc24d41361dc9850b4ffaec3",
+      "status": "PASS"
+    }
+  },
+  "completed_ensemble": {
+    "declared_attempts": 8,
+    "completed_attempts": 8,
+    "recording_contract_passes": 8,
+    "natural_wins": 8,
+    "host_exact_restores": 8,
+    "zero_process_memory_write_attempts": 8,
+    "natural_uncontrolled_rng_attempts": 8,
+    "global_trace_passes": 8,
+    "retained_raw_dmos": 8
+  },
+  "post_ensemble_locator_analysis": {
+    "autoplay_decision_count": 564,
+    "trigger_fruit_proximity_bomb_decision_count": 0,
+    "ordinary_direct_fruit_shot_count": 0,
+    "decision_interval_score_delta_at_least_500_count": 0,
+    "maximum_observed_decision_interval_score_delta": 400,
+    "final_interval_score_delta_at_least_500_count": 0,
+    "locator_candidate_count": 0,
+    "controller_logs_are_certifying_evidence": false
+  },
+  "interpretation": {
+    "established": "The fixed eight-run c175 acquisition design produced no preregistered controller locator and no +500-compatible sampled score interval from which to select a formal source-bound replay window.",
+    "not_established": [
+      "the original fruit-powerup collision mechanism is absent",
+      "the eight recordings formally contain no unobserved same-tick fruit-powerup transition",
+      "the simulator is correct for fruit-powerup collision"
+    ],
+    "design_weakness": "The c174 fallback resumes legacy autoplay whenever an immediately triggerable fruit-near-bomb run is unavailable, so a naturally spawned proximity bomb may be consumed before a fruit overlaps its path. This is a follow-up acquisition hypothesis, not a result claimed from original state evidence."
+  },
+  "decision": {
+    "c175_closed_without_source_selection": true,
+    "all_failed_outputs_retained": true,
+    "follow_up_requires_new_preregistration": true,
+    "candidate_recording_gate_credit": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

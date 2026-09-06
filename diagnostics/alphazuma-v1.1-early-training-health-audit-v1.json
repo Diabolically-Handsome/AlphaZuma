@@ -1,0 +1,55 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-early-training-health-audit",
+  "version": 1,
+  "status": "PASS",
+  "completed_utc": "2026-08-14T00:33:30Z",
+  "scope": {
+    "formal_routes": 7,
+    "recent_updates_per_metric_per_route": 20,
+    "training_outcomes_used_for_model_selection": false,
+    "purpose": "Numerical stability and hardware health only"
+  },
+  "ppo_numerics": {
+    "all_routes_have_recent_updates": true,
+    "nonfinite_values": 0,
+    "resume_ppo1_approx_kl_range": [0.0000058167779570794664, 0.000018855789676308632],
+    "resume_ppo1_clip_fraction_range": [0.0, 0.0],
+    "dense_and_ultradense_approx_kl_range": [0.0016581497620791197, 0.008653271943330765],
+    "dense_and_ultradense_clip_fraction_range": [0.0027832030318677425, 0.04844970628619194],
+    "dense_and_ultradense_explained_variance_range": [0.08255898952484131, 0.9698113799095154],
+    "policy_gradient_losses_finite": true,
+    "value_losses_finite": true,
+    "instability_detected": false
+  },
+  "hardware_sampling": {
+    "samples_per_gpu": 30,
+    "interval_seconds": 1,
+    "gpu0": {
+      "average_utilization_percent": 77.5,
+      "p50_utilization_percent": 86,
+      "p95_utilization_percent": 91,
+      "maximum_utilization_percent": 92,
+      "average_power_watts": 242.3,
+      "maximum_temperature_c": 52,
+      "average_memory_mib": 10329
+    },
+    "gpu1": {
+      "average_utilization_percent": 71.0,
+      "p50_utilization_percent": 73,
+      "p95_utilization_percent": 82,
+      "maximum_utilization_percent": 82,
+      "average_power_watts": 142.3,
+      "maximum_temperature_c": 58,
+      "average_memory_mib": 9495
+    },
+    "wsl_available_memory_gib": 46,
+    "swap_used_gib": 0
+  },
+  "validation": {
+    "all_gpu_average_utilizations_in_frozen_65_to_90_percent_band": true,
+    "temperatures_below_82_c": true,
+    "available_memory_above_24_gib": true,
+    "swap_unused": true,
+    "all_checks_passed": true
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "schema": "zuma-rl.c155-natural-loss-zero-write-formal-campaign-implementation-receipt",
+  "version": 1,
+  "status": "PASS_BEFORE_CAMPAIGN_OUTPUT",
+  "created_utc": "2026-08-10T11:50:30.6072120Z",
+  "preregistration": "diagnostics/c158-c155-natural-loss-zero-write-formal-campaign-preregistration-v1.json",
+  "preregistration_sha256": "sha256:facc4cc24f78a2a8a2a7056c89d46ed03f7e5e7c57be82fb6edf37b3715075b0",
+  "amendment": "diagnostics/c158-c155-natural-loss-zero-write-formal-campaign-preregistration-amendment-v1.json",
+  "amendment_sha256": "sha256:172e939d79afe36fc9159760a9fe9dbf79e1dd947130eccff5b806d522223191",
+  "implementation": {
+    "wrapper": "tools/collect_pc_formal_campaign.py",
+    "wrapper_sha256": "sha256:bc1bcca6ff82165ec919761e4b21851311b51b4e9fe2f75ddea924fa6128c2df",
+    "tests": "tests/test_collect_pc_formal_campaign.py",
+    "tests_sha256": "sha256:fcd6e770978ec6f5875f67a4ec4df465c54ac30b32bcad81180d3da69890dee9",
+    "scope_review": "PASS",
+    "unchanged_one_shot_wrapper": "tools/collect_pc_formal_window.py",
+    "unchanged_one_shot_wrapper_sha256": "sha256:bdf7368ee6d0ced319f17b85c3b5ef4b80f4d85cbfbfbeed9f71389da6d064e",
+    "unchanged_collector": "tools/collect_pc_memory_probe.py",
+    "unchanged_collector_sha256": "sha256:79464752ab35693b8f8765483894ae152a389c367f511e7e33398fc4fa2d28b0",
+    "collector_acceptance_logic_modified": false,
+    "plan_or_dmo_modified": false,
+    "formal_window_modified": false,
+    "gate_threshold_modified": false
+  },
+  "tests_run": [
+    {
+      "command": ".\\.venv-win\\Scripts\\python.exe -m py_compile tools\\collect_pc_formal_campaign.py",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "command": ".\\.venv-win\\Scripts\\python.exe -m pytest -q tests\\test_collect_pc_formal_campaign.py",
+      "status": "PASS",
+      "exit_code": 0,
+      "test_count": 3
+    },
+    {
+      "command": ".\\.venv-win\\Scripts\\python.exe -m pytest -q",
+      "status": "PASS",
+      "exit_code": 0,
+      "collected_test_count": 1531,
+      "collection_file_count": 109,
+      "warnings": 1,
+      "warning_classification": "preexisting Gymnasium render-mode spec warning"
+    }
+  ],
+  "campaign_preflight": {
+    "root": "D:/ZumaGolden/formal-full-state-c155-natural-loss-c158-campaign-v1",
+    "root_absent": true,
+    "fixed_maximum_attempts": 8,
+    "fixed_nonce_stem": "c158000000000000000000000000000",
+    "nonce_stem_length": 31,
+    "fixed_freeze_update": 11200,
+    "fixed_slowdown_update": 11180,
+    "fixed_trajectory_end_update": 11830,
+    "ready": true
+  },
+  "decision": {
+    "campaign_execution_authorized": true,
+    "same_campaign_second_execution_authorized": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

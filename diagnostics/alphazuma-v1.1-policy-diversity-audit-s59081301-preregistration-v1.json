@@ -1,0 +1,70 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-policy-diversity-audit-preregistration",
+  "version": 1,
+  "created_utc": "2026-08-14T02:32:05.4789309Z",
+  "status": "FROZEN_BEFORE_EXECUTION",
+  "classification": "frozen_dataset_post_hoc_training_health_diagnostic_only",
+  "purpose": "Determine whether the seven latest independently audited V1.1 route checkpoints produce distinct deterministic masked actions on the already frozen behavior-probe dataset.",
+  "inputs": {
+    "reference_model": {
+      "path": "/mnt/d/ZumaTraining/overnight-v11-adaptive-recovery-s43081301-v1/checkpoints/adaptive-5090-recovery_13631488_steps.zip",
+      "sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579"
+    },
+    "dataset": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-early-behavior-drift-probe-s52081301-v1/frozen_probe_dataset.npz",
+      "sha256": "sha256:2a71543c08892dc0232110b1c6ec3e9df40e968507ae671333ea7488f8cfe0aa",
+      "sample_count": 1243,
+      "formal_seed_overlap": false
+    },
+    "checkpoint_audit": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-checkpoint-recovery-audit-latest-s58081301-v1/audit.json",
+      "sha256": "sha256:c85c9a6c673d28f37b786db72a241e3efc4301b6d67c2020293bc08593d8bc4b",
+      "expected_candidates": 7,
+      "status": "PASS"
+    }
+  },
+  "method": {
+    "tool": {
+      "path": "tools/audit_alphazuma_v11_policy_diversity.py",
+      "sha256": "sha256:17db88ef92f4078748b286af3094335498e6188afd9e21ff50a92bf595dc2249"
+    },
+    "tests": {
+      "path": "tests/test_audit_alphazuma_v11_policy_diversity.py",
+      "sha256": "sha256:6255187d7c27cb10be871f709e7ec4e2c85a7d15a42beba38c908d393aa6cbd2",
+      "combined_result": "7_passed"
+    },
+    "device": "cpu",
+    "batch_size": 64,
+    "metrics": [
+      "candidate_action_signature",
+      "versus_reference_exact_action_difference_rate",
+      "versus_reference_semantic_action_difference_rate",
+      "pairwise_candidate_exact_action_difference_rate",
+      "pairwise_candidate_semantic_action_difference_rate",
+      "both_fire_circular_aim_distance"
+    ],
+    "semantic_difference_definition": "verb differs, or both actions fire and their aim indices differ",
+    "integrity_requirements": [
+      "all input hashes match",
+      "all seven checkpoint-audit rows passed",
+      "reference deterministic actions exactly reproduce stored collector actions",
+      "all predicted actions satisfy the frozen action masks",
+      "all model observation and action spaces match the dataset"
+    ]
+  },
+  "decision_rule": {
+    "audit_status": "PASS only when every integrity requirement succeeds",
+    "diversity_threshold": null,
+    "interpretation": "All diversity metrics are descriptive. No observed disagreement rate may be used to claim performance improvement or select a formal candidate."
+  },
+  "output": "/mnt/d/ZumaTraining/alphazuma-v1.1-policy-diversity-audit-s59081301-v1/audit.json",
+  "formal_seed_consumption": "none",
+  "formal_gate_effect": "none",
+  "non_authorizations": [
+    "candidate_selection",
+    "certification_evidence",
+    "fresh_holdout_claim",
+    "recipe_change",
+    "promotion"
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "schema": "zuma-rl.pil-particle-mtrand-reconciliation-verifier-extension-qualification-success-receipt",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T16:20:06.8179642Z",
+  "preregistration": {
+    "artifact": "diagnostics/c194-pil-particle-mtrand-reconciliation-verifier-extension-preregistration-v1.json",
+    "artifact_bytes": 7187,
+    "artifact_sha256": "sha256:c6ec6ec642cdea2057aa4a6c7e897ecb45dcab22faa982f33c86ed43513feadd"
+  },
+  "qualified_candidate": {
+    "module": {
+      "artifact": "src/zuma_rl/pc_mtrand_reconciliation.py",
+      "artifact_bytes": 68579,
+      "artifact_sha256": "sha256:674474238016605fb895f17bafe7ba0691a268a24cf5dedf8b1d6080df602625"
+    },
+    "tests": {
+      "artifact": "tests/test_pc_mtrand_reconciliation.py",
+      "artifact_bytes": 10767,
+      "artifact_sha256": "sha256:815a1eac7bdd5f23e7a68cca54fa536458894947f94781541eb5943c008c03b8"
+    },
+    "hashes_unchanged_after_qualification": true
+  },
+  "implemented_contract": {
+    "scope": "omitted_visual",
+    "semantic": "pil_particle_emitter_update",
+    "primary_direct_caller_count": 8,
+    "mixed_direct_caller_count": 1,
+    "nested_direct_caller_count": 2,
+    "total_new_direct_caller_count": 11,
+    "generic_compat_caller_stack_bound": true,
+    "primary_marker_required_where_frozen": true,
+    "particle_movable_marker_pair_required_together": true,
+    "nested_emitter_marker_triple_required_together": true,
+    "caller_only_classification_rejected": true,
+    "partial_marker_classification_rejected": true,
+    "runtime_hash_checked_before_static_surface": true,
+    "all_11_direct_call_targets_verified": true,
+    "emitter_particle_and_movable_object_rtti_verified": true,
+    "complete_object_locator_and_vtable_bindings_verified": true,
+    "key_native_update_edges_verified": true,
+    "pil_static_surface_serialized_conditionally": true,
+    "pil_headless_scope_name_serialized_conditionally": true
+  },
+  "qualification_checks": {
+    "python_compile": "PASS",
+    "targeted_test_file": "tests/test_pc_mtrand_reconciliation.py",
+    "targeted_test_count": 36,
+    "targeted_test_failures": 0,
+    "positive_dynamic_marker_families_tested": 14,
+    "negative_partial_or_wrong_marker_families_tested": 6,
+    "synthetic_static_surface_positive_test": "PASS",
+    "synthetic_rtti_drift_negative_test": "PASS",
+    "conditional_activation_test": "PASS",
+    "live_retail_runtime_static_surface": {
+      "status": "PASS",
+      "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+      "verified_direct_call_site_count": 11,
+      "verified_rtti_classes": [
+        "emitter",
+        "movable_object",
+        "particle"
+      ]
+    },
+    "c193_forensic_dynamic_partition": {
+      "status": "PASS",
+      "call_count": 3587,
+      "omitted_visual_count": 3587,
+      "modeled_gameplay_count": 0,
+      "unclassified_count": 0,
+      "semantic_counts": {
+        "pi_effect_particle_update": 9,
+        "pil_particle_emitter_update": 3562,
+        "score_digit_transition": 14,
+        "shadow_canopy_animation": 2
+      }
+    },
+    "full_pytest_suite": "PASS",
+    "full_suite_collected": 1602,
+    "full_suite_failure_count": 0,
+    "full_suite_skip_count": 13,
+    "full_suite_warning_count": 1,
+    "warning_is_existing_gymnasium_render_spec_warning": true
+  },
+  "legacy_compatibility": {
+    "immutable_diff": {
+      "artifact": "D:/ZumaGolden/diagnostics/jungle2-c164-u5278-u5305-fruit-collection-diff-v3-reconciled-bound.json",
+      "artifact_bytes": 61551,
+      "artifact_sha256_before_and_after": "sha256:f676bc811dfda69e12d0f3f33290a75219936e748d8402a0fc8dd69e5ece94b0"
+    },
+    "immutable_proof": {
+      "artifact": "D:/ZumaGolden/diagnostics/jungle2-c164-u5278-u5305-fruit-collection-mtrand-proof-v1.json",
+      "artifact_bytes": 9221,
+      "artifact_sha256_before_and_after": "sha256:eaf811c352449a0a4de4e86cb26bf3a923cba88667eff34a8bf6466b2b126bf9"
+    },
+    "full_proof_object_recomputation_equal": true,
+    "legacy_semantic_counts_unchanged": {
+      "score_digit_transition": 6,
+      "score_digit_wobble": 1
+    },
+    "legacy_serialized_static_surface_unchanged": true,
+    "legacy_serialized_headless_scope_unchanged": true
+  },
+  "forensic_boundary": {
+    "c193_external_event_count": 1239,
+    "c193_remains_formally_invalid": true,
+    "c193_certifying_memory_probe_sidecar_not_published_after_guard_failure": true,
+    "c193_candidate_proof_not_derived": true,
+    "c193_proof_binding_for_certification_forbidden": true
+  },
+  "authorization": {
+    "new_zero_input_confirmatory_trace_may_be_preregistered": true,
+    "verifier_candidate_qualified_for_confirmatory_use": true,
+    "pc_golden_credit": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

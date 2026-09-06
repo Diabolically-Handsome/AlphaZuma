@@ -1,0 +1,23 @@
+{
+  "schema": "zuma-rl.alphazuma-55-waiting-switch-supersession",
+  "version": 1,
+  "status": "PASS",
+  "completed_utc": "2026-08-15T07:25:41.239884+00:00",
+  "prestop_evidence": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-switch-s98081501-capacity-safe-supersession-prestop-v1.json",
+    "sha256": "sha256:cc7255d99e971c0805bf110b80ec765760c0624137efc75a24ab502223d40c73"
+  },
+  "old_switch": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-switch-s98081501-preregistration-v1.json",
+    "sha256": "sha256:93e194a39350e957cf7f3cb555cefc358c1e9f90f3d9de6db9afb14755e07087"
+  },
+  "new_switch": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-switch-capacity-safe-s99081505-preregistration-v1.json",
+    "sha256": "sha256:c868e3c03812dc6614b3d0b8cd291c907dad4ecedba171ffb996b9878263ed93"
+  },
+  "old_pid": 43007,
+  "old_process_absent": true,
+  "formal_seed_consumption": false,
+  "training_processes_modified": false,
+  "power_restoration_requested": false
+}

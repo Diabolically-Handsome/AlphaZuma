@@ -1,0 +1,863 @@
+{
+  "schema": "zuma-rl.alphazuma-55-distilled-hard-frontier-analysis",
+  "version": 1,
+  "status": "FROZEN_AFTER_SOURCE_CHECKPOINT_BEFORE_RESCUE_TRAINING",
+  "created_utc": "2026-08-16T07:08:36.205565+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "route_status_snapshots": [
+    {
+      "run_id": "alphazuma55-speed-frontier-5090",
+      "preregistration": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-speed-frontier-s83081501-preregistration-v1.json",
+        "sha256": "sha256:da146c52314fa7c9b30398acc484b1f2f6442b61d22f4cb2a4772ca581d3e22f"
+      },
+      "training_status_snapshot": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-speed-frontier-s83081501-v1/training_status.json",
+        "sha256": "sha256:0d2dddb0b8df1948319c4a8e30373ec65f7e857b875dc24e4291e43c9a76f48b",
+        "updated_utc": "2026-08-16T07:08:22.384019+00:00",
+        "timesteps": 42978336,
+        "steps_this_run": 42978336,
+        "steps_per_second": 437.61573583073516
+      }
+    },
+    {
+      "run_id": "alphazuma55-v11-balanced-5080",
+      "preregistration": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-v11-balanced-s84081501-preregistration-v1.json",
+        "sha256": "sha256:d7f6e4eb65e9e31c34b54d97828a33ae5df3ab5c2fa09b111a83ffef8e4b7b23"
+      },
+      "training_status_snapshot": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-v11-balanced-s84081501-v1/training_status.json",
+        "sha256": "sha256:0d4a017c460c2209ffd9d97cb3596bc016ffc9335fc3a9f1fe612415b35d3840",
+        "updated_utc": "2026-08-16T07:08:32.771631+00:00",
+        "timesteps": 34824208,
+        "steps_this_run": 34824208,
+        "steps_per_second": 354.4305611909066
+      }
+    },
+    {
+      "run_id": "alphazuma55-v1-frontier-5080",
+      "preregistration": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-v1-frontier-s87081501-preregistration-v1.json",
+        "sha256": "sha256:81decbb22039957342d1419efbd4a53f4ddf70147b6f96a50e91fab62de19fbe"
+      },
+      "training_status_snapshot": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-v1-frontier-s87081501-v1/training_status.json",
+        "sha256": "sha256:37fa8f8f7965ddc7463a16255521df2263e92c1e1699ba8d13c360b3ac89f705",
+        "updated_utc": "2026-08-16T07:08:09.333220+00:00",
+        "timesteps": 34091024,
+        "steps_this_run": 34091024,
+        "steps_per_second": 352.2009472143351
+      }
+    },
+    {
+      "run_id": "alphazuma55-distilled-frontier-5090",
+      "preregistration": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-distilled-ppo-s86081501-preregistration-v1.json",
+        "sha256": "sha256:6796be4cb62b376a5d462af4ea9c52b368db95836a9ce4ea043595063bfffd7c"
+      },
+      "training_status_snapshot": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-distilled-ppo-s86081501-v1/training_status.json",
+        "sha256": "sha256:cbe2f315e925ce8f354c35f3b92fb99e196c96a3cdf9ac028c6e9f5b53f4fdca",
+        "updated_utc": "2026-08-16T07:08:30.429441+00:00",
+        "timesteps": 30880800,
+        "steps_this_run": 30880800,
+        "steps_per_second": 331.7229913635461
+      }
+    },
+    {
+      "run_id": "alphazuma55-v1-frontier-replicate-5090",
+      "preregistration": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-v1-frontier-replicate-s88081501-preregistration-v1.json",
+        "sha256": "sha256:3044c0c33a44230cc9aa0f4207ad043dd2c6b0f09746970e5c336b93bb22ab6a"
+      },
+      "training_status_snapshot": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-v1-frontier-replicate-s88081501-v1/training_status.json",
+        "sha256": "sha256:b58c8ddcd167bb7bfa8c41d09d62fb6c2d1d28bbd539b1b07223b8b2d5b589b0",
+        "updated_utc": "2026-08-16T07:08:28.636266+00:00",
+        "timesteps": 28109680,
+        "steps_this_run": 28109680,
+        "steps_per_second": 321.02116289320935
+      }
+    },
+    {
+      "run_id": "alphazuma55-v1-hard-frontier-rescue-5090",
+      "preregistration": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-v1-hard-frontier-rescue-s89081501-preregistration-v1.json",
+        "sha256": "sha256:524330741123505a13cb447d80f791c07c11c6f0df085fe50f7a581f75077124"
+      },
+      "training_status_snapshot": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-v1-hard-frontier-rescue-s89081501-v1/training_status.json",
+        "sha256": "sha256:6071fd88294b473ae03326beb8c819b15ebb8c76fd2377133ceb0e5f126d6e9a",
+        "updated_utc": "2026-08-16T07:08:21.978641+00:00",
+        "timesteps": 27317472,
+        "steps_this_run": 27317472,
+        "steps_per_second": 317.57023523034877
+      }
+    }
+  ],
+  "summary": {
+    "levels": 55,
+    "routes": 6,
+    "source_levels_with_any_win": 20,
+    "union_levels_with_any_win": 23,
+    "source_zero_win_levels": 35
+  },
+  "per_level": [
+    {
+      "level_id": "Jungle1",
+      "episodes": 198,
+      "wins": 178,
+      "losses": 1,
+      "truncations": 19,
+      "winning_routes": 6,
+      "source_episodes": 34,
+      "source_wins": 28,
+      "source_recent_win_rate": 0.8235294117647058,
+      "rescue_initial_weight": 1.0
+    },
+    {
+      "level_id": "Jungle2",
+      "episodes": 405,
+      "wins": 403,
+      "losses": 1,
+      "truncations": 1,
+      "winning_routes": 6,
+      "source_episodes": 54,
+      "source_wins": 53,
+      "source_recent_win_rate": 0.9814814814814815,
+      "rescue_initial_weight": 1.0
+    },
+    {
+      "level_id": "Jungle3",
+      "episodes": 177,
+      "wins": 171,
+      "losses": 1,
+      "truncations": 5,
+      "winning_routes": 6,
+      "source_episodes": 26,
+      "source_wins": 26,
+      "source_recent_win_rate": 1.0,
+      "rescue_initial_weight": 1.0
+    },
+    {
+      "level_id": "Jungle4",
+      "episodes": 176,
+      "wins": 174,
+      "losses": 0,
+      "truncations": 2,
+      "winning_routes": 6,
+      "source_episodes": 26,
+      "source_wins": 25,
+      "source_recent_win_rate": 0.9615384615384616,
+      "rescue_initial_weight": 1.0
+    },
+    {
+      "level_id": "jungle6",
+      "episodes": 194,
+      "wins": 189,
+      "losses": 1,
+      "truncations": 4,
+      "winning_routes": 6,
+      "source_episodes": 41,
+      "source_wins": 40,
+      "source_recent_win_rate": 0.975609756097561,
+      "rescue_initial_weight": 1.0
+    },
+    {
+      "level_id": "Jungle7",
+      "episodes": 355,
+      "wins": 4,
+      "losses": 335,
+      "truncations": 16,
+      "winning_routes": 2,
+      "source_episodes": 74,
+      "source_wins": 3,
+      "source_recent_win_rate": 0.046875,
+      "rescue_initial_weight": 1.5
+    },
+    {
+      "level_id": "Jungle8",
+      "episodes": 192,
+      "wins": 186,
+      "losses": 1,
+      "truncations": 5,
+      "winning_routes": 6,
+      "source_episodes": 30,
+      "source_wins": 29,
+      "source_recent_win_rate": 0.9666666666666667,
+      "rescue_initial_weight": 1.0
+    },
+    {
+      "level_id": "Jungle9",
+      "episodes": 445,
+      "wins": 67,
+      "losses": 339,
+      "truncations": 39,
+      "winning_routes": 6,
+      "source_episodes": 74,
+      "source_wins": 10,
+      "source_recent_win_rate": 0.15625,
+      "rescue_initial_weight": 1.5
+    },
+    {
+      "level_id": "Jungle10",
+      "episodes": 212,
+      "wins": 175,
+      "losses": 0,
+      "truncations": 37,
+      "winning_routes": 6,
+      "source_episodes": 37,
+      "source_wins": 30,
+      "source_recent_win_rate": 0.8108108108108109,
+      "rescue_initial_weight": 1.0
+    },
+    {
+      "level_id": "village1",
+      "episodes": 190,
+      "wins": 161,
+      "losses": 18,
+      "truncations": 11,
+      "winning_routes": 6,
+      "source_episodes": 35,
+      "source_wins": 27,
+      "source_recent_win_rate": 0.7714285714285715,
+      "rescue_initial_weight": 1.0
+    },
+    {
+      "level_id": "village2",
+      "episodes": 218,
+      "wins": 198,
+      "losses": 1,
+      "truncations": 19,
+      "winning_routes": 6,
+      "source_episodes": 34,
+      "source_wins": 33,
+      "source_recent_win_rate": 0.9705882352941176,
+      "rescue_initial_weight": 1.0
+    },
+    {
+      "level_id": "village3",
+      "episodes": 566,
+      "wins": 0,
+      "losses": 566,
+      "truncations": 0,
+      "winning_routes": 0,
+      "source_episodes": 85,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.0
+    },
+    {
+      "level_id": "village4",
+      "episodes": 285,
+      "wins": 128,
+      "losses": 84,
+      "truncations": 73,
+      "winning_routes": 6,
+      "source_episodes": 56,
+      "source_wins": 19,
+      "source_recent_win_rate": 0.3392857142857143,
+      "rescue_initial_weight": 1.0
+    },
+    {
+      "level_id": "village5",
+      "episodes": 437,
+      "wins": 13,
+      "losses": 3,
+      "truncations": 421,
+      "winning_routes": 5,
+      "source_episodes": 78,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 3.5
+    },
+    {
+      "level_id": "village6",
+      "episodes": 464,
+      "wins": 2,
+      "losses": 460,
+      "truncations": 2,
+      "winning_routes": 2,
+      "source_episodes": 64,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 3.5
+    },
+    {
+      "level_id": "village7",
+      "episodes": 273,
+      "wins": 139,
+      "losses": 18,
+      "truncations": 116,
+      "winning_routes": 6,
+      "source_episodes": 47,
+      "source_wins": 23,
+      "source_recent_win_rate": 0.48936170212765956,
+      "rescue_initial_weight": 1.0
+    },
+    {
+      "level_id": "village8",
+      "episodes": 294,
+      "wins": 80,
+      "losses": 4,
+      "truncations": 210,
+      "winning_routes": 6,
+      "source_episodes": 52,
+      "source_wins": 17,
+      "source_recent_win_rate": 0.3269230769230769,
+      "rescue_initial_weight": 1.0
+    },
+    {
+      "level_id": "village10",
+      "episodes": 419,
+      "wins": 0,
+      "losses": 416,
+      "truncations": 3,
+      "winning_routes": 0,
+      "source_episodes": 76,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.0
+    },
+    {
+      "level_id": "city1",
+      "episodes": 420,
+      "wins": 21,
+      "losses": 13,
+      "truncations": 386,
+      "winning_routes": 5,
+      "source_episodes": 67,
+      "source_wins": 4,
+      "source_recent_win_rate": 0.0625,
+      "rescue_initial_weight": 1.5
+    },
+    {
+      "level_id": "city2",
+      "episodes": 464,
+      "wins": 1,
+      "losses": 434,
+      "truncations": 29,
+      "winning_routes": 1,
+      "source_episodes": 68,
+      "source_wins": 1,
+      "source_recent_win_rate": 0.015625,
+      "rescue_initial_weight": 1.5
+    },
+    {
+      "level_id": "city3",
+      "episodes": 595,
+      "wins": 0,
+      "losses": 331,
+      "truncations": 264,
+      "winning_routes": 0,
+      "source_episodes": 98,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.0
+    },
+    {
+      "level_id": "city4",
+      "episodes": 499,
+      "wins": 0,
+      "losses": 401,
+      "truncations": 98,
+      "winning_routes": 0,
+      "source_episodes": 94,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.75
+    },
+    {
+      "level_id": "city5",
+      "episodes": 474,
+      "wins": 9,
+      "losses": 19,
+      "truncations": 446,
+      "winning_routes": 5,
+      "source_episodes": 66,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 3.5
+    },
+    {
+      "level_id": "city6",
+      "episodes": 461,
+      "wins": 0,
+      "losses": 5,
+      "truncations": 456,
+      "winning_routes": 0,
+      "source_episodes": 57,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.75
+    },
+    {
+      "level_id": "city7",
+      "episodes": 447,
+      "wins": 7,
+      "losses": 32,
+      "truncations": 408,
+      "winning_routes": 6,
+      "source_episodes": 53,
+      "source_wins": 1,
+      "source_recent_win_rate": 0.018867924528301886,
+      "rescue_initial_weight": 1.5
+    },
+    {
+      "level_id": "city9",
+      "episodes": 477,
+      "wins": 0,
+      "losses": 5,
+      "truncations": 472,
+      "winning_routes": 0,
+      "source_episodes": 83,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.75
+    },
+    {
+      "level_id": "city10",
+      "episodes": 473,
+      "wins": 1,
+      "losses": 468,
+      "truncations": 4,
+      "winning_routes": 1,
+      "source_episodes": 72,
+      "source_wins": 1,
+      "source_recent_win_rate": 0.015625,
+      "rescue_initial_weight": 1.5
+    },
+    {
+      "level_id": "Coast1",
+      "episodes": 472,
+      "wins": 0,
+      "losses": 7,
+      "truncations": 465,
+      "winning_routes": 0,
+      "source_episodes": 71,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.75
+    },
+    {
+      "level_id": "Coast2",
+      "episodes": 416,
+      "wins": 17,
+      "losses": 345,
+      "truncations": 54,
+      "winning_routes": 5,
+      "source_episodes": 65,
+      "source_wins": 1,
+      "source_recent_win_rate": 0.015625,
+      "rescue_initial_weight": 1.5
+    },
+    {
+      "level_id": "Coast3",
+      "episodes": 630,
+      "wins": 0,
+      "losses": 619,
+      "truncations": 11,
+      "winning_routes": 0,
+      "source_episodes": 102,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.0
+    },
+    {
+      "level_id": "Coast4",
+      "episodes": 508,
+      "wins": 0,
+      "losses": 508,
+      "truncations": 0,
+      "winning_routes": 0,
+      "source_episodes": 68,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.0
+    },
+    {
+      "level_id": "Coast5",
+      "episodes": 471,
+      "wins": 0,
+      "losses": 471,
+      "truncations": 0,
+      "winning_routes": 0,
+      "source_episodes": 67,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.0
+    },
+    {
+      "level_id": "Coast6",
+      "episodes": 446,
+      "wins": 0,
+      "losses": 22,
+      "truncations": 424,
+      "winning_routes": 0,
+      "source_episodes": 64,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.75
+    },
+    {
+      "level_id": "Coast7",
+      "episodes": 463,
+      "wins": 0,
+      "losses": 47,
+      "truncations": 416,
+      "winning_routes": 0,
+      "source_episodes": 81,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.75
+    },
+    {
+      "level_id": "Coast9",
+      "episodes": 447,
+      "wins": 0,
+      "losses": 332,
+      "truncations": 115,
+      "winning_routes": 0,
+      "source_episodes": 61,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.0
+    },
+    {
+      "level_id": "Coast10",
+      "episodes": 657,
+      "wins": 0,
+      "losses": 655,
+      "truncations": 2,
+      "winning_routes": 0,
+      "source_episodes": 115,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.75
+    },
+    {
+      "level_id": "grotto1",
+      "episodes": 458,
+      "wins": 17,
+      "losses": 3,
+      "truncations": 438,
+      "winning_routes": 6,
+      "source_episodes": 73,
+      "source_wins": 2,
+      "source_recent_win_rate": 0.03125,
+      "rescue_initial_weight": 1.5
+    },
+    {
+      "level_id": "grotto2",
+      "episodes": 515,
+      "wins": 0,
+      "losses": 44,
+      "truncations": 471,
+      "winning_routes": 0,
+      "source_episodes": 75,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.75
+    },
+    {
+      "level_id": "grotto3",
+      "episodes": 654,
+      "wins": 0,
+      "losses": 488,
+      "truncations": 166,
+      "winning_routes": 0,
+      "source_episodes": 114,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.0
+    },
+    {
+      "level_id": "grotto4",
+      "episodes": 495,
+      "wins": 0,
+      "losses": 495,
+      "truncations": 0,
+      "winning_routes": 0,
+      "source_episodes": 71,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.0
+    },
+    {
+      "level_id": "grotto5",
+      "episodes": 460,
+      "wins": 0,
+      "losses": 58,
+      "truncations": 402,
+      "winning_routes": 0,
+      "source_episodes": 70,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.75
+    },
+    {
+      "level_id": "grotto6",
+      "episodes": 483,
+      "wins": 0,
+      "losses": 480,
+      "truncations": 3,
+      "winning_routes": 0,
+      "source_episodes": 85,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.0
+    },
+    {
+      "level_id": "grotto7",
+      "episodes": 496,
+      "wins": 0,
+      "losses": 403,
+      "truncations": 93,
+      "winning_routes": 0,
+      "source_episodes": 83,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.0
+    },
+    {
+      "level_id": "grotto9",
+      "episodes": 505,
+      "wins": 0,
+      "losses": 440,
+      "truncations": 65,
+      "winning_routes": 0,
+      "source_episodes": 71,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.0
+    },
+    {
+      "level_id": "grotto10",
+      "episodes": 503,
+      "wins": 0,
+      "losses": 14,
+      "truncations": 489,
+      "winning_routes": 0,
+      "source_episodes": 88,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 5.5
+    },
+    {
+      "level_id": "volcano1",
+      "episodes": 552,
+      "wins": 0,
+      "losses": 551,
+      "truncations": 1,
+      "winning_routes": 0,
+      "source_episodes": 73,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.0
+    },
+    {
+      "level_id": "volcano2",
+      "episodes": 501,
+      "wins": 0,
+      "losses": 24,
+      "truncations": 477,
+      "winning_routes": 0,
+      "source_episodes": 84,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.75
+    },
+    {
+      "level_id": "volcano3",
+      "episodes": 601,
+      "wins": 0,
+      "losses": 53,
+      "truncations": 548,
+      "winning_routes": 0,
+      "source_episodes": 99,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.75
+    },
+    {
+      "level_id": "volcano4",
+      "episodes": 497,
+      "wins": 0,
+      "losses": 2,
+      "truncations": 495,
+      "winning_routes": 0,
+      "source_episodes": 83,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.75
+    },
+    {
+      "level_id": "volcano5",
+      "episodes": 500,
+      "wins": 0,
+      "losses": 129,
+      "truncations": 371,
+      "winning_routes": 0,
+      "source_episodes": 76,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.75
+    },
+    {
+      "level_id": "volcano6",
+      "episodes": 508,
+      "wins": 0,
+      "losses": 23,
+      "truncations": 485,
+      "winning_routes": 0,
+      "source_episodes": 85,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.75
+    },
+    {
+      "level_id": "volcano7",
+      "episodes": 524,
+      "wins": 0,
+      "losses": 13,
+      "truncations": 511,
+      "winning_routes": 0,
+      "source_episodes": 92,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.75
+    },
+    {
+      "level_id": "volcano8",
+      "episodes": 506,
+      "wins": 0,
+      "losses": 21,
+      "truncations": 485,
+      "winning_routes": 0,
+      "source_episodes": 89,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.75
+    },
+    {
+      "level_id": "volcano9",
+      "episodes": 523,
+      "wins": 0,
+      "losses": 153,
+      "truncations": 370,
+      "winning_routes": 0,
+      "source_episodes": 79,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 5.5
+    },
+    {
+      "level_id": "volcano10",
+      "episodes": 541,
+      "wins": 0,
+      "losses": 78,
+      "truncations": 463,
+      "winning_routes": 0,
+      "source_episodes": 77,
+      "source_wins": 0,
+      "source_recent_win_rate": 0.0,
+      "rescue_initial_weight": 4.75
+    }
+  ],
+  "rescue_initial_weights": {
+    "Jungle1": 1.0,
+    "Jungle2": 1.0,
+    "Jungle3": 1.0,
+    "Jungle4": 1.0,
+    "jungle6": 1.0,
+    "Jungle7": 1.5,
+    "Jungle8": 1.0,
+    "Jungle9": 1.5,
+    "Jungle10": 1.0,
+    "village1": 1.0,
+    "village2": 1.0,
+    "village3": 4.0,
+    "village4": 1.0,
+    "village5": 3.5,
+    "village6": 3.5,
+    "village7": 1.0,
+    "village8": 1.0,
+    "village10": 4.0,
+    "city1": 1.5,
+    "city2": 1.5,
+    "city3": 4.0,
+    "city4": 4.75,
+    "city5": 3.5,
+    "city6": 4.75,
+    "city7": 1.5,
+    "city9": 4.75,
+    "city10": 1.5,
+    "Coast1": 4.75,
+    "Coast2": 1.5,
+    "Coast3": 4.0,
+    "Coast4": 4.0,
+    "Coast5": 4.0,
+    "Coast6": 4.75,
+    "Coast7": 4.75,
+    "Coast9": 4.0,
+    "Coast10": 4.75,
+    "grotto1": 1.5,
+    "grotto2": 4.75,
+    "grotto3": 4.0,
+    "grotto4": 4.0,
+    "grotto5": 4.75,
+    "grotto6": 4.0,
+    "grotto7": 4.0,
+    "grotto9": 4.0,
+    "grotto10": 5.5,
+    "volcano1": 4.0,
+    "volcano2": 4.75,
+    "volcano3": 4.75,
+    "volcano4": 4.75,
+    "volcano5": 4.75,
+    "volcano6": 4.75,
+    "volcano7": 4.75,
+    "volcano8": 4.75,
+    "volcano9": 5.5,
+    "volcano10": 4.75
+  },
+  "source_checkpoint": {
+    "source_route_id": "alphazuma55-distilled-frontier-5090",
+    "source_route_preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-distilled-ppo-s86081501-preregistration-v1.json",
+      "sha256": "sha256:6796be4cb62b376a5d462af4ea9c52b368db95836a9ce4ea043595063bfffd7c"
+    },
+    "training_steps": 30408704,
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-distilled-ppo-s86081501-v1/checkpoints/alphazuma55-distilled-frontier-5090_30408704_steps.zip",
+    "sha256": "sha256:7f0e8d2c06a8fb1e514c2fb5e0e6209600a62b514659d941e785847e9c9a5dcd"
+  },
+  "rescue_contract": {
+    "single_policy": true,
+    "environment_network_reward_and_ppo_hyperparameters_unchanged": true,
+    "solved_level_replay_floor_weight": 1.0,
+    "fragile_solved_level_weight": 1.5,
+    "sibling_solved_source_unsolved_weight": 2.75,
+    "cold_frontier_weight_range": [
+      3.5,
+      6.5
+    ],
+    "adaptive_weight_ceiling_unchanged": 8.0
+  },
+  "authority_boundary": {
+    "classification": "engineering_training_only",
+    "formal_selection_authority": false,
+    "formal_seed_consumption": false,
+    "may_train_one_additional_distilled_rescue_route": true,
+    "promotion_requires_a_separate_frozen_successor_contract": true,
+    "may_not_change_existing_routes_or_gates": true
+  },
+  "builder": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_distilled_hard_rescue_v1.py",
+    "sha256": "sha256:1f5e20c77e2beeb5182ba73e766729c9ca7ce85c474b095d338ff1ac689e3f33"
+  }
+}

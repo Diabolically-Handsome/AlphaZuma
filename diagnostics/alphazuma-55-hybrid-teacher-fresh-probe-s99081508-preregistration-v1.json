@@ -1,0 +1,2011 @@
+{
+  "schema": "zuma-rl.alphazuma-55-hybrid-teacher-probe-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_FRESH_ENGINEERING_PROBE",
+  "created_utc": "2026-08-15T07:49:06.456347+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "objective": "Test on fresh engineering seeds whether a deterministic per-level map selected only from the consumed paired teacher screen generalizes.",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "source_evaluation_contract": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-engineering-baseline-s82081402-preregistration-v1.json",
+    "sha256": "sha256:c6c00d29dfebeafa347aa7995608d53c73b5b8d29eba7d9a056ff72568b9c6f8"
+  },
+  "selection_evidence": {
+    "geometric_result": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/geometric-teacher-probe-s99081506-v1/result.json",
+      "sha256": "sha256:1d3169d8f91d7edd1c80ceb62d9675e9d49200360734b1822de678348486b19a"
+    },
+    "strategic_result": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/strategic-teacher-probe-s99081507-v1/result.json",
+      "sha256": "sha256:6696ddd4127aa5ba01765b2fba393027e003a27385137b576049d5fdd9a1df34"
+    },
+    "fresh_seed_relative_to_mapping": true,
+    "selection_conditioned_policy_development": true,
+    "formal_evidence": false,
+    "rule": "wins outrank nonwins; among two wins lower ticks wins; among nonwins compare outcome rank, score, survival ticks, then geometric"
+  },
+  "levels": [
+    {
+      "id": "Jungle1",
+      "display_name": "Shipwrecked!",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle1\\Jungle1"
+      ]
+    },
+    {
+      "id": "Jungle2",
+      "display_name": "Castaway",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle2\\Jungle2"
+      ]
+    },
+    {
+      "id": "Jungle3",
+      "display_name": "Echo Beach",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle3\\Jungle3"
+      ]
+    },
+    {
+      "id": "Jungle4",
+      "display_name": "Bones of an Idol",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle4\\Jungle4"
+      ]
+    },
+    {
+      "id": "jungle6",
+      "display_name": "Jungle Clearing",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle6\\Jungle6"
+      ]
+    },
+    {
+      "id": "Jungle7",
+      "display_name": "Sand Trap",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle7\\Jungle7"
+      ]
+    },
+    {
+      "id": "Jungle8",
+      "display_name": "Nasal Passage",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle8\\Jungle8"
+      ]
+    },
+    {
+      "id": "Jungle9",
+      "display_name": "Creeper Copse",
+      "curve_count": 2,
+      "curve_names": [
+        "Jungle9\\Jungle9-1",
+        "Jungle9\\Jungle9-2"
+      ]
+    },
+    {
+      "id": "Jungle10",
+      "display_name": "Darkness Falls",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle10\\Jungle10"
+      ]
+    },
+    {
+      "id": "village1",
+      "display_name": "Watering Hole",
+      "curve_count": 1,
+      "curve_names": [
+        "Village1"
+      ]
+    },
+    {
+      "id": "village2",
+      "display_name": "Overgrown Plaza",
+      "curve_count": 1,
+      "curve_names": [
+        "Village2"
+      ]
+    },
+    {
+      "id": "village3",
+      "display_name": "Lilypad Leap",
+      "curve_count": 1,
+      "curve_names": [
+        "Village3\\Village3v3"
+      ]
+    },
+    {
+      "id": "village4",
+      "display_name": "Sandspirals",
+      "curve_count": 1,
+      "curve_names": [
+        "Village4v2"
+      ]
+    },
+    {
+      "id": "village5",
+      "display_name": "Abandoned Well",
+      "curve_count": 1,
+      "curve_names": [
+        "Village5"
+      ]
+    },
+    {
+      "id": "village6",
+      "display_name": "Face Your Fear",
+      "curve_count": 2,
+      "curve_names": [
+        "Village6-1",
+        "Village6-2"
+      ]
+    },
+    {
+      "id": "village7",
+      "display_name": "Seven Sides (minus one)",
+      "curve_count": 1,
+      "curve_names": [
+        "Village7"
+      ]
+    },
+    {
+      "id": "village8",
+      "display_name": "Vines of Vengeance",
+      "curve_count": 1,
+      "curve_names": [
+        "Village8"
+      ]
+    },
+    {
+      "id": "village10",
+      "display_name": "The Horseshoe",
+      "curve_count": 1,
+      "curve_names": [
+        "Village10\\Village10v2"
+      ]
+    },
+    {
+      "id": "city1",
+      "display_name": "Ancient Cistern",
+      "curve_count": 1,
+      "curve_names": [
+        "city1"
+      ]
+    },
+    {
+      "id": "city2",
+      "display_name": "Blossom Grove",
+      "curve_count": 1,
+      "curve_names": [
+        "city2\\city2"
+      ]
+    },
+    {
+      "id": "city3",
+      "display_name": "Empty Cistern",
+      "curve_count": 1,
+      "curve_names": [
+        "city3\\city3-4"
+      ]
+    },
+    {
+      "id": "city4",
+      "display_name": "Ancestral Tongue",
+      "curve_count": 2,
+      "curve_names": [
+        "city4\\city4-1v2",
+        "city4\\city4-2v2"
+      ]
+    },
+    {
+      "id": "city5",
+      "display_name": "Mossy Square",
+      "curve_count": 1,
+      "curve_names": [
+        "city5\\city5"
+      ]
+    },
+    {
+      "id": "city6",
+      "display_name": "Mosaic Mayhem",
+      "curve_count": 1,
+      "curve_names": [
+        "city6\\city6"
+      ]
+    },
+    {
+      "id": "city7",
+      "display_name": "Strange Smile",
+      "curve_count": 1,
+      "curve_names": [
+        "city7\\city7-2"
+      ]
+    },
+    {
+      "id": "city9",
+      "display_name": "Ghosts of the Past",
+      "curve_count": 1,
+      "curve_names": [
+        "city9\\city9"
+      ]
+    },
+    {
+      "id": "city10",
+      "display_name": "Double Danger",
+      "curve_count": 2,
+      "curve_names": [
+        "city10\\city10-1",
+        "city10\\city10-2"
+      ]
+    },
+    {
+      "id": "Coast1",
+      "display_name": "Swamp Spin",
+      "curve_count": 1,
+      "curve_names": [
+        "coast1"
+      ]
+    },
+    {
+      "id": "Coast2",
+      "display_name": "Deadmarsh",
+      "curve_count": 1,
+      "curve_names": [
+        "coast2"
+      ]
+    },
+    {
+      "id": "Coast3",
+      "display_name": "Stagnant Ponds",
+      "curve_count": 1,
+      "curve_names": [
+        "coast3"
+      ]
+    },
+    {
+      "id": "Coast4",
+      "display_name": "Brackish Pool",
+      "curve_count": 1,
+      "curve_names": [
+        "coast4"
+      ]
+    },
+    {
+      "id": "Coast5",
+      "display_name": "Justified and Ancient",
+      "curve_count": 1,
+      "curve_names": [
+        "coast5"
+      ]
+    },
+    {
+      "id": "Coast6",
+      "display_name": "Ancient Inlay",
+      "curve_count": 1,
+      "curve_names": [
+        "coast6"
+      ]
+    },
+    {
+      "id": "Coast7",
+      "display_name": "Secret Circle",
+      "curve_count": 1,
+      "curve_names": [
+        "coast7"
+      ]
+    },
+    {
+      "id": "Coast9",
+      "display_name": "Tide Pools",
+      "curve_count": 1,
+      "curve_names": [
+        "coast9"
+      ]
+    },
+    {
+      "id": "Coast10",
+      "display_name": "Skull Coral",
+      "curve_count": 2,
+      "curve_names": [
+        "coast10-1",
+        "coast10-2"
+      ]
+    },
+    {
+      "id": "grotto1",
+      "display_name": "Coral Catch",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto1\\grotto1"
+      ]
+    },
+    {
+      "id": "grotto2",
+      "display_name": "Wave Babies",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto2\\grotto2-2"
+      ]
+    },
+    {
+      "id": "grotto3",
+      "display_name": "Submergathon",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto3\\grotto3"
+      ]
+    },
+    {
+      "id": "grotto4",
+      "display_name": "Anglers Cove",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto4\\grotto4"
+      ]
+    },
+    {
+      "id": "grotto5",
+      "display_name": "Coelacanth Cave",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto5\\grotto5"
+      ]
+    },
+    {
+      "id": "grotto6",
+      "display_name": "Ocean Floor",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto6\\grotto6"
+      ]
+    },
+    {
+      "id": "grotto7",
+      "display_name": "Smugglers Depth",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto7\\grotto7"
+      ]
+    },
+    {
+      "id": "grotto9",
+      "display_name": "The Deep",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto9\\grotto9"
+      ]
+    },
+    {
+      "id": "grotto10",
+      "display_name": "Shark Den",
+      "curve_count": 2,
+      "curve_names": [
+        "grotto10\\grotto10-1",
+        "grotto10\\grotto10-2"
+      ]
+    },
+    {
+      "id": "volcano1",
+      "display_name": "Flowing Tiki Rage",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano1\\Volcano1"
+      ]
+    },
+    {
+      "id": "volcano2",
+      "display_name": "Subterran Solaris",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano2/Volcano2-3"
+      ]
+    },
+    {
+      "id": "volcano3",
+      "display_name": "Reflection in Magma",
+      "curve_count": 1,
+      "curve_names": [
+        "volcano3\\volcano3"
+      ]
+    },
+    {
+      "id": "volcano4",
+      "display_name": "Obsidian Isle",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano4\\Volcano4"
+      ]
+    },
+    {
+      "id": "volcano5",
+      "display_name": "Underworld Remnants",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano5\\Volcano5-2"
+      ]
+    },
+    {
+      "id": "volcano6",
+      "display_name": "Thermal Vortex",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano6\\Volcano6"
+      ]
+    },
+    {
+      "id": "volcano7",
+      "display_name": "Molten Dais",
+      "curve_count": 1,
+      "curve_names": [
+        "volcano7\\volcano7-2"
+      ]
+    },
+    {
+      "id": "volcano8",
+      "display_name": "Basaltic Approach",
+      "curve_count": 1,
+      "curve_names": [
+        "volcano8\\volcano8-3"
+      ]
+    },
+    {
+      "id": "volcano9",
+      "display_name": "Searing Visage",
+      "curve_count": 2,
+      "curve_names": [
+        "volcano9\\volcano9-1",
+        "Volcano9\\Volcano9-2"
+      ]
+    },
+    {
+      "id": "volcano10",
+      "display_name": "Descent into Anguish",
+      "curve_count": 1,
+      "curve_names": [
+        "volcano10\\volcano10-4"
+      ]
+    }
+  ],
+  "teacher_policy_map": [
+    {
+      "level_id": "Jungle1",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "both_win_faster_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 4356,
+          "score": 2210,
+          "trajectory_sha256": "sha256:e99917ebf1df0b823feffe4e94c3db7bab1298106ce190e87ee6fe77a6d8e5c7"
+        },
+        "strategic": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 4228,
+          "score": 2760,
+          "trajectory_sha256": "sha256:e2078aceac045c7ea0a9d2458d31602783983abbd797fbf7ef44c84fb06405b3"
+        }
+      }
+    },
+    {
+      "level_id": "Jungle2",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "both_win_faster_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 7945,
+          "score": 4500,
+          "trajectory_sha256": "sha256:2a84cf9ce40591f4a68b7fb4768684b79c5f1b3999440b007e4e10a2d71a9945"
+        },
+        "strategic": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 2159,
+          "score": 2410,
+          "trajectory_sha256": "sha256:b623a73ea86b3e47838b605c09119ac27f97d5900b4c23cd5a51d2476841bb81"
+        }
+      }
+    },
+    {
+      "level_id": "Jungle3",
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "only_geometric_win",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 5171,
+          "score": 3280,
+          "trajectory_sha256": "sha256:8d16a1c82180f9169b65eb9808ffedc6f53e1c3d0b69d80df0f1b1f988a85d63"
+        },
+        "strategic": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 6797,
+          "score": 0,
+          "trajectory_sha256": "sha256:3e1a517bf85fe1a66685e3fd18ffeec6a508387c0a04ffbd3580756b5d2e2d6c"
+        }
+      }
+    },
+    {
+      "level_id": "Jungle4",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "both_win_faster_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 9507,
+          "score": 6380,
+          "trajectory_sha256": "sha256:faa4fe56ffd1cc698e4798e782a40738ec3be5af90e458b222cc3d785023a696"
+        },
+        "strategic": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 6114,
+          "score": 3160,
+          "trajectory_sha256": "sha256:8c19b90c6e8d80d369c1480180b942a8a864e64f5dfb4be0dfd76fb86a137642"
+        }
+      }
+    },
+    {
+      "level_id": "jungle6",
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "both_win_faster_geometric",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 4480,
+          "score": 3450,
+          "trajectory_sha256": "sha256:988a18730373898da113f919dd1604d0b187b6a579e7e81901eba9cefeee28bd"
+        },
+        "strategic": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 4594,
+          "score": 2920,
+          "trajectory_sha256": "sha256:3ab544f7256b8ee3cb8a81742c50839800967a493fd362d388b7a28ab29e34cf"
+        }
+      }
+    },
+    {
+      "level_id": "Jungle7",
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "both_win_faster_geometric",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 3927,
+          "score": 2770,
+          "trajectory_sha256": "sha256:fbf72845a289032e49ea9e646ec59a39b16cd8604841298e5717edf0a14985c4"
+        },
+        "strategic": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 4318,
+          "score": 4550,
+          "trajectory_sha256": "sha256:55f86701eb670f6766490f3503a599cf13fa6577d9d58b1d8a8f00e677fcfd93"
+        }
+      }
+    },
+    {
+      "level_id": "Jungle8",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "both_win_faster_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 9467,
+          "score": 7010,
+          "trajectory_sha256": "sha256:707ffd9c53f8e8255315c5fbde179ad01b093ad442e89292a107169ca962e12f"
+        },
+        "strategic": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 4282,
+          "score": 3820,
+          "trajectory_sha256": "sha256:3ad3b0b4e4b5a240fa0f66aefdd9e107560a7fa51d758523a162e5860b6eacd8"
+        }
+      }
+    },
+    {
+      "level_id": "Jungle9",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_outcome_rank_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 11017,
+          "score": 14140,
+          "trajectory_sha256": "sha256:d575c4229ce02831bf80dfc36725421b2d7c149c34531397ac6ac03182d69549"
+        },
+        "strategic": {
+          "outcome": "None",
+          "time_limit_truncated": true,
+          "ticks": 12000,
+          "score": 11620,
+          "trajectory_sha256": "sha256:4906028e82c52a8fe6b3b33b569fd91170933748205b48b7c28b98bd6be41dd4"
+        }
+      }
+    },
+    {
+      "level_id": "Jungle10",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "both_win_faster_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 5743,
+          "score": 3760,
+          "trajectory_sha256": "sha256:afa3963c47f59ddff7e36edd495b9e08895f802b575c1bfd2de8a07628bf3948"
+        },
+        "strategic": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 4803,
+          "score": 3860,
+          "trajectory_sha256": "sha256:6712f512838698e9fa2c13ae83b10b20ef76c4f984d33cea83ecd5ba947cfa54"
+        }
+      }
+    },
+    {
+      "level_id": "village1",
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "both_win_faster_geometric",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 7169,
+          "score": 4650,
+          "trajectory_sha256": "sha256:3fcb20fea2e0bd60654f80061c3de500e2d961ed74503f8f5e9b9321d361e164"
+        },
+        "strategic": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 10831,
+          "score": 7410,
+          "trajectory_sha256": "sha256:06b455e5920e2a6ecea3b6b89ac9b4d8778749b6163ffd5a2ae5960e2f4e7eb7"
+        }
+      }
+    },
+    {
+      "level_id": "village2",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "only_strategic_win",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 7750,
+          "score": 5020,
+          "trajectory_sha256": "sha256:cf23599b7497ed085bb53b38184a241aa202b669d06a782529b1dcbd52e73514"
+        },
+        "strategic": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 4130,
+          "score": 3120,
+          "trajectory_sha256": "sha256:dbbe6966bfc8b621cc1a62c79e9a89b0eb34badcc7cca4fc8d8829b7919e93fd"
+        }
+      }
+    },
+    {
+      "level_id": "village3",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "both_win_faster_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 5379,
+          "score": 3650,
+          "trajectory_sha256": "sha256:4649b77ae8bc4f77445e99b197f7c32c40cc77b3eb23f7dd6009bd6d32d7ef6b"
+        },
+        "strategic": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 5189,
+          "score": 4580,
+          "trajectory_sha256": "sha256:c898018881d2d13e04859e6a02fd4ae27148507b5c38e026b6bc6c4cbe016ee8"
+        }
+      }
+    },
+    {
+      "level_id": "village4",
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "only_geometric_win",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 8603,
+          "score": 9700,
+          "trajectory_sha256": "sha256:d94af699809bf10256197d42fe4835ece0a5f82247d0b7d79c446905a26ceb7f"
+        },
+        "strategic": {
+          "outcome": "None",
+          "time_limit_truncated": true,
+          "ticks": 12000,
+          "score": 11570,
+          "trajectory_sha256": "sha256:0830f9ce271647d700829c1b6f28b881ed48c392aca7226221b504cb94a145fd"
+        }
+      }
+    },
+    {
+      "level_id": "village5",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "only_strategic_win",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 8266,
+          "score": 7280,
+          "trajectory_sha256": "sha256:024c801cfade77198f770471c4e216fba492d8c51b58d38cb0a6cf18b3dc06a3"
+        },
+        "strategic": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 6950,
+          "score": 5390,
+          "trajectory_sha256": "sha256:95c25f2e24d2bf4b70d7c09f92a357a1c56139d21122244751c0bb208afba18f"
+        }
+      }
+    },
+    {
+      "level_id": "village6",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 4885,
+          "score": 6110,
+          "trajectory_sha256": "sha256:791a580c218e5f63b2f1083946cd5b5ca18d08a0ef25f6ad8ab3b9b5be559f18"
+        },
+        "strategic": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 9251,
+          "score": 12080,
+          "trajectory_sha256": "sha256:b24059843fee6b394bfff509ea18e2dcf6511f54d516e408887524756bf03323"
+        }
+      }
+    },
+    {
+      "level_id": "village7",
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "both_win_faster_geometric",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 5519,
+          "score": 5640,
+          "trajectory_sha256": "sha256:b1125a5e6a7b7dde846516ff34609f68b6961f1b628bc3720f1beb08ca4b7538"
+        },
+        "strategic": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 9612,
+          "score": 9350,
+          "trajectory_sha256": "sha256:2ef3a143117a32426485f7914cefdf72d9dc034fa5e7f26401144704cbff3ec5"
+        }
+      }
+    },
+    {
+      "level_id": "village8",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "only_strategic_win",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "None",
+          "time_limit_truncated": true,
+          "ticks": 12000,
+          "score": 6290,
+          "trajectory_sha256": "sha256:b1c38f19c4e82135fbdf7d02cb893ef7163cc0451f19d9b48160ad689b60bce1"
+        },
+        "strategic": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 11811,
+          "score": 6080,
+          "trajectory_sha256": "sha256:0c8baa0970a12793dd7024af15abd0d6f5cd8d085bc84cc830708cde35a1de08"
+        }
+      }
+    },
+    {
+      "level_id": "village10",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "both_win_faster_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 10835,
+          "score": 10080,
+          "trajectory_sha256": "sha256:71abf14b0be41dd358c9d8ea0db8b64e372163004284d706ad6839e0a12022c4"
+        },
+        "strategic": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 10484,
+          "score": 9710,
+          "trajectory_sha256": "sha256:c6ca576b401e734267bf681dc347a4dca672f75340ea4d50ec0d2d716da464cc"
+        }
+      }
+    },
+    {
+      "level_id": "city1",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "only_strategic_win",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 11337,
+          "score": 12570,
+          "trajectory_sha256": "sha256:899da3552766303d2e14972542d80c16dd023c017c7568690ce5b6be217098b1"
+        },
+        "strategic": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 4346,
+          "score": 4160,
+          "trajectory_sha256": "sha256:c15903e7df485143b57e4877260091df43a1d8b2b6c602861a64d4c0d0bc2179"
+        }
+      }
+    },
+    {
+      "level_id": "city2",
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "only_geometric_win",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 9743,
+          "score": 7720,
+          "trajectory_sha256": "sha256:eb39813fbc478dae72207b7e4998be5720cb2e3b9463de980baa6216d4d2cb90"
+        },
+        "strategic": {
+          "outcome": "None",
+          "time_limit_truncated": true,
+          "ticks": 12000,
+          "score": 10810,
+          "trajectory_sha256": "sha256:30320b00f924e9e849c57a1b70256f1db281a707cfe5ac50905ba7d24cf0da88"
+        }
+      }
+    },
+    {
+      "level_id": "city3",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 6891,
+          "score": 2070,
+          "trajectory_sha256": "sha256:7b91d34eb1566856becc90acf755cce9af8e8e2e1c166bc50cd79a200e525dc8"
+        },
+        "strategic": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 11477,
+          "score": 4980,
+          "trajectory_sha256": "sha256:9d3e6d88b1da65804443393cf33afdd293d98c91c5843018e644cdd40aad996e"
+        }
+      }
+    },
+    {
+      "level_id": "city4",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_outcome_rank_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 11742,
+          "score": 11720,
+          "trajectory_sha256": "sha256:594ba87ea5fa3e0e8e76a4849c376790a9938904e933a304e084a2afd18b9aa5"
+        },
+        "strategic": {
+          "outcome": "None",
+          "time_limit_truncated": true,
+          "ticks": 12000,
+          "score": 14350,
+          "trajectory_sha256": "sha256:4921b8101507b74c404b057e2e698e45b55fefadc6ea89e6da1de22244983110"
+        }
+      }
+    },
+    {
+      "level_id": "city5",
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_geometric",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "None",
+          "time_limit_truncated": true,
+          "ticks": 12000,
+          "score": 9150,
+          "trajectory_sha256": "sha256:a6d0e18534a360c22d7ca2442a11cb724d134fd77b61521bc4fe8b66c1ce31df"
+        },
+        "strategic": {
+          "outcome": "None",
+          "time_limit_truncated": true,
+          "ticks": 12000,
+          "score": 8380,
+          "trajectory_sha256": "sha256:80840905bf4a6349b681572ff65b729de395f7a6cf1d3ba4c5f1acef0562afa0"
+        }
+      }
+    },
+    {
+      "level_id": "city6",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "None",
+          "time_limit_truncated": true,
+          "ticks": 12000,
+          "score": 10900,
+          "trajectory_sha256": "sha256:ab79b06f390e3596dda78459afa9aa0050233494716077c31dd03f30bae1075d"
+        },
+        "strategic": {
+          "outcome": "None",
+          "time_limit_truncated": true,
+          "ticks": 12000,
+          "score": 14160,
+          "trajectory_sha256": "sha256:ae8dde33b64b91e1fd6c16a06e2cb42670a5e2b6d3c51e8c6f528990082bb68b"
+        }
+      }
+    },
+    {
+      "level_id": "city7",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "only_strategic_win",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 9081,
+          "score": 6600,
+          "trajectory_sha256": "sha256:1e15d204e88a956a8dec7c8f4313f111e1764fb4219827ed28221a2291b5eec8"
+        },
+        "strategic": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 11165,
+          "score": 8990,
+          "trajectory_sha256": "sha256:5a641df3a3e39be06dc6506b651eab4ba6f797106ddc21a340d920e8445e7f16"
+        }
+      }
+    },
+    {
+      "level_id": "city9",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_outcome_rank_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 11051,
+          "score": 7270,
+          "trajectory_sha256": "sha256:ecd62d0b23ede5129826fab5339e531fe0da31a60202a64c5c0f2b9f2cb28b9c"
+        },
+        "strategic": {
+          "outcome": "None",
+          "time_limit_truncated": true,
+          "ticks": 12000,
+          "score": 8250,
+          "trajectory_sha256": "sha256:0afef7a6ef030556bd63544d1246e585de439b6ac79c32389230fc850f3a15d6"
+        }
+      }
+    },
+    {
+      "level_id": "city10",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "only_strategic_win",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 4191,
+          "score": 4180,
+          "trajectory_sha256": "sha256:707953c37d9b902e708ddf9d33d4f57d99f55758e35a15e4db96d5693bcb8e5b"
+        },
+        "strategic": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 7857,
+          "score": 10170,
+          "trajectory_sha256": "sha256:c94d38407172ee6915022269ed57ae371262e2da3216cfd3cadc1d303a40bd9b"
+        }
+      }
+    },
+    {
+      "level_id": "Coast1",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_outcome_rank_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 7103,
+          "score": 11720,
+          "trajectory_sha256": "sha256:709eecb49de3a3f360ee3c92bce59e5759a142cf97107bf5cc08733124d6cb4f"
+        },
+        "strategic": {
+          "outcome": "None",
+          "time_limit_truncated": true,
+          "ticks": 12000,
+          "score": 6520,
+          "trajectory_sha256": "sha256:65f924f9555b774f0fc0cee5561ec5a048ee3e3efaeca9d1c0a4cb789dc2636b"
+        }
+      }
+    },
+    {
+      "level_id": "Coast2",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "only_strategic_win",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "None",
+          "time_limit_truncated": true,
+          "ticks": 12000,
+          "score": 11330,
+          "trajectory_sha256": "sha256:1088abb6cc915cb18843cc1f37ecfb3828ae614b8eca41083eea13f34cc2d2d6"
+        },
+        "strategic": {
+          "outcome": "win",
+          "time_limit_truncated": false,
+          "ticks": 9685,
+          "score": 11430,
+          "trajectory_sha256": "sha256:3dbd55ec0e486f849632b94a460d6a90cf11075b7313eecb44419e2efb0bde75"
+        }
+      }
+    },
+    {
+      "level_id": "Coast3",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "None",
+          "time_limit_truncated": true,
+          "ticks": 12000,
+          "score": 6920,
+          "trajectory_sha256": "sha256:fffc5f68f2a5be1db8028fa5825b45acde0f73d81d050c9a2c1c9b9a2e4783ae"
+        },
+        "strategic": {
+          "outcome": "None",
+          "time_limit_truncated": true,
+          "ticks": 12000,
+          "score": 7450,
+          "trajectory_sha256": "sha256:cabd2904d12762b329fe2d6486591ce873f1f2d49de68830b184ecb924d8fa04"
+        }
+      }
+    },
+    {
+      "level_id": "Coast4",
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_geometric",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 11200,
+          "score": 12050,
+          "trajectory_sha256": "sha256:c4d5d52fe45eee1499ec7c6fbb526f044114d0ab1f7a2dbeea7a0702f5b08f00"
+        },
+        "strategic": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 8954,
+          "score": 7280,
+          "trajectory_sha256": "sha256:17b502fcfe3b76080b1ccacd8262391329b4e15ead563ae990015c9b96f49957"
+        }
+      }
+    },
+    {
+      "level_id": "Coast5",
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_geometric",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 9403,
+          "score": 9640,
+          "trajectory_sha256": "sha256:2ce120f972ce7d92b3dcc4e579b73bcfcc2bc03ea51fc1d62b718e7ddef44300"
+        },
+        "strategic": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 11061,
+          "score": 8790,
+          "trajectory_sha256": "sha256:803fcd694829051f6a756fd3293961e876dddc391eafbe32c1f48f9a7e37df97"
+        }
+      }
+    },
+    {
+      "level_id": "Coast6",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 10957,
+          "score": 6040,
+          "trajectory_sha256": "sha256:205a82004f41c7b9d00d6e4bb3c79b8f5ab16d88d68456b70c5bebb6151e2859"
+        },
+        "strategic": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 9832,
+          "score": 10210,
+          "trajectory_sha256": "sha256:65043d6b65821c564e92edf104c2726858300337e4b08be7cfeb6bd044b5a833"
+        }
+      }
+    },
+    {
+      "level_id": "Coast7",
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_geometric",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 9708,
+          "score": 11800,
+          "trajectory_sha256": "sha256:7682cffa19259cbabab503288b6ef547079facfce68b459378b017c03df3c589"
+        },
+        "strategic": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 10026,
+          "score": 11290,
+          "trajectory_sha256": "sha256:e46fb50732a833febfc60a342ff3fadf4d54ec3a2d010873077146896463a5bf"
+        }
+      }
+    },
+    {
+      "level_id": "Coast9",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 7729,
+          "score": 8650,
+          "trajectory_sha256": "sha256:1469fbfb5acd4fe243f3754f2a5d09b0089aec6784ce7d063600e1d9a3e7fa2c"
+        },
+        "strategic": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 8424,
+          "score": 9050,
+          "trajectory_sha256": "sha256:8a74f32c8e94ad5dd98bc7a85325eb691f38807fb4988ad622cd4f9288c82a7a"
+        }
+      }
+    },
+    {
+      "level_id": "Coast10",
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_geometric",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 5460,
+          "score": 6550,
+          "trajectory_sha256": "sha256:ee6f9d89eb8c98f194266470b680e1f7957df22d11cd5a4f60c320567b742a53"
+        },
+        "strategic": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 4568,
+          "score": 2290,
+          "trajectory_sha256": "sha256:7b1da11dd7f288fe3d716ae2d395472d0768c19b0bee0b2ff6f86f36e3a375db"
+        }
+      }
+    },
+    {
+      "level_id": "grotto1",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "None",
+          "time_limit_truncated": true,
+          "ticks": 12000,
+          "score": 5330,
+          "trajectory_sha256": "sha256:f372c80468fc44506fdf4875d07daba00bf203b967ed6f8e61d487b6eb218a3f"
+        },
+        "strategic": {
+          "outcome": "None",
+          "time_limit_truncated": true,
+          "ticks": 12000,
+          "score": 7210,
+          "trajectory_sha256": "sha256:20380ed3501911a635b5cd5b8c7449b0be9d5f485e338a04de77e5c28b86b5d3"
+        }
+      }
+    },
+    {
+      "level_id": "grotto2",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 4933,
+          "score": 2610,
+          "trajectory_sha256": "sha256:09764b44c905873303f25c217bad49ebee13c9c322d0ae661c28990709c15d00"
+        },
+        "strategic": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 6319,
+          "score": 3090,
+          "trajectory_sha256": "sha256:42f3164f517d8a38f29e7a727e60787a8dcecf2f4d1e8e81b102a21fbacff757"
+        }
+      }
+    },
+    {
+      "level_id": "grotto3",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 6477,
+          "score": 3200,
+          "trajectory_sha256": "sha256:a158887a305fcfc608d571f3ffec9d6d57060d9ba813bc1c640033e0f2d4c7ef"
+        },
+        "strategic": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 10608,
+          "score": 6190,
+          "trajectory_sha256": "sha256:9b71a1ed3db9342a30654771c06dc406074e8359f79e23a5e0dd67851bd16f64"
+        }
+      }
+    },
+    {
+      "level_id": "grotto4",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_outcome_rank_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 7327,
+          "score": 6770,
+          "trajectory_sha256": "sha256:823648c44ae538746d84032852cb6e4e1a33251d98d53a31c6a7b0e2d7ca9720"
+        },
+        "strategic": {
+          "outcome": "None",
+          "time_limit_truncated": true,
+          "ticks": 12000,
+          "score": 13640,
+          "trajectory_sha256": "sha256:32452b2372aa067fd30c1df44a21d2be1b880508adff231721d5a2e0d267f9d3"
+        }
+      }
+    },
+    {
+      "level_id": "grotto5",
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_geometric",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 7424,
+          "score": 7060,
+          "trajectory_sha256": "sha256:5a9978c09fd06e3976207866af64a1a864d5be1ed3d4b95b945c7ed54b9bbcfe"
+        },
+        "strategic": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 6197,
+          "score": 3550,
+          "trajectory_sha256": "sha256:269f21f45fec33c8a64ceef08f7cd952ca989edd5a19856fd54253b927f81c4f"
+        }
+      }
+    },
+    {
+      "level_id": "grotto6",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 10460,
+          "score": 8630,
+          "trajectory_sha256": "sha256:959986ecaff158f3abafc2031f379b7ab8e12fe0d3aae11306827cf1915b2db3"
+        },
+        "strategic": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 11184,
+          "score": 9220,
+          "trajectory_sha256": "sha256:4f4b111fe34663a8f9804ff9f1f852af62a65c27525afd2b95f745766550d11d"
+        }
+      }
+    },
+    {
+      "level_id": "grotto7",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 9299,
+          "score": 6110,
+          "trajectory_sha256": "sha256:4a8e5e956695518d051d0faaffa6fc0bd7bbbde1c674c19cb505b93647874f67"
+        },
+        "strategic": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 8119,
+          "score": 7690,
+          "trajectory_sha256": "sha256:0a35585f33eb75de5a57b7af3a2f3b77eff4ea4ff1e38f32e6da017d16bfd89a"
+        }
+      }
+    },
+    {
+      "level_id": "grotto9",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 3382,
+          "score": 1720,
+          "trajectory_sha256": "sha256:46d2f7ea6ebc67a5e9a3c56ad49634323ae3c1d30ee32a14909fc4e5c56f2cfc"
+        },
+        "strategic": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 8152,
+          "score": 11170,
+          "trajectory_sha256": "sha256:3827cc9c0af8c9e16d1623b97f547b89f4493ab7a544ab5f3f22db722c6ead43"
+        }
+      }
+    },
+    {
+      "level_id": "grotto10",
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_geometric",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 6161,
+          "score": 4930,
+          "trajectory_sha256": "sha256:e84c8982946a741de0e4ec9052c48c20d18ecbd9f7a4baea21035e6a58fa00c8"
+        },
+        "strategic": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 8368,
+          "score": 4630,
+          "trajectory_sha256": "sha256:c548bd95e4e62cdcbe0c841bf1f39139cd41917acf61fb0183f4caad2ded3be6"
+        }
+      }
+    },
+    {
+      "level_id": "volcano1",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 9524,
+          "score": 8590,
+          "trajectory_sha256": "sha256:e9febeeea34b099759c551edffba175bf22812421db510a47711c98b1d4d26d3"
+        },
+        "strategic": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 11753,
+          "score": 8890,
+          "trajectory_sha256": "sha256:6dbb3d3cccfeebd4bd1c8610efc9bd695ec4e1e42ad0bf2f958bc8b19b93ac14"
+        }
+      }
+    },
+    {
+      "level_id": "volcano2",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 7731,
+          "score": 4790,
+          "trajectory_sha256": "sha256:e22999b02647836574da63e8a7328239c571dd3fc0393d05ad1e0cefeffcca1f"
+        },
+        "strategic": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 9324,
+          "score": 5890,
+          "trajectory_sha256": "sha256:7f43de4300a88de3adbdd904a97018d4694920090733b50c2d2dea609dd6312f"
+        }
+      }
+    },
+    {
+      "level_id": "volcano3",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 4947,
+          "score": 2220,
+          "trajectory_sha256": "sha256:62c563cc164c983b1a59fd4f9fcbb8ecb0e9bfab407cd82fe07b262c8bbe9fff"
+        },
+        "strategic": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 4970,
+          "score": 2410,
+          "trajectory_sha256": "sha256:38816fac468f260ce46e65f99cd4a58b354ce6287884e53b23383c2ec86d54a3"
+        }
+      }
+    },
+    {
+      "level_id": "volcano4",
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_geometric",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 8161,
+          "score": 6830,
+          "trajectory_sha256": "sha256:8184126e9475c639157e30eb2258245fdc945aa5490c70144ab514a445f5192e"
+        },
+        "strategic": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 6328,
+          "score": 6610,
+          "trajectory_sha256": "sha256:b3d1e109f8796a49ece4ed36a9623e3ad6b6b9d68462c681c3d2e71662e85472"
+        }
+      }
+    },
+    {
+      "level_id": "volcano5",
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_geometric",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 5852,
+          "score": 3040,
+          "trajectory_sha256": "sha256:2b12de00d002c33748887158978ff1d82e61d707d87f791a24e26fb78320bf95"
+        },
+        "strategic": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 5978,
+          "score": 3020,
+          "trajectory_sha256": "sha256:9af0ab4dc7ac7f11f3f6431a7aff8deb78709f895a40ebef2495019f5434a531"
+        }
+      }
+    },
+    {
+      "level_id": "volcano6",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 9488,
+          "score": 5790,
+          "trajectory_sha256": "sha256:5d83b3a8da3de2a95599f910999268de88b907a2cd06e666b6ddbb63017905dd"
+        },
+        "strategic": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 10628,
+          "score": 5900,
+          "trajectory_sha256": "sha256:52f670a58f9e4d3e0f9938c2c41f72391b8629e46f63d5932f59bcc2a1ff3364"
+        }
+      }
+    },
+    {
+      "level_id": "volcano7",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 8008,
+          "score": 8680,
+          "trajectory_sha256": "sha256:26fd3956eb1a6c401e6ad16da86cf1f8053869ceba232c7ce5b21a1350d3c051"
+        },
+        "strategic": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 8830,
+          "score": 8980,
+          "trajectory_sha256": "sha256:12f1b5f60f56de422b94eb1bb7bcc6b58604ac71a746b9fa8c37214418c8f71a"
+        }
+      }
+    },
+    {
+      "level_id": "volcano8",
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 4465,
+          "score": 2600,
+          "trajectory_sha256": "sha256:28e60c3bbde1d827d4cadb3cbdfad46154080eab3a190e5c196659ef223ebe8a"
+        },
+        "strategic": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 8841,
+          "score": 7990,
+          "trajectory_sha256": "sha256:6c31f88da5e86d3b392f4c6ee1f354f060249fac51756a6a88aa400fcbf42ee9"
+        }
+      }
+    },
+    {
+      "level_id": "volcano9",
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_geometric",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 3741,
+          "score": 3250,
+          "trajectory_sha256": "sha256:9de125ccdc704f949dedd1d49b5d5daf022f47525e51d6bba258a35723177089"
+        },
+        "strategic": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 2558,
+          "score": 1990,
+          "trajectory_sha256": "sha256:839fb54bf34ff5b217892db3d5c4361522114aa796b54588a9429c48a6cf3870"
+        }
+      }
+    },
+    {
+      "level_id": "volcano10",
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_geometric",
+      "paired_source_metrics": {
+        "geometric": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 10735,
+          "score": 12460,
+          "trajectory_sha256": "sha256:4ef4b84e36d4f3fc109093909d732a3a9faf6ecdb6d20754929cc99cd9c1963a"
+        },
+        "strategic": {
+          "outcome": "loss",
+          "time_limit_truncated": false,
+          "ticks": 4034,
+          "score": 2610,
+          "trajectory_sha256": "sha256:4a3c2d7b1bc3e08929e23c642ff1048b2b2eadc2b8cbec624df3f45209068f37"
+        }
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "level_id": "Jungle1",
+      "seed": 1400600000,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "both_win_faster_strategic"
+    },
+    {
+      "level_id": "Jungle2",
+      "seed": 1400600001,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "both_win_faster_strategic"
+    },
+    {
+      "level_id": "Jungle3",
+      "seed": 1400600002,
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "only_geometric_win"
+    },
+    {
+      "level_id": "Jungle4",
+      "seed": 1400600003,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "both_win_faster_strategic"
+    },
+    {
+      "level_id": "jungle6",
+      "seed": 1400600004,
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "both_win_faster_geometric"
+    },
+    {
+      "level_id": "Jungle7",
+      "seed": 1400600005,
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "both_win_faster_geometric"
+    },
+    {
+      "level_id": "Jungle8",
+      "seed": 1400600006,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "both_win_faster_strategic"
+    },
+    {
+      "level_id": "Jungle9",
+      "seed": 1400600007,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_outcome_rank_strategic"
+    },
+    {
+      "level_id": "Jungle10",
+      "seed": 1400600008,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "both_win_faster_strategic"
+    },
+    {
+      "level_id": "village1",
+      "seed": 1400600009,
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "both_win_faster_geometric"
+    },
+    {
+      "level_id": "village2",
+      "seed": 1400600010,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "only_strategic_win"
+    },
+    {
+      "level_id": "village3",
+      "seed": 1400600011,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "both_win_faster_strategic"
+    },
+    {
+      "level_id": "village4",
+      "seed": 1400600012,
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "only_geometric_win"
+    },
+    {
+      "level_id": "village5",
+      "seed": 1400600013,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "only_strategic_win"
+    },
+    {
+      "level_id": "village6",
+      "seed": 1400600014,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic"
+    },
+    {
+      "level_id": "village7",
+      "seed": 1400600015,
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "both_win_faster_geometric"
+    },
+    {
+      "level_id": "village8",
+      "seed": 1400600016,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "only_strategic_win"
+    },
+    {
+      "level_id": "village10",
+      "seed": 1400600017,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "both_win_faster_strategic"
+    },
+    {
+      "level_id": "city1",
+      "seed": 1400600018,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "only_strategic_win"
+    },
+    {
+      "level_id": "city2",
+      "seed": 1400600019,
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "only_geometric_win"
+    },
+    {
+      "level_id": "city3",
+      "seed": 1400600020,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic"
+    },
+    {
+      "level_id": "city4",
+      "seed": 1400600021,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_outcome_rank_strategic"
+    },
+    {
+      "level_id": "city5",
+      "seed": 1400600022,
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_geometric"
+    },
+    {
+      "level_id": "city6",
+      "seed": 1400600023,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic"
+    },
+    {
+      "level_id": "city7",
+      "seed": 1400600024,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "only_strategic_win"
+    },
+    {
+      "level_id": "city9",
+      "seed": 1400600025,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_outcome_rank_strategic"
+    },
+    {
+      "level_id": "city10",
+      "seed": 1400600026,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "only_strategic_win"
+    },
+    {
+      "level_id": "Coast1",
+      "seed": 1400600027,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_outcome_rank_strategic"
+    },
+    {
+      "level_id": "Coast2",
+      "seed": 1400600028,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "only_strategic_win"
+    },
+    {
+      "level_id": "Coast3",
+      "seed": 1400600029,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic"
+    },
+    {
+      "level_id": "Coast4",
+      "seed": 1400600030,
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_geometric"
+    },
+    {
+      "level_id": "Coast5",
+      "seed": 1400600031,
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_geometric"
+    },
+    {
+      "level_id": "Coast6",
+      "seed": 1400600032,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic"
+    },
+    {
+      "level_id": "Coast7",
+      "seed": 1400600033,
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_geometric"
+    },
+    {
+      "level_id": "Coast9",
+      "seed": 1400600034,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic"
+    },
+    {
+      "level_id": "Coast10",
+      "seed": 1400600035,
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_geometric"
+    },
+    {
+      "level_id": "grotto1",
+      "seed": 1400600036,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic"
+    },
+    {
+      "level_id": "grotto2",
+      "seed": 1400600037,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic"
+    },
+    {
+      "level_id": "grotto3",
+      "seed": 1400600038,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic"
+    },
+    {
+      "level_id": "grotto4",
+      "seed": 1400600039,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_outcome_rank_strategic"
+    },
+    {
+      "level_id": "grotto5",
+      "seed": 1400600040,
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_geometric"
+    },
+    {
+      "level_id": "grotto6",
+      "seed": 1400600041,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic"
+    },
+    {
+      "level_id": "grotto7",
+      "seed": 1400600042,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic"
+    },
+    {
+      "level_id": "grotto9",
+      "seed": 1400600043,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic"
+    },
+    {
+      "level_id": "grotto10",
+      "seed": 1400600044,
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_geometric"
+    },
+    {
+      "level_id": "volcano1",
+      "seed": 1400600045,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic"
+    },
+    {
+      "level_id": "volcano2",
+      "seed": 1400600046,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic"
+    },
+    {
+      "level_id": "volcano3",
+      "seed": 1400600047,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic"
+    },
+    {
+      "level_id": "volcano4",
+      "seed": 1400600048,
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_geometric"
+    },
+    {
+      "level_id": "volcano5",
+      "seed": 1400600049,
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_geometric"
+    },
+    {
+      "level_id": "volcano6",
+      "seed": 1400600050,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic"
+    },
+    {
+      "level_id": "volcano7",
+      "seed": 1400600051,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic"
+    },
+    {
+      "level_id": "volcano8",
+      "seed": 1400600052,
+      "teacher_policy_id": "strategic-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_strategic"
+    },
+    {
+      "level_id": "volcano9",
+      "seed": 1400600053,
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_geometric"
+    },
+    {
+      "level_id": "volcano10",
+      "seed": 1400600054,
+      "teacher_policy_id": "geometric-actor-observable-v1",
+      "selection_reason": "higher_nonwin_score_geometric"
+    }
+  ],
+  "seed_range": [
+    1400600000,
+    1400600054
+  ],
+  "execution": {
+    "device": "cpu",
+    "workers": 12,
+    "attempts_per_level": 1,
+    "human_input_wrapper": "elite-human-v1",
+    "capacity_overflow": "fail_closed_affected_attempt_only"
+  },
+  "implementation": {
+    "builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_hybrid_teacher_probe.py",
+      "sha256": "sha256:8b019f21494a4f30827f0a5568b65f2db53d76939a1f3750f3cbbe35672e5a0b"
+    },
+    "evaluator": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_alphazuma_55_hybrid_teacher.py",
+      "sha256": "sha256:16b436245ba7c281d08f87deaf3b3c2b1b7f24d2bfd3542c94d322109b2e5429"
+    },
+    "geometric_teacher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_teacher.py",
+      "sha256": "sha256:ce31abd1b422770d1c34f55226c550a5a19570fd6a994ab330769eb758cf5089"
+    },
+    "strategic_teacher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_strategic_teacher.py",
+      "sha256": "sha256:d342e7185638d9cf4771b19efad2ae93362d092ebce9b5208fd156bb66e64746"
+    },
+    "capacity_wrapper": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel_v2.py",
+      "sha256": "sha256:811de7b530e6703858ae218aa9a0309724c49824d817e2f55733646ec89fd6c3"
+    }
+  },
+  "outputs": {
+    "root": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/hybrid-teacher-fresh-probe-s99081508-v1",
+    "result": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/hybrid-teacher-fresh-probe-s99081508-v1/result.json"
+  },
+  "authority_boundary": {
+    "formal_seed_consumption": false,
+    "training_recipe_change_authorized": false,
+    "formal_candidate_registration_authorized": false,
+    "positive_holdout_rows_may_support_a_separate_distillation_route": true
+  }
+}

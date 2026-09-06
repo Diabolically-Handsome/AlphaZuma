@@ -1,0 +1,54 @@
+{
+  "schema": "zuma-rl.fidelity-audit",
+  "version": 1,
+  "status": "PASS",
+  "audit_type": "actor_no_hidden_state",
+  "scope": {
+    "policy": "original-transfer-jungle2-v1",
+    "environment_id": "ZumaRevenge-v0",
+    "level_id": "Jungle2",
+    "hard": false,
+    "profile_mode": "tutorials_completed",
+    "observation_mode": "actor"
+  },
+  "checks": [
+    {
+      "name": "feature_contract_complete",
+      "status": "PASS"
+    },
+    {
+      "name": "tunnel_filter",
+      "status": "PASS"
+    },
+    {
+      "name": "privileged_global_slots_zero",
+      "status": "PASS"
+    },
+    {
+      "name": "visible_powerup_channel",
+      "status": "PASS"
+    },
+    {
+      "name": "hidden_state_invariance",
+      "status": "PASS"
+    },
+    {
+      "name": "privileged_control_changed",
+      "status": "PASS"
+    },
+    {
+      "name": "observation_deterministic",
+      "status": "PASS"
+    }
+  ],
+  "failure_reasons": [],
+  "summary": {
+    "feature_count": 72,
+    "unmapped_feature_count": 0,
+    "hidden_perturbation_actor_equal": true,
+    "privileged_control_changed": true,
+    "visible_powerup_channel_verified": true,
+    "tunnel_hidden_ball_count": 1
+  },
+  "audit_fingerprint": "sha256:2387c2c989a4ead19e3448789bc40305c67c962350ab0970b1577385da83b517"
+}

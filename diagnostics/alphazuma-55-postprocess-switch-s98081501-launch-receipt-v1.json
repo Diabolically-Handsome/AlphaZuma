@@ -1,0 +1,47 @@
+{
+  "schema": "zuma-rl.alphazuma-55-waiting-deployment-switch-launch-receipt",
+  "version": 1,
+  "status": "PASS",
+  "recorded_utc": "2026-08-15T06:11:24.773975+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-switch-s98081501-preregistration-v1.json",
+    "sha256": "sha256:93e194a39350e957cf7f3cb555cefc358c1e9f90f3d9de6db9afb14755e07087"
+  },
+  "orchestrator": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/switch_alphazuma_55_waiting_deployment.py",
+    "sha256": "sha256:ee7c1c5e6035408e97de8936a713ddffb0fdf035a7998cd91500e273c8c3993b"
+  },
+  "process": {
+    "windows_wsl_client_pid": 59336,
+    "wsl_pid": 43007,
+    "started_utc": "2026-08-15T06:11:05.971594+00:00",
+    "alive_after_launch": true
+  },
+  "status_snapshot": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/postprocess-switch-s98081501-v1/controller_status.json",
+    "sha256_at_recording": "sha256:452c15ea98d5bb6df6f3e3f2cdea3c014e7c5946aabd2cc556317b140abc59e0",
+    "status": "RUNNING",
+    "phase": "WAITING_FOR_MILESTONE",
+    "milestone_status": "WAITING_FOR_TARGET"
+  },
+  "logs": {
+    "stdout": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/launchers/postprocess-switch-s98081501.stdout.log",
+    "stderr": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/launchers/postprocess-switch-s98081501.stderr.log",
+    "stdout_bytes_at_recording": 0,
+    "stderr_bytes_at_recording": 0
+  },
+  "formal_boundary": {
+    "selection_root_exists": false,
+    "final_blind_root_exists": false,
+    "continuous_root_exists": false,
+    "withdrawal_receipt_exists": false,
+    "new_deployment_preregistration_exists": false,
+    "formal_seed_consumption": false
+  },
+  "test_evidence": {
+    "related_tests_passed": 25,
+    "related_tests_failed": 0,
+    "validate_only_status": "VALID"
+  }
+}

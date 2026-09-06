@@ -1,0 +1,33 @@
+{
+  "schema": "zuma-rl.pc-mechanism-audit-plan",
+  "version": 1,
+  "cases": [
+    {
+      "id": "c136l1-natural-terminal",
+      "manifest_path": "sources/c136l1-u8880-u9200-natural-terminal-v1.json",
+      "memory_probe_path": "formal-full-state-c136l1-natural-terminal-u8880-u9200-v1/attempt-01/memory-probe.json",
+      "window": {
+        "start_update": 8880,
+        "end_update": 9200
+      }
+    },
+    {
+      "id": "c136l2-natural-terminal",
+      "manifest_path": "sources/c136l2-u8880-u9200-natural-terminal-v1.json",
+      "memory_probe_path": "formal-full-state-c136l2-natural-terminal-u8880-u9200-v1/attempt-01/memory-probe.json",
+      "window": {
+        "start_update": 8880,
+        "end_update": 9200
+      }
+    },
+    {
+      "id": "c136l3-natural-terminal",
+      "manifest_path": "sources/c136l3-u8880-u9200-natural-terminal-v1.json",
+      "memory_probe_path": "formal-full-state-c136l3-natural-terminal-u8880-u9200-v1/attempt-01/memory-probe.json",
+      "window": {
+        "start_update": 8880,
+        "end_update": 9200
+      }
+    }
+  ]
+}

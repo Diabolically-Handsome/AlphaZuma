@@ -1,0 +1,247 @@
+{
+  "schema": "zuma-rl.alphazuma-55-configured-successor-master-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_SUCCESSOR_FINAL_BLIND",
+  "campaign_id": "alphazuma-55-polar-wide-successor-s99081539-v1",
+  "created_utc": "2026-08-15T21:22:09.181218+00:00",
+  "deadline_utc": "2026-08-17T15:00:00Z",
+  "deadline_local": "2026-08-17 11:00 America/Toronto",
+  "objective": {
+    "one_frozen_policy_file": true,
+    "runtime_model_switching_forbidden": true,
+    "per_level_weight_routing_forbidden": true,
+    "simulator_state_policy": true,
+    "visual_frontend_in_scope": false,
+    "original_client_world_record_claim": false,
+    "target": "Certify one frozen configured policy on all 55 included levels and four continuous no-retry campaigns."
+  },
+  "scope": {
+    "retail_ordinary_adventure_level_count": 60,
+    "included_level_count": 55,
+    "excluded_moving_frog_level_count": 5,
+    "excluded_bosses": "all story boss definitions, including multipart final-boss definitions",
+    "included_levels_in_adventure_order": [
+      "Jungle1",
+      "Jungle2",
+      "Jungle3",
+      "Jungle4",
+      "jungle6",
+      "Jungle7",
+      "Jungle8",
+      "Jungle9",
+      "Jungle10",
+      "village1",
+      "village2",
+      "village3",
+      "village4",
+      "village5",
+      "village6",
+      "village7",
+      "village8",
+      "village10",
+      "city1",
+      "city2",
+      "city3",
+      "city4",
+      "city5",
+      "city6",
+      "city7",
+      "city9",
+      "city10",
+      "Coast1",
+      "Coast2",
+      "Coast3",
+      "Coast4",
+      "Coast5",
+      "Coast6",
+      "Coast7",
+      "Coast9",
+      "Coast10",
+      "grotto1",
+      "grotto2",
+      "grotto3",
+      "grotto4",
+      "grotto5",
+      "grotto6",
+      "grotto7",
+      "grotto9",
+      "grotto10",
+      "volcano1",
+      "volcano2",
+      "volcano3",
+      "volcano4",
+      "volcano5",
+      "volcano6",
+      "volcano7",
+      "volcano8",
+      "volcano9",
+      "volcano10"
+    ],
+    "excluded_moving_frog_levels": [
+      "Jungle5",
+      "village9",
+      "city8",
+      "Coast8",
+      "grotto8"
+    ],
+    "included_dual_position_levels": [
+      "village3",
+      "city3",
+      "Coast3",
+      "Coast10",
+      "grotto3",
+      "volcano3"
+    ],
+    "notes": [
+      "Dual-position frog stages remain in scope.",
+      "Dual-curve stages are ordinary stages and are not excluded.",
+      "Moving horizontal or vertical frog stages and every boss are outside this campaign."
+    ]
+  },
+  "original_root": "/mnt/d/SteamLibrary/steamapps/common/Zuma's Revenge",
+  "seed_registry": {
+    "final_blind": {
+      "first": 2300000000,
+      "last": 2300000439,
+      "matrix": "55 levels x 8 attempts for one frozen successor policy",
+      "embargo_until_promotion_decision_is_frozen": true
+    },
+    "continuous_campaign_challenge": {
+      "first": 2400000000,
+      "last": 2400000219,
+      "matrix": "4 frozen campaigns x 55 levels, one attempt per level",
+      "embargo_until_successor_policy_hash_is_frozen": true
+    },
+    "overlap_with_source_or_sibling_formal_seeds": false
+  },
+  "successor": {
+    "intent": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-wide-successor-s99081539-intent-v1.json",
+      "sha256": "sha256:18cc0492e1bdaa65b28f6500174d025534ae4e08f5fbe90a75df8d9f8c12dc7f"
+    },
+    "source_campaign_master": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+      "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+    },
+    "engineering_validation": {
+      "plan": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-wide-validation-s99081538-plan-v1.json",
+        "sha256": "sha256:57bfa54cd8b113c39b896bc441ff471b2075fe45358ffc18d2847f4415e65c9f"
+      },
+      "plan_schema": "zuma-rl.alphazuma-55-polar-wide-validation-plan",
+      "manifest_plan_binding_key": "polar_wide_validation_plan",
+      "audit_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-wide-validation-s99081538-audit-v1.json",
+      "eligible_model_ids": [
+        "polar-source-final",
+        "polar-wide-epoch-10",
+        "polar-wide-epoch-30",
+        "polar-wide-epoch-60"
+      ],
+      "ranking": [
+        "wins_desc",
+        "level_coverage_desc",
+        "total_score_desc",
+        "median_winning_ticks_asc",
+        "smaller_model_first_as_tie_break"
+      ],
+      "one_paired_attempt_per_level": true,
+      "current_campaign_candidate_authority": false
+    },
+    "promotion_gate": {
+      "selected_model_must_be_one_of": [
+        "polar-wide-epoch-10",
+        "polar-wide-epoch-30",
+        "polar-wide-epoch-60"
+      ],
+      "minimum_cleared_levels": 35,
+      "minimum_wins": 35,
+      "evaluated_before_successor_seed_consumption": true,
+      "failure_action": "write COMPLETE_NO_PROMOTION and leave both configured successor formal seed ranges unconsumed"
+    },
+    "formal_gates": {
+      "single_policy_capability_gate": {
+        "levels_cleared": 55,
+        "minimum_wins_per_level": 1,
+        "total_wins": 220,
+        "attempts": 440
+      },
+      "continuous_full_game_gate": {
+        "campaigns_cleared": 1,
+        "campaigns_attempted": 4,
+        "no_retry": true,
+        "no_model_change": true
+      }
+    },
+    "authority_boundary": {
+      "separate_from_source_campaign": true,
+      "does_not_modify_source_candidate_inventory": true,
+      "does_not_consume_source_selection_final_or_continuous_seeds": true,
+      "negative_results_retained": true
+    }
+  },
+  "execution": {
+    "shard_count": 2,
+    "devices": [
+      "cuda:0",
+      "cuda:0"
+    ],
+    "parallel_envs_per_shard": 12,
+    "final_blind_attempts_per_level": 8,
+    "continuous_campaigns": 4
+  },
+  "power_policy": {
+    "rtx_5090_limit_watts": 550,
+    "rtx_5080_limit_watts": 250,
+    "does_not_authorize_early_power_restore": true
+  },
+  "implementation": {
+    "master_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_configured_successor_master.py",
+      "sha256": "sha256:657179ac4fbbb7dca3a8d1afcaf413ce42b04af1dc046923fafc7af55a8ac7c6"
+    },
+    "controller": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_configured_successor_certification.py",
+      "sha256": "sha256:1d55eea57947abe87168ec9fdc2157753262474b044329417ee5f725f9eda953"
+    },
+    "watcher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/watch_alphazuma_55_configured_successor_certification.py",
+      "sha256": "sha256:1cbcfc1e922aa934859c89433aecff11a121551f1d84c582eeb6078f4da8df1b"
+    },
+    "independent_auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_configured_successor_result.py",
+      "sha256": "sha256:d664b80ac6d2c951802f20d2ba36d37f5626980791fee80c7e0bd1fe65dfcc63"
+    },
+    "evaluation_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_configured_successor_eval_contract.py",
+      "sha256": "sha256:39308f485773c3acd64227e9ed6abf47cdb34d908c84358dbf2dde4662a306ae"
+    },
+    "evaluator": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel_v2.py",
+      "sha256": "sha256:811de7b530e6703858ae218aa9a0309724c49824d817e2f55733646ec89fd6c3"
+    },
+    "evaluation_helper": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_overnight_v11_postprocess.py",
+      "sha256": "sha256:1f8ce2067be93b001d182f8c22018ad3b2a0fb5e5c051b9a60f9a18de66c1a0e"
+    },
+    "matrix_auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_v11_frontier_result.py",
+      "sha256": "sha256:a37ea47134610ec2824c1774d98afa84ff9025f7aa3b4d7235414feec6e45b34"
+    },
+    "engineering_auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_training_validation.py",
+      "sha256": "sha256:3621dcb64c3342e3954533d22401f258fe6c72ac49d164456455ad77ea54aa67"
+    },
+    "summarizer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/summarize_multimodel_evaluation.py",
+      "sha256": "sha256:e7096d86aa06cb26abc781977ec4448a7715a6bcb7023d0596870b3baf7e00a6"
+    }
+  },
+  "outputs": {
+    "root": "/mnt/d/ZumaTraining/alphazuma-55-polar-wide-successor-s99081539-v1",
+    "controller": "/mnt/d/ZumaTraining/alphazuma-55-polar-wide-successor-s99081539-v1/controller",
+    "watcher": "/mnt/d/ZumaTraining/alphazuma-55-polar-wide-successor-s99081539-v1/watcher",
+    "final_blind": "/mnt/d/ZumaTraining/alphazuma-55-polar-wide-successor-s99081539-v1/final-blind",
+    "continuous": "/mnt/d/ZumaTraining/alphazuma-55-polar-wide-successor-s99081539-v1/continuous",
+    "independent_audit_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-wide-successor-s99081539-independent-audit-v1.json"
+  }
+}

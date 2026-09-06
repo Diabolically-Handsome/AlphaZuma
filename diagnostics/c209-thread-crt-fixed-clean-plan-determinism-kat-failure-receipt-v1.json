@@ -1,0 +1,35 @@
+{
+  "comparison": {
+    "first_difference": {
+      "field": "mtrand_index",
+      "kat_a": 434,
+      "kat_b": 452,
+      "update": 3429
+    },
+    "other_semantic_fields_at_first_difference_equal": true,
+    "status": "FAIL"
+  },
+  "created_utc": "2026-08-10T17:57:25.648Z",
+  "decision": {
+    "kat_outputs_reusable_as_formal_evidence": false,
+    "kat_outputs_retained": true,
+    "next_action": "derive new clean plans that reconstruct global MTRand from the DMO 32-bit seed at the existing Board breakpoint in addition to the already fixed one-word thread CRT state"
+  },
+  "id": "c209-thread-crt-fixed-clean-plan-determinism-kat-failure",
+  "interpretation": {
+    "complete_mtrand_state_words_equal": true,
+    "difference_class": "pre_board_asynchronous_global_mtrand_draw_count",
+    "thread_crt_seed_fix_effective": true,
+    "thread_crt_state_equal": true
+  },
+  "preregistration": {
+    "path": "diagnostics/c209-thread-crt-fixed-clean-plan-determinism-kat-preregistration-v1.json",
+    "sha256": "sha256:405840851740e1ea562b9a73d74c3f43b531ec623dc0633deb15f88887625a8b"
+  },
+  "runs": {
+    "kat_a_trajectory_sha256": "sha256:37b7f037d2139ff7c8d6a3f256044ba00e1c9933d2f9748abc56e9e96ffefb1d",
+    "kat_b_trajectory_sha256": "sha256:09f2d5013e851868be4190200012ef7773cc1aac0aa3e643698f1412ae1bf9c8"
+  },
+  "status": "KAT_REJECTED",
+  "version": 1
+}

@@ -1,0 +1,132 @@
+{
+  "schema": "zuma-rl.training-timelimit-screening-preregistration",
+  "version": 1,
+  "created_utc": "2026-08-04T08:49:08.666Z",
+  "status": "FROZEN_BEFORE_RUN_OUTPUT",
+  "classification": "failure_conditioned_closed_gate_episode_diversity_mechanism_screen",
+  "hypotheses": {
+    "null": "a training-only 2048-step TimeLimit does not recover both deterministic and stochastic full-horizon learning for failed seed 20260811",
+    "alternative": "increasing reset-boundary and initial-state diversity while preserving native tick dynamics recovers both full-horizon evaluation modes"
+  },
+  "design": {
+    "training_seed": 20260811,
+    "environment_seed": 20270811,
+    "action_sampling_seed": 20280811,
+    "run_dir": "/mnt/d/ZumaTraining/curriculum-timelimit2048-jungle2-masked-ent000-s20260811-v1",
+    "expected_run_dir_absent": true,
+    "only_recipe_difference_from_failed_98304_control": "training_time_limit_steps_2048",
+    "common_recipe": {
+      "algorithm": "maskable_ppo",
+      "environment": "revenge",
+      "level": "Jungle2",
+      "hard": false,
+      "curve_index": 0,
+      "profile_mode": "tutorials_completed",
+      "aim_bins": 180,
+      "mask_rejected_actions": true,
+      "frame_skip": 1,
+      "max_ticks": 12000,
+      "max_balls": 768,
+      "total_steps": 98304,
+      "num_envs": 8,
+      "rollout_steps": 512,
+      "batch_size": 1024,
+      "learning_rate": 0.0003,
+      "reward_scale": 0.01,
+      "entropy_coef": 0.0,
+      "checkpoint_every": 32768,
+      "eval_every": 1000000
+    },
+    "curriculum_boundary": {
+      "wrapper": "gymnasium.wrappers.TimeLimit",
+      "training_time_limit_steps": 2048,
+      "training_full_episode_lower_bound": 48,
+      "control_full_episode_approximation": 8,
+      "evaluation_time_limit_steps": 12000,
+      "native_dynamics_changed": false,
+      "observation_changed": false,
+      "reward_changed": false,
+      "action_space_changed": false
+    },
+    "evaluation": {
+      "boundary_eval_episodes": 8,
+      "parallel_envs": 8,
+      "deterministic": true,
+      "stochastic": true,
+      "seed_protocol": "vec_env_seed_once_continuous_resets",
+      "full_horizon_ticks": 12000
+    }
+  },
+  "acceptance": {
+    "pipeline": {
+      "process_exit_code": 0,
+      "completion_receipt_status": "COMPLETE",
+      "failure_receipt_forbidden": true,
+      "final_model_required": true,
+      "all_four_boundary_receipts_required": true
+    },
+    "baseline_replay": {
+      "pretrain_deterministic_receipt_identical_to_failed_98304_control": true,
+      "pretrain_stochastic_receipt_identical_to_failed_98304_control": true
+    },
+    "within_curriculum": {
+      "deterministic": "posttrain_mean_greater_than_pretrain_mean_and_at_least_6_of_8_pairs_improve",
+      "stochastic": "posttrain_mean_greater_than_pretrain_mean_and_at_least_5_of_8_pairs_improve"
+    },
+    "matched_control": {
+      "deterministic_posttrain_mean_greater_than_failed_98304_control": true,
+      "stochastic_posttrain_mean_greater_than_failed_98304_control": true
+    },
+    "promotion_rule": "a pass supports the episode-diversity mechanism only and requires at least two fresh training-seed confirmations before recipe promotion",
+    "rejection_rule": "reject the 2048-step training-only boundary if the pipeline passes but either full-horizon evaluation mode or matched-control comparison fails"
+  },
+  "evidence_anchor": {
+    "failed_98304_control": {
+      "root": "D:/ZumaTraining/horizon98304-jungle2-masked-ent000-s20260811-v1",
+      "deterministic_pretrain_mean": 4.85145,
+      "deterministic_posttrain_mean": -10.6399,
+      "stochastic_pretrain_mean": 52.0212625,
+      "stochastic_posttrain_mean": 47.419575
+    },
+    "horizon_outcome": {
+      "path": "diagnostics/masked-ent000-horizon98304-outcome-v1.json",
+      "sha256": "sha256:7a74b8e0a780d03b1045cc17516e0d42db1b990c446b5c5675156c04616b3870",
+      "status": "FINITE_HORIZON_RECOVERY_FAIL_RECIPE_REJECTED"
+    },
+    "action_distribution_posthoc": {
+      "path": "diagnostics/masked-ent000-horizon98304-final-distribution-posthoc-v1.json",
+      "sha256": "sha256:8a92429d078e3dfd24c4b1afe6571a264d3aecd87e680d699db9fd042bf4fb1e"
+    },
+    "infrastructure_smoke": {
+      "root": "D:/ZumaTraining/infrastructure-training-time-limit-s20260814-v1",
+      "completion_sha256": "sha256:8ad32776818192e680e9205b9c37b26b04e08f70fbe4e2da85795dec33db5132",
+      "status": "COMPLETE"
+    },
+    "regression": {
+      "wsl_pytest": "PASS_1114_TESTS_WITH_ONE_EXISTING_RENDER_WARNING"
+    }
+  },
+  "source_hashes": {
+    "train.py": "sha256:c394cf4c7dd7f03e8b36014c5329ec1ec0db583aed364dadad8168350e7ddb76",
+    "revenge_env.py": "sha256:ff18c84e8b73459994aa738fe3a767c019de452a898d8506531978a12c40b849",
+    "pyproject.toml": "sha256:74850cea79642cf17f4f35adfa23f1ce69066e56e96bdedbe74ccb8afc0511e4"
+  },
+  "resources": {
+    "cuda_visible_devices": "0",
+    "expected_cuda_device": "NVIDIA GeForce RTX 5090",
+    "rtx_5080_excluded": true,
+    "cpu_thread_environment": {
+      "OMP_NUM_THREADS": 8,
+      "MKL_NUM_THREADS": 8,
+      "OPENBLAS_NUM_THREADS": 8
+    }
+  },
+  "non_authorizations": [
+    "fresh_seed_generalization_claim",
+    "large_scale_training",
+    "fidelity_gate_opening",
+    "original_game_deployment",
+    "original_transfer_certification",
+    "visual_policy_training"
+  ]
+}

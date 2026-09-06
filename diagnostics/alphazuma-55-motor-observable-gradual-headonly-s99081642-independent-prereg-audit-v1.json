@@ -1,0 +1,52 @@
+{
+  "schema": "zuma-rl.alphazuma-55-headonly-prereg-independent-audit",
+  "version": 1,
+  "status": "PASS",
+  "audited_utc": "2026-08-16T15:42:46.435704+00:00",
+  "auditor": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_motor_observable_gradual_headonly_prereg_v1.py",
+    "sha256": "sha256:e340821697392ee2fc9ba1a04b774a645a1ce4b517ba27491d7107f197bb41ab"
+  },
+  "base": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-s99081629-preregistration-v1.json",
+    "sha256": "sha256:11dd10f8537dfa12deb94c41ad3be3998a4204efec93a53fa97b8a04f21d0076"
+  },
+  "candidate": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-headonly-s99081642-preregistration-v1.json",
+    "sha256": "sha256:18b12280221b59588a65349812303ab58c115e859fdfb8e2eb674d222cd2ea72"
+  },
+  "verified_runtime_bindings": {
+    "trainer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_motor_observable_gradual_headonly_v1.py",
+      "sha256": "sha256:ceb6e87d388f9ab6d03ba2c1f0194da4c7dd2d62344d70bc6a6f1c1ab30744ba"
+    },
+    "builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_motor_observable_gradual_headonly_v1.py",
+      "sha256": "sha256:728d38dd8ec9dda5f42778b9e4bcef00e75f3aef15937e124badd2f198521c1b"
+    },
+    "training_seed_overlap_incident": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-training-seed-overlap-1546000000-incident-v1.json",
+      "sha256": "sha256:e957e188226f1b2b6f402e68c1da40a18d2c6c85c505973db885d7759bbc2bb5"
+    },
+    "predecessor_gate_audit": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-postprocess-s99081630-timeout-recovery-audit-v1.json",
+      "sha256": "sha256:e2f73963847962ca7de39e1bcf3d7ad6eed604145caf57e78d77d32223818ff6"
+    }
+  },
+  "allowed_recipe_delta": {
+    "optimizer_parameter_scope": [
+      "full_policy",
+      "action_net_only"
+    ],
+    "optimizer_state_reset_required_by_scope_change": true,
+    "training_seed_range_reused_with_disclosure": [
+      1546000000,
+      1546000219
+    ],
+    "run_identity_device_and_output_paths": true
+  },
+  "all_other_recipe_fields_byte_equivalent_after_normalization": true,
+  "run_directory_absent": true,
+  "formal_seed_consumption": "NONE",
+  "formal_candidate_authority": false
+}

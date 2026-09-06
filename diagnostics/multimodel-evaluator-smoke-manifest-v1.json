@@ -1,0 +1,19 @@
+{
+  "schema": "zuma-rl.zero-shot-models-manifest",
+  "version": 1,
+  "status": "FROZEN",
+  "models": [
+    {
+      "id": "smoke-adaptive",
+      "training_steps": 65536,
+      "path": "/mnt/d/ZumaTraining/overnight-multilevel-smoke-a-s310200001-v1/final_model.zip",
+      "sha256": "sha256:d4670dd6f2526eb8075bba21de52b117d73796bfa949b8f0e3be1c9bd70f8b1a"
+    },
+    {
+      "id": "smoke-uniform",
+      "training_steps": 65536,
+      "path": "/mnt/d/ZumaTraining/overnight-multilevel-smoke-b-s310200002-v1/final_model.zip",
+      "sha256": "sha256:55c09f7709eb5e0b4827607d90b8fe7d060b63a00c2c9f41d5e12445f76dad77"
+    }
+  ]
+}

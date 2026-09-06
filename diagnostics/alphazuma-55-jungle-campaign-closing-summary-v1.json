@@ -1,0 +1,81 @@
+{
+  "schema": "alphazuma-55-jungle-campaign-closing-summary",
+  "version": 1,
+  "written_utc": "2026-08-22T06:18:51Z",
+  "campaign": "Jungle lateral expansion ('一关一关来 直到丛林全部搞定'), 2026-08-19 .. 2026-08-22",
+  "scope": "all Jungle zone levels except Jungle5 (moving frog, out of macro-interface scope)",
+  "human_records_broken": [
+    {
+      "level": "Jungle1 (Adv 1)",
+      "ai": "5.30 s",
+      "human": "6 s",
+      "margin": "12%"
+    },
+    {
+      "level": "Jungle2 (Adv 2)",
+      "ai": "7.07 s",
+      "human": "12 s",
+      "margin": "41%"
+    },
+    {
+      "level": "jungle6 (Adv 6)",
+      "ai": "15.46 s",
+      "human": "18 s",
+      "margin": "14%"
+    },
+    {
+      "level": "Jungle10 (Adv 10)",
+      "ai": "16.29 s",
+      "human": "25 s",
+      "margin": "35%; top-8 all sub-human"
+    }
+  ],
+  "parked_with_ai_tas_bests": [
+    {
+      "level": "Jungle3",
+      "ai": "9.88 s",
+      "human": "7 s",
+      "gap": "1.41x"
+    },
+    {
+      "level": "Jungle4",
+      "ai": "7.54 s",
+      "human": "7 s",
+      "gap": "1.077x"
+    },
+    {
+      "level": "Jungle7",
+      "ai": "20.05 s",
+      "human": "16 s",
+      "gap": "1.25x"
+    },
+    {
+      "level": "Jungle8",
+      "ai": "14.63 s",
+      "human": "8 s",
+      "gap": "1.83x"
+    }
+  ],
+  "parked_without_wins": [
+    {
+      "level": "Jungle9",
+      "note": "five distinct attacks repelled; park verdict with four reopening levers"
+    }
+  ],
+  "conventions": "every number is AI-TAS (seed_list_tas, golden enumeration), simulator timing with the RTA-audit-pending caveat, elite-human-v1 motor constraints, embargoed formal seed ranges untouched, formal_seed_consumption false throughout",
+  "method_inventory_validated": [
+    "macro-teacher-BC -> timepolish PPO (4 champions)",
+    "strengthened-init route: 240-ep collections, >= 8/16 gate (J3 16/16, J10 10/16, J8 14/16)",
+    "iterated beta-DAgger with per-merge invfreq recomputation (J7: 0->0->4->10)",
+    "warm-critic resume after infrastructure death (J3 round 2 champion)",
+    "quantized one-seed-dip relative floors + lowest-E[t] champion rule",
+    "mean-tail separation: record-hunting champion vs expected-time champion",
+    "negative results receipted: plain-DAgger poison, record-mode stochastic sampling, three J8 polish stops, J9 five-attack park"
+  ],
+  "infrastructure_lessons": [
+    "latest-launch bounds on every queued launcher (saved one stale prereg)",
+    "clock-derived schedules inside freeze generators",
+    "checkpoint+receipt discipline as disaster recovery (two Windows-update deaths, ~350k steps lost total)"
+  ],
+  "formal_seed_consumption": false
+}

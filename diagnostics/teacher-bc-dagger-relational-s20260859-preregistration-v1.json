@@ -1,0 +1,135 @@
+{
+  "schema": "zuma-rl.teacher-bc-dagger-relational-preregistration",
+  "version": 1,
+  "created_utc": "2026-08-04T10:14:57.399Z",
+  "status": "FROZEN_BEFORE_RUN_OUTPUT",
+  "classification": "failure_conditioned_matched_relational_inductive_bias_screen",
+  "hypotheses": {
+    "null": "explicit shooter-color and adjacent-run relations do not improve stable fire-versus-swap imitation enough to produce a held-out Jungle2 win",
+    "alternative": "explicit current/next-color matching and run relations stabilize the semantic action boundary and produce at least one held-out Jungle2 win"
+  },
+  "design": {
+    "run_dir": "/mnt/d/ZumaTraining/screening-teacher-bc-dagger-relational-s20260859-v1",
+    "expected_run_dir_absent": true,
+    "matched_control": "/mnt/d/ZumaTraining/screening-teacher-bc-dagger-semantic-aim-s20260859-v1",
+    "only_training_architecture_difference": "entity_relational_instead_of_entity_attention",
+    "common_recipe": {
+      "algorithm": "maskable_ppo_actor_behavior_cloning_with_dagger",
+      "level": "Jungle2",
+      "profile_mode": "tutorials_completed",
+      "aim_bins": 180,
+      "max_ticks": 12000,
+      "max_balls": 768,
+      "frame_skip": 1,
+      "training_episodes": 4,
+      "training_seed": 20271859,
+      "validation_episodes": 2,
+      "validation_seed": 20272859,
+      "model_seed": 20260859,
+      "batch_size": 256,
+      "initial_epochs": 30,
+      "wait_sample_stride": 16,
+      "swap_sample_repeat": 2,
+      "learning_rate": 0.0001,
+      "verb_loss_weight": 10.0,
+      "aim_loss_scope": "fire_only",
+      "max_grad_norm": 0.5,
+      "dagger_rounds": 2,
+      "dagger_episodes_per_round": 1,
+      "dagger_epochs_per_round": 15,
+      "dagger_seed": 20273859,
+      "dagger_max_steps": 4000,
+      "dagger_teacher_action_probability": 0.5
+    },
+    "intervention": {
+      "policy_architecture": "entity_relational",
+      "expected_policy_parameter_count": 307960,
+      "per_ball_relations": [
+        "matches_current_color",
+        "matches_next_color",
+        "same_color_left_neighbor",
+        "same_color_right_neighbor",
+        "current_color_run_support",
+        "next_color_run_support"
+      ],
+      "global_relation_summary": [
+        "current_match_exists",
+        "next_match_exists",
+        "current_run_exists",
+        "next_run_exists",
+        "current_local_span",
+        "next_local_span",
+        "current_match_fraction",
+        "next_match_fraction"
+      ],
+      "separate_conditioned_entity_pools": [
+        "current_color_candidates",
+        "next_color_candidates"
+      ],
+      "privileged_dynamic_state_added": false
+    },
+    "resources": {
+      "cuda_visible_devices": "0",
+      "expected_cuda_device": "NVIDIA GeForce RTX 5090",
+      "rtx_5080_excluded": true,
+      "cpu_thread_limit": 8
+    }
+  },
+  "acceptance": {
+    "pipeline": {
+      "process_exit_code": 0,
+      "completion_receipt_status": "COMPLETE",
+      "all_dagger_rounds_required": true,
+      "policy_parameter_count": 307960
+    },
+    "aggregated_dataset": {
+      "verb_accuracy_at_least": 0.9,
+      "fire_recall_at_least": 0.65,
+      "swap_recall_at_least": 0.65
+    },
+    "held_out_full_horizon": {
+      "wins_at_least": 1,
+      "validation_episodes": 2,
+      "mean_score_greater_than_matched_control": true,
+      "all_swap_degenerate_episode_forbidden": true
+    },
+    "promotion_rule": "a pass authorizes a fresh-seed relational DAgger confirmation only",
+    "rejection_rule": "if either dataset discrimination or held-out full-horizon behavior fails, reject this exact relational recipe"
+  },
+  "evidence_anchor": {
+    "matched_semantic_control": {
+      "report": "D:/ZumaTraining/screening-teacher-bc-dagger-semantic-aim-s20260859-v1/report.json",
+      "report_sha256": "sha256:c6c1472dde6a7169f5c9da6e2bcd27bcb726ce57f059388e74354aa97fae4b84",
+      "outcome": "diagnostics/teacher-bc-dagger-semantic-aim-s20260859-outcome-v1.json",
+      "outcome_sha256": "sha256:5b7c7a403a4162129f82ed2bda591853a29d87dee67a1047c21953bc149e6c25",
+      "held_out_wins": 0,
+      "held_out_mean_score": 5375.0
+    },
+    "relational_infrastructure_smoke": {
+      "report": "D:/ZumaTraining/infrastructure-teacher-bc-relational-s20260862-v1/report.json",
+      "report_sha256": "sha256:421ac023a75b777487f973b4abae04cd1ea512e0a6e604465246169dbcc0a339",
+      "completion_sha256": "sha256:72bbc9830a31f5b0d301939bbcf9af7efabb0737e99ba78c9a818ce783d494a9",
+      "result": "forward_backward_save_validation_pipeline_complete"
+    },
+    "regression": {
+      "wsl_targeted_pytest": "PASS_57",
+      "relational_known_answer_test": "PASS"
+    }
+  },
+  "source_hashes": {
+    "pretrain_maskable_ppo_teacher.py": "sha256:f4743419ab8117a37a2a892a380112e5bccf19ccf0046999aaaedd3c29f6e6be",
+    "revenge_features.py": "sha256:c51e80b1385fa24052d368585c63fd3e7a8c7230e9d35f88acfc2a98a12c8fc4",
+    "revenge_teacher.py": "sha256:9a7d343f824e29b0074053440a93ec4456e7584c433342fff850afd89bb1f3a5",
+    "revenge_env.py": "sha256:ff18c84e8b73459994aa738fe3a767c019de452a898d8506531978a12c40b849",
+    "test_revenge_env.py": "sha256:3612b7b882a20c022adae0f9ff2e9d552261c1b5cb40b9444bf254d4a3b1aa0d"
+  },
+  "non_authorizations": [
+    "fresh_seed_generalization_claim",
+    "large_scale_training",
+    "rl_recipe_promotion",
+    "fidelity_gate_opening",
+    "original_game_deployment",
+    "original_transfer_certification",
+    "visual_policy_training"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-formal-portfolio-load-spotcheck",
+  "version": 1,
+  "completed_utc": "2026-08-14T00:57:51.0203783Z",
+  "status": "PASS",
+  "classification": "runtime_health_evidence",
+  "anchor": {
+    "path": "diagnostics/alphazuma-v1.1-formal-portfolio-load-verification-v1.json",
+    "sha256": "sha256:246a6060c780785965b0a7c83f1f7645199a59e6c5215b1e6e190edc08c3c937"
+  },
+  "measurement": {
+    "source": "nvidia-smi",
+    "duration_seconds": 30,
+    "sample_interval_seconds": 1,
+    "samples_per_gpu": 30,
+    "accepted_average_utilization_band_percent": [65, 90]
+  },
+  "gpus": [
+    {
+      "index": 0,
+      "name": "NVIDIA GeForce RTX 5090",
+      "utilization_percent": {
+        "average": 79.6,
+        "median": 84,
+        "minimum": 51,
+        "maximum": 90
+      },
+      "maximum_memory_used_mib": 10329,
+      "total_memory_mib": 32607,
+      "maximum_temperature_c": 52,
+      "average_power_w": 243.4,
+      "status": "PASS"
+    },
+    {
+      "index": 1,
+      "name": "NVIDIA GeForce RTX 5080",
+      "utilization_percent": {
+        "average": 73.9,
+        "median": 80,
+        "minimum": 20,
+        "maximum": 93
+      },
+      "maximum_memory_used_mib": 9508,
+      "total_memory_mib": 16303,
+      "maximum_temperature_c": 58,
+      "average_power_w": 143.5,
+      "status": "PASS"
+    }
+  ],
+  "combined_unweighted_average_utilization_percent": 76.75,
+  "interpretation": "Both card averages are inside the frozen 65-90 percent safety band. Rollout and PPO-update phase alternation explains short minima; median utilization is at or above 80 percent on both cards.",
+  "recipe_change_authorized_by_result": false
+}

@@ -1,0 +1,34 @@
+{
+  "acceptance": {
+    "both_runs_must_pass": true,
+    "normalized_rng_trajectory_must_match_exactly": true,
+    "thread_crt_state_must_match_every_retained_update": true
+  },
+  "created_utc": "2026-08-10T17:54:18.445Z",
+  "fixed_contract": {
+    "end_update": 3438,
+    "freeze_update": 3425,
+    "run_order": ["kat_a", "kat_b"],
+    "start_update": 3429,
+    "warmup_tick_count": 4
+  },
+  "fixed_input": {
+    "dmo_sha256": "sha256:a5306095efb020c747530b0b546c8a8af1267a71ea48395e225f9b9a7c6516cf",
+    "plan": "D:/ZumaGolden/diagnostics/clean-c208-natural-loss-thread-crt-fixed-plan-v1/plan.json",
+    "plan_sha256": "sha256:642ff8a14320ebc055ac8eed004cc2483ee3b573178c8b5130af9cff6abf25e7",
+    "thread_crt_rng_seed": 1020014204
+  },
+  "id": "c209-thread-crt-fixed-clean-plan-determinism-kat",
+  "non_authorizations": ["pc_golden_credit", "mechanism_credit", "fidelity_gate_open", "training_start"],
+  "output_roots_absent_at_freeze": {"kat_a": true, "kat_b": true},
+  "outputs": {
+    "kat_a": "D:/ZumaGolden/diagnostics/c209-thread-crt-determinism-kat-a-v1",
+    "kat_b": "D:/ZumaGolden/diagnostics/c209-thread-crt-determinism-kat-b-v1"
+  },
+  "parent": {
+    "path": "diagnostics/c208-thread-crt-fixed-clean-pc-golden-plan-derivation-preregistration-v1.json",
+    "sha256": "sha256:f3e1801a16b70156a14801065a988441d0512d70a3dca12d6d14228979ec3a25"
+  },
+  "status": "FROZEN_BEFORE_KAT_OUTPUTS",
+  "version": 1
+}

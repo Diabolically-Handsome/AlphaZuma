@@ -1,0 +1,140 @@
+{
+  "schema": "zuma-rl.polar-ppo-continuation-confirmation-preregistration",
+  "version": 1,
+  "created_utc": "2026-08-04T11:42:02.337Z",
+  "status": "FROZEN_BEFORE_RUN_OUTPUT",
+  "classification": "independent_training_seed_exact_recipe_confirmation",
+  "hypotheses": {
+    "null": "the passing 16384-step continuation result is specific to one training seed or one boundary seed stream",
+    "alternative": "an exact-recipe replication with independent training, environment, and action-sampling seeds also preserves Jungle2 capability"
+  },
+  "design": {
+    "run_dir": "/mnt/d/ZumaTraining/confirmation-polar-ppo-continuation-s20260877-v1",
+    "expected_run_dir_absent": true,
+    "execution_supervision": {
+      "mode": "detached_hidden_wsl_process_with_persistent_stdout_and_stderr",
+      "stdout_path": "D:/ZumaTraining/confirmation-polar-ppo-continuation-s20260877-v1.stdout.log",
+      "stderr_path": "D:/ZumaTraining/confirmation-polar-ppo-continuation-s20260877-v1.stderr.log",
+      "expected_log_paths_absent": true
+    },
+    "input_model": {
+      "path": "D:/ZumaTraining/screening-teacher-offline-polar90-s20260873-v1/refined_model.zip",
+      "sha256": "sha256:f03dee97cb5a3e2ce3abcf4324137fe6ed9b68e827765b4a7b6adfa63cafb8f7",
+      "same_as_screen": true,
+      "actor_observable_only": true
+    },
+    "exact_recipe": {
+      "environment": "ZumaRevenge-v0",
+      "level": "Jungle2",
+      "profile_mode": "tutorials_completed",
+      "hard": false,
+      "curve_index": 0,
+      "aim_bins": 180,
+      "action_mode": "factorized",
+      "actor_observable_retail_rejection_mask": true,
+      "frame_skip": 1,
+      "max_ticks": 12000,
+      "training_time_limit_steps": 0,
+      "max_balls": 768,
+      "score_reward_scale": 0.01,
+      "algorithm": "MaskablePPO",
+      "total_effective_steps": 16384,
+      "num_envs": 4,
+      "vector_env": "SubprocVecEnv",
+      "rollout_steps_per_env": 512,
+      "batch_size": 512,
+      "learning_rate": 0.00001,
+      "entropy_coef": 0.0,
+      "checkpoint_every_effective_steps": 8192,
+      "periodic_eval_disabled_within_horizon": true
+    },
+    "independent_seeds": {
+      "training_seed": 20260877,
+      "boundary_environment_seed": 20270877,
+      "stochastic_action_sampling_seed": 20280877,
+      "json_files_searched": 338,
+      "seed_search_hits_before_freeze": 0
+    },
+    "boundary_evaluation": {
+      "episodes_per_boundary": 8,
+      "eval_num_envs": 4,
+      "seed_protocol": "vec_env_seed_once_continuous_resets",
+      "same_seed_sequences_pre_and_post_within_run": true,
+      "deterministic_and_stochastic": true,
+      "stochastic_rng_isolated_from_training": true,
+      "win_classifier": "episode_reward_gt_10_and_episode_length_lt_12000",
+      "truncation_classifier": "episode_length_eq_12000"
+    },
+    "resources": {
+      "cuda_visible_devices": "0",
+      "expected_cuda_device": "NVIDIA GeForce RTX 5090",
+      "rtx_5080_excluded": true,
+      "cpu_thread_budget": 8
+    }
+  },
+  "acceptance": {
+    "replication_run": {
+      "completion_receipt_status": "COMPLETE",
+      "effective_steps_exactly": 16384,
+      "all_four_boundary_receipts_required": true,
+      "input_model_hash_must_match": true,
+      "failure_receipt_forbidden": true,
+      "stderr_bytes": 0,
+      "pretrain_deterministic_wins_at_least": 6,
+      "posttrain_deterministic_wins_at_least": 6,
+      "posttrain_deterministic_wins_no_less_than_pretrain_minus": 1,
+      "posttrain_deterministic_truncations_at_most": 1,
+      "posttrain_deterministic_mean_reward_at_least_pretrain_minus": 2.0,
+      "deterministic_paired_reward_regressions_exceeding_5_at_most": 2,
+      "posttrain_stochastic_wins_no_less_than_pretrain_minus": 1,
+      "posttrain_stochastic_truncations_no_more_than_pretrain_plus": 1,
+      "posttrain_stochastic_mean_reward_at_least_pretrain_minus": 2.0
+    },
+    "two_run_aggregate": {
+      "both_runs_must_pass_their_preregistered_hard_gates": true,
+      "posttrain_deterministic_wins_at_least": 13,
+      "deterministic_episodes": 16,
+      "posttrain_deterministic_truncations_at_most": 2,
+      "mean_of_run_level_deterministic_reward_deltas_at_least": 0.0,
+      "posttrain_stochastic_wins_at_least": 14,
+      "stochastic_episodes": 16,
+      "posttrain_stochastic_truncations_at_most": 2,
+      "mean_of_run_level_stochastic_reward_deltas_at_least": 0.0
+    },
+    "promotion_rule": "a replication and aggregate pass authorizes one preregistered 98304-step closed-gate scale-stability screen; it still does not authorize large-scale transfer training",
+    "rejection_rule": "if replication or aggregate criteria fail, do not scale; preserve the seed-specific receipts and diagnose PPO variance"
+  },
+  "evidence_anchor": {
+    "screen_outcome": {
+      "path": "diagnostics/polar-ppo-continuation-s20260876-outcome-v1.json",
+      "sha256": "sha256:425fe854f99a3fb37b33bc9fb293234a3b6f1682f54338157c4dd458fdcce3e9",
+      "status": "SMALL_PPO_CONTINUATION_PASS"
+    },
+    "screen_posttrain": {
+      "deterministic_wins": 7,
+      "deterministic_episodes": 8,
+      "deterministic_truncations": 1,
+      "deterministic_mean_reward_delta": 1.4532625,
+      "stochastic_wins": 8,
+      "stochastic_episodes": 8,
+      "stochastic_truncations": 0,
+      "stochastic_mean_reward_delta": 2.7939875
+    },
+    "regression": {
+      "wsl_full_pytest": "PASS",
+      "process_exit_code": 0
+    }
+  },
+  "source_hashes": {
+    "train.py": "sha256:b0426f5dafe330474a6eeb576832afe2ccd78c6727f817aee570d600f4358917",
+    "revenge_features.py": "sha256:863e956fa99f25aff2c56700ea4ea7b2acd601cfd032136078e424a5204a3a08",
+    "revenge_env.py": "sha256:ff18c84e8b73459994aa738fe3a767c019de452a898d8506531978a12c40b849"
+  },
+  "non_authorizations": [
+    "large_scale_training",
+    "fidelity_gate_opening",
+    "original_game_deployment",
+    "original_transfer_certification",
+    "visual_policy_training"
+  ]
+}

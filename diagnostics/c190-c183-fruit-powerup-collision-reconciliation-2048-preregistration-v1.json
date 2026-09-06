@@ -1,0 +1,100 @@
+{
+  "schema": "zuma-rl.c183-fruit-powerup-collision-reconciliation-2048-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_UNBOUND_DIFF_OUTPUT",
+  "created_utc": "2026-08-10T15:40:19.1664855Z",
+  "purpose": "Run the same immutable conditional reconciliation with a 2048-draw ceiling, fixed above the independently measured 1220-draw full-state maximum, and freeze the complete expected source transition transcript before output.",
+  "classification": "preregistered-source-state-bounded-unbound-reconciliation",
+  "parents": {
+    "c189_preregistration_sha256": "sha256:ef9873187e5676c7f7eafab55863e53d3d6fe9e15ef9e84ad7092158ca187dc2",
+    "c189_failure_receipt": "diagnostics/c189-c183-fruit-powerup-collision-reconciliation-1024-failure-receipt-v1.json",
+    "c189_failure_receipt_sha256": "sha256:9a03950271e5d074a57775054be0bbe0a6881b77e9f28f283796cf15ce010dd2",
+    "c189_failed_output_sha256": "sha256:97be1329730edaba5b8f13684533efcec6bdfdb87c9f3dfc5ca4d03469b031c3"
+  },
+  "only_change_from_c189": {
+    "maximum_external_visual_mtrand_draws_per_tick_before": 1024,
+    "maximum_external_visual_mtrand_draws_per_tick_after": 2048,
+    "independently_measured_required_maximum": 1220,
+    "all_other_inputs_options_code_and_tolerances_unchanged": true
+  },
+  "fixed_inputs": {
+    "trajectory": "D:/ZumaGolden/formal-full-state-c181a1-fruit-powerup-c182-campaign-v1/attempt-01/source/attempt-01/trajectory/index.json",
+    "trajectory_sha256": "sha256:64e8439227c20cd5f4909f8cdfafc6cd69d87496af411dc4aa284c9c1174f7f4",
+    "dmo": "D:/ZumaGolden/diagnostics/full-state-source-bound-fruit-powerup-c181a1-plan-v1-stop3166/inputs/input.dmo",
+    "dmo_sha256": "sha256:413ff5b6470f695dc703b99064762a3d5749434530e620833291925c56339e77",
+    "start_update": 8213,
+    "end_update": 8260,
+    "source_proof_start_update": 8120,
+    "source_proof_end_update": 8270
+  },
+  "expected_reconciliation": {
+    "classification": "unclassified_until_bound_call_trace_proof",
+    "reconciled_tick_count": 27,
+    "total_reconciled_draw_count": 3587,
+    "maximum_reconciled_draw_count": 1220,
+    "rows": [
+      {"framework_update": 8234, "draw_count": 14},
+      {"framework_update": 8235, "draw_count": 1220},
+      {"framework_update": 8236, "draw_count": 74},
+      {"framework_update": 8237, "draw_count": 61},
+      {"framework_update": 8238, "draw_count": 85},
+      {"framework_update": 8239, "draw_count": 80},
+      {"framework_update": 8240, "draw_count": 67},
+      {"framework_update": 8241, "draw_count": 93},
+      {"framework_update": 8242, "draw_count": 74},
+      {"framework_update": 8243, "draw_count": 82},
+      {"framework_update": 8244, "draw_count": 99},
+      {"framework_update": 8245, "draw_count": 79},
+      {"framework_update": 8246, "draw_count": 90},
+      {"framework_update": 8247, "draw_count": 93},
+      {"framework_update": 8248, "draw_count": 92},
+      {"framework_update": 8249, "draw_count": 109},
+      {"framework_update": 8250, "draw_count": 90},
+      {"framework_update": 8251, "draw_count": 100},
+      {"framework_update": 8252, "draw_count": 103},
+      {"framework_update": 8253, "draw_count": 105},
+      {"framework_update": 8254, "draw_count": 106},
+      {"framework_update": 8255, "draw_count": 109},
+      {"framework_update": 8256, "draw_count": 113},
+      {"framework_update": 8257, "draw_count": 100},
+      {"framework_update": 8258, "draw_count": 124},
+      {"framework_update": 8259, "draw_count": 119},
+      {"framework_update": 8260, "draw_count": 106}
+    ],
+    "derivation": "adjacent immutable source full-state advancement with production PopCapMTRandom; output-independent"
+  },
+  "output": {
+    "path": "D:/ZumaGolden/diagnostics/jungle2-c183-u8213-u8260-fruit-powerup-collision-diff-v5-reconciled-unbound.json",
+    "absent_at_freeze": true
+  },
+  "fixed_command": ".\\.venv-win\\Scripts\\python.exe tools\\compare_pc_gameplay_trajectory.py D:\\ZumaGolden\\formal-full-state-c181a1-fruit-powerup-c182-campaign-v1\\attempt-01\\source\\attempt-01\\trajectory\\index.json --dmo D:\\ZumaGolden\\diagnostics\\full-state-source-bound-fruit-powerup-c181a1-plan-v1-stop3166\\inputs\\input.dmo --original-root \"D:\\SteamLibrary\\steamapps\\common\\Zuma's Revenge\" --level-id Jungle2 --curve-index 0 --start-update 8213 --end-update 8260 --no-synchronize-shooter --reconcile-external-visual-mtrand --maximum-external-visual-mtrand-draws-per-tick 2048 --source-feature-proofs --source-proof-start-update 8120 --source-proof-end-update 8270 --evidence-root D:\\ZumaGolden --waypoint-tolerance 0.0001 --position-tolerance 0.001 --progress-tolerance 0.000001 --output D:\\ZumaGolden\\diagnostics\\jungle2-c183-u8213-u8260-fruit-powerup-collision-diff-v5-reconciled-unbound.json",
+  "acceptance": {
+    "status": "PASS",
+    "compared_tick_count": 47,
+    "all_tick_statuses_pass": true,
+    "all_gameplay_states_exact_before_global_rng": true,
+    "all_global_mtrand_states_exact_after_reconciliation": true,
+    "all_qrand_crt_and_shooter_states_exact": true,
+    "reconciliation_rows_equal_frozen_rows": true,
+    "required_source_authorized_features": [
+      "powerup_proximity_bomb",
+      "fruit_powerup_collision",
+      "fruit_collection_animation"
+    ],
+    "unbound_output_is_not_certifying": true,
+    "native_call_trace_proof_pending": true
+  },
+  "frozen_code": {
+    "tools/compare_pc_gameplay_trajectory.py": "sha256:96ef141bee133f7c866f41183b2e0f41a420eab6345b77e5d5bc6a9ecd8ee8c8",
+    "src/zuma_rl/pc_gameplay_diff.py": "sha256:0b8cd75dd7d93180269f255d946b4959ddb7b65cd23ed0303662d5e0db4fa971",
+    "src/zuma_rl/pc_mtrand_reconciliation.py": "sha256:d9781e7626b1f981aa82ce220dd96e55ac074722d83873ba8990617aec4e3ac7",
+    "src/zuma_rl/pc_mechanism_audit.py": "sha256:656895a45cc546238e6c7051272eef325b1853527bacde1c76586b5f138abad4"
+  },
+  "decision_rule": {
+    "pass": "Freeze the output and preregister a complete source-bound native-call trace; no Gate credit until proof binding passes.",
+    "failure": "Retain the output and stop ceiling changes because the independently measured maximum is already covered.",
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

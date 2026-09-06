@@ -1,0 +1,140 @@
+{
+  "schema": "zuma-rl.teacher-policy-anchor-scale-stability-outcome",
+  "version": 2,
+  "created_utc": "2026-08-04T16:56:38.452Z",
+  "status": "BEHAVIORAL_SCALE_STABILITY_PASS",
+  "decision": "AUTHORIZE_EIGHTH_PC_GOLDEN_AND_FIDELITY_GATE_RECERTIFICATION",
+  "preregistration": {
+    "path": "diagnostics/teacher-policy-anchor-c1000-scale98k-behavioral-s20260940-preregistration-v1.json",
+    "sha256": "sha256:e51c651e5f17604f59c7c3a057a5d3c9e95ff32428c689077db4ef2993fc9c50",
+    "status": "FROZEN_BEFORE_RUN_OUTPUT"
+  },
+  "independence": {
+    "classification": "fresh_nonoverlapping_future_only_behavioral_scale_stability_screen",
+    "seed_family": 20260940,
+    "json_exact_hits_before_freeze": 0,
+    "prior_run_artifacts_using_seed_family": 0,
+    "replacement_seed_selection_after_baseline": false
+  },
+  "acceptance_results": {
+    "pipeline": {
+      "pass": true,
+      "completion_status": "COMPLETE",
+      "effective_steps": 98304,
+      "optimizer_reset_status": "PASS",
+      "teacher_anchor_installation_status": "INSTALLED",
+      "teacher_anchor_verification_status": "PASS",
+      "teacher_policy_bitwise_unchanged": true,
+      "teacher_requires_grad_all_false": true,
+      "current_policy_bitwise_changed": true,
+      "teacher_detached_before_model_save": true,
+      "teacher_anchor_train_calls": 48,
+      "teacher_anchor_minibatches": 192,
+      "teacher_anchor_samples": 98304,
+      "teacher_anchor_mean_forward_kl": 0.000007022546952247429,
+      "teacher_anchor_mean_forward_kl_catastrophic_limit": 0.00005,
+      "teacher_anchor_max_sample_forward_kl": 0.0007630319450981915,
+      "teacher_anchor_max_sample_forward_kl_catastrophic_limit": 0.01,
+      "six_exact_nonempty_checkpoints": true,
+      "all_four_v4_boundaries": true,
+      "both_v2_identity_comparisons": true,
+      "failure_receipt_present": false,
+      "stderr_bytes": 0
+    },
+    "capability_precondition": {
+      "pass": true,
+      "pretrain_stochastic_wins": 32,
+      "required_wins": 30,
+      "pretrain_stochastic_truncations": 0,
+      "maximum_truncations": 1,
+      "episodes": 32
+    },
+    "deterministic_behavior": {
+      "pass": true,
+      "pretrain": {"wins": 21, "losses": 6, "truncations": 5, "mean_reward": 29.6688625},
+      "posttrain": {"wins": 24, "losses": 5, "truncations": 3, "mean_reward": 29.772896875},
+      "mean_reward_delta": 0.104034375,
+      "paired_reward_improvements": 6,
+      "paired_reward_regressions": 5,
+      "paired_reward_regressions_exceeding_5": 4,
+      "checks": {
+        "posttrain_wins_at_least_20": true,
+        "posttrain_wins_no_less_than_pretrain_minus_2": true,
+        "posttrain_nonwins_no_more_than_pretrain_plus_2": true,
+        "posttrain_truncations_no_more_than_pretrain_plus_2": true,
+        "posttrain_mean_reward_at_least_pretrain_minus_1_5": true,
+        "paired_reward_regressions_exceeding_5_at_most_8": true
+      }
+    },
+    "stochastic_behavior": {
+      "pass": true,
+      "pretrain": {"wins": 32, "losses": 0, "truncations": 0, "mean_reward": 35.606925},
+      "posttrain": {"wins": 32, "losses": 0, "truncations": 0, "mean_reward": 36.359753125},
+      "mean_reward_delta": 0.752828125,
+      "paired_reward_improvements": 6,
+      "paired_reward_regressions": 3,
+      "paired_reward_regressions_exceeding_5": 2,
+      "all_frozen_checks_pass": true
+    },
+    "frozen_dataset_actor_safety": {
+      "pass": true,
+      "report_status": "PASS",
+      "report_sha256": "sha256:ababad1ba228bfbdd23ab3a47b8c972bbeedb07b0354b301d007eda954c81875",
+      "verb_deterministic_argmax_flips": 0,
+      "verb_flip_limit": 5,
+      "semantic_deterministic_argmax_flips": 4,
+      "semantic_flip_limit": 24,
+      "semantic_flip_rate": 0.0016174686615446825,
+      "semantic_flip_rate_limit": 0.01,
+      "verb_accuracy_reference": 0.9753336029114436,
+      "verb_accuracy_candidate": 0.9753336029114436,
+      "verb_accuracy_absolute_delta": 0.0,
+      "verb_accuracy_delta_limit": 0.01,
+      "fire_aim_exact_accuracy_reference": 0.6618421052631579,
+      "fire_aim_exact_accuracy_candidate": 0.6592105263157895,
+      "fire_aim_exact_accuracy_absolute_delta": 0.0026315789473684292,
+      "fire_aim_exact_accuracy_delta_limit": 0.02
+    },
+    "overall": {
+      "pass": true,
+      "post_hoc_override_applied": false
+    }
+  },
+  "bounded_inference": "on a zero-overlap 98304-step population, coefficient-1000 teacher-anchored PPO improves deterministic wins 21-to-24 and mean reward, preserves stochastic 32-of-32 wins while improving mean reward, and keeps frozen-dataset semantic actor drift below two tenths of one percent",
+  "artifacts": {
+    "run_dir": "D:/ZumaTraining/scale-teacher-anchor-c1000-behavioral-s20260940-98k-n32-v1",
+    "config_sha256": "sha256:4836a1014946e2ae9a7ef7800d8dfced634d1a20121c42c0c3dbf005681c6419",
+    "completion_sha256": "sha256:d2b7c7599780a201b3ace9e3f1eac133273aa990f9b1aca46cb40873e0c1bd40",
+    "optimizer_reset_sha256": "sha256:eaca6a6bc3fee4d8ce4a5a4877b38a823b2d2d90ae9c87fb14cd54d9bca4219d",
+    "teacher_anchor_installation_sha256": "sha256:166deb0d205c0522fe428c86b9846a6969d7bbc107a6f86d8804774d22668111",
+    "teacher_anchor_verification_sha256": "sha256:ff2a878d9ae086a48ef3b3177f20f761c21b84c8837a73b7b2375fad3bcc1e64",
+    "pretrain_deterministic_sha256": "sha256:2b66714c2b751766fe4ebc471b2dbf972caaf99f1571a2a2f1399f40bb447c75",
+    "posttrain_deterministic_sha256": "sha256:1780954145b501c359e1e943103d7c44a504a7f838d086390b07b62a0de22a39",
+    "pretrain_stochastic_sha256": "sha256:436c891f170adcb49e939ab672846017c15421eef74adfc470da3701d5e860ba",
+    "posttrain_stochastic_sha256": "sha256:00a7cd848fe4c714b29fbd2419f5bb8531848a6f02963aef9d4ff862e52b7566",
+    "deterministic_comparison_sha256": "sha256:1a4e50e18331918aa339f047ea5628685c91aa25f29506e5dfc7410d438da4f5",
+    "stochastic_comparison_sha256": "sha256:4cef4a1fdc23e9270a7d5ecd9fc614d794015a185305350a1fc2aa42bad4d820",
+    "final_model_sha256": "sha256:4329e48b46d964b411313d4d707187f94c367009ef73d3b923b396194e17d760",
+    "stdout_sha256": "sha256:fc05688f0806a96ec642c8ae22130087d7522d605cfb9f5599c8cccb4decbb9c",
+    "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "factor_drift_report_sha256": "sha256:ababad1ba228bfbdd23ab3a47b8c972bbeedb07b0354b301d007eda954c81875",
+    "checkpoint_sha256_by_step": {
+      "16384": "sha256:86b50423669d365466431c12aee3664a31e433922452450cc51a87e86fd3673b",
+      "32768": "sha256:a027c74d974ad8cfce5419cfe63c1d884bab48cae52045a85fd3ba120e256ca4",
+      "49152": "sha256:d3e1bb0c5f8dd9ccc1ce2ad551bdadc382ace1837efaa74717cf495b241a3a9d",
+      "65536": "sha256:31e36e462a4e18ba93ad81c0da2ca6b27917a18ca9ba822f46d0be1b78727d13",
+      "81920": "sha256:e6f1e26138a66eca1ea8ee5583dd507d6b4eed3ba6509eca740a0cd32ecb3f6d",
+      "98304": "sha256:4d1504ef1d34402a760d49e6504ea2937483ee4aee46857f1def3fab92528f4a"
+    }
+  },
+  "next_action": {
+    "authorized": "complete the eighth PC Golden and rerun the formal Fidelity Gate against the scale-stable recipe evidence",
+    "reserved_large_scale_seed_family": 20260950,
+    "large_scale_training_requires_gate_open": true
+  },
+  "non_authorizations": [
+    "large_scale_original_transfer_training_before_gate_open",
+    "fidelity_gate_opening_without_eighth_pc_golden",
+    "original_transfer_certification"
+  ]
+}

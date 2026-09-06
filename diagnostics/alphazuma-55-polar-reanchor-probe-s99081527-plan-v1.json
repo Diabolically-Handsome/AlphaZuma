@@ -1,0 +1,188 @@
+{
+  "schema": "zuma-rl.alphazuma-55-polar-reanchor-probe-plan",
+  "version": 1,
+  "status": "FROZEN_BEFORE_VARIANT_CREATION",
+  "created_utc": "2026-08-15T12:33:52.448168+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "objective": "Test whether the actor-visible 180-bin polar basis can repair the weak learned aim head without changing the verb policy or environment.",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "source_completion": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-multiseed-s99081525-v1/completion.json",
+    "sha256": "sha256:84a06961d8fc2532830c2babb413b25ac185046a5d55ff7ce4af63854c550660"
+  },
+  "source_model": {
+    "id": "settled-v3-multiseed-final",
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-multiseed-s99081525-v1/final_model.zip",
+    "sha256": "sha256:ced0d6196fa27317e198d6c7a946fd21c9ed18d4d9574a02ea93ab8b4bcd116c",
+    "training_steps": 36027227
+  },
+  "canonical_validation": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-settled-v3-multiseed-validation-s99081526-preregistration-v1.json",
+    "sha256": "sha256:45a5e43e77c2436dc8ad2203f8b4b1e059783fb60a75f11c9c46879faccba4b5"
+  },
+  "implementation": {
+    "runner": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/create_alphazuma_55_polar_reanchor_variants.py",
+      "sha256": "sha256:19bf0d2a3546cef3b630059cd6de709772e7a465ecd1d408000528602e46162c"
+    },
+    "materializer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/materialize_alphazuma_55_polar_reanchor_probe.py",
+      "sha256": "sha256:aa8867b5b57350a1f05b35ecf873156fca9235a4a71535b80958e72b74a65c73"
+    },
+    "evaluator": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel_v2.py",
+      "sha256": "sha256:811de7b530e6703858ae218aa9a0309724c49824d817e2f55733646ec89fd6c3"
+    }
+  },
+  "variants": [
+    {
+      "id": "polar-reset-identity-scale-5",
+      "mode": "reset_identity",
+      "scale": 5.0
+    },
+    {
+      "id": "polar-additive-identity-scale-1",
+      "mode": "additive_identity",
+      "scale": 1.0
+    },
+    {
+      "id": "polar-additive-identity-scale-2",
+      "mode": "additive_identity",
+      "scale": 2.0
+    }
+  ],
+  "variant_output_root": "/mnt/d/ZumaTraining/alphazuma-55-polar-reanchor-variants-s99081527-v1",
+  "validation": {
+    "levels": [
+      {
+        "id": "Jungle2",
+        "display_name": "Castaway",
+        "curve_count": 1,
+        "curve_names": [
+          "Jungle2\\Jungle2"
+        ]
+      },
+      {
+        "id": "Jungle9",
+        "display_name": "Creeper Copse",
+        "curve_count": 2,
+        "curve_names": [
+          "Jungle9\\Jungle9-1",
+          "Jungle9\\Jungle9-2"
+        ]
+      },
+      {
+        "id": "village6",
+        "display_name": "Face Your Fear",
+        "curve_count": 2,
+        "curve_names": [
+          "Village6-1",
+          "Village6-2"
+        ]
+      },
+      {
+        "id": "city4",
+        "display_name": "Ancestral Tongue",
+        "curve_count": 2,
+        "curve_names": [
+          "city4\\city4-1v2",
+          "city4\\city4-2v2"
+        ]
+      },
+      {
+        "id": "city10",
+        "display_name": "Double Danger",
+        "curve_count": 2,
+        "curve_names": [
+          "city10\\city10-1",
+          "city10\\city10-2"
+        ]
+      },
+      {
+        "id": "Coast10",
+        "display_name": "Skull Coral",
+        "curve_count": 2,
+        "curve_names": [
+          "coast10-1",
+          "coast10-2"
+        ]
+      },
+      {
+        "id": "grotto10",
+        "display_name": "Shark Den",
+        "curve_count": 2,
+        "curve_names": [
+          "grotto10\\grotto10-1",
+          "grotto10\\grotto10-2"
+        ]
+      },
+      {
+        "id": "volcano1",
+        "display_name": "Flowing Tiki Rage",
+        "curve_count": 1,
+        "curve_names": [
+          "Volcano1\\Volcano1"
+        ]
+      },
+      {
+        "id": "volcano5",
+        "display_name": "Underworld Remnants",
+        "curve_count": 1,
+        "curve_names": [
+          "Volcano5\\Volcano5-2"
+        ]
+      },
+      {
+        "id": "volcano8",
+        "display_name": "Basaltic Approach",
+        "curve_count": 1,
+        "curve_names": [
+          "volcano8\\volcano8-3"
+        ]
+      },
+      {
+        "id": "volcano9",
+        "display_name": "Searing Visage",
+        "curve_count": 2,
+        "curve_names": [
+          "volcano9\\volcano9-1",
+          "Volcano9\\Volcano9-2"
+        ]
+      },
+      {
+        "id": "volcano10",
+        "display_name": "Descent into Anguish",
+        "curve_count": 1,
+        "curve_names": [
+          "volcano10\\volcano10-4"
+        ]
+      }
+    ],
+    "attempts_per_level": 1,
+    "seed_plan": {
+      "registry": "training_validation",
+      "base_seed": 1550000700,
+      "last_seed": 1550000711
+    },
+    "execution": {
+      "output_root": "/mnt/d/ZumaTraining/alphazuma-55-polar-reanchor-probe-s99081527-v1",
+      "shard_count": 1,
+      "devices": [
+        "cuda:0"
+      ],
+      "parallel_envs_per_shard": 24
+    },
+    "manifest_output": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-reanchor-probe-s99081527-models-v1.json",
+    "preregistration_output": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-reanchor-probe-s99081527-preregistration-v1.json"
+  },
+  "authority_boundary": {
+    "classification": "posthoc_engineering_probe_only",
+    "formal_candidate_registration_authorized": false,
+    "formal_selection_seed_consumption": false,
+    "formal_final_blind_seed_consumption": false,
+    "continuous_campaign_seed_consumption": false
+  }
+}

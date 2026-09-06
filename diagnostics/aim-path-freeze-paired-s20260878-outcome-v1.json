@@ -1,0 +1,92 @@
+{
+  "schema": "zuma-rl.aim-path-freeze-paired-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T12:39:12.509Z",
+  "status": "AIM_PATH_FREEZE_SCREEN_FAIL",
+  "decision": "REJECT_FREEZE_AND_TEST_FRESH_OPTIMIZER_STATE",
+  "preregistration": {
+    "path": "diagnostics/aim-path-freeze-paired-s20260878-preregistration-v1.json",
+    "sha256": "sha256:bef12f83eec5b747ffdc3006524c75703fcc0c339727a26a6445786098beff08",
+    "status": "FROZEN_BEFORE_RUN_OUTPUT"
+  },
+  "artifacts": {
+    "run_dir": "D:/ZumaTraining/screening-aim-path-freeze-paired-s20260878-v1",
+    "config_sha256": "sha256:d3b07cddd6592ec84fd5e96ce9743f159f935e72a0584d5bd4b6b22378f206f1",
+    "final_model_sha256": "sha256:d5dc2fabec179de9575a355de6dc354b1be6370de13a063c0579b875db01d6d1",
+    "deterministic_comparison_sha256": "sha256:2620912b24ee9aff3e855eb3ea8f1ae2548da948f1cdda6d4c83195a532cc28d",
+    "stochastic_comparison_sha256": "sha256:0282793e0a526ff3f4ea17e1e14577b8c6c4ae8a79236d47e79070c7a2c6dddf",
+    "completion_sha256": "sha256:a4a820918612cf79c9bf76deffcd3032fa0da3aba751803b3b03f32a5782c8bc",
+    "stdout_sha256": "sha256:6d4bee8590d45159f0a571a5ba16202288ee3c2ebb21c73b151bfa5e66a1ee05",
+    "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "acceptance_results": {
+    "pipeline": {
+      "pass": true,
+      "completion_receipt_status": "COMPLETE",
+      "effective_steps": 16384,
+      "aim_path_verification_status": "PASS",
+      "aim_path_bitwise_unchanged": true,
+      "failure_receipt_present": false,
+      "stderr_bytes": 0
+    },
+    "replayed_precondition": {
+      "pass": true,
+      "deterministic_receipt_hash_exactly_reproduced": true,
+      "stochastic_receipt_hash_exactly_reproduced": true
+    },
+    "deterministic_retention": {
+      "pass": false,
+      "pretrain_wins": 7,
+      "posttrain_wins": 6,
+      "posttrain_losses": 1,
+      "posttrain_truncations": 1,
+      "mean_reward_delta": -3.40095,
+      "identity_paired_regressions_exceeding_5": 2,
+      "allowed_identity_paired_regressions_exceeding_5": 1
+    },
+    "stochastic_retention": {
+      "pass": false,
+      "pretrain_wins": 8,
+      "posttrain_wins": 8,
+      "posttrain_truncations": 0,
+      "mean_reward_delta": -3.676025,
+      "identity_paired_regressions_exceeding_5": 4,
+      "allowed_identity_paired_regressions_exceeding_5": 1
+    },
+    "mechanism_effect": {
+      "pass": false,
+      "unfrozen_deterministic_severe_regressions": 3,
+      "frozen_deterministic_severe_regressions": 2,
+      "unfrozen_posttrain_deterministic_wins": 7,
+      "frozen_posttrain_deterministic_wins": 6
+    },
+    "overall": {
+      "pass": false,
+      "post_hoc_override_applied": false
+    }
+  },
+  "mechanism_inference": {
+    "confirmed": "feature parameters and all aim-logit rows remained bitwise unchanged",
+    "observed": "three deterministic identity streams changed despite the frozen aim path, including one win-to-truncation transition",
+    "conclusion": "aim drift is not the sole cause; small verb-logit changes can cross deterministic argmax boundaries",
+    "optimizer_transition_audit": {
+      "initial_teacher_optimizer_state_parameter_count": 20,
+      "initial_teacher_optimizer_state_elements": 209059,
+      "initial_teacher_action_weight_exp_avg_norm": 0.07084807753562927,
+      "initial_teacher_action_weight_state_step": 900,
+      "aggregate_exp_avg_norm": 0.07569751882484041,
+      "interpretation": "the loaded model carries substantial 90-epoch supervised Adam momentum into the PPO objective; the freeze experiment zeroed frozen rows but intentionally left verb-row momentum active"
+    }
+  },
+  "next_action": {
+    "authorized": "implement a content-addressed full optimizer-state reset that leaves model parameters unchanged, KAT it, then repeat the consumed-seed controlled screen without aim freezing",
+    "forbidden": "do not promote aim-path freezing or launch the 98304-step screen"
+  },
+  "non_authorizations": [
+    "fresh_seed_evidence",
+    "aim_path_freeze_recipe_promotion",
+    "98304_step_scale_screen",
+    "large_scale_training",
+    "fidelity_gate_opening"
+  ]
+}

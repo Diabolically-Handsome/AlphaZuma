@@ -1,0 +1,45 @@
+{
+  "schema": "zuma-rl.zero-shot-multilevel-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_EVALUATION",
+  "model": {
+    "id": "smoke-adaptive",
+    "training_steps": 65536,
+    "path": "/mnt/d/ZumaTraining/overnight-multilevel-smoke-a-s310200001-v1/final_model.zip",
+    "sha256": "sha256:d4670dd6f2526eb8075bba21de52b117d73796bfa949b8f0e3be1c9bd70f8b1a"
+  },
+  "levels": [
+    {"id":"Jungle1","display_name":"Shipwrecked!","curve_count":1,"curve_names":["Jungle1\\Jungle1"]},
+    {"id":"village6","display_name":"Face Your Fear","curve_count":2,"curve_names":["Village6-1","Village6-2"]}
+  ],
+  "attempts_per_level": 1,
+  "total_attempts": 2,
+  "seed_plan": {"base_seed": 360000000,"last_seed":360000001},
+  "environment": {
+    "profile_mode":"tutorials_completed",
+    "base_config": {
+      "aim_bins":180,"action_mode":"factorized","frame_skip":1,"max_ticks":200,
+      "max_balls":768,"max_projectiles":32,"max_curves":2,"score_reward_scale":0.01,
+      "step_penalty":-0.0001,"win_reward":10.0,"loss_reward":-10.0,
+      "privileged_debug":false,"render_width":400,"render_height":300
+    },
+    "input_profile": {
+      "profile_id":"elite-human-v1","reaction_delay_ticks":12,
+      "max_aim_speed_degrees_per_second":1080.0,
+      "max_aim_acceleration_degrees_per_second_squared":18000.0,
+      "min_button_interval_ticks":5
+    },
+    "reward_profile": {
+      "profile_id":"win-time-score-v1","win_reward":10.0,"failure_reward":-10.0,
+      "time_penalty_per_native_tick":-0.0001,"score_progress_reward_cap":0.01
+    }
+  },
+  "execution": {
+    "output_root":"/mnt/d/ZumaTraining/multimodel-evaluator-smoke-v1",
+    "shard_count":2,"devices":["cuda:0","cuda:1"],"parallel_envs_per_shard":1
+  },
+  "evaluator": {
+    "path":"/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel.py",
+    "sha256":"sha256:d0011f9ad5c6837315007a7fb31e128fb315e4baddb45959c5f3b98d11a6a7e3"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "schema": "zuma-rl.pc-startup-global-mtrand-observation-diagnostic-execution-binding",
+  "version": 7,
+  "status": "BOUND_BEFORE_RUN_OUTPUTS",
+  "created_utc": "2026-08-04T20:22:40.963Z",
+  "id": "startup-global-mtrand-observation-e01-u0-u1702-v7-execution",
+  "parent_preregistration": "diagnostics/startup-global-mtrand-observation-preregistration-v7.json",
+  "parent_preregistration_sha256": "sha256:0f19d8339d570e0029d544b1d4d92fa58b04307982055f89bbea631fdd44455a",
+  "trigger_outcome": "diagnostics/initial-global-mtrand-exact-step-d01-d02-outcome-v6.json",
+  "trigger_outcome_sha256": "sha256:d27af3f8b477c68b3d1379a678bee70d3da870e6dbc79c1f6b0fa73308605348",
+  "hash_recheck": {
+    "collector_plan_sha256": "sha256:5a7ba58eccd7e0d1b1008ac089cce59c167a26ba8bc359ef76f3dcd2bea8c0db",
+    "playback_dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "replay_pre_snapshot_sha256": "sha256:06d243f34ecf209c6296659fd4cc3c0a6c299c203cc8b4e342f55cc001c32842",
+    "global_mtrand_source_trace_sha256": "sha256:4de39ac6a0e800323949e0095fc2fd3e924ea41a670ceb5d75a0ecb25b5c15a4",
+    "startup_oracle_semantic_sha256": "sha256:b056ae46a5bf3228adec0be9309d1bffae349bae55dcd2063c2a02b894069c94",
+    "collector_sha256": "sha256:30292b775b011afea212e4874398a421b359c4ea58b25cf0a2d1d56c7bed6db8",
+    "tracer_sha256": "sha256:7c77547e00806af95cab5376e863ae197ff012467055dad69519dbe7bd6ef96e",
+    "global_oracle_loader_sha256": "sha256:813ef37279e7b00bade0dc73ecdb405841fdaff5b85a5b85727eb059a0485269",
+    "collector_test_sha256": "sha256:ca2968101298b31d456ad6203cf86ef99de05f23efa4466f863891735774fb14",
+    "tracer_test_sha256": "sha256:77093df2f3ad2a8089904b237a26516f33e4703152c11ba4fae5866eca1985a0",
+    "global_oracle_test_sha256": "sha256:50e3e2df66943f3bf5c3e331eca11302b1aa9a3e58882d8cf3a895732a2a4243"
+  },
+  "preflight": {
+    "tooling_python_compile": "PASS",
+    "focused_native_tests": "PASS_61",
+    "native_full_suite": "PASS_1160_COLLECTED_EXIT_0",
+    "offline_startup_oracle_reconstruction": "PASS_309_CALLS",
+    "wrapper_prefix": "PASS_bac013a300",
+    "read_only_process_memory_contract": "PASS",
+    "source_anchor_suppression": "PASS",
+    "hardware_breakpoint_restore_enforcement": "PASS",
+    "receipt_provenance_validation": "PASS"
+  },
+  "fixed_contract": {
+    "source_order_first": 0,
+    "source_order_last": 308,
+    "expected_hit_count": 309,
+    "source_update_last": 1675,
+    "selection_end_at_update": 1702,
+    "seed": 23557968,
+    "maximum_draws": 100000,
+    "process_memory_writes_required": 0,
+    "hardware_breakpoint_restored_required": true,
+    "diagnostic_disable_source_bound_board_anchor": true,
+    "freeze_update": 3425,
+    "slowdown_update": 3415,
+    "trajectory_end_update": 3425,
+    "maximum_attempts": 3
+  },
+  "execution_rule": {
+    "capture_fresh_host_pre_after_this_binding": true,
+    "retain_every_attempt": true,
+    "do_not_change_thresholds_after_outputs_exist": true,
+    "semantic_mismatch_is_the_measurement_not_a_collection_failure": true,
+    "restore_host_state_after_run": true
+  },
+  "output_absence_recheck": {
+    "run": true,
+    "host_pre_snapshot": true,
+    "host_post_snapshot": true,
+    "outcome": true
+  },
+  "non_authorizations": [
+    "pc_golden_credit",
+    "fidelity_gate_change",
+    "formal_transport_change",
+    "large_scale_training_start"
+  ]
+}

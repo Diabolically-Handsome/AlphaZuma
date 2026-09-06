@@ -1,0 +1,46 @@
+{
+  "schema": "zuma-rl.alphazuma-55-engineering-route-resource-stop",
+  "version": 1,
+  "status": "AUTHORIZED_STOP_FOR_HIGHER_PRIORITY_ROUTE_MEMORY_SAFETY",
+  "observed_utc": "2026-08-16T08:38:33.7333862Z",
+  "route": {
+    "campaign_id": "alphazuma-55-distilled-nearmiss-focus-s99081627-v1",
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-distilled-nearmiss-focus-s99081627-preregistration-v1.json",
+      "sha256": "sha256:f066e6460f570c0985bf4db43f0a9245905798564b989292a2f69e38d7cb35f6"
+    },
+    "config": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-distilled-nearmiss-focus-s99081627-v1/config.json",
+      "sha256": "sha256:c0e2b49f19f0929ffb170615eba196fdb9fa960892e724f54453f1e67313d49b"
+    },
+    "training_status": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-distilled-nearmiss-focus-s99081627-v1/training_status.json",
+      "sha256_at_decision": "sha256:2aa72c13a59397fefa2fd9f7b13f027ff77978623bb951232bb1dd100c507886"
+    }
+  },
+  "decision_evidence": {
+    "timesteps": 749584,
+    "episodes": 64,
+    "wins": 5,
+    "losses": 13,
+    "truncations": 46,
+    "high_weight_target_completed_episodes": 49,
+    "high_weight_target_wins": 0,
+    "checkpoint_count": 0,
+    "linux_pid": 335909,
+    "resident_memory_kib": 2842848,
+    "wsl_available_memory_bytes": 12540325888,
+    "safety_threshold_bytes": 12884901888,
+    "safety_threshold_breached": true,
+    "wsl_swap_used_bytes": 0
+  },
+  "priority_reason": "Preserve the actor-observable gradual DAgger route after it entered its 0.9-teacher round with one complete 54-of-55 teacher collection and four frozen round-0 checkpoints.",
+  "scope_boundary": {
+    "terminate_only_linux_pid": 335909,
+    "seven_formal_ppo_routes_unchanged": true,
+    "formal_postprocess_unchanged": true,
+    "gradual_dagger_route_unchanged": true,
+    "formal_seed_consumption": "NONE",
+    "power_restore_authority": false
+  }
+}

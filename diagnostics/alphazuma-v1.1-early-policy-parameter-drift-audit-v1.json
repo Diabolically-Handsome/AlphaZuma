@@ -1,0 +1,168 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-early-policy-parameter-drift-audit",
+  "version": 1,
+  "created_utc": "2026-08-14T00:43:00Z",
+  "status": "PASS",
+  "classification": "post_hoc_training_health_diagnostic_only",
+  "purpose": "Verify that saved V1.1 checkpoints contain learned policy updates rather than unchanged initialization weights.",
+  "method": {
+    "loader": "sb3_contrib.MaskablePPO.load(device=cpu)",
+    "comparison": "Exact elementwise comparison of every floating tensor in policy.state_dict() between each route training source and its latest available checkpoint.",
+    "interpretation_limit": "This proves policy-parameter updates only; it is not evidence of improved gameplay or a certification result.",
+    "state_dict_alias_note": "The state_dict element count may include aliased/shared tensors and is therefore labeled as state-dict elements, not unique trainable parameters."
+  },
+  "acceptance": {
+    "all_routes_with_available_checkpoints_audited": true,
+    "all_float_tensors_changed_on_every_audited_route": true,
+    "minimum_changed_element_fraction": 0.9,
+    "all_metrics_finite": true
+  },
+  "summary": {
+    "formal_routes_total": 7,
+    "routes_with_available_checkpoints": 6,
+    "routes_passed": 6,
+    "routes_pending_first_checkpoint": [
+      "alphazuma-v1.1-ultradense-zero-win-5090-c-s50081301-v1"
+    ],
+    "changed_element_fraction_range": [
+      0.9388388464158656,
+      0.9547622160596198
+    ],
+    "relative_l2_range": [
+      0.0026257752047155795,
+      0.012188205347038874
+    ]
+  },
+  "routes": [
+    {
+      "route": "alphazuma-v1.1-frontier-adaptive-oom-recovery-s47081301-v1",
+      "reference": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-frontier-adaptive-s44081301-v1/checkpoints/frontier-adaptive-5090_16777216_steps.zip",
+        "sha256": "sha256:7823840418e94525543983d0b05f0660af9c107734909caea936eeb15e042b8d"
+      },
+      "candidate": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-frontier-adaptive-oom-recovery-s47081301-v1/checkpoints/frontier-adaptive-5090-oom-recovery_18350080_steps.zip",
+        "sha256": "sha256:378465ced294762041359fb8830b67b3083b118a8f8c8aa04326f0eb5d0ec33e"
+      },
+      "float_state_dict_tensors": 60,
+      "changed_tensors": 60,
+      "float_state_dict_elements": 581284,
+      "changed_elements": 554988,
+      "changed_fraction": 0.9547622160596198,
+      "delta_l2": 0.25375148437801004,
+      "reference_l2": 92.43119856078698,
+      "relative_l2": 0.0027453012438341524,
+      "max_abs_delta": 0.003170095384120941,
+      "status": "PASS"
+    },
+    {
+      "route": "alphazuma-v1.1-frontier-fixed-oom-recovery-s47081302-v1",
+      "reference": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-frontier-fixed-s44081302-v1/checkpoints/frontier-fixed-5080_15728640_steps.zip",
+        "sha256": "sha256:cbd3653264ed73884fb6a56926030c00600fb5f3866f1e0945d14e3ffe4f86f2"
+      },
+      "candidate": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-frontier-fixed-oom-recovery-s47081302-v1/checkpoints/frontier-fixed-5080-oom-recovery_17301504_steps.zip",
+        "sha256": "sha256:9ef46ffd01a1d7d8ddc78f895a794e5e6da1399ed0dcf41e771e2a6c37e48114"
+      },
+      "float_state_dict_tensors": 60,
+      "changed_tensors": 60,
+      "float_state_dict_elements": 581284,
+      "changed_elements": 553668,
+      "changed_fraction": 0.9524913811493178,
+      "delta_l2": 0.24270327682961973,
+      "reference_l2": 92.43109478441016,
+      "relative_l2": 0.0026257752047155795,
+      "max_abs_delta": 0.0028105974197387695,
+      "status": "PASS"
+    },
+    {
+      "route": "alphazuma-v1.1-memdense-adaptive-5090-a-s48081301-v1",
+      "reference": {
+        "path": "/mnt/d/ZumaTraining/overnight-v11-adaptive-recovery-s43081301-v1/checkpoints/adaptive-5090-recovery_13631488_steps.zip",
+        "sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579"
+      },
+      "candidate": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-memdense-adaptive-5090-a-s48081301-v1/checkpoints/memdense-adaptive-5090-a_524288_steps.zip",
+        "sha256": "sha256:69e98bece2928137127d8663bee6f134d4322bc3d0416f2d9733e50facf7c9f1"
+      },
+      "float_state_dict_tensors": 60,
+      "changed_tensors": 60,
+      "float_state_dict_elements": 581284,
+      "changed_elements": 549270,
+      "changed_fraction": 0.944925372107266,
+      "delta_l2": 1.1083619618943854,
+      "reference_l2": 92.42812068219187,
+      "relative_l2": 0.01199160984464259,
+      "max_abs_delta": 0.012072652578353882,
+      "status": "PASS"
+    },
+    {
+      "route": "alphazuma-v1.1-memdense-fixed-5090-b-s48081302-v1",
+      "reference": {
+        "path": "/mnt/d/ZumaTraining/overnight-v11-adaptive-recovery-s43081301-v1/checkpoints/adaptive-5090-recovery_13631488_steps.zip",
+        "sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579"
+      },
+      "candidate": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-memdense-fixed-5090-b-s48081302-v1/checkpoints/memdense-fixed-5090-b_524288_steps.zip",
+        "sha256": "sha256:e3e6df907a34b3b118477222bacc8b75cce55c4f1174a3e914e10f9ce7a58d8b"
+      },
+      "float_state_dict_tensors": 60,
+      "changed_tensors": 60,
+      "float_state_dict_elements": 581284,
+      "changed_elements": 545732,
+      "changed_fraction": 0.9388388464158656,
+      "delta_l2": 1.0651195429202707,
+      "reference_l2": 92.42812068219187,
+      "relative_l2": 0.011523760680828029,
+      "max_abs_delta": 0.01180267333984375,
+      "status": "PASS"
+    },
+    {
+      "route": "alphazuma-v1.1-memdense-adaptive-5080-a-s48081303-v1",
+      "reference": {
+        "path": "/mnt/d/ZumaTraining/overnight-v11-adaptive-recovery-s43081301-v1/checkpoints/adaptive-5090-recovery_13631488_steps.zip",
+        "sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579"
+      },
+      "candidate": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-memdense-adaptive-5080-a-s48081303-v1/checkpoints/memdense-adaptive-5080-a_524288_steps.zip",
+        "sha256": "sha256:f283a548015414bcb316695d59eba27f68236bd6437b5f01bb6db8d44196526f"
+      },
+      "float_state_dict_tensors": 60,
+      "changed_tensors": 60,
+      "float_state_dict_elements": 581284,
+      "changed_elements": 545814,
+      "changed_fraction": 0.9389799134330207,
+      "delta_l2": 1.039563357114887,
+      "reference_l2": 92.42812068219187,
+      "relative_l2": 0.011247262731754101,
+      "max_abs_delta": 0.013111919164657593,
+      "status": "PASS"
+    },
+    {
+      "route": "alphazuma-v1.1-memdense-fixed-5080-b-s48081304-v1",
+      "reference": {
+        "path": "/mnt/d/ZumaTraining/overnight-v11-adaptive-recovery-s43081301-v1/checkpoints/adaptive-5090-recovery_13631488_steps.zip",
+        "sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579"
+      },
+      "candidate": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-memdense-fixed-5080-b-s48081304-v1/checkpoints/memdense-fixed-5080-b_524288_steps.zip",
+        "sha256": "sha256:f602ab3a1d50ecab29c9bc640f2465b1119d5a7b9a0f930725fe716740bd92fd"
+      },
+      "float_state_dict_tensors": 60,
+      "changed_tensors": 60,
+      "float_state_dict_elements": 581284,
+      "changed_elements": 550641,
+      "changed_fraction": 0.9472839438209206,
+      "delta_l2": 1.1265329147154453,
+      "reference_l2": 92.42812068219187,
+      "relative_l2": 0.012188205347038874,
+      "max_abs_delta": 0.011210339143872261,
+      "status": "PASS"
+    }
+  ],
+  "behavior_probe_dataset": {
+    "status": "NOT_RUN",
+    "reason": "The only two discovered frozen NPZ datasets have observation width 21215, while all formal V1.1 models require width 21220. They were not silently padded or treated as compatible evidence."
+  }
+}

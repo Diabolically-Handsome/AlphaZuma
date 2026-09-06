@@ -1,0 +1,67 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-policy-diversity-audit-receipt",
+  "version": 1,
+  "completed_utc": "2026-08-14T03:42:47.5491719Z",
+  "status": "PASS",
+  "classification": "frozen_dataset_post_hoc_training_health_diagnostic_only",
+  "preregistration": {
+    "path": "diagnostics/alphazuma-v1.1-policy-diversity-audit-0339z-s65081301-preregistration-v1.json",
+    "sha256": "sha256:524c026f03af3218c685f428d7b5786b79e286537754a9d7458b0a6d27ef6947",
+    "frozen_before_execution": true
+  },
+  "source_audit": {
+    "path": "D:\\ZumaTraining\\alphazuma-v1.1-policy-diversity-audit-0339z-s65081301-v1\\audit.json",
+    "created_utc": "2026-08-14T03:41:49.731744Z",
+    "sha256": "sha256:137a703872996213e716387ac482e6b687dfce0327679c178bfeccb12c36d65e"
+  },
+  "tool": {
+    "path": "tools/audit_alphazuma_v11_policy_diversity.py",
+    "sha256": "sha256:17db88ef92f4078748b286af3094335498e6188afd9e21ff50a92bf595dc2249"
+  },
+  "tests": {
+    "path": "tests/test_audit_alphazuma_v11_policy_diversity.py",
+    "sha256": "sha256:6255187d7c27cb10be871f709e7ec4e2c85a7d15a42beba38c908d393aa6cbd2",
+    "result": "4_passed"
+  },
+  "validation": {
+    "candidate_count": 7,
+    "pairwise_candidate_comparisons": 21,
+    "unique_candidate_action_signatures": 7,
+    "identical_candidate_pairs": 0,
+    "reference_reproduced_all_1243_stored_collector_actions": true,
+    "all_predicted_actions_satisfied_frozen_masks": true,
+    "all_10_input_hashes_independently_revalidated": true,
+    "input_hash_mismatches": 0,
+    "pairwise_count_rate_arithmetic_mismatches": 0,
+    "pairwise_summary_arithmetic_independently_recomputed": true,
+    "maximum_summary_absolute_difference": 0.0,
+    "exact_action_difference_rate": {
+      "min": 0.42880128720836685,
+      "median": 0.7039420756234915,
+      "max": 0.831858407079646
+    },
+    "semantic_action_difference_rate": {
+      "min": 0.017699115044247787,
+      "median": 0.030571198712791632,
+      "max": 0.04907481898632341
+    }
+  },
+  "comparison_to_0256z_portfolio": {
+    "prior_source_audit_sha256": "sha256:b199d0227247d6d02e47fd24487c0c5a3b4b0277974ce1178c3a56cf58100802",
+    "prior_exact_difference_median": 0.6790024135156878,
+    "current_exact_difference_median": 0.7039420756234915,
+    "exact_median_delta_percentage_points": 2.49396621078037,
+    "prior_semantic_difference_median": 0.03459372485921158,
+    "current_semantic_difference_median": 0.030571198712791632,
+    "semantic_median_delta_percentage_points": -0.4022526146419949,
+    "interpretation": "The later independently audited checkpoints remain behaviorally distinct on the same frozen probe. Exact disagreement increased while median semantic disagreement decreased slightly; neither direction establishes performance improvement."
+  },
+  "conclusion": {
+    "candidate_portfolio_behaviorally_diverse_on_frozen_probe": true,
+    "later_training_collapsed_to_duplicate_deterministic_policies": false,
+    "performance_improvement_claimed": false
+  },
+  "training_or_evaluation_semantics_changed": false,
+  "formal_seed_consumption": "none",
+  "formal_gate_effect": "none"
+}

@@ -1,0 +1,33 @@
+{
+  "schema": "zuma-rl.retail-natural-loss-latched-transition-implementation-receipt",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T08:18:40.3000455Z",
+  "preregistration": {
+    "path": "diagnostics/recording-c140-natural-loss-latched-transition-preregistration-v1.json",
+    "sha256": "sha256:74a9029b7cb4a45794e928a81b07421424839e3b073d771322b3001cb2dfa5ca"
+  },
+  "implementation": [
+    {
+      "path": "tools/autoplay_live_zuma.py",
+      "bytes": 44405,
+      "sha256": "sha256:93a7efd2cb1ba98e79b97eb6b6c6d6351d4601000920b28f4b2fd72bd240c0cf"
+    },
+    {
+      "path": "tools/record_autoplay_zuma.py",
+      "bytes": 47677,
+      "sha256": "sha256:c21e448fd7d7538f623b6579e4eb626bc2d1ec0ac27a02e381a6d0d9a3ecf390"
+    },
+    {
+      "path": "src/zuma_rl/retail_dmo_provenance.py",
+      "bytes": 38301,
+      "sha256": "sha256:bd7d2acb863130950111be101b12d0637d42ca14d8b51af5c6ecd621b09415f7"
+    }
+  ],
+  "verification": {
+    "passed": 68,
+    "failed": 0,
+    "command": "python -m pytest tests/test_autoplay_live_zuma.py tests/test_record_autoplay_zuma.py tests/test_retail_dmo_provenance.py tests/test_popcap_thread_crt_restore.py tests/test_popcap_global_mtrand_restore.py -q"
+  },
+  "authorized_delta": "Latch a verified replacement-board clock reset across readable loading states; no provenance, exit, threshold, or outcome-priority change."
+}

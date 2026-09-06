@@ -1,0 +1,49 @@
+{
+  "schema": "zuma-rl.alphazuma-55-polar-intent-wide-launch-plan",
+  "version": 1,
+  "status": "FROZEN_BEFORE_WAIT",
+  "created_utc": "2026-08-15T20:47:46.668405+00:00",
+  "intent_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-wide-s99081540-preregistration-v1.json",
+    "sha256": "sha256:7365b0b5d77c9edeea0025bffc5670c42163900153159f61cea0f6f2d4d0c712"
+  },
+  "source_effective_wide_launch_plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-wide-launch-s99081537-plan-v1.json",
+    "sha256": "sha256:d6ddc3658e039b75a02e9448a236769d82d5eb72049b21378dc9c983949fd10c"
+  },
+  "source_terminal": {
+    "completion": "/mnt/d/ZumaTraining/alphazuma-55-polar-wide-s99081536-v1/completion.json",
+    "failure": "/mnt/d/ZumaTraining/alphazuma-55-polar-wide-s99081536-v1/failure.json",
+    "watcher_pid_at_registration": 189769,
+    "launch_after_either_terminal_receipt_and_watcher_exit": true
+  },
+  "target": {
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-wide-s99081540-v1",
+    "completion": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-wide-s99081540-v1/completion.json",
+    "failure": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-wide-s99081540-v1/failure.json"
+  },
+  "original_root": "/mnt/d/SteamLibrary/steamapps/common/Zuma's Revenge",
+  "outputs": {
+    "status_root": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-wide-s99081540-watch-v1"
+  },
+  "implementation": {
+    "builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_polar_intent_wide_launch_plan.py",
+      "sha256": "sha256:b239604cf05db0c8c02f0de50fe9476b5b1a17e6bab4984c52a5cb258a47d4f2"
+    },
+    "watcher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/watch_alphazuma_55_polar_intent_wide.py",
+      "sha256": "sha256:786fbd63d8fa8c73ba1719ca5b7c5852a68d9d5d24437dabdb8237ec2ced686e"
+    },
+    "trainer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_polar_intent_wide_v1.py",
+      "sha256": "sha256:186fa0eb1a015ac9ba2f089b36269c41b994661a6c4f0f09090bcb2aab0a7fd2"
+    }
+  },
+  "authority_boundary": {
+    "formal_seed_consumption": false,
+    "current_campaign_candidate_authority": false,
+    "s99081535_successor_candidate_authority": false,
+    "power_restore_authority": false
+  }
+}

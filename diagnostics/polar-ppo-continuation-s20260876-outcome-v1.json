@@ -1,0 +1,95 @@
+{
+  "schema": "zuma-rl.polar-ppo-continuation-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T11:40:36.481Z",
+  "status": "SMALL_PPO_CONTINUATION_PASS",
+  "decision": "AUTHORIZE_INDEPENDENT_FRESH_SEED_CONFIRMATION",
+  "preregistration": {
+    "path": "diagnostics/polar-ppo-continuation-s20260876-preregistration-v1.json",
+    "sha256": "sha256:647bcb5af8c3e036ca23c9d8e7679ab10d230995932473cf086cf1fcc8a71669",
+    "status": "FROZEN_BEFORE_RUN_OUTPUT"
+  },
+  "artifacts": {
+    "run_dir": "D:/ZumaTraining/screening-polar-ppo-continuation-s20260876-v1",
+    "config_sha256": "sha256:6555ed902478347f03e882fbf93b6aef8f35d83011cb8173040b1d7052ccb24e",
+    "initial_model_sha256": "sha256:f03dee97cb5a3e2ce3abcf4324137fe6ed9b68e827765b4a7b6adfa63cafb8f7",
+    "final_model_sha256": "sha256:1bf6b9711f8eaf5f1aee5d4ee237ee9a28e4650d1dcec5b56ad76147db0e9c18",
+    "pretrain_deterministic_sha256": "sha256:c5acbbfb643e36471ad02617c6be59107be0840858f459488d06b2510dc68647",
+    "pretrain_stochastic_sha256": "sha256:e3dfaa2b274d142982340cce2a6a795989c0814d7443c4f78e511c060e7f02df",
+    "posttrain_deterministic_sha256": "sha256:96e989d27921549890a0243672295958067f10431fce353998efa2ab6671773b",
+    "posttrain_stochastic_sha256": "sha256:5fd0f480c8dc0d1b3bd73d60541f403e0f4cb056f03503a29f6a6282536f538d",
+    "completion_sha256": "sha256:7e88535d7f3fb6fb4dbd47de7c30af8cd2c4b96723916d77cf669a76817720e9",
+    "stdout_sha256": "sha256:76523d9e40176ee615c7f01ea74f14277ecc47674883f0b6d638a986723c5d79",
+    "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "acceptance_results": {
+    "pipeline": {
+      "pass": true,
+      "completion_receipt_status": "COMPLETE",
+      "effective_steps": 16384,
+      "expected_effective_steps": 16384,
+      "all_four_boundary_receipts_present": true,
+      "input_model_hash_matches": true,
+      "failure_receipt_present": false,
+      "vector_env_close_status": "PASS",
+      "stderr_bytes": 0
+    },
+    "precondition": {
+      "pass": true,
+      "deterministic_wins": 8,
+      "required_wins": 6,
+      "episodes": 8,
+      "truncations": 0,
+      "mean_reward": 31.940475,
+      "mean_episode_length": 1595.25
+    },
+    "deterministic_retention": {
+      "pass": true,
+      "pretrain_wins": 8,
+      "posttrain_wins": 7,
+      "posttrain_losses": 0,
+      "posttrain_truncations": 1,
+      "pretrain_mean_reward": 31.940475,
+      "posttrain_mean_reward": 33.3937375,
+      "mean_reward_delta": 1.4532625,
+      "paired_reward_deltas": [-0.6585, -3.9908, -2.8076, 18.4184, 5.4021, -1.7164, -10.2827, 7.2616],
+      "paired_reward_regressions_exceeding_5": 1,
+      "allowed_paired_reward_regressions_exceeding_5": 2
+    },
+    "stochastic_retention": {
+      "pass": true,
+      "pretrain_wins": 8,
+      "posttrain_wins": 8,
+      "pretrain_truncations": 0,
+      "posttrain_truncations": 0,
+      "pretrain_mean_reward": 35.15475,
+      "posttrain_mean_reward": 37.9487375,
+      "mean_reward_delta": 2.7939875,
+      "posttrain_mean_episode_length": 2512.625
+    },
+    "optimization_health": {
+      "final_reported_rollout_mean_reward": 32.0,
+      "final_reported_rollout_mean_episode_length": 1750.0,
+      "final_reported_approx_kl": 0.003690952,
+      "final_reported_clip_fraction": 0.0082,
+      "finite_metrics": true
+    },
+    "overall": {
+      "pass": true,
+      "all_preregistered_hard_gates_pass": true
+    }
+  },
+  "bounded_inference": "under one fresh training seed and one fresh paired boundary seed stream, 16384 MaskablePPO steps preserved the frozen actor-observable polar policy's Jungle2 capability and improved mean deterministic and stochastic return; the one deterministic truncation prevents a perfect-retention claim and independent seeds are still required",
+  "next_action": {
+    "authorized": "preregistered independent fresh-seed confirmation of the exact 16384-step recipe",
+    "forbidden": "do not launch large-scale or original-transfer training until independent confirmation and the fidelity gate both pass"
+  },
+  "non_authorizations": [
+    "large_scale_training",
+    "rl_recipe_generalization_claim",
+    "fidelity_gate_opening",
+    "original_game_deployment",
+    "original_transfer_certification",
+    "visual_policy_training"
+  ]
+}

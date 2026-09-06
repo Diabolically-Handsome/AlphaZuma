@@ -1,0 +1,61 @@
+{
+  "schema": "zuma-rl.pc-handoff-boundary-runtime-delta-smoke-execution-binding",
+  "version": 17,
+  "status": "BOUND_BEFORE_RUN_OUTPUTS",
+  "created_utc": "2026-08-05T17:53:43.906Z",
+  "id": "handoff-boundary-runtime-delta-smoke-v17-execution",
+  "session_nonce": "38a522fd506f4fdf887205fd8646db83",
+  "parent_preregistration": "diagnostics/handoff-boundary-runtime-delta-smoke-preregistration-v17.json",
+  "parent_preregistration_sha256": "sha256:89d201361b18d0d763f33b3d95f21566c1146a0f76fe814f04791fdbe0bdd4ad",
+  "trigger_outcome": "diagnostics/transactional-ready-smoke-outcome-v16.json",
+  "trigger_outcome_sha256": "sha256:6d5a6f8548fc4a6fa953bf608caa0f50358c7bcc6ca912e5a6f5af9a9971bbcf",
+  "preflight": {
+    "run_root_absent": true,
+    "host_outputs_absent": true,
+    "outcome_absent": true,
+    "runtime_process_count": 0,
+    "input_and_tool_hashes_match": true,
+    "focused_tests": "PASS_60",
+    "native_full_suite": "PASS_1174_COLLECTED_EXIT_0",
+    "capture_fresh_host_pre_after_this_binding": true
+  },
+  "hash_recheck": {
+    "collector_plan_sha256": "sha256:5a7ba58eccd7e0d1b1008ac089cce59c167a26ba8bc359ef76f3dcd2bea8c0db",
+    "playback_dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "replay_pre_snapshot_sha256": "sha256:06d243f34ecf209c6296659fd4cc3c0a6c299c203cc8b4e342f55cc001c32842",
+    "host_restore_snapshot_sha256": "sha256:c48bd69be03fc6e2fdf1a400b571f0f0294a5fadda1c48e08c1bd6d1dd093f46",
+    "global_mtrand_source_trace_sha256": "sha256:4de39ac6a0e800323949e0095fc2fd3e924ea41a670ceb5d75a0ecb25b5c15a4",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "thread_runtime_tool_sha256": "sha256:89a992457b6d2e9e0629a1dc63dd3b7973f67ad384cfa48a3791329a927c829d",
+    "global_boundary_tool_sha256": "sha256:86a57143fa3908c5e7fb08350d97ce22775f3252d934cd492d690a938c14a371",
+    "collector_sha256": "sha256:91196a6cc3bde9fb79f3705db09bd0634dd773bf6ef2c5e8f2cc45a88b927ab0"
+  },
+  "fixed_command_contract": {
+    "probe_update": 3425,
+    "slowdown_update": 3415,
+    "maximum_attempts": 3,
+    "trajectory_mode": "rng",
+    "trajectory_end_update": 3425,
+    "trace_detach_update": 1702,
+    "trace_reattach_update": 3501,
+    "global_mtrand_call_start_after_update": 1702,
+    "global_mtrand_call_end_at_update": 3121,
+    "global_mtrand_call_observe_boundary_only": true,
+    "global_mtrand_call_observe_thread_runtime": true,
+    "global_mtrand_call_observe_handoff_thread_runtime": true,
+    "diagnostic_disable_source_bound_board_anchor": true,
+    "skip_repaint_guard": true,
+    "skip_frozen_snapshot": true,
+    "timeout_seconds": 900
+  },
+  "execution_rule": {
+    "retain_every_attempt": true,
+    "stop_at_first_valid_boundary_observation": true,
+    "failed_handoff_before_v2_ready_is_retryable": true,
+    "post_verified_ready_failure_is_nonretryable": true,
+    "capture_and_verify_host_post": true,
+    "semantic_and_intervention_result_is_quarantined": true
+  },
+  "output_absence_recheck": {"run_root": true, "host_pre": true, "host_post": true, "outcome": true},
+  "non_authorizations": ["pc_golden_credit", "fidelity_gate_change", "formal_transport_change", "large_scale_training_start"]
+}

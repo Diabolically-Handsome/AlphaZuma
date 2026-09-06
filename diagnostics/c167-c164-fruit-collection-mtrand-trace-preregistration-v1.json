@@ -1,0 +1,131 @@
+{
+  "schema": "zuma-rl.pc-gameplay-mtrand-call-trace-confirmation-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_OUTPUT",
+  "created_utc": "2026-08-10T12:58:56.1703268Z",
+  "id": "c167-c164-u5278-u5305-final-confirmatory-source-bound-call-trace-v1",
+  "purpose": "Independently bind the seven c166 shared-stream omissions to exact retail visual call stacks and the two later draws to modeled pending-ball gameplay consumers.",
+  "parents": {
+    "c166_failure_receipt": "diagnostics/c166-c164-fruit-collection-simulator-diff-failure-receipt-v1.json",
+    "c166_failure_receipt_sha256": "sha256:4aa644f6439873b4ecef1c50b89f0f538cac1f9f031483eed23ec81be3327c77",
+    "c166_failed_diff": "D:/ZumaGolden/diagnostics/jungle2-c164-u5278-u5305-fruit-collection-diff-v1.json",
+    "c166_failed_diff_sha256": "sha256:b6b86a0cc200d9eeef6f7c54c95f6aa3d0706d8ddb3fa47f9a057f4da3b48ad9"
+  },
+  "fixed_source": {
+    "memory_probe_path": "formal-full-state-c138a3-fruit-collection-c164-campaign-v1/attempt-01/source/attempt-01/memory-probe.json",
+    "memory_probe_bytes": 210179,
+    "memory_probe_sha256": "sha256:5db71850365ca198e4be8a42997d7e8d18e7478c0293d94fcd82773917140876",
+    "trajectory_index_sha256": "sha256:6ea075248dc73e1023a04a72ff6352355f762cad7a8a4cb916d7563d974c3b36",
+    "strict_replay_sha256": "sha256:425c4dc95e520b6709d4920184ba29368092a379845668f009edca3b690c47ae",
+    "external_input_guard_sha256": "sha256:183cfeae3d86c50c26ba4826281ee0d8b4a6098c633c8178e20c132ab798e661",
+    "dmo_sha256": "sha256:6f2d645c3109f73b77ef55c7e7e7941f7f1d2f73dccd5a71adc3051d4a360989",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "freeze_update": 5220,
+    "freeze_score": 8780,
+    "freeze_displayed_score": 7950
+  },
+  "frozen_transport": {
+    "plan_sha256": "sha256:a5c4b44df8828862f67335ef8919861eb6d33bb517b92bcab22b599a56d150aa",
+    "pre_template_sha256": "sha256:ca058b8e2f231335255b51174088530a77aa9fb0f31818987dd1559dcf725fbb",
+    "host_pre_sha256": "sha256:0f1dd88161454724adaa7619c8ee78601fb453d243e9b6ccc69db928819fda9a",
+    "collector_sha256": "sha256:79464752ab35693b8f8765483894ae152a389c367f511e7e33398fc4fa2d28b0"
+  },
+  "hypothesis_generation_only": {
+    "raw_recording_trace": "record-c138a3-autoplay-fruit-collect-v1/global-mtrand-calls.json",
+    "raw_recording_trace_sha256": "sha256:e1b9acb64c5df043d53141b9f90a85180896e6900efa132ee3ab6ef8494eda84",
+    "raw_trace_has_no_sampled_stack_code": true,
+    "raw_trace_not_used_as_confirmatory_classification_evidence": true
+  },
+  "fixed_window": {
+    "trajectory_start_update": 5278,
+    "trajectory_end_update": 5305,
+    "tick_count": 28,
+    "transition_count": 27,
+    "initial_mtrand_index": 403,
+    "final_mtrand_index": 412,
+    "expected_total_call_count": 9,
+    "expected_calls_by_update": {
+      "5279": [
+        "0x0040cadf",
+        "0x0040cbc0",
+        "0x0040cadf",
+        "0x0040cbc0",
+        "0x0040cadf",
+        "0x0040cbc0"
+      ],
+      "5295": ["0x0040cdde"],
+      "5301": ["0x00458cd1", "0x00402111"]
+    },
+    "expected_caller_counts": {
+      "0x00402111": 1,
+      "0x0040cadf": 3,
+      "0x0040cbc0": 3,
+      "0x0040cdde": 1,
+      "0x00458cd1": 1
+    },
+    "expected_outputs_in_order": [
+      1812868868,
+      433870383,
+      1943661770,
+      861977117,
+      389320100,
+      1193189089,
+      5368987,
+      1138495214,
+      1730531522
+    ]
+  },
+  "frozen_classification_contract": {
+    "0x0040cadf,0x0040cbc0": {
+      "scope": "omitted_visual",
+      "semantic": "score_digit_transition",
+      "required_stack_ancestor": "0x004171ad"
+    },
+    "0x0040cdde": {
+      "scope": "omitted_visual",
+      "semantic": "score_digit_wobble",
+      "required_stack_ancestors": ["0x0041fd7d", "0x004227f5"]
+    },
+    "0x00458cd1": {
+      "scope": "modeled_gameplay",
+      "semantic": "pending_ball_repeat_roll",
+      "required_stack_ancestors": ["0x00459031", "0x0045de5e", "0x0065de83"]
+    },
+    "0x00402111": {
+      "scope": "modeled_gameplay",
+      "semantic": "pending_ball_visual_frame_roll",
+      "required_stack_ancestors": ["0x00458d6a", "0x00459031", "0x0045de5e", "0x0065de83"]
+    }
+  },
+  "output": {
+    "root": "diagnostics/c167-c164-final-confirmatory-source-bound-rng-trace-u5278-u5305-v1",
+    "absent_at_freeze": true,
+    "maximum_attempts": 1,
+    "retain_every_started_attempt": true
+  },
+  "acceptance_contract": {
+    "strict_source_bound_replay_status": "PASS",
+    "source_bound_board_anchor_exact": true,
+    "diagnostic_mutation_must_be_null": true,
+    "external_input_guard_status": "PASS",
+    "external_input_event_count": 0,
+    "trace_status": "PASS",
+    "trace_stop_reason": "stop_requested",
+    "trace_complete_sequence_equals_frozen_expectation": true,
+    "all_calls_satisfy_frozen_classification_contract": true,
+    "trace_alignment_all_27_transitions_exact": true,
+    "formal_source_compact_overlap_all_28_ticks_exact": true,
+    "formal_source_global_mtrand_overlap_all_28_ticks_exact": true,
+    "unknown_or_ambiguous_callers_fail_closed": true,
+    "host_state_must_be_restored": true
+  },
+  "command": ".\\.venv-win\\Scripts\\python.exe tools\\collect_pc_memory_probe.py --plan D:\\ZumaGolden\\diagnostics\\full-state-source-bound-fruit-collection-c138a3-plan-v1-stop3151\\plan.json --prestate D:\\ZumaGolden\\diagnostics\\full-state-source-bound-fruit-collection-c138a3-plan-v1-stop3151\\protocol\\pre-template.json --host-restore D:\\ZumaGolden\\diagnostics\\full-state-source-bound-fruit-collection-c138a3-plan-v1-stop3151\\safety\\host-pre.json --output-root D:\\ZumaGolden\\diagnostics\\c167-c164-final-confirmatory-source-bound-rng-trace-u5278-u5305-v1 --probe-update 5220 --slowdown-update 5200 --int32-value 8780 --displayed-score-value 7950 --maximum-attempts 1 --trajectory-start-update 5278 --trajectory-end-update 5305 --trajectory-mode rng --trace-global-rng-calls --global-rng-call-trace-timeout-seconds 900 --skip-repaint-guard --skip-frozen-snapshot --diagnostic-source-bound-replay",
+  "decision_rule": {
+    "pass": "The single retained source-bound replay reproduces the frozen nine-call sequence, exact stacks, exact 28-tick source overlap, and host restoration.",
+    "fail": "Retain the attempt and use it only as forensic evidence; do not weaken classification or rerun the same output root.",
+    "proof_generalization_pending": true,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

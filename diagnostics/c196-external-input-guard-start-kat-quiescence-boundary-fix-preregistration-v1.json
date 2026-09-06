@@ -1,0 +1,92 @@
+{
+  "schema": "zuma-rl.external-input-guard-start-kat-quiescence-boundary-fix-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_IMPLEMENTATION",
+  "created_utc": "2026-08-10T16:34:39.0992571Z",
+  "id": "c196-external-input-guard-start-kat-quiescence-boundary-fix-v1",
+  "purpose": "Move formal external-input coverage start to after the guard's own start KAT and a bounded prelaunch quiescence interval, so guard-generated or startup-adjacent input cannot contaminate the interval while all input after coverage begins remains fail-closed.",
+  "parent_failure": {
+    "artifact": "diagnostics/c195-c183-fruit-powerup-collision-confirmatory-input-guard-startup-overlap-failure-receipt-v1.json",
+    "artifact_bytes": 5971,
+    "artifact_sha256": "sha256:b9fbbe29d622182ae804395cd71134a184574721de6597d1864642f13f2d4109"
+  },
+  "baseline": {
+    "guard": {
+      "artifact": "tools/pc_external_input_guard.py",
+      "artifact_bytes": 20396,
+      "artifact_sha256": "sha256:3f7b43d1100c44c0a07fe23cb9a20fba99ccbbb6e456115b4998f6b6f72d6212"
+    },
+    "validator_tests": {
+      "artifact": "tests/test_pc_external_input.py",
+      "artifact_bytes": 3133,
+      "artifact_sha256": "sha256:d079ac91641193003ae1c9d16827b188135f68868ba2ae420b0125a5f5ddabc3"
+    },
+    "new_guard_test_artifact": "tests/test_pc_external_input_guard.py",
+    "new_guard_test_artifact_absent_at_freeze": true,
+    "collector": {
+      "artifact": "tools/collect_pc_memory_probe.py",
+      "artifact_bytes": 478340,
+      "artifact_sha256": "sha256:15deb94e655c92e46b6992c9cab24d4108b49621c2d7cbd676a069835bf14d7e"
+    },
+    "collector_tests": {
+      "artifact": "tests/test_collect_pc_memory_probe.py",
+      "artifact_bytes": 143502,
+      "artifact_sha256": "sha256:1db15dd8ae6c51586f95fc836b53e37e7ace2f92772e336da7af897a4748d4f3"
+    }
+  },
+  "frozen_fix_contract": {
+    "start_order": [
+      "install_global_keyboard_and_mouse_hooks",
+      "run_and_pass_tagged_start_self_test",
+      "wait_for_precoverage_quiescence",
+      "set_coverage_start_perf_counter_ns",
+      "return_from_ExternalInputGuard.start",
+      "collector_launches_game_process"
+    ],
+    "required_quiet_interval_seconds": 0.5,
+    "maximum_quiescence_wait_seconds": 5.0,
+    "quiescence_poll_interval_seconds": 0.01,
+    "precoverage_unrecognized_events_update_last_activity": true,
+    "precoverage_unrecognized_events_not_formal_events": true,
+    "continuous_precoverage_activity_fails_before_game_launch": true,
+    "first_unrecognized_event_at_or_after_coverage_start_is_formal_external": true,
+    "formal_external_event_limit": 0,
+    "end_coverage_boundary_unchanged": true,
+    "end_self_test_order_unchanged": true,
+    "self_test_tag_validation_unchanged": true,
+    "repaint_tag_validation_unchanged": true,
+    "keyboard_and_mouse_hook_scope_unchanged": true,
+    "privacy_surface_unchanged": true,
+    "receipt_schema_and_version_unchanged": true,
+    "receipt_validator_unchanged": true,
+    "collector_launch_order_unchanged": true,
+    "collector_process_memory_write_surface_unchanged": true,
+    "gameplay_or_rng_semantics_unchanged": true
+  },
+  "qualification_acceptance": {
+    "unit_start_order_test": "PASS",
+    "unit_precoverage_event_tracking_test": "PASS",
+    "unit_quiescence_reset_test": "PASS",
+    "unit_quiescence_timeout_fail_closed_test": "PASS",
+    "unit_first_postcoverage_event_rejected_test": "PASS",
+    "legacy_receipt_validation_tests": "PASS",
+    "collector_tests": "PASS",
+    "python_compile": "PASS",
+    "standalone_live_guard_duration_seconds": 10,
+    "standalone_live_guard_external_event_count": 0,
+    "standalone_live_guard_status": "PASS",
+    "coverage_start_after_start_return_gap_nonnegative": true,
+    "full_pytest_suite": "PASS",
+    "existing_immutable_guard_receipts_remain_valid": true
+  },
+  "decision_rule": {
+    "pass": "Freeze a new c197 zero-input confirmatory trace using a new output root and the qualified guard hash.",
+    "fail": "Retain the candidate and exact failure, make no formal collection, proof, Gate, or training change, and preregister any revision before editing.",
+    "c195_remains_invalid": true,
+    "no_c195_event_reclassification": true,
+    "pc_golden_credit": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

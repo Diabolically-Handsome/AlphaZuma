@@ -1,0 +1,30 @@
+{
+  "schema": "zuma-rl.alphazuma-55-engineering-evaluation-abort",
+  "version": 1,
+  "status": "ABORTED_WITHOUT_RESULTS",
+  "created_utc": "2026-08-15T02:01:38.4171847Z",
+  "reason": "The engineering-only matrix inherited the 180000 native-tick environment-audit ceiling. After more than ten wall-clock minutes both first 24-environment batches still had zero completed attempts, making it unsuitable for rapid teacher assignment.",
+  "scientific_effect": "No attempt completed, no ranking was observed, and no selection, final-blind, or continuous-campaign seed was consumed.",
+  "recovery_rule": "Freeze a new engineering contract with the historical 12000-tick training ceiling; retain this preregistration, shard snapshots, and launcher logs without overwrite.",
+  "preregistration": {
+    "path": "diagnostics/alphazuma-55-engineering-baseline-s82081401-preregistration-v1.json",
+    "sha256": "sha256:98629fe6717ed041f10bc0f2e282e18ce8842b709f15d5e1756147f62474561f"
+  },
+  "shards_at_decision": [
+    {
+      "path": "D:/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering-baseline-s82081401-v1/matrix-shard-00-of-02.json",
+      "sha256": "sha256:c3f14cfe3771159ad37c38f5db38c5dd5e24b9b31004120ea10eec6183154e3a",
+      "status": "RUNNING",
+      "completed_attempts": 0,
+      "expected_attempts": 81
+    },
+    {
+      "path": "D:/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering-baseline-s82081401-v1/matrix-shard-01-of-02.json",
+      "sha256": "sha256:ed4f97873bc76f2741949a0bdcad36f5382c62036b115a34583f8f7a22774904",
+      "status": "RUNNING",
+      "completed_attempts": 0,
+      "expected_attempts": 84
+    }
+  ],
+  "windows_launcher_pids": [47948, 59316]
+}

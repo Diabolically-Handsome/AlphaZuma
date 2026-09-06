@@ -1,0 +1,122 @@
+{
+  "schema": "zuma-rl.pc-handoff-rng-state-correlation-outcome",
+  "version": 21,
+  "status": "UNSTABLE_EXACT_HANDOFF_REFERENCE",
+  "created_utc": "2026-08-05T19:28:51.269Z",
+  "id": "handoff-rng-state-correlation-v21-outcome",
+  "parent_preregistration": {
+    "path": "diagnostics/handoff-rng-state-correlation-preregistration-v21.json",
+    "sha256": "sha256:ee77c282e67455f3e1095ea8ab800a3be266beb01e5e5f5e81de2f1121047ac3"
+  },
+  "execution_binding": {
+    "path": "diagnostics/handoff-rng-state-correlation-execution-binding-v21.json",
+    "sha256": "sha256:79184eb3c4a37f7d9544e9acc517d2682073d13622e495a74fc539e429851d08",
+    "session_nonce": "191963fd19234baeb8d7ef427b7a3198"
+  },
+  "execution": {
+    "stage_one_run_count": 20,
+    "stage_one_valid_run_count": 20,
+    "stage_one_stop_rule_passed": false,
+    "stage_one_stop_failure": "The exact reference pair was not stable even though valid, exact, and nonexact counts were sufficient.",
+    "stage_two_triggered_by_frozen_rule": true,
+    "stage_two_run_count": 20,
+    "stage_two_valid_run_count": 20,
+    "terminal_valid_run_count": 40,
+    "selected_probe_manifest_sha256": "sha256:e9f0f3ad9736f9ae7515336df829fcc268e2d9a323d1bfb39cd7138b248760d1",
+    "host_snapshot_manifest_sha256": "sha256:f98dd50f8286a8ff121aa2f69a2b22257f5383762a5f7ef7800e22f590e9169f"
+  },
+  "execution_driver_incident": {
+    "after_run": "r01",
+    "classification": "orchestration_only_no_experiment_artifact_mutation",
+    "error": "PowerShell variable Host is read-only; the initial loop attempted to assign $host while parsing the already-written r01 host snapshot.",
+    "effect": "The driver stopped after r01. The r01 collector had already passed and its host snapshot was already written.",
+    "recovery": "Independently parsed the immutable r01 snapshot with a nonreserved variable, verified the canonical state root, verified r02-r20 roots were absent and runtime process count was zero, then resumed at r02 without rerunning r01.",
+    "r01_host_snapshot_sha256": "sha256:1ba91210ecf978889953f7543e66c5c6e8070dfea6c619ce47035641e5955b32",
+    "semantic_selection_involved": false,
+    "run_root_reused": false
+  },
+  "retry_accounting": {
+    "roots_with_pre_handoff_infrastructure_retry": ["r06", "r12", "r13", "r19", "r20", "r22", "r25", "r34"],
+    "root_count": 8,
+    "retry_count": 8,
+    "all_retry_scopes": "pre_handoff_startup_infrastructure",
+    "all_selected_attempts_first_valid": true,
+    "semantic_result_triggered_retry": false,
+    "post_ready_retry_count": 0
+  },
+  "validity": {
+    "all_40_collector_contracts_pass": true,
+    "all_40_observer_contracts_pass": true,
+    "all_40_ready_v2_handoffs_verified": true,
+    "all_40_handoff_rng_states_ready_bound": true,
+    "all_40_handoff_rng_reads": 1,
+    "all_40_handoff_rng_read_bytes": 2500,
+    "all_40_handoff_rng_writes": 0,
+    "all_40_observer_process_memory_writes": 0,
+    "all_40_state_correction_counts": 0,
+    "all_40_hardware_breakpoints_restored": true,
+    "all_40_debugger_detach_errors": null,
+    "all_40_persistent_file_modified": false,
+    "integer_identity_errors": 0
+  },
+  "semantic_counts": {
+    "EXACT": 31,
+    "DEFICIT": 9,
+    "SURPLUS": 0,
+    "NONEXACT": 9
+  },
+  "exact_reference_analysis": {
+    "required_minimum_exact_runs": 10,
+    "observed_exact_runs": 31,
+    "required_unique_modal_support_minimum": 10,
+    "required_modal_fraction_minimum": 0.8,
+    "observed_pairs": [
+      {"handoff_draw_count": 1465, "handoff_to_boundary_increment": 197, "support": 24, "fraction": 0.7741935483870968},
+      {"handoff_draw_count": 1464, "handoff_to_boundary_increment": 198, "support": 7, "fraction": 0.22580645161290322}
+    ],
+    "unique_mode": true,
+    "modal_support_pass": true,
+    "modal_fraction_pass": false,
+    "stable_exact_reference": false,
+    "margin_below_fraction_requirement": 0.025806451612903247,
+    "additional_modal_support_needed_at_fixed_denominator": 1
+  },
+  "nonexact_observations_without_formal_location_assignment": [
+    {"run_id": "r07", "H": 1464, "B": 1541, "I": 77, "dB": -121},
+    {"run_id": "r09", "H": 1456, "B": 1644, "I": 188, "dB": -18},
+    {"run_id": "r11", "H": 1444, "B": 1463, "I": 19, "dB": -199},
+    {"run_id": "r17", "H": 1443, "B": 1640, "I": 197, "dB": -22},
+    {"run_id": "r19", "H": 1454, "B": 1639, "I": 185, "dB": -23},
+    {"run_id": "r31", "H": 1463, "B": 1648, "I": 185, "dB": -14},
+    {"run_id": "r33", "H": 1459, "B": 1646, "I": 187, "dB": -16},
+    {"run_id": "r34", "H": 1443, "B": 1640, "I": 197, "dB": -22},
+    {"run_id": "r38", "H": 1454, "B": 1639, "I": 185, "dB": -23}
+  ],
+  "formal_interpretation": {
+    "causal_location_selected": false,
+    "reason": "The frozen localization rule requires one stable exact reference pair. The exact boundary itself permits two adjacent handoff states whose increments compensate to the same boundary state.",
+    "pre_handoff_only_claim_authorized": false,
+    "post_handoff_only_claim_authorized": false,
+    "mixed_location_claim_authorized": false,
+    "posthoc_redefinition_forbidden": true
+  },
+  "host_safety": {
+    "canonical_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_pre_sha256": "sha256:f71e80201218f7250ec96d7e184753e469cdb65b6dadca4765d59807b4ceef6b",
+    "host_after_r40_sha256": "sha256:3726fdbe8e08fd301861d67584ffe8638c538743a28625d28a0e2bf8f79e2b5c",
+    "host_post_sha256": "sha256:b66fa2b81bd7047cb87738f0ee392b966618723659ff1d4c88a5713b88fdb748",
+    "all_40_after_run_state_roots_match": true,
+    "host_pre_state_root_match": true,
+    "host_post_state_root_match": true,
+    "residual_retail_process_count": 0
+  },
+  "decision": {
+    "frozen_status": "UNSTABLE_EXACT_HANDOFF_REFERENCE",
+    "next_action": "Freeze a new analysis or experiment whose exact reference is the preregistered two-state handoff manifold rather than selecting one adjacent state post hoc; only then localize pre- versus post-handoff deficits.",
+    "pc_golden_credit": false,
+    "fidelity_gate_change": false,
+    "formal_transport_change": false,
+    "large_scale_training_start": false
+  },
+  "non_authorizations": ["pc_golden_credit", "fidelity_gate_change", "formal_transport_change", "large_scale_training_start"]
+}

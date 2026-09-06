@@ -1,0 +1,125 @@
+{
+  "schema": "zuma-rl.pc-formal-startup-screen-preregistration",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T06:49:55.5437151Z",
+  "evidence_classification": "fresh-formal-prelocalized-natural-mechanism-source",
+  "purpose": "Freeze a short source-bound window around the first predicted TreasurePoint spawn in the already-certified natural retail DMO.",
+  "selection_policy": {
+    "classification": "prelocalized-not-holdout",
+    "formal_output_existed_at_freeze": false,
+    "window_fixed_before_any_formal_launch": true,
+    "acceptance_independent_of_feature_presence": true,
+    "selection_must_not_inspect_any_reserved_attempt_target_window": true
+  },
+  "selection_basis": {
+    "expiry_source": {
+      "path": "diagnostics/pc-mechanism-c132c1-proximity-fruit-expiry-live-v1.json",
+      "bytes": 9424,
+      "sha256": "sha256:ff6faa581cf14172ba9e701fa69837383e54ba7ffc4f68ada0efc46a1a3f2cf0",
+      "expiry_framework_update": 5750,
+      "expiry_native_game_time": 2738
+    },
+    "installed_scheduler_source": {
+      "path": "diagnostics/pc-mechanism-c118-full-state-v3-live.json",
+      "bytes": 6608,
+      "sha256": "sha256:c0eb4792a772675acf1877963389166da203b415d5d173ed8fb9d2be844a4aac",
+      "lifetime_ticks": 1000
+    },
+    "visual_locator": {
+      "path": "diagnostics/c57-step-visual-freeze3152-warm4250-u4800-affinity1-preresume-nopriority-r1-v1/attempt-01/trajectory/index.json",
+      "bytes": 5561298,
+      "sha256": "sha256:d31afa23dcd00994c8b327cae87b54ee82bc6967a5f9a8ca5096a0100728a784",
+      "role": "diagnostic-only visual corroboration near u4750; never submitted as formal evidence"
+    },
+    "prediction": {
+      "framework_native_offset": 3012,
+      "predicted_spawn_native_game_time": 1738,
+      "predicted_spawn_framework_update": 4750,
+      "derivation": "expiry native time minus the installed 1000-tick lifetime, then add the fixed source-bound framework/native offset"
+    }
+  },
+  "fixed_window": {
+    "features_sought": [
+      "fruit_scheduler_spawn"
+    ],
+    "slowdown_update": 4735,
+    "freeze_update": 4745,
+    "trajectory_end_update": 4760,
+    "tick_count": 16,
+    "acceptance_independent_of_feature_presence": true
+  },
+  "source": {
+    "dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "runtime_executable_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "plan": {
+      "path": "diagnostics/full-state-source-bound-natural-win-c126-plan-v1/plan.json",
+      "bytes": 12888,
+      "sha256": "sha256:d814b8fc4a46c619a4d9834f8a744a31e48a27696ec25e2b73ff2fdc6b920755"
+    },
+    "prestate": {
+      "path": "diagnostics/full-state-source-bound-natural-win-c126-plan-v1/protocol/pre-template.json",
+      "bytes": 16964,
+      "sha256": "sha256:b67be1d2693b26cdad4c9189022a5df9dcce1dd65c88ac61ca2c170b4b82af2a"
+    }
+  },
+  "startup_screen_policy": {
+    "maximum_reserved_attempts": 3,
+    "launch_order": [
+      "c133a1",
+      "c133a2",
+      "c133a3"
+    ],
+    "launch_next_only_if": "the preceding attempt creates no trajectory and fails the strict source-bound startup contract",
+    "stop_after_first_startup_pass": true,
+    "selection_must_not_inspect_target_window_or_feature_presence": true,
+    "any_attempt_reaching_formal_trajectory_is_final_for_this window": true,
+    "all_launched_attempts_and_host_snapshots_are_retained": true,
+    "required_startup_state": {
+      "global_precall_changed": false,
+      "global_precall_bytes_written": 0,
+      "global_precall_process_memory_mutation": false,
+      "global_postcall_natural_state_match": true,
+      "global_postcall_bytes_written": 0,
+      "strict_trace_process_completed": true
+    }
+  },
+  "reserved_attempts": [
+    {
+      "id": "c133a1",
+      "session_nonce": "c133a100000000000000000000000000",
+      "output_root": "formal-full-state-c133a1-fruit-spawn-u4745-u4760-v1",
+      "host_pre_output": "diagnostics/formal-full-state-c133a1-host-pre-v1.json",
+      "host_post_output": "diagnostics/formal-full-state-c133a1-host-post-v1.json"
+    },
+    {
+      "id": "c133a2",
+      "session_nonce": "c133a200000000000000000000000000",
+      "output_root": "formal-full-state-c133a2-fruit-spawn-u4745-u4760-v1",
+      "host_pre_output": "diagnostics/formal-full-state-c133a2-host-pre-v1.json",
+      "host_post_output": "diagnostics/formal-full-state-c133a2-host-post-v1.json"
+    },
+    {
+      "id": "c133a3",
+      "session_nonce": "c133a300000000000000000000000000",
+      "output_root": "formal-full-state-c133a3-fruit-spawn-u4745-u4760-v1",
+      "host_pre_output": "diagnostics/formal-full-state-c133a3-host-pre-v1.json",
+      "host_post_output": "diagnostics/formal-full-state-c133a3-host-post-v1.json"
+    }
+  ],
+  "decision_rules": {
+    "failed_attempts_are_retained": true,
+    "window_coordinates_are_immutable_after_first_launch": true,
+    "feature_absence_does_not_permit_retry": true,
+    "external_input_is_fatal_without_retry": true,
+    "formal_collection_requires_zero_external_input_events": true,
+    "formal_collection_requires_zero_post_board_memory_writes": true,
+    "formal_collection_requires_exact_host_state_restore": true,
+    "diagnostic_locators_must_not_be_submitted_to_fidelity_gate": true
+  },
+  "non_authorizations_before_live_audit_and_diff_pass": [
+    "fruit_scheduler_spawn",
+    "fidelity_gate_open",
+    "large_scale_original_transfer_training_start"
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "schema": "zuma-rl.pc-startup-initial-atomic-barrier-paired-execution-binding",
+  "version": 13,
+  "status": "BOUND_BEFORE_RUN_OUTPUTS",
+  "created_utc": "2026-08-05T16:43:47.430Z",
+  "id": "startup-initial-atomic-barrier-paired-v13-execution",
+  "session_nonce": "c9d3e6f922c34a9aa445bdc1ee84ed88",
+  "parent_preregistration": "diagnostics/startup-barrier-paired-preregistration-v13.json",
+  "parent_preregistration_sha256": "sha256:265f5b5bf64d506ca7e3fb081279f4d9f25e222a7742b5ae1364507cafdf86ae",
+  "trigger_outcome": "diagnostics/global-mtrand-boundary-observer-smoke-outcome-v12.json",
+  "trigger_outcome_sha256": "sha256:9d33312b9e1e2bb8bfb895c420a537548364e9dfc80b6443d8839f7162fc81bd",
+  "preflight": {
+    "all_output_roots_absent": true,
+    "runtime_process_count": 0,
+    "qualified_tool_hashes_match": true,
+    "observer_live_qualification": "PASS",
+    "focused_tests": "PASS_60",
+    "native_full_suite": "PASS_1168_COLLECTED_EXIT_0",
+    "host_pre_must_be_captured_after_this_binding": true
+  },
+  "hash_recheck": {
+    "collector_plan_sha256": "sha256:5a7ba58eccd7e0d1b1008ac089cce59c167a26ba8bc359ef76f3dcd2bea8c0db",
+    "playback_dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "replay_pre_snapshot_sha256": "sha256:06d243f34ecf209c6296659fd4cc3c0a6c299c203cc8b4e342f55cc001c32842",
+    "host_restore_snapshot_sha256": "sha256:c48bd69be03fc6e2fdf1a400b571f0f0294a5fadda1c48e08c1bd6d1dd093f46",
+    "global_mtrand_source_trace_sha256": "sha256:4de39ac6a0e800323949e0095fc2fd3e924ea41a670ceb5d75a0ecb25b5c15a4",
+    "runtime_payload_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "global_boundary_tool_sha256": "sha256:3d4b3a0285bbc26a0fc2ccce539652ada90d6af9b5be892ec3882b1f3bfbf8af",
+    "collector_sha256": "sha256:e6d3d45f19661b62ec7d50f996146192e2e6d582ff5f85b487300f481cd749d6",
+    "tracer_sha256": "sha256:6586859c0eab6d29673f2a8ca05b0c80f6b59c87b8c985cd24c50423ab72d10d",
+    "state_transaction_sha256": "sha256:b6f2b810dfa180f3368c368850eab57d4c2a1010067ea7de26e6cc1271fcd493"
+  },
+  "fixed_common_command": {
+    "python": "D:/ZumaGolden/tools/dxcam-venv/Scripts/python.exe",
+    "tool": "tools/collect_pc_memory_probe.py",
+    "arguments": [
+      "--plan", "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/plan.json",
+      "--prestate", "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/protocol/pre.json",
+      "--host-restore", "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/safety/host-pre.json",
+      "--probe-update", "3425",
+      "--slowdown-update", "3415",
+      "--maximum-attempts", "3",
+      "--trajectory-end-update", "3425",
+      "--trajectory-mode", "rng",
+      "--global-mtrand-call-oracle", "D:/ZumaGolden/autoplay-jungle2-natural-win-v8-globaloracle-20260802-0250/global-mtrand-calls.json",
+      "--global-mtrand-call-oracle-seed", "23557968",
+      "--global-mtrand-call-start-after-update", "1702",
+      "--global-mtrand-call-end-at-update", "3121",
+      "--global-mtrand-call-maximum-draws", "100000",
+      "--global-mtrand-call-sync-timeout-seconds", "900",
+      "--global-mtrand-call-observe-boundary-only",
+      "--diagnostic-disable-source-bound-board-anchor",
+      "--skip-repaint-guard",
+      "--skip-frozen-snapshot",
+      "--trace-detach-update", "1702",
+      "--trace-reattach-update", "3501"
+    ]
+  },
+  "arm_specific_command": {
+    "A_NO_INITIAL_BARRIER": {
+      "additional_arguments": []
+    },
+    "B_INITIAL_ATOMIC_BARRIER": {
+      "additional_arguments": [
+        "--initial-global-mtrand-oracle", "D:/ZumaGolden/autoplay-jungle2-natural-win-v8-globaloracle-20260802-0250/global-mtrand-calls.json",
+        "--initial-global-mtrand-seed", "23557968"
+      ]
+    }
+  },
+  "fixed_execution_order": [
+    {
+      "run": "A01_NO_INITIAL",
+      "arm": "A_NO_INITIAL_BARRIER",
+      "output_root": "D:/ZumaGolden/diagnostics/startup-barrier-paired-a01-no-initial-v13"
+    },
+    {
+      "run": "B01_INITIAL_ATOMIC",
+      "arm": "B_INITIAL_ATOMIC_BARRIER",
+      "output_root": "D:/ZumaGolden/diagnostics/startup-barrier-paired-b01-initial-atomic-v13"
+    },
+    {
+      "run": "B02_INITIAL_ATOMIC",
+      "arm": "B_INITIAL_ATOMIC_BARRIER",
+      "output_root": "D:/ZumaGolden/diagnostics/startup-barrier-paired-b02-initial-atomic-v13"
+    },
+    {
+      "run": "A02_NO_INITIAL",
+      "arm": "A_NO_INITIAL_BARRIER",
+      "output_root": "D:/ZumaGolden/diagnostics/startup-barrier-paired-a02-no-initial-v13"
+    },
+    {
+      "run": "A03_NO_INITIAL",
+      "arm": "A_NO_INITIAL_BARRIER",
+      "output_root": "D:/ZumaGolden/diagnostics/startup-barrier-paired-a03-no-initial-v13"
+    },
+    {
+      "run": "B03_INITIAL_ATOMIC",
+      "arm": "B_INITIAL_ATOMIC_BARRIER",
+      "output_root": "D:/ZumaGolden/diagnostics/startup-barrier-paired-b03-initial-atomic-v13"
+    }
+  ],
+  "execution_rule": {
+    "capture_fresh_host_pre_after_this_binding": true,
+    "retain_every_attempt": true,
+    "stop_at_first_valid_boundary_observation_per_root": true,
+    "never_retry_for_semantic_source_mismatch": true,
+    "post_boundary_failure_is_nonretryable": true,
+    "capture_host_snapshot_after_every_root": true,
+    "verify_same_host_state_root_after_every_root": true,
+    "do_not_change_order_or_thresholds_after_outputs": true
+  },
+  "output_absence_recheck": {
+    "all_six_run_roots": true,
+    "host_pre": true,
+    "host_post": true,
+    "outcome": true
+  },
+  "non_authorizations": [
+    "pc_golden_credit",
+    "fidelity_gate_change",
+    "formal_transport_change",
+    "large_scale_training_start"
+  ]
+}

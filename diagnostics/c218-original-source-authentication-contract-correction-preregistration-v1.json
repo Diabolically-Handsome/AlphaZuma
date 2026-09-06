@@ -1,0 +1,139 @@
+{
+  "acceptance": {
+    "all_97_frozen_evidence_entries_revalidate_live": true,
+    "all_fixed_evidence_hashes_unchanged": true,
+    "all_policy_requirements_unchanged": true,
+    "candidate_gate_reasons": [],
+    "candidate_gate_status": "OPEN",
+    "candidate_policy": "original-transfer-jungle2-v4",
+    "full_test_suite": "PASS_WITH_ONLY_DOCUMENTED_SKIPS_AND_PREEXISTING_WARNING",
+    "missing_certifying_feature_count": 0,
+    "rejected_evidence_count": 0,
+    "targeted_tests": "PASS",
+    "training_start": false
+  },
+  "allowed_changes": {
+    "create": [
+      "D:/ZumaGolden/diagnostics/fidelity-gate-c218-candidate-v28-report.json",
+      "diagnostics/c218-original-source-authentication-contract-correction-success-receipt-v1.json",
+      "diagnostics/c218-original-source-authentication-contract-correction-failure-receipt-v1.json"
+    ],
+    "forbidden": [
+      "changing original-transfer-jungle2-v4 feature requirements or thresholds",
+      "modifying or deleting any frozen evidence artifact",
+      "authenticating a legacy or generic pc_source without same-DMO PC Golden provenance",
+      "treating cross-process pixel equality as a source-authenticity invariant",
+      "training before both Gates are OPEN"
+    ],
+    "modify": [
+      "src/zuma_rl/fidelity_gate.py",
+      "tests/test_fidelity_gate.py",
+      "docs/FIDELITY_SUITE.md"
+    ]
+  },
+  "baseline": {
+    "gate_report": {
+      "artifact": "D:/ZumaGolden/diagnostics/fidelity-gate-c200-candidate-v27-report.json",
+      "artifact_bytes": 87573,
+      "artifact_sha256": "sha256:2531c36cf52d5cc58876283e213da477b064fca22c48b01cb50bd77e4616bb82",
+      "missing_features": [
+        "natural_loss",
+        "fruit_projectile_collision",
+        "fruit_powerup_collision",
+        "fruit_collection_score",
+        "fruit_collection_animation"
+      ],
+      "rejected_evidence_count": 0,
+      "status": "CLOSED"
+    },
+    "suite": {
+      "artifact": "D:/ZumaGolden/diagnostics/fidelity-suite-c200-candidate-v24.json",
+      "artifact_bytes": 26756,
+      "artifact_sha256": "sha256:0bfb00323d7544626b1d19452e64e55c88bacc496ecee0ba2303c7cb0ea29712",
+      "evidence_count": 97,
+      "policy": "original-transfer-jungle2-v4"
+    }
+  },
+  "counterevidence": {
+    "all_seeds_long_horizon_failure": {
+      "artifact": "diagnostics/c212-c213-natural-loss-exact-step-comparison-failure-receipt-v1.json",
+      "artifact_sha256": "sha256:b16777a1c5928ad6fc10a075cd3d7f5920b4f9a1fccf65fc76ff5fddff313b8c",
+      "finding": "global MTRand, main-thread CRT, and Board seeds produced an exact early KAT but diverged before the retained long-horizon source window"
+    },
+    "global_call_transcript_failure": {
+      "artifact": "diagnostics/global-mtrand-exact-step-d01-d02-outcome-v4.json",
+      "artifact_sha256": "sha256:9e69631e47351d834d8d089cc414ba6fd3f1232619f1f6ff5a570afea10b0e75"
+    },
+    "initial_global_seed_failure": {
+      "artifact": "diagnostics/initial-global-mtrand-exact-step-d01-d02-outcome-v6.json",
+      "artifact_sha256": "sha256:d27af3f8b477c68b3d1379a678bee70d3da870e6dbc79c1f6b0fa73308605348"
+    },
+    "single_cpu_affinity_failure": {
+      "artifact": "diagnostics/startup-rng-affinity-diagnostic-outcome-v1.json",
+      "artifact_sha256": "sha256:b9fcf2da2fffd29efebd3d3b3c3f29ea11ad67ac1edca867f7902ed61d033d67"
+    },
+    "thread_crt_only_failure": {
+      "artifact": "diagnostics/c209-thread-crt-fixed-clean-plan-determinism-kat-failure-receipt-v1.json",
+      "artifact_sha256": "sha256:2271d18109ad2c00a5cb99501fd5df7aebc9e906ab045e85e26d0fb4ff549402"
+    }
+  },
+  "created_utc": "2026-08-10T18:18:49.284Z",
+  "decision_rule": {
+    "fail": "Retain the candidate report, create the immutable failure receipt, grant no Fidelity or training authorization, and diagnose the exact failed invariant before any new candidate.",
+    "pass": "Create the immutable c218 success receipt, then audit and bind the Training Gate to this exact suite, report, and qualified implementation before authorizing training."
+  },
+  "fixed_code_before_change": {
+    "docs/FIDELITY_SUITE.md": "sha256:4e15a63011bf28a068cabffff4853db853de64b4ed00b099f178a1facba449d1",
+    "src/zuma_rl/fidelity_gate.py": "sha256:b2ad6a5b39536cfcf050e95624c9ab4cf1db3e9202447fe013e520fefec2e22a",
+    "src/zuma_rl/pc_source.py": "sha256:7971e5f9cd02f9d7888427f42f87227e6ba1ee121cfdea8128568d3abf80163f",
+    "tests/test_fidelity_gate.py": "sha256:f88c8057870d5191366cae40778ac3a9b7950cc8cb881822f8aa8e879d0676ff",
+    "tests/test_pc_source.py": "sha256:96dfdfa3d7ef92ae138c704018c3efbbeb2e5195174e702c5ae9917cf994de0f"
+  },
+  "frozen_contract": {
+    "feature_credit": [
+      "the accepted pc_source must be independently authenticated",
+      "an accepted pc_mechanism_coverage audit must bind the exact source fingerprint to the claimed feature",
+      "an independently accepted simulator_diff must authorize the same feature",
+      "no audit or simulator report may authenticate its own source"
+    ],
+    "legacy_pc_source": "A generic or legacy PC source remains unauthenticated unless an accepted PC Golden in the same suite certifies the exact DMO bytes.",
+    "pc_golden": "Every accepted PC Golden remains self-authenticating through its existing independently recomputed recording provenance.",
+    "policy_change": false,
+    "source_bound_pc_source": {
+      "authentication_basis": "verified_source_bound_natural_recording_provenance",
+      "required_cross_process_pixel_equality": false,
+      "required_report_contract": {
+        "cross_process_exact_replay_required": false,
+        "strict_command_replay_classification": [
+          "source_bound_original_natural_retail_recording",
+          "source_bound_original_natural_retail_outcome"
+        ],
+        "strict_command_replay_schema": "zuma-rl.pc-source-bound-original-command-replay-binding",
+        "strict_command_replay_status": "PASS",
+        "strict_command_replay_versions": [
+          1,
+          2
+        ],
+        "transport": "single_retail_process_source_bound_full_state_exact_step_source"
+      },
+      "verifier_preconditions": [
+        "installed original executable and derived runtime identity recompute exactly",
+        "raw retail recording has zero process-memory writes, a natural outcome, normal exit, and exact host restoration",
+        "the playback DMO differs from the raw recording only through independently verified permitted transport normalization",
+        "the source-bound Board handoff has no post-construction process-memory writes",
+        "the retained trajectory, process creation identity, input isolation, and state transaction all revalidate live"
+      ]
+    }
+  },
+  "id": "c218-original-source-authentication-contract-correction-v1",
+  "outputs": {
+    "candidate_gate": "D:/ZumaGolden/diagnostics/fidelity-gate-c218-candidate-v28-report.json",
+    "candidate_gate_absent_at_freeze": true,
+    "candidate_suite": "D:/ZumaGolden/diagnostics/fidelity-suite-c200-candidate-v24.json",
+    "new_suite_required": false
+  },
+  "purpose": "Correct the Fidelity Gate's stale assumption that original-source authenticity requires same-DMO cross-process exact replay, while preserving same-DMO protection for legacy sources and all feature, mechanism, differential, policy, and minimum-count requirements.",
+  "schema": "zuma-rl.original-source-authentication-contract-correction-preregistration",
+  "status": "FROZEN_BEFORE_IMPLEMENTATION_AND_OUTPUTS",
+  "version": 1
+}

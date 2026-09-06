@@ -1,0 +1,15 @@
+{
+  "schema": "zuma-rl.pc-mechanism-audit-plan",
+  "version": 1,
+  "cases": [
+    {
+      "id": "c119-first-fruit-terminal-mechanisms",
+      "manifest_path": "sources/c119-first-fruit-terminal-full-state-source-v1.json",
+      "memory_probe_path": "formal-full-state-c119-first-fruit-terminal-v1/attempt-01/memory-probe.json",
+      "window": {
+        "start_update": 9970,
+        "end_update": 10481
+      }
+    }
+  ]
+}

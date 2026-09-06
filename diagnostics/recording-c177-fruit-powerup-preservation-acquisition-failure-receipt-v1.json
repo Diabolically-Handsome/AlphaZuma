@@ -1,0 +1,60 @@
+{
+  "schema": "zuma-rl.retail-fruit-powerup-preservation-acquisition-failure-receipt",
+  "version": 1,
+  "status": "CLOSED_NO_LOCATOR_CANDIDATE",
+  "created_utc": "2026-08-10T14:21:05.0000000Z",
+  "classification": "retained-acquisition-failure-not-original-mechanism-falsification",
+  "parents": {
+    "preregistration": {
+      "path": "diagnostics/recording-c177-fruit-powerup-preservation-ensemble-preregistration-v1.json",
+      "sha256": "sha256:b1b18e8175f75a6ab9746ae32029f678053f0a81c802aecd3e4423b19c9c53be"
+    },
+    "execution_receipt": {
+      "path": "diagnostics/recording-c177-fruit-powerup-preservation-ensemble-execution-receipt-v1.json",
+      "sha256": "sha256:c685fb0ba87cac6faf73524eb969af4681c2c83fadef54fe593116a57678f109",
+      "status": "PASS"
+    }
+  },
+  "completed_ensemble": {
+    "declared_attempts": 8,
+    "completed_attempts": 8,
+    "recording_contract_passes": 8,
+    "natural_wins": 8,
+    "host_exact_restores": 8,
+    "zero_process_memory_write_attempts": 8,
+    "natural_uncontrolled_rng_attempts": 8,
+    "global_trace_passes": 8,
+    "retained_raw_dmos": 8
+  },
+  "post_ensemble_locator_analysis": {
+    "autoplay_decision_count": 568,
+    "preserve_fruit_proximity_bomb_decision_count": 131,
+    "trigger_fruit_proximity_bomb_decision_count": 0,
+    "ordinary_direct_fruit_shot_count": 0,
+    "score_delta_at_least_500_locator_count": 0,
+    "locator_candidate_count": 0,
+    "controller_logs_are_certifying_evidence": false
+  },
+  "interpretation": {
+    "established": [
+      "The c176 controller repeatedly detected and preserved natural active-chain type-0 bombs.",
+      "The fixed c177 ensemble retained natural-win and provenance integrity in all eight runs.",
+      "No preregistered trigger or +500-compatible locator was produced."
+    ],
+    "unresolved_observation_boundary": [
+      "whether an uncollected fruit was active during preserved-bomb intervals",
+      "the minimum static TreasurePoint-to-bomb distance during those intervals",
+      "whether a strict-radius overlap occurred while shooter colour or visibility prevented a trigger"
+    ],
+    "next_design_requirement": "Add read-only per-native-tick fruit and active-bomb telemetry without changing qualified action selection, then run a separately frozen natural-retail diagnostic ensemble before revising acquisition behavior again."
+  },
+  "decision": {
+    "c177_closed_without_source_selection": true,
+    "all_outputs_retained": true,
+    "blind_additional_runs_rejected_until_observation_boundary_is_resolved": true,
+    "candidate_recording_gate_credit": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

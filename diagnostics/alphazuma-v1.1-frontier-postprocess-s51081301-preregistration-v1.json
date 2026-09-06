@@ -1,0 +1,247 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-frontier-postprocess-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_SELECTION",
+  "frozen_utc": "2026-08-14T00:10:30Z",
+  "id": "alphazuma-v1.1-frontier-postprocess-s51081301-v1",
+  "preselection_amendments": [
+    {
+      "amended_utc": "2026-08-14T00:22:30Z",
+      "scope": "serialization-only controller correction before any selection or final-blind seed was consumed",
+      "old_controller_sha256": "sha256:14fe8e50b9604303faf2069e8bfde2aed2c289df6a5c5c8982c9197efe5cc628",
+      "new_controller_sha256": "sha256:0f97b9d143f9d33de935311d11074ea4f68cb4b3027a412ed70b52b76ff99689",
+      "change": "Represent an undefined median winning time as JSON null and use a finite internal ranking sentinel, preventing strict-JSON failure when a model records zero wins on a subset.",
+      "training_recipe_changed": false,
+      "candidate_rule_changed": false,
+      "ranking_changed": false,
+      "gate_changed": false,
+      "seed_changed": false,
+      "selection_inference_had_started": false
+    }
+  ],
+  "objective": "Select one AlphaZuma V1.1 frontier policy from seven formal training routes without consuming final blind seeds, then compare it pairwise with the published V1 champion on all seventeen frozen levels.",
+  "controller": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_v11_frontier_postprocess.py",
+    "sha256": "sha256:0f97b9d143f9d33de935311d11074ea4f68cb4b3027a412ed70b52b76ff99689"
+  },
+  "evaluator": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel.py",
+    "sha256": "sha256:d0011f9ad5c6837315007a7fb31e128fb315e4baddb45959c5f3b98d11a6a7e3"
+  },
+  "summarizer": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/summarize_multimodel_evaluation.py",
+    "sha256": "sha256:e7096d86aa06cb26abc781977ec4448a7715a6bcb7023d0596870b3baf7e00a6"
+  },
+  "baseline_model": {
+    "id": "baseline-v1",
+    "training_steps": 13631488,
+    "frontier_steps": 0,
+    "path": "/mnt/d/ZumaTraining/overnight-v11-adaptive-recovery-s43081301-v1/checkpoints/adaptive-5090-recovery_13631488_steps.zip",
+    "sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579",
+    "source": "published_v1_champion"
+  },
+  "runs": [
+    {
+      "id": "frontier-adaptive-5090-oom-recovery",
+      "training_run_id": "frontier-adaptive-5090-oom-recovery",
+      "family": "broad-frontier-adaptive-ppo1-resume",
+      "device": "cuda:0",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-v1.1-frontier-adaptive-oom-recovery-s47081301-v1",
+      "preregistration_path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-v1.1-main-oom-recovery-s47081301-preregistration-v1.json",
+      "preregistration_sha256": "sha256:5db4161d3b820415c1b99ef0d007ed73eb728c549a1076e9c336b9685fbd3aeb",
+      "source_counter_timesteps": 16777216,
+      "source_effective_training_steps": 16777216
+    },
+    {
+      "id": "frontier-fixed-5080-oom-recovery",
+      "training_run_id": "frontier-fixed-5080-oom-recovery",
+      "family": "broad-frontier-fixed-ppo1-resume",
+      "device": "cuda:1",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-v1.1-frontier-fixed-oom-recovery-s47081302-v1",
+      "preregistration_path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-v1.1-main-oom-recovery-s47081301-preregistration-v1.json",
+      "preregistration_sha256": "sha256:5db4161d3b820415c1b99ef0d007ed73eb728c549a1076e9c336b9685fbd3aeb",
+      "source_counter_timesteps": 15728640,
+      "source_effective_training_steps": 15728640
+    },
+    {
+      "id": "memdense-adaptive-5090-a",
+      "training_run_id": "memdense-adaptive-5090-a",
+      "family": "focused-frontier-adaptive-ppo20-fresh-optimizer",
+      "device": "cuda:0",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-v1.1-memdense-adaptive-5090-a-s48081301-v1",
+      "preregistration_path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-v1.1-memory-efficient-frontier-dense-s48081301-preregistration-v1.json",
+      "preregistration_sha256": "sha256:95d44a24fe670e66e44a4a9f079b0540968afec8ae1db6a98a5b530a774ccb9e",
+      "source_counter_timesteps": 0,
+      "source_effective_training_steps": 13631488
+    },
+    {
+      "id": "memdense-fixed-5090-b",
+      "training_run_id": "memdense-fixed-5090-b",
+      "family": "focused-frontier-fixed-ppo20-fresh-optimizer",
+      "device": "cuda:0",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-v1.1-memdense-fixed-5090-b-s48081302-v1",
+      "preregistration_path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-v1.1-memory-efficient-frontier-dense-s48081301-preregistration-v1.json",
+      "preregistration_sha256": "sha256:95d44a24fe670e66e44a4a9f079b0540968afec8ae1db6a98a5b530a774ccb9e",
+      "source_counter_timesteps": 0,
+      "source_effective_training_steps": 13631488
+    },
+    {
+      "id": "memdense-adaptive-5080-a",
+      "training_run_id": "memdense-adaptive-5080-a",
+      "family": "focused-frontier-adaptive-ppo20-fresh-optimizer",
+      "device": "cuda:1",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-v1.1-memdense-adaptive-5080-a-s48081303-v1",
+      "preregistration_path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-v1.1-memory-efficient-frontier-dense-s48081301-preregistration-v1.json",
+      "preregistration_sha256": "sha256:95d44a24fe670e66e44a4a9f079b0540968afec8ae1db6a98a5b530a774ccb9e",
+      "source_counter_timesteps": 0,
+      "source_effective_training_steps": 13631488
+    },
+    {
+      "id": "memdense-fixed-5080-b",
+      "training_run_id": "memdense-fixed-5080-b",
+      "family": "focused-frontier-fixed-ppo20-fresh-optimizer",
+      "device": "cuda:1",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-v1.1-memdense-fixed-5080-b-s48081304-v1",
+      "preregistration_path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-v1.1-memory-efficient-frontier-dense-s48081301-preregistration-v1.json",
+      "preregistration_sha256": "sha256:95d44a24fe670e66e44a4a9f079b0540968afec8ae1db6a98a5b530a774ccb9e",
+      "source_counter_timesteps": 0,
+      "source_effective_training_steps": 13631488
+    },
+    {
+      "id": "ultradense-zero-win-5090-c",
+      "training_run_id": "ultradense-zero-win-5090-c",
+      "family": "zero-win-specialist-adaptive-ppo40-fresh-optimizer",
+      "device": "cuda:0",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-v1.1-ultradense-zero-win-5090-c-s50081301-v1",
+      "preregistration_path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-v1.1-ultradense-zero-win-s50081301-preregistration-v1.json",
+      "preregistration_sha256": "sha256:45706c5a370f666ab9ab7ce306ed1bbc6d0c32a7c24f174f0d3d1986a317f7ae",
+      "source_counter_timesteps": 0,
+      "source_effective_training_steps": 13631488
+    }
+  ],
+  "excluded_training_outputs": [
+    "all calibration and throughput smoke runs",
+    "all pre-OOM partial routes",
+    "both OOM-triggering s46081301 routes",
+    "all models evaluated during prior V1 publication"
+  ],
+  "levels": [
+    {"id": "Jungle1", "display_name": "Shipwrecked!", "curve_count": 1, "curve_names": ["Jungle1\\Jungle1"]},
+    {"id": "Jungle2", "display_name": "Castaway", "curve_count": 1, "curve_names": ["Jungle2\\Jungle2"]},
+    {"id": "Jungle3", "display_name": "Echo Beach", "curve_count": 1, "curve_names": ["Jungle3\\Jungle3"]},
+    {"id": "Jungle4", "display_name": "Bones of an Idol", "curve_count": 1, "curve_names": ["Jungle4\\Jungle4"]},
+    {"id": "jungle6", "display_name": "Jungle Clearing", "curve_count": 1, "curve_names": ["Jungle6\\Jungle6"]},
+    {"id": "Jungle7", "display_name": "Sand Trap", "curve_count": 1, "curve_names": ["Jungle7\\Jungle7"]},
+    {"id": "Jungle8", "display_name": "Nasal Passage", "curve_count": 1, "curve_names": ["Jungle8\\Jungle8"]},
+    {"id": "Jungle9", "display_name": "Creeper Copse", "curve_count": 2, "curve_names": ["Jungle9\\Jungle9-1", "Jungle9\\Jungle9-2"]},
+    {"id": "Jungle10", "display_name": "Darkness Falls", "curve_count": 1, "curve_names": ["Jungle10\\Jungle10"]},
+    {"id": "village1", "display_name": "Watering Hole", "curve_count": 1, "curve_names": ["Village1"]},
+    {"id": "village2", "display_name": "Overgrown Plaza", "curve_count": 1, "curve_names": ["Village2"]},
+    {"id": "village4", "display_name": "Sandspirals", "curve_count": 1, "curve_names": ["Village4v2"]},
+    {"id": "village5", "display_name": "Abandoned Well", "curve_count": 1, "curve_names": ["Village5"]},
+    {"id": "village6", "display_name": "Face Your Fear", "curve_count": 2, "curve_names": ["Village6-1", "Village6-2"]},
+    {"id": "village7", "display_name": "Seven Sides (minus one)", "curve_count": 1, "curve_names": ["Village7"]},
+    {"id": "village8", "display_name": "Vines of Vengeance", "curve_count": 1, "curve_names": ["Village8"]},
+    {"id": "village10", "display_name": "The Horseshoe", "curve_count": 1, "curve_names": ["Village10\\Village10v2"]}
+  ],
+  "environment": {
+    "profile_mode": "tutorials_completed",
+    "hard": false,
+    "curve_index": 0,
+    "base_config": {
+      "aim_bins": 180,
+      "action_mode": "factorized",
+      "frame_skip": 1,
+      "max_ticks": 12000,
+      "max_balls": 768,
+      "max_projectiles": 32,
+      "max_curves": 2,
+      "score_reward_scale": 0.01,
+      "step_penalty": -0.0001,
+      "win_reward": 10,
+      "loss_reward": -10,
+      "privileged_debug": false,
+      "render_width": 400,
+      "render_height": 300
+    },
+    "input_profile": {
+      "profile_id": "elite-human-v1",
+      "reaction_delay_ticks": 12,
+      "max_aim_speed_degrees_per_second": 1080,
+      "max_aim_acceleration_degrees_per_second_squared": 18000,
+      "min_button_interval_ticks": 5
+    },
+    "reward_profile": {
+      "profile_id": "win-time-score-v1",
+      "win_reward": 10,
+      "failure_reward": -10,
+      "time_penalty_per_native_tick": -0.0001,
+      "score_progress_reward_cap": 0.01
+    }
+  },
+  "zero_win_level_ids": ["Jungle7", "village6", "village10"],
+  "selection": {
+    "candidate_rule": "Published V1 baseline plus the checkpoint nearest the temporal midpoint of each formal route and the final model of each formal route; exactly fifteen candidates. Midpoints are computed over new steps after each route source counter.",
+    "level_ids": ["Jungle2", "Jungle7", "Jungle9", "village4", "village5", "village6", "village8", "village10"],
+    "retention_anchor": "Jungle2",
+    "attempts_per_level": 4,
+    "seed_base": 910000000,
+    "last_seed": 910000031,
+    "ranking": [
+      "Jungle2 wins at least 3 of 4",
+      "previously zero-win levels cleared descending",
+      "previously zero-win wins descending",
+      "remaining selection target levels cleared descending",
+      "remaining selection target wins descending",
+      "median best winning ticks ascending",
+      "earlier manifest position as deterministic final tie-break"
+    ],
+    "selection_results_are_not_final_blind_claims": true
+  },
+  "final_blind": {
+    "level_ids": "all seventeen frozen levels",
+    "attempts_per_level": 16,
+    "seed_base": 1010000000,
+    "last_seed": 1010000271,
+    "paired_same_seed_baseline": true,
+    "seeds_must_not_be_consumed_before_selection_is_frozen": true,
+    "all_attempts_must_be_reported": true
+  },
+  "promotion_gates": {
+    "jungle2_wins_at_least": 14,
+    "target_levels_cleared_at_least": 14,
+    "target_wins_at_least": 168,
+    "zero_win_levels_cleared_at_least": 1,
+    "zero_win_total_wins_at_least": 4,
+    "target_wins_must_not_be_below_same_seed_v1_baseline": true,
+    "target_breadth_must_not_be_below_same_seed_v1_baseline": true,
+    "rationale": "Promotion requires anchor retention, breadth beyond the published 13-of-16 V1 result, concrete recovery on previously zero-win levels, absolute target performance, and paired non-inferiority. Statistical significance is reported but is not misused as a hard gate at this sample size."
+  },
+  "stretch_goals": {
+    "target_wins_at_least": 176,
+    "zero_win_levels_cleared_at_least": 3,
+    "zero_win_total_wins_at_least": 12,
+    "affects_promotion_decision": false
+  },
+  "seed_isolation": {
+    "formal_training_ranges": [
+      [930000000, 933999999],
+      [940000000, 943999999],
+      [950000000, 953999999],
+      [960000000, 963999999],
+      [970000000, 973999999],
+      [980000000, 983999999],
+      [996000000, 997999999]
+    ],
+    "selection_range": [910000000, 910000031],
+    "final_blind_range": [1010000000, 1010000271],
+    "prior_v1_selection_and_blind_ranges_excluded": true,
+    "no_overlap": true
+  },
+  "schedule": {
+    "training_stop_utc": "2026-08-14T12:00:00Z",
+    "training_stop_local": "2026-08-14T08:00:00-04:00",
+    "goal_end_utc": "2026-08-14T14:30:00Z",
+    "goal_end_local": "2026-08-14T10:30:00-04:00"
+  }
+}

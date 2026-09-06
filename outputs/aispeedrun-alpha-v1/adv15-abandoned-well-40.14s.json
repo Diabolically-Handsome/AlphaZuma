@@ -1,0 +1,135 @@
+{
+  "schema": "zuma-rl.paired-multimodel-level-video",
+  "version": 1,
+  "status": "COMPLETE",
+  "source": {
+    "aggregate": "/mnt/d/ZumaTraining/overnight-v11-recovery-postprocess-s43081301-v1/morning-target-evaluation/aggregate.json",
+    "aggregate_sha256": "sha256:b82e017511d39540f17e28ab50bfa451cdac9804f2b67b7764762eb94d8621c8",
+    "preregistration": "/mnt/d/ZumaTraining/overnight-v11-recovery-postprocess-s43081301-v1/morning-target-preregistration.json",
+    "preregistration_sha256": "sha256:55543e20ecae3fac92072d8c40fcb65c686183cd292128d7504aa76eb0a4d3ad",
+    "models_manifest": "/mnt/d/ZumaTraining/overnight-v11-recovery-postprocess-s43081301-v1/morning-blind-models-manifest.json",
+    "models_manifest_sha256": "sha256:5f9c76008d70e6ce8c156916d6a1b214ad34509399a3142f44d4158e382408e0"
+  },
+  "selection": {
+    "rule": "fastest winning formal blind attempt for level across frozen models",
+    "requested_level_id": "village5",
+    "requested_model_id": null
+  },
+  "candidate": {
+    "model_id": "selected-overnight",
+    "training_steps": 16252928,
+    "model_sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579",
+    "seed": 710000189,
+    "outcome": "win",
+    "native_outcome": null,
+    "time_limit_truncated": false,
+    "ticks": 4014,
+    "seconds": 40.14,
+    "score": 5210,
+    "reward": 9.608600000000028,
+    "decisions": 4014,
+    "desired_action_counts": {
+      "wait": 3815,
+      "fire": 120,
+      "swap": 79
+    },
+    "executed_action_counts": {
+      "wait": 3815,
+      "fire": 120,
+      "swap": 79
+    },
+    "trajectory_sha256": "sha256:543b3e5a5417fa97cdee82f2bd646ad37655ad58ad1e1b582e348d603734d3ff",
+    "level_id": "village5",
+    "display_name": "Abandoned Well",
+    "curve_count": 1,
+    "attempt_index": 13
+  },
+  "model": {
+    "path": "/mnt/d/ZumaTraining/overnight-v11-adaptive-recovery-s43081301-v1/checkpoints/adaptive-5090-recovery_13631488_steps.zip",
+    "sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579",
+    "device": "cuda:1"
+  },
+  "verification": {
+    "identity_fields": [
+      "outcome",
+      "ticks",
+      "score",
+      "trajectory_sha256",
+      "decisions",
+      "desired_action_counts",
+      "executed_action_counts"
+    ],
+    "pre_render_matches_formal_attempt": true,
+    "rendered_matches_formal_attempt": true,
+    "pre_render": {
+      "model_id": "selected-overnight",
+      "training_steps": 16252928,
+      "model_sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579",
+      "seed": 710000189,
+      "outcome": "win",
+      "native_outcome": null,
+      "time_limit_truncated": false,
+      "ticks": 4014,
+      "seconds": 40.14,
+      "score": 5210,
+      "reward": 9.608600000000028,
+      "decisions": 4014,
+      "desired_action_counts": {
+        "wait": 3815,
+        "fire": 120,
+        "swap": 79
+      },
+      "executed_action_counts": {
+        "wait": 3815,
+        "fire": 120,
+        "swap": 79
+      },
+      "trajectory_sha256": "sha256:543b3e5a5417fa97cdee82f2bd646ad37655ad58ad1e1b582e348d603734d3ff",
+      "qualifies_sub_12": false
+    },
+    "rendered": {
+      "model_id": "selected-overnight",
+      "training_steps": 16252928,
+      "model_sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579",
+      "seed": 710000189,
+      "outcome": "win",
+      "native_outcome": null,
+      "time_limit_truncated": false,
+      "ticks": 4014,
+      "seconds": 40.14,
+      "score": 5210,
+      "reward": 9.608600000000028,
+      "decisions": 4014,
+      "desired_action_counts": {
+        "wait": 3815,
+        "fire": 120,
+        "swap": 79
+      },
+      "executed_action_counts": {
+        "wait": 3815,
+        "fire": 120,
+        "swap": 79
+      },
+      "trajectory_sha256": "sha256:543b3e5a5417fa97cdee82f2bd646ad37655ad58ad1e1b582e348d603734d3ff",
+      "qualifies_sub_12": false
+    }
+  },
+  "video": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/outputs/aispeedrun-alpha-v1/adv15-abandoned-well-40.14s.mp4",
+    "sha256": "sha256:3483007af881373c502b92f3eeca7a17b83fec0ec26775e5ca243ebe3ae597d9",
+    "bytes": 2724837,
+    "codec": "h264/libx264",
+    "pixel_format": "yuv420p",
+    "width": 800,
+    "height": 736,
+    "fps": 50,
+    "frame_stride_native_ticks": 2,
+    "gameplay_frame_count": 2008,
+    "frame_count": 2108,
+    "decoded_frame_count": 2108,
+    "duration_seconds": 42.16,
+    "final_hold_seconds": 2.0,
+    "poster": "/mnt/c/Users/Laure/Documents/祖玛/outputs/aispeedrun-alpha-v1/adv15-abandoned-well-40.14s-poster.png",
+    "poster_sha256": "sha256:e38c42e835513689e09991c8a97d93cea1365ce99552a16c820914daba9ff72f"
+  }
+}

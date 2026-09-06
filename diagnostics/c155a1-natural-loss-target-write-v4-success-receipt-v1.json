@@ -1,0 +1,147 @@
+{
+  "schema": "zuma-rl.retail-natural-loss-target-write-v4-success-receipt",
+  "version": 1,
+  "status": "PASS_CERTIFYING_CANDIDATE_RAW_RECORDING",
+  "created_utc": "2026-08-10T11:16:21.8697602Z",
+  "run": {
+    "id": "c155a1",
+    "root": "D:/ZumaGolden/record-c155a1-idle-natural-loss-target-write-v4",
+    "preregistration_sha256": "sha256:9302314ca987ea1ffdb7cecabcb88e7d2269b68eed6cadfe38049984f87046f4",
+    "implementation_receipt_sha256": "sha256:32e45ce10d25d4aa9b37f35d2b3b2ad4a7fbccaca34072eb197c3d12749a6013",
+    "result_status": "PASS",
+    "result_sha256": "sha256:a59deec6b7b7a39f7d72fffd035c41d7609e1fb9ad56ef91c8eed30138a2576f",
+    "certifying_recording_outcome_recomputed": "natural_loss",
+    "expected_outcome": "natural_loss",
+    "gameplay_policy": "idle",
+    "fruit_policy": "ignore"
+  },
+  "navigation": {
+    "target_framework_updates": [1622, 2422, 3108],
+    "observed_framework_updates": [1622, 2422, 3109],
+    "logical_points": [[400.0, 533.0], [633.0, 281.0], [399.0, 456.0]],
+    "all_clicks_exact_target_hwnd_stable_for_at_least_0_15_seconds": true,
+    "foreground_verification_passed": true
+  },
+  "source_anchor": {
+    "count": 1,
+    "call_address": "0x0065B81C",
+    "framework_update": 3137,
+    "board_address": 647954944,
+    "native_game_time": 109,
+    "score": 7950,
+    "score_target": 9650,
+    "curve_plan_exhausted": false,
+    "global_pre_index": 447,
+    "global_pre_state_sha256": "sha256:5bf8c65b8348e1fc66be38f460343e8b960c4cb0fd691435c6579c12aade4f35",
+    "global_post_index": 448,
+    "global_post_state_sha256": "sha256:c432feafcbde51db2da536c5f59ec906c0ed2142abe7a028dac193841cd62822",
+    "predicted_output": 1853292490,
+    "thread_crt_rand_state": 1020014204,
+    "thread_id": 24192
+  },
+  "natural_loss_target_write_pair": {
+    "receipt_kind": "natural_loss_same_board_target_write_transition_v4",
+    "same_board_address": 647954944,
+    "watched_address": "0x269F0308",
+    "framework_update": 11856,
+    "score": 7950,
+    "clear_write": {
+      "writer_address": "0x00412EED",
+      "instruction_hex": "899f08010000",
+      "post_eip": "0x00412EF3",
+      "previous_target": 9650,
+      "post_target": 0,
+      "native_game_time": 0,
+      "curve_plan_exhausted": true,
+      "register_edi": 647954944,
+      "register_ebx": 0,
+      "perf_counter_ns": 415479569770000
+    },
+    "positive_write": {
+      "writer_address": "0x00411B8D",
+      "instruction_hex": "899608010000",
+      "post_eip": "0x00411B93",
+      "previous_target": 0,
+      "post_target": 9616,
+      "native_game_time": 0,
+      "curve_plan_exhausted": false,
+      "register_esi": 647954944,
+      "register_edx": 9616,
+      "perf_counter_ns": 415479570027100
+    },
+    "write_interval_ns": 257100,
+    "maximum_allowed_interval_ns": 5000000,
+    "trace_status": "PASS",
+    "trace_failure": null,
+    "process_memory_writes": 0,
+    "process_memory_mutation": false,
+    "persistent_file_modified": false,
+    "hardware_breakpoint_restored": true,
+    "debugger_detach_error": null
+  },
+  "polling_transparency": {
+    "status_before_v4_receipt": "INCOMPLETE",
+    "outcome_before_v4_receipt": "timeout",
+    "terminal_observation_before_v4_receipt": null,
+    "legacy_result_retained": true,
+    "v4_promotion_applied_only_after_full_trace_validation": true
+  },
+  "recording_commit": {
+    "input_dmo_created": true,
+    "input_dmo_bytes": 21782,
+    "input_dmo_sha256": "sha256:fe550425c3a7a0977b2bf1b3be45ab8281f26fb44b5bd71a0fede87c8d508e41",
+    "normal_exit_method": "retail_ui",
+    "normal_exit": true,
+    "process_exit_code": 0,
+    "action_count": 0,
+    "swap_count": 0,
+    "fruit_shot_count": 0
+  },
+  "evidence": [
+    {
+      "path": "D:/ZumaGolden/record-c155a1-idle-natural-loss-target-write-v4/result.json",
+      "bytes": 23507,
+      "sha256": "sha256:a59deec6b7b7a39f7d72fffd035c41d7609e1fb9ad56ef91c8eed30138a2576f"
+    },
+    {
+      "path": "D:/ZumaGolden/record-c155a1-idle-natural-loss-target-write-v4/input.dmo",
+      "bytes": 21782,
+      "sha256": "sha256:fe550425c3a7a0977b2bf1b3be45ab8281f26fb44b5bd71a0fede87c8d508e41"
+    },
+    {
+      "path": "D:/ZumaGolden/record-c155a1-idle-natural-loss-target-write-v4/board-global-precall-and-natural-loss-target-write.json",
+      "bytes": 21669,
+      "sha256": "sha256:0d7d3f531742d5bab58191e32cb8e8a7a272f30dc7e08d9c9c740ae2737edb6f"
+    },
+    {
+      "path": "D:/ZumaGolden/record-c155a1-idle-natural-loss-target-write-v4/autoplay.ndjson",
+      "bytes": 219210,
+      "sha256": "sha256:36533f5c0e195524060b37e142632c8b211a52b00f04da063ab1f9ee2f8bd0d5"
+    },
+    {
+      "path": "D:/ZumaGolden/record-c155a1-idle-natural-loss-target-write-v4/rng.ndjson",
+      "bytes": 1318,
+      "sha256": "sha256:569b49bf4732fb802206a466490e850071d5d0070a3334f05a1c5b7e8c9beb1e"
+    }
+  ],
+  "safety": {
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "host_pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "applied_pre_state_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526",
+    "host_end_state_root": "sha256:66db5cbefb1c6592e58aeab56b737bcc2475bc7b7ddb1fbc19518fec7bf3611d",
+    "host_restored_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_restored_exactly": true,
+    "retail_process_remaining": false,
+    "process_memory_writes": 0
+  },
+  "decision": {
+    "c155a1_passed_frozen_contract": true,
+    "raw_recording_is_certifying_candidate": true,
+    "raw_recording_alone_is_not_original_source_or_simulator_diff_credit": true,
+    "same_preregistration_retry_forbidden": true,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false,
+    "next_step": "Freeze the exact duplicate-startup-read normalization, collector-plan, two native replays, source trajectory, mechanism audit, and simulator-diff protocol before creating any c155-derived artifact."
+  }
+}

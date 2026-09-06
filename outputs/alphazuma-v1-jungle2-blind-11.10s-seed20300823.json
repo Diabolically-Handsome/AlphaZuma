@@ -1,0 +1,125 @@
+{
+  "schema": "zuma-rl.certified-human-speedrun-blind-video",
+  "version": 1,
+  "status": "COMPLETE",
+  "source": {
+    "blind_evaluation": "/mnt/d/ZumaTraining/human-speedrun-v1-jungle2-blind-s20300812-n32-v1/blind_evaluation.json",
+    "blind_evaluation_sha256": "sha256:8af20964e41d18ad967a5432784b5f4acef75bc1ab94f6a5b1801b0ed25405e9",
+    "preregistration": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/human-speedrun-v1-jungle2-blind-s20300812-n32-preregistration.json",
+    "preregistration_sha256": "sha256:6c9ecdae6ad42c2eefb1e987ea25840b13ca8985ab3cce73b53b23dbbd377005"
+  },
+  "candidate": {
+    "model_id": "step-0786432",
+    "training_steps": 786432,
+    "model_sha256": "sha256:8ef60bc39a907e2b1aac140608055665e4d5a0dd55d08cb3a7bd927938f4ffe3",
+    "seed": 20300823,
+    "outcome": "win",
+    "native_outcome": null,
+    "time_limit_truncated": false,
+    "ticks": 1110,
+    "seconds": 11.1,
+    "score": 2010,
+    "reward": 9.898999999999997,
+    "decisions": 1110,
+    "desired_action_counts": {
+      "wait": 1054,
+      "fire": 31,
+      "swap": 25
+    },
+    "executed_action_counts": {
+      "wait": 1054,
+      "fire": 31,
+      "swap": 25
+    },
+    "trajectory_sha256": "sha256:82acdf6fd2c4ec075f195d46de8c031db691b569659acba158cd5da0c3bbd115",
+    "qualifies_sub_12": true
+  },
+  "model": {
+    "path": "/mnt/d/ZumaTraining/human-speedrun-v1-jungle2-s20261010-2621k-v1/checkpoints/zuma_human_speedrun_v1_786432_steps.zip",
+    "sha256": "sha256:8ef60bc39a907e2b1aac140608055665e4d5a0dd55d08cb3a7bd927938f4ffe3",
+    "device": "cuda:0"
+  },
+  "verification": {
+    "identity_fields": [
+      "outcome",
+      "ticks",
+      "score",
+      "trajectory_sha256",
+      "decisions",
+      "desired_action_counts",
+      "executed_action_counts"
+    ],
+    "pre_render_matches_blind_attempt": true,
+    "rendered_matches_blind_attempt": true,
+    "pre_render": {
+      "model_id": "step-0786432",
+      "training_steps": 786432,
+      "model_sha256": "sha256:8ef60bc39a907e2b1aac140608055665e4d5a0dd55d08cb3a7bd927938f4ffe3",
+      "seed": 20300823,
+      "outcome": "win",
+      "native_outcome": null,
+      "time_limit_truncated": false,
+      "ticks": 1110,
+      "seconds": 11.1,
+      "score": 2010,
+      "reward": 9.898999999999997,
+      "decisions": 1110,
+      "desired_action_counts": {
+        "wait": 1054,
+        "fire": 31,
+        "swap": 25
+      },
+      "executed_action_counts": {
+        "wait": 1054,
+        "fire": 31,
+        "swap": 25
+      },
+      "trajectory_sha256": "sha256:82acdf6fd2c4ec075f195d46de8c031db691b569659acba158cd5da0c3bbd115",
+      "qualifies_sub_12": true
+    },
+    "rendered": {
+      "model_id": "step-0786432",
+      "training_steps": 786432,
+      "model_sha256": "sha256:8ef60bc39a907e2b1aac140608055665e4d5a0dd55d08cb3a7bd927938f4ffe3",
+      "seed": 20300823,
+      "outcome": "win",
+      "native_outcome": null,
+      "time_limit_truncated": false,
+      "ticks": 1110,
+      "seconds": 11.1,
+      "score": 2010,
+      "reward": 9.898999999999997,
+      "decisions": 1110,
+      "desired_action_counts": {
+        "wait": 1054,
+        "fire": 31,
+        "swap": 25
+      },
+      "executed_action_counts": {
+        "wait": 1054,
+        "fire": 31,
+        "swap": 25
+      },
+      "trajectory_sha256": "sha256:82acdf6fd2c4ec075f195d46de8c031db691b569659acba158cd5da0c3bbd115",
+      "qualifies_sub_12": true
+    }
+  },
+  "video": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/outputs/alphazuma-v1-jungle2-blind-11.10s-seed20300823.mp4",
+    "sha256": "sha256:50de5b4f7e017defffef7ce83a949eb8da6afb333758d6358be6049fce5dd553",
+    "bytes": 807210,
+    "codec": "h264/libx264",
+    "pixel_format": "yuv420p",
+    "width": 800,
+    "height": 696,
+    "fps": 50,
+    "frame_stride_native_ticks": 2,
+    "gameplay_frame_count": 556,
+    "frame_count": 656,
+    "decoded_frame_count": 656,
+    "duration_seconds": 13.12,
+    "final_hold_seconds": 2.0,
+    "poster": "/mnt/c/Users/Laure/Documents/祖玛/outputs/alphazuma-v1-jungle2-blind-11.10s-seed20300823-poster.png",
+    "poster_sha256": "sha256:d30aa92b8840cc1099237735f1c3bcb94302d802e42f18ead4d460016cce8dba"
+  }
+}

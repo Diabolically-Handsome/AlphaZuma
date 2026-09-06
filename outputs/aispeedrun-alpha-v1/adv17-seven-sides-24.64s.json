@@ -1,0 +1,135 @@
+{
+  "schema": "zuma-rl.paired-multimodel-level-video",
+  "version": 1,
+  "status": "COMPLETE",
+  "source": {
+    "aggregate": "/mnt/d/ZumaTraining/overnight-v11-recovery-postprocess-s43081301-v1/morning-target-evaluation/aggregate.json",
+    "aggregate_sha256": "sha256:b82e017511d39540f17e28ab50bfa451cdac9804f2b67b7764762eb94d8621c8",
+    "preregistration": "/mnt/d/ZumaTraining/overnight-v11-recovery-postprocess-s43081301-v1/morning-target-preregistration.json",
+    "preregistration_sha256": "sha256:55543e20ecae3fac92072d8c40fcb65c686183cd292128d7504aa76eb0a4d3ad",
+    "models_manifest": "/mnt/d/ZumaTraining/overnight-v11-recovery-postprocess-s43081301-v1/morning-blind-models-manifest.json",
+    "models_manifest_sha256": "sha256:5f9c76008d70e6ce8c156916d6a1b214ad34509399a3142f44d4158e382408e0"
+  },
+  "selection": {
+    "rule": "fastest winning formal blind attempt for level across frozen models",
+    "requested_level_id": "village7",
+    "requested_model_id": null
+  },
+  "candidate": {
+    "model_id": "baseline-v1",
+    "training_steps": 2621440,
+    "model_sha256": "sha256:aeb6385c6df3faa0e720b43dd52853284807a25eaf2e4d0da4dcdc0769c4f5b6",
+    "seed": 710000218,
+    "outcome": "win",
+    "native_outcome": null,
+    "time_limit_truncated": false,
+    "ticks": 2464,
+    "seconds": 24.64,
+    "score": 4920,
+    "reward": 9.76360000000001,
+    "decisions": 2464,
+    "desired_action_counts": {
+      "wait": 2339,
+      "fire": 71,
+      "swap": 54
+    },
+    "executed_action_counts": {
+      "wait": 2339,
+      "fire": 71,
+      "swap": 54
+    },
+    "trajectory_sha256": "sha256:9480cb831d58831f2156d9a888cbe42904a82676fe8afda0d9f9dcd36a32c221",
+    "level_id": "village7",
+    "display_name": "Seven Sides (minus one)",
+    "curve_count": 1,
+    "attempt_index": 10
+  },
+  "model": {
+    "path": "/mnt/d/ZumaTraining/human-speedrun-v1-jungle2-s20261010-2621k-v1/final_model.zip",
+    "sha256": "sha256:aeb6385c6df3faa0e720b43dd52853284807a25eaf2e4d0da4dcdc0769c4f5b6",
+    "device": "cuda:0"
+  },
+  "verification": {
+    "identity_fields": [
+      "outcome",
+      "ticks",
+      "score",
+      "trajectory_sha256",
+      "decisions",
+      "desired_action_counts",
+      "executed_action_counts"
+    ],
+    "pre_render_matches_formal_attempt": true,
+    "rendered_matches_formal_attempt": true,
+    "pre_render": {
+      "model_id": "baseline-v1",
+      "training_steps": 2621440,
+      "model_sha256": "sha256:aeb6385c6df3faa0e720b43dd52853284807a25eaf2e4d0da4dcdc0769c4f5b6",
+      "seed": 710000218,
+      "outcome": "win",
+      "native_outcome": null,
+      "time_limit_truncated": false,
+      "ticks": 2464,
+      "seconds": 24.64,
+      "score": 4920,
+      "reward": 9.76360000000001,
+      "decisions": 2464,
+      "desired_action_counts": {
+        "wait": 2339,
+        "fire": 71,
+        "swap": 54
+      },
+      "executed_action_counts": {
+        "wait": 2339,
+        "fire": 71,
+        "swap": 54
+      },
+      "trajectory_sha256": "sha256:9480cb831d58831f2156d9a888cbe42904a82676fe8afda0d9f9dcd36a32c221",
+      "qualifies_sub_12": false
+    },
+    "rendered": {
+      "model_id": "baseline-v1",
+      "training_steps": 2621440,
+      "model_sha256": "sha256:aeb6385c6df3faa0e720b43dd52853284807a25eaf2e4d0da4dcdc0769c4f5b6",
+      "seed": 710000218,
+      "outcome": "win",
+      "native_outcome": null,
+      "time_limit_truncated": false,
+      "ticks": 2464,
+      "seconds": 24.64,
+      "score": 4920,
+      "reward": 9.76360000000001,
+      "decisions": 2464,
+      "desired_action_counts": {
+        "wait": 2339,
+        "fire": 71,
+        "swap": 54
+      },
+      "executed_action_counts": {
+        "wait": 2339,
+        "fire": 71,
+        "swap": 54
+      },
+      "trajectory_sha256": "sha256:9480cb831d58831f2156d9a888cbe42904a82676fe8afda0d9f9dcd36a32c221",
+      "qualifies_sub_12": false
+    }
+  },
+  "video": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/outputs/aispeedrun-alpha-v1/adv17-seven-sides-24.64s.mp4",
+    "sha256": "sha256:b51affb7410072bc013a8ec16b0922794f571f3b624e4e82e1df112a90276126",
+    "bytes": 1674643,
+    "codec": "h264/libx264",
+    "pixel_format": "yuv420p",
+    "width": 800,
+    "height": 736,
+    "fps": 50,
+    "frame_stride_native_ticks": 2,
+    "gameplay_frame_count": 1233,
+    "frame_count": 1333,
+    "decoded_frame_count": 1333,
+    "duration_seconds": 26.66,
+    "final_hold_seconds": 2.0,
+    "poster": "/mnt/c/Users/Laure/Documents/祖玛/outputs/aispeedrun-alpha-v1/adv17-seven-sides-24.64s-poster.png",
+    "poster_sha256": "sha256:b02ebf534acb6e7735b0d9f432eee78e9c38ec09ef74e56998c4a3c5a7eec8b2"
+  }
+}

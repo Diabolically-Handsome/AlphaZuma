@@ -1,0 +1,290 @@
+{
+  "schema": "zuma-rl.alphazuma-55-configured-successor-master-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_SUCCESSOR_FINAL_BLIND",
+  "campaign_id": "alphazuma-55-polar-intent-replay-anchor-successor-s99081609-v1",
+  "created_utc": "2026-08-16T01:51:26.415603+00:00",
+  "deadline_utc": "2026-08-17T15:00:00Z",
+  "deadline_local": "2026-08-17 11:00 America/Toronto",
+  "objective": {
+    "one_frozen_policy_file": true,
+    "runtime_model_switching_forbidden": true,
+    "per_level_weight_routing_forbidden": true,
+    "simulator_state_policy": true,
+    "visual_frontend_in_scope": false,
+    "original_client_world_record_claim": false,
+    "target": "Certify one frozen configured policy on all 55 included levels and four continuous no-retry campaigns."
+  },
+  "scope": {
+    "retail_ordinary_adventure_level_count": 60,
+    "included_level_count": 55,
+    "excluded_moving_frog_level_count": 5,
+    "excluded_bosses": "all story boss definitions, including multipart final-boss definitions",
+    "included_levels_in_adventure_order": [
+      "Jungle1",
+      "Jungle2",
+      "Jungle3",
+      "Jungle4",
+      "jungle6",
+      "Jungle7",
+      "Jungle8",
+      "Jungle9",
+      "Jungle10",
+      "village1",
+      "village2",
+      "village3",
+      "village4",
+      "village5",
+      "village6",
+      "village7",
+      "village8",
+      "village10",
+      "city1",
+      "city2",
+      "city3",
+      "city4",
+      "city5",
+      "city6",
+      "city7",
+      "city9",
+      "city10",
+      "Coast1",
+      "Coast2",
+      "Coast3",
+      "Coast4",
+      "Coast5",
+      "Coast6",
+      "Coast7",
+      "Coast9",
+      "Coast10",
+      "grotto1",
+      "grotto2",
+      "grotto3",
+      "grotto4",
+      "grotto5",
+      "grotto6",
+      "grotto7",
+      "grotto9",
+      "grotto10",
+      "volcano1",
+      "volcano2",
+      "volcano3",
+      "volcano4",
+      "volcano5",
+      "volcano6",
+      "volcano7",
+      "volcano8",
+      "volcano9",
+      "volcano10"
+    ],
+    "excluded_moving_frog_levels": [
+      "Jungle5",
+      "village9",
+      "city8",
+      "Coast8",
+      "grotto8"
+    ],
+    "included_dual_position_levels": [
+      "village3",
+      "city3",
+      "Coast3",
+      "Coast10",
+      "grotto3",
+      "volcano3"
+    ],
+    "notes": [
+      "Dual-position frog stages remain in scope.",
+      "Dual-curve stages are ordinary stages and are not excluded.",
+      "Moving horizontal or vertical frog stages and every boss are outside this campaign."
+    ]
+  },
+  "original_root": "/mnt/d/SteamLibrary/steamapps/common/Zuma's Revenge",
+  "seed_registry": {
+    "final_blind": {
+      "first": 3100000000,
+      "last": 3100000439,
+      "matrix": "55 levels x 8 attempts for one frozen successor policy",
+      "embargo_until_promotion_decision_is_frozen": true
+    },
+    "continuous_campaign_challenge": {
+      "first": 3200000000,
+      "last": 3200000219,
+      "matrix": "4 frozen campaigns x 55 levels, one attempt per level",
+      "embargo_until_successor_policy_hash_is_frozen": true
+    },
+    "overlap_with_source_or_sibling_formal_seeds": false
+  },
+  "successor": {
+    "intent": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-replay-anchor-successor-s99081609-intent-v1.json",
+      "sha256": "sha256:9800099a8dbaffeb592f38763788661ca8b308cd594a7e7485a80107555c24db"
+    },
+    "source_campaign_master": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+      "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+    },
+    "engineering_validation": {
+      "plan": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-replay-anchor-validation-s99081608-plan-v1.json",
+        "sha256": "sha256:0bedcc7c32eef2ab3959f3e31bba27d7bc86dff23d3a32b3157a323cea9a7f1f"
+      },
+      "plan_schema": "zuma-rl.alphazuma-55-polar-intent-replay-anchor-validation-plan",
+      "manifest_plan_binding_key": "polar_intent_replay_anchor_validation_plan",
+      "audit_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-replay-anchor-validation-s99081608-audit-v1.json",
+      "eligible_model_ids": [
+        "polar-intent-replay-anchor-source-wide-final",
+        "polar-intent-replay-anchor-source-dagger-final",
+        "polar-intent-replay-anchor-round-00",
+        "polar-intent-replay-anchor-round-01",
+        "polar-intent-replay-anchor-round-02"
+      ],
+      "ranking": [
+        "wins_desc",
+        "level_coverage_desc",
+        "total_score_desc",
+        "median_winning_ticks_asc",
+        "earlier_round_first"
+      ],
+      "one_paired_attempt_per_level": true,
+      "current_campaign_candidate_authority": false,
+      "plan_lifecycle_status_actual": "FROZEN_BEFORE_TARGET_TRAINING_COMPLETION",
+      "ranking_tie_break_semantics": "earlier_manifest_round_first",
+      "matrix_models_actual": 5,
+      "matrix_attempts_actual": 275
+    },
+    "promotion_gate": {
+      "selected_model_must_be_one_of": [
+        "polar-intent-replay-anchor-round-00",
+        "polar-intent-replay-anchor-round-01",
+        "polar-intent-replay-anchor-round-02"
+      ],
+      "minimum_cleared_levels": 35,
+      "minimum_wins": 35,
+      "evaluated_before_successor_seed_consumption": true,
+      "failure_action": "write COMPLETE_NO_PROMOTION and leave both configured successor formal seed ranges unconsumed"
+    },
+    "formal_gates": {
+      "single_policy_capability_gate": {
+        "levels_cleared": 55,
+        "minimum_wins_per_level": 1,
+        "total_wins": 220,
+        "attempts": 440
+      },
+      "continuous_full_game_gate": {
+        "campaigns_cleared": 1,
+        "campaigns_attempted": 4,
+        "no_retry": true,
+        "no_model_change": true
+      }
+    },
+    "authority_boundary": {
+      "separate_from_source_campaign": true,
+      "does_not_modify_source_candidate_inventory": true,
+      "does_not_consume_source_selection_final_or_continuous_seeds": true,
+      "negative_results_retained": true
+    }
+  },
+  "execution": {
+    "shard_count": 2,
+    "devices": [
+      "cuda:0",
+      "cuda:1"
+    ],
+    "parallel_envs_per_shard": 12,
+    "final_blind_attempts_per_level": 8,
+    "continuous_campaigns": 4
+  },
+  "power_policy": {
+    "rtx_5090_limit_watts": 550,
+    "rtx_5080_limit_watts": 250,
+    "does_not_authorize_early_power_restore": true
+  },
+  "implementation": {
+    "master_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_configured_successor_master_replay_anchor_v1.py",
+      "sha256": "sha256:1cedbe28946bc04067b649040d0d9e6b1c5a26ad609d8801b4389ed242453125"
+    },
+    "controller": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_configured_successor_certification_replay_anchor_v1.py",
+      "sha256": "sha256:5cbd13d8c88ef2c718d8e901fcd3119bde72ec52611601546a8813b90f562760"
+    },
+    "watcher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/watch_alphazuma_55_configured_successor_certification_replay_anchor_v1.py",
+      "sha256": "sha256:1b1a980de93b86ea14793f38943eafe4f3f6c300f9f84b97605ec4aa4c0f0d60"
+    },
+    "independent_auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_configured_successor_result_replay_anchor_v1.py",
+      "sha256": "sha256:8d226182af2af92cd3168aa13496704e89bc852f3da8844fdf86e96bd1c743af"
+    },
+    "evaluation_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_configured_successor_eval_contract.py",
+      "sha256": "sha256:39308f485773c3acd64227e9ed6abf47cdb34d908c84358dbf2dde4662a306ae"
+    },
+    "evaluator": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel_v2.py",
+      "sha256": "sha256:811de7b530e6703858ae218aa9a0309724c49824d817e2f55733646ec89fd6c3"
+    },
+    "evaluation_helper": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_overnight_v11_postprocess.py",
+      "sha256": "sha256:1f8ce2067be93b001d182f8c22018ad3b2a0fb5e5c051b9a60f9a18de66c1a0e"
+    },
+    "matrix_auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_v11_frontier_result.py",
+      "sha256": "sha256:a37ea47134610ec2824c1774d98afa84ff9025f7aa3b4d7235414feec6e45b34"
+    },
+    "engineering_auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_training_validation.py",
+      "sha256": "sha256:3621dcb64c3342e3954533d22401f258fe6c72ac49d164456455ad77ea54aa67"
+    },
+    "summarizer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/summarize_multimodel_evaluation.py",
+      "sha256": "sha256:e7096d86aa06cb26abc781977ec4448a7715a6bcb7023d0596870b3baf7e00a6"
+    },
+    "compatibility_base_master_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_configured_successor_master.py",
+      "sha256": "sha256:657179ac4fbbb7dca3a8d1afcaf413ce42b04af1dc046923fafc7af55a8ac7c6"
+    },
+    "compatibility_base_controller": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_configured_successor_certification.py",
+      "sha256": "sha256:1d55eea57947abe87168ec9fdc2157753262474b044329417ee5f725f9eda953"
+    },
+    "compatibility_base_watcher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/watch_alphazuma_55_configured_successor_certification.py",
+      "sha256": "sha256:1cbcfc1e922aa934859c89433aecff11a121551f1d84c582eeb6078f4da8df1b"
+    },
+    "compatibility_base_auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_configured_successor_result.py",
+      "sha256": "sha256:d664b80ac6d2c951802f20d2ba36d37f5626980791fee80c7e0bd1fe65dfcc63"
+    }
+  },
+  "outputs": {
+    "root": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-replay-anchor-successor-s99081609-v1",
+    "controller": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-replay-anchor-successor-s99081609-v1/controller",
+    "watcher": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-replay-anchor-successor-s99081609-v1/watcher",
+    "final_blind": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-replay-anchor-successor-s99081609-v1/final-blind",
+    "continuous": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-replay-anchor-successor-s99081609-v1/continuous",
+    "independent_audit_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-replay-anchor-successor-independent-audit-s99081609-v1.json"
+  },
+  "formal_seed_registry_snapshot": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-formal-seed-registry-s99081604-v3.json",
+    "sha256": "sha256:847c7ca9a8770c5482c4f1eaf6f681e3081a105b70a16ac83577ebae551462c2"
+  },
+  "compatibility_adapter": {
+    "engineering_plan_lifecycle_normalization": "FROZEN_BEFORE_TARGET_TRAINING_COMPLETION -> FROZEN_DURING_TARGET_TRAINING",
+    "base_builder_validation_projection": "temporarily omit the first of two non-promotable source baselines and project 5x55 to 4x55 solely while exercising the legacy static builder",
+    "actual_master_inventory_restored": [
+      "polar-intent-replay-anchor-source-wide-final",
+      "polar-intent-replay-anchor-source-dagger-final",
+      "polar-intent-replay-anchor-round-00",
+      "polar-intent-replay-anchor-round-01",
+      "polar-intent-replay-anchor-round-02"
+    ],
+    "actual_engineering_matrix_attempts": 275,
+    "normalization_is_validation_only": true,
+    "plan_bytes_changed": false,
+    "candidate_order_changed_in_actual_master": false,
+    "ranking_changed": false,
+    "seed_matrix_changed": false,
+    "policy_inference_performed": false
+  }
+}

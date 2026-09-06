@@ -1,0 +1,72 @@
+{
+  "schema": "zuma-rl.alphazuma-55-motor-observable-gradual-round-evidence",
+  "version": 1,
+  "status": "FROZEN_AFTER_ROUND_BEFORE_ROUTE_COMPLETION",
+  "observed_utc": "2026-08-16T10:19:56.7869411Z",
+  "campaign_id": "alphazuma-55-motor-observable-gradual-s99081629-v1",
+  "round": {
+    "index": 2,
+    "teacher_execution_probability": 0.7,
+    "levels": 55,
+    "wins": 23,
+    "losses": 32,
+    "truncations": 0,
+    "first_24_wins": 17,
+    "second_24_wins": 5,
+    "last_7_wins": 1,
+    "collection_wall_seconds": 2706.1000021590007,
+    "retained_samples": 37980,
+    "aggregate_samples_after_round": 116852
+  },
+  "capacity_metrics_on_consumed_training_data": {
+    "sample_count": 116852,
+    "exact_action_accuracy": 0.06949816862355801,
+    "verb_accuracy": 0.9178619107931401,
+    "fire_aim_sample_count": 41555,
+    "fire_aim_exact_accuracy": 0.10922873300445193,
+    "fire_aim_within_three_accuracy": 0.6114306340993864,
+    "fire_aim_mean_circular_bin_error": 3.6259655877752377,
+    "fire_aim_median_circular_bin_error": 3.0,
+    "fire_aim_p90_circular_bin_error": 8.0,
+    "fire_expected_unique_aim_bins": 180,
+    "fire_predicted_unique_aim_bins": 180
+  },
+  "interpretation_boundary": {
+    "observation": "offline verb capacity rose while closed-loop wins collapsed as teacher execution decreased",
+    "supports": "closed-loop covariate shift and under-supervised queued aim state",
+    "does_not_prove": "that the separately preregistered all-actions route will pass its engineering Gate",
+    "fallback_trigger_satisfied": true
+  },
+  "source_status": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-s99081629-v1/training_status.json",
+    "sha256_at_round3_start": "sha256:37d1b08e22da5624143f1d7de5dbcda54a36681f6efaf26a90c6d83b01c8cea2"
+  },
+  "checkpoints": [
+    {
+      "epoch": 3,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-s99081629-v1/round_02/epoch_03_model.zip",
+      "sha256": "sha256:065f44985089870899b9d5066b3133df1533f21e7b3a9d50eca4457883565134"
+    },
+    {
+      "epoch": 6,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-s99081629-v1/round_02/epoch_06_model.zip",
+      "sha256": "sha256:18005e9a69a322966275a7f330011895643ec10d455c090d72f83f8cb2e4e015"
+    },
+    {
+      "epoch": 9,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-s99081629-v1/round_02/epoch_09_model.zip",
+      "sha256": "sha256:7eb7736b5e2aefb6d7410c4b9acf5100a07ef902b1d9e3762eafc9fef202bb68"
+    },
+    {
+      "epoch": 12,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-s99081629-v1/round_02/epoch_12_model.zip",
+      "sha256": "sha256:a5a1c189b924bced701ed9a91d59efe7cbcabb4e0609f9d4fb9dd2488ff94859"
+    }
+  ],
+  "authority_boundary": {
+    "engineering_evidence_only": true,
+    "formal_seed_consumption": "NONE",
+    "formal_candidate_authority": false,
+    "power_restore_authority": false
+  }
+}

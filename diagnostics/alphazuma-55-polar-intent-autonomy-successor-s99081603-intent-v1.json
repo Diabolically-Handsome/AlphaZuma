@@ -1,0 +1,167 @@
+{
+  "schema": "zuma-rl.alphazuma-55-polar-intent-autonomy-successor-intent",
+  "version": 1,
+  "status": "FROZEN_BEFORE_ENGINEERING_RESULT",
+  "created_utc": "2026-08-16T00:49:21.760253+00:00",
+  "campaign_id": "polar-intent-autonomy-successor-s99081603",
+  "objective": "Authorize formal full55 and continuous evaluation only if an autonomy-trained raw-intent round clears the frozen engineering gate.",
+  "source_campaign_master": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "formal_seed_registry_snapshot": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-formal-seed-registry-s99081552-v2.json",
+    "sha256": "sha256:35c517a9b8788bbeb9852fdb956ff4eead68bf5d5084e97468c44ea3bb6fcb14"
+  },
+  "sibling_reserved_seed_intent": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-dagger-successor-s99081551-intent-v1.json",
+    "sha256": "sha256:1c2bc71f92c52493c2c00fafcd7eb717e58cda992548114fa6f35072ad383047"
+  },
+  "engineering_validation": {
+    "plan": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-autonomy-validation-s99081602-plan-v1.json",
+      "sha256": "sha256:22c6525d6173e944b3a63640c18199df291cc60a57eda671094b7c5e2e3fd3e7"
+    },
+    "audit_receipt_expected": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-autonomy-validation-s99081602-audit-v1.json",
+    "candidate_order": [
+      "polar-intent-autonomy-source-final",
+      "polar-intent-autonomy-round-00",
+      "polar-intent-autonomy-round-01",
+      "polar-intent-autonomy-round-02",
+      "polar-intent-autonomy-round-03"
+    ],
+    "ranking": [
+      "wins_desc",
+      "level_coverage_desc",
+      "total_score_desc",
+      "median_winning_ticks_asc",
+      "earlier_round_first"
+    ],
+    "paired_attempts": 275,
+    "formal_authority": false
+  },
+  "promotion_gate": {
+    "selected_model_must_be_one_of": [
+      "polar-intent-autonomy-round-00",
+      "polar-intent-autonomy-round-01",
+      "polar-intent-autonomy-round-02",
+      "polar-intent-autonomy-round-03"
+    ],
+    "minimum_cleared_levels": 35,
+    "minimum_wins": 35,
+    "training_label_semantics": "raw_teacher_intent",
+    "state_distribution_semantics": "student_only_dagger",
+    "online_inference_semantics": "exact_action_masks",
+    "evaluated_on_frozen_engineering_matrix": true,
+    "evaluated_before_formal_contract_or_seed_consumption": true,
+    "negative_result_action": "COMPLETE_NO_PROMOTION"
+  },
+  "formal_campaign_if_promoted": {
+    "single_selected_policy_only": true,
+    "scope_levels": [
+      "Jungle1",
+      "Jungle2",
+      "Jungle3",
+      "Jungle4",
+      "jungle6",
+      "Jungle7",
+      "Jungle8",
+      "Jungle9",
+      "Jungle10",
+      "village1",
+      "village2",
+      "village3",
+      "village4",
+      "village5",
+      "village6",
+      "village7",
+      "village8",
+      "village10",
+      "city1",
+      "city2",
+      "city3",
+      "city4",
+      "city5",
+      "city6",
+      "city7",
+      "city9",
+      "city10",
+      "Coast1",
+      "Coast2",
+      "Coast3",
+      "Coast4",
+      "Coast5",
+      "Coast6",
+      "Coast7",
+      "Coast9",
+      "Coast10",
+      "grotto1",
+      "grotto2",
+      "grotto3",
+      "grotto4",
+      "grotto5",
+      "grotto6",
+      "grotto7",
+      "grotto9",
+      "grotto10",
+      "volcano1",
+      "volcano2",
+      "volcano3",
+      "volcano4",
+      "volcano5",
+      "volcano6",
+      "volcano7",
+      "volcano8",
+      "volcano9",
+      "volcano10"
+    ],
+    "final_blind": {
+      "base_seed": 2900000000,
+      "last_seed": 2900000439,
+      "attempts_per_level": 8,
+      "expected_attempts": 440,
+      "gate": {
+        "cleared_levels": 55,
+        "minimum_win_per_level": 1,
+        "minimum_total_wins": 220
+      }
+    },
+    "continuous_campaign_challenge": {
+      "base_seed": 3000000000,
+      "last_seed": 3000000219,
+      "campaigns": 4,
+      "levels_per_campaign": 55,
+      "expected_attempts": 220,
+      "gate": {
+        "minimum_complete_55_level_campaigns": 1
+      }
+    },
+    "execution": {
+      "shard_count": 2,
+      "devices": [
+        "cuda:0",
+        "cuda:1"
+      ],
+      "parallel_envs_per_shard": 12
+    },
+    "all_seeds_frozen_before_policy_inference": true
+  },
+  "outputs": {
+    "root": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-autonomy-successor-s99081603-v1",
+    "independent_audit_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-autonomy-successor-s99081603-independent-audit-v1.json"
+  },
+  "implementation_boundary": {
+    "intent_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_polar_intent_autonomy_successor_intent.py",
+      "sha256": "sha256:baa8aaeb09a42204e96ea1558e8d3bd25ba9d7b7bbea28b5f5b7a3f3d5bcfb11"
+    },
+    "formal_master_controller_and_auditor_must_be_hash_frozen_before_inference": true,
+    "this_intent_does_not_authorize_policy_inference": true
+  },
+  "authority_boundary": {
+    "current_campaign_candidate_authority": false,
+    "predecessor_successor_candidate_authority": false,
+    "formal_seed_consumption": false,
+    "power_restore_authority": false
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "schema": "zuma-rl.pc-fruit-powerup-collision-preservation-controller-qualification",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T14:03:54.5175961Z",
+  "classification": "qualified-evidence-acquisition-controller-not-certifying-gameplay-evidence",
+  "preregistration": {
+    "path": "diagnostics/c176-fruit-powerup-collision-preservation-controller-preregistration-v1.json",
+    "sha256": "sha256:d8269d9a5ecfc97fac92a54821008510c8fefe4d79f36fdf5b675221b7eb7a48",
+    "frozen_before_implementation": true
+  },
+  "implementation": {
+    "fruit_policy": "bomb",
+    "active_bomb_primary_type": 0,
+    "bomb_bearing_candidate_rows_excluded_during_preservation": true,
+    "ordinary_order_reused_for_bomb_free_rows": true,
+    "deterministic_clear_perimeter_discard": true,
+    "active_fruit_discard_safety_radius_px": 60.0,
+    "strict_trigger_radius_px": 108.0,
+    "strict_trigger_priority_preserved": true,
+    "direct_fruit_targeting": false,
+    "process_memory_writes": 0,
+    "input_transport": "Win32 SendInput",
+    "simulator_core_changed": false,
+    "fidelity_gate_policy_changed": false,
+    "training_gate_policy_changed": false
+  },
+  "post_implementation_files": [
+    {
+      "path": "tools/autoplay_live_zuma.py",
+      "bytes": 93387,
+      "sha256": "sha256:ebd1c8a4d09b4f17d33a8b68f6a2920b03097fafe0ce60991ded6dc3d26b5428"
+    },
+    {
+      "path": "tests/test_autoplay_live_zuma.py",
+      "bytes": 25062,
+      "sha256": "sha256:28d5a457867d8674571428ae7498b183d56aec2f5f79c25d41550742f852781d"
+    },
+    {
+      "path": "tools/record_autoplay_zuma.py",
+      "bytes": 71066,
+      "sha256": "sha256:438b74c5f6fc8190c9835852a86dfba5c04e25c9b963f98c8d2564b5123d614f",
+      "unchanged": true
+    }
+  ],
+  "checks": [
+    {
+      "name": "python_compile",
+      "command": ".venv-win/Scripts/python.exe -m py_compile tools/autoplay_live_zuma.py tests/test_autoplay_live_zuma.py",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "focused_pytest",
+      "command": ".venv-win/Scripts/python.exe -m pytest tests/test_autoplay_live_zuma.py tests/test_record_autoplay_zuma.py -q",
+      "collected_tests": 96,
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "full_pytest",
+      "command": ".venv-win/Scripts/python.exe -m pytest -q",
+      "collected_tests": 1555,
+      "exit_code": 0,
+      "status": "PASS",
+      "known_warning": "Gymnasium could not test alternate render modes because the environment has no spec"
+    }
+  ],
+  "required_behavior_results": {
+    "bomb_free_same_colour_row_selected": "PASS",
+    "safe_next_chamber_row_selected": "PASS",
+    "clear_perimeter_discard": "PASS",
+    "active_fruit_discard_safety_radius": "PASS",
+    "strict_radius_trigger_priority": "PASS",
+    "no_active_bomb_legacy_recommendation": "PASS",
+    "ignore_policy_regression": "PASS",
+    "collect_policy_regression": "PASS"
+  },
+  "decision": {
+    "controller_qualified_for_fresh_retail_capture": true,
+    "controller_is_pc_golden": false,
+    "fidelity_gate_open": false,
+    "training_gate_open": false,
+    "training_start": false
+  }
+}

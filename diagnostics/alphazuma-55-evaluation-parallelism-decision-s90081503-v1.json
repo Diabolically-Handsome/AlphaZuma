@@ -1,0 +1,102 @@
+{
+  "schema": "zuma-rl.alphazuma-55-evaluation-parallelism-decision",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-15T03:45:43.024392+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "bytes": 11077,
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "formal_seed_embargo_intact": true,
+  "benchmarks": [
+    {
+      "parallel_envs_per_shard": 64,
+      "preregistration": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-throughput-benchmark-64-s90081501-preregistration-v1.json",
+        "bytes": 11739,
+        "sha256": "sha256:3258ee5516240fea21e079610c93d46fde54289c4921a96fbd150d7101044f52"
+      },
+      "result": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/throughput-benchmark-64-s90081501-v1/shard-01-of-02.json",
+        "bytes": 114207,
+        "sha256": "sha256:801243b7b95c5f5d5dbd1c1800dc178b3375118c16937fc43b883fc87875b901"
+      },
+      "stderr": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/throughput-benchmark-64-s90081501-launcher/shard-01.recovery-01.stderr.log",
+        "bytes": 0,
+        "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "shard_index": 1,
+      "shard_count": 2,
+      "attempts": 112,
+      "vector_transitions": 1344000,
+      "wall_seconds": 1240.973129045,
+      "seed_plan": {
+        "registry": "engineering_and_calibration",
+        "base_seed": 1400300000,
+        "last_seed": 1400300219,
+        "formal_seed_embargo_intact": true
+      },
+      "max_ticks": 12000,
+      "model_sha256": "sha256:cfa2d352dacb5b5b1bddccd8445ae19693cd1bd1a7fa2a0e0d967e4addbf9094",
+      "evaluator_sha256": "sha256:d0011f9ad5c6837315007a7fb31e128fb315e4baddb45959c5f3b98d11a6a7e3"
+    },
+    {
+      "parallel_envs_per_shard": 112,
+      "preregistration": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-throughput-benchmark-112-s90081502-preregistration-v1.json",
+        "bytes": 11741,
+        "sha256": "sha256:804e085460577e37c4f7ac778dc561abdbc510e64ed20d009fda4e6ea3873a17"
+      },
+      "result": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/throughput-benchmark-112-s90081502-v1/shard-01-of-02.json",
+        "bytes": 114209,
+        "sha256": "sha256:13869711dfc19149a3e1b105f6cf5735cd4e904af7eefe3167a315a1bdd0f075"
+      },
+      "stderr": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/throughput-benchmark-112-s90081502-launcher/shard-01.stderr.log",
+        "bytes": 0,
+        "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "shard_index": 1,
+      "shard_count": 2,
+      "attempts": 112,
+      "vector_transitions": 1344000,
+      "wall_seconds": 941.5004194570001,
+      "seed_plan": {
+        "registry": "engineering_and_calibration",
+        "base_seed": 1400301000,
+        "last_seed": 1400301219,
+        "formal_seed_embargo_intact": true
+      },
+      "max_ticks": 12000,
+      "model_sha256": "sha256:cfa2d352dacb5b5b1bddccd8445ae19693cd1bd1a7fa2a0e0d967e4addbf9094",
+      "evaluator_sha256": "sha256:d0011f9ad5c6837315007a7fb31e128fb315e4baddb45959c5f3b98d11a6a7e3"
+    }
+  ],
+  "comparison": {
+    "same_attempts": true,
+    "same_vector_transitions": true,
+    "wall_seconds_64": 1240.973129045,
+    "wall_seconds_112": 941.5004194570001,
+    "relative_wall_reduction": 0.241320865519837,
+    "minimum_required_relative_wall_reduction": 0.1
+  },
+  "decision": {
+    "formal_parallel_envs_per_shard": 112,
+    "formal_shard_count": 2,
+    "devices": [
+      "cuda:0",
+      "cuda:1"
+    ],
+    "selection_batches_per_model_per_shard": 1,
+    "final_blind_batches_per_model_per_shard": 2,
+    "continuous_batches_per_model_per_shard": 1,
+    "training_semantics_changed": false,
+    "evaluation_task_or_seed_semantics_changed": false,
+    "selection_or_gate_semantics_changed": false
+  },
+  "scope_limit": "The benchmark proves width safety and relative throughput at the 12,000-tick engineering guard. It does not by itself prove the absolute runtime of 180,000-tick formal matrices."
+}

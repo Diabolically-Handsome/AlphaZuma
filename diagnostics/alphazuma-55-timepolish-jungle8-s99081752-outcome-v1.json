@@ -1,0 +1,37 @@
+{
+  "schema": "zuma-rl.alphazuma-55-macro-ppo-run-outcome",
+  "version": 1,
+  "run_id": "timepolish-jungle8-r3",
+  "preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-timepolish-jungle8-s99081752-preregistration-v1.json",
+    "sha256": "sha256:c1ec67ae059dbd290b0a65ffb8234761d04f1ee90a460a105100875352bf8398"
+  },
+  "status": "STOPPED_BY_WIN_RATE_FLOOR_CLAUSE",
+  "decision": "FAIL_NO_POLISH_GAIN_CHAMPION_IS_REDO_BC",
+  "stopped_utc": "2026-08-21T20:24:42Z",
+  "reason": "Floor clause (0.8075, from the 14/16 init) fired on two consecutive breaches: ckpt262120 7/16 median 7746, ckpt524240 12/16 median 7553. The 7 -> 12 recovery slope resembled Jungle10's successful arc, but the frozen clause is the frozen clause - a high-baseline init earns a high floor, and re-litigating it mid-run is exactly what this culture forbids. No checkpoint reached the floor; the preregistered fallback applies: CHAMPION FOR JUNGLE8 = THE STRENGTHENED REDO BC (14/16, median 6374, E[t] 7285 - itself -14.2% vs the old init, so Jungle8 still ends today materially stronger than it started).",
+  "checkpoint_grid": [
+    {
+      "checkpoint": 262120,
+      "wins": "7/16",
+      "median": 7746
+    },
+    {
+      "checkpoint": 524240,
+      "wins": "12/16",
+      "median": 7553
+    }
+  ],
+  "init_baseline": {
+    "wins": "14/16",
+    "median": 6374.5,
+    "expected_time": 7285
+  },
+  "champion": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-bc-jungle8-240-s99081751-v1/final_model.zip",
+    "sha256": "sha256:8904336e8321035e0dcf90988fa7a08d3a9177e24af02fcd5db23060d2bdc537"
+  },
+  "polish_history_note": "THIRD Jungle8 polish attempt, third clause stop (fixed floor s99081711, honest floor s99081724, strengthened init s99081752). Jungle8 is now the campaign's clearest counterexample to 'polish always helps': its BCs improve with data, its polishes consistently trade wins away faster than the floor allows. Recorded lever: a warm-critic RESUME from ckpt524240 (the Jungle3-round-2 maneuver) under a floor recomputed from 524240's own 12/16 would legally continue the recovery arc - candidate for a future round if the record gap warrants it.",
+  "next_step": "record rescan of the top-3000 golden seeds with the redo BC (prior scan with the OLD BC: 14.63 s vs human 8 s)",
+  "formal_seed_consumption": false
+}

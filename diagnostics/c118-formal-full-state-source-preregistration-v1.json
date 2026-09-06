@@ -1,0 +1,143 @@
+{
+  "schema": "zuma-rl.pc-full-state-source-preregistration",
+  "version": 2,
+  "id": "c118-natural-u9547-u11047-formal-independent-score-source",
+  "status": "FROZEN_BEFORE_RUN_OUTPUTS",
+  "created_utc": "2026-08-09T15:20:23.171Z",
+  "question": "Can the unchanged prelocalized late-game interval be captured from one fresh unmodified retail Jungle2 process while accepting every accumulated-score and rolling-display-score int32 pair without retries or outcome filtering?",
+  "evidence_classification": "fresh_formal_pc_full_state_source",
+  "fixed_contract": {
+    "freeze_update": 9547,
+    "source_start_update": 9547,
+    "source_end_update": 11047,
+    "retained_tick_count": 1501,
+    "warmup_tick_count": 0,
+    "trajectory_mode": "full_raw_board_state",
+    "sample_phase": "frozen_post_replay_update_barrier",
+    "maximum_startup_attempts": 1,
+    "strict_command_broker_stop_update": 3123,
+    "score_binding_schema_version": 2,
+    "score_mode": "independent_active_board_fields_read_only",
+    "score_offsets": {
+      "accumulated_score": 260,
+      "rolling_display_score": 3836
+    },
+    "score_acceptance_rule": "all_int32_pairs_without_outcome_filtering",
+    "slowdown_update": 9527,
+    "single_retail_process": true
+  },
+  "execution_envelope": {
+    "outer_command_timeout_seconds": 3600,
+    "timeout_is_not_an_acceptance_criterion": true,
+    "reason": "C117 was externally interrupted at 1203.65 seconds and retained through update 10382, demonstrating that the former 1200 second shell limit was too short for the frozen 1501-tick evidence window"
+  },
+  "acceptance_contract": {
+    "collector_status": "PASS",
+    "selected_attempt": 1,
+    "started_attempt_count": 1,
+    "external_event_count": 0,
+    "strict_replay_failure_count": 0,
+    "strict_replay_gameplay_or_rng_process_memory_write_count": 0,
+    "runtime_payload_must_bind_to_signed_retail_executable": true,
+    "all_1501_tick_artifacts_must_pass_independent_full_state_reader": true,
+    "first_trajectory_frame_must_equal_both_score_binding_fields": true,
+    "visual_anchor_must_bind_the_freeze_process_and_window": true,
+    "host_post_state_root_must_equal_fresh_host_pre_state_root": true,
+    "no_feature_is_required_for_source_acceptance": true,
+    "feature_authorization_is_machine_derived_after_source_acceptance": true
+  },
+  "attempt_rule": {
+    "retain_every_started_attempt": true,
+    "retry_allowed": false,
+    "infrastructure_failure_disposition": "retain_failed_source_and_create_a_new_preregistered_source",
+    "external_input_is_not_retryable": true,
+    "maximum_attempts": 1
+  },
+  "selection_basis": {
+    "historical_diagnostic_only": true,
+    "historical_window": "D:/ZumaGolden/diagnostics/memory-trajectory-20260730-u9000-u11047-rng-powerup-barrier-v2",
+    "infrastructure_pilot": "D:/ZumaGolden/diagnostics/c114-natural-pilot-u9547-u9552-v3",
+    "failed_score_contract_predecessor": "D:/ZumaGolden/formal-full-state-c115-natural-u9547-u11047-v1",
+    "failed_timeout_predecessor": {
+      "path": "D:/ZumaGolden/formal-full-state-c117-natural-u9547-u11047-v1",
+      "attempts_sha256": "sha256:df904b7b14e2000b831dc27909eb6087e5e5fba9bcc6b583e543f30345e7863c",
+      "last_retained_update": 10382,
+      "last_tick_sha256": "sha256:db42ff12334a3405e857321c6ea2f230615d2d5db41d28141ec57c99243e721b",
+      "failure": "outer_shell_timeout_only",
+      "evidence_disposition": "forbidden"
+    },
+    "contract_change_from_c117": "none",
+    "endpoint_change_from_c117": "none",
+    "execution_only_change_from_c117": "outer command timeout increased from 1200 to 3600 seconds",
+    "window_reason": "the broad interval was frozen before C115 outputs and remains unchanged; no gameplay outcome from C115 through C117 altered either endpoint",
+    "expected_feature_hypotheses_not_acceptance_criteria": [
+      "gap_shot",
+      "match3",
+      "match4",
+      "powerup_spawn",
+      "projectile_collision",
+      "rng_pending",
+      "rng_rejection",
+      "rollback_chain",
+      "shot_release",
+      "tunnel_collision"
+    ]
+  },
+  "fixed_inputs": {
+    "collector_plan": {
+      "path": "D:/ZumaGolden/diagnostics/full-state-natural-strict-plan-c114-v2/plan.json",
+      "sha256": "sha256:b9df684f4590842a389be66aac028b0f71168059998a733b789dd75cc2b51769"
+    },
+    "playback_dmo": {
+      "path": "D:/ZumaGolden/diagnostics/full-state-natural-strict-plan-c114-v2/inputs/input.dmo",
+      "sha256": "sha256:e43c645a18d74c5320a0687446f38cd9c46fff4eb8c0ff1a2b9c265b78a18b12"
+    },
+    "replay_pre_snapshot": {
+      "path": "D:/ZumaGolden/diagnostics/full-state-natural-strict-plan-c114-v2/protocol/pre-template.json",
+      "sha256": "sha256:4adf6a8ea5fc6eaf42c8a2b9268af64ac13250e7d85b3362b3cba69743569a58"
+    },
+    "runtime_payload": {
+      "path": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+      "sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20"
+    },
+    "runtime_source": {
+      "path": "D:/SteamLibrary/steamapps/common/Zuma's Revenge/ZumasRevenge.exe",
+      "sha256": "sha256:db85b891ba662a463d23251a376081386b47437c29248b21e2c10335a6f3eb50"
+    }
+  },
+  "state_transaction": {
+    "session_nonce": "ea4595fbffd34d3e94d45433a29a5ca5",
+    "host_prestate_role": "fresh_live_state_captured_after_this_preregistration_and_before_the_run",
+    "replay_prestate_role": "fixed_game_start_state",
+    "poststate_rule": "same session nonce and exact state root after the sole attempt finishes",
+    "c117_restore_attestation": {
+      "pre_sha256": "sha256:2406341f8b8ff42fd99844b16e7a97b4e7b7b482bb20a9467d7fbfb604a559f1",
+      "post_sha256": "sha256:bbe6cd10dd7b7b2f0e6060e381a4e43856ab6b706789563e91be9c06b3480efe",
+      "equal_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061"
+    }
+  },
+  "outputs": {
+    "run": "D:/ZumaGolden/formal-full-state-c118-natural-u9547-u11047-v1",
+    "host_pre_snapshot": "D:/ZumaGolden/diagnostics/c118-full-state-host-pre-v1.json",
+    "host_post_snapshot": "D:/ZumaGolden/diagnostics/c118-full-state-host-post-v1.json",
+    "source_manifest": "D:/ZumaGolden/sources/c118-u9547-u11047-full-state-source-v1.json",
+    "mechanism_audit": "D:/ZumaGolden/diagnostics/pc-mechanism-c118-full-state-v1.json"
+  },
+  "decision": {
+    "pass": "package source v2, independently verify it, then derive mechanism coverage and simulator diffs",
+    "any_attempt_failure": "retain immutable failure artifacts and do not grant Fidelity credit",
+    "external_input": "formal invalid",
+    "mechanism_absence": "does not invalidate source authenticity and cannot be repaired by changing this frozen window"
+  },
+  "tooling": {
+    "collector_sha256": "sha256:fe0542c7006abf5537c42788ea666a2bec28f0a5f331099bd6dc59c29a86bc25",
+    "memory_evidence_reader_sha256": "sha256:c7de1a030cee799e62bf3a00981f4f36bbf03f81f50b8dd43ddad0fae85a7466",
+    "full_state_reader_sha256": "sha256:11f5b54142a27142b1d18b28e2d61b3109d5e45bfa6e976f2e3942a6b7bf6e9d",
+    "pc_source_verifier_sha256": "sha256:13270c4784c417044e2fbf30ea0a1c648088b63701098c2c97174e57bcf29ed3",
+    "mechanism_auditor_sha256": "sha256:aa1651d5e12ee8d161652abf33c8117225e353df8345aa564b5736a3f3d59135",
+    "state_transaction_sha256": "sha256:b6f2b810dfa180f3368c368850eab57d4c2a1010067ea7de26e6cc1271fcd493",
+    "input_guard_sha256": "sha256:3f7b43d1100c44c0a07fe23cb9a20fba99ccbbb6e456115b4998f6b6f72d6212",
+    "full_test_suite_status": "PASS"
+  },
+  "output_paths_absent_at_freeze": true
+}

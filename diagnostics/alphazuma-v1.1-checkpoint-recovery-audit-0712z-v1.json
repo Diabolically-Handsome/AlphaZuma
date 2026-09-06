@@ -1,0 +1,31 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-checkpoint-recovery-audit-receipt",
+  "version": 1,
+  "status": "PASS",
+  "completed_utc": "2026-08-14T07:11:41.7144422Z",
+  "classification": "training_integrity_diagnostic_only",
+  "formal_gate_effect": "none",
+  "source_audit": {"path": "D:\\ZumaTraining\\alphazuma-v1.1-checkpoint-recovery-audit-0710z-s67081301-v1\\audit.json", "completed_utc": "2026-08-14T07:11:22.549426Z", "sha256": "sha256:ddb85a66dc439727ae1cc7cd321fd220f51b0c5b061257f3d1ac5cdce7252015"},
+  "inputs": {"master_preregistration_sha256": "sha256:3dc8a51563c763ef46b3c3415a6e4da9b5430ab3a19b586e5e0b95b98b0ffc01", "auditor_sha256": "sha256:f690cf732d147c8bc5ad777261ea9a016a4babcc8895fc9861443e5be2a800d4", "auditor_tests_sha256": "sha256:247509b0648c32d445669e3f5fd0ab9a788710913195b51c2cd519a63e3c064f", "most_recent_tests_result": "3_passed", "stable_age_seconds": 60.0, "device": "cpu"},
+  "validation": {"formal_routes": 7, "audited_routes": 7, "passed_routes": 7, "all_formal_routes_passed": true, "observation_shape": [21220], "action_nvec": [3, 180], "optimizer_state_entries": 24, "all_filename_internal_timesteps_match": true, "all_policy_parameters_finite": true, "all_files_unchanged_during_audit": true, "all_checkpoint_hashes_independently_recomputed_on_windows": true, "checkpoint_hash_mismatches": 0, "checkpoint_size_mismatches": 0, "checkpoint_filename_timestep_mismatches": 0, "total_checkpoint_bytes": 41166166, "total_checkpoint_timesteps": 79167488},
+  "checkpoints": [
+    {"run": "frontier-adaptive-5090-oom-recovery", "filename": "frontier-adaptive-5090-oom-recovery_27262976_steps.zip", "timesteps": 27262976, "sha256": "sha256:9f7172dba11b64298ebbaf4ac60e9e50d86dbe806da62b5ac9f140f22957ca9b", "status": "PASS"},
+    {"run": "frontier-fixed-5080-oom-recovery", "filename": "frontier-fixed-5080-oom-recovery_26214400_steps.zip", "timesteps": 26214400, "sha256": "sha256:78d458a2023a2f582b1714e8ed9997ae5dbf7fa3fd9d426d76e6f38caca9a6ca", "status": "PASS"},
+    {"run": "memdense-adaptive-5090-a", "filename": "memdense-adaptive-5090-a_5767168_steps.zip", "timesteps": 5767168, "sha256": "sha256:1436559d0e911a24901b8514308cb463db54c5941e2247e17cdcb3cd117225b0", "status": "PASS"},
+    {"run": "memdense-fixed-5090-b", "filename": "memdense-fixed-5090-b_5767168_steps.zip", "timesteps": 5767168, "sha256": "sha256:3b8e6789c90987158f9b2beb06ea7eb79cf300ed2a74b6de743fc0beeec32230", "status": "PASS"},
+    {"run": "memdense-adaptive-5080-a", "filename": "memdense-adaptive-5080-a_5767168_steps.zip", "timesteps": 5767168, "sha256": "sha256:f116e8d4b4e8a78aec477562f99ff1a4a27df55b5716a60a0f0f6720654d7cc6", "status": "PASS"},
+    {"run": "memdense-fixed-5080-b", "filename": "memdense-fixed-5080-b_5767168_steps.zip", "timesteps": 5767168, "sha256": "sha256:85237424f782ec3c6a6072f3d43b7fe1702de114aea6b1ae8702f5f537def706", "status": "PASS"},
+    {"run": "ultradense-zero-win-5090-c", "filename": "ultradense-zero-win-5090-c_2621440_steps.zip", "timesteps": 2621440, "sha256": "sha256:c08bcd009ed2cc6a9fe38e5486cafa4664b54e4d85590492216c4fd6ecef1751", "status": "PASS"}
+  ],
+  "recoverable_timestep_delta_since_0339z": [
+    {"run": "frontier-adaptive-5090-oom-recovery", "delta": 5242880},
+    {"run": "frontier-fixed-5080-oom-recovery", "delta": 4718592},
+    {"run": "memdense-adaptive-5090-a", "delta": 2621440},
+    {"run": "memdense-fixed-5090-b", "delta": 3145728},
+    {"run": "memdense-adaptive-5080-a", "delta": 3145728},
+    {"run": "memdense-fixed-5080-b", "delta": 3145728},
+    {"run": "ultradense-zero-win-5090-c", "delta": 1572864}
+  ],
+  "training_or_evaluation_semantics_changed": false,
+  "formal_seed_consumption": "none"
+}

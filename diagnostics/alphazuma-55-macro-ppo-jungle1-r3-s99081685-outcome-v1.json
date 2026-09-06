@@ -1,0 +1,34 @@
+{
+ "schema": "zuma-rl.alphazuma-55-macro-ppo-run-outcome",
+ "version": 1,
+ "run_id": "macro-ppo-jungle1-r3",
+ "preregistration": {
+  "path": "/mnt/c/Users/Laure/Documents/\u7956\u739b/diagnostics/alphazuma-55-macro-ppo-jungle1-r3-s99081685-preregistration-v1.json",
+  "sha256": "sha256:fad323e3b169aca56da9ea4d8ca64dcc558cd3b175f6d0aeeb02d0096a4c8b18"
+ },
+ "status": "STOPPED_EARLY_R3B_GATE",
+ "decision": "FAIL",
+ "stopped_utc": "2026-08-18T12:43:21.246993+00:00",
+ "reason": "Win-rediscovery premise failure: initialized from the farm-converged predecessor final, the policy produced ZERO training wins across 2,610 episodes and three consecutive checkpoints (1M/2M/3M) under the speedrun reward (cap 1.0); eval scores fell 1210 -> 640 -> 710. With zero win events there is no win gradient, and entropy 0.01 exploration could not re-find winning trajectories lost during the predecessor cap-10.0 phase.",
+ "prereg_deviation_note": "The run document own early_stop_rule clauses did not fire (clause 2 requires rising eval score; scores fell). The stop is authorized by the frozen successor document alphazuma-55-macro-ppo-jungle1-r3b-s99081687-preregistration-v1.json whose freeze_note gates its launch on a documented third winless checkpoint. This receipt is that documentation.",
+ "evidence": [
+  {
+   "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-r3-s99081685-v1/eval-ckpt1M/completion.json",
+   "sha256": "sha256:5ba317e45ee5d403099012aa49a2a51115ea74e2b9d1380b4ea92537b0a5c7bd"
+  },
+  {
+   "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-r3-s99081685-v1/eval-ckpt2M/completion.json",
+   "sha256": "sha256:f0ef913b792cfae07faffab7e40304aac2adaeeee85bdbf597e30a44b3818702"
+  },
+  {
+   "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-r3-s99081685-v1/eval-ckpt3M/completion.json",
+   "sha256": "sha256:2858fead8af3a2f03e1fabbcc7c545ccd74ed5288e027f4078e140608ff0e258"
+  },
+  {
+   "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle1-r3-s99081685-v1/training_status.json",
+   "sha256": "sha256:bfcbb1c7e4be9f8bed14a5d89974ed792fdb7103826bba1faef6a2aa03dfaa06"
+  }
+ ],
+ "successor": "jungle1-r3b s99081687 (win-era checkpoint init, launches now)",
+ "formal_seed_consumption": false
+}

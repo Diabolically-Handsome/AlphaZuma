@@ -1,0 +1,155 @@
+{
+  "schema": "zuma-rl.pc-startup-global-mtrand-hidden-draw-diagnostic-preregistration",
+  "version": 8,
+  "status": "FROZEN_BEFORE_RUN_OUTPUTS",
+  "created_utc": "2026-08-04T20:46:44.815Z",
+  "id": "startup-global-mtrand-hidden-draw-observation-e01-o308-o309-v8",
+  "question": "Which direct global MTRand index-write call sites execute in the strict replay between source wrapper orders 308 and 309, and how many source-required draws are absent?",
+  "trigger": {
+    "outcome": "diagnostics/startup-global-mtrand-observation-outcome-v7.json",
+    "outcome_sha256": "sha256:b6a23a3f5bbae4789c243cfb33afa1d9cc8cbf6a66ef570194b8d96644cfe240",
+    "finding": "wrapper schedule observation reconverged through source order 308, while triangulation with V6 localized a persistent 23-draw deficit to the wrapper-silent interval after order 308 and before order 309"
+  },
+  "evidence_classification": "diagnostic_only_no_pc_golden_credit",
+  "fixed_inputs": {
+    "collector_plan": {
+      "path": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/plan.json",
+      "sha256": "sha256:5a7ba58eccd7e0d1b1008ac089cce59c167a26ba8bc359ef76f3dcd2bea8c0db",
+      "persistent_modification_allowed": false
+    },
+    "playback_dmo": {
+      "path": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/inputs/input.dmo",
+      "sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7"
+    },
+    "replay_pre_snapshot": {
+      "path": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/protocol/pre.json",
+      "sha256": "sha256:06d243f34ecf209c6296659fd4cc3c0a6c299c203cc8b4e342f55cc001c32842"
+    },
+    "global_mtrand_source_trace": {
+      "path": "D:/ZumaGolden/autoplay-jungle2-natural-win-v8-globaloracle-20260802-0250/global-mtrand-calls.json",
+      "sha256": "sha256:4de39ac6a0e800323949e0095fc2fd3e924ea41a670ceb5d75a0ecb25b5c15a4",
+      "seed": 23557968,
+      "source_process_id": 43056,
+      "source_main_thread_id": 49020
+    },
+    "runtime_payload_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "runtime_source_sha256": "sha256:db85b891ba662a463d23251a376081386b47437c29248b21e2c10335a6f3eb50"
+  },
+  "oracle_contract": {
+    "wrapper_address": 6386832,
+    "wrapper_instruction_hex": "bac013a300",
+    "seed": 23557968,
+    "source_order_first": 0,
+    "source_order_last": 311,
+    "entry_count": 312,
+    "source_update_first": 0,
+    "source_update_last": 3121,
+    "selection_end_at_update": 3121,
+    "maximum_reconstruction_draws": 100000,
+    "semantic_sha256": "sha256:4342d275f7ed0aa561171b4522aaf1ab7d92fb0b83aa293213b519f867e380fb"
+  },
+  "hidden_draw_interval": {
+    "start_after_source_order": 308,
+    "start_framework_update": 1675,
+    "start_post_draw_count": 1435,
+    "start_post_index": 187,
+    "start_post_state_sha256": "sha256:092fad0d6d487270bf59cd940a3539e53fb81f2314d77e202fcc6e902e42fa14",
+    "stop_before_source_order": 309,
+    "stop_framework_update": 3121,
+    "expected_stop_pre_draw_count": 1662,
+    "expected_stop_pre_index": 414,
+    "expected_stop_pre_state_sha256": "sha256:c0d2599105a0ba4ee7623f4991a704c0260548dbf7fc47b1041dbfd1e45e2422",
+    "expected_hidden_draw_count": 227,
+    "expected_total_index_write_count_including_start_boundary": 228
+  },
+  "diagnostic_transport": {
+    "wrapper_boundary_mechanism": "main_thread_global_wrapper_hardware_execution_breakpoint_dr0",
+    "hidden_draw_mechanism": "main_thread_global_mtrand_index_hardware_write_breakpoint_dr1",
+    "index_address": 10689920,
+    "index_address_hex": "0x00a31d80",
+    "watch_access": "write",
+    "watch_length_bytes": 4,
+    "read_only_process_memory": true,
+    "process_memory_writes_required": 0,
+    "ephemeral_debug_register_housekeeping_allowed": true,
+    "hardware_breakpoint_restore_required": true,
+    "disable_source_bound_board_anchor": true,
+    "disable_source_bound_board_precall_restore": true,
+    "initial_global_state_control_allowed": false,
+    "gameplay_global_sync_allowed": false,
+    "playback_dmo_modified": false,
+    "collector_plan_file_modified": false
+  },
+  "fixed_run_contract": {
+    "run_count": 1,
+    "maximum_startup_attempts": 3,
+    "freeze_update": 3425,
+    "slowdown_update": 3415,
+    "trajectory_mode": "rng",
+    "trajectory_end_update": 3425,
+    "skip_repaint_guard": true,
+    "skip_frozen_snapshot": true,
+    "snapshot_trajectory_frames": false,
+    "startup_priority_bias": null,
+    "process_affinity_override": null,
+    "trace_detach_update": 3150,
+    "trace_reattach_update": 10373
+  },
+  "collection_acceptance": {
+    "receipt_status": "PASS",
+    "wrapper_oracle_complete": true,
+    "observed_wrapper_call_count": 312,
+    "hidden_interval_status": "PASS",
+    "hidden_draw_count_may_differ_from_source": true,
+    "draw_count_reconstruction_status": "PASS",
+    "index_write_draw_counts_contiguous": true,
+    "start_boundary_matches_source_order_308_post_state": true,
+    "stop_wrapper_pre_state_matches_last_observed_index_write": true,
+    "caller_histogram_reconstructs_all_non_boundary_writes": true,
+    "process_memory_writes": 0,
+    "process_memory_mutation": false,
+    "hardware_breakpoint_restored": true,
+    "persistent_file_modified": false,
+    "host_state_restored_after_run": true
+  },
+  "decision_rule": {
+    "no_threshold_changes_after_output": true,
+    "if_source_deficit_is_reproduced": "rank hidden draw call-site groups by count and update range, then compare source and replay branch state at the first call-site whose count can explain the deficit",
+    "if_no_deficit_is_observed": "treat the extra watchpoint as a possible schedule perturbation and repeat only under a newly frozen perturbation-control protocol",
+    "if_collection_contract_fails": "retain every attempt, classify infrastructure versus debugger perturbation, and do not infer RNG semantics"
+  },
+  "retry_contract": {
+    "maximum_attempts": 3,
+    "retain_every_attempt": true,
+    "retryable": "only collection infrastructure failure before a complete validated wrapper and index-write receipt",
+    "semantic_mismatch_is_successful_diagnostic_observation": true
+  },
+  "outputs": {
+    "run": "D:/ZumaGolden/diagnostics/startup-global-mtrand-hidden-draw-observation-e01-o308-o309-v8",
+    "host_pre_snapshot": "D:/ZumaGolden/diagnostics/startup-global-mtrand-hidden-draw-observation-host-pre-v8.json",
+    "host_post_snapshot": "D:/ZumaGolden/diagnostics/startup-global-mtrand-hidden-draw-observation-host-post-v8.json",
+    "outcome": "diagnostics/startup-global-mtrand-hidden-draw-observation-outcome-v8.json"
+  },
+  "output_absence_at_freeze": {
+    "run": true,
+    "host_pre_snapshot": true,
+    "host_post_snapshot": true,
+    "outcome": true
+  },
+  "tooling": {
+    "collector_sha256": "sha256:a137d9c4ed1d113b96ebd97257ff61727d261daea573e2520b41e356e84d483c",
+    "tracer_sha256": "sha256:7bab84fa47934d8b795058c66c4ae352c57e9cd36e37f8fce805bbc76340f5da",
+    "global_oracle_loader_sha256": "sha256:813ef37279e7b00bade0dc73ecdb405841fdaff5b85a5b85727eb059a0485269",
+    "collector_test_sha256": "sha256:48bd9b15a00904280280ecbda7ccda0ea3d88841391ce8b1f24f4787187ebc07",
+    "tracer_test_sha256": "sha256:ac6e4c2151f8e5b1e4a32097e2d88779ebde734dec8023e0d84fd7b59316ffa1",
+    "global_oracle_test_sha256": "sha256:50e3e2df66943f3bf5c3e331eca11302b1aa9a3e58882d8cf3a895732a2a4243",
+    "focused_native_tests": "PASS_62",
+    "native_full_suite": "PASS_1161_COLLECTED_EXIT_0"
+  },
+  "non_authorizations": [
+    "pc_golden_credit",
+    "fidelity_gate_change",
+    "formal_transport_change",
+    "large_scale_training_start"
+  ]
+}

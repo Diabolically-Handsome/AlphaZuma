@@ -1,0 +1,28 @@
+{
+  "schema": "zuma-rl.alphazuma-55-engineering-route-resource-stop-receipt",
+  "version": 1,
+  "status": "STOP_CONFIRMED",
+  "observed_utc": "2026-08-16T08:39:10.0862152Z",
+  "decision": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-distilled-nearmiss-focus-s99081627-resource-stop-v1.json",
+    "sha256": "sha256:f2adfed437e60e0227a16795d6833fe6fa3a1739dc3c0ed408423f44cdca2c36"
+  },
+  "termination": {
+    "signal": "SIGTERM",
+    "linux_pid": 335909,
+    "process_alive_after_wait": false,
+    "scope_expanded_beyond_target_pid": false
+  },
+  "post_stop_resources": {
+    "wsl_available_memory_bytes": 20122710016,
+    "wsl_swap_used_bytes": 0,
+    "gpu0_memory_used_mib": 16182,
+    "gpu1_memory_used_mib": 15038
+  },
+  "protected_workloads": {
+    "seven_formal_ppo_processes_alive": 7,
+    "gradual_dagger_process_alive": true,
+    "formal_seed_consumption": "NONE"
+  },
+  "recoverability": "No checkpoint existed; frozen config, status, preregistration, and stop evidence remain on disk."
+}

@@ -1,0 +1,58 @@
+{
+  "schema": "zuma-rl.alphazuma-55-successor-launch-receipt",
+  "version": 1,
+  "status": "LAUNCHED_WAITING_FOR_ENGINEERING_RESULT",
+  "campaign_id": "alphazuma-55-motor-observable-gradual-headonly-successor-s99081644-v1",
+  "observed_utc": "2026-08-16T16:08:52.932620+00:00",
+  "bindings": {
+    "master": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-headonly-successor-s99081644-preregistration-v1.json",
+      "sha256": "sha256:fe65883da6d2edbc69cc202900914e11fa9c5b2b4c341cfb95b365b2860e3c19"
+    },
+    "formal_seed_registry": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-formal-seed-registry-s99081645-v9.json",
+      "sha256": "sha256:39f52356d105cfe195f43d77ded9b8ffea8235fa939b97b890497fb551c5aa6d"
+    },
+    "engineering_plan": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-headonly-postprocess-s99081643-plan-v2.json",
+      "sha256": "sha256:8c1e9ff3c21697256b2d05eff4ad9726f58675a1ce6cb5818539bd0a74bb1261"
+    },
+    "controller": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_motor_observable_gradual_headonly_successor_v1.py",
+      "sha256": "sha256:9e1b587dc58fb5dacbb32132459d542b3effa61218fbe311c1f3399696ec4a77"
+    },
+    "master_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_motor_observable_gradual_headonly_successor_master_v1.py",
+      "sha256": "sha256:e5a32f55f301960eddce283729c189124a10d47c3ffe86113fd64f5c4d045f05"
+    },
+    "independent_auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_motor_observable_gradual_headonly_successor_v1.py",
+      "sha256": "sha256:dfc2281cd1c7cdc89e3d2933078b2c6370321c82b952ec3573e7d01ecccf4f70"
+    }
+  },
+  "processes": {
+    "windows_launcher_pid": 30916,
+    "wsl_controller_pid": 406289,
+    "windows_launcher_alive": true,
+    "wsl_controller_alive": true
+  },
+  "validation": {
+    "status": "VALID",
+    "engineering_gate": "35 wins and 35 cleared levels",
+    "final_blind_attempts": 440,
+    "continuous_attempts": 220,
+    "formal_seed_ranges_strictly_non_overlapping": true,
+    "formal_seed_consumption": "NONE"
+  },
+  "outputs": {
+    "root": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-headonly-successor-s99081644-v1",
+    "controller_status": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-headonly-successor-s99081644-v1/controller/controller_status.json",
+    "stdout": "/mnt/d/ZumaTraining/launcher-logs/alphazuma-headonly-successor-s99081644-v1.stdout.log",
+    "stderr": "/mnt/d/ZumaTraining/launcher-logs/alphazuma-headonly-successor-s99081644-v1.stderr.log"
+  },
+  "authority_boundary": {
+    "engineering_result_unseen_at_freeze": true,
+    "formal_seed_consumption": "NONE",
+    "power_restore_authority": false
+  }
+}

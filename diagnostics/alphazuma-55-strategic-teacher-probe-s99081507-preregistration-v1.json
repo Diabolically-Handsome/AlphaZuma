@@ -1,0 +1,735 @@
+{
+  "schema": "zuma-rl.alphazuma-55-geometric-teacher-probe-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_ENGINEERING_PROBE",
+  "created_utc": "2026-08-15T07:39:46.887222+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "objective": "Paired screen of an actor-observable strategic ranking teacher using the already-consumed geometric-probe seeds; no fresh evidence claim.",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "source_evaluation_contract": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-engineering-baseline-s82081402-preregistration-v1.json",
+    "sha256": "sha256:c6c00d29dfebeafa347aa7995608d53c73b5b8d29eba7d9a056ff72568b9c6f8"
+  },
+  "levels": [
+    {
+      "id": "Jungle1",
+      "display_name": "Shipwrecked!",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle1\\Jungle1"
+      ]
+    },
+    {
+      "id": "Jungle2",
+      "display_name": "Castaway",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle2\\Jungle2"
+      ]
+    },
+    {
+      "id": "Jungle3",
+      "display_name": "Echo Beach",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle3\\Jungle3"
+      ]
+    },
+    {
+      "id": "Jungle4",
+      "display_name": "Bones of an Idol",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle4\\Jungle4"
+      ]
+    },
+    {
+      "id": "jungle6",
+      "display_name": "Jungle Clearing",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle6\\Jungle6"
+      ]
+    },
+    {
+      "id": "Jungle7",
+      "display_name": "Sand Trap",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle7\\Jungle7"
+      ]
+    },
+    {
+      "id": "Jungle8",
+      "display_name": "Nasal Passage",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle8\\Jungle8"
+      ]
+    },
+    {
+      "id": "Jungle9",
+      "display_name": "Creeper Copse",
+      "curve_count": 2,
+      "curve_names": [
+        "Jungle9\\Jungle9-1",
+        "Jungle9\\Jungle9-2"
+      ]
+    },
+    {
+      "id": "Jungle10",
+      "display_name": "Darkness Falls",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle10\\Jungle10"
+      ]
+    },
+    {
+      "id": "village1",
+      "display_name": "Watering Hole",
+      "curve_count": 1,
+      "curve_names": [
+        "Village1"
+      ]
+    },
+    {
+      "id": "village2",
+      "display_name": "Overgrown Plaza",
+      "curve_count": 1,
+      "curve_names": [
+        "Village2"
+      ]
+    },
+    {
+      "id": "village3",
+      "display_name": "Lilypad Leap",
+      "curve_count": 1,
+      "curve_names": [
+        "Village3\\Village3v3"
+      ]
+    },
+    {
+      "id": "village4",
+      "display_name": "Sandspirals",
+      "curve_count": 1,
+      "curve_names": [
+        "Village4v2"
+      ]
+    },
+    {
+      "id": "village5",
+      "display_name": "Abandoned Well",
+      "curve_count": 1,
+      "curve_names": [
+        "Village5"
+      ]
+    },
+    {
+      "id": "village6",
+      "display_name": "Face Your Fear",
+      "curve_count": 2,
+      "curve_names": [
+        "Village6-1",
+        "Village6-2"
+      ]
+    },
+    {
+      "id": "village7",
+      "display_name": "Seven Sides (minus one)",
+      "curve_count": 1,
+      "curve_names": [
+        "Village7"
+      ]
+    },
+    {
+      "id": "village8",
+      "display_name": "Vines of Vengeance",
+      "curve_count": 1,
+      "curve_names": [
+        "Village8"
+      ]
+    },
+    {
+      "id": "village10",
+      "display_name": "The Horseshoe",
+      "curve_count": 1,
+      "curve_names": [
+        "Village10\\Village10v2"
+      ]
+    },
+    {
+      "id": "city1",
+      "display_name": "Ancient Cistern",
+      "curve_count": 1,
+      "curve_names": [
+        "city1"
+      ]
+    },
+    {
+      "id": "city2",
+      "display_name": "Blossom Grove",
+      "curve_count": 1,
+      "curve_names": [
+        "city2\\city2"
+      ]
+    },
+    {
+      "id": "city3",
+      "display_name": "Empty Cistern",
+      "curve_count": 1,
+      "curve_names": [
+        "city3\\city3-4"
+      ]
+    },
+    {
+      "id": "city4",
+      "display_name": "Ancestral Tongue",
+      "curve_count": 2,
+      "curve_names": [
+        "city4\\city4-1v2",
+        "city4\\city4-2v2"
+      ]
+    },
+    {
+      "id": "city5",
+      "display_name": "Mossy Square",
+      "curve_count": 1,
+      "curve_names": [
+        "city5\\city5"
+      ]
+    },
+    {
+      "id": "city6",
+      "display_name": "Mosaic Mayhem",
+      "curve_count": 1,
+      "curve_names": [
+        "city6\\city6"
+      ]
+    },
+    {
+      "id": "city7",
+      "display_name": "Strange Smile",
+      "curve_count": 1,
+      "curve_names": [
+        "city7\\city7-2"
+      ]
+    },
+    {
+      "id": "city9",
+      "display_name": "Ghosts of the Past",
+      "curve_count": 1,
+      "curve_names": [
+        "city9\\city9"
+      ]
+    },
+    {
+      "id": "city10",
+      "display_name": "Double Danger",
+      "curve_count": 2,
+      "curve_names": [
+        "city10\\city10-1",
+        "city10\\city10-2"
+      ]
+    },
+    {
+      "id": "Coast1",
+      "display_name": "Swamp Spin",
+      "curve_count": 1,
+      "curve_names": [
+        "coast1"
+      ]
+    },
+    {
+      "id": "Coast2",
+      "display_name": "Deadmarsh",
+      "curve_count": 1,
+      "curve_names": [
+        "coast2"
+      ]
+    },
+    {
+      "id": "Coast3",
+      "display_name": "Stagnant Ponds",
+      "curve_count": 1,
+      "curve_names": [
+        "coast3"
+      ]
+    },
+    {
+      "id": "Coast4",
+      "display_name": "Brackish Pool",
+      "curve_count": 1,
+      "curve_names": [
+        "coast4"
+      ]
+    },
+    {
+      "id": "Coast5",
+      "display_name": "Justified and Ancient",
+      "curve_count": 1,
+      "curve_names": [
+        "coast5"
+      ]
+    },
+    {
+      "id": "Coast6",
+      "display_name": "Ancient Inlay",
+      "curve_count": 1,
+      "curve_names": [
+        "coast6"
+      ]
+    },
+    {
+      "id": "Coast7",
+      "display_name": "Secret Circle",
+      "curve_count": 1,
+      "curve_names": [
+        "coast7"
+      ]
+    },
+    {
+      "id": "Coast9",
+      "display_name": "Tide Pools",
+      "curve_count": 1,
+      "curve_names": [
+        "coast9"
+      ]
+    },
+    {
+      "id": "Coast10",
+      "display_name": "Skull Coral",
+      "curve_count": 2,
+      "curve_names": [
+        "coast10-1",
+        "coast10-2"
+      ]
+    },
+    {
+      "id": "grotto1",
+      "display_name": "Coral Catch",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto1\\grotto1"
+      ]
+    },
+    {
+      "id": "grotto2",
+      "display_name": "Wave Babies",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto2\\grotto2-2"
+      ]
+    },
+    {
+      "id": "grotto3",
+      "display_name": "Submergathon",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto3\\grotto3"
+      ]
+    },
+    {
+      "id": "grotto4",
+      "display_name": "Anglers Cove",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto4\\grotto4"
+      ]
+    },
+    {
+      "id": "grotto5",
+      "display_name": "Coelacanth Cave",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto5\\grotto5"
+      ]
+    },
+    {
+      "id": "grotto6",
+      "display_name": "Ocean Floor",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto6\\grotto6"
+      ]
+    },
+    {
+      "id": "grotto7",
+      "display_name": "Smugglers Depth",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto7\\grotto7"
+      ]
+    },
+    {
+      "id": "grotto9",
+      "display_name": "The Deep",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto9\\grotto9"
+      ]
+    },
+    {
+      "id": "grotto10",
+      "display_name": "Shark Den",
+      "curve_count": 2,
+      "curve_names": [
+        "grotto10\\grotto10-1",
+        "grotto10\\grotto10-2"
+      ]
+    },
+    {
+      "id": "volcano1",
+      "display_name": "Flowing Tiki Rage",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano1\\Volcano1"
+      ]
+    },
+    {
+      "id": "volcano2",
+      "display_name": "Subterran Solaris",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano2/Volcano2-3"
+      ]
+    },
+    {
+      "id": "volcano3",
+      "display_name": "Reflection in Magma",
+      "curve_count": 1,
+      "curve_names": [
+        "volcano3\\volcano3"
+      ]
+    },
+    {
+      "id": "volcano4",
+      "display_name": "Obsidian Isle",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano4\\Volcano4"
+      ]
+    },
+    {
+      "id": "volcano5",
+      "display_name": "Underworld Remnants",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano5\\Volcano5-2"
+      ]
+    },
+    {
+      "id": "volcano6",
+      "display_name": "Thermal Vortex",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano6\\Volcano6"
+      ]
+    },
+    {
+      "id": "volcano7",
+      "display_name": "Molten Dais",
+      "curve_count": 1,
+      "curve_names": [
+        "volcano7\\volcano7-2"
+      ]
+    },
+    {
+      "id": "volcano8",
+      "display_name": "Basaltic Approach",
+      "curve_count": 1,
+      "curve_names": [
+        "volcano8\\volcano8-3"
+      ]
+    },
+    {
+      "id": "volcano9",
+      "display_name": "Searing Visage",
+      "curve_count": 2,
+      "curve_names": [
+        "volcano9\\volcano9-1",
+        "Volcano9\\Volcano9-2"
+      ]
+    },
+    {
+      "id": "volcano10",
+      "display_name": "Descent into Anguish",
+      "curve_count": 1,
+      "curve_names": [
+        "volcano10\\volcano10-4"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "level_id": "Jungle1",
+      "seed": 1400500000
+    },
+    {
+      "level_id": "Jungle2",
+      "seed": 1400500001
+    },
+    {
+      "level_id": "Jungle3",
+      "seed": 1400500002
+    },
+    {
+      "level_id": "Jungle4",
+      "seed": 1400500003
+    },
+    {
+      "level_id": "jungle6",
+      "seed": 1400500004
+    },
+    {
+      "level_id": "Jungle7",
+      "seed": 1400500005
+    },
+    {
+      "level_id": "Jungle8",
+      "seed": 1400500006
+    },
+    {
+      "level_id": "Jungle9",
+      "seed": 1400500007
+    },
+    {
+      "level_id": "Jungle10",
+      "seed": 1400500008
+    },
+    {
+      "level_id": "village1",
+      "seed": 1400500009
+    },
+    {
+      "level_id": "village2",
+      "seed": 1400500010
+    },
+    {
+      "level_id": "village3",
+      "seed": 1400500011
+    },
+    {
+      "level_id": "village4",
+      "seed": 1400500012
+    },
+    {
+      "level_id": "village5",
+      "seed": 1400500013
+    },
+    {
+      "level_id": "village6",
+      "seed": 1400500014
+    },
+    {
+      "level_id": "village7",
+      "seed": 1400500015
+    },
+    {
+      "level_id": "village8",
+      "seed": 1400500016
+    },
+    {
+      "level_id": "village10",
+      "seed": 1400500017
+    },
+    {
+      "level_id": "city1",
+      "seed": 1400500018
+    },
+    {
+      "level_id": "city2",
+      "seed": 1400500019
+    },
+    {
+      "level_id": "city3",
+      "seed": 1400500020
+    },
+    {
+      "level_id": "city4",
+      "seed": 1400500021
+    },
+    {
+      "level_id": "city5",
+      "seed": 1400500022
+    },
+    {
+      "level_id": "city6",
+      "seed": 1400500023
+    },
+    {
+      "level_id": "city7",
+      "seed": 1400500024
+    },
+    {
+      "level_id": "city9",
+      "seed": 1400500025
+    },
+    {
+      "level_id": "city10",
+      "seed": 1400500026
+    },
+    {
+      "level_id": "Coast1",
+      "seed": 1400500027
+    },
+    {
+      "level_id": "Coast2",
+      "seed": 1400500028
+    },
+    {
+      "level_id": "Coast3",
+      "seed": 1400500029
+    },
+    {
+      "level_id": "Coast4",
+      "seed": 1400500030
+    },
+    {
+      "level_id": "Coast5",
+      "seed": 1400500031
+    },
+    {
+      "level_id": "Coast6",
+      "seed": 1400500032
+    },
+    {
+      "level_id": "Coast7",
+      "seed": 1400500033
+    },
+    {
+      "level_id": "Coast9",
+      "seed": 1400500034
+    },
+    {
+      "level_id": "Coast10",
+      "seed": 1400500035
+    },
+    {
+      "level_id": "grotto1",
+      "seed": 1400500036
+    },
+    {
+      "level_id": "grotto2",
+      "seed": 1400500037
+    },
+    {
+      "level_id": "grotto3",
+      "seed": 1400500038
+    },
+    {
+      "level_id": "grotto4",
+      "seed": 1400500039
+    },
+    {
+      "level_id": "grotto5",
+      "seed": 1400500040
+    },
+    {
+      "level_id": "grotto6",
+      "seed": 1400500041
+    },
+    {
+      "level_id": "grotto7",
+      "seed": 1400500042
+    },
+    {
+      "level_id": "grotto9",
+      "seed": 1400500043
+    },
+    {
+      "level_id": "grotto10",
+      "seed": 1400500044
+    },
+    {
+      "level_id": "volcano1",
+      "seed": 1400500045
+    },
+    {
+      "level_id": "volcano2",
+      "seed": 1400500046
+    },
+    {
+      "level_id": "volcano3",
+      "seed": 1400500047
+    },
+    {
+      "level_id": "volcano4",
+      "seed": 1400500048
+    },
+    {
+      "level_id": "volcano5",
+      "seed": 1400500049
+    },
+    {
+      "level_id": "volcano6",
+      "seed": 1400500050
+    },
+    {
+      "level_id": "volcano7",
+      "seed": 1400500051
+    },
+    {
+      "level_id": "volcano8",
+      "seed": 1400500052
+    },
+    {
+      "level_id": "volcano9",
+      "seed": 1400500053
+    },
+    {
+      "level_id": "volcano10",
+      "seed": 1400500054
+    }
+  ],
+  "seed_range": [
+    1400500000,
+    1400500054
+  ],
+  "execution": {
+    "device": "cpu",
+    "workers": 12,
+    "attempts_per_level": 1,
+    "human_input_wrapper": "elite-human-v1",
+    "capacity_overflow": "fail_closed_affected_attempt_only"
+  },
+  "implementation": {
+    "builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_strategic_teacher_probe.py",
+      "sha256": "sha256:44ed1021e177d198189c596b56daed44d34bd36596e463e9c8849409cd272561"
+    },
+    "evaluator": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_alphazuma_55_strategic_teacher.py",
+      "sha256": "sha256:fd8d3dac2cf55aefb9c081e0b5316edb7884ae2f210dbbb4c653c116781350a8"
+    },
+    "teacher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_strategic_teacher.py",
+      "sha256": "sha256:d342e7185638d9cf4771b19efad2ae93362d092ebce9b5208fd156bb66e64746"
+    },
+    "capacity_wrapper": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel_v2.py",
+      "sha256": "sha256:811de7b530e6703858ae218aa9a0309724c49824d817e2f55733646ec89fd6c3"
+    }
+  },
+  "outputs": {
+    "root": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/strategic-teacher-probe-s99081507-v1",
+    "result": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/strategic-teacher-probe-s99081507-v1/result.json"
+  },
+  "authority_boundary": {
+    "formal_seed_consumption": false,
+    "training_recipe_change_authorized": false,
+    "formal_candidate_registration_authorized": false,
+    "winning_rows_may_support_a_separately_preregistered_demonstration_route": true
+  },
+  "teacher_policy_id": "strategic-actor-observable-v1",
+  "paired_seed_reuse": {
+    "fresh_evidence": false,
+    "reason": "paired policy engineering on the frozen geometric probe matrix",
+    "geometric_result": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/geometric-teacher-probe-s99081506-v1/result.json",
+      "sha256": "sha256:1d3169d8f91d7edd1c80ceb62d9675e9d49200360734b1822de678348486b19a"
+    }
+  }
+}

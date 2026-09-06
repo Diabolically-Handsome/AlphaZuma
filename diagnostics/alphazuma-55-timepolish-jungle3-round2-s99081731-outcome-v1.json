@@ -1,0 +1,118 @@
+{
+  "schema": "zuma-rl.alphazuma-55-macro-ppo-run-outcome",
+  "version": 1,
+  "run_id": "timepolish-jungle3-r2",
+  "preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-timepolish-jungle3-round2-s99081731-preregistration-v1.json",
+    "sha256": "sha256:61fd1cb49a6b9987c089fd2bb7caa93e847396e4e424780641282d59c8cd5091"
+  },
+  "status": "COMPLETE_FULL_BUDGET",
+  "decision": "SUCCESS_POLISH_GAIN_CHAMPION_FINAL_MODEL",
+  "completed_utc": "2026-08-21T06:33:54Z",
+  "reason": "Full 2M budget ran to completion (no clause fired; 16/16 at EVERY one of the eight panel evaluations). The final model is the cross-round champion: median 4156 (E[t] 4156) vs the BC init's 4660 (-10.8%) and round 1's best 4823.5. The warm-critic resume thesis validated: round 2's FIRST checkpoint (5002) already beat round 1's first checkpoint (6714) by 1712 ticks, and the run produced the first-ever Jungle3 checkpoints beating the BC init (524k: 4429; 1048k: 4369; final: 4156).",
+  "checkpoint_grid": [
+    {
+      "checkpoint": 262120,
+      "wins": "16/16",
+      "median": 5002
+    },
+    {
+      "checkpoint": 524240,
+      "wins": "16/16",
+      "median": 4429
+    },
+    {
+      "checkpoint": 786360,
+      "wins": "16/16",
+      "median": 5774
+    },
+    {
+      "checkpoint": 1048480,
+      "wins": "16/16",
+      "median": 4369
+    },
+    {
+      "checkpoint": 1310600,
+      "wins": "16/16",
+      "median": 4467
+    },
+    {
+      "checkpoint": 1572720,
+      "wins": "16/16",
+      "median": 4759
+    },
+    {
+      "checkpoint": 1834840,
+      "wins": "16/16",
+      "median": 4484
+    },
+    {
+      "checkpoint": "final_2M",
+      "wins": "16/16",
+      "median": 4156
+    }
+  ],
+  "cross_round_adjudication": [
+    {
+      "candidate": "R2 final_2M",
+      "expected_time": 4156,
+      "champion": true
+    },
+    {
+      "candidate": "R2 ckpt1048480",
+      "expected_time": 4369
+    },
+    {
+      "candidate": "R2 ckpt524240",
+      "expected_time": 4429
+    },
+    {
+      "candidate": "BC init (240-ep, s99081726)",
+      "expected_time": 4660
+    },
+    {
+      "candidate": "R1 ckpt786360",
+      "expected_time": 4823.5
+    }
+  ],
+  "champion": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle3-round2-s99081731-v1/final_model.zip",
+    "sha256": "sha256:c0e21a35316eab0d539e66258ec6bb9e51e1cf69dbc93d3c124f8e3192ef6cb1"
+  },
+  "tier_notes": "tier_1 (median < 3121 teacher mean) NOT reached - 4156 is 1.33x teacher; tier_0 sanity held throughout (perfect panel win rate at the champion). Next: rescan the top-3000 golden seeds with this champion vs the 700-tick Adv 3 human line (prior scan with the unpolished BC: fastest 1179).",
+  "evidence": [
+    {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle3-round2-s99081731-v1/eval16-ckpt32262120",
+      "note": "16 per-seed completions"
+    },
+    {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle3-round2-s99081731-v1/eval16-ckpt32524240",
+      "note": "16 per-seed completions"
+    },
+    {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle3-round2-s99081731-v1/eval16-ckpt32786360",
+      "note": "16 per-seed completions"
+    },
+    {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle3-round2-s99081731-v1/eval16-ckpt321048480",
+      "note": "16 per-seed completions"
+    },
+    {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle3-round2-s99081731-v1/eval16-ckpt321310600",
+      "note": "16 per-seed completions"
+    },
+    {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle3-round2-s99081731-v1/eval16-ckpt321572720",
+      "note": "16 per-seed completions"
+    },
+    {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle3-round2-s99081731-v1/eval16-ckpt321834840",
+      "note": "16 per-seed completions"
+    },
+    {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle3-round2-s99081731-v1/eval16-final",
+      "note": "final model, 16 per-seed completions"
+    }
+  ],
+  "formal_seed_consumption": false
+}

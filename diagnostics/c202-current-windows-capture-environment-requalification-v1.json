@@ -1,0 +1,48 @@
+{
+  "created_utc": "2026-08-10T17:41:13.886Z",
+  "current_environment": {
+    "comtypes": "1.4.16",
+    "dxcam": "0.3.0",
+    "numpy": "2.5.1",
+    "python": "3.12.10",
+    "requirements_sha256": "sha256:576aa62950bba9b71590f7e45adf6ebd6b499d136ef3633992b47e8cb0c48718"
+  },
+  "dxgi_device_kat": {
+    "camera_type": "DXCamera",
+    "create_device_0_output_0_bgra": "PASS",
+    "release": "PASS"
+  },
+  "gpu": {
+    "capture_device": "NVIDIA GeForce RTX 5090",
+    "display_driver": "610.88",
+    "secondary_gpu_excluded_from_capture": "NVIDIA GeForce RTX 5080"
+  },
+  "id": "c202-current-windows-capture-environment-requalification",
+  "os": {
+    "build": "26200",
+    "caption": "Microsoft Windows 11 Pro",
+    "version": "10.0.26200"
+  },
+  "predecessor": {
+    "path": "diagnostics/windows-dxgi-capture-environment-qualification-v1.json",
+    "sha256": "sha256:83acb154bba8d5491f4d1adcfa51ef44ffee04d44ee6b7fb749024285e38d780",
+    "status": "PASS_DIAGNOSTIC_METHOD_QUALIFICATION"
+  },
+  "schema": "zuma-rl.windows-dxgi-capture-environment-requalification",
+  "status": "PASS",
+  "tests": {
+    "command": ".venv-win/Scripts/python.exe -m pytest tests/test_collect_pc_memory_probe.py tests/test_pc_external_input.py tests/test_verify_pc_golden.py -q",
+    "collected": 143,
+    "passed": 143,
+    "status": "PASS"
+  },
+  "tooling": {
+    "collector_sha256": "sha256:15deb94e655c92e46b6992c9cab24d4108b49621c2d7cbd676a069835bf14d7e",
+    "exact_step_reader_sha256": "sha256:9cd884ca80bb6130b97984625b7f03e43cd7d80b52fca09b140c375f8160956a",
+    "external_input_guard_sha256": "sha256:6a89c260fc26dbbda56dabc6c84a28221ceb83512446c7d3f9f002c777ff6ec9",
+    "packager_sha256": "sha256:7f9bc9d890456768f84578c5c9a3dab84c50da495a2601d1d06e1ae4fd6a08a7",
+    "state_transaction_sha256": "sha256:b6f2b810dfa180f3368c368850eab57d4c2a1010067ea7de26e6cc1271fcd493",
+    "verifier_sha256": "sha256:19f87b22c26027b0d4a582f6588a1b5aea3ba6ba413a9d978c77a373c0a6e189"
+  },
+  "version": 1
+}

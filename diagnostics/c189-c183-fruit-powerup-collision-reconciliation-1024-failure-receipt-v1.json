@@ -1,0 +1,49 @@
+{
+  "schema": "zuma-rl.c183-fruit-powerup-collision-reconciliation-1024-failure-receipt",
+  "version": 1,
+  "status": "FAIL_EXACT_SOURCE_TRANSITION_REQUIRES_1220_DRAWS",
+  "created_utc": "2026-08-10T15:40:00.7595950Z",
+  "preregistration": {
+    "path": "diagnostics/c189-c183-fruit-powerup-collision-reconciliation-1024-preregistration-v1.json",
+    "sha256": "sha256:ef9873187e5676c7f7eafab55863e53d3d6fe9e15ef9e84ad7092158ca187dc2"
+  },
+  "failed_output": {
+    "path": "D:/ZumaGolden/diagnostics/jungle2-c183-u8213-u8260-fruit-powerup-collision-diff-v4-reconciled-unbound.json",
+    "bytes": 99035,
+    "sha256": "sha256:97be1329730edaba5b8f13684533efcec6bdfdb87c9f3dfc5ca4d03469b031c3",
+    "status": "FAIL",
+    "compared_tick_count": 47,
+    "failed_tick_count": 26,
+    "gameplay_state_exact_before_global_rng_tick_count": 47,
+    "reconciled_tick_count": 1,
+    "reconciled_draw_count": 14
+  },
+  "source_state_transition_audit": {
+    "method": "load immutable trajectory MTRand state at each adjacent frame and advance the production PopCapMTRandom implementation until the next full 624-word-plus-index state matches",
+    "update_8233_to_8234_draw_count": 14,
+    "update_8234_to_8235_draw_count": 1220,
+    "update_8235_to_8236_draw_count": 74,
+    "selected_window_nonzero_transition_count": 27,
+    "selected_window_total_draw_count": 3587,
+    "selected_window_maximum_per_tick": 1220,
+    "all_adjacent_source_states_reached_exactly": true,
+    "frozen_ceiling": 1024,
+    "ceiling_insufficient": true
+  },
+  "interpretation": {
+    "simulator_gameplay_mismatch_observed": false,
+    "full_state_search_is_not_index_only": true,
+    "reason_596_index_delta_was_insufficient": "the 624-word state twists during the transition; exact full-state equality occurs after 1220 draws, not the first matching index",
+    "only_authorized_next_change": "increase the new-output search ceiling to 2048, which exceeds the independently measured 1220 maximum",
+    "native_call_trace_proof_still_mandatory": true
+  },
+  "decision": {
+    "c189_simulator_diff_credit": false,
+    "failed_output_retained": true,
+    "code_changed": false,
+    "standards_lowered": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

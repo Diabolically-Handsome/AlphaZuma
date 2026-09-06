@@ -1,0 +1,165 @@
+{
+  "schema": "zuma-rl.alphazuma-55-polar-intent-dagger-successor-intent",
+  "version": 1,
+  "status": "FROZEN_BEFORE_ENGINEERING_RESULT",
+  "created_utc": "2026-08-15T22:45:52.332010+00:00",
+  "campaign_id": "alphazuma-55-polar-intent-dagger-successor-s99081551-v1",
+  "objective": "Authorize formal full55 and continuous evaluation only if a raw-intent DAgger round clears its predeclared engineering gate.",
+  "source_campaign_master": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "formal_seed_registry_snapshot": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-formal-seed-registry-s99081546-v1.json",
+    "sha256": "sha256:a5930a8bd9437210991118050f1e94d572c6e78647ffbd7d8c9ff293960ecefa"
+  },
+  "sibling_reserved_seed_intent": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-wide-successor-s99081545-intent-v1.json",
+    "sha256": "sha256:ebc8c71b94ff0a5a38cefbcf725d3b4d6199b50d1e37717aca6aa44bf5c92b78"
+  },
+  "engineering_validation": {
+    "plan": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-dagger-validation-s99081550-plan-v1.json",
+      "sha256": "sha256:8cbc5837e6eba98c921f182adc6e17173e53e5c5315c5f426168b8092fdfafb6"
+    },
+    "audit_receipt_expected": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-dagger-validation-s99081550-audit-v1.json",
+    "candidate_order": [
+      "polar-intent-wide-source-final",
+      "polar-intent-dagger-round-00",
+      "polar-intent-dagger-round-01",
+      "polar-intent-dagger-round-02"
+    ],
+    "ranking": [
+      "wins_desc",
+      "level_coverage_desc",
+      "total_score_desc",
+      "median_winning_ticks_asc",
+      "earlier_round_first"
+    ],
+    "paired_attempts": 220,
+    "formal_authority": false
+  },
+  "promotion_gate": {
+    "selected_model_must_be_one_of": [
+      "polar-intent-dagger-round-00",
+      "polar-intent-dagger-round-01",
+      "polar-intent-dagger-round-02"
+    ],
+    "minimum_cleared_levels": 35,
+    "minimum_wins": 35,
+    "training_label_semantics": "raw_teacher_intent",
+    "state_distribution_semantics": "dagger_teacher_student_mixture",
+    "online_inference_semantics": "exact_action_masks",
+    "evaluated_on_frozen_engineering_matrix": true,
+    "evaluated_before_formal_contract_or_seed_consumption": true,
+    "negative_result_action": "COMPLETE_NO_PROMOTION"
+  },
+  "formal_campaign_if_promoted": {
+    "single_selected_policy_only": true,
+    "scope_levels": [
+      "Jungle1",
+      "Jungle2",
+      "Jungle3",
+      "Jungle4",
+      "jungle6",
+      "Jungle7",
+      "Jungle8",
+      "Jungle9",
+      "Jungle10",
+      "village1",
+      "village2",
+      "village3",
+      "village4",
+      "village5",
+      "village6",
+      "village7",
+      "village8",
+      "village10",
+      "city1",
+      "city2",
+      "city3",
+      "city4",
+      "city5",
+      "city6",
+      "city7",
+      "city9",
+      "city10",
+      "Coast1",
+      "Coast2",
+      "Coast3",
+      "Coast4",
+      "Coast5",
+      "Coast6",
+      "Coast7",
+      "Coast9",
+      "Coast10",
+      "grotto1",
+      "grotto2",
+      "grotto3",
+      "grotto4",
+      "grotto5",
+      "grotto6",
+      "grotto7",
+      "grotto9",
+      "grotto10",
+      "volcano1",
+      "volcano2",
+      "volcano3",
+      "volcano4",
+      "volcano5",
+      "volcano6",
+      "volcano7",
+      "volcano8",
+      "volcano9",
+      "volcano10"
+    ],
+    "final_blind": {
+      "base_seed": 2700000000,
+      "last_seed": 2700000439,
+      "attempts_per_level": 8,
+      "expected_attempts": 440,
+      "gate": {
+        "cleared_levels": 55,
+        "minimum_win_per_level": 1,
+        "minimum_total_wins": 220
+      }
+    },
+    "continuous_campaign_challenge": {
+      "base_seed": 2800000000,
+      "last_seed": 2800000219,
+      "campaigns": 4,
+      "levels_per_campaign": 55,
+      "expected_attempts": 220,
+      "gate": {
+        "minimum_complete_55_level_campaigns": 1
+      }
+    },
+    "execution": {
+      "shard_count": 2,
+      "devices": [
+        "cuda:0",
+        "cuda:1"
+      ],
+      "parallel_envs_per_shard": 12
+    },
+    "all_seeds_frozen_before_policy_inference": true
+  },
+  "outputs": {
+    "root": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-dagger-successor-s99081551-v1",
+    "independent_audit_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-dagger-successor-s99081551-independent-audit-v1.json"
+  },
+  "implementation_boundary": {
+    "intent_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_polar_intent_dagger_successor_intent.py",
+      "sha256": "sha256:08f28709067cc625a395a79ed87cbd62470224e635a6da4b42ba06bc94c28d49"
+    },
+    "formal_master_controller_and_auditor_must_be_hash_frozen_before_inference": true,
+    "this_intent_does_not_authorize_policy_inference": true
+  },
+  "authority_boundary": {
+    "current_campaign_candidate_authority": false,
+    "s99081545_successor_candidate_authority": false,
+    "formal_seed_consumption": false,
+    "power_restore_authority": false
+  }
+}

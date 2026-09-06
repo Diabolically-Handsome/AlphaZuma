@@ -1,0 +1,132 @@
+{
+  "schema": "zuma-rl.pc-startup-global-mtrand-observation-diagnostic-outcome",
+  "version": 7,
+  "status": "PASS_LOCALIZED_HIDDEN_DRAW_INTERVAL",
+  "created_utc": "2026-08-04T20:27:53.017Z",
+  "parent_preregistration": "diagnostics/startup-global-mtrand-observation-preregistration-v7.json",
+  "parent_preregistration_sha256": "sha256:0f19d8339d570e0029d544b1d4d92fa58b04307982055f89bbea631fdd44455a",
+  "parent_execution_binding": "diagnostics/startup-global-mtrand-observation-execution-binding-v7.json",
+  "parent_execution_binding_sha256": "sha256:4acaee1a57e81601f4e88e553324c5bdcfc3654b672a2c72460e6267c2d1aa9a",
+  "run": {
+    "output_root": "D:/ZumaGolden/diagnostics/startup-global-mtrand-observation-e01-u0-u1702-v7",
+    "attempt_count": 1,
+    "selected_attempt": 1,
+    "process_id": 56404,
+    "status": "PASS",
+    "attempts_sha256": "sha256:4e433b5869f1e1ae7e437a39da7566808e014fa8e1f0fa6a65ff28a35db00b7b",
+    "memory_probe_sha256": "sha256:0e8358e1c107e259f808c11c35e2ebed2b80c0f983f460d3b5c4f85c0dbad40d",
+    "startup_observation_receipt_sha256": "sha256:84d4f4ac51b332d1678e8576f1a5b620fc965dea4ad1f064313a301ab2d889c4",
+    "strict_replay_log_sha256": "sha256:a75910f5a2cb0a5ac7528e4ff46d29a1e202b4a9af173e1934109c6ad3455cde",
+    "trajectory_index_sha256": "sha256:569cd2846a24d25526131f4008a3e3cae3daf8bf466bdedf2d052f9bdf69071f",
+    "trajectory_tick_count": 1
+  },
+  "collection_contract": {
+    "receipt_status": "PASS",
+    "observed_call_count": 309,
+    "expected_call_count": 309,
+    "draw_count_reconstruction_status": "PASS",
+    "process_memory_writes": 0,
+    "process_memory_mutation": false,
+    "process_context_mutation": true,
+    "hardware_breakpoint_restored": true,
+    "persistent_file_modified": false
+  },
+  "comparison": {
+    "exact_match_count": 301,
+    "mismatch_count": 8,
+    "first_exact_mismatch_order": 188,
+    "first_caller_mismatch_order": 188,
+    "first_framework_update_mismatch_order": 190,
+    "first_pre_state_mismatch_order": 302,
+    "first_transition_mismatch_order": 302,
+    "first_draw_count_mismatch_order": 302
+  },
+  "localized_events": [
+    {
+      "source_order": 188,
+      "framework_update": 519,
+      "expected_framework_update": 519,
+      "observed_caller": 5136917,
+      "observed_caller_hex": "0x004e6215",
+      "expected_caller": 4238946,
+      "expected_caller_hex": "0x0040ae62",
+      "observed_pre_draw_count": 188,
+      "expected_pre_draw_count": 188,
+      "state_exact": true,
+      "classification": "control_flow_callsite_mismatch_without_rng_state_divergence"
+    },
+    {
+      "source_order": 302,
+      "observed_framework_update": 1482,
+      "expected_framework_update": 1566,
+      "caller": 4238946,
+      "caller_hex": "0x0040ae62",
+      "observed_pre_draw_count": 1234,
+      "expected_pre_draw_count": 1318,
+      "draw_count_delta": -84,
+      "observed_hidden_draws_before_call": 20,
+      "expected_hidden_draws_before_call": 104,
+      "classification": "temporary_timeline_and_rng_state_divergence"
+    },
+    {
+      "source_order": 303,
+      "framework_update": 1660,
+      "observed_pre_draw_count": 1415,
+      "expected_pre_draw_count": 1415,
+      "observed_hidden_draws_before_call": 180,
+      "expected_hidden_draws_before_call": 96,
+      "state_exact": true,
+      "classification": "automatic_84_draw_reconvergence"
+    },
+    {
+      "source_order": 308,
+      "framework_update": 1675,
+      "observed_pre_draw_count": 1434,
+      "expected_pre_draw_count": 1434,
+      "observed_post_draw_count": 1435,
+      "expected_post_draw_count": 1435,
+      "state_exact": true,
+      "classification": "last_observed_exact_boundary"
+    }
+  ],
+  "triangulation_with_v6": {
+    "v6_source_order": 309,
+    "v6_framework_update": 3121,
+    "source_pre_draw_count": 1662,
+    "v6_live_pre_draw_count": 1639,
+    "draw_count_delta": -23,
+    "source_hidden_draws_from_order_308_post": 227,
+    "v6_live_hidden_draws_from_order_308_post": 204,
+    "localized_interval": {
+      "after_source_order": 308,
+      "after_framework_update": 1675,
+      "before_source_order": 309,
+      "at_framework_update": 3121
+    }
+  },
+  "interpretation": {
+    "initial_seed_hypothesis": false,
+    "order_188_is_not_yet_proven_causal": true,
+    "order_302_divergence_is_not_persistent": true,
+    "last_exact_global_state_boundary": "source order 308 post-state at framework update 1675",
+    "first_known_persistent_deficit_boundary": "source order 309 pre-state at framework update 3121",
+    "summary": "The strict replay is byte-exact again by source order 303 and remains exact through order 308. Combined with the V6 order-309 deficit, the persistent missing 23 draws arise inside the wrapper-silent update-1675-through-3121 interval, not at initialization and not from the temporary order-302 timing divergence.",
+    "next_localization": "Use a read-only four-byte hardware write watchpoint on the global MTRand index during the order-308-post to order-309-pre interval, record every direct draw caller and framework update, and compare the 204 observed draws against the source-required total of 227."
+  },
+  "host_state": {
+    "pre_file_sha256": "sha256:188a9c8c7e42268ec1fffce41cda864a18c36df580d5fc64946451510c2597d0",
+    "post_file_sha256": "sha256:02cfee1c4c600615eda045c208091ee113f3a8860b33a5de4b12a2154c2f680e",
+    "semantic_root_before": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "semantic_root_after": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "residual_runtime_process_count": 0,
+    "status": "RESTORED"
+  },
+  "decision": {
+    "result": "LOCALIZE_DIRECT_INDEX_WRITES_BETWEEN_SOURCE_ORDERS_308_AND_309",
+    "pc_golden_credit": false,
+    "fidelity_gate_change": false,
+    "formal_transport_change": false,
+    "large_scale_training_start": false
+  },
+  "evidence_classification": "diagnostic_only_no_pc_golden_credit"
+}

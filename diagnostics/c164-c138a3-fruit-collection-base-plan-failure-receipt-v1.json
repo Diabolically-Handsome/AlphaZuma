@@ -1,0 +1,43 @@
+{
+  "schema": "zuma-rl.c138a3-fruit-collection-base-plan-failure-receipt",
+  "version": 1,
+  "status": "FAILED_CLOSED_BEFORE_BASE_PLAN_OUTPUT",
+  "created_utc": "2026-08-10T12:40:34.7031403Z",
+  "parent_preregistration": "diagnostics/c164-c138a3-fruit-collection-formal-source-preregistration-v1.json",
+  "parent_preregistration_sha256": "sha256:4750bb9cfc209df055364dd8404d156d8b61c7729690274e83d057b6a1d951e1",
+  "parent_hash_amendment": "diagnostics/c164-c138a3-fruit-collection-formal-source-preregistration-amendment-v1.json",
+  "parent_hash_amendment_sha256": "sha256:bee3c585f52876539d7a67c57546fa4c326773d46da48e327e1486e775c5f6e6",
+  "completed_prior_step": {
+    "normalized_dmo": "D:/ZumaGolden/diagnostics/normalized-c138a3-fruit-collection-v1.dmo",
+    "bytes": 21719,
+    "sha256": "sha256:6f2d645c3109f73b77ef55c7e7e7941f7f1d2f73dccd5a71adc3051d4a360989"
+  },
+  "failed_step": {
+    "command_reference": "/commands/prepare_base",
+    "exit_code": 1,
+    "stderr": "collection error: trace_capture_blackout_invalid",
+    "effective_attach_at_update": 0,
+    "effective_detach_at_update_from_tool_default": 7300,
+    "frozen_window_repaint_update": 3150,
+    "frozen_wait_until_framework_update": 3400,
+    "effective_reattach_at_update_from_tool_default": 8500,
+    "dmo_length_updates": 10043,
+    "failed_required_order": "0 <= attach < detach < repaint <= wait < reattach < dmo_length",
+    "failure_is_argument_validation_before_output_or_process_launch": true
+  },
+  "post_failure_observation": {
+    "base_plan_root_absent": true,
+    "finite_plan_root_absent": true,
+    "campaign_root_absent": true,
+    "residual_game_process_count": 0,
+    "retail_gameplay_observed": false,
+    "feature_presence_observed": false
+  },
+  "decision": {
+    "retain_normalized_dmo": true,
+    "same_frozen_command_not_retried": true,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

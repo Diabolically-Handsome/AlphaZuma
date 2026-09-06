@@ -1,0 +1,350 @@
+{
+  "schema": "zuma-rl.overnight-multilevel-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_TRAINING",
+  "frozen_utc": "2026-08-14T17:02:57.876220+00:00",
+  "id": "alphazuma-speed-essence-v1-lowdrift-s71081401-v1",
+  "objective": "Preserve the V1 champion with very low PPO update intensity while rehearsing all seventeen levels and oversampling the unresolved tail.",
+  "scope": {
+    "state_policy_training_only": true,
+    "visual_policy_training_authorized": false,
+    "environment_semantics": "unchanged_from_independently_audited_v1.1",
+    "human_input_limits": "elite-human-v1 unchanged"
+  },
+  "trainer": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/train_overnight_multilevel.py",
+    "sha256": "sha256:2886a72a7348e492f4d34f4ef9733eee1668df24e17cc896ace0094267d371ba"
+  },
+  "initial_model": {
+    "id": "alphazuma-v1-published-champion-adaptive-mid-13631488",
+    "training_steps": 13631488,
+    "path": "/mnt/d/ZumaTraining/overnight-v11-adaptive-recovery-s43081301-v1/checkpoints/adaptive-5090-recovery_13631488_steps.zip",
+    "sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579"
+  },
+  "levels": [
+    {
+      "id": "Jungle1",
+      "display_name": "Shipwrecked!",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle1\\Jungle1"
+      ]
+    },
+    {
+      "id": "Jungle2",
+      "display_name": "Castaway",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle2\\Jungle2"
+      ]
+    },
+    {
+      "id": "Jungle3",
+      "display_name": "Echo Beach",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle3\\Jungle3"
+      ]
+    },
+    {
+      "id": "Jungle4",
+      "display_name": "Bones of an Idol",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle4\\Jungle4"
+      ]
+    },
+    {
+      "id": "jungle6",
+      "display_name": "Jungle Clearing",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle6\\Jungle6"
+      ]
+    },
+    {
+      "id": "Jungle7",
+      "display_name": "Sand Trap",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle7\\Jungle7"
+      ]
+    },
+    {
+      "id": "Jungle8",
+      "display_name": "Nasal Passage",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle8\\Jungle8"
+      ]
+    },
+    {
+      "id": "Jungle9",
+      "display_name": "Creeper Copse",
+      "curve_count": 2,
+      "curve_names": [
+        "Jungle9\\Jungle9-1",
+        "Jungle9\\Jungle9-2"
+      ]
+    },
+    {
+      "id": "Jungle10",
+      "display_name": "Darkness Falls",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle10\\Jungle10"
+      ]
+    },
+    {
+      "id": "village1",
+      "display_name": "Watering Hole",
+      "curve_count": 1,
+      "curve_names": [
+        "Village1"
+      ]
+    },
+    {
+      "id": "village2",
+      "display_name": "Overgrown Plaza",
+      "curve_count": 1,
+      "curve_names": [
+        "Village2"
+      ]
+    },
+    {
+      "id": "village4",
+      "display_name": "Sandspirals",
+      "curve_count": 1,
+      "curve_names": [
+        "Village4v2"
+      ]
+    },
+    {
+      "id": "village5",
+      "display_name": "Abandoned Well",
+      "curve_count": 1,
+      "curve_names": [
+        "Village5"
+      ]
+    },
+    {
+      "id": "village6",
+      "display_name": "Face Your Fear",
+      "curve_count": 2,
+      "curve_names": [
+        "Village6-1",
+        "Village6-2"
+      ]
+    },
+    {
+      "id": "village7",
+      "display_name": "Seven Sides (minus one)",
+      "curve_count": 1,
+      "curve_names": [
+        "Village7"
+      ]
+    },
+    {
+      "id": "village8",
+      "display_name": "Vines of Vengeance",
+      "curve_count": 1,
+      "curve_names": [
+        "Village8"
+      ]
+    },
+    {
+      "id": "village10",
+      "display_name": "The Horseshoe",
+      "curve_count": 1,
+      "curve_names": [
+        "Village10\\Village10v2"
+      ]
+    }
+  ],
+  "environment": {
+    "profile_mode": "tutorials_completed",
+    "hard": false,
+    "curve_index": 0,
+    "base_config": {
+      "aim_bins": 180,
+      "action_mode": "factorized",
+      "frame_skip": 1,
+      "max_ticks": 12000,
+      "max_balls": 768,
+      "max_projectiles": 32,
+      "max_curves": 2,
+      "score_reward_scale": 0.01,
+      "step_penalty": -0.0001,
+      "win_reward": 10,
+      "loss_reward": -10,
+      "privileged_debug": false,
+      "render_width": 400,
+      "render_height": 300
+    },
+    "input_profile": {
+      "profile_id": "elite-human-v1",
+      "reaction_delay_ticks": 12,
+      "max_aim_speed_degrees_per_second": 1080,
+      "max_aim_acceleration_degrees_per_second_squared": 18000,
+      "min_button_interval_ticks": 5
+    },
+    "reward_profile": {
+      "profile_id": "win-time-score-v1",
+      "win_reward": 10,
+      "failure_reward": -10,
+      "time_penalty_per_native_tick": -0.0001,
+      "score_progress_reward_cap": 0.01
+    }
+  },
+  "runs": [
+    {
+      "id": "essence-v1-lowdrift-fixed-5090",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-speed-essence-v1-lowdrift-fixed-s71081401-v1",
+      "device": "cuda:0",
+      "seed": 71081401,
+      "episode_seed_base": 1100000000,
+      "episode_seed_stride": 250000,
+      "total_steps": 60000000,
+      "num_envs": 16,
+      "rollout_steps": 256,
+      "batch_size": 512,
+      "ppo_epochs": 1,
+      "learning_rate": 2.5e-06,
+      "entropy_coef": 0.0,
+      "checkpoint_every": 524288,
+      "initial_weights": {
+        "Jungle1": 0.5,
+        "Jungle2": 2.5,
+        "Jungle3": 0.75,
+        "Jungle4": 0.75,
+        "jungle6": 0.75,
+        "Jungle7": 5.0,
+        "Jungle8": 0.75,
+        "Jungle9": 3.0,
+        "Jungle10": 1.0,
+        "village1": 1.0,
+        "village2": 1.0,
+        "village4": 2.5,
+        "village5": 4.5,
+        "village6": 6.0,
+        "village7": 2.5,
+        "village8": 3.5,
+        "village10": 6.0
+      },
+      "adaptive": {
+        "enabled": false,
+        "update_every_steps": 262144,
+        "rolling_episodes": 64,
+        "minimum_episodes": 4,
+        "minimum_weight": 0.5,
+        "maximum_weight": 8.0,
+        "anchor_level": "Jungle2"
+      }
+    },
+    {
+      "id": "essence-v1-lowdrift-adaptive-5080",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-speed-essence-v1-lowdrift-adaptive-s71081402-v1",
+      "device": "cuda:1",
+      "seed": 71081402,
+      "episode_seed_base": 1104000000,
+      "episode_seed_stride": 250000,
+      "total_steps": 60000000,
+      "num_envs": 16,
+      "rollout_steps": 256,
+      "batch_size": 512,
+      "ppo_epochs": 1,
+      "learning_rate": 5e-06,
+      "entropy_coef": 0.0,
+      "checkpoint_every": 524288,
+      "initial_weights": {
+        "Jungle1": 0.5,
+        "Jungle2": 2.5,
+        "Jungle3": 0.75,
+        "Jungle4": 0.75,
+        "jungle6": 0.75,
+        "Jungle7": 5.0,
+        "Jungle8": 0.75,
+        "Jungle9": 3.0,
+        "Jungle10": 1.0,
+        "village1": 1.0,
+        "village2": 1.0,
+        "village4": 2.5,
+        "village5": 4.5,
+        "village6": 6.0,
+        "village7": 2.5,
+        "village8": 3.5,
+        "village10": 6.0
+      },
+      "adaptive": {
+        "enabled": true,
+        "update_every_steps": 262144,
+        "rolling_episodes": 64,
+        "minimum_episodes": 4,
+        "minimum_weight": 0.5,
+        "maximum_weight": 8.0,
+        "anchor_level": "Jungle2"
+      }
+    }
+  ],
+  "seed_isolation": {
+    "training_ranges": [
+      [
+        1100000000,
+        1103999999
+      ],
+      [
+        1104000000,
+        1107999999
+      ]
+    ],
+    "selection_range_reserved": [
+      1200000000,
+      1200000035
+    ],
+    "final_blind_range_reserved": [
+      1300000000,
+      1300000135
+    ],
+    "prior_v1_and_v11_ranges_excluded": true,
+    "no_overlap": true
+  },
+  "schedule": {
+    "training_stop_utc": "2026-08-14T21:45:00Z",
+    "training_stop_local": "2026-08-14T17:45:00-04:00",
+    "reserved_for_selection_blind_video_seconds": 8100,
+    "goal_end_utc": "2026-08-15T00:00:00Z",
+    "goal_end_local": "2026-08-14T20:00:00-04:00"
+  },
+  "evidence_anchor": {
+    "source_master_path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-v1.1-frontier-postprocess-s51081301-preregistration-v1.json",
+    "source_master_sha256": "sha256:3dc8a51563c763ef46b3c3415a6e4da9b5430ab3a19b586e5e0b95b98b0ffc01",
+    "source_v11_gate_result": {
+      "jungle2_wins_at_least": 14,
+      "target_levels_cleared_at_least": 14,
+      "target_wins_at_least": 168,
+      "zero_win_levels_cleared_at_least": 1,
+      "zero_win_total_wins_at_least": 4,
+      "target_wins_must_not_be_below_same_seed_v1_baseline": true,
+      "target_breadth_must_not_be_below_same_seed_v1_baseline": true,
+      "rationale": "Promotion requires anchor retention, breadth beyond the published 13-of-16 V1 result, concrete recovery on previously zero-win levels, absolute target performance, and paired non-inferiority. Statistical significance is reported but is not misused as a hard gate at this sample size."
+    }
+  },
+  "implementation": {
+    "revenge_core": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_core.py",
+      "sha256": "sha256:2652b12d396d47f70875323ab7157c64d68d5067ff762cc723a2aba99329dae3"
+    },
+    "revenge_env": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_env.py",
+      "sha256": "sha256:8c4e49e31725a5c47b3dd4933c6e3b9195bcbddc717e5390bf4e5a56f0d6e8d0"
+    },
+    "human_speedrun": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/human_speedrun.py",
+      "sha256": "sha256:d2df69821ce5f5e837a962cfc6efdafaf152baf06a30fb8c6d2c04ddec6517dd"
+    },
+    "original_data": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/original_data.py",
+      "sha256": "sha256:d562b4855943a57d2b38cfb1916db3618fb501a434e682b0e79c665b1840762a"
+    }
+  }
+}

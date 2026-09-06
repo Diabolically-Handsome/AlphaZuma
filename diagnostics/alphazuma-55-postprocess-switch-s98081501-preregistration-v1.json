@@ -1,0 +1,101 @@
+{
+  "schema": "zuma-rl.alphazuma-55-waiting-deployment-switch",
+  "version": 1,
+  "status": "FROZEN_BEFORE_SWITCH",
+  "created_utc": "2026-08-15T06:10:17.209677+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "objective": "After the engineering milestone becomes terminal, cleanly replace the waiting four-route V3 deployment with the frozen six-route deployment before any formal seed is consumed.",
+  "implementation": {
+    "orchestrator": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/switch_alphazuma_55_waiting_deployment.py",
+      "sha256": "sha256:ee7c1c5e6035408e97de8936a713ddffb0fdf035a7998cd91500e273c8c3993b"
+    },
+    "withdrawal_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/freeze_alphazuma_55_waiting_postprocess_withdrawal.py",
+      "sha256": "sha256:59592f8a2eee9d48d78e52fd92c6d30622849abfdbfc91eba668fc66a166aa83"
+    },
+    "deployment_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_capacity_expansion_deployment.py",
+      "sha256": "sha256:2d911c1be3f1c63e74643417a54eba486f8c7179aebf1cca4b51ca5acb0b19da"
+    },
+    "deployer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/deploy_alphazuma_55_postprocess_parallel_v2.py",
+      "sha256": "sha256:347b43711d9099256f21e7b77f50899b8a16b52eebaac0cd1244629a58c1d479"
+    }
+  },
+  "capacity_expansion": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-capacity-expansion-s96081501-preregistration-v1.json",
+    "sha256": "sha256:982786bd9e8539937f4afe2e5c9b78c05e23cea3ad3b71db4559004bbd85fb0d"
+  },
+  "current_deployment": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-deployment-s88081503-preregistration-v1.json",
+    "sha256": "sha256:beb1876545ecf80db4b1e3424b4e5ccade6cec179952350bd7d4e676a2ad6122"
+  },
+  "milestone_controller": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/distilled-milestone-controller-s92081502-v1/controller_status.json",
+    "accepted_terminal_statuses": ["COMPLETE", "ERROR"],
+    "must_not_be_modified_by_switch": true
+  },
+  "outputs": {
+    "switch_output_root": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/postprocess-switch-s98081501-v1",
+    "withdrawal_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-deployment-s88081503-withdrawal-for-s88081505-v1.json",
+    "new_deployment_preregistration": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-deployment-s88081505-preregistration-v1.json"
+  },
+  "poll_seconds": 15,
+  "process_policy": {
+    "require_exactly_one_old_controller": true,
+    "require_exactly_one_old_deployer": true,
+    "terminate_old_controller_first": true,
+    "signal": "SIGTERM",
+    "graceful_exit_timeout_seconds": 60,
+    "terminate_old_deployer_only_if_it_does_not_exit_after_its_child": true,
+    "never_match_processes_without_both_script_and_contract_name": true
+  },
+  "prestop_gate": {
+    "milestone_must_be_terminal": true,
+    "old_controller_phase_must_equal": "WAITING_FOR_TRAINING",
+    "old_controller_error_must_be_null": true,
+    "old_selection_final_and_continuous_roots_must_be_absent": true,
+    "all_new_six_route_outputs_must_be_absent": true,
+    "formal_seed_consumption_must_equal": false,
+    "save_immutable_status_and_process_evidence_before_signal": true
+  },
+  "power_state": {
+    "training_gpu_limits_watts": {
+      "0": 550,
+      "1": 250
+    },
+    "windows_training_power_plan_guid": "8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c",
+    "restoration_requested_by_switch": false,
+    "restoration_remains_delegated_to_final_audit_or_deadline": true
+  },
+  "execution_sequence": [
+    "wait for terminal milestone without changing training",
+    "freeze immutable prestop evidence",
+    "terminate only the exact waiting V3 controller and allow its deployer to exit",
+    "freeze the V3 withdrawal receipt",
+    "freeze and validate the six-route deployment preregistration",
+    "exec-replace this controller with the frozen deployer",
+    "new deployer freezes and validates the six-route postprocess then waits for the original training deadline"
+  ],
+  "formal_semantics": {
+    "registered_training_routes": 6,
+    "migration_baselines": 3,
+    "levels": 55,
+    "selection_seed_range": [1600000000, 1600000219],
+    "final_blind_seed_range": [1700000000, 1700000439],
+    "continuous_seed_range": [1800000000, 1800000219],
+    "gate_ranking_environment_parallelism_and_deadlines_unchanged": true
+  },
+  "authority_boundary": {
+    "may_switch_only_after_terminal_milestone": true,
+    "may_not_stop_or_modify_any_training_route": true,
+    "may_not_consume_any_formal_seed": true,
+    "may_not_restore_power_early": true,
+    "may_not_overwrite_any_receipt_or_output": true
+  },
+  "test_evidence": {
+    "related_tests_passed": 25,
+    "related_tests_failed": 0
+  }
+}

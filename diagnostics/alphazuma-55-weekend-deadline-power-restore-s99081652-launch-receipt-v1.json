@@ -1,0 +1,30 @@
+{
+  "schema": "zuma-rl.alphazuma-55-weekend-deadline-power-restore-launch-receipt",
+  "version": 1,
+  "status": "LAUNCHED_AND_WAITING_FOR_DEADLINE",
+  "started_utc": "2026-08-16T19:09:26.8064331Z",
+  "observed_utc": "2026-08-16T19:09:38.4808794Z",
+  "preregistration": {
+    "path": "C:\\Users\\Laure\\Documents\\祖玛\\diagnostics\\alphazuma-55-weekend-deadline-power-restore-s99081652-preregistration-v1.json",
+    "sha256": "sha256:7a6a6d2a1896932730025cf63d0ff6460b3a409dc58d627dec6435a25a0c95da"
+  },
+  "watcher": {
+    "path": "C:\\Users\\Laure\\Documents\\祖玛\\tools\\restore_alphazuma_55_weekend_power_at_deadline_v1.ps1",
+    "sha256": "sha256:82c53ec8f4cd76baff47106d26d52f5c91ce6408efe8576950465ce866355b40"
+  },
+  "process": {
+    "pid": 59544,
+    "name": "powershell.exe",
+    "alive_at_snapshot": true,
+    "command_line": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\\Users\\Laure\\Documents\\祖玛\\tools\\restore_alphazuma_55_weekend_power_at_deadline_v1.ps1 -DeadlineUtc 2026-08-16T20:00:00Z -ReceiptPath C:\\Users\\Laure\\Documents\\祖玛\\diagnostics\\alphazuma-55-weekend-deadline-power-restore-s99081652-receipt-v1.json"
+  },
+  "logs": {
+    "stdout": "D:\\ZumaTraining\\alphazuma-55-weekend-deadline-power-restore-s99081652-v1.stdout.log",
+    "stderr": "D:\\ZumaTraining\\alphazuma-55-weekend-deadline-power-restore-s99081652-v1.stderr.log"
+  },
+  "deadline_utc": "2026-08-16T20:00:00Z",
+  "current_action": "read-only wait",
+  "seed_consumption": "NONE",
+  "training_or_evaluation_process_signaled": false,
+  "model_or_recipe_change": false
+}

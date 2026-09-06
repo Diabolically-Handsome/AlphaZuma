@@ -1,0 +1,53 @@
+{
+  "schema": "zuma-rl.alphazuma-55-configured-successor-independent-audit",
+  "version": 1,
+  "status": "PASS",
+  "audited_utc": "2026-08-16T04:13:57.383304+00:00",
+  "controller_result": "COMPLETE_NO_PROMOTION",
+  "formal_seed_consumption": "NONE",
+  "promotion_gate": {
+    "actual": {
+      "wins": 1,
+      "cleared_levels": 1,
+      "total_score": 56480,
+      "median_winning_ticks": 8139,
+      "model_bytes": 9448887
+    },
+    "required": {
+      "selected_model_must_be_one_of": [
+        "polar-intent-dagger-round-00",
+        "polar-intent-dagger-round-01",
+        "polar-intent-dagger-round-02"
+      ],
+      "minimum_cleared_levels": 35,
+      "minimum_wins": 35
+    },
+    "passed": false
+  },
+  "artifacts": {
+    "master": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-dagger-successor-s99081551-preregistration-v2.json",
+      "sha256": "sha256:d0822a344b7f9b347c0912b40eebd00a8ea59dfe4f8a672b30f3c0dabde8dce1"
+    },
+    "controller": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_configured_successor_certification_v3.py",
+      "sha256": "sha256:1d2aa9375ce522811d2076fbd947a388022bcd6461a00e9fd9849fd046080c8b"
+    },
+    "promotion_decision": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-dagger-successor-s99081551-v1/controller/promotion-decision.json",
+      "sha256": "sha256:bb21b5253f64e5aae9245b134da4fc1fd651d8154efb603e4529a61ee97de20c"
+    },
+    "engineering_audit": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-dagger-validation-s99081550-audit-v1.json",
+      "sha256": "sha256:4603678b36665326593c03b42ae341dde7613232b5de3513fd3197c46814e829"
+    }
+  },
+  "checks": [
+    "engineering_matrix_recomputed",
+    "promotion_ranking_recomputed",
+    "promotable_inventory_recomputed",
+    "successor_seed_roots_absent"
+  ],
+  "ranking_tie_break_semantics": "earlier_manifest_round_first",
+  "preflight_controller_version": 3
+}

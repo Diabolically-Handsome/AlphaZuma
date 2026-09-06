@@ -1,0 +1,149 @@
+{
+  "schema": "zuma-rl.pc-exact-step-square-corner-visual-preregistration",
+  "version": 1,
+  "id": "c86-u3664-u3684-exact-step-square-corner-independent-diagnostic",
+  "created_utc": "2026-08-03T21:14:35Z",
+  "status": "FROZEN_BEFORE_EITHER_C86_OUTPUT_ROOT_WAS_CREATED",
+  "classification": "fresh-mechanism-diagnostic-after-c83-c85-finite-campaign-failure",
+  "gate_effect": "none",
+  "question": "Does exact framework stepping plus verified non-rounded DWM window transport make two independent u3664-u3684 retail visual trajectories fully BGRA exact?",
+  "method_basis_only": {
+    "c79_exact_step_mechanism_audit": {
+      "path": "diagnostics/c79-front-insertion-render-phase-mechanism-audit-v1.json",
+      "sha256": "sha256:8480e6a01797a69e575a6a3e67da62e4681c9661c91c8f48eae07e723715e30e",
+      "finding": "exact_gameplay_and_ball_render_state_with_only_stable_window_edge_transport_pixels_after_the_initial_snapshot"
+    },
+    "c83_c85_finite_campaign_failure": {
+      "path": "diagnostics/c85-front-insertion-bottom-row-finite-campaign-failure-audit-v1.json",
+      "sha256": "sha256:6d93376768ebc8efabe3d08c33de9ab413e87bf4b4f85b0800669a5f8a6503d0",
+      "formal_status": "FAIL",
+      "finding": "live_fixed_delay_capture_is_not_a_single_valued_displayed_surface_selector"
+    },
+    "c65_window_edge_coordinates": {
+      "path": "diagnostics/c65-render-transport-preregistration-v1.json",
+      "sha256": "sha256:e28cf5ce21428cc64fca82e822d818bb9797e743511f58d660efeaf703b5d8cb",
+      "interpretation": "the_frozen_66_pixel_set_is_concentrated_in_rounded_client_corners_and_edges"
+    },
+    "reuse_of_c79_or_c83_c85_frames_for_c86_acceptance_forbidden": true
+  },
+  "fixed_inputs": {
+    "plan": {
+      "path": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/plan.json",
+      "sha256": "sha256:5a7ba58eccd7e0d1b1008ac089cce59c167a26ba8bc359ef76f3dcd2bea8c0db"
+    },
+    "protocol_prestate": {
+      "path": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/protocol/pre.json",
+      "sha256": "sha256:06d243f34ecf209c6296659fd4cc3c0a6c299c203cc8b4e342f55cc001c32842",
+      "state_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526"
+    },
+    "host_restore": {
+      "path": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/safety/host-pre.json",
+      "sha256": "sha256:c48bd69be03fc6e2fdf1a400b571f0f0294a5fadda1c48e08c1bd6d1dd093f46",
+      "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061"
+    },
+    "live_host_precheck": {
+      "path": "D:/ZumaGolden/diagnostics/c86-live-host-precheck-v1.json",
+      "sha256": "sha256:f7cb3103453aff322d2264c29218084d0cacb5eb7c9c31cdeb8614e108b42a4a",
+      "session_nonce": "cac4338635314746bd85371f8dc27107",
+      "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061"
+    },
+    "dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20"
+  },
+  "tooling": {
+    "collector": {
+      "path": "tools/collect_pc_memory_probe.py",
+      "sha256": "sha256:db76e998fd9d9b0d0fc2fdf0ffc771eac86b59f1972b076e370c112f06e36018"
+    },
+    "collector_tests": {
+      "path": "tests/test_collect_pc_memory_probe.py",
+      "sha256": "sha256:7244816e949138470342a6a09a0de05bc82d61bdffc9ac276a36fec1b099e60d"
+    },
+    "pair_comparator": {
+      "path": "tools/compare_pc_step_visual_trajectories.py",
+      "sha256": "sha256:977183e5a2fc83aebdc13c0c61e3b1be8dbc1abecb0230d27802c96bbd70b4a5",
+      "required_status": "PASS"
+    },
+    "verification": {
+      "targeted_command": "python -m pytest -q tests/test_collect_pc_memory_probe.py tests/test_compare_pc_step_visual_trajectories.py",
+      "targeted_test_count": 38,
+      "targeted_status": "PASS",
+      "full_suite_command": "python -m pytest -q",
+      "full_suite_status": "PASS",
+      "full_suite_warning_count": 1
+    }
+  },
+  "fixed_trajectory_recipe": {
+    "probe_update": 3660,
+    "slowdown_update": 3650,
+    "trajectory_start_update": 3664,
+    "trajectory_end_update": 3684,
+    "retained_tick_count": 21,
+    "trajectory_mode": "rng",
+    "int32_value": 7950,
+    "displayed_score_value": 7950,
+    "skip_repaint_guard": true,
+    "skip_frozen_snapshot": true,
+    "snapshot_trajectory_frames": true,
+    "snapshot_square_dwm_corners": true,
+    "snapshot_trajectory_warmup_frame": true,
+    "warmup_update": 3660,
+    "warmup_acceptance_role": "discarded_dxgi_surface_warmup",
+    "dwm_attribute": "DWMWA_WINDOW_CORNER_PREFERENCE",
+    "required_dwm_value": "DWMWCP_DONOTROUND",
+    "full_bgra_acceptance_mask": "none",
+    "maximum_pixel_mismatches_each_retained_tick": 0,
+    "maximum_startup_attempts_each_run": 3
+  },
+  "independent_runs": [
+    {
+      "label": "a",
+      "output_root": "D:/ZumaGolden/memory-followup-c86-exact-step-square-corners-a-v1",
+      "verified_output_root_absent_at_freeze": true
+    },
+    {
+      "label": "b",
+      "output_root": "D:/ZumaGolden/memory-followup-c86-exact-step-square-corners-b-v1",
+      "verified_output_root_absent_at_freeze": true
+    }
+  ],
+  "attempt_and_selection_rule": {
+    "run_order": [
+      "a",
+      "b"
+    ],
+    "collector_attempts_are_only_for_fail_closed_startup_races": true,
+    "each_run_stops_at_first_collector_pass": true,
+    "each_started_attempt_must_remain_recorded_in_attempts_json": true,
+    "successful_index_is_the_unique_first_pass_in_declared_attempt_order": true,
+    "no_successful_attempt_cherry_picking": true,
+    "no_more_than_three_attempts_per_run": true,
+    "additional_runs_under_this_preregistration_forbidden": true
+  },
+  "fixed_comparison": {
+    "left_run": "a",
+    "right_run": "b",
+    "output": "D:/ZumaGolden/diagnostics/c86-exact-step-square-corners-comparison-v1.json",
+    "verified_output_absent_at_freeze": true,
+    "require_distinct_process_ids": true,
+    "require_exact_loaded_gameplay_and_rng_memory_all_21_ticks": true,
+    "require_exact_ball_render_state_all_21_ticks": true,
+    "require_full_800x600_bgra_exact_all_21_ticks": true,
+    "require_verified_square_corner_receipt_both_runs": true,
+    "warmup_frame_excluded_only_by_predeclared_role": true
+  },
+  "decision_matrix": {
+    "full_pass": "exact_step_plus_square_corners_is_a_candidate_formal_pc_golden_transport; design_a_separate_fresh_packaging_holdout",
+    "memory_exact_rgb_mismatch": "remaining_display_surface_or_capture_transport_divergence; localize_without_mask_or_threshold_expansion",
+    "memory_mismatch": "internal_state_or_single_step_divergence; stop_visual_contract_work_and_locate_first_field",
+    "dwm_receipt_or_protocol_failure": "C86_INVALID_OR_INCONCLUSIVE"
+  },
+  "non_authorizations": [
+    "pc_golden",
+    "front_insertion_gate_credit",
+    "fidelity_gate_open",
+    "training_start",
+    "reclassification_of_c83_c85",
+    "mask_expansion"
+  ]
+}

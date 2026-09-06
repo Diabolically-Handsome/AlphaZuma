@@ -1,0 +1,99 @@
+{
+  "schema": "zuma-rl.retail-fruit-bomb-cycle-alignment-recording-ensemble-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_FIRST_PROCESS_LAUNCH",
+  "created_utc": "2026-08-10T14:47:16.7487684Z",
+  "purpose": "Run a fixed eight-recording natural-retail ensemble with the qualified c180 controller to acquire a later natural same-tick type-0 proximity-bomb explosion and fruit collection after ordinary projectile deferral of provably unreachable fruit cycles.",
+  "classification": "candidate-recording-with-read-only-alignment-telemetry-not-pc-golden",
+  "parents": {
+    "cycle_alignment_controller_preregistration": {
+      "path": "diagnostics/c180-fruit-bomb-cycle-alignment-controller-preregistration-v1.json",
+      "sha256": "sha256:78af5bb8f184ad01c07c30c4f58621f28030d69439f17b77cf1055a5136ad4c4"
+    },
+    "cycle_alignment_controller_qualification": {
+      "path": "diagnostics/c180-fruit-bomb-cycle-alignment-controller-qualification-v1.json",
+      "sha256": "sha256:b3d52e807b046bd40880a05bdcd6b4f59c2f66cb2bd39c4e4062d277f6e6955b",
+      "status": "PASS"
+    },
+    "temporal_geometric_diagnosis": {
+      "path": "diagnostics/c179-fruit-bomb-temporal-geometric-analysis-v1.json",
+      "sha256": "sha256:04f6557a16d5bbe8b57d692f7de29a4a3097b976aa320be0d992fae8df8d210a",
+      "status": "PASS_DIAGNOSIS_NO_LOCATOR"
+    }
+  },
+  "frozen_tooling": {
+    "live_controller": [105527, "sha256:8eae77d26ef167b42de4aa93be402bf167b1536d910cc597f6167351980ae551"],
+    "record_controller": [71066, "sha256:438b74c5f6fc8190c9835852a86dfba5c04e25c9b963f98c8d2564b5123d614f"],
+    "focused_tests": [110, "PASS"],
+    "full_tests": [1569, "PASS"]
+  },
+  "retail_contract": {
+    "runtime_executable": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+    "runtime_bytes": 6657328,
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "changedir": "D:/SteamLibrary/steamapps/common/Zuma's Revenge",
+    "prestate_dir": "D:/ZumaGolden/session-20260728-203153/native-windowed-record-001-prestate-reconstructed",
+    "expected_score_target": 9650,
+    "minimum_entry_score": 7000,
+    "maximum_gameplay_seconds": 180.0,
+    "expected_outcome": "natural_win",
+    "gameplay_policy": "autoplay",
+    "fruit_policy": "bomb",
+    "navigation_updates": [1622, 2422, 3108],
+    "navigation_points": [[400.0, 533.0], [633.0, 281.0], [399.0, 456.0]],
+    "prelaunch_cursor_screen_point": [100, 100],
+    "rng_monitor_stop_native_time": 500,
+    "gameplay_mtrand_trace": true,
+    "mtrand_trace_kind": "global_wrapper_entry",
+    "controlled_crt_rand_seed": null,
+    "offline_dmo_seed_edit": false,
+    "process_memory_writes_required": 0,
+    "host_state_exact_restore_required": true,
+    "active_game_process_count_at_freeze": 0
+  },
+  "ensemble": {
+    "attempt_count": 8,
+    "run_order": ["c181a1", "c181a2", "c181a3", "c181a4", "c181a5", "c181a6", "c181a7", "c181a8"],
+    "output_roots": [
+      "D:/ZumaGolden/record-c181a1-fruit-bomb-cycle-alignment-v1",
+      "D:/ZumaGolden/record-c181a2-fruit-bomb-cycle-alignment-v1",
+      "D:/ZumaGolden/record-c181a3-fruit-bomb-cycle-alignment-v1",
+      "D:/ZumaGolden/record-c181a4-fruit-bomb-cycle-alignment-v1",
+      "D:/ZumaGolden/record-c181a5-fruit-bomb-cycle-alignment-v1",
+      "D:/ZumaGolden/record-c181a6-fruit-bomb-cycle-alignment-v1",
+      "D:/ZumaGolden/record-c181a7-fruit-bomb-cycle-alignment-v1",
+      "D:/ZumaGolden/record-c181a8-fruit-bomb-cycle-alignment-v1"
+    ],
+    "all_output_roots_absent_at_freeze": true,
+    "attempts_sequential": true,
+    "all_attempts_execute_before_target_feature_analysis": true,
+    "no_early_stop_on_deferral_overlap_trigger_or_score_interval": true,
+    "no_retry_or_replacement_under_this_preregistration": true,
+    "retain_every_started_attempt": true
+  },
+  "command_template": ".venv-win/Scripts/python.exe tools/record_autoplay_zuma.py --output-root {OUTPUT_ROOT} --runtime-executable D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe --changedir \"D:/SteamLibrary/steamapps/common/Zuma's Revenge\" --prestate-dir D:/ZumaGolden/session-20260728-203153/native-windowed-record-001-prestate-reconstructed --expected-score-target 9650 --minimum-entry-score 7000 --maximum-gameplay-seconds 180 --expected-outcome natural_win --gameplay-policy autoplay --fruit-policy bomb --rng-monitor-stop-native-time 500 --gameplay-mtrand-trace --mtrand-trace-kind global_wrapper_entry --title-start-update 1622 --adventure-update 2422 --continue-game-update 3108 --title-start-point 400 533 --adventure-point 633 281 --continue-game-point 399 456 --prelaunch-cursor-screen-point 100 100",
+  "analysis_order_after_execution_receipt": [
+    "verify all eight natural-win integrity and exact-host-restore contracts",
+    "count defer_fruit_for_bomb_alignment decisions",
+    "identify later fruit cycles while the same naturally hosted bomb remains active",
+    "count strict-radius trigger_fruit_proximity_bomb decisions",
+    "locate same-tick type-0 explosion and fruit-collection-compatible score transitions",
+    "select only the earliest frozen-order integrity-passing target locator"
+  ],
+  "formal_source_rules": {
+    "ordinary projectile deferrals are acquisition history only": true,
+    "target event requires later original same-tick type-0 explosion and fruit collection": true,
+    "controller telemetry is locator only": true,
+    "fresh source-bound full-state replay required": true,
+    "machine mechanism audit required": true,
+    "exact simulator diff required": true,
+    "pc_golden_authentication_required": true,
+    "frequency_claim": false
+  },
+  "decision": {
+    "candidate_recording_gate_credit": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

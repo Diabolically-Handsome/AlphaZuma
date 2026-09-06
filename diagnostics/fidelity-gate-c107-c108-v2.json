@@ -1,0 +1,1261 @@
+{
+  "evidence": [
+    {
+      "accepted": false,
+      "authorized_features": [],
+      "declared_features": [
+        "deterministic_replay",
+        "shot_release"
+      ],
+      "features": [
+        "deterministic_replay",
+        "shot_release"
+      ],
+      "hard": false,
+      "id": "a-pc-jungle2-shot-v4",
+      "kind": "pc_golden",
+      "level_id": "Jungle2",
+      "profile_mode": "tutorials_completed",
+      "random_seed": 36311796,
+      "reason": "PC Golden verifier returned FAIL: certification requires a provenance-bound raw retail recording and exact startup transport normalization",
+      "schema": "zuma-rl.pc-golden-manifest",
+      "source_fingerprint": "sha256:5e6e648c7fe1d0e3684900f0acca444b43c8ca1b790727135051cb05314f8b19",
+      "status": "FAIL",
+      "supporting_source_features": [],
+      "supporting_source_fingerprints": [],
+      "tick_count": 78,
+      "unsupported_features": [],
+      "version": 4
+    },
+    {
+      "accepted": false,
+      "authorized_features": [],
+      "declared_features": [
+        "deterministic_replay"
+      ],
+      "features": [
+        "deterministic_replay"
+      ],
+      "hard": false,
+      "id": "a2-pc-jungle2-natural-ingress-v4",
+      "kind": "pc_golden",
+      "level_id": "Jungle2",
+      "profile_mode": "tutorials_completed",
+      "random_seed": 36311796,
+      "reason": "PC Golden verifier returned FAIL: certification requires a provenance-bound raw retail recording and exact startup transport normalization",
+      "schema": "zuma-rl.pc-golden-manifest",
+      "source_fingerprint": "sha256:de4bc760f01c874b616baf142864aa508a1c09689e8cdd316d4e0c795a57cbf9",
+      "status": "FAIL",
+      "supporting_source_features": [],
+      "supporting_source_fingerprints": [],
+      "tick_count": 97,
+      "unsupported_features": [],
+      "version": 4
+    },
+    {
+      "accepted": false,
+      "authorized_features": [],
+      "declared_features": [
+        "deterministic_replay",
+        "powerup_spawn"
+      ],
+      "features": [
+        "deterministic_replay",
+        "powerup_spawn"
+      ],
+      "hard": false,
+      "id": "a3-pc-jungle2-powerup-spawn-v5",
+      "kind": "pc_golden",
+      "level_id": "Jungle2",
+      "profile_mode": "tutorials_completed",
+      "random_seed": 36311796,
+      "reason": "PC Golden verifier returned FAIL: certification requires a provenance-bound raw retail recording and exact startup transport normalization",
+      "schema": "zuma-rl.pc-golden-manifest",
+      "source_fingerprint": "sha256:efd64ec25f47ef20bfe4a5a91f8e0850e4566bd99fb3afc81b8623699b28ae01",
+      "status": "FAIL",
+      "supporting_source_features": [],
+      "supporting_source_fingerprints": [],
+      "tick_count": 62,
+      "unsupported_features": [],
+      "version": 4
+    },
+    {
+      "accepted": true,
+      "authorized_features": [
+        "pc_mechanism_coverage"
+      ],
+      "declared_features": [
+        "pc_mechanism_coverage"
+      ],
+      "features": [
+        "pc_mechanism_coverage"
+      ],
+      "hard": null,
+      "id": "a4-audit-c5-powerup-spawn",
+      "kind": "audit",
+      "level_id": null,
+      "profile_mode": null,
+      "random_seed": null,
+      "reason": null,
+      "schema": "zuma-rl.fidelity-audit",
+      "source_fingerprint": "sha256:33f5cee4fad865f24ce5a2811451712559878dd25da90aaa111cf1fc18fc4593",
+      "status": "PASS",
+      "supporting_source_features": [
+        {
+          "authorized_features": [
+            "powerup_spawn"
+          ],
+          "source_fingerprint": "sha256:efd64ec25f47ef20bfe4a5a91f8e0850e4566bd99fb3afc81b8623699b28ae01"
+        }
+      ],
+      "supporting_source_fingerprints": [
+        "sha256:efd64ec25f47ef20bfe4a5a91f8e0850e4566bd99fb3afc81b8623699b28ae01"
+      ],
+      "tick_count": 0,
+      "unsupported_features": [],
+      "version": 1
+    },
+    {
+      "accepted": true,
+      "authorized_features": [
+        "deterministic_replay"
+      ],
+      "declared_features": [
+        "deterministic_replay"
+      ],
+      "features": [
+        "deterministic_replay"
+      ],
+      "hard": false,
+      "id": "a4-pc-jungle2-natural-entry-c23-v4",
+      "kind": "pc_golden",
+      "level_id": "Jungle2",
+      "profile_mode": "tutorials_completed",
+      "random_seed": 85961375,
+      "reason": null,
+      "schema": "zuma-rl.pc-golden-manifest",
+      "source_fingerprint": "sha256:1d6d1f5400d08ef3fa9341dd8ae180340739b9ed498235113eee0f63563d517b",
+      "status": "PASS",
+      "supporting_source_features": [],
+      "supporting_source_fingerprints": [],
+      "tick_count": 41,
+      "unsupported_features": [],
+      "version": 4
+    },
+    {
+      "accepted": true,
+      "authorized_features": [
+        "deterministic_replay"
+      ],
+      "declared_features": [
+        "deterministic_replay"
+      ],
+      "features": [
+        "deterministic_replay"
+      ],
+      "hard": false,
+      "id": "a5-pc-jungle2-natural-entry-c32-v4",
+      "kind": "pc_golden",
+      "level_id": "Jungle2",
+      "profile_mode": "tutorials_completed",
+      "random_seed": 19404125,
+      "reason": null,
+      "schema": "zuma-rl.pc-golden-manifest",
+      "source_fingerprint": "sha256:99fb0c72af99ca1781d84364b15eacbd5c0447774393d036ec6e87bea3375768",
+      "status": "PASS",
+      "supporting_source_features": [],
+      "supporting_source_fingerprints": [],
+      "tick_count": 46,
+      "unsupported_features": [],
+      "version": 4
+    },
+    {
+      "accepted": true,
+      "authorized_features": [
+        "deterministic_replay"
+      ],
+      "declared_features": [
+        "deterministic_replay"
+      ],
+      "features": [
+        "deterministic_replay"
+      ],
+      "hard": false,
+      "id": "a5b-pc-jungle2-natural-entry-c31-v4",
+      "kind": "pc_golden",
+      "level_id": "Jungle2",
+      "profile_mode": "tutorials_completed",
+      "random_seed": 19404125,
+      "reason": null,
+      "schema": "zuma-rl.pc-golden-manifest",
+      "source_fingerprint": "sha256:944cec6364ef3dfa0e4dc3042fc34a81c99b970d8dc40128d40b16dddb5f28f7",
+      "status": "PASS",
+      "supporting_source_features": [],
+      "supporting_source_fingerprints": [],
+      "tick_count": 60,
+      "unsupported_features": [],
+      "version": 4
+    },
+    {
+      "accepted": true,
+      "authorized_features": [
+        "deterministic_replay",
+        "projectile_collision",
+        "shot_release"
+      ],
+      "declared_features": [
+        "deterministic_replay",
+        "projectile_collision",
+        "shot_release"
+      ],
+      "features": [
+        "deterministic_replay",
+        "projectile_collision",
+        "shot_release"
+      ],
+      "hard": false,
+      "id": "a6-pc-jungle2-natural-entry-c35-v4",
+      "kind": "pc_golden",
+      "level_id": "Jungle2",
+      "profile_mode": "tutorials_completed",
+      "random_seed": 23557968,
+      "reason": null,
+      "schema": "zuma-rl.pc-golden-manifest",
+      "source_fingerprint": "sha256:867bc2aad347230f9cdb0579505e181fa5496151b6ed181bf64c794f8c20ad06",
+      "status": "PASS",
+      "supporting_source_features": [],
+      "supporting_source_fingerprints": [],
+      "tick_count": 72,
+      "unsupported_features": [],
+      "version": 4
+    },
+    {
+      "accepted": true,
+      "authorized_features": [
+        "deterministic_replay"
+      ],
+      "declared_features": [
+        "deterministic_replay"
+      ],
+      "features": [
+        "deterministic_replay"
+      ],
+      "hard": false,
+      "id": "a6b-pc-jungle2-natural-entry-c66-v4",
+      "kind": "pc_golden",
+      "level_id": "Jungle2",
+      "profile_mode": "tutorials_completed",
+      "random_seed": 23557968,
+      "reason": null,
+      "schema": "zuma-rl.pc-golden-manifest",
+      "source_fingerprint": "sha256:6e107f88abd569a87b3a7953a702264eea5d6d4332d5e25f2cf8b79fa8d0dedd",
+      "status": "PASS",
+      "supporting_source_features": [],
+      "supporting_source_fingerprints": [],
+      "tick_count": 22,
+      "unsupported_features": [],
+      "version": 4
+    },
+    {
+      "accepted": true,
+      "authorized_features": [
+        "deterministic_replay",
+        "front_insertion"
+      ],
+      "declared_features": [
+        "deterministic_replay",
+        "front_insertion"
+      ],
+      "features": [
+        "deterministic_replay",
+        "front_insertion"
+      ],
+      "hard": false,
+      "id": "a6c-pc-jungle2-front-insertion-c91-c92-v5",
+      "kind": "pc_golden",
+      "level_id": "Jungle2",
+      "profile_mode": "tutorials_completed",
+      "random_seed": 23557968,
+      "reason": null,
+      "schema": "zuma-rl.pc-golden-manifest",
+      "source_fingerprint": "sha256:99a1faf5540030350efe3335478c4eaab2029a41e0dfc38b56367bd948b84595",
+      "status": "PASS",
+      "supporting_source_features": [],
+      "supporting_source_fingerprints": [],
+      "tick_count": 21,
+      "unsupported_features": [],
+      "version": 5
+    },
+    {
+      "accepted": true,
+      "authorized_features": [
+        "pc_mechanism_coverage"
+      ],
+      "declared_features": [
+        "pc_mechanism_coverage"
+      ],
+      "features": [
+        "pc_mechanism_coverage"
+      ],
+      "hard": null,
+      "id": "a6d-audit-c91-front-insertion",
+      "kind": "audit",
+      "level_id": null,
+      "profile_mode": null,
+      "random_seed": null,
+      "reason": null,
+      "schema": "zuma-rl.fidelity-audit",
+      "source_fingerprint": "sha256:990e262d1fce742c52d78a8e7d1f36e1afca8072d4bada38db770013b750472a",
+      "status": "PASS",
+      "supporting_source_features": [
+        {
+          "authorized_features": [
+            "front_insertion"
+          ],
+          "source_fingerprint": "sha256:99a1faf5540030350efe3335478c4eaab2029a41e0dfc38b56367bd948b84595"
+        }
+      ],
+      "supporting_source_fingerprints": [
+        "sha256:99a1faf5540030350efe3335478c4eaab2029a41e0dfc38b56367bd948b84595"
+      ],
+      "tick_count": 0,
+      "unsupported_features": [],
+      "version": 1
+    },
+    {
+      "accepted": true,
+      "authorized_features": [
+        "deterministic_replay"
+      ],
+      "declared_features": [
+        "deterministic_replay"
+      ],
+      "features": [
+        "deterministic_replay"
+      ],
+      "hard": false,
+      "id": "a6e-pc-jungle2-natural-c105-c106-v5",
+      "kind": "pc_golden",
+      "level_id": "Jungle2",
+      "profile_mode": "tutorials_completed",
+      "random_seed": 23557968,
+      "reason": null,
+      "schema": "zuma-rl.pc-golden-manifest",
+      "source_fingerprint": "sha256:822dd82e450af23044c743eede983602b8e75d7ab9feae2635cee357e418e200",
+      "status": "PASS",
+      "supporting_source_features": [],
+      "supporting_source_fingerprints": [],
+      "tick_count": 50,
+      "unsupported_features": [],
+      "version": 5
+    },
+    {
+      "accepted": true,
+      "authorized_features": [
+        "deterministic_replay"
+      ],
+      "declared_features": [
+        "deterministic_replay"
+      ],
+      "features": [
+        "deterministic_replay"
+      ],
+      "hard": false,
+      "id": "a6f-pc-jungle2-natural-c107-c108-v5",
+      "kind": "pc_golden",
+      "level_id": "Jungle2",
+      "profile_mode": "tutorials_completed",
+      "random_seed": 23557968,
+      "reason": null,
+      "schema": "zuma-rl.pc-golden-manifest",
+      "source_fingerprint": "sha256:d2f915c4ee0d66c2d060c38cb45548a8921ef13a3b57f750ccf640f11c59bc76",
+      "status": "PASS",
+      "supporting_source_features": [],
+      "supporting_source_fingerprints": [],
+      "tick_count": 50,
+      "unsupported_features": [],
+      "version": 5
+    },
+    {
+      "accepted": true,
+      "authorized_features": [
+        "pc_mechanism_coverage"
+      ],
+      "declared_features": [
+        "pc_mechanism_coverage"
+      ],
+      "features": [
+        "pc_mechanism_coverage"
+      ],
+      "hard": null,
+      "id": "a6g-audit-c107-c108-back-insertion",
+      "kind": "audit",
+      "level_id": null,
+      "profile_mode": null,
+      "random_seed": null,
+      "reason": null,
+      "schema": "zuma-rl.fidelity-audit",
+      "source_fingerprint": "sha256:ca2467a2155139b83daad2a2acc615f6fbce01d75403c4869f72735762a43493",
+      "status": "PASS",
+      "supporting_source_features": [
+        {
+          "authorized_features": [
+            "back_insertion"
+          ],
+          "source_fingerprint": "sha256:d2f915c4ee0d66c2d060c38cb45548a8921ef13a3b57f750ccf640f11c59bc76"
+        }
+      ],
+      "supporting_source_fingerprints": [
+        "sha256:d2f915c4ee0d66c2d060c38cb45548a8921ef13a3b57f750ccf640f11c59bc76"
+      ],
+      "tick_count": 0,
+      "unsupported_features": [],
+      "version": 1
+    },
+    {
+      "accepted": true,
+      "authorized_features": [
+        "pc_mechanism_coverage"
+      ],
+      "declared_features": [
+        "pc_mechanism_coverage"
+      ],
+      "features": [
+        "pc_mechanism_coverage"
+      ],
+      "hard": null,
+      "id": "a7-audit-c35-natural-shot",
+      "kind": "audit",
+      "level_id": null,
+      "profile_mode": null,
+      "random_seed": null,
+      "reason": null,
+      "schema": "zuma-rl.fidelity-audit",
+      "source_fingerprint": "sha256:ab9d19386e97c524a1fd7c8bec48422619f6c963c31790391a4e2da74afc713f",
+      "status": "PASS",
+      "supporting_source_features": [
+        {
+          "authorized_features": [
+            "projectile_collision",
+            "shot_release"
+          ],
+          "source_fingerprint": "sha256:867bc2aad347230f9cdb0579505e181fa5496151b6ed181bf64c794f8c20ad06"
+        }
+      ],
+      "supporting_source_fingerprints": [
+        "sha256:867bc2aad347230f9cdb0579505e181fa5496151b6ed181bf64c794f8c20ad06"
+      ],
+      "tick_count": 0,
+      "unsupported_features": [],
+      "version": 1
+    },
+    {
+      "accepted": true,
+      "authorized_features": [],
+      "declared_features": [
+        "match3",
+        "match4",
+        "projectile_collision",
+        "rollback_chain",
+        "shot_release"
+      ],
+      "features": [
+        "match3",
+        "match4",
+        "projectile_collision",
+        "rollback_chain",
+        "shot_release"
+      ],
+      "hard": false,
+      "id": "b-diag-gameplay-shot3-match",
+      "kind": "diagnostic",
+      "level_id": "Jungle2",
+      "profile_mode": null,
+      "random_seed": null,
+      "reason": "diagnostic evidence is validated but cannot certify transferability",
+      "schema": "zuma-rl.pc-gameplay-simulator-diff",
+      "source_fingerprint": "sha256:61bb130c85d8702c06c934132267bc34384f15d65fa7175b3d45a0647e31bc89",
+      "status": "PASS",
+      "supporting_source_features": [],
+      "supporting_source_fingerprints": [],
+      "tick_count": 200,
+      "unsupported_features": [],
+      "version": 1
+    },
+    {
+      "accepted": true,
+      "authorized_features": [],
+      "declared_features": [
+        "natural_loss"
+      ],
+      "features": [
+        "natural_loss"
+      ],
+      "hard": false,
+      "id": "c-diag-loss-injected",
+      "kind": "diagnostic",
+      "level_id": "Jungle2",
+      "profile_mode": null,
+      "random_seed": null,
+      "reason": "diagnostic evidence is validated but cannot certify transferability",
+      "schema": "zuma-rl.pc-loss-simulator-diff",
+      "source_fingerprint": "sha256:cef001e6cf1669e7650d052f1db8e349a8925725c0df2520b670320ff63f6ddd",
+      "status": "PASS",
+      "supporting_source_features": [],
+      "supporting_source_fingerprints": [],
+      "tick_count": 177,
+      "unsupported_features": [],
+      "version": 1
+    },
+    {
+      "accepted": true,
+      "authorized_features": [
+        "back_insertion"
+      ],
+      "declared_features": [
+        "back_insertion"
+      ],
+      "features": [
+        "back_insertion"
+      ],
+      "hard": false,
+      "id": "d-sim-merge-back",
+      "kind": "simulator_diff",
+      "level_id": "Jungle2",
+      "profile_mode": null,
+      "random_seed": null,
+      "reason": null,
+      "schema": "zuma-rl.pc-merge-simulator-diff",
+      "source_fingerprint": "sha256:52a7e922290df2e020536f63ad60287611ffd1ddb0e853b09899044052554b6e",
+      "status": "PASS",
+      "supporting_source_features": [],
+      "supporting_source_fingerprints": [],
+      "tick_count": 40,
+      "unsupported_features": [],
+      "version": 1
+    },
+    {
+      "accepted": true,
+      "authorized_features": [
+        "front_insertion"
+      ],
+      "declared_features": [
+        "front_insertion"
+      ],
+      "features": [
+        "front_insertion"
+      ],
+      "hard": false,
+      "id": "d2-sim-merge-front-c91",
+      "kind": "simulator_diff",
+      "level_id": "Jungle2",
+      "profile_mode": null,
+      "random_seed": null,
+      "reason": null,
+      "schema": "zuma-rl.pc-merge-simulator-diff",
+      "source_fingerprint": "sha256:2047169b55e091eba3b1a6f231b6353670651c39b26fd233e0451e9bdae81cbc",
+      "status": "PASS",
+      "supporting_source_features": [],
+      "supporting_source_fingerprints": [],
+      "tick_count": 20,
+      "unsupported_features": [],
+      "version": 1
+    },
+    {
+      "accepted": true,
+      "authorized_features": [],
+      "declared_features": [
+        "powerup_reverse"
+      ],
+      "features": [
+        "powerup_reverse"
+      ],
+      "hard": false,
+      "id": "e-sim-powerup-activation-reverse",
+      "kind": "simulator_diff",
+      "level_id": "Jungle2",
+      "profile_mode": null,
+      "random_seed": null,
+      "reason": null,
+      "schema": "zuma-rl.pc-powerup-lifecycle-core-diff",
+      "source_fingerprint": "sha256:ea254fbb95b590e8b47f21a72da8bbd43bd7e7a4c74cdf341c2a0855308cdd82",
+      "status": "PASS",
+      "supporting_source_features": [],
+      "supporting_source_fingerprints": [],
+      "tick_count": 102,
+      "unsupported_features": [
+        "powerup_reverse"
+      ],
+      "version": 1
+    },
+    {
+      "accepted": true,
+      "authorized_features": [],
+      "declared_features": [
+        "powerup_reverse"
+      ],
+      "features": [
+        "powerup_reverse"
+      ],
+      "hard": false,
+      "id": "f-sim-powerup-lifecycle-reverse",
+      "kind": "simulator_diff",
+      "level_id": "Jungle2",
+      "profile_mode": null,
+      "random_seed": null,
+      "reason": null,
+      "schema": "zuma-rl.pc-powerup-lifecycle-core-diff",
+      "source_fingerprint": "sha256:079aac3d0c7c9a58d1e3a4ecdca072b7085c9053ae2ec6e2535d7dd68d9a2c02",
+      "status": "PASS",
+      "supporting_source_features": [],
+      "supporting_source_fingerprints": [],
+      "tick_count": 153,
+      "unsupported_features": [
+        "powerup_reverse"
+      ],
+      "version": 1
+    },
+    {
+      "accepted": true,
+      "authorized_features": [
+        "powerup_spawn"
+      ],
+      "declared_features": [
+        "powerup_spawn"
+      ],
+      "features": [
+        "powerup_spawn"
+      ],
+      "hard": false,
+      "id": "g-sim-powerup-spawn",
+      "kind": "simulator_diff",
+      "level_id": "Jungle2",
+      "profile_mode": null,
+      "random_seed": null,
+      "reason": null,
+      "schema": "zuma-rl.pc-powerup-spawn-core-diff",
+      "source_fingerprint": "sha256:fd680a6ba3150252a602dad250992a184ba0ea0d98eccbdd2a88b4e5a4898479",
+      "status": "PASS",
+      "supporting_source_features": [],
+      "supporting_source_fingerprints": [],
+      "tick_count": 0,
+      "unsupported_features": [],
+      "version": 1
+    },
+    {
+      "accepted": true,
+      "authorized_features": [
+        "rng_pending"
+      ],
+      "declared_features": [
+        "rng_pending"
+      ],
+      "features": [
+        "rng_pending"
+      ],
+      "hard": false,
+      "id": "h-sim-rng-7737",
+      "kind": "simulator_diff",
+      "level_id": "Jungle2",
+      "profile_mode": null,
+      "random_seed": null,
+      "reason": null,
+      "schema": "zuma-rl.pc-gameplay-simulator-diff",
+      "source_fingerprint": "sha256:38ffa10e82e7e105daefc1a65cfb6fdf8c4d1d5aaab36e3029ab685afa8190b6",
+      "status": "PASS",
+      "supporting_source_features": [],
+      "supporting_source_fingerprints": [],
+      "tick_count": 18,
+      "unsupported_features": [],
+      "version": 1
+    },
+    {
+      "accepted": true,
+      "authorized_features": [
+        "rng_pending"
+      ],
+      "declared_features": [
+        "rng_pending"
+      ],
+      "features": [
+        "rng_pending"
+      ],
+      "hard": false,
+      "id": "i-sim-rng-9425",
+      "kind": "simulator_diff",
+      "level_id": "Jungle2",
+      "profile_mode": null,
+      "random_seed": null,
+      "reason": null,
+      "schema": "zuma-rl.pc-gameplay-simulator-diff",
+      "source_fingerprint": "sha256:1333735e2448e87a766096f174a01f408ba67f4288bb3c6923df7dae84a958bc",
+      "status": "PASS",
+      "supporting_source_features": [],
+      "supporting_source_fingerprints": [],
+      "tick_count": 35,
+      "unsupported_features": [],
+      "version": 1
+    },
+    {
+      "accepted": true,
+      "authorized_features": [
+        "rng_pending"
+      ],
+      "declared_features": [
+        "rng_pending"
+      ],
+      "features": [
+        "rng_pending"
+      ],
+      "hard": false,
+      "id": "j-sim-rng-9910",
+      "kind": "simulator_diff",
+      "level_id": "Jungle2",
+      "profile_mode": null,
+      "random_seed": null,
+      "reason": null,
+      "schema": "zuma-rl.pc-gameplay-simulator-diff",
+      "source_fingerprint": "sha256:dee0f789d6f4030f759d009dd34558a94a8fcfb5eb84a39107193ca74d3f3f81",
+      "status": "PASS",
+      "supporting_source_features": [],
+      "supporting_source_fingerprints": [],
+      "tick_count": 32,
+      "unsupported_features": [],
+      "version": 1
+    },
+    {
+      "accepted": true,
+      "authorized_features": [
+        "input_cadence"
+      ],
+      "declared_features": [
+        "input_cadence",
+        "swap"
+      ],
+      "features": [
+        "input_cadence",
+        "swap"
+      ],
+      "hard": false,
+      "id": "k-sim-swap",
+      "kind": "simulator_diff",
+      "level_id": "Jungle2",
+      "profile_mode": null,
+      "random_seed": null,
+      "reason": null,
+      "schema": "zuma-rl.pc-gameplay-simulator-diff",
+      "source_fingerprint": "sha256:fe79880464119db38e7a713539d8d0ea1075fed679c4eca39effcfc27ac22d58",
+      "status": "PASS",
+      "supporting_source_features": [],
+      "supporting_source_fingerprints": [],
+      "tick_count": 12,
+      "unsupported_features": [
+        "swap"
+      ],
+      "version": 1
+    },
+    {
+      "accepted": false,
+      "authorized_features": [],
+      "declared_features": [
+        "actor_no_hidden_state"
+      ],
+      "features": [
+        "actor_no_hidden_state"
+      ],
+      "hard": null,
+      "id": "l-audit-actor-hidden-state",
+      "kind": "audit",
+      "level_id": null,
+      "profile_mode": null,
+      "random_seed": null,
+      "reason": "actor audit fingerprint differs from the live implementation",
+      "schema": "zuma-rl.fidelity-audit",
+      "source_fingerprint": "sha256:6094ae5616a885214b4b16520fa1635121829702f39062e1b44efece22e3d5e7",
+      "status": "PASS",
+      "supporting_source_features": [],
+      "supporting_source_fingerprints": [],
+      "tick_count": 0,
+      "unsupported_features": [],
+      "version": 1
+    },
+    {
+      "accepted": true,
+      "authorized_features": [
+        "input_cadence",
+        "projectile_collision",
+        "shot_release"
+      ],
+      "declared_features": [
+        "input_cadence",
+        "projectile_collision",
+        "shot_release"
+      ],
+      "features": [
+        "input_cadence",
+        "projectile_collision",
+        "shot_release"
+      ],
+      "hard": false,
+      "id": "m-sim-shot-hit-u11190",
+      "kind": "simulator_diff",
+      "level_id": "Jungle2",
+      "profile_mode": null,
+      "random_seed": null,
+      "reason": null,
+      "schema": "zuma-rl.pc-gameplay-simulator-diff",
+      "source_fingerprint": "sha256:77b15d3f79b8b71952da10777ad8b9819f640f05a071ae994dde6d207272e841",
+      "status": "PASS",
+      "supporting_source_features": [],
+      "supporting_source_fingerprints": [],
+      "tick_count": 170,
+      "unsupported_features": [],
+      "version": 1
+    },
+    {
+      "accepted": true,
+      "authorized_features": [
+        "input_cadence",
+        "projectile_collision",
+        "shot_release"
+      ],
+      "declared_features": [
+        "input_cadence",
+        "projectile_collision",
+        "shot_release"
+      ],
+      "features": [
+        "input_cadence",
+        "projectile_collision",
+        "shot_release"
+      ],
+      "hard": false,
+      "id": "n-sim-c35-natural-shot-bounded",
+      "kind": "simulator_diff",
+      "level_id": "Jungle2",
+      "profile_mode": null,
+      "random_seed": null,
+      "reason": null,
+      "schema": "zuma-rl.pc-gameplay-simulator-diff",
+      "source_fingerprint": "sha256:8315bd73d1b2e9c1dc308d8fb436f86ad2b918a5f5f1c11bf50d87b6a6bb15cd",
+      "status": "PASS",
+      "supporting_source_features": [],
+      "supporting_source_fingerprints": [],
+      "tick_count": 34,
+      "unsupported_features": [],
+      "version": 1
+    }
+  ],
+  "policy": "original-transfer-jungle2-v1",
+  "reasons": [
+    "missing certifying evidence: back_insertion",
+    "missing certifying evidence: gap_shot",
+    "missing certifying evidence: input_cadence",
+    "missing certifying evidence: match3",
+    "missing certifying evidence: match4",
+    "missing certifying evidence: natural_loss",
+    "missing certifying evidence: natural_win",
+    "missing certifying evidence: powerup_proximity_bomb",
+    "missing certifying evidence: powerup_reverse",
+    "missing certifying evidence: powerup_slow",
+    "missing certifying evidence: powerup_spawn",
+    "missing certifying evidence: rng_pending",
+    "missing certifying evidence: rng_rejection",
+    "missing certifying evidence: rollback_chain",
+    "missing certifying evidence: swap",
+    "missing certifying evidence: tunnel_collision",
+    "missing certifying evidence: zuma_transition",
+    "missing certifying evidence: long_horizon_drift",
+    "missing certifying evidence: actor_no_hidden_state",
+    "missing certifying evidence: actor_visual_derivability",
+    "a-pc-jungle2-shot-v4: PC Golden verifier returned FAIL: certification requires a provenance-bound raw retail recording and exact startup transport normalization",
+    "a2-pc-jungle2-natural-ingress-v4: PC Golden verifier returned FAIL: certification requires a provenance-bound raw retail recording and exact startup transport normalization",
+    "a3-pc-jungle2-powerup-spawn-v5: PC Golden verifier returned FAIL: certification requires a provenance-bound raw retail recording and exact startup transport normalization",
+    "e-sim-powerup-activation-reverse: unsupported evidence feature claim(s): powerup_reverse",
+    "f-sim-powerup-lifecycle-reverse: unsupported evidence feature claim(s): powerup_reverse",
+    "k-sim-swap: unsupported evidence feature claim(s): swap",
+    "l-audit-actor-hidden-state: actor audit fingerprint differs from the live implementation"
+  ],
+  "requirements": [
+    {
+      "accepted": {
+        "audit": 0,
+        "pc_golden": 0,
+        "simulator_diff": 1
+      },
+      "feature": "back_insertion",
+      "minimum_ticks": 0,
+      "required": {
+        "audit": 0,
+        "pc_golden": 1,
+        "simulator_diff": 1
+      },
+      "status": "MISSING"
+    },
+    {
+      "accepted": {
+        "audit": 0,
+        "pc_golden": 1,
+        "simulator_diff": 1
+      },
+      "feature": "front_insertion",
+      "minimum_ticks": 0,
+      "required": {
+        "audit": 0,
+        "pc_golden": 1,
+        "simulator_diff": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "accepted": {
+        "audit": 0,
+        "pc_golden": 0,
+        "simulator_diff": 0
+      },
+      "feature": "gap_shot",
+      "minimum_ticks": 0,
+      "required": {
+        "audit": 0,
+        "pc_golden": 1,
+        "simulator_diff": 1
+      },
+      "status": "MISSING"
+    },
+    {
+      "accepted": {
+        "audit": 0,
+        "pc_golden": 0,
+        "simulator_diff": 3
+      },
+      "feature": "input_cadence",
+      "minimum_ticks": 0,
+      "required": {
+        "audit": 0,
+        "pc_golden": 1,
+        "simulator_diff": 1
+      },
+      "status": "MISSING"
+    },
+    {
+      "accepted": {
+        "audit": 0,
+        "pc_golden": 0,
+        "simulator_diff": 0
+      },
+      "feature": "match3",
+      "minimum_ticks": 0,
+      "required": {
+        "audit": 0,
+        "pc_golden": 1,
+        "simulator_diff": 1
+      },
+      "status": "MISSING"
+    },
+    {
+      "accepted": {
+        "audit": 0,
+        "pc_golden": 0,
+        "simulator_diff": 0
+      },
+      "feature": "match4",
+      "minimum_ticks": 0,
+      "required": {
+        "audit": 0,
+        "pc_golden": 1,
+        "simulator_diff": 1
+      },
+      "status": "MISSING"
+    },
+    {
+      "accepted": {
+        "audit": 0,
+        "pc_golden": 0,
+        "simulator_diff": 0
+      },
+      "feature": "natural_loss",
+      "minimum_ticks": 0,
+      "required": {
+        "audit": 0,
+        "pc_golden": 1,
+        "simulator_diff": 1
+      },
+      "status": "MISSING"
+    },
+    {
+      "accepted": {
+        "audit": 0,
+        "pc_golden": 0,
+        "simulator_diff": 0
+      },
+      "feature": "natural_win",
+      "minimum_ticks": 0,
+      "required": {
+        "audit": 0,
+        "pc_golden": 1,
+        "simulator_diff": 1
+      },
+      "status": "MISSING"
+    },
+    {
+      "accepted": {
+        "audit": 0,
+        "pc_golden": 0,
+        "simulator_diff": 0
+      },
+      "feature": "powerup_proximity_bomb",
+      "minimum_ticks": 0,
+      "required": {
+        "audit": 0,
+        "pc_golden": 1,
+        "simulator_diff": 1
+      },
+      "status": "MISSING"
+    },
+    {
+      "accepted": {
+        "audit": 0,
+        "pc_golden": 0,
+        "simulator_diff": 0
+      },
+      "feature": "powerup_reverse",
+      "minimum_ticks": 0,
+      "required": {
+        "audit": 0,
+        "pc_golden": 1,
+        "simulator_diff": 1
+      },
+      "status": "MISSING"
+    },
+    {
+      "accepted": {
+        "audit": 0,
+        "pc_golden": 0,
+        "simulator_diff": 0
+      },
+      "feature": "powerup_slow",
+      "minimum_ticks": 0,
+      "required": {
+        "audit": 0,
+        "pc_golden": 1,
+        "simulator_diff": 1
+      },
+      "status": "MISSING"
+    },
+    {
+      "accepted": {
+        "audit": 0,
+        "pc_golden": 0,
+        "simulator_diff": 1
+      },
+      "feature": "powerup_spawn",
+      "minimum_ticks": 0,
+      "required": {
+        "audit": 0,
+        "pc_golden": 1,
+        "simulator_diff": 1
+      },
+      "status": "MISSING"
+    },
+    {
+      "accepted": {
+        "audit": 0,
+        "pc_golden": 1,
+        "simulator_diff": 2
+      },
+      "feature": "projectile_collision",
+      "minimum_ticks": 0,
+      "required": {
+        "audit": 0,
+        "pc_golden": 1,
+        "simulator_diff": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "accepted": {
+        "audit": 0,
+        "pc_golden": 0,
+        "simulator_diff": 3
+      },
+      "feature": "rng_pending",
+      "minimum_ticks": 0,
+      "required": {
+        "audit": 0,
+        "pc_golden": 1,
+        "simulator_diff": 1
+      },
+      "status": "MISSING"
+    },
+    {
+      "accepted": {
+        "audit": 0,
+        "pc_golden": 0,
+        "simulator_diff": 0
+      },
+      "feature": "rng_rejection",
+      "minimum_ticks": 0,
+      "required": {
+        "audit": 0,
+        "pc_golden": 1,
+        "simulator_diff": 1
+      },
+      "status": "MISSING"
+    },
+    {
+      "accepted": {
+        "audit": 0,
+        "pc_golden": 0,
+        "simulator_diff": 0
+      },
+      "feature": "rollback_chain",
+      "minimum_ticks": 0,
+      "required": {
+        "audit": 0,
+        "pc_golden": 1,
+        "simulator_diff": 1
+      },
+      "status": "MISSING"
+    },
+    {
+      "accepted": {
+        "audit": 0,
+        "pc_golden": 1,
+        "simulator_diff": 2
+      },
+      "feature": "shot_release",
+      "minimum_ticks": 0,
+      "required": {
+        "audit": 0,
+        "pc_golden": 1,
+        "simulator_diff": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "accepted": {
+        "audit": 0,
+        "pc_golden": 0,
+        "simulator_diff": 0
+      },
+      "feature": "swap",
+      "minimum_ticks": 0,
+      "required": {
+        "audit": 0,
+        "pc_golden": 1,
+        "simulator_diff": 1
+      },
+      "status": "MISSING"
+    },
+    {
+      "accepted": {
+        "audit": 0,
+        "pc_golden": 0,
+        "simulator_diff": 0
+      },
+      "feature": "tunnel_collision",
+      "minimum_ticks": 0,
+      "required": {
+        "audit": 0,
+        "pc_golden": 1,
+        "simulator_diff": 1
+      },
+      "status": "MISSING"
+    },
+    {
+      "accepted": {
+        "audit": 0,
+        "pc_golden": 0,
+        "simulator_diff": 0
+      },
+      "feature": "zuma_transition",
+      "minimum_ticks": 0,
+      "required": {
+        "audit": 0,
+        "pc_golden": 1,
+        "simulator_diff": 1
+      },
+      "status": "MISSING"
+    },
+    {
+      "accepted": {
+        "audit": 0,
+        "pc_golden": 8,
+        "simulator_diff": 0
+      },
+      "feature": "deterministic_replay",
+      "minimum_ticks": 0,
+      "required": {
+        "audit": 0,
+        "pc_golden": 1,
+        "simulator_diff": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "accepted": {
+        "audit": 0,
+        "pc_golden": 0,
+        "simulator_diff": 0
+      },
+      "feature": "long_horizon_drift",
+      "minimum_ticks": 500,
+      "required": {
+        "audit": 0,
+        "pc_golden": 1,
+        "simulator_diff": 1
+      },
+      "status": "MISSING"
+    },
+    {
+      "accepted": {
+        "audit": 0,
+        "pc_golden": 0,
+        "simulator_diff": 0
+      },
+      "feature": "actor_no_hidden_state",
+      "minimum_ticks": 0,
+      "required": {
+        "audit": 1,
+        "pc_golden": 0,
+        "simulator_diff": 0
+      },
+      "status": "MISSING"
+    },
+    {
+      "accepted": {
+        "audit": 0,
+        "pc_golden": 0,
+        "simulator_diff": 0
+      },
+      "feature": "actor_visual_derivability",
+      "minimum_ticks": 0,
+      "required": {
+        "audit": 1,
+        "pc_golden": 1,
+        "simulator_diff": 0
+      },
+      "status": "MISSING"
+    }
+  ],
+  "schema": "zuma-rl.fidelity-gate-report",
+  "status": "CLOSED",
+  "summary": {
+    "accepted_pc_golden_cases": 8,
+    "accepted_random_seed_count": 3,
+    "accepted_simulator_diff_cases": 9,
+    "diagnostic_only_cases": 2,
+    "gate_open": false,
+    "scope": {
+      "curve_count": 1,
+      "environment_id": "ZumaRevenge-v0",
+      "hard": false,
+      "levels": [
+        "Jungle2"
+      ],
+      "observation_mode": "actor",
+      "profile_mode": "tutorials_completed"
+    }
+  },
+  "version": 1
+}

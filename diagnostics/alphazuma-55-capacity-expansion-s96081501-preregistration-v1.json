@@ -1,0 +1,191 @@
+{
+  "schema": "zuma-rl.alphazuma-55-capacity-expansion-preregistration",
+  "version": 2,
+  "status": "FROZEN_BEFORE_HARD_FRONTIER_TRAINING",
+  "created_utc": "2026-08-15T05:53:58.472986+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "objective": "Use remaining verified compute headroom for one preregistered hard-frontier rescue route while preserving the single-policy objective and every formal evaluation semantic.",
+  "supersedes_capacity_expansion": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-capacity-expansion-s93081501-preregistration-v1.json",
+    "sha256": "sha256:b9c30b9eb795c2a2f14a12258025ea6b87870e67f2c88fd013432f5e188eb743",
+    "reason": "The five-route expansion remains valid, but the newly frozen sixth route requires a new route registry and unique postprocess outputs before it starts training."
+  },
+  "authorization": {
+    "user_authorized_additional_load": true,
+    "training_gpu_power_limits_watts": {
+      "cuda:0": 550,
+      "cuda:1": 250
+    },
+    "power_limits_may_not_be_raised_by_this_expansion": true
+  },
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "predecision_evidence": {
+    "observed_utc": "2026-08-15T05:53:58.472986+00:00",
+    "formal_controller_phase": "WAITING_FOR_TRAINING",
+    "formal_selection_final_and_continuous_roots_absent": true,
+    "formal_seed_consumption_before_decision": false,
+    "gpu_power_limits_watts": {
+      "cuda:0": 550,
+      "cuda:1": 250
+    },
+    "windows_power_plan_guid": "8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c",
+    "frontier_interpretation": "Across the five active routes, many later levels had substantial episode counts but no observed training win; the bottleneck is curriculum frontier access rather than only aggregate sampling volume."
+  },
+  "hard_frontier_decision": {
+    "analysis": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-hard-frontier-analysis-s95081501-v1.json",
+      "sha256": "sha256:49ae136c38458fe0f452975257085ccdaee765a7e35cbcf517f7a2cc6766572e",
+      "status": "FROZEN_BEFORE_SOURCE_CHECKPOINT"
+    },
+    "source_checkpoint": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-v1-frontier-s87081501-v1/checkpoints/alphazuma55-v1-frontier-5080_4194304_steps.zip",
+      "sha256": "sha256:4324ccf39b822ad946359e34c73a1afe62c7f00d73d4a2d1375a5b9e64a955bc",
+      "training_steps": 4194304,
+      "existed_only_after_the_analysis_was_frozen": true
+    },
+    "route": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-v1-hard-frontier-rescue-s89081501-preregistration-v1.json",
+      "sha256": "sha256:524330741123505a13cb447d80f791c07c11c6f0df085fe50f7a581f75077124",
+      "run_id": "alphazuma55-v1-hard-frontier-rescue-5090",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-v1-hard-frontier-rescue-s89081501-v1",
+      "device": "cuda:0",
+      "model_seed": 89081501,
+      "episode_seed_first": 1538000000,
+      "episode_seed_last": 1541999999,
+      "source_model_training_steps": 17825792
+    },
+    "validate_only": {
+      "status": "VALID",
+      "levels_verified": 55,
+      "observation_shape": [22833],
+      "action_nvec": [4, 180],
+      "base_environment_unchanged": true,
+      "observation_space_unchanged": true,
+      "action_space_unchanged": true,
+      "formal_seed_consumption": false
+    }
+  },
+  "route_registry": [
+    {
+      "role": "speed_frontier",
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-speed-frontier-s83081501-preregistration-v1.json",
+      "sha256": "sha256:da146c52314fa7c9b30398acc484b1f2f6442b61d22f4cb2a4772ca581d3e22f",
+      "run_id": "alphazuma55-speed-frontier-5090",
+      "episode_seed_first": 1500000000,
+      "episode_seed_last": 1505999999
+    },
+    {
+      "role": "v11_balanced",
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-v11-balanced-s84081501-preregistration-v1.json",
+      "sha256": "sha256:d7f6e4eb65e9e31c34b54d97828a33ae5df3ab5c2fa09b111a83ffef8e4b7b23",
+      "run_id": "alphazuma55-v11-balanced-5080",
+      "episode_seed_first": 1510000000,
+      "episode_seed_last": 1513999999
+    },
+    {
+      "role": "v1_frontier",
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-v1-frontier-s87081501-preregistration-v1.json",
+      "sha256": "sha256:81decbb22039957342d1419efbd4a53f4ddf70147b6f96a50e91fab62de19fbe",
+      "run_id": "alphazuma55-v1-frontier-5080",
+      "episode_seed_first": 1514000000,
+      "episode_seed_last": 1517999999
+    },
+    {
+      "role": "distilled_frontier",
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-distilled-ppo-s86081501-preregistration-v1.json",
+      "sha256": "sha256:6796be4cb62b376a5d462af4ea9c52b368db95836a9ce4ea043595063bfffd7c",
+      "run_id": "alphazuma55-distilled-frontier-5090",
+      "episode_seed_first": 1530000000,
+      "episode_seed_last": 1533999999
+    },
+    {
+      "role": "v1_frontier_replicate",
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-v1-frontier-replicate-s88081501-preregistration-v1.json",
+      "sha256": "sha256:3044c0c33a44230cc9aa0f4207ad043dd2c6b0f09746970e5c336b93bb22ab6a",
+      "run_id": "alphazuma55-v1-frontier-replicate-5090",
+      "episode_seed_first": 1534000000,
+      "episode_seed_last": 1537999999
+    },
+    {
+      "role": "v1_hard_frontier_rescue",
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-v1-hard-frontier-rescue-s89081501-preregistration-v1.json",
+      "sha256": "sha256:524330741123505a13cb447d80f791c07c11c6f0df085fe50f7a581f75077124",
+      "run_id": "alphazuma55-v1-hard-frontier-rescue-5090",
+      "episode_seed_first": 1538000000,
+      "episode_seed_last": 1541999999
+    }
+  ],
+  "route_registry_contract": {
+    "registered_route_count": 6,
+    "all_route_ids_unique": true,
+    "all_training_seed_namespaces_pairwise_disjoint": true,
+    "all_six_routes_enter_candidate_generation_regardless_of_training_outcome": true,
+    "a_failed_route_is_recorded_without_replacement": true
+  },
+  "training_contract": {
+    "hard_frontier_route_starts_only_after_this_file_is_frozen": true,
+    "no_in_place_change_to_the_other_five_routes": true,
+    "same_training_stop_utc": "2026-08-17T09:30:00Z",
+    "failure_is_recorded_without_replacement_or_hidden_restart": true,
+    "recoverable_process_restart_must_use_the_exact_frozen_route": true
+  },
+  "postprocess_supersession": {
+    "current_deployment": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-deployment-s88081503-preregistration-v1.json",
+      "sha256": "sha256:beb1876545ecf80db4b1e3424b4e5ccade6cec179952350bd7d4e676a2ad6122"
+    },
+    "unmaterialized_five_route_outputs_superseded": {
+      "postprocess": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-s89081703-preregistration-v1.json",
+      "deployment": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-deployment-s88081504-preregistration-v1.json",
+      "all_paths_absent_at_this_freeze": true
+    },
+    "new_postprocess_preregistration": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-s89081704-preregistration-v1.json",
+    "new_deployment_preregistration": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-deployment-s88081505-preregistration-v1.json",
+    "new_deployment_output_root": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/postprocess-deployment-s88081505-v1",
+    "new_formal_outputs": {
+      "controller": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/postprocess-s89081704-v1",
+      "selection": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/selection-s89081704-v1",
+      "final_blind": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/final-blind-s89081704-v1",
+      "continuous": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/continuous-s89081704-v1"
+    },
+    "new_independent_audit_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-independent-final-audit-s89081704-v1.json",
+    "registered_route_count": 6,
+    "all_six_routes_must_be_included_before_any_formal_seed": true,
+    "all_three_migration_baselines_unchanged": true,
+    "selection_and_final_ranking_rules_unchanged": true,
+    "selection_final_and_continuous_seed_ranges_unchanged": true,
+    "environment_and_human_input_contract_unchanged": true,
+    "evaluation_parallelism_unchanged": true,
+    "training_stop_and_final_deadline_unchanged": true,
+    "gpu_and_windows_power_restoration_contract_unchanged": true
+  },
+  "safe_switch_gate": {
+    "wait_for_milestone_controller_to_reach_terminal_complete_or_error": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/distilled-milestone-controller-s92081502-v1/controller_status.json",
+    "old_controller_must_still_equal": "WAITING_FOR_TRAINING",
+    "old_selection_final_and_continuous_roots_must_be_absent": true,
+    "save_old_controller_and_deployer_status_hashes": true,
+    "stop_old_controller_and_deployer_before_starting_new_deployer": true,
+    "verify_old_processes_absent": true,
+    "write_immutable_withdrawal_receipt": true,
+    "validate_new_postprocess_and_deployment_before_launch": true,
+    "never_run_old_and_new_formal_evaluations_concurrently": true
+  },
+  "formal_seed_embargo": {
+    "selection": [1600000000, 1600000219],
+    "final_blind": [1700000000, 1700000439],
+    "continuous": [1800000000, 1800000219],
+    "must_remain_unconsumed_until_all_six_candidate_route_hashes_are_frozen": true
+  },
+  "authority_boundary": {
+    "may_add_the_exact_registered_hard_frontier_route": true,
+    "may_supersede_the_waiting_postprocess_before_formal_seeds": true,
+    "may_not_add_a_seventh_route_without_another_frozen_decision": true,
+    "may_not_change_reward_or_environment": true,
+    "may_not_change_any_gate_or_ranking": true,
+    "may_not_use_training_or_validation_results_to_remove_a_registered_route": true,
+    "may_not_claim_training_coverage_as_final_55_level_success": true
+  }
+}

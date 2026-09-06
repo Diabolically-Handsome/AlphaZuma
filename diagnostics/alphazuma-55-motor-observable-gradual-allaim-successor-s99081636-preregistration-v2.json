@@ -1,0 +1,222 @@
+{
+  "schema": "zuma-rl.alphazuma-55-motor-observable-successor-master",
+  "version": 1,
+  "status": "FROZEN_BEFORE_ENGINEERING_RESULT",
+  "campaign_id": "alphazuma-55-motor-observable-gradual-allaim-successor-s99081636-v2",
+  "created_utc": "2026-08-16T14:34:29.992723+00:00",
+  "deadline_utc": "2026-08-17T15:00:00Z",
+  "deadline_local": "2026-08-17 11:00 America/Toronto",
+  "objective": {
+    "one_frozen_policy_file": true,
+    "runtime_model_switching_forbidden": true,
+    "per_level_weight_routing_forbidden": true,
+    "simulator_state_policy": true,
+    "visual_frontend_in_scope": false,
+    "original_client_world_record_claim": false,
+    "target": "Certify one all-actions motor policy on all 55 included levels and four continuous no-retry campaigns."
+  },
+  "scope": {
+    "retail_ordinary_adventure_level_count": 60,
+    "included_level_count": 55,
+    "included_levels": [
+      "Jungle1",
+      "Jungle2",
+      "Jungle3",
+      "Jungle4",
+      "jungle6",
+      "Jungle7",
+      "Jungle8",
+      "Jungle9",
+      "Jungle10",
+      "village1",
+      "village2",
+      "village3",
+      "village4",
+      "village5",
+      "village6",
+      "village7",
+      "village8",
+      "village10",
+      "city1",
+      "city2",
+      "city3",
+      "city4",
+      "city5",
+      "city6",
+      "city7",
+      "city9",
+      "city10",
+      "Coast1",
+      "Coast2",
+      "Coast3",
+      "Coast4",
+      "Coast5",
+      "Coast6",
+      "Coast7",
+      "Coast9",
+      "Coast10",
+      "grotto1",
+      "grotto2",
+      "grotto3",
+      "grotto4",
+      "grotto5",
+      "grotto6",
+      "grotto7",
+      "grotto9",
+      "grotto10",
+      "volcano1",
+      "volcano2",
+      "volcano3",
+      "volcano4",
+      "volcano5",
+      "volcano6",
+      "volcano7",
+      "volcano8",
+      "volcano9",
+      "volcano10"
+    ],
+    "excluded_moving_frog_levels": [
+      "Jungle5",
+      "village9",
+      "city8",
+      "Coast8",
+      "grotto8"
+    ],
+    "included_dual_position_levels": [
+      "village3",
+      "city3",
+      "Coast3",
+      "Coast10",
+      "grotto3",
+      "volcano3"
+    ],
+    "bosses_excluded": true
+  },
+  "original_root": "/mnt/d/SteamLibrary/steamapps/common/Zuma's Revenge",
+  "environment_template": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-wide-validation-s99081544-preregistration-v1.json",
+    "sha256": "sha256:38485e9bd6f3f21f7e4250c53b699a251a86581fbbeea4e72fb1ef2e89b99787"
+  },
+  "engineering": {
+    "plan": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-allaim-postprocess-s99081634-plan-v2.json",
+      "sha256": "sha256:88d7c794cc4285db7e769e01ea14ca4f742293cee73050ad1143be1777328c01"
+    },
+    "independent_audit": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-allaim-postprocess-s99081634-independent-audit-v2.json",
+    "promotion_gate": {
+      "minimum_wins": 35,
+      "minimum_cleared_levels": 35,
+      "must_be_promotable_motor_checkpoint": true,
+      "evaluated_before_formal_seed_consumption": true,
+      "failure_action": "write COMPLETE_NO_PROMOTION and leave both formal ranges unconsumed"
+    }
+  },
+  "seed_registry": {
+    "final_blind": {
+      "first": 3700000000,
+      "last": 3700000439,
+      "matrix": "55 levels x 8 attempts for one frozen policy",
+      "embargo_until_engineering_promotion_is_frozen": true
+    },
+    "continuous_campaign_challenge": {
+      "first": 3800000000,
+      "last": 3800000219,
+      "matrix": "4 campaigns x 55 levels for one frozen policy",
+      "embargo_until_policy_hash_is_frozen": true
+    }
+  },
+  "formal_seed_registry": {
+    "predecessor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-formal-seed-registry-s99081632-v6.json",
+      "sha256": "sha256:9c079b5de166623b112864547e4e6f040c29680593dedbb53bde5a5da04e7db3"
+    },
+    "active_registry_path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-formal-seed-registry-s99081641-v8.json",
+    "active_registry_must_bind_this_master_before_controller_launch": true
+  },
+  "formal_gates": {
+    "single_policy_capability_gate": {
+      "levels_cleared": 55,
+      "minimum_wins_per_level": 1,
+      "total_wins": 220,
+      "attempts": 440
+    },
+    "continuous_full_game_gate": {
+      "campaigns_cleared": 1,
+      "campaigns_attempted": 4,
+      "no_retry": true,
+      "no_model_change": true
+    }
+  },
+  "execution": {
+    "shard_count": 2,
+    "devices": [
+      "cuda:0",
+      "cuda:1"
+    ],
+    "parallel_envs_per_shard": 24,
+    "final_blind_attempts_per_level": 8,
+    "continuous_campaigns": 4
+  },
+  "power_policy": {
+    "rtx_5090_limit_watts": 550,
+    "rtx_5080_limit_watts": 250,
+    "does_not_authorize_early_power_restore": true
+  },
+  "implementation": {
+    "master_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_motor_observable_gradual_allaim_successor_master_v2.py",
+      "sha256": "sha256:ff0431b2f3dc50ec384312ca27fa65def86dda370fd001bcd4b4260958a4caa2"
+    },
+    "controller": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_motor_observable_gradual_allaim_successor_v2.py",
+      "sha256": "sha256:c88aff4a221f20dcab6c1dac23da1cd23e8faa701a6073e819fbe6dd5a138015"
+    },
+    "independent_auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_motor_observable_gradual_allaim_successor_v2.py",
+      "sha256": "sha256:a1ad2a0141902e11602408a25baf091b8bbf63071475aa798b51eaf2bf2d0cce"
+    },
+    "evaluator": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_alphazuma_55_motor_observable.py",
+      "sha256": "sha256:ca792c154864aa5dbfc3ad19460dee2ef9ea55aedecf69ba8e7b40b50f8d4fca"
+    },
+    "evaluation_helper": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_overnight_v11_postprocess.py",
+      "sha256": "sha256:1f8ce2067be93b001d182f8c22018ad3b2a0fb5e5c051b9a60f9a18de66c1a0e"
+    },
+    "matrix_auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_v11_frontier_result.py",
+      "sha256": "sha256:a37ea47134610ec2824c1774d98afa84ff9025f7aa3b4d7235414feec6e45b34"
+    },
+    "summarizer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/summarize_multimodel_evaluation.py",
+      "sha256": "sha256:e7096d86aa06cb26abc781977ec4448a7715a6bcb7023d0596870b3baf7e00a6"
+    },
+    "engineering_controller": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_motor_observable_gradual_allaim_postprocess_v2.py",
+      "sha256": "sha256:7115b39982c2c8fc7e5228077be6197b071878e7acd6c720845d7846ce5ca61f"
+    },
+    "engineering_auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_motor_observable_gradual_allaim_postprocess_v2.py",
+      "sha256": "sha256:c2ba4bc1c3ca28576b860a46fb20c61d863afc21d71056a15ad7b2b717f1e031"
+    }
+  },
+  "outputs": {
+    "root": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-allaim-successor-s99081636-v2",
+    "controller": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-allaim-successor-s99081636-v2/controller",
+    "final_blind": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-allaim-successor-s99081636-v2/final-blind",
+    "continuous": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-allaim-successor-s99081636-v2/continuous",
+    "independent_audit_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-allaim-successor-s99081636-independent-audit-v2.json"
+  },
+  "authority_boundary": {
+    "engineering_result_unseen_at_freeze": true,
+    "formal_seeds_embargoed_until_promotion_decision": true,
+    "negative_results_retained": true,
+    "power_restore_authority": false
+  },
+  "reader_lineage": {
+    "engineering_timeout_reader": "canonical_v2",
+    "formal_matrix_reader_already_supported_null_timeout": true,
+    "formal_gate_changed": false,
+    "formal_seed_ranges_changed": false
+  }
+}

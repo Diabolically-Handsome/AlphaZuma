@@ -1,0 +1,125 @@
+{
+  "schema": "zuma-rl.retail-fruit-bomb-cycle-alignment-locator-analysis",
+  "version": 1,
+  "status": "PASS_LOCATOR_PENDING_FORMAL_SOURCE",
+  "created_utc": "2026-08-10T15:10:01.7115249Z",
+  "classification": "selection-conditioned-original-retail-locator-not-mechanism-proof-not-pc-golden",
+  "parents": {
+    "controller_qualification": {
+      "path": "diagnostics/c180-fruit-bomb-cycle-alignment-controller-qualification-v1.json",
+      "sha256": "sha256:b3d52e807b046bd40880a05bdcd6b4f59c2f66cb2bd39c4e4062d277f6e6955b"
+    },
+    "ensemble_preregistration": {
+      "path": "diagnostics/recording-c181-fruit-bomb-cycle-alignment-ensemble-preregistration-v1.json",
+      "sha256": "sha256:3e898d7f8a62d233052dec3205351e603892561e6cc2750da0205c9cf1c92e42"
+    },
+    "ensemble_execution_receipt": {
+      "path": "diagnostics/recording-c181-fruit-bomb-cycle-alignment-ensemble-execution-receipt-v1.json",
+      "sha256": "sha256:f76498b667920967d4f6724728a9fa55e1cf8fcd85a032a3ffe5255e3f469d9d",
+      "all_eight_integrity_passed_before_analysis": true
+    }
+  },
+  "run_fields": [
+    "id",
+    "decision_count",
+    "observation_count",
+    "fruit_active_ticks",
+    "bomb_active_ticks",
+    "temporal_overlap_ticks",
+    "strict_overlap_ticks",
+    "defer_decisions",
+    "trigger_decisions",
+    "fruit_collection_transition_count",
+    "unique_bomb_ids"
+  ],
+  "runs": [
+    ["c181a1", 84, 1533, 1129, 939, 535, 386, 3, 3, 1, [87]],
+    ["c181a2", 51, 497, 104, 497, 104, 0, 1, 0, 0, [78]],
+    ["c181a3", 37, 612, 612, 0, 0, 0, 0, 0, 0, []],
+    ["c181a4", 80, 2178, 646, 1532, 0, 0, 0, 0, 0, [145]],
+    ["c181a5", 52, 586, 78, 586, 78, 6, 1, 0, 1, [84]],
+    ["c181a6", 72, 1758, 638, 1202, 82, 0, 1, 0, 1, [25]],
+    ["c181a7", 129, 1487, 0, 1487, 0, 0, 0, 0, 0, [210]],
+    ["c181a8", 74, 1939, 590, 1349, 0, 0, 0, 0, 0, [147]]
+  ],
+  "selection": {
+    "rule": "earliest frozen-order integrity-passing run with a trigger locator",
+    "selected_run": "c181a1",
+    "selected_root": "D:/ZumaGolden/record-c181a1-fruit-bomb-cycle-alignment-v1",
+    "autoplay_bytes": 1383497,
+    "autoplay_sha256": "sha256:553ee006b4420dae7da96f89fd84db786c64e23467f86781bc90505edcdc49b2",
+    "dmo_bytes": 22093,
+    "dmo_sha256": "sha256:f0feb5419ce82831fa9a884e403d1295952016fbb7a7e08972cffb85bfc5eabd",
+    "frequency_claim": false
+  },
+  "selected_locator": {
+    "natural_bomb_ball_id": 87,
+    "bomb_observed_native_tick_range": [3836, 5245],
+    "bomb_initial_and_final_curve_distance": [1343.0, 1156.0],
+    "fruit_point_index": 1,
+    "fruit_expiry_time": 5443,
+    "fruit_observed_native_tick_range": [4453, 5232],
+    "defer_decision_native_ticks": [4511, 4597, 4675],
+    "strict_overlap_first_native_tick": 4644,
+    "strict_overlap_observation_count": 386,
+    "trigger_decision_native_ticks": [4754, 5009, 5109],
+    "trigger_bomb_ball_ids": [87, 87, 87],
+    "collection_transition": {
+      "before_native_tick": 5206,
+      "after_native_tick": 5207,
+      "same_fruit_expiry_time": 5443,
+      "collecting_before": false,
+      "collecting_after": true,
+      "score_before": 9840,
+      "score_after": 10430,
+      "observed_total_score_delta": 590,
+      "bomb_ball_id_before_and_after": 87,
+      "bomb_curve_distance_before_and_after": 1156.0,
+      "bomb_static_point_distance_squared_before_and_after": 199.76686198357493,
+      "strict_radius_squared": 11664.0,
+      "bomb_powerup_lifetime_before_after": [629, 628],
+      "bomb_powerup_transition_before_after": [0, 0]
+    },
+    "framework_mapping_locator": {
+      "target_framework_update": 8234,
+      "source": "global wrapper-entry trace rows with native_game_time 5207",
+      "same_update_score_samples": [10340, 10430],
+      "interpretation": "compatible with a 500-point fruit collection plus 90 points of simultaneous chain effects; exact ordering and cause remain pending full-state derivation"
+    }
+  },
+  "nonselected_collection_transitions": [
+    {
+      "run": "c181a5",
+      "native_ticks": [2648, 2649],
+      "score_delta": 500,
+      "bomb_distance_squared_before": 36141.584524452686,
+      "classification": "ordinary-projectile-compatible acquisition history, no trigger locator"
+    },
+    {
+      "run": "c181a6",
+      "native_ticks": [2883, 2884],
+      "score_delta": 500,
+      "bomb_distance_squared_before": 26727.50969631318,
+      "classification": "ordinary-projectile-compatible acquisition history, no trigger locator"
+    }
+  ],
+  "formal_source_requirements": {
+    "full_state_before_after_frames": true,
+    "consecutive_native_and_board_updates": true,
+    "same_nonzero_fruit_pointer_to_collecting": true,
+    "newly_exploding_type0_trigger_ball_id_87": true,
+    "free_projectile_collision_excluded": true,
+    "strict_static_point_radius_verified": true,
+    "source_bound_rng_anchor": true,
+    "zero_post_board_process_memory_writes": true,
+    "exact_host_restore": true
+  },
+  "decision": {
+    "authorize_separately_preregistered_formal_source_replay": true,
+    "locator_gets_gate_credit": false,
+    "pc_golden": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

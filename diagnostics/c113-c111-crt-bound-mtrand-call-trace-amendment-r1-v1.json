@@ -1,0 +1,52 @@
+{
+  "schema": "zuma-rl.pc-gameplay-mtrand-call-trace-preregistration-amendment",
+  "version": 1,
+  "id": "c113-c111-u3615-crt-bound-residual-call-trace-r1",
+  "status": "FROZEN_BEFORE_RETRY_OUTPUTS",
+  "created_utc": "2026-08-09T09:55:48.994Z",
+  "parent": {
+    "artifact": "diagnostics/c113-c111-crt-bound-mtrand-call-trace-preregistration-v1.json",
+    "artifact_sha256": "sha256:656332f3364b35111e50e65cb69cab582d4f7aeecd7b10a1eece2fcdada4d8b7"
+  },
+  "failed_output": {
+    "artifact": "D:/ZumaGolden/diagnostics/c113-crt-bound-rng-trace-u3648-u3710-v1",
+    "status": "RETAINED_NOT_USABLE",
+    "attempt_count": 3,
+    "attempts_sha256": "sha256:3bc785895aff6df5debbfef81299dbd291ac5cf250e1cef5d3683bbbbc18c696",
+    "attempt_1_error": "natural_strict_trace_process_failed",
+    "attempt_2_error": "global_rng_call_trace_stop_timeout",
+    "attempt_3_error": "global_rng_call_trace_stop_timeout",
+    "trace_result_published": false,
+    "trajectory_attempt_2_sha256": "sha256:ed12ad9bb932fe4bf0662dab7522fab115681fc5d0901d18dc57cd594fbea8c0",
+    "trajectory_attempt_3_sha256": "sha256:95faf4446bf9643f4a8fd4a724daf9494ad53eda6274d57a22dac13eee5ab094"
+  },
+  "root_cause": {
+    "classification": "diagnostic_tracer_shutdown_liveness_bug",
+    "detail": "after the target trajectory froze at its final update, the stop file was visible but the tracer waited for a future RNG breakpoint before entering its clean-stop branch; a quiet suffix therefore exhausted the collector's 30-second stop wait",
+    "gameplay_or_rng_semantics_changed": false,
+    "selection_information_revealed": true,
+    "revealed_information_scope": "caller addresses in the first fixed segment only"
+  },
+  "single_tooling_change": {
+    "artifact": "tools/trace_popcap_global_rng_calls.py",
+    "old_sha256": "sha256:02a0eb56c3930bee24bcb3a2267d1cdc7002f6a57ee89acf38be57514ebc9d24",
+    "new_sha256": "sha256:26c78837b5fb1929e74ca0a9fbf8d256fe05c33123d5c18c85df7ea0bd6c9bbf",
+    "change": "when a stop request is present and no wrapper single-step is in flight, restore the armed INT3 in the existing finally block and detach immediately without requiring another RNG call",
+    "does_not_change_start_update": true,
+    "does_not_change_end_update": true,
+    "does_not_change_call_capture": true,
+    "does_not_change_rng_or_gameplay_memory": true,
+    "test_artifact": "tests/test_trace_popcap_global_rng_calls.py",
+    "test_artifact_sha256": "sha256:69e00301da4aca2708b335fd61712452588decd0c2d499a2df7c9a089bd5773b",
+    "focused_test_command": ".venv-win/Scripts/python.exe -m pytest tests/test_trace_popcap_global_rng_calls.py tests/test_collect_pc_memory_probe.py -q",
+    "focused_test_result": "PASS_73"
+  },
+  "retry_outputs": [
+    "D:/ZumaGolden/diagnostics/c113-crt-bound-rng-trace-u3648-u3710-r1-v1",
+    "D:/ZumaGolden/diagnostics/c113-crt-bound-rng-trace-u3768-u3910-r1-v1",
+    "D:/ZumaGolden/diagnostics/c113-crt-bound-rng-trace-u4058-u4130-r1-v1",
+    "D:/ZumaGolden/diagnostics/c113-crt-bound-rng-trace-u4184-u4240-r1-v1"
+  ],
+  "acceptance_contract": "unchanged_from_parent",
+  "retry_output_paths_absent_at_freeze": true
+}

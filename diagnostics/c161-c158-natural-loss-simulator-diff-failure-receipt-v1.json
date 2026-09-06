@@ -1,0 +1,76 @@
+{
+  "schema": "zuma-rl.c158-natural-loss-simulator-diff-failure-receipt",
+  "version": 1,
+  "status": "FAILED_CLOSED",
+  "created_utc": "2026-08-10T12:23:17.3624002Z",
+  "preregistration": "diagnostics/c161-c158-natural-loss-simulator-diff-preregistration-v1.json",
+  "preregistration_sha256": "sha256:523606698fe202d4beb20ce72921544304a4ad21565c8c62bdfde68ccc19b266",
+  "implementation_receipt": "diagnostics/c161-c158-natural-loss-simulator-diff-implementation-receipt-v1.json",
+  "implementation_receipt_sha256": "sha256:d47855e18bdffdf9d1acf0e0e4566123e024dd60f45e15c88adfabc70ba3ba3b",
+  "immutable_source": {
+    "trajectory": "D:/ZumaGolden/formal-full-state-c155-natural-loss-c158-campaign-v1/attempt-01/source/attempt-01/trajectory/index.json",
+    "trajectory_sha256": "sha256:a5cd4410676579f0ac75ec0bb69f18d483c026cde14566284ad10a24e2b60ada",
+    "selected_start_update": 11341,
+    "selected_end_update": 11519,
+    "source_bytes_modified": false
+  },
+  "execution": {
+    "attempt_count": 1,
+    "fixed_output": "D:/ZumaGolden/diagnostics/jungle2-c158-u11341-u11519-natural-loss-diff-v1.json",
+    "output_created": false,
+    "exception_type": "ValueError",
+    "exception_message": "QRand state vectors have the wrong length",
+    "failure_site": "src/zuma_rl/pc_loss_sequence.py:_build_loss_simulator -> RevengeSimulator.load_shooter_random_state -> _BalancedColorChooser.load_state",
+    "classification": "simulator_state_loader_rejected_valid_native_preinitialization_state"
+  },
+  "source_observations": {
+    "update_11341": {
+      "thread_crt_rand_state": 1020014204,
+      "current_color_id": 3,
+      "next_color_id": 3,
+      "native_game_time": 8313,
+      "qrand_update_count": 0,
+      "qrand_selected_index": -1,
+      "qrand_vector_lengths": {
+        "weights": 0,
+        "sways": 0,
+        "last_hit": 0,
+        "previous_hit": 0
+      }
+    },
+    "update_11342_after_native_skull_entry_reset": {
+      "thread_crt_rand_state": 3527905494,
+      "current_color_id": 0,
+      "next_color_id": 2,
+      "native_game_time": 0,
+      "qrand_update_count": 2,
+      "qrand_selected_index": 2,
+      "qrand_weights": [0.25, 0.25, 0.25, 0.25, 0.0, 0.0],
+      "qrand_sways": [0.0832500010728836, 0.109375, 0.109375, 0.109375, 0.0, 0.0],
+      "qrand_last_hit": [1, 0, 2, 0, 0, 0],
+      "qrand_previous_hit": [0, 0, 0, 0, 0, 0]
+    },
+    "semantic_mapping": "All four empty native vectors with update_count=0 and selected_index=-1 encode the state before QRand vector initialization. The simulator factory-equivalent representation is six zero entries per allocated vector with allowed_support=None, update_count=0, and selected_index=-1.",
+    "padding_or_fitting": false
+  },
+  "acceptance_audit": {
+    "c161_preregistered_shooter_colors_after_reset": [3, 3],
+    "immutable_source_shooter_colors_after_reset": [0, 2],
+    "classification": "c161_acceptance_transcription_error_discovered_before_any_output",
+    "false_pass_possible": false,
+    "correction_requires_new_preregistration": true
+  },
+  "immutability": {
+    "c161_preregistration_modified": false,
+    "c161_implementation_receipt_modified": false,
+    "c161_fixed_output_reused": false,
+    "source_modified": false
+  },
+  "decision": {
+    "c161_result": "FAIL",
+    "new_preregistration_required": true,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

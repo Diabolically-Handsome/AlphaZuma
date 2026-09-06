@@ -1,0 +1,20 @@
+{
+  "schema": "zuma-rl.training-gate-suite",
+  "version": 1,
+  "policy": "jungle2-teacher-anchor-v1",
+  "stage": "state-policy-calibration-491520-v1",
+  "evidence": [
+    {
+      "id": "a-scale-stability-outcome",
+      "kind": "scale_stability_outcome",
+      "path": "teacher-policy-anchor-c1000-scale98k-behavioral-s20260940-outcome-v1.json",
+      "sha256": "sha256:2db48f6ff73b72e84705e715d4d9431cf24afeb3e4135dc5c83114e7ae4a2449"
+    },
+    {
+      "id": "b-scale-stability-preregistration",
+      "kind": "preregistration",
+      "path": "teacher-policy-anchor-c1000-scale98k-behavioral-s20260940-preregistration-v1.json",
+      "sha256": "sha256:e51c651e5f17604f59c7c3a057a5d3c9e95ff32428c689077db4ef2993fc9c50"
+    }
+  ]
+}

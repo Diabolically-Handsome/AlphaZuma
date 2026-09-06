@@ -1,0 +1,100 @@
+{
+  "schema": "zuma-rl.c158-loss-chamber-lock-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_CODE_CHANGE_OR_DIFF_OUTPUT",
+  "created_utc": "2026-08-10T12:27:55.2808763Z",
+  "purpose": "Keep the shooter chamber and QRand/CRT state frozen while skull-entry and loss suction remove colors from the active chain, matching the immutable c158 retail trajectory.",
+  "classification": "preregistered-loss-input-lock-dynamics-repair",
+  "parents": {
+    "c162_diff_failure_receipt": "diagnostics/c162-c158-uninitialized-qrand-restore-diff-failure-receipt-v1.json",
+    "c162_diff_failure_receipt_sha256": "sha256:d315f13a2a09cb1ea75ea1366016f2538856bea40439931adffb51c2848bc943",
+    "c162_implementation_receipt_sha256": "sha256:45a61534bdc6138054297abc948e1ce83d2943db0887b0913bf87809acc6c28a",
+    "source_manifest_sha256": "sha256:706b8e9d18cf8bdbed2b7d9b9adab052258638ed8955a8199e2cb578f89f23b1",
+    "mechanism_audit_sha256": "sha256:148cdcabf8ad633cfdc73bf53952888bc1e136f18a825bae6d6426949b218b26"
+  },
+  "immutable_source": {
+    "trajectory": "D:/ZumaGolden/formal-full-state-c155-natural-loss-c158-campaign-v1/attempt-01/source/attempt-01/trajectory/index.json",
+    "trajectory_sha256": "sha256:a5cd4410676579f0ac75ec0bb69f18d483c026cde14566284ad10a24e2b60ada",
+    "selected_start_update": 11341,
+    "selected_end_update": 11519,
+    "source_bytes_modified": false
+  },
+  "observed_boundary": {
+    "last_matching_update": 11517,
+    "first_failing_update": 11518,
+    "active_colors_before": [0, 2],
+    "active_colors_after": [0],
+    "retail_shooter_colors_before": [0, 2],
+    "retail_shooter_colors_after": [0, 2],
+    "retail_qrand_update_count_before_and_after": 2,
+    "retail_thread_crt_rand_state_before_and_after": 3527905494,
+    "failing_check": "loss_simulator_locked_state_mismatch:11518"
+  },
+  "repair_contract": {
+    "skip_absent_chamber_color_reselection_during_skull_entry_pending": true,
+    "skip_absent_chamber_color_reselection_during_loss_started": true,
+    "normal_gameplay_color_reselection_unchanged": true,
+    "skull_entry_reset_two_ball_loading_unchanged": true,
+    "loss_chain_and_suction_dynamics_unchanged": true,
+    "locked_qrand_and_crt_state_unchanged": true
+  },
+  "permitted_changes": {
+    "src/zuma_rl/revenge_core.py": [
+      "Return from _check_gun_colors without inspecting active support when skull_entry_pending or loss_started is true."
+    ],
+    "tests/test_revenge_core.py": [
+      "Add skull-entry-pending and loss-started support-shrink tests requiring chamber, QRand vectors/scalars, and CRT state to remain byte-semantically unchanged.",
+      "Retain the existing normal-gameplay absent-color replacement test."
+    ]
+  },
+  "forbidden_changes": [
+    "No c158 source, source manifest, or mechanism audit edit.",
+    "No c161/c162 artifact edit or failed output reuse.",
+    "No QRand chooser arithmetic, CRT arithmetic, skull-entry reset, chain movement, suction recurrence, score, timer, removal, or outcome change.",
+    "No simulator-diff tolerance or Gate policy change."
+  ],
+  "frozen_code_before_change": {
+    "src/zuma_rl/revenge_core.py": "sha256:5a8f9cb5c5eeba9f7644463053b53c0d2009515e736fe887f767ee7aa2953248",
+    "src/zuma_rl/pc_loss_sequence.py": "sha256:0da3747d4931438eed86e1797303aba83306b226fea2b4d6b9b4ed1c4676c42b",
+    "tools/compare_pc_loss_sequence.py": "sha256:661a8a1371514030ab4694607dd2e8f357209d5c22e838799668ff4b327cddc4",
+    "tests/test_revenge_core.py": "sha256:a9a23a43ca9961d58b1d535838061deaf52ee46b39da430c4e6e15372ac8bad4"
+  },
+  "output": {
+    "path": "D:/ZumaGolden/diagnostics/jungle2-c158-u11341-u11519-natural-loss-diff-v3.json",
+    "absent_at_freeze": true,
+    "schema": "zuma-rl.pc-loss-simulator-diff",
+    "version": 1
+  },
+  "fixed_command": ".\\.venv-win\\Scripts\\python.exe tools\\compare_pc_loss_sequence.py --trajectory D:\\ZumaGolden\\formal-full-state-c155-natural-loss-c158-campaign-v1\\attempt-01\\source\\attempt-01\\trajectory\\index.json --root \"D:\\SteamLibrary\\steamapps\\common\\Zuma's Revenge\" --level Jungle2 --curve-index 0 --start-update 11341 --end-update 11519 --trigger-ball-id 176 --decoded-curve-end 3757 --expected-trigger-update 11343 --expected-chain-empty-update 11519 --expected-pending-count 1 --expected-pretrigger-advance 0.125 --output D:\\ZumaGolden\\diagnostics\\jungle2-c158-u11341-u11519-natural-loss-diff-v3.json",
+  "acceptance": {
+    "status": "PASS",
+    "start_update": 11341,
+    "reset_update": 11342,
+    "trigger_update": 11343,
+    "empty_update": 11519,
+    "end_update": 11519,
+    "ticks_compared": 178,
+    "maximum_waypoint_error": 0.0,
+    "initial_chain_count": 105,
+    "pending_ball_count": 1,
+    "score": 7950,
+    "shooter_colors_after_reset": [0, 2],
+    "post_empty_pc_ticks_excluded": 0,
+    "inferred_advance_speed": 0.125,
+    "oracle_status": "PASS",
+    "oracle_ticks_from_trigger_to_empty": 176,
+    "removal_coverage_exact": true
+  },
+  "required_tests": {
+    "targeted": "PASS",
+    "full_suite": "PASS before the single v3 diff execution",
+    "implementation_receipt_required_before_diff": true
+  },
+  "decision_rule": {
+    "pass": "The exact loss lock tests and every frozen natural-loss diff acceptance value pass.",
+    "simulator_mismatch": "Retain the exception and evidence, create no replacement output, and preregister the next isolated repair.",
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

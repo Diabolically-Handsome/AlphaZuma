@@ -1,0 +1,84 @@
+{
+  "schema": "zuma-rl.pc-clean-late-handoff-priority-window-replication-execution-binding",
+  "version": 29,
+  "status": "BOUND_BEFORE_RUN_OUTPUTS",
+  "created_utc": "2026-08-05T21:25:48.2182012Z",
+  "id": "clean-late-handoff-priority-window-replication-v29-execution",
+  "session_nonce": "62811397062144f1beec342904b4ffbf",
+  "parent_preregistration": "diagnostics/clean-late-handoff-priority-window-replication-preregistration-v29.json",
+  "parent_preregistration_sha256": "sha256:def1ed09b9dabfd12467fc3102680890dfbabcdac4f5c8cb9a1f1e15f0380162",
+  "preflight": {
+    "all_64_run_roots_absent": true,
+    "all_64_after_run_host_outputs_absent": true,
+    "host_post_absent": true,
+    "selected_manifest_absent": true,
+    "outcome_absent": true,
+    "runtime_process_count": 0,
+    "live_host_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_pre_artifact_sha256": "sha256:c750a0031469cdce32f03bbf520b4e0bd0a7cda11cc86ff3c71dea7429db849f",
+    "input_and_tool_hashes_match": true
+  },
+  "fixed_command_contract": {
+    "python": "D:/ZumaGolden/tools/dxcam-venv/Scripts/python.exe",
+    "collector": "tools/collect_pc_memory_probe.py",
+    "plan": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/plan.json",
+    "prestate": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/protocol/pre.json",
+    "host_restore": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/safety/host-pre.json",
+    "probe_update": 3425,
+    "slowdown_update": 3415,
+    "maximum_attempts": 3,
+    "trajectory_mode": "rng",
+    "trajectory_end_update": 3425,
+    "trace_detach_update": 3008,
+    "trace_reattach_update": 3501,
+    "global_mtrand_call_oracle": "D:/ZumaGolden/autoplay-jungle2-natural-win-v8-globaloracle-20260802-0250/global-mtrand-calls.json",
+    "global_mtrand_call_oracle_seed": 23557968,
+    "global_mtrand_call_start_after_update": 3008,
+    "global_mtrand_call_end_at_update": 3121,
+    "global_mtrand_call_observe_boundary_only": true,
+    "global_mtrand_call_observe_thread_runtime": true,
+    "global_mtrand_call_observe_handoff_thread_runtime": true,
+    "global_mtrand_call_observe_handoff_rng_state": true,
+    "global_mtrand_call_readiness_wait": null,
+    "diagnostic_disable_source_bound_board_anchor": true,
+    "skip_repaint_guard": true,
+    "skip_frozen_snapshot": true,
+    "global_sync_timeout_seconds": 900,
+    "arm_specific_argument": {
+      "A_control": null,
+      "B_bias_u1802": ["--diagnostic-startup-priority-bias-until-update", "1802"]
+    }
+  },
+  "fixed_execution_order": [
+    "a01","b01","b02","a02","b03","a03","a04","b04",
+    "a05","b05","b06","a06","b07","a07","a08","b08",
+    "a09","b09","b10","a10","b11","a11","a12","b12",
+    "a13","b13","b14","a14","b15","a15","a16","b16",
+    "a17","b17","b18","a18","b19","a19","a20","b20",
+    "a21","b21","b22","a22","b23","a23","a24","b24",
+    "a25","b25","b26","a26","b27","a27","a28","b28",
+    "a29","b29","b30","a30","b31","a31","a32","b32"
+  ],
+  "execution_rule": {
+    "retain_every_attempt": true,
+    "stop_at_first_valid_observation_per_root": true,
+    "never_retry_for_semantic_result": true,
+    "post_verified_ready_failure_is_nonretryable": true,
+    "capture_host_snapshot_after_every_root": true,
+    "verify_same_host_state_root_after_every_root": true,
+    "run_all_64_even_after_any_semantic_failure": true
+  },
+  "tool_hashes": {
+    "tracer": "sha256:6586859c0eab6d29673f2a8ca05b0c80f6b59c87b8c985cd24c50423ab72d10d",
+    "collector": "sha256:becadf38599b7e324ac98adb4cc46e54aa068e535a9510d9dece75d140338ed6",
+    "global_boundary_tool": "sha256:8ab14f90aab69e014089363204732199ea7f5c8e5f0efba8d1008d8744d78a5d"
+  },
+  "output_absence_recheck": {
+    "all_64_run_roots": true,
+    "all_64_after_run_host_outputs": true,
+    "host_post": true,
+    "selected_manifest": true,
+    "outcome": true
+  },
+  "non_authorizations": ["pc_golden_credit", "fidelity_gate_change", "formal_transport_change", "large_scale_training_start"]
+}

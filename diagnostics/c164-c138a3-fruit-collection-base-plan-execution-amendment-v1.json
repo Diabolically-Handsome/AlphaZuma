@@ -1,0 +1,54 @@
+{
+  "schema": "zuma-rl.c138a3-fruit-collection-base-plan-execution-amendment",
+  "version": 1,
+  "status": "FROZEN_AFTER_PREEXECUTION_VALIDATION_FAILURE_AND_BEFORE_BASE_PLAN_OUTPUT",
+  "created_utc": "2026-08-10T12:40:34.7031403Z",
+  "parent_preregistration": "diagnostics/c164-c138a3-fruit-collection-formal-source-preregistration-v1.json",
+  "parent_preregistration_sha256": "sha256:4750bb9cfc209df055364dd8404d156d8b61c7729690274e83d057b6a1d951e1",
+  "parent_hash_amendment": "diagnostics/c164-c138a3-fruit-collection-formal-source-preregistration-amendment-v1.json",
+  "parent_hash_amendment_sha256": "sha256:bee3c585f52876539d7a67c57546fa4c326773d46da48e327e1486e775c5f6e6",
+  "failure_receipt": "diagnostics/c164-c138a3-fruit-collection-base-plan-failure-receipt-v1.json",
+  "reason": "The frozen prepare_base command omitted required blackout endpoints and therefore inherited incompatible generic defaults. Add only explicit endpoints that satisfy the unchanged source-anchor and idle-corridor ordering. This is a pre-process transport-plan correction, not an observed-gameplay response.",
+  "sole_command_change": {
+    "command_reference": "/commands/prepare_base",
+    "append_exactly": " --detach-at-update 3136 --reattach-at-update 9865",
+    "detach_at_update": 3136,
+    "reattach_at_update": 9865
+  },
+  "static_validation": {
+    "source_bound_framework_update": 3121,
+    "first_idle_command_after_anchor_update": 3136,
+    "detach_at_update": 3136,
+    "window_repaint_update": 3150,
+    "wait_until_framework_update": 3400,
+    "next_effectful_command_update": 3448,
+    "reattach_at_update": 9865,
+    "dmo_length_updates": 10043,
+    "required_order_passes": true,
+    "repaint_idle_guard_passes": true,
+    "reattach_offset_from_dmo_end": 178
+  },
+  "derivation_boundary": {
+    "base_plan_is_not_executed_by_c164": true,
+    "prepare_pc_source_bound_plan_nulls_base_detach_and_reattach": true,
+    "finite_command_broker_stop_after_update_remains": 3151,
+    "formal_slowdown_update_remains": 5200,
+    "formal_freeze_update_remains": 5220,
+    "formal_trajectory_end_update_remains": 5310
+  },
+  "unchanged_contract": {
+    "normalized_dmo_unchanged": true,
+    "source_bound_anchor_unchanged": true,
+    "source_selection_unchanged": true,
+    "formal_window_unchanged": true,
+    "maximum_attempts_unchanged": true,
+    "acceptance_rule_unchanged": true,
+    "feature_presence_not_observed": true
+  },
+  "authorization": {
+    "may_prepare_base_once_with_appended_endpoints": true,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

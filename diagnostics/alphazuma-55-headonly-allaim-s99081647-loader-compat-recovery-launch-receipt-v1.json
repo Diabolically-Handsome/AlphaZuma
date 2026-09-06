@@ -1,0 +1,35 @@
+{
+  "schema": "zuma-rl.inference-loader-compat-recovery-launch-receipt",
+  "version": 1,
+  "status": "LAUNCHED",
+  "launched_utc": "2026-08-16T19:36:20.276338+00:00",
+  "campaign_id": "alphazuma-55-motor-observable-gradual-headonly-allaim-postprocess-s99081647-v1",
+  "incident_amendment": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-headonly-allaim-s99081647-inference-loader-incident-amendment-v1.json",
+    "sha256": "sha256:24d3a9b020ee3a4bb327b8f385acb9954dbcfbe80362b52ee3a69dc8f29d29dd"
+  },
+  "launcher": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/recover_alphazuma_55_headonly_allaim_postprocess_loader_compat_v1.sh",
+    "sha256": "sha256:45687f73cb4c38cdecb6367d0d1c3a4c45233c897e88c7203966eaa5f8417470"
+  },
+  "startup_hook": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/inference_optimizer_compat/sitecustomize.py",
+    "sha256": "sha256:b27a5d28f8f37f746dda695be28f69d426d1a4919101fbed32d80df9648c98c2"
+  },
+  "frozen_plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-headonly-allaim-postprocess-s99081647-plan-v1.json",
+    "sha256": "sha256:307b328db15dccb14317c5b27a81ebc84b62f16e409bba845dc0ae9012e6af81"
+  },
+  "processes": {
+    "windows_launcher_pid": 26440,
+    "wsl_controller_pid": 436599
+  },
+  "logs": {
+    "stdout": "/mnt/d/ZumaTraining/alphazuma-55-headonly-allaim-s99081647-postprocess.recovery-01.stdout.log",
+    "stderr": "/mnt/d/ZumaTraining/alphazuma-55-headonly-allaim-s99081647-postprocess.recovery-01.stderr.log"
+  },
+  "preserved_failure_directory": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-headonly-allaim-postprocess-s99081647-v1-failed-loader-incident-20260816T193133Z",
+  "candidate_bytes_modified": false,
+  "screen_attempts_consumed_before_recovery": 0,
+  "formal_seed_consumption": "NONE"
+}

@@ -1,0 +1,60 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-policy-diversity-audit-receipt",
+  "version": 1,
+  "completed_utc": "2026-08-14T02:34:43.4954549Z",
+  "status": "PASS",
+  "classification": "frozen_dataset_post_hoc_training_health_diagnostic_only",
+  "preregistration": {
+    "path": "diagnostics/alphazuma-v1.1-policy-diversity-audit-s59081301-preregistration-v1.json",
+    "sha256": "sha256:fbba5e1422d2e2f25c4919f317aacef8032025946f16e7cd706455f4f188b90f",
+    "frozen_before_execution": true
+  },
+  "source_audit": {
+    "path": "D:\\ZumaTraining\\alphazuma-v1.1-policy-diversity-audit-s59081301-v1\\audit.json",
+    "sha256": "sha256:a11e518103a66df3337865716074abe586482ddec3f97bbe9a263c7e62d4f6c4"
+  },
+  "tool": {
+    "path": "tools/audit_alphazuma_v11_policy_diversity.py",
+    "sha256": "sha256:17db88ef92f4078748b286af3094335498e6188afd9e21ff50a92bf595dc2249"
+  },
+  "tests": {
+    "path": "tests/test_audit_alphazuma_v11_policy_diversity.py",
+    "sha256": "sha256:6255187d7c27cb10be871f709e7ec4e2c85a7d15a42beba38c908d393aa6cbd2",
+    "combined_with_existing_policy_drift_tests": "7_passed"
+  },
+  "validation": {
+    "candidate_count": 7,
+    "pairwise_candidate_comparisons": 21,
+    "unique_candidate_action_signatures": 7,
+    "identical_candidate_pairs": 0,
+    "reference_reproduced_all_1243_stored_collector_actions": true,
+    "all_predicted_actions_satisfied_frozen_masks": true,
+    "all_10_input_hashes_independently_revalidated": true,
+    "pairwise_summary_arithmetic_independently_recomputed": true,
+    "exact_action_difference_rate": {
+      "min": 0.3507642799678198,
+      "median": 0.6572807723250201,
+      "max": 0.7385358004827032
+    },
+    "semantic_action_difference_rate": {
+      "min": 0.011263073209975865,
+      "median": 0.0249396621078037,
+      "max": 0.038616251005631534
+    }
+  },
+  "conclusion": {
+    "candidate_portfolio_behaviorally_diverse_on_frozen_probe": true,
+    "performance_improvement_claimed": false,
+    "reason": "The seven stable checkpoints are not deterministic-action duplicates, but only the frozen selection and final blind evaluation may determine game-playing quality."
+  },
+  "training_or_evaluation_semantics_changed": false,
+  "formal_seed_consumption": "none",
+  "formal_gate_effect": "none",
+  "non_authorizations": [
+    "candidate_selection",
+    "certification_evidence",
+    "fresh_holdout_claim",
+    "recipe_change",
+    "promotion"
+  ]
+}

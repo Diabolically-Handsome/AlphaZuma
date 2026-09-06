@@ -1,0 +1,80 @@
+{
+  "schema": "zuma-rl.pc-formal-natural-loss-ensemble-preregistration-control-correction",
+  "version": 2,
+  "status": "PASS",
+  "created_utc": "2026-08-10T07:06:03.4793101Z",
+  "purpose": "Correct only the invalid session nonce encoding before any retail process or formal output existed.",
+  "prior_preregistration": {
+    "path": "diagnostics/formal-natural-loss-c136-preregistration-v1.json",
+    "bytes": 4557,
+    "sha256": "sha256:279a5f100e2ec656a3b074fa16517c2a81cca71ff7f097747feaadf5e626b98e",
+    "preserved_immutable": true
+  },
+  "failed_preflight": {
+    "run_id": "c136l1",
+    "error": "session_nonce must contain exactly 32 lowercase hexadecimal digits",
+    "failure_stage": "host_state_capture_argument_validation",
+    "host_snapshot_created": false,
+    "retail_process_started": false,
+    "formal_output_root_created": false,
+    "target_window_observed": false
+  },
+  "unchanged_contract": {
+    "evidence_classification": "fresh-formal-prelocalized-natural-seed-ensemble",
+    "dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "runtime_executable_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "plan_sha256": "sha256:9910710ce9069bcafea8ab77d08b2245c593c898a510d3da0e1dd4907f13aaa8",
+    "prestate_sha256": "sha256:81de1c356b0cd189003b31cc5e80952ebd2dad9c6815745122113c17504fdcd7",
+    "feature_sought": "natural_loss",
+    "slowdown_update": 8870,
+    "freeze_update": 8880,
+    "trajectory_end_update": 9200,
+    "tick_count": 321,
+    "run_count": 3,
+    "all_runs_execute_regardless_of_prior_outcomes": true,
+    "feature_absence_does_not_permit_additional_runs": true
+  },
+  "control_correction": {
+    "field": "runs[*].session_nonce",
+    "old_values_invalid": true,
+    "window_or_outcome_rule_changed": false
+  },
+  "run_order": [
+    "c136l1",
+    "c136l2",
+    "c136l3"
+  ],
+  "runs": [
+    {
+      "id": "c136l1",
+      "session_nonce": "c136a100000000000000000000000000",
+      "output_root": "formal-full-state-c136l1-natural-terminal-u8880-u9200-v1",
+      "host_pre_output": "diagnostics/formal-full-state-c136l1-host-pre-v1.json",
+      "host_post_output": "diagnostics/formal-full-state-c136l1-host-post-v1.json"
+    },
+    {
+      "id": "c136l2",
+      "session_nonce": "c136a200000000000000000000000000",
+      "output_root": "formal-full-state-c136l2-natural-terminal-u8880-u9200-v1",
+      "host_pre_output": "diagnostics/formal-full-state-c136l2-host-pre-v1.json",
+      "host_post_output": "diagnostics/formal-full-state-c136l2-host-post-v1.json"
+    },
+    {
+      "id": "c136l3",
+      "session_nonce": "c136a300000000000000000000000000",
+      "output_root": "formal-full-state-c136l3-natural-terminal-u8880-u9200-v1",
+      "host_pre_output": "diagnostics/formal-full-state-c136l3-host-pre-v1.json",
+      "host_post_output": "diagnostics/formal-full-state-c136l3-host-post-v1.json"
+    }
+  ],
+  "decision_rules": {
+    "each_run_has_exactly_one_startup_attempt": true,
+    "failed_runs_and_partial_outputs_are_retained": true,
+    "all_three_declared_runs_are_launched_even_if_an_earlier_run_contains_natural_loss": true,
+    "external_input_is_fatal_for_that_run": true,
+    "formal_collection_requires_zero_external_input_events": true,
+    "formal_collection_requires_zero_gameplay_or_rng_memory_writes": true,
+    "formal_collection_requires_exact_host_state_restore": true,
+    "only_independently_audited_runs_may_enter_fidelity_suite": true
+  }
+}

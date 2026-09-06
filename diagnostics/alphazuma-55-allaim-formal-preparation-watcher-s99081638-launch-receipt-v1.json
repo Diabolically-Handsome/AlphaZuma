@@ -1,0 +1,49 @@
+{
+  "schema": "zuma-rl.alphazuma-55-allaim-formal-preparation-launch-receipt",
+  "version": 1,
+  "status": "LAUNCHED_AND_EMBARGOED",
+  "observed_utc": "2026-08-16T10:09:44.9437548Z",
+  "campaign_id": "alphazuma-55-allaim-formal-preparation-watcher-s99081638-v1",
+  "bindings": {
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-allaim-formal-preparation-watcher-s99081638-preregistration-v1.json",
+      "sha256": "sha256:0427d396fbfd08f292c921cedc809cb8245491732e4a1cadf0332508f2d2b24b"
+    },
+    "watcher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_allaim_formal_preparation_watcher_v1.py",
+      "sha256": "sha256:2647eac84768c2b3c16f4602c6e66c56e687fe9e7a960f6f3ffc6051cb4ac1ee"
+    },
+    "launcher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/launch_alphazuma_55_allaim_formal_preparation_watcher_v1.sh",
+      "sha256": "sha256:059c1e33198f33e56fa71bbb2fadc2ab7c41b961c34d126f03b580c7d6eff57f"
+    }
+  },
+  "processes": {
+    "windows_launcher_pid": 13376,
+    "wsl_watcher_pid": 360145,
+    "windows_launcher_alive": true,
+    "wsl_watcher_alive": true
+  },
+  "logs": {
+    "stdout": {
+      "path": "D:\\ZumaTraining\\alphazuma-55-allaim-formal-preparation-watcher-s99081638-launcher-01.stdout.log",
+      "bytes_at_snapshot": 0,
+      "sha256_at_snapshot": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "path": "D:\\ZumaTraining\\alphazuma-55-allaim-formal-preparation-watcher-s99081638-launcher-01.stderr.log",
+      "bytes_at_snapshot": 0,
+      "sha256_at_snapshot": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "initial_status": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-allaim-formal-preparation-watcher-s99081638-v1/controller_status.json",
+    "sha256_at_snapshot": "sha256:574ab58cac05ae726718800cfc654d4657548b7f9df921dcf91d2f47c7dfd4ab",
+    "phase": "WAITING_FOR_ALLAIM_CONTINGENCY_DECISION"
+  },
+  "authority_boundary": {
+    "formal_seed_consumption": "NONE",
+    "formal_candidate_authority": false,
+    "power_restore_authority": false
+  }
+}

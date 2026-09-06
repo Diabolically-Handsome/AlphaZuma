@@ -1,0 +1,88 @@
+{
+  "schema": "zuma-rl.pc-handoff-rng-state-smoke-outcome",
+  "version": 19,
+  "status": "FAIL_COLLECTOR_VALIDATOR_UNDEFINED_GLOBAL_RNG_SYMBOL",
+  "created_utc": "2026-08-05T18:39:57.345Z",
+  "id": "handoff-rng-state-smoke-v19-outcome",
+  "parent_preregistration": {
+    "path": "diagnostics/handoff-rng-state-smoke-preregistration-v19.json",
+    "sha256": "sha256:be6d879867331ea190352c6ef05740b74e65c5253590b0264d8579a3069e6680"
+  },
+  "execution_binding": {
+    "path": "diagnostics/handoff-rng-state-smoke-execution-binding-v19.json",
+    "sha256": "sha256:5a81aab15e98a7c1df4ea6470f26998815ac999a024bfec896d3cc79808b4903",
+    "session_nonce": "a236d898ccf7467b800b7056c6851854"
+  },
+  "execution": {
+    "run_root": "D:/ZumaGolden/diagnostics/handoff-rng-state-smoke-e01-v19",
+    "attempt_count": 1,
+    "selected_attempt": null,
+    "collector_status": "FAIL",
+    "collector_error_type": "NameError",
+    "collector_error": "name 'DEFAULT_GLOBAL_RNG_STATE' is not defined",
+    "retry_scope": "post_handoff_nonretryable",
+    "attempts_sha256": "sha256:fd42cb6c0ecf4764a516aec3ec3678ee5dbf74f89921138c047183b7c98b6981"
+  },
+  "observer_artifact": {
+    "status": "PASS",
+    "failure": null,
+    "hit_count": 1,
+    "natural_boundary_source_exact": true,
+    "state_correction_count": 0,
+    "process_memory_writes": 0,
+    "process_memory_mutation": false,
+    "hardware_breakpoint_restored": true,
+    "debugger_detach_error": null,
+    "handoff_main_thread_resumed": true,
+    "ready_sha256": "sha256:2950bf63cbcc2c573ead6dc1b6106c7f435bde8a6039ee1e285e967d3a3850de",
+    "observer_sha256": "sha256:bd5f52e1e9959be6456128cc3c52dcfcdaff44ac67b3589922a0a0302a179b37",
+    "observer_log_sha256": "sha256:069f0c58c8628ebcfdd42c5130e493a7418909276e740a24010f9cfb445c91f7"
+  },
+  "quarantined_telemetry": {
+    "reason": "The observer produced a self-consistent artifact, but the frozen collector crashed before validating and embedding it. These values are retained only to diagnose the tool.",
+    "handoff_draw_count": 1465,
+    "handoff_index": 217,
+    "handoff_state_sha256": "sha256:bd5a2a41a29aa2bdc5132672252202ef8f2420a45d7a0068173ad989ac3e48aa",
+    "handoff_process_memory_reads": 1,
+    "handoff_process_memory_read_bytes": 2500,
+    "handoff_process_memory_writes": 0,
+    "handoff_process_memory_mutation": false,
+    "boundary_live_pre_draw_count": 1662,
+    "boundary_live_pre_index": 414,
+    "boundary_state_sha256": "sha256:c0d2599105a0ba4ee7623f4991a704c0260548dbf7fc47b1041dbfd1e45e2422",
+    "handoff_to_boundary_draw_increment": 197,
+    "semantic_class": "EXACT",
+    "tool_qualification_credit": false,
+    "correlation_series_credit": false
+  },
+  "host_safety": {
+    "canonical_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "pre_state_root_match": true,
+    "post_state_root_match": true,
+    "host_pre_sha256": "sha256:22de0808866d7f9eca5f98ec93c68ca3c3ac0450b977c02d3fbd6aa9bf362bb4",
+    "host_post_sha256": "sha256:cd08262937209579f4c8b617e29e9b29c82afa4cd5f5ec39d97d9e923b13513f",
+    "residual_retail_process_count": 0
+  },
+  "root_cause": {
+    "classification": "collector_validation_wiring_error",
+    "location": "tools/collect_pc_memory_probe.py:_finish_global_mtrand_boundary_observation",
+    "detail": "The new validator compared the handoff address to DEFAULT_GLOBAL_RNG_STATE, but that name was not defined in the collector module. The already-defined equivalent collector constant is G_FRAMEWORK_MTRAND_ADDRESS.",
+    "game_semantics_implicated": false,
+    "transport_semantics_implicated": false
+  },
+  "decision": {
+    "tool_qualified": false,
+    "next_action": "Repair the validator with the collector's existing global MTRand address constant, add a direct regression test, rerun focused and full suites, then freeze a fresh smoke under a new version and new output root.",
+    "reuse_v19_output_root": false,
+    "pc_golden_credit": false,
+    "fidelity_gate_change": false,
+    "formal_transport_change": false,
+    "large_scale_training_start": false
+  },
+  "non_authorizations": [
+    "pc_golden_credit",
+    "fidelity_gate_change",
+    "formal_transport_change",
+    "large_scale_training_start"
+  ]
+}

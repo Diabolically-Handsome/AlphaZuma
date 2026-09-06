@@ -1,0 +1,53 @@
+{
+  "schema": "zuma-rl.alphazuma-55-distilled-nearmiss-focus-launch-receipt",
+  "version": 1,
+  "recorded_utc": "2026-08-16T07:51:24.5363263+00:00",
+  "status": "PASS_AFTER_TRANSPORT_RECOVERY",
+  "builder": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_distilled_nearmiss_focus_v1.py",
+    "sha256": "sha256:625bc40740c73c05a28a3d64ad4d5ebcbd6fbe49cbea3e2faeaeaeea239332be"
+  },
+  "analysis": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-distilled-nearmiss-focus-analysis-s99081627-v1.json",
+    "sha256": "sha256:1d5c96c93fab9960c367b1f22d976009cbfb58137ed37e89c9a24bd3dbc4a4ee"
+  },
+  "preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-distilled-nearmiss-focus-s99081627-preregistration-v1.json",
+    "sha256": "sha256:f066e6460f570c0985bf4db43f0a9245905798564b989292a2f69e38d7cb35f6"
+  },
+  "validation": {
+    "status": "VALID",
+    "levels_verified": 55,
+    "observation_shape": [22833],
+    "action_nvec": [4, 180],
+    "human_speedrun_contract_unchanged": true,
+    "trainer_sha256": "sha256:2886a72a7348e492f4d34f4ef9733eee1668df24e17cc896ace0094267d371ba"
+  },
+  "initial_launcher_transport_failure": {
+    "windows_pid": 56656,
+    "run_directory_created": false,
+    "training_steps_consumed": 0,
+    "stdout_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "sha256:0843ce06c490059032ff64b7cfedc9a53b343cf2fd4db5a149df7ab86c1fbddf",
+    "error": "Windows-to-WSL command transport truncated the apostrophe-bearing original-root argument.",
+    "logs_preserved": true
+  },
+  "recovery": {
+    "method": "identical frozen preregistration launched through the already validated shell glob for the original-root path",
+    "windows_launcher_pid": 17688,
+    "linux_trainer_pid": 335909,
+    "training_status_snapshot": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-distilled-nearmiss-focus-s99081627-v1/training_status.json",
+      "sha256": "sha256:202eafba875c8c3457922da777e5bc0b0cf0c30a422a34fafd74e885f8831cdb",
+      "status": "RUNNING",
+      "timesteps": 25600,
+      "steps_per_second": 279.78092096925354,
+      "episodes": 0,
+      "wins": 0,
+      "error": null
+    }
+  },
+  "formal_seed_consumption": false,
+  "formal_candidate_authority": false,
+  "training_semantics_changed_during_recovery": false
+}

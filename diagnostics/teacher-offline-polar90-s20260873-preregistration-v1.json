@@ -1,0 +1,113 @@
+{
+  "schema": "zuma-rl.teacher-offline-polar-aim-preregistration",
+  "version": 1,
+  "created_utc": "2026-08-04T11:03:17.878Z",
+  "status": "FROZEN_BEFORE_RUN_OUTPUT",
+  "classification": "frozen_dataset_angle_equivariant_representation_screen",
+  "hypotheses": {
+    "null": "a direct actor-visible polar basis does not jointly learn stable verbs and pass the aim capacity gate",
+    "alternative": "separating circular coordinate construction from learned candidate selection passes verb and aim capacity gates under the same 90-epoch budget"
+  },
+  "design": {
+    "run_dir": "/mnt/d/ZumaTraining/screening-teacher-offline-polar90-s20260873-v1",
+    "expected_run_dir_absent": true,
+    "model_initialization": {
+      "policy_architecture": "entity_polar",
+      "model_seed": 20260873,
+      "learned_relational_features": 256,
+      "direct_polar_features": 180,
+      "polar_sigma_bins": 0.75,
+      "aim_head_initialization": "scaled_identity",
+      "aim_head_identity_scale": 5.0,
+      "pi_hidden_layers": [],
+      "static_geometry_inputs": [
+        "logical_canvas_width",
+        "logical_canvas_height",
+        "fixed_level_shooter_position"
+      ],
+      "privileged_dynamic_state_added": false
+    },
+    "input_dataset": {
+      "path": "D:/ZumaTraining/screening-teacher-bc-dagger-relational-refine-s20260859-v1/teacher_dataset.npz",
+      "sha256": "sha256:1f01535ef45794071e819b779abf91f0f005e982a33b07cada0d4d82da614862",
+      "sample_count": 2473,
+      "classification": "consumed_training_dataset_not_generalization_holdout"
+    },
+    "optimization": {
+      "epochs": 90,
+      "batch_size": 256,
+      "learning_rate": 0.0001,
+      "verb_loss_weight": 2.0,
+      "aim_loss_scope": "fire_only",
+      "aim_loss_mode": "categorical",
+      "max_grad_norm": 0.5,
+      "shuffle_seed": 20274873,
+      "new_environment_steps": 0
+    },
+    "validation_episodes": 0,
+    "resources": {
+      "cuda_visible_devices": "0",
+      "expected_cuda_device": "NVIDIA GeForce RTX 5090",
+      "rtx_5080_excluded": true
+    }
+  },
+  "acceptance": {
+    "pipeline": {
+      "process_exit_code": 0,
+      "completion_receipt_status": "COMPLETE",
+      "report_status": "OFFLINE_COMPLETE",
+      "policy_architecture": "entity_polar",
+      "refined_model_required": true
+    },
+    "verb_capacity": {
+      "verb_accuracy_at_least": 0.9,
+      "fire_recall_at_least": 0.65,
+      "swap_recall_at_least": 0.65
+    },
+    "aim_capacity": {
+      "fire_aim_exact_accuracy_at_least": 0.35,
+      "fire_aim_within_three_accuracy_at_least": 0.55,
+      "fire_predicted_unique_aim_bins_at_least": 120,
+      "fire_aim_mean_circular_bin_error_at_most": 10.0
+    },
+    "promotion_rule": "a pass authorizes one preregistered full-horizon evaluation of the frozen polar candidate on fresh seeds",
+    "rejection_rule": "if any capacity criterion fails, do not full-horizon evaluate and inspect candidate-selection geometry"
+  },
+  "evidence_anchor": {
+    "generic_head_family": {
+      "outcome": "diagnostics/teacher-offline-aim-hybrid90-s20274867-outcome-v1.json",
+      "outcome_sha256": "sha256:c6695e6be1c2ad72b42134033e142895910cfb2192ea77ac21bf990de1eba503",
+      "status": "HYBRID_CATEGORICAL_DISTANCE_CAPACITY_FAIL"
+    },
+    "polar_initialization_smoke": {
+      "report": "D:/ZumaTraining/infrastructure-teacher-polar-initialization-s20260871-v1/report.json",
+      "report_sha256": "sha256:c4e79e65d077572f83f26d0b45f90538fe20bbb50fe51b58c8c551f6f0aeecb0",
+      "untrained_fire_aim_exact_accuracy": 0.22631578947368422,
+      "untrained_predicted_unique_aim_bins": 164
+    },
+    "polar_backprop_smoke": {
+      "report": "D:/ZumaTraining/infrastructure-teacher-polar-backprop-s20260872-v1/report.json",
+      "report_sha256": "sha256:c00e05ed694d5e9f2c3dba4919d4f497faec76548b61116fc4b9c83bfc13c34e",
+      "completion_sha256": "sha256:a74272558058a6f2d82ffff2d7a45a03b515ce8bdff12cf1b74b02ebb016a0ea",
+      "one_epoch_fire_aim_exact_accuracy": 0.2513157894736842
+    },
+    "regression": {
+      "wsl_targeted_pytest": "PASS_58",
+      "polar_geometry_known_answer_test": "PASS"
+    }
+  },
+  "source_hashes": {
+    "refine_maskable_ppo_teacher.py": "sha256:5cc4510756b8a3f0a6d12c98fc774efce2f059ef001f75a299b33fe762a3b987",
+    "pretrain_maskable_ppo_teacher.py": "sha256:a8d271e3b70198cd324f8e9bd41f59f50c1874451400cf188156c146187e59c9",
+    "revenge_features.py": "sha256:863e956fa99f25aff2c56700ea4ea7b2acd601cfd032136078e424a5204a3a08",
+    "test_revenge_env.py": "sha256:e463f0d6d9b37ac7606eb92105ff3532ed22397ba4ed234dcc572ac29a03a2e0"
+  },
+  "non_authorizations": [
+    "generalization_claim",
+    "held_out_environment_claim",
+    "large_scale_training",
+    "rl_recipe_promotion",
+    "fidelity_gate_opening",
+    "original_transfer_certification"
+  ]
+}

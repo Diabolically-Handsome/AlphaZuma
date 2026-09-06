@@ -1,0 +1,22 @@
+{
+  "schema": "zuma-rl.alphazuma-55-headonly-postprocess-audit-path-incident",
+  "version": 1,
+  "status": "CONFIRMED_PRE_INFERENCE",
+  "created_utc": "2026-08-16T15:58:52.2699139Z",
+  "plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-headonly-postprocess-s99081643-plan-v1.json",
+    "sha256": "sha256:24ecc5dcfef99070f58bee31ad319730b1899e9d11979945a5ed19c5d0e4ae51"
+  },
+  "issue": "outputs.independent_audit_receipt incorrectly names the pre-inference preregistration audit receipt rather than reserving a distinct final-result audit receipt.",
+  "impact": {
+    "inference_consumed": false,
+    "screen_seed_consumed": false,
+    "gate_seed_consumed": false,
+    "formal_seed_consumed": false,
+    "training_recipe_changed": false,
+    "candidate_rule_changed": false,
+    "promotion_gate_changed": false
+  },
+  "remediation": "Supersede this plan before controller launch with byte-distinct pre-inference and final-result audit paths while preserving every model, seed, matrix, timeout, and Gate semantic.",
+  "original_plan_modified": false
+}

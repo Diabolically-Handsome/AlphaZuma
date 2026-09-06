@@ -1,0 +1,117 @@
+{
+  "schema": "zuma-rl.retail-board-reset-entry-falsification-receipt",
+  "version": 1,
+  "status": "FAIL_RETAINED",
+  "created_utc": "2026-08-10T10:45:00Z",
+  "run": {
+    "id": "c152a1",
+    "root": "D:/ZumaGolden/record-c152a1-idle-natural-loss-reset-trace-v1-verified-foreground",
+    "preregistration_sha256": "sha256:e2f292f59d94dd95e2be08e09e9611f5cd406a732319738f3ed8c4b685eb2aca",
+    "implementation_receipt_sha256": "sha256:c7ac5a39c1701bd5e8ea26ce1ac4a69a4bda933a8c58c164f588524b6aeffacb",
+    "result_status": "FAILED",
+    "result_sha256": "sha256:10eab5dbed9f4c8f98c7971d4ca26f831bb720bfd5b0aa65902e10d6fe6476d6",
+    "gameplay_completed_seconds": 180.0,
+    "expected_idle_actions": 0,
+    "reset_entry_protocol_evaluated": true,
+    "reset_entry_protocol_passed": false
+  },
+  "verified_successes": {
+    "navigation": {
+      "title_start_foreground_verified": true,
+      "adventure_foreground_verified": true,
+      "continue_game_foreground_verified": true,
+      "all_three_target_hwnds_exactly_matched": true,
+      "all_three_existing_updates_and_points_preserved": true
+    },
+    "source_anchor": {
+      "count": 1,
+      "framework_update": 3121,
+      "board_address": 629102072,
+      "native_game_time": 109,
+      "score": 7950,
+      "score_target": 9650,
+      "curve_plan_exhausted": false,
+      "global_pre_index": 414,
+      "global_pre_state_sha256": "sha256:204010be4ad87c26e86dcb69436e7cab1035a4d99993305487fdd0049dc6b959",
+      "global_post_index": 415,
+      "global_post_state_sha256": "sha256:aa119ead69c76a19bd33fbb67ce7a2c06f6469658a699976de49400df52d23a6",
+      "predicted_output": 1741594162,
+      "thread_crt_rand_state": 414421964
+    },
+    "retail_loss_sequence": {
+      "same_board_address": 629102072,
+      "first_restart_score_target": 9616,
+      "first_restart_curve_plan_exhausted": false,
+      "first_restart_pending_ball_count": 10,
+      "second_loss_started_before_timeout": true,
+      "final_score_target": 9616
+    }
+  },
+  "failed_frozen_observation": {
+    "name": "candidate_reset_entry_0x00419A90_observed_after_source_anchor",
+    "observed": false,
+    "reset_entry_attempt_count": 0,
+    "reset_return_count": 0,
+    "trace_failure": "board_reset_entry_not_observed",
+    "conclusion": "Although 0x00419A90 is a statically valid Board reinitialization routine, this natural-loss path did not execute its entry after the source anchor. The exact loss path uses another routine or another entry boundary."
+  },
+  "evidence": [
+    {
+      "path": "D:/ZumaGolden/record-c152a1-idle-natural-loss-reset-trace-v1-verified-foreground/board-global-precall-and-reset.json",
+      "bytes": 12360,
+      "sha256": "sha256:b4582b9008cdda7163d4900f51a8ec67d5cc37696b75fca05d0f637ecaaec4b3",
+      "call_count": 9,
+      "source_anchor_count": 1,
+      "reset_entry_count": 0,
+      "reset_return_count": 0,
+      "process_memory_writes": 0,
+      "process_memory_mutation": false,
+      "hardware_breakpoint_restored": true,
+      "debugger_detach_error": null
+    },
+    {
+      "path": "D:/ZumaGolden/record-c152a1-idle-natural-loss-reset-trace-v1-verified-foreground/autoplay.ndjson",
+      "bytes": 222335,
+      "sha256": "sha256:7845700951bd436178df08ca491c91cf9a68e56ecc685db99c858a73a61febb0"
+    },
+    {
+      "path": "D:/ZumaGolden/record-c152a1-idle-natural-loss-reset-trace-v1-verified-foreground/navigation-before-title-start.bmp",
+      "bytes": 1920054,
+      "sha256": "sha256:9c2b7279339f61b2374833c7c2b7c732d17986d7dcd9345fcd786b97d79c02f2"
+    },
+    {
+      "path": "D:/ZumaGolden/record-c152a1-idle-natural-loss-reset-trace-v1-verified-foreground/navigation-before-adventure.bmp",
+      "bytes": 1920054,
+      "sha256": "sha256:714a08de23df8b454f22b36d7b2300a9c115b98266a09ec2543ed930c17ac660"
+    },
+    {
+      "path": "D:/ZumaGolden/record-c152a1-idle-natural-loss-reset-trace-v1-verified-foreground/navigation-before-continue-game.bmp",
+      "bytes": 1920054,
+      "sha256": "sha256:8a2d63533d233c5f29ef581033ec1080259ef86d09fc196c1971fc4d5ef78ca9"
+    }
+  ],
+  "recording_commit": {
+    "input_dmo_created": false,
+    "reason": "The fail-closed trace result was evaluated before normal retail exit, so no DMO commitment is claimed."
+  },
+  "safety": {
+    "host_pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "applied_pre_state_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526",
+    "host_end_state_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526",
+    "host_restored_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_restored_exactly": true,
+    "retail_process_remaining": false,
+    "process_memory_writes": 0,
+    "hardware_breakpoint_restored": true
+  },
+  "decision": {
+    "c152a1_remains_failed": true,
+    "same_preregistration_retry_forbidden": true,
+    "candidate_entry_0x00419A90_must_not_be_claimed_as_loss_path": true,
+    "verified_foreground_correction_retained": true,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false,
+    "next_step": "Freeze a diagnostic that watches the anchored Board+0x108 score-target field for low-frequency writes, records each exact post-instruction EIP and stack, and stops only after a positive changed target appears on the same Board."
+  }
+}

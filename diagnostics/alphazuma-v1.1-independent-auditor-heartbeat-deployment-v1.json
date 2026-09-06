@@ -1,0 +1,27 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-independent-auditor-heartbeat-deployment",
+  "version": 1,
+  "status": "ACTIVE",
+  "deployed_utc": "2026-08-14T01:56:57.1547539+00:00",
+  "automation": {
+    "id": "alphazuma-v1-1",
+    "path": "C:\\Users\\Laure\\.codex\\automations\\alphazuma-v1-1\\automation.toml",
+    "sha256": "sha256:cec3f073d0ee5bac10ea545a3ba5f46effd95c5f4961d636915b836dbf965bc4",
+    "status": "ACTIVE",
+    "rrule": "FREQ=MINUTELY;INTERVAL=30;UNTIL=20260814T150000Z",
+    "notification_policy": "failed_runs_only"
+  },
+  "completion_requirement_added": {
+    "auditor": "tools/audit_alphazuma_v11_frontier_result.py",
+    "receipt": "diagnostics/alphazuma-v1.1-frontier-independent-final-audit-v1.json",
+    "required_status": "PASS",
+    "goal_may_complete_on_formal_gate_fail": true,
+    "rationale": "The work objective is complete when the frozen campaign is run and independently audited; promotion success must be reported accurately rather than assumed."
+  },
+  "auditor_test_receipt": {
+    "path": "diagnostics/alphazuma-v1.1-independent-result-auditor-tests-v1.json",
+    "sha256": "sha256:cecbb0d960066d7f9864de5fbf62e73556e4f483284029e9578652708eee0952"
+  },
+  "training_or_evaluation_semantics_changed": false,
+  "formal_seed_consumption": "none"
+}

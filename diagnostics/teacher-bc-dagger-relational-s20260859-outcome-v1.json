@@ -1,0 +1,87 @@
+{
+  "schema": "zuma-rl.teacher-bc-dagger-relational-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T10:24:50.114Z",
+  "status": "RELATIONAL_SCREEN_FAIL_AIM_BOUNDARY",
+  "decision": "RETAIN_RELATIONAL_ARCHITECTURE_REJECT_EXACT_RECIPE",
+  "preregistration": {
+    "path": "diagnostics/teacher-bc-dagger-relational-s20260859-preregistration-v1.json",
+    "sha256": "sha256:722b55db761ceb548514f53613bde3e0114a0d12fd6e73376e3e75761972e8e9",
+    "status": "FROZEN_BEFORE_RUN_OUTPUT"
+  },
+  "artifacts": {
+    "run_dir": "D:/ZumaTraining/screening-teacher-bc-dagger-relational-s20260859-v1",
+    "report_sha256": "sha256:d74c352ee4ffaedb1175438027209ea2cb3d99a660bc57c2be9fa891ca708a75",
+    "completion_sha256": "sha256:e86607dbbc38b6e58009fc9798b836596e52547b549dc323075d2a6d3d5aa961",
+    "model_sha256": "sha256:52d5ad858b637a337edfa9378c1ba169a69543cbe884cb83c73009182c40cfa4"
+  },
+  "acceptance_results": {
+    "pipeline": {
+      "pass": true,
+      "process_exit_code": 0,
+      "completion_receipt_status": "COMPLETE",
+      "all_dagger_rounds_complete": true,
+      "policy_parameter_count": 307960
+    },
+    "aggregated_dataset": {
+      "pass": true,
+      "sample_count": 2473,
+      "verb_accuracy": 0.9712899312575819,
+      "verb_accuracy_threshold": 0.9,
+      "fire_recall": 0.9539473684210527,
+      "fire_recall_threshold": 0.65,
+      "swap_recall": 0.9401993355481728,
+      "swap_recall_threshold": 0.65,
+      "fire_aim_exact_accuracy": 0.030263157894736843,
+      "fire_aim_within_one_accuracy": 0.05,
+      "confusion_expected_rows_predicted_columns": [
+        [1111, 0, 0],
+        [1, 725, 34],
+        [0, 36, 566]
+      ]
+    },
+    "held_out_full_horizon": {
+      "pass": false,
+      "wins": 0,
+      "required_wins": 1,
+      "losses": 0,
+      "truncations": 2,
+      "scores": [5790, 5020],
+      "mean_score": 5405.0,
+      "matched_control_mean_score": 5375.0,
+      "mean_score_greater_than_matched_control": true,
+      "episode_action_counts": [
+        {"wait": 11290, "fire": 564, "swap": 146},
+        {"wait": 11342, "fire": 567, "swap": 91}
+      ]
+    }
+  },
+  "mechanism_evidence": {
+    "dagger_round_0_teacher_conditioned_verb_recall": [
+      1.0,
+      0.5210526315789473,
+      0.2871287128712871
+    ],
+    "dagger_round_1_teacher_conditioned_verb_recall": [
+      1.0,
+      0.8308457711442786,
+      0.9880952380952381
+    ],
+    "final_fire_and_swap_discrimination_passed": true,
+    "final_fire_aim_exact_accuracy": 0.030263157894736843,
+    "bounded_inference": "explicit color relations resolved the fire-versus-swap instability, while categorical aim imitation remained near-unlearned and no held-out episode completed"
+  },
+  "next_action": {
+    "authorized": "retain relational features and isolate aim optimization with semantically balanced or staged aim training under a new preregistration",
+    "forbidden": "do not launch large-scale RL or claim completion based on score and survival alone"
+  },
+  "non_authorizations": [
+    "fresh_seed_generalization_claim",
+    "large_scale_training",
+    "rl_recipe_promotion",
+    "fidelity_gate_opening",
+    "original_game_deployment",
+    "original_transfer_certification",
+    "visual_policy_training"
+  ]
+}

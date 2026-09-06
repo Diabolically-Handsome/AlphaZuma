@@ -1,0 +1,15 @@
+{
+  "cases": [
+    {
+      "id": "c133a1-fruit-spawn",
+      "manifest_path": "sources/c133a1-u4745-u4760-source-bound-fruit-spawn-v1.json",
+      "memory_probe_path": "formal-full-state-c133a1-fruit-spawn-u4745-u4760-v1/attempt-01/memory-probe.json",
+      "window": {
+        "end_update": 4760,
+        "start_update": 4745
+      }
+    }
+  ],
+  "schema": "zuma-rl.pc-mechanism-audit-plan",
+  "version": 1
+}

@@ -1,0 +1,79 @@
+{
+  "acceptance": {
+    "full_test_suite": "PASS_WITH_ONLY_DOCUMENTED_SKIPS_AND_PREEXISTING_WARNING",
+    "native_fidelity_timeout_seconds": 900,
+    "native_windows_fidelity_report": {
+      "policy": "original-transfer-jungle2-v4",
+      "reasons": [],
+      "status": "OPEN"
+    },
+    "run_directory_created_after_both_gates": true,
+    "targeted_tests": "PASS",
+    "training_recipe_changed": false,
+    "training_service_active_after_gate": true
+  },
+  "allowed_changes": {
+    "create": [
+      "diagnostics/c221-wsl-fidelity-runtime-timeout-repair-success-receipt-v1.json",
+      "diagnostics/c221-wsl-fidelity-runtime-timeout-repair-failure-receipt-v1.json"
+    ],
+    "forbidden": [
+      "changing Fidelity Gate evidence, policy, thresholds, or frozen reports",
+      "changing Training Gate policy, recipe, seed, model, or authorized step count",
+      "changing simulator or policy runtime semantics",
+      "modifying or deleting any failed launch log",
+      "creating the training run directory before both live Gates accept the request"
+    ],
+    "modify": [
+      "src/zuma_rl/fidelity_runtime.py",
+      "tests/test_fidelity_runtime.py",
+      "docs/TRAINING_GATE.md"
+    ]
+  },
+  "baseline": {
+    "failure": {
+      "classification": "operational_wrapper_timeout_below_observed_valid_gate_runtime",
+      "exception": "subprocess.TimeoutExpired",
+      "failed_systemd_unit": "zuma-pc-golden-jungle2-s20260950-v3.service",
+      "log": "D:/ZumaGolden/training/launch-logs/pc-golden-jungle2-transfer-s20260950-98k-v1-20260812T145848Z.stderr.log",
+      "log_bytes": 1674,
+      "log_sha256": "sha256:dd80ebb91e0100fa27eb13af14ac613c5830b14c6204b4afd4df2c7a7cf383e8",
+      "timeout_seconds": 300
+    },
+    "observed_valid_full_gate_runtime_seconds": 372.3,
+    "run_directory_absent": true,
+    "training_started": false,
+    "training_steps_executed": 0
+  },
+  "created_utc": "2026-08-12T15:05:43.761Z",
+  "decision_rule": {
+    "fail": "Retain the failed service and logs, start no training, and diagnose the first failed invariant under a separately preregistered attempt.",
+    "pass": "Freeze the c221 success receipt after the exact request passes both live Gates, creates the new run directory, loads CUDA on the RTX 5090, and begins producing training progress."
+  },
+  "fixed_inputs": {
+    "fidelity_report_sha256": "sha256:a08d64bfd13bdbfdcb74c65163aa9e9b6a004e9d8c8fc5ff35376d252655c7d1",
+    "fidelity_suite_sha256": "sha256:0bfb00323d7544626b1d19452e64e55c88bacc496ecee0ba2303c7cb0ea29712",
+    "launch_script": "tools/launch_pc_golden_transfer_s20260950_v1.sh",
+    "launch_script_sha256": "sha256:81c261b370561306fd43ea2923e15a596645666e8478307ca1050abfc9ad691c",
+    "model_sha256": "sha256:32e1e841962833b3c74ce743598df1c87e21c9c9c931092152e8bc2700081f64",
+    "recipe_sha256": "sha256:dde6a9ee9c8b7e08f20589e633d1a6a947849bc0831054d8b5019f6f84a4c9c0",
+    "training_report_sha256": "sha256:137f831422e6f40ee51425a184554d767f489ff4265cc3a1b773e9ba537b1999",
+    "training_suite_sha256": "sha256:bedff8521857d36414689fce5682049d8dd9dca10ab010fcc64a86a76b0f8e17"
+  },
+  "frozen_code_before_change": {
+    "src/zuma_rl/fidelity_runtime.py": "sha256:ac8df93e6bb1cfef0e0286111bf48b2ed70ca2b5abe8f3b3966633e0d7dc27ca",
+    "tests/test_fidelity_runtime.py": "sha256:5f64374894d17877f129bdcf04af7857b9cba77940c4bb9fbb7cd44a7d36eac3"
+  },
+  "id": "c221-wsl-fidelity-runtime-timeout-repair-v1",
+  "repair_contract": {
+    "catch_timeout_and_raise_domain_error": true,
+    "native_fidelity_timeout_seconds_after": 900,
+    "native_fidelity_timeout_seconds_before": 300,
+    "policy_or_evidence_change": false,
+    "rationale": "The wrapper ceiling must exceed the independently observed 372.3-second valid full Fidelity recomputation while remaining finite and fail-closed.",
+    "training_semantics_change": false
+  },
+  "schema": "zuma-rl.wsl-fidelity-runtime-timeout-repair-preregistration",
+  "status": "FROZEN_BEFORE_CODE_CHANGE_AND_RELAUNCH",
+  "version": 1
+}

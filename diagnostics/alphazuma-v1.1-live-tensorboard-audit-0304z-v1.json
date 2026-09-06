@@ -1,0 +1,63 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-live-tensorboard-audit-receipt",
+  "version": 1,
+  "completed_utc": "2026-08-14T03:04:58.9020683Z",
+  "status": "PASS",
+  "classification": "live_training_diagnostic_only",
+  "immutable_snapshot": {
+    "path": "D:\\ZumaTraining\\alphazuma-v1.1-live-tensorboard-audit-0303z-s62081301-v1",
+    "created_utc": "2026-08-14T03:04:20.6638839Z",
+    "run_directories": 7,
+    "event_files": 7,
+    "event_bytes": 3909868
+  },
+  "source_audit": {
+    "path": "D:\\ZumaTraining\\alphazuma-v1.1-live-tensorboard-audit-0303z-s62081301-v1\\audit.json",
+    "sha256": "sha256:8d2bae316a82ab91281aef19dc9d27d1d8c49f1d677121ba3ac06a7eb506d9c7"
+  },
+  "tool": {
+    "path": "tools/audit_alphazuma_v11_tensorboard.py",
+    "sha256": "sha256:9eec5f90e0f61d668524ea5795fa2007dccc94f5a1db4ec52962fecd1add6378"
+  },
+  "tests": {
+    "path": "tests/test_audit_alphazuma_v11_tensorboard.py",
+    "sha256": "sha256:a5d1bbc02d70d5b3d3fea8c9b42e6e106c0780fa1ec2c7e76d004b9b46059696",
+    "result": "3_passed"
+  },
+  "validation": {
+    "runs": 7,
+    "passed": 7,
+    "failed": 0,
+    "expected_scalar_streams": 84,
+    "missing_scalar_streams": 0,
+    "nonfinite_scalar_streams": 0,
+    "structural_errors": 0,
+    "diagnostic_warnings": 0,
+    "copied_status_and_event_files_independently_rehashed": 14,
+    "copy_hash_mismatches": 0
+  },
+  "recent_means": [
+    {"run": "frontier-adaptive-5090-oom-recovery", "fps": 403.0, "approx_kl": 0.000010544625251895922, "clip_fraction": 0.0, "explained_variance": 0.7957353055477142, "entropy_loss": -1.4890110075473786, "value_loss": 0.08259148579090833},
+    {"run": "frontier-fixed-5080-oom-recovery", "fps": 414.0, "approx_kl": 0.000014368589950208843, "clip_fraction": 0.0, "explained_variance": 0.7403793156147003, "entropy_loss": -1.3814718008041382, "value_loss": 0.0825363771058619},
+    {"run": "memdense-adaptive-5090-a", "fps": 232.0, "approx_kl": 0.004607369669247419, "clip_fraction": 0.025781250349245964, "explained_variance": 0.6738710105419159, "entropy_loss": -1.0176968634128571, "value_loss": 0.0802911200444214},
+    {"run": "memdense-fixed-5090-b", "fps": 230.65, "approx_kl": 0.0056202846579253675, "clip_fraction": 0.03050842299126089, "explained_variance": 0.7080249041318893, "entropy_loss": -1.1564571797847747, "value_loss": 0.1310102845192887},
+    {"run": "memdense-adaptive-5080-a", "fps": 226.0, "approx_kl": 0.005363288416992873, "clip_fraction": 0.02814636209513992, "explained_variance": 0.5801168471574784, "entropy_loss": -1.1686728954315186, "value_loss": 0.11883406169945374},
+    {"run": "memdense-fixed-5080-b", "fps": 222.0, "approx_kl": 0.004754545656032861, "clip_fraction": 0.027384033147245645, "explained_variance": 0.5984384596347809, "entropy_loss": -0.8532725512981415, "value_loss": 0.12354772932594642},
+    {"run": "ultradense-zero-win-5090-c", "fps": 124.0, "approx_kl": 0.003872057842090726, "clip_fraction": 0.018236694298684596, "explained_variance": 0.722692334651947, "entropy_loss": -0.9869734436273576, "value_loss": 0.1265189682599157}
+  ],
+  "difficult_level_training_flow": [
+    {"level": "Jungle7", "episodes": 458, "wins": 4, "routes_with_win": 2},
+    {"level": "village6", "episodes": 508, "wins": 1, "routes_with_win": 1},
+    {"level": "village10", "episodes": 562, "wins": 0, "routes_with_win": 0}
+  ],
+  "interpretation": {
+    "numerical_divergence_detected": false,
+    "policy_entropy_collapse_detected": false,
+    "difficulty_starvation_detected": false,
+    "performance_improvement_claimed": false,
+    "reason": "Live optimization diagnostics and on-policy training-flow outcomes are not frozen blind evaluation evidence."
+  },
+  "training_or_evaluation_semantics_changed": false,
+  "formal_seed_consumption": "none",
+  "formal_gate_effect": "none"
+}

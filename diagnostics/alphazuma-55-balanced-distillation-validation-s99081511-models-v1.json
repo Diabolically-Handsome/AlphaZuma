@@ -1,0 +1,39 @@
+{
+  "schema": "zuma-rl.zero-shot-models-manifest",
+  "version": 1,
+  "status": "FROZEN",
+  "created_utc": "2026-08-15T09:31:17.813000+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "stage": "training_validation",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "models": [
+    {
+      "id": "specialist-distilled-v1",
+      "training_steps": 34444283,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-specialist-distillation-s85081501-v1/final_model.zip",
+      "sha256": "sha256:36d8bf8882a949d69f06f7ba5c456ef076b6a4bd7268505c996ba627050ccb82"
+    },
+    {
+      "id": "balanced-distilled-v1",
+      "training_steps": 35142127,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-balanced-distillation-s99081510-v1/final_model.zip",
+      "sha256": "sha256:1dd57f98d3638f70235c2e2fefed272dafd58186a45b7ac48d598709ba74cf0d"
+    }
+  ],
+  "purpose": "Paired early-health diagnostic only; it cannot select the formal finalist.",
+  "builder": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_training_validation.py",
+    "sha256": "sha256:45fcdd98cda89f2a606cb24c30a82c12b877d108b232d37f7623ed71bb9a1391"
+  },
+  "balanced_validation_plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-balanced-distillation-validation-s99081511-plan-v1.json",
+    "sha256": "sha256:2a93fcebf57d730b8fcc69a2a65bf41a2820328c37baed460b8ed586d9dda2be"
+  },
+  "target_completion": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-balanced-distillation-s99081510-v1/completion.json",
+    "sha256": "sha256:dd7688a3517c616ee3f07d0e1f59a1bca34424e379237e8225fc3c56422cc269"
+  }
+}

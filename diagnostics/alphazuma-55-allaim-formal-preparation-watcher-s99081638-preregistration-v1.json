@@ -1,0 +1,67 @@
+{
+  "schema": "zuma-rl.alphazuma-55-allaim-formal-preparation-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_ALLAIM_ENGINEERING_DECISION_AND_FORMAL_INFERENCE",
+  "campaign_id": "alphazuma-55-allaim-formal-preparation-watcher-s99081638-v1",
+  "created_utc": "2026-08-16T10:08:59.1461910Z",
+  "objective": "If and only if the independently gated all-actions contingency launches, freeze its one-policy formal master and disjoint seed registry before the engineering result, then launch an embargoed successor that cannot infer on formal seeds before promotion.",
+  "trigger": {
+    "source_status": "/mnt/d/ZumaTraining/alphazuma-55-allaim-contingency-watcher-s99081635-v1/controller_status.json",
+    "required_phase": "ALLAIM_TRAINING_AND_POSTPROCESS_LAUNCHED",
+    "on_current_route_gate_pass": "terminate COMPLETE without creating a master or registry",
+    "on_contingency_error": "preserve evidence and terminate ERROR"
+  },
+  "formal_contract": {
+    "single_policy": true,
+    "final_blind": {
+      "range": [3700000000, 3700000439],
+      "matrix": "55 levels x 8 attempts",
+      "minimum_wins_per_level": 1,
+      "minimum_total_wins": 220
+    },
+    "continuous": {
+      "range": [3800000000, 3800000219],
+      "matrix": "4 campaigns x 55 levels",
+      "minimum_complete_campaigns": 1,
+      "retry_forbidden": true,
+      "model_change_forbidden": true
+    },
+    "formal_seed_consumption_before_engineering_gate": "NONE"
+  },
+  "implementation": {
+    "watcher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_allaim_formal_preparation_watcher_v1.py",
+      "sha256": "sha256:2647eac84768c2b3c16f4602c6e66c56e687fe9e7a960f6f3ffc6051cb4ac1ee"
+    },
+    "launcher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/launch_alphazuma_55_allaim_formal_preparation_watcher_v1.sh",
+      "sha256": "sha256:059c1e33198f33e56fa71bbb2fadc2ab7c41b961c34d126f03b580c7d6eff57f"
+    },
+    "master_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_motor_observable_gradual_allaim_successor_master_v1.py",
+      "sha256": "sha256:9af157a675a1c42bad8ce42d144c77bdfee6874eb365101a717be66e95536dfb"
+    },
+    "registry_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_formal_seed_registry_v7.py",
+      "sha256": "sha256:1cc92c7cd852cc173c5b67e2340072e5fc7bc4c210cffe63585b08c1ab84f7f5"
+    },
+    "successor_controller": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_motor_observable_gradual_allaim_successor_v1.py",
+      "sha256": "sha256:82af3e08941ead744ae5193e7a40086f1016d395f13a4586bfcbcccf33395fc4"
+    },
+    "successor_auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_motor_observable_gradual_allaim_successor_v1.py",
+      "sha256": "sha256:146aec3051ec7eee55294ec3134198c3be02b492c04c3ff402f1afe84d00f166"
+    },
+    "successor_launcher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/launch_alphazuma_55_motor_observable_gradual_allaim_successor_v1.sh",
+      "sha256": "sha256:ba4e51d6f52dc6da1ef1d954d3e6b4bb2f6326045aa36be9bee4e3cdfeaa5caa"
+    }
+  },
+  "authority_boundary": {
+    "preparation_only": true,
+    "formal_seed_consumption": "NONE",
+    "formal_candidate_authority": false,
+    "power_restore_authority": false
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "schema": "zuma-rl.teacher-policy-anchor-confirmation-preregistration",
+  "version": 3,
+  "created_utc": "2026-08-04T15:41:21.337Z",
+  "status": "FROZEN_BEFORE_RUN_OUTPUT",
+  "classification": "fresh_pre_reserved_nonoverlapping_multi_episode_vector_seed_confirmation",
+  "hypotheses": {
+    "null": "the coefficient-1000 repair is specific to the consumed s20260910 failure population",
+    "alternative": "the exact coefficient-1000 anchored recipe preserves deterministic and stochastic capability on the independently pre-reserved s20260920 population"
+  },
+  "anti_seed_fishing": {
+    "seed_family": 20260920,
+    "reservation_origin": "diagnostics/teacher-policy-anchor-c100-confirmation-n32-s20260910-preregistration-v1.json",
+    "reservation_was_frozen_before_s20260910_run_outputs": true,
+    "prior_run_artifacts_using_any_seed_in_family": 0,
+    "exact_json_hit_files_before_freeze": [
+      "diagnostics/teacher-policy-anchor-c100-confirmation-n32-s20260910-preregistration-v1.json",
+      "diagnostics/teacher-policy-anchor-c100-confirmation-n32-s20260910-outcome-v1.json"
+    ],
+    "hit_classification": "reservation_and_non_authorization_metadata_only_no_episode_or_training_output",
+    "replacement_after_observed_baseline_forbidden": true
+  },
+  "design": {
+    "run_dir": "/mnt/d/ZumaTraining/confirmation-teacher-anchor-c1000-s20260920-n32-v1",
+    "expected_run_dir_absent": true,
+    "input_model": {
+      "path": "D:/ZumaTraining/screening-teacher-offline-polar90-s20260873-v1/refined_model.zip",
+      "sha256": "sha256:f03dee97cb5a3e2ce3abcf4324137fe6ed9b68e827765b4a7b6adfa63cafb8f7"
+    },
+    "fresh_seeds": {
+      "training_base_seed": 20260920,
+      "training_initial_vector_seeds": [20260920, 20260921, 20260922, 20260923],
+      "boundary_base_seed": 20270920,
+      "boundary_initial_vector_seeds": [20270920, 20270921, 20270922, 20270923, 20270924, 20270925, 20270926, 20270927],
+      "stochastic_action_sampling_seed": 20280920,
+      "search_roots": [
+        "C:/Users/Laure/Documents/祖玛",
+        "D:/ZumaTraining",
+        "D:/ZumaGolden"
+      ],
+      "json_files_searched": 12915,
+      "exact_numeric_hit_files": 2,
+      "prior_run_artifact_hits": 0,
+      "numeric_boundary_regex_used": true
+    },
+    "recipe": {
+      "environment": "ZumaRevenge-v0",
+      "level": "Jungle2",
+      "profile_mode": "tutorials_completed",
+      "aim_bins": 180,
+      "factorized_actions": true,
+      "actor_observable_retail_rejection_mask": true,
+      "frame_skip": 1,
+      "max_ticks": 12000,
+      "training_time_limit_steps": 0,
+      "max_balls": 768,
+      "algorithm": "TeacherAnchoredMaskablePPO",
+      "total_effective_steps": 16384,
+      "num_envs": 4,
+      "rollout_steps_per_env": 512,
+      "batch_size": 512,
+      "ppo_epochs": 1,
+      "learning_rate": 0.000005,
+      "entropy_coef": 0.0,
+      "reset_optimizer_state": true,
+      "teacher_forward_kl_coefficient": 1000.0,
+      "teacher_forward_kl_state_source": "current_rollout_observations",
+      "teacher_and_current_action_masks_identical": true,
+      "freeze_aim_path": false,
+      "all_current_policy_and_value_parameters_trainable": true
+    },
+    "boundary_evaluation": {
+      "receipt_schema_version": 4,
+      "episodes_per_boundary": 32,
+      "eval_num_envs": 8,
+      "episode_identity_protocol": "vector_env_index_per_env_episode_ordinal_and_terminal_info",
+      "outcome_source": "terminal_info",
+      "deterministic_and_stochastic": true,
+      "same_identity_sets_required_pre_and_post": true,
+      "paired_episode_count_per_mode": 32
+    },
+    "resources": {
+      "cuda_visible_devices": "0",
+      "expected_cuda_device": "NVIDIA GeForce RTX 5090",
+      "rtx_5080_excluded": true,
+      "cpu_affinity": "0-7",
+      "cpu_thread_budget": 8
+    }
+  },
+  "acceptance": {
+    "pipeline": {
+      "completion_receipt_status": "COMPLETE",
+      "effective_steps_exactly": 16384,
+      "optimizer_reset_receipt_status": "PASS",
+      "teacher_anchor_installation_status": "INSTALLED",
+      "teacher_anchor_verification_status": "PASS",
+      "teacher_policy_bitwise_unchanged": true,
+      "teacher_requires_grad_all_false": true,
+      "current_policy_bitwise_changed": true,
+      "teacher_detached_before_model_save": true,
+      "teacher_anchor_train_calls_exactly": 8,
+      "teacher_anchor_minibatches_exactly": 32,
+      "teacher_anchor_samples_exactly": 16384,
+      "teacher_anchor_mean_and_max_kl_finite_nonnegative": true,
+      "all_four_v4_boundary_receipts_required": true,
+      "each_boundary_receipt_episode_count_exactly": 32,
+      "each_boundary_receipt_vector_env_count_exactly": 8,
+      "both_v2_identity_comparisons_required": true,
+      "each_comparison_paired_episode_count_exactly": 32,
+      "comparison_outcome_source": "terminal_info",
+      "failure_receipt_forbidden": true,
+      "stderr_bytes": 0
+    },
+    "precondition": {
+      "pretrain_deterministic_wins_at_least": 24,
+      "episodes": 32
+    },
+    "deterministic_retention": {
+      "posttrain_wins_at_least": 24,
+      "posttrain_wins_no_less_than_pretrain_minus": 1,
+      "posttrain_losses_plus_truncations_at_most": 8,
+      "posttrain_truncations_at_most": 4,
+      "posttrain_mean_reward_at_least_pretrain_minus": 1.0,
+      "identity_paired_reward_regressions_exceeding_5_at_most": 4
+    },
+    "stochastic_retention": {
+      "posttrain_wins_at_least": 30,
+      "posttrain_wins_no_less_than_pretrain_minus": 1,
+      "posttrain_truncations_at_most": 1,
+      "posttrain_mean_reward_at_least_pretrain_minus": 0.75,
+      "identity_paired_reward_regressions_exceeding_5_at_most": 4
+    },
+    "promotion_rule": "a complete pass authorizes one preregistered 98304-step closed-gate scale-stability screen using coefficient 1000 and the reserved fresh 20260930 seed family; it does not authorize original-game transfer training",
+    "rejection_rule": "on failure, do not choose another confirmation seed block or increase the coefficient again; implement a structural actor-drift repair and repeat consumed controls first"
+  },
+  "reserved_if_pass": {
+    "scale_training_base_seed": 20260930,
+    "scale_training_initial_vector_seeds": [20260930, 20260931, 20260932, 20260933],
+    "scale_boundary_base_seed": 20270930,
+    "scale_boundary_initial_vector_seeds": [20270930, 20270931, 20270932, 20270933, 20270934, 20270935, 20270936, 20270937],
+    "scale_stochastic_action_sampling_seed": 20280930,
+    "exact_numeric_hits_at_confirmation_freeze": 0
+  },
+  "evidence_anchor": {
+    "coefficient_1000_repair": {
+      "path": "diagnostics/teacher-policy-anchor-c1000-repair-screen-s20260910-outcome-v1.json",
+      "sha256": "sha256:1e3dfbbe0925f84e0875610389a57cfaf727f8978e78c632ea29277b4403f6ea",
+      "status": "COEFFICIENT_1000_REPAIR_SCREEN_PASS",
+      "stream_classification": "consumed_failure_control"
+    },
+    "regression": {
+      "factor_audit_targeted_pytest": "PASS_3",
+      "wsl_full_pytest": "PASS_1137",
+      "wsl_full_pytest_exit_code": 0
+    }
+  },
+  "source_hashes": {
+    "train.py": "sha256:94d14cb9cf5da4e46989cab00ef501d0852bc8e08488d1e7fd955bd7185f0f84",
+    "teacher_anchor.py": "sha256:52611e4833422f81a148281dad8982d1d0908410f4c52842bd11f15c58d5a601",
+    "boundary_evidence.py": "sha256:27c1a103c53d57e0f3983714fce58ca144ab927a84dfd3770c4273c2590826f6",
+    "compare_ppo_boundaries.py": "sha256:c3d6d3bc02d0de6901d5d265db966dd015bda87473a10154a92c9439a17efeca"
+  },
+  "non_authorizations": [
+    "selecting_a_replacement_seed_block_after_observing_this_run",
+    "98304_step_scale_screen_before_this_confirmation_passes",
+    "large_scale_training",
+    "fidelity_gate_opening",
+    "original_transfer_certification"
+  ]
+}

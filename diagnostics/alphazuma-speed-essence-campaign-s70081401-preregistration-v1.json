@@ -1,0 +1,120 @@
+{
+  "schema": "zuma-rl.alphazuma-speed-essence-campaign-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_TRAINING",
+  "frozen_utc": "2026-08-14T17:02:57.921875+00:00",
+  "id": "alphazuma-speed-essence-campaign-s70081401-v1",
+  "objective": "Preserve V1's rare fast colour-management behaviour, recover V1.1's breadth gains, and search for an independently held-out speed surprise.",
+  "hypotheses": [
+    "A low-update V1 continuation retains speed better than the long V1.1 frontier.",
+    "A doubled but bounded time penalty improves winning times without replacing victory as the dominant objective.",
+    "A mild V1.1 repair curriculum can recover its speed regressions without losing its win-count gain."
+  ],
+  "training_preregistrations": [
+    {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-speed-essence-v1-lowdrift-s71081401-preregistration-v1.json",
+      "sha256": "sha256:b40b0bfda1fbe492b5cd66354342e852a129069f828b8ef74a34564f16a47fca"
+    },
+    {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-speed-essence-v1-speed-s72081401-preregistration-v1.json",
+      "sha256": "sha256:d0014e7d253d31bd0d3e003410cacdfdbcaaaa811f88785a361d0a7bee82edf3"
+    },
+    {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-speed-essence-v11-repair-s73081401-preregistration-v1.json",
+      "sha256": "sha256:bbb84c51ed600664b61d18222d6136e7914f793ad05adf977bfcdde3cf103ba9"
+    }
+  ],
+  "baselines": {
+    "v1": {
+      "id": "alphazuma-v1-published-champion-adaptive-mid-13631488",
+      "training_steps": 13631488,
+      "path": "/mnt/d/ZumaTraining/overnight-v11-adaptive-recovery-s43081301-v1/checkpoints/adaptive-5090-recovery_13631488_steps.zip",
+      "sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579"
+    },
+    "v11": {
+      "id": "alphazuma-v1.1-selected-fixed-final-33772736",
+      "training_steps": 33772736,
+      "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-frontier-fixed-oom-recovery-s47081302-v1/final_model.zip",
+      "sha256": "sha256:c3ffb855f0a7d3f8521bc81224172e992cd59249154f0c0a3251636d63f6ba91"
+    }
+  },
+  "candidate_rule": "The two frozen baselines plus, for each of six routes, the checkpoint nearest half of that route's completed new steps and its final model; exactly fourteen candidates unless a route produces no eligible checkpoint, which is retained as a recorded route failure rather than substituted.",
+  "selection": {
+    "level_ids": [
+      "Jungle2",
+      "Jungle4",
+      "Jungle7",
+      "Jungle9",
+      "village4",
+      "village5",
+      "village6",
+      "village7",
+      "village10"
+    ],
+    "attempts_per_level": 4,
+    "seed_base": 1200000000,
+    "last_seed": 1200000035,
+    "robust_ranking": [
+      "Jungle2 wins at least 3 of 4",
+      "Jungle7 village6 village10 levels cleared descending",
+      "all selection levels cleared descending",
+      "all selection wins descending",
+      "median best winning ticks ascending",
+      "earlier manifest position as deterministic final tie-break"
+    ],
+    "speed_ranking": [
+      "Jungle2 wins at least 3 of 4",
+      "Jungle2 Jungle4 Jungle9 village7 levels cleared descending",
+      "all selection wins descending",
+      "geometric mean ratio of best winning ticks to frozen V1 references ascending",
+      "earlier manifest position as deterministic final tie-break"
+    ],
+    "frozen_v1_best_tick_references": {
+      "Jungle2": 1567,
+      "Jungle4": 1865,
+      "Jungle9": 5578,
+      "village7": 3179
+    },
+    "selection_results_are_not_final_blind_claims": true
+  },
+  "final_blind": {
+    "models": "V1 baseline, V1.1 baseline, robust-selected candidate, and speed-selected candidate; deduplicate identical selected candidates",
+    "level_ids": "all seventeen frozen levels",
+    "attempts_per_level": 8,
+    "seed_base": 1300000000,
+    "last_seed": 1300000135,
+    "paired_same_seed": true,
+    "all_attempts_must_be_reported": true
+  },
+  "reporting": {
+    "separate_best_seed_speed_from_robust_win_rate": true,
+    "no_original_client_world_record_claim": true,
+    "render_video_for_any_new_final_blind_level_best": true,
+    "report_negative_result_without_recipe_rewrite": true
+  },
+  "schedule": {
+    "training_stop_utc": "2026-08-14T21:45:00Z",
+    "training_stop_local": "2026-08-14T17:45:00-04:00",
+    "goal_end_utc": "2026-08-15T00:00:00Z",
+    "goal_end_local": "2026-08-14T20:00:00-04:00"
+  },
+  "execution": {
+    "selection_output_root": "/mnt/d/ZumaTraining/alphazuma-speed-essence-selection-s70081401-v1",
+    "final_output_root": "/mnt/d/ZumaTraining/alphazuma-speed-essence-final-blind-s70081401-v1",
+    "selection_shards": 2,
+    "final_shards": 2,
+    "devices": [
+      "cuda:0",
+      "cuda:1"
+    ],
+    "parallel_envs_per_shard": 24
+  },
+  "evaluator": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel.py",
+    "sha256": "sha256:d0011f9ad5c6837315007a7fb31e128fb315e4baddb45959c5f3b98d11a6a7e3"
+  },
+  "power_plan": {
+    "temporary": "8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c",
+    "restore_at_finish_or_deadline": "381b4222-f694-41f0-9685-ff5bb260df2e"
+  }
+}

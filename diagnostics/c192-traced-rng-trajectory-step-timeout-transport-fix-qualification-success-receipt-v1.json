@@ -1,0 +1,60 @@
+{
+  "schema": "zuma-rl.traced-rng-trajectory-step-timeout-transport-fix-qualification-success-receipt",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T15:57:45.2111980Z",
+  "preregistration": {
+    "artifact": "diagnostics/c192-traced-rng-trajectory-step-timeout-transport-fix-preregistration-v1.json",
+    "artifact_bytes": 3446,
+    "artifact_sha256": "sha256:d33d5a53cfe7b6545f475b99de093c101cea8c9e311666483cb089f2181f2e12"
+  },
+  "qualified_candidate": {
+    "tools/collect_pc_memory_probe.py": {
+      "bytes": 478340,
+      "sha256": "sha256:15deb94e655c92e46b6992c9cab24d4108b49621c2d7cbd676a069835bf14d7e"
+    },
+    "tests/test_collect_pc_memory_probe.py": {
+      "bytes": 143502,
+      "sha256": "sha256:1db15dd8ae6c51586f95fc836b53e37e7ace2f92772e336da7af897a4748d4f3"
+    },
+    "hashes_unchanged_after_qualification": true
+  },
+  "implemented_contract": {
+    "parameter": "trajectory_step_timeout_seconds",
+    "cli_option": "--trajectory-step-timeout-seconds",
+    "legacy_default_seconds": 5.0,
+    "minimum_exclusive_seconds": 0.0,
+    "maximum_inclusive_seconds": 3600.0,
+    "custom_value_passed_to_unrecorded_warmup_and_recorded_steps": true,
+    "board_trajectory_timeout_unchanged": true,
+    "natural_freeze_timeout_unchanged": true,
+    "global_rng_trace_timeout_unchanged": true,
+    "replay_step_barrier_predicate_unchanged": true,
+    "trajectory_schema_unchanged": true,
+    "process_memory_write_surface_unchanged": true
+  },
+  "checks": {
+    "python_compile": "PASS",
+    "collect_pc_memory_probe_tests": "PASS_105",
+    "custom_300_second_warmup_and_recorded_step_forwarding": "PASS",
+    "legacy_default_exactly_5_seconds": "PASS",
+    "invalid_timeout_fail_closed_cases": 6,
+    "cli_parser_and_main_forwarding": "PASS",
+    "full_pytest_suite": "PASS",
+    "full_suite_collected": 1579,
+    "full_suite_failure_count": 0,
+    "full_suite_skip_count": 13,
+    "full_suite_warning_count": 1,
+    "warning_is_existing_gymnasium_render_spec_warning": true
+  },
+  "authorization": {
+    "c193_new_output_root_may_be_preregistered": true,
+    "c193_trajectory_step_timeout_seconds": 300.0,
+    "c191_output_root_reuse_forbidden": true,
+    "scientific_classification_change": false,
+    "pc_golden_credit": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

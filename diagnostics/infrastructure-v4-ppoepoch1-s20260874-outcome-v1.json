@@ -1,0 +1,70 @@
+{
+  "schema": "zuma-rl.infrastructure-v4-ppoepoch1-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T13:26:47.326Z",
+  "status": "INFRASTRUCTURE_V4_PPO_EPOCH1_PASS",
+  "scope": "infrastructure_only_not_recipe_evidence",
+  "run_dir": "D:/ZumaTraining/infrastructure-v4-ppoepoch1-s20260874-v1",
+  "checks": {
+    "completion_status": "COMPLETE",
+    "effective_steps": 512,
+    "requested_steps": 512,
+    "ppo_epochs": 1,
+    "optimizer_reset_status": "PASS",
+    "optimizer_state_parameter_count_after_reset": 0,
+    "model_parameters_bitwise_unchanged_by_reset": true,
+    "boundary_receipt_schema_version": 4,
+    "boundary_receipts_present": 4,
+    "comparison_schema_version": 2,
+    "comparison_outcome_source": "terminal_info",
+    "identity_sets_match": true,
+    "failure_receipt_present": false,
+    "stderr_bytes": 0,
+    "cuda_device": "NVIDIA GeForce RTX 5090",
+    "torch_cpu_threads": 8,
+    "process_cpu_affinity": "0-7",
+    "wsl_full_pytest": "PASS_1129"
+  },
+  "behavioral_observations": {
+    "deterministic": {
+      "pretrain_wins": 4,
+      "posttrain_wins": 3,
+      "posttrain_truncations": 1,
+      "pretrain_mean_reward": 32.8494,
+      "posttrain_mean_reward": 28.95,
+      "mean_reward_delta": -3.8994000000000035,
+      "paired_regressions_exceeding_5": 2
+    },
+    "stochastic": {
+      "pretrain_wins": 4,
+      "posttrain_wins": 4,
+      "posttrain_truncations": 0,
+      "pretrain_mean_reward": 34.754625,
+      "posttrain_mean_reward": 35.168724999999995,
+      "mean_reward_delta": 0.4140999999999977,
+      "paired_regressions_exceeding_5": 0
+    },
+    "interpretation": "the short KAT validates plumbing only; its four-episode behavior is not used to promote or reject the one-epoch recipe"
+  },
+  "artifacts": {
+    "config_sha256": "sha256:33a74cfaf129f3179bc3a47e9b4d232f9030e34f76475b95c0d9aff71cd58bed",
+    "completion_sha256": "sha256:cf2117aa8c11e2f0877b18923b59c1d7ba8eb846ba801a70468c71aae4d38248",
+    "optimizer_reset_sha256": "sha256:eaca6a6bc3fee4d8ce4a5a4877b38a823b2d2d90ae9c87fb14cd54d9bca4219d",
+    "pretrain_deterministic_sha256": "sha256:8ba315f536a8a4d8f359c22d94c12aa1012e5b0502be99d8a8c164971f3f3cc5",
+    "pretrain_stochastic_sha256": "sha256:17ff265fb0af2f163f575996ccd9fdc9e7fd196be666dd5bc5aff359463d22ad",
+    "posttrain_deterministic_sha256": "sha256:38342a2e5e4ead57c6e29ec8f4fef8dfd81a9aee8214de7584baefe4bf1af678",
+    "posttrain_stochastic_sha256": "sha256:b4304f607b0a936bf2b2a34e9222858f9e123f7bcd105dd19fb46491d80d7f79",
+    "deterministic_comparison_sha256": "sha256:64c120818ecb330db5b4ce846961ae7d774f1a43e9d28b3af28017f2be50137e",
+    "stochastic_comparison_sha256": "sha256:d7444c9aac9b88265d4eead7ec4ef16ce859ea60e34873adefc65e3dbbbbea71",
+    "final_model_sha256": "sha256:d630079f81874fee86240179b522e8fcab00f67874a43c562d294ff4fbb3f52e",
+    "stdout_sha256": "sha256:843680fc69cf7af6cc516ec15ae9d9705e43f4b6915d7df060ac566e44e7a716",
+    "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_hashes": {
+    "train.py": "sha256:fadb2c03066199b6bffa829d69cfd6019b99cca74b6b27964c9c85a952ada61b",
+    "boundary_evidence.py": "sha256:27c1a103c53d57e0f3983714fce58ca144ab927a84dfd3770c4273c2590826f6",
+    "compare_ppo_boundaries.py": "sha256:c3d6d3bc02d0de6901d5d265db966dd015bda87473a10154a92c9439a17efeca",
+    "test_train_gate.py": "sha256:87c42a6a69f38c06f6f8ac459e7dfaea3c62537621f0f044f868abbaf138e318",
+    "test_boundary_evidence.py": "sha256:6097fdfaa44457eeccf6a606f2a11d053c650743ef5bab27fdb8cd6c6f4f0e5b"
+  }
+}

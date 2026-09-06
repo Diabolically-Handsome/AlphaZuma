@@ -1,0 +1,44 @@
+{
+  "schema": "zuma-rl.alphazuma-speed-essence-postprocess-execution-receipt",
+  "version": 1,
+  "status": "FROZEN_BEFORE_SELECTION",
+  "frozen_utc": "2026-08-14T17:51:24.8571493Z",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-speed-essence-campaign-s70081401-preregistration-v1.json",
+    "sha256": "sha256:5de3a8e4205d5a665caa840f1f3f8115da792ee22a3dd6c29d5691cb64cf204c"
+  },
+  "output_root": "/mnt/d/ZumaTraining/alphazuma-speed-essence-postprocess-s70081401-v1",
+  "controller": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_speed_essence_postprocess.py",
+    "sha256": "sha256:43648be2602a1fe44c68689ebc48860109c19c580d023620f2522c942ffb5406"
+  },
+  "independent_auditor": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_speed_essence_result.py",
+    "sha256": "sha256:82a3ca744c6d80dfce4d2d9da1a75d69210017c1f8129a655995f46c4ddf06b6"
+  },
+  "evaluator": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel.py",
+    "sha256": "sha256:d0011f9ad5c6837315007a7fb31e128fb315e4baddb45959c5f3b98d11a6a7e3"
+  },
+  "summarizer": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/summarize_multimodel_evaluation.py",
+    "sha256": "sha256:e7096d86aa06cb26abc781977ec4448a7715a6bcb7023d0596870b3baf7e00a6"
+  },
+  "matrix_auditor": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_v11_frontier_result.py",
+    "sha256": "sha256:a37ea47134610ec2824c1774d98afa84ff9025f7aa3b4d7235414feec6e45b34"
+  },
+  "record_renderer": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/record_paired_multimodel_level_best.py",
+    "sha256": "sha256:0602f51a93cbfecb137e02d7234ca11592a514a5c3356b527121b9f871d7cd8e"
+  },
+  "postprocess_helper": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_overnight_v11_postprocess.py",
+    "sha256": "sha256:1f8ce2067be93b001d182f8c22018ad3b2a0fb5e5c051b9a60f9a18de66c1a0e"
+  },
+  "synthetic_and_consumed_data_tests": {
+    "command": "TMPDIR=/tmp TEMP=/tmp .venv/bin/python -m pytest -q tests/test_alphazuma_speed_essence_postprocess.py tests/test_alphazuma_v11_frontier_postprocess.py tests/test_audit_alphazuma_v11_frontier_result.py",
+    "result": "11 passed",
+    "fresh_selection_or_final_seeds_consumed": false
+  }
+}

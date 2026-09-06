@@ -1,0 +1,101 @@
+{
+  "schema": "zuma-rl.retail-natural-loss-transition-recording-preregistration",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T08:02:02.9439803Z",
+  "purpose": "Acquire fully certifying retail natural-loss recordings after correcting the c137 transient-loss detector contradiction, while preserving every c137 artifact and label unchanged.",
+  "classification": "control-corrected-recording-preregistered-before-implementation",
+  "control_correction": {
+    "path": "diagnostics/recording-c137-control-correction-preregistration-v1.json",
+    "sha256": "sha256:b33ea9fdb6709ab65b41dd38593fbb9b46ea6a09473b16abc54d845ef6592cc7"
+  },
+  "why_new_acquisition_is_preferred": "A new PASS recording keeps every downstream source-bound and PC Golden validator strict. The c137 bounded-authentic-capture path remains scientifically valid but is not used unless all c139 runs fail for a declared technical reason.",
+  "frozen_pre_patch_implementation": {
+    "record_controller": {
+      "path": "tools/record_autoplay_zuma.py",
+      "bytes": 45375,
+      "sha256": "sha256:3a78d173bf3a889efc9c25993d7fa00193ac53db3d73411c9455a169012c8681"
+    },
+    "live_controller": {
+      "path": "tools/autoplay_live_zuma.py",
+      "bytes": 39032,
+      "sha256": "sha256:b95fbb7e3a2eba6aa0771d8780b61df85295b1516a6159650ef432795f90e7e0"
+    }
+  },
+  "frozen_detector_contract": {
+    "receipt_kind": "natural_loss_restart_transition_v1",
+    "required_policy": "idle",
+    "required_action_count": 0,
+    "required_swap_count": 0,
+    "required_expected_outcome": "natural_loss",
+    "pre_restart_score_below_target": true,
+    "pre_restart_native_game_time_minimum": 1000,
+    "post_restart_native_game_time_maximum": 1000,
+    "minimum_native_game_time_reset": 1000,
+    "board_unavailable_gap_required": true,
+    "replacement_board_runtime_active_required": true,
+    "replacement_board_gameplay_population_required": true,
+    "terminal_persistence_seconds": 0,
+    "loss_counter_is_not_used": "The previously named offset is not a reliable life counter and may be negative on a replacement board.",
+    "normal_exit_path": "retail_ui_from_replacement_board",
+    "recording_report_version": 2
+  },
+  "retail_contract": {
+    "runtime_executable": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "changedir": "D:/SteamLibrary/steamapps/common/Zuma's Revenge",
+    "prestate_dir": "D:/ZumaGolden/session-20260728-203153/native-windowed-record-001-prestate-reconstructed",
+    "expected_score_target": 9650,
+    "minimum_entry_score": 7000,
+    "maximum_gameplay_seconds": 180.0,
+    "navigation": {
+      "title_start_update": 1622,
+      "title_start_point": [400.0, 533.0],
+      "adventure_update": 2422,
+      "adventure_point": [633.0, 281.0],
+      "continue_game_update": 3108,
+      "continue_game_point": [399.0, 456.0],
+      "prelaunch_cursor_screen_point": [100, 100]
+    },
+    "rng_monitor_stop_native_time": 500,
+    "gameplay_mtrand_trace": true,
+    "mtrand_trace_kind": "global_wrapper_entry",
+    "controlled_crt_rand_seed": null,
+    "process_memory_writes_required": 0,
+    "host_state_restore_required": true
+  },
+  "run_order": ["c139a1", "c139a2", "c139a3"],
+  "runs": [
+    {
+      "id": "c139a1",
+      "output_root": "D:/ZumaGolden/record-c139a1-idle-natural-loss-transition-v1",
+      "expected_outcome": "natural_loss",
+      "gameplay_policy": "idle",
+      "fruit_policy": "ignore"
+    },
+    {
+      "id": "c139a2",
+      "output_root": "D:/ZumaGolden/record-c139a2-idle-natural-loss-transition-v1",
+      "expected_outcome": "natural_loss",
+      "gameplay_policy": "idle",
+      "fruit_policy": "ignore"
+    },
+    {
+      "id": "c139a3",
+      "output_root": "D:/ZumaGolden/record-c139a3-idle-natural-loss-transition-v1",
+      "expected_outcome": "natural_loss",
+      "gameplay_policy": "idle",
+      "fruit_policy": "ignore"
+    }
+  ],
+  "decision_rules": {
+    "every_declared_run_executes_in_order": true,
+    "no_retry_or_replacement_under_this_preregistration": true,
+    "failed_and_partial_outputs_are_retained": true,
+    "c137_reports_remain_incomplete": true,
+    "no_fidelity_credit_from_recording_report": true,
+    "first_passing_run_by_frozen_order_is_the_primary_replay_source": true,
+    "later_passing_runs_are_independent_holdbacks": true,
+    "formal_fixed_window_and_two_run_recurrence_remain_required": true
+  }
+}

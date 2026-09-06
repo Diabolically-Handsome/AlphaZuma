@@ -1,0 +1,78 @@
+{
+  "schema": "zuma-rl.teacher-bc-dagger-semantic-aim-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T10:10:26.467Z",
+  "status": "SEMANTIC_AIM_SCREEN_FAIL_INSUFFICIENT",
+  "decision": "RETAIN_INFRASTRUCTURE_FIX_REJECT_AS_SUFFICIENT_RECIPE",
+  "preregistration": {
+    "path": "diagnostics/teacher-bc-dagger-semantic-aim-s20260859-preregistration-v1.json",
+    "sha256": "sha256:a4bf97423dac091150cda6eacbb38ee07357118cf49d35db41890a74c61bcad0",
+    "status": "FROZEN_BEFORE_RUN_OUTPUT"
+  },
+  "artifacts": {
+    "run_dir": "D:/ZumaTraining/screening-teacher-bc-dagger-semantic-aim-s20260859-v1",
+    "report_sha256": "sha256:c6c1472dde6a7169f5c9da6e2bcd27bcb726ce57f059388e74354aa97fae4b84",
+    "completion_sha256": "sha256:bfeacceb8991d9b7b4c752a92d4ec83f15b201ef5e903d899861a3c6f321d5a3",
+    "model_sha256": "sha256:3d662eb7e8247d917bd731fcf7dceb1c1381194abdca88e84bab6c366acc8b7a"
+  },
+  "acceptance_results": {
+    "pipeline": {
+      "pass": true,
+      "process_exit_code": 0,
+      "completion_receipt_status": "COMPLETE",
+      "all_dagger_rounds_complete": true
+    },
+    "aggregated_dataset": {
+      "pass": false,
+      "sample_count": 2436,
+      "verb_accuracy": 0.8386699507389163,
+      "verb_accuracy_threshold": 0.9,
+      "fire_recall": 0.86328125,
+      "fire_recall_threshold": 0.65,
+      "swap_recall": 0.48201438848920863,
+      "swap_recall_threshold": 0.65,
+      "fire_aim_exact_accuracy": 0.036458333333333336,
+      "confusion_expected_rows_predicted_columns": [
+        [1112, 0, 0],
+        [0, 663, 105],
+        [0, 288, 268]
+      ]
+    },
+    "held_out_full_horizon": {
+      "pass": false,
+      "wins": 0,
+      "required_wins": 1,
+      "losses": 0,
+      "truncations": 2,
+      "scores": [7370, 3380],
+      "mean_score": 5375.0,
+      "matched_control_mean_score": 0.0,
+      "mean_score_greater_than_matched_control": true,
+      "episode_action_counts": [
+        {"wait": 5986, "fire": 299, "swap": 5715},
+        {"wait": 11367, "fire": 568, "swap": 65}
+      ]
+    }
+  },
+  "matched_control_comparison": {
+    "control_status": "DAGGER_SCREEN_FAIL_RECIPE_REJECTED",
+    "control_outcomes": ["loss", "loss"],
+    "intervention_outcomes": ["truncated", "truncated"],
+    "control_mean_score": 0.0,
+    "intervention_mean_score": 5375.0,
+    "bounded_inference": "removing semantically irrelevant aim gradients materially improved held-out survival and score, but did not close the policy imitation gate"
+  },
+  "next_action": {
+    "authorized": "retain fire-only aim supervision and screen explicit current/next-color relational entity features under a new preregistration",
+    "forbidden": "do not promote the current entity-attention DAgger recipe or launch large-scale RL"
+  },
+  "non_authorizations": [
+    "fresh_seed_generalization_claim",
+    "large_scale_training",
+    "rl_recipe_promotion",
+    "fidelity_gate_opening",
+    "original_game_deployment",
+    "original_transfer_certification",
+    "visual_policy_training"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema": "zuma-rl.pc-gameplay-mtrand-call-trace-preregistered-outcome",
+  "version": 1,
+  "status": "FAIL_CLOSED_BEFORE_TRACE_RETRYABLE_TRANSPORT",
+  "created_utc": "2026-08-10T13:02:07.5039515Z",
+  "preregistration": {
+    "artifact": "diagnostics/c167-c164-fruit-collection-mtrand-trace-preregistration-v1.json",
+    "artifact_sha256": "sha256:a6b791e927f1150b19aa42ce48c2319389e5ef4e08077e29d0861c3c6e60ddee"
+  },
+  "collector_result": {
+    "status": "RETRY_EXHAUSTED",
+    "attempt_count": 1,
+    "process_id": 6952,
+    "error_type": "ProbeError",
+    "error": "source_bound_global_precall_natural_state_mismatch",
+    "attempts_artifact": "D:/ZumaGolden/diagnostics/c167-c164-final-confirmatory-source-bound-rng-trace-u5278-u5305-v1/attempts.json",
+    "attempts_bytes": 223,
+    "attempts_sha256": "sha256:1a91b7cd9f0f49e8b66623c6269b19f375ba4b7ba4c14638728dee3ae660945c",
+    "strict_replay_sha256": "sha256:d7bea76194aab95d6b85b8c39e37b2d201d7236ebd0c46632e26628219cdd592",
+    "external_input_guard_sha256": "sha256:3e5b28ae2b3b373d0077dca6c9c7e7fc04f3f4353a1ca707d134e355f6e33085",
+    "external_input_event_count": 0
+  },
+  "failure_boundary": {
+    "source_anchor_framework_update": 3121,
+    "live_precall_state_matched_natural_reference": false,
+    "target_trace_start_update": 5278,
+    "target_trace_reached": false,
+    "memory_probe_written": false,
+    "global_rng_call_trace_written": false,
+    "fruit_feature_presence_observed": false,
+    "call_classification_observed": false,
+    "scientific_hypothesis_tested": false,
+    "classification": "transport_failure_not_negative_mechanism_evidence"
+  },
+  "rollback_and_host_restore": {
+    "transactional_process_rollback_enabled": true,
+    "residual_game_process_count": 0,
+    "independent_host_post_artifact": "D:/ZumaGolden/diagnostics/c167-host-post-failure-v1.json",
+    "independent_host_post_bytes": 33126,
+    "independent_host_post_sha256": "sha256:35fbbf12eb8ab90c8ac16950a70680558f7f59a58d88706f889bbbb808b2d6f3",
+    "host_pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_post_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_restored_exactly": true
+  },
+  "decision": {
+    "failed_attempt_retained": true,
+    "same_output_root_not_reused": true,
+    "bounded_new_transport_campaign_permitted_only_after_new_preregistration": true,
+    "code_changed": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

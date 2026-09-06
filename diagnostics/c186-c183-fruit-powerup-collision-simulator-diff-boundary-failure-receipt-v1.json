@@ -1,0 +1,41 @@
+{
+  "schema": "zuma-rl.c183-fruit-powerup-collision-simulator-diff-boundary-failure-receipt",
+  "version": 1,
+  "status": "FAIL_BEFORE_OUTPUT_INITIAL_BOUNDARY_NOT_QUIESCENT",
+  "created_utc": "2026-08-10T15:34:56.5170945Z",
+  "preregistration": {
+    "path": "diagnostics/c186-c183-fruit-powerup-collision-simulator-diff-preregistration-v1.json",
+    "sha256": "sha256:977d831a543e58299db32e8927e28a5c82e725477ec0c4c99453c7a5b89db918"
+  },
+  "attempt": {
+    "fixed_command_executed": true,
+    "exit_code": 1,
+    "error": "gameplay_diff_initial_state_not_quiescent",
+    "output": "D:/ZumaGolden/diagnostics/jungle2-c183-u8233-u8260-fruit-powerup-collision-diff-v1.json",
+    "output_created": false,
+    "source_or_simulator_bytes_modified": false
+  },
+  "diagnosis": {
+    "selected_start_update": 8233,
+    "initial_active_chain_present": true,
+    "initial_insertion_staging_projectile_count": 1,
+    "initial_insertion_staging_ball_id": 224,
+    "comparator_contract": "midstate transplantation rejects any initial merging or insertion-staging projectile because that transient cannot be independently restored as a quiescent boundary",
+    "nearest_preceding_quiescent_update": 8213,
+    "update_8213_free_projectile_count": 1,
+    "update_8213_free_projectile_ball_id": 224,
+    "update_8214_transition": "free projectile 224 enters curve insertion-staging list",
+    "classification": "window-boundary selection failure before simulation; no gameplay mismatch observed"
+  },
+  "decision": {
+    "c186_simulator_diff_credit": false,
+    "failed_output_absent": true,
+    "standards_lowered": false,
+    "next_attempt_may_only_expand_start_to_8213": true,
+    "simulator_core_change_authorized": false,
+    "pc_golden_authentication_start": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

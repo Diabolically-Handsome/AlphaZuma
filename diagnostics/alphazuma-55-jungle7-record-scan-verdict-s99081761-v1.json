@@ -1,0 +1,64 @@
+{
+  "schema": "alphazuma-55-record-scan-verdict",
+  "version": 1,
+  "written_utc": "2026-08-22T06:18:51Z",
+  "level": "Jungle7 (Adv 7, 'Sand Trap')",
+  "verdict": "HUMAN_RECORD_NOT_BROKEN",
+  "summary": "Golden scan (top-3000, champion ckpt786360): fastest 2005 ticks = 20.05 s vs the 16 s human line (gap 1.25x); win rate 1836/3000 (61.2%). Jungle7's AI-TAS best is set at 20.05 s. Considering the level repelled every BC until iterated beta-DAgger this week, 'wins at all + a receipted best' is the honest landing.",
+  "best": {
+    "ticks": 2005,
+    "seconds_simulator": 20.05,
+    "seed": 1614396,
+    "shots": 33
+  },
+  "top_5": [
+    {
+      "seed": 1614396,
+      "ticks": 2005,
+      "shots": 33,
+      "score": 2710
+    },
+    {
+      "seed": 1404481,
+      "ticks": 2582,
+      "shots": 42,
+      "score": 2710
+    },
+    {
+      "seed": 2364618,
+      "ticks": 2686,
+      "shots": 41,
+      "score": 3950
+    },
+    {
+      "seed": 2104895,
+      "ticks": 2692,
+      "shots": 43,
+      "score": 2620
+    },
+    {
+      "seed": 2365745,
+      "ticks": 2779,
+      "shots": 44,
+      "score": 2990
+    }
+  ],
+  "human_reference": {
+    "record": "0:16 RTA",
+    "runner": "WYL071018",
+    "date": "2022-07-24",
+    "source": "speedrun.com REST API",
+    "caveat": "simulator timing, RTA audit pending"
+  },
+  "champion_model_sha256": "sha256:55fd8f6b0c64ba7159af204dfd4ee856460a2d21be49e5a03d1259823353afea",
+  "scan": {
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-record-jungle7-s99081761-v1",
+    "completion_sha256": "sha256:9779561df762e4270d62f7ce8afbe4e3263a359d5b72e43083b84853c5283318"
+  },
+  "levers_for_reopening": [
+    "beta round 3+ toward a stronger init (the 0->0->4->10 slope had not saturated)",
+    "scan the beta-2 BC as the secondary tail candidate (mean-tail rule)",
+    "deep seed ranks with whichever model tails sharper"
+  ],
+  "formal_seed_consumption": false
+}

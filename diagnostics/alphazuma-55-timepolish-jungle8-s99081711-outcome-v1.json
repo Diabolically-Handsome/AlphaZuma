@@ -1,0 +1,25 @@
+{
+ "schema": "zuma-rl.alphazuma-55-macro-ppo-run-outcome",
+ "version": 1,
+ "run_id": "timepolish-jungle8",
+ "preregistration": {
+  "path": "/mnt/c/Users/Laure/Documents/\u7956\u739b/diagnostics/alphazuma-55-timepolish-jungle8-s99081711-preregistration-v1.json",
+  "sha256": "sha256:04a6f4bedefc110b4e2ba358843213045ddfc1f16e3de63480a8b94cb5945cd7"
+ },
+ "status": "STOPPED_BY_WIN_RATE_FLOOR_CLAUSE",
+ "decision": "FAIL_NO_POLISH_GAIN",
+ "stopped_utc": "2026-08-20T05:37:33.638434+00:00",
+ "reason": "Win-rate floor clause fired (two consecutive checkpoints at 0.75 < 0.90: ckpt262k 12/16 median 7472; ckpt524k 12/16 median 7081). Post-hoc init baseline on the SAME panel: BC init 13/16 (0.8125) median 6901 \u2014 the floor breach was PARTIALLY INHERITED (the fixed 0.90 floor was mis-calibrated for this level-panel pair), but expected-time comparison still shows no polish gain: E[t]=median/win_rate: init 8494 vs ckpt262k 9963 vs ckpt524k 9441. Champion for Jungle8 = the BC init model unchanged.",
+ "lesson_for_successors": "Set the win-rate floor RELATIVE to a measured init baseline on the exact eval panel (e.g., init minus 5pp), and always run the init baseline eval BEFORE training starts.",
+ "champion": {
+  "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-bc49/Jungle8/final_model.zip",
+  "sha256": "sha256:6b812ab239610461e9fe18236af3652b80399c2221dee63e54843a3c41b7d579"
+ },
+ "evidence": [
+  {
+   "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle8-s99081711-v1/eval16-init-baseline",
+   "note": "16 per-seed completions"
+  }
+ ],
+ "formal_seed_consumption": false
+}

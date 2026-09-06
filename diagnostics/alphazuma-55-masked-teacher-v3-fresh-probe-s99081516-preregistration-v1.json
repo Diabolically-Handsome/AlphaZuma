@@ -1,0 +1,843 @@
+{
+  "schema": "zuma-rl.alphazuma-55-masked-teacher-v3-probe-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_FRESH_ENGINEERING_PROBE",
+  "created_utc": "2026-08-15T09:07:26.347449+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "objective": "Measure V3 after replacing every temporarily masked button request with wait while preserving its selected aim.",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "source_evaluation_contract": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-engineering-baseline-s82081402-preregistration-v1.json",
+    "sha256": "sha256:c6c00d29dfebeafa347aa7995608d53c73b5b8d29eba7d9a056ff72568b9c6f8"
+  },
+  "environment": {
+    "profile_mode": "tutorials_completed",
+    "base_config": {
+      "aim_bins": 180,
+      "action_mode": "factorized",
+      "frame_skip": 1,
+      "max_ticks": 30000,
+      "max_balls": 768,
+      "max_projectiles": 32,
+      "max_curves": 2,
+      "score_reward_scale": 1.0,
+      "step_penalty": -0.01,
+      "win_reward": 1000.0,
+      "loss_reward": -1000.0,
+      "privileged_debug": false,
+      "render_width": 400,
+      "render_height": 300,
+      "actor_interface": "full55-v1"
+    },
+    "input_profile": {
+      "profile_id": "elite-human-v1",
+      "reaction_delay_ticks": 12,
+      "max_aim_speed_degrees_per_second": 1080.0,
+      "max_aim_acceleration_degrees_per_second_squared": 18000.0,
+      "min_button_interval_ticks": 5
+    },
+    "reward_profile": {
+      "profile_id": "win-time-score-v1",
+      "win_reward": 10.0,
+      "failure_reward": -10.0,
+      "time_penalty_per_native_tick": -0.0001,
+      "score_progress_reward_cap": 0.01
+    }
+  },
+  "teacher": {
+    "policy_id": "curve-aware-settled-strategic-masked-v3",
+    "base_policy_id": "curve-aware-settled-strategic-actor-observable-v3",
+    "masked_verb_fallback": "wait_with_teacher_aim",
+    "aim_tolerance_bins": 2,
+    "runtime_state": "none",
+    "actor_observation_only": true,
+    "canonical_human_input_unchanged": true
+  },
+  "development_disclosure": {
+    "selection_conditioned_engineering": true,
+    "v3_unmasked_fresh_result": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/settled-teacher-v3-fresh-probe-s99081514-v1/result.json",
+      "sha256": "sha256:4ddefd33fcaa753fd9fa9d288fc95271a889416e1b7ea984f176e8daa0ef622c"
+    },
+    "fresh_seed_relative_to_mask_adapter_bytes": true,
+    "formal_evidence": false
+  },
+  "levels": [
+    {
+      "id": "Jungle1",
+      "display_name": "Shipwrecked!",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle1\\Jungle1"
+      ]
+    },
+    {
+      "id": "Jungle2",
+      "display_name": "Castaway",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle2\\Jungle2"
+      ]
+    },
+    {
+      "id": "Jungle3",
+      "display_name": "Echo Beach",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle3\\Jungle3"
+      ]
+    },
+    {
+      "id": "Jungle4",
+      "display_name": "Bones of an Idol",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle4\\Jungle4"
+      ]
+    },
+    {
+      "id": "jungle6",
+      "display_name": "Jungle Clearing",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle6\\Jungle6"
+      ]
+    },
+    {
+      "id": "Jungle7",
+      "display_name": "Sand Trap",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle7\\Jungle7"
+      ]
+    },
+    {
+      "id": "Jungle8",
+      "display_name": "Nasal Passage",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle8\\Jungle8"
+      ]
+    },
+    {
+      "id": "Jungle9",
+      "display_name": "Creeper Copse",
+      "curve_count": 2,
+      "curve_names": [
+        "Jungle9\\Jungle9-1",
+        "Jungle9\\Jungle9-2"
+      ]
+    },
+    {
+      "id": "Jungle10",
+      "display_name": "Darkness Falls",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle10\\Jungle10"
+      ]
+    },
+    {
+      "id": "village1",
+      "display_name": "Watering Hole",
+      "curve_count": 1,
+      "curve_names": [
+        "Village1"
+      ]
+    },
+    {
+      "id": "village2",
+      "display_name": "Overgrown Plaza",
+      "curve_count": 1,
+      "curve_names": [
+        "Village2"
+      ]
+    },
+    {
+      "id": "village3",
+      "display_name": "Lilypad Leap",
+      "curve_count": 1,
+      "curve_names": [
+        "Village3\\Village3v3"
+      ]
+    },
+    {
+      "id": "village4",
+      "display_name": "Sandspirals",
+      "curve_count": 1,
+      "curve_names": [
+        "Village4v2"
+      ]
+    },
+    {
+      "id": "village5",
+      "display_name": "Abandoned Well",
+      "curve_count": 1,
+      "curve_names": [
+        "Village5"
+      ]
+    },
+    {
+      "id": "village6",
+      "display_name": "Face Your Fear",
+      "curve_count": 2,
+      "curve_names": [
+        "Village6-1",
+        "Village6-2"
+      ]
+    },
+    {
+      "id": "village7",
+      "display_name": "Seven Sides (minus one)",
+      "curve_count": 1,
+      "curve_names": [
+        "Village7"
+      ]
+    },
+    {
+      "id": "village8",
+      "display_name": "Vines of Vengeance",
+      "curve_count": 1,
+      "curve_names": [
+        "Village8"
+      ]
+    },
+    {
+      "id": "village10",
+      "display_name": "The Horseshoe",
+      "curve_count": 1,
+      "curve_names": [
+        "Village10\\Village10v2"
+      ]
+    },
+    {
+      "id": "city1",
+      "display_name": "Ancient Cistern",
+      "curve_count": 1,
+      "curve_names": [
+        "city1"
+      ]
+    },
+    {
+      "id": "city2",
+      "display_name": "Blossom Grove",
+      "curve_count": 1,
+      "curve_names": [
+        "city2\\city2"
+      ]
+    },
+    {
+      "id": "city3",
+      "display_name": "Empty Cistern",
+      "curve_count": 1,
+      "curve_names": [
+        "city3\\city3-4"
+      ]
+    },
+    {
+      "id": "city4",
+      "display_name": "Ancestral Tongue",
+      "curve_count": 2,
+      "curve_names": [
+        "city4\\city4-1v2",
+        "city4\\city4-2v2"
+      ]
+    },
+    {
+      "id": "city5",
+      "display_name": "Mossy Square",
+      "curve_count": 1,
+      "curve_names": [
+        "city5\\city5"
+      ]
+    },
+    {
+      "id": "city6",
+      "display_name": "Mosaic Mayhem",
+      "curve_count": 1,
+      "curve_names": [
+        "city6\\city6"
+      ]
+    },
+    {
+      "id": "city7",
+      "display_name": "Strange Smile",
+      "curve_count": 1,
+      "curve_names": [
+        "city7\\city7-2"
+      ]
+    },
+    {
+      "id": "city9",
+      "display_name": "Ghosts of the Past",
+      "curve_count": 1,
+      "curve_names": [
+        "city9\\city9"
+      ]
+    },
+    {
+      "id": "city10",
+      "display_name": "Double Danger",
+      "curve_count": 2,
+      "curve_names": [
+        "city10\\city10-1",
+        "city10\\city10-2"
+      ]
+    },
+    {
+      "id": "Coast1",
+      "display_name": "Swamp Spin",
+      "curve_count": 1,
+      "curve_names": [
+        "coast1"
+      ]
+    },
+    {
+      "id": "Coast2",
+      "display_name": "Deadmarsh",
+      "curve_count": 1,
+      "curve_names": [
+        "coast2"
+      ]
+    },
+    {
+      "id": "Coast3",
+      "display_name": "Stagnant Ponds",
+      "curve_count": 1,
+      "curve_names": [
+        "coast3"
+      ]
+    },
+    {
+      "id": "Coast4",
+      "display_name": "Brackish Pool",
+      "curve_count": 1,
+      "curve_names": [
+        "coast4"
+      ]
+    },
+    {
+      "id": "Coast5",
+      "display_name": "Justified and Ancient",
+      "curve_count": 1,
+      "curve_names": [
+        "coast5"
+      ]
+    },
+    {
+      "id": "Coast6",
+      "display_name": "Ancient Inlay",
+      "curve_count": 1,
+      "curve_names": [
+        "coast6"
+      ]
+    },
+    {
+      "id": "Coast7",
+      "display_name": "Secret Circle",
+      "curve_count": 1,
+      "curve_names": [
+        "coast7"
+      ]
+    },
+    {
+      "id": "Coast9",
+      "display_name": "Tide Pools",
+      "curve_count": 1,
+      "curve_names": [
+        "coast9"
+      ]
+    },
+    {
+      "id": "Coast10",
+      "display_name": "Skull Coral",
+      "curve_count": 2,
+      "curve_names": [
+        "coast10-1",
+        "coast10-2"
+      ]
+    },
+    {
+      "id": "grotto1",
+      "display_name": "Coral Catch",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto1\\grotto1"
+      ]
+    },
+    {
+      "id": "grotto2",
+      "display_name": "Wave Babies",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto2\\grotto2-2"
+      ]
+    },
+    {
+      "id": "grotto3",
+      "display_name": "Submergathon",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto3\\grotto3"
+      ]
+    },
+    {
+      "id": "grotto4",
+      "display_name": "Anglers Cove",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto4\\grotto4"
+      ]
+    },
+    {
+      "id": "grotto5",
+      "display_name": "Coelacanth Cave",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto5\\grotto5"
+      ]
+    },
+    {
+      "id": "grotto6",
+      "display_name": "Ocean Floor",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto6\\grotto6"
+      ]
+    },
+    {
+      "id": "grotto7",
+      "display_name": "Smugglers Depth",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto7\\grotto7"
+      ]
+    },
+    {
+      "id": "grotto9",
+      "display_name": "The Deep",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto9\\grotto9"
+      ]
+    },
+    {
+      "id": "grotto10",
+      "display_name": "Shark Den",
+      "curve_count": 2,
+      "curve_names": [
+        "grotto10\\grotto10-1",
+        "grotto10\\grotto10-2"
+      ]
+    },
+    {
+      "id": "volcano1",
+      "display_name": "Flowing Tiki Rage",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano1\\Volcano1"
+      ]
+    },
+    {
+      "id": "volcano2",
+      "display_name": "Subterran Solaris",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano2/Volcano2-3"
+      ]
+    },
+    {
+      "id": "volcano3",
+      "display_name": "Reflection in Magma",
+      "curve_count": 1,
+      "curve_names": [
+        "volcano3\\volcano3"
+      ]
+    },
+    {
+      "id": "volcano4",
+      "display_name": "Obsidian Isle",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano4\\Volcano4"
+      ]
+    },
+    {
+      "id": "volcano5",
+      "display_name": "Underworld Remnants",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano5\\Volcano5-2"
+      ]
+    },
+    {
+      "id": "volcano6",
+      "display_name": "Thermal Vortex",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano6\\Volcano6"
+      ]
+    },
+    {
+      "id": "volcano7",
+      "display_name": "Molten Dais",
+      "curve_count": 1,
+      "curve_names": [
+        "volcano7\\volcano7-2"
+      ]
+    },
+    {
+      "id": "volcano8",
+      "display_name": "Basaltic Approach",
+      "curve_count": 1,
+      "curve_names": [
+        "volcano8\\volcano8-3"
+      ]
+    },
+    {
+      "id": "volcano9",
+      "display_name": "Searing Visage",
+      "curve_count": 2,
+      "curve_names": [
+        "volcano9\\volcano9-1",
+        "Volcano9\\Volcano9-2"
+      ]
+    },
+    {
+      "id": "volcano10",
+      "display_name": "Descent into Anguish",
+      "curve_count": 1,
+      "curve_names": [
+        "volcano10\\volcano10-4"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "level_id": "Jungle1",
+      "seed": 1400960000,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "Jungle2",
+      "seed": 1400960001,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "Jungle3",
+      "seed": 1400960002,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "Jungle4",
+      "seed": 1400960003,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "jungle6",
+      "seed": 1400960004,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "Jungle7",
+      "seed": 1400960005,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "Jungle8",
+      "seed": 1400960006,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "Jungle9",
+      "seed": 1400960007,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "Jungle10",
+      "seed": 1400960008,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "village1",
+      "seed": 1400960009,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "village2",
+      "seed": 1400960010,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "village3",
+      "seed": 1400960011,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "village4",
+      "seed": 1400960012,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "village5",
+      "seed": 1400960013,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "village6",
+      "seed": 1400960014,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "village7",
+      "seed": 1400960015,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "village8",
+      "seed": 1400960016,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "village10",
+      "seed": 1400960017,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "city1",
+      "seed": 1400960018,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "city2",
+      "seed": 1400960019,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "city3",
+      "seed": 1400960020,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "city4",
+      "seed": 1400960021,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "city5",
+      "seed": 1400960022,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "city6",
+      "seed": 1400960023,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "city7",
+      "seed": 1400960024,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "city9",
+      "seed": 1400960025,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "city10",
+      "seed": 1400960026,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "Coast1",
+      "seed": 1400960027,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "Coast2",
+      "seed": 1400960028,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "Coast3",
+      "seed": 1400960029,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "Coast4",
+      "seed": 1400960030,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "Coast5",
+      "seed": 1400960031,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "Coast6",
+      "seed": 1400960032,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "Coast7",
+      "seed": 1400960033,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "Coast9",
+      "seed": 1400960034,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "Coast10",
+      "seed": 1400960035,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "grotto1",
+      "seed": 1400960036,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "grotto2",
+      "seed": 1400960037,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "grotto3",
+      "seed": 1400960038,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "grotto4",
+      "seed": 1400960039,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "grotto5",
+      "seed": 1400960040,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "grotto6",
+      "seed": 1400960041,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "grotto7",
+      "seed": 1400960042,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "grotto9",
+      "seed": 1400960043,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "grotto10",
+      "seed": 1400960044,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "volcano1",
+      "seed": 1400960045,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "volcano2",
+      "seed": 1400960046,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "volcano3",
+      "seed": 1400960047,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "volcano4",
+      "seed": 1400960048,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "volcano5",
+      "seed": 1400960049,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "volcano6",
+      "seed": 1400960050,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "volcano7",
+      "seed": 1400960051,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "volcano8",
+      "seed": 1400960052,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "volcano9",
+      "seed": 1400960053,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    },
+    {
+      "level_id": "volcano10",
+      "seed": 1400960054,
+      "teacher_policy_id": "curve-aware-settled-strategic-masked-v3"
+    }
+  ],
+  "seed_range": [
+    1400960000,
+    1400960054
+  ],
+  "execution": {
+    "device": "cpu",
+    "workers": 8,
+    "attempts_per_level": 1,
+    "max_ticks": 30000,
+    "action_masks": "exact_get_action_masks_before_every_decision",
+    "human_input_wrapper": "elite-human-v1",
+    "capacity_overflow": "fail_closed_affected_attempt_only"
+  },
+  "implementation": {
+    "builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_masked_teacher_v3_probe.py",
+      "sha256": "sha256:8c19e9e9d647d8761b835ef5bd60328ca7b8618cfcc7c22809354cc05bf9d502"
+    },
+    "evaluator": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_alphazuma_55_masked_teacher_v3.py",
+      "sha256": "sha256:7c067196aac0896c0aa576ab50ffa82405e708460056d7172ff89162fc71c099"
+    },
+    "settled_teacher_v3": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_settled_strategic_teacher_v3.py",
+      "sha256": "sha256:32181d24b6dee736f18afb588ce5baea32d96ac055da06be621c2a36f45369a3"
+    },
+    "settled_teacher_v1": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_settled_strategic_teacher.py",
+      "sha256": "sha256:1af7b00963df88a953fb8ae517efc422f8a1193677c62bf2dea6430997ae4fae"
+    },
+    "strategic_teacher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_strategic_teacher.py",
+      "sha256": "sha256:d342e7185638d9cf4771b19efad2ae93362d092ebce9b5208fd156bb66e64746"
+    },
+    "capacity_wrapper": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel_v2.py",
+      "sha256": "sha256:811de7b530e6703858ae218aa9a0309724c49824d817e2f55733646ec89fd6c3"
+    }
+  },
+  "outputs": {
+    "root": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/masked-teacher-v3-fresh-probe-s99081516-v1",
+    "result": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/masked-teacher-v3-fresh-probe-s99081516-v1/result.json"
+  },
+  "authority_boundary": {
+    "formal_seed_consumption": false,
+    "training_recipe_change_authorized": false,
+    "formal_candidate_registration_authorized": false,
+    "positive_rows_may_support_separate_preregistered_distillation": true
+  }
+}

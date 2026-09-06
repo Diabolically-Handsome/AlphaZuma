@@ -1,0 +1,96 @@
+{
+  "schema": "zuma-rl.c158-natural-loss-source-packaging-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_SOURCE_MANIFEST_OR_AUDIT_OUTPUT",
+  "created_utc": "2026-08-10T12:13:57.9681058Z",
+  "purpose": "Package the immutable c158 formal full-state natural-loss run as one independently verified PC source, then run one machine-derived mechanism audit case over the entire frozen window.",
+  "classification": "preregistered-source-packaging-and-mechanism-authorization",
+  "parents": {
+    "c158_source_receipt_sha256": "sha256:9ac0eb253afbfc8e7c43ad307745be63a1399fad43de98c2ad8a0ad69be7ab78",
+    "c159_preregistration_sha256": "sha256:e2aa7d42c63cd9f55d2e5129145086593b0b8f1a3e41727018eead4727141d96",
+    "c159_implementation_receipt_sha256": "sha256:579e5f94effe76930d98a13dab454622fa0e1cdff7ebdc3ea20af275ab869c81"
+  },
+  "fixed_source_inputs": {
+    "evidence_root": "D:/ZumaGolden",
+    "original_root": "D:/SteamLibrary/steamapps/common/Zuma's Revenge",
+    "source_id": "c158-u11200-u11830-source-bound-natural-loss-v1",
+    "run_id": "formal-full-state-c158-natural-loss-u11200-u11830-v1",
+    "run_root": "D:/ZumaGolden/formal-full-state-c155-natural-loss-c158-campaign-v1/attempt-01/source",
+    "runtime_payload": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+    "runtime_payload_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "dmo": "D:/ZumaGolden/diagnostics/full-state-source-bound-natural-loss-c155-plan-v1-stop3182/inputs/input.dmo",
+    "dmo_sha256": "sha256:a5306095efb020c747530b0b546c8a8af1267a71ea48395e225f9b9a7c6516cf",
+    "pre_snapshot": "D:/ZumaGolden/formal-full-state-c155-natural-loss-c158-campaign-v1/attempt-01/host-pre.json",
+    "pre_snapshot_sha256": "sha256:e0b39b478c9bd930aae9a9e0fc8b01a6be2b0e94100ef9ef63308fb9660b92f0",
+    "post_snapshot": "D:/ZumaGolden/formal-full-state-c155-natural-loss-c158-campaign-v1/attempt-01/host-post.json",
+    "post_snapshot_sha256": "sha256:f29d1e1e25b5bb04ed8abf75b00f8511c45653ff58a8265fd3e8300a962f964a",
+    "host_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "start_update": 11200,
+    "end_update": 11830,
+    "tick_count": 631,
+    "selected_run_inner_maximum_startup_attempts": 1,
+    "campaign_maximum_attempts_disclosed_in_parent": 8,
+    "campaign_selected_attempt": 1
+  },
+  "source_output": {
+    "path": "D:/ZumaGolden/sources/c158-u11200-u11830-source-bound-natural-loss-v1.json",
+    "absent_at_freeze": true,
+    "expected_schema": "zuma-rl.pc-source-manifest",
+    "expected_version": 3,
+    "expected_source_kind": "formal_full_state_source_bound_original_replay"
+  },
+  "source_command": ".\\.venv-win\\Scripts\\python.exe tools\\build_pc_full_state_source.py --evidence-root D:\\ZumaGolden --original-root \"D:\\SteamLibrary\\steamapps\\common\\Zuma's Revenge\" --source-id c158-u11200-u11830-source-bound-natural-loss-v1 --run-id formal-full-state-c158-natural-loss-u11200-u11830-v1 --run-root D:\\ZumaGolden\\formal-full-state-c155-natural-loss-c158-campaign-v1\\attempt-01\\source --runtime-payload D:\\ZumaGolden\\tools\\direct-runtime\\popcapgame1.exe --dmo D:\\ZumaGolden\\diagnostics\\full-state-source-bound-natural-loss-c155-plan-v1-stop3182\\inputs\\input.dmo --pre-snapshot D:\\ZumaGolden\\formal-full-state-c155-natural-loss-c158-campaign-v1\\attempt-01\\host-pre.json --post-snapshot D:\\ZumaGolden\\formal-full-state-c155-natural-loss-c158-campaign-v1\\attempt-01\\host-post.json --start-update 11200 --end-update 11830 --maximum-startup-attempts 1 --output D:\\ZumaGolden\\sources\\c158-u11200-u11830-source-bound-natural-loss-v1.json",
+  "mechanism_plan": {
+    "path": "D:/ZumaGolden/diagnostics/pc-mechanism-c158-natural-loss-plan-v1.json",
+    "absent_at_freeze": true,
+    "exact_payload": {
+      "cases": [
+        {
+          "id": "c158-natural-loss",
+          "manifest_path": "sources/c158-u11200-u11830-source-bound-natural-loss-v1.json",
+          "memory_probe_path": "formal-full-state-c155-natural-loss-c158-campaign-v1/attempt-01/source/attempt-01/memory-probe.json",
+          "window": {
+            "end_update": 11830,
+            "start_update": 11200
+          }
+        }
+      ],
+      "schema": "zuma-rl.pc-mechanism-audit-plan",
+      "version": 1
+    }
+  },
+  "mechanism_output": {
+    "path": "D:/ZumaGolden/diagnostics/pc-mechanism-c158-natural-loss-live-v1.json",
+    "absent_at_freeze": true
+  },
+  "mechanism_command": ".\\.venv-win\\Scripts\\python.exe -m zuma_rl.pc_mechanism_audit D:\\ZumaGolden\\diagnostics\\pc-mechanism-c158-natural-loss-plan-v1.json --evidence-root D:\\ZumaGolden --original-root \"D:\\SteamLibrary\\steamapps\\common\\Zuma's Revenge\" --level Jungle2 --compact --output D:\\ZumaGolden\\diagnostics\\pc-mechanism-c158-natural-loss-live-v1.json",
+  "frozen_code": {
+    "tools/build_pc_full_state_source.py": "sha256:992d090116e78d874d8f7d6c0351c1016136d3e87f4814d75a0bc0c69bf3b9c9",
+    "src/zuma_rl/pc_source.py": "sha256:7971e5f9cd02f9d7888427f42f87227e6ba1ee121cfdea8128568d3abf80163f",
+    "src/zuma_rl/pc_mechanism_audit.py": "sha256:b413e07ca095f2e9bb6048d300883dd04f80697776e6d9da6f4d0601e9321e87"
+  },
+  "acceptance": {
+    "source_verifier_status": "PASS",
+    "source_tick_count": 631,
+    "source_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "source_runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "source_dmo_sha256": "sha256:a5306095efb020c747530b0b546c8a8af1267a71ea48395e225f9b9a7c6516cf",
+    "mechanism_audit_status": "PASS",
+    "mechanism_case_count": 1,
+    "authorized_features_exactly": ["natural_loss"],
+    "natural_loss_proof_count": 1,
+    "trigger_update": 11343,
+    "empty_update": 11519,
+    "initial_chain_count": 105,
+    "ticks_from_trigger_to_empty": 176
+  },
+  "decision_rule": {
+    "pass": "The source verifier and mechanism audit independently recompute every fixed identity and natural-loss proof invariant and emit exactly the expected feature set.",
+    "failure": "Retain any exclusively created output, do not rewrite it, and do not package or credit the case under this preregistration.",
+    "pc_golden_authentication_pending": true,
+    "simulator_diff_pending": true,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

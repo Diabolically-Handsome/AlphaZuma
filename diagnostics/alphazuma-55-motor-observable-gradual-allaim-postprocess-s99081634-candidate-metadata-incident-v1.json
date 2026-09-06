@@ -1,0 +1,86 @@
+{
+  "schema": "zuma-rl.alphazuma-55-allaim-candidate-metadata-incident",
+  "version": 1,
+  "status": "PRE_INFERENCE_METADATA_DISCREPANCY_RECORDED",
+  "created_utc": "2026-08-16T15:03:12.0111673Z",
+  "classification": "NON_AUTHORITATIVE_INHERITED_DESCRIPTION_ONLY",
+  "plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-allaim-postprocess-s99081634-plan-v2.json",
+    "sha256": "sha256:88d7c794cc4285db7e769e01ea14ca4f742293cee73050ad1143be1777328c01",
+    "bytes": 19220
+  },
+  "observed_discrepancy": {
+    "inherited_descriptive_candidate_inventory": {
+      "expected_motor_checkpoints": 12,
+      "expected_total_candidates": 13
+    },
+    "authoritative_frozen_candidate_inventory_rule": {
+      "source_baseline_included": true,
+      "round_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "checkpoint_epochs": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "expected_motor_checkpoints": 16,
+      "expected_total_candidates": 17
+    },
+    "authoritative_screen_contract": {
+      "expected_candidates": 17,
+      "expected_levels": 12,
+      "expected_attempts": 204
+    }
+  },
+  "runtime_contract": {
+    "inventory_formula": "one frozen non-promotable source baseline plus four checkpoints from each of four rounds",
+    "candidate_count_asserted_by_runtime": 17,
+    "screen_matrix_count_asserted_by_runtime": 204,
+    "full55_gate_maximum_candidates": 5,
+    "full55_gate_minimum_wins": 35,
+    "full55_gate_minimum_cleared_levels": 35
+  },
+  "implementation_bindings": {
+    "timeout_compatible_controller": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_motor_observable_gradual_allaim_postprocess_v2.py",
+      "sha256": "sha256:7115b39982c2c8fc7e5228077be6197b071878e7acd6c720845d7846ce5ca61f"
+    },
+    "all_actions_inventory_controller": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_motor_observable_gradual_allaim_postprocess_v1.py",
+      "sha256": "sha256:fbb8346b062f58c586614e1fcab39014a3d63e98cc7e82fe534a72cbc2c57aec"
+    },
+    "gradual_inventory_controller": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_motor_observable_gradual_postprocess_v1.py",
+      "sha256": "sha256:620448a9c821673ccb4e5873c43d6a2477f49e3d07740b5a4242f6e8fdc6bf8e"
+    }
+  },
+  "pre_inference_boundary": {
+    "controller_status": "RUNNING",
+    "controller_phase": "WAITING_FOR_TRAINING",
+    "output_root_files_at_capture": [
+      "controller_status.json"
+    ],
+    "screen_preregistration_exists": false,
+    "screen_manifest_exists": false,
+    "screen_matrix_exists": false,
+    "gate_preregistration_exists": false,
+    "gate_manifest_exists": false,
+    "gate_matrix_exists": false,
+    "formal_seed_consumption": "NONE"
+  },
+  "semantic_impact": {
+    "candidate_rule_changed": false,
+    "candidate_order_changed": false,
+    "seed_ranges_changed": false,
+    "screen_matrix_changed": false,
+    "promotion_gate_changed": false,
+    "evaluation_environment_changed": false,
+    "inference_already_consumed": false
+  },
+  "disposition": "Preserve the frozen plan and enforce the authoritative 17-candidate runtime and matrix contracts. Independently audit the realized manifest and all 204 screen attempts before accepting any Gate result."
+}

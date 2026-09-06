@@ -1,0 +1,29 @@
+{
+  "created_utc": "2026-08-10T18:13:45.273Z",
+  "decision": {
+    "contracts_reusable": false,
+    "formal_process_count": 0,
+    "outputs_reusable": false,
+    "replacement_must_use_fresh_run_ids_and_output_roots": true
+  },
+  "id": "c214-c217-unexecuted-all-seeds-contract-withdrawal",
+  "reason": "The c212-c213 predeclared natural-loss sibling pair proved that fixing global MTRand, main-thread CRT, and Board seeds does not control asynchronous shared-RNG consumption between the Board seed breakpoint and a long retained window. The same invalid sufficiency assumption is present in c214-c217, so those contracts are withdrawn without consuming a formal process.",
+  "status": "WITHDRAWN_BEFORE_EXECUTION",
+  "withdrawn": [
+    {
+      "binding": "diagnostics/c214-c215-fruit-collection-exact-step-golden-execution-binding-v1.json",
+      "binding_sha256": "sha256:2d89fe6d65191ea3e98992d91125eade2ff92c548006574d98beb9ce19631311",
+      "output_roots_absent_at_withdrawal": true,
+      "preregistration": "diagnostics/c214-c215-fruit-collection-exact-step-golden-preregistration-v1.json",
+      "preregistration_sha256": "sha256:f485d15d4d46a621ef4bff8e36e4b7823a60493b9cf2cff3460ef9531570a2f4"
+    },
+    {
+      "binding": "diagnostics/c216-c217-fruit-powerup-exact-step-golden-execution-binding-v1.json",
+      "binding_sha256": "sha256:ca912ac873b3eb92c347411ae4c1e7ef8f833ea57f94a617bd9433929ca89c78",
+      "output_roots_absent_at_withdrawal": true,
+      "preregistration": "diagnostics/c216-c217-fruit-powerup-exact-step-golden-preregistration-v1.json",
+      "preregistration_sha256": "sha256:4acaf461d930bac2f6152782c50c1dbeeb488ca4c714dc688086ef10e35d60c7"
+    }
+  ],
+  "version": 1
+}

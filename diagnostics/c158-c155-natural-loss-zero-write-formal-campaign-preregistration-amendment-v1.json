@@ -1,0 +1,24 @@
+{
+  "schema": "zuma-rl.c155-natural-loss-zero-write-formal-campaign-preregistration-amendment",
+  "version": 1,
+  "status": "FROZEN_BEFORE_IMPLEMENTATION_AND_CAMPAIGN_OUTPUT",
+  "created_utc": "2026-08-10T11:47:59.8313603Z",
+  "parent": "diagnostics/c158-c155-natural-loss-zero-write-formal-campaign-preregistration-v1.json",
+  "parent_sha256": "sha256:facc4cc24f78a2a8a2a7056c89d46ed03f7e5e7c57be82fb6edf37b3715075b0",
+  "reason": "Correct the planned command's nonce-stem text to the 31-character common prefix already fixed by all eight 32-character session nonces. No nonce, input, attempt count, window, selection rule, acceptance criterion, output path, or semantic decision changes.",
+  "only_change": {
+    "field": "planned_command --nonce-stem value",
+    "from": "c1580000000000000000000000000000",
+    "from_length": 32,
+    "to": "c158000000000000000000000000000",
+    "to_length": 31,
+    "resulting_nonce_lengths": 32,
+    "session_nonce_list_unchanged": true,
+    "semantic_digest_unchanged": true
+  },
+  "output_absence_reconfirmed": {
+    "D:/ZumaGolden/formal-full-state-c155-natural-loss-c158-campaign-v1": true,
+    "tools/collect_pc_formal_campaign.py": true,
+    "tests/test_collect_pc_formal_campaign.py": true
+  }
+}

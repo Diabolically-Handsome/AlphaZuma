@@ -1,0 +1,43 @@
+{
+  "schema": "zuma-rl.pc-front-insertion-render-settled-sparse-mask-execution-binding",
+  "version": 1,
+  "id": "c75-front-insertion-u3664-u3684-render-settled-sparse-mask-execution",
+  "created_utc": "2026-08-03T19:07:48Z",
+  "status": "FROZEN_AFTER_PREPARE_BEFORE_COLLECTION",
+  "parent_preregistration": {
+    "path": "diagnostics/c75-front-insertion-render-settled-sparse-mask-preregistration-v1.json",
+    "sha256": "sha256:7cf4caac3c636c81d7f1e706aa014dafb874d482714db7967d8beec1d7944565"
+  },
+  "collector_plan": {
+    "path": "D:/ZumaGolden/campaign-c75-natural-win-v8-front-insertion-sparse-mask-u3569-u3710/plan.json",
+    "sha256": "sha256:d1b7cc8ea86b57efce0d50db0bd6bba7e3c4e1a41a6c1f63308c8c6cac50a49d",
+    "session_nonce": "cbb8fdac78e041f98a04cd730fed8a41"
+  },
+  "preparation_result": {
+    "status": "prepared",
+    "dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "host_pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "protocol_prestate_template_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526"
+  },
+  "recursive_plan_difference_from_c74": {
+    "difference_count": 1,
+    "differences": [
+      "session_nonce"
+    ],
+    "all_other_fields_byte_semantically_equal": true
+  },
+  "collection_authorization": {
+    "fresh_two_run_collection": true,
+    "arm_window": [
+      3566,
+      3568
+    ],
+    "capture_wait_update": 3569,
+    "target_update_range": [
+      3664,
+      3684
+    ],
+    "sparse_mask_sha256": "sha256:5e88cfacf441a56a5de6636fd3fe1259c9c844fc8494a992655d92e3a970530b",
+    "gate_effect_before_complete_postprocessing": "none"
+  }
+}

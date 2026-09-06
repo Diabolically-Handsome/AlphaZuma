@@ -1,0 +1,95 @@
+{
+  "schema": "zuma-rl.pc-gameplay-mtrand-call-trace-confirmation-success-receipt",
+  "version": 2,
+  "status": "PASS_READY_FOR_RECONCILED_SIMULATOR_DIFF",
+  "created_utc": "2026-08-10T13:22:29.3937833Z",
+  "preregistration": {
+    "artifact": "diagnostics/c172-c164-fruit-collection-revised-mtrand-trace-preregistration-v1.json",
+    "artifact_sha256": "sha256:5aa97df8648592688d7208c775fa94be40fd9f55aece8a23e0df1b2595aa0431"
+  },
+  "collector": {
+    "status": "PASS",
+    "attempt_count": 1,
+    "process_id": 31856,
+    "attempts_sha256": "sha256:cccdf796cf575f04b85c422646da1819a5894e32ba04a67a1663de15f699f206",
+    "memory_probe_bytes": 207504,
+    "memory_probe_sha256": "sha256:8959e55952eba6fcd918664b70641be1533a46b9505dcfcd4f07893cf800758d",
+    "strict_replay_sha256": "sha256:b87a5ec91ff5b1a5859586fda65657167579b5e97dec33c8cb42f9232e5de71f",
+    "external_input_guard_sha256": "sha256:f48dd0bf22eee1e5c44bb774741a4be3d5472af96be08cf4ad050161e5661011",
+    "external_input_event_count": 0,
+    "diagnostic_mutation": null
+  },
+  "trajectory": {
+    "artifact_sha256": "sha256:663663d0b5d5a2a5200b52cc00bada010ad75f036ca136338cd2d71bcc3032ef",
+    "start_update": 5278,
+    "end_update": 5305,
+    "tick_count": 28
+  },
+  "trace": {
+    "artifact_sha256": "sha256:051ad362fc8b19d063714e58e069efa85da684ed1b04ba1a92ed64a0c10b0ece",
+    "status": "PASS",
+    "stop_reason": "stop_requested",
+    "process_memory_mutation": false,
+    "access_denied_thread_skip_event_count": 0,
+    "call_count": 9,
+    "complete_sequence_equals_frozen_expectation": true,
+    "outputs_and_full_states_equal_frozen_source": true,
+    "classified_calls": {
+      "score_digit_transition_omitted_visual": 6,
+      "score_digit_wobble_omitted_visual": 1,
+      "pending_ball_repeat_roll_modeled_gameplay": 1,
+      "pending_ball_visual_frame_roll_modeled_gameplay": 1
+    },
+    "all_nine_calls_satisfy_frozen_stack_contract": true,
+    "caller_only_classification_used": false,
+    "runtime_static_callsite_contract_required": true
+  },
+  "independent_verification": {
+    "alignment": {
+      "artifact_sha256": "sha256:be508998f750bc0a57c5e383572ea84fa6e655cae075317d13ca2c729db36c85",
+      "artifact_bytes": 3266,
+      "status": "PASS",
+      "tick_count": 28,
+      "transition_count": 27,
+      "call_count": 9
+    },
+    "source_overlap": {
+      "artifact_sha256": "sha256:27d12443b81dc595ad80cbe97c830a588ccec02494e33abcd4bead5af29e12ed",
+      "artifact_bytes": 1368,
+      "status": "PASS",
+      "tick_count": 28,
+      "compact_exact_tick_count": 28,
+      "global_mtrand_exact_tick_count": 28,
+      "first_mismatch": null
+    },
+    "v2_retail_dmo_provenance": {
+      "source_probe_recomputed": true,
+      "trace_probe_recomputed": true,
+      "artifact_sha256": "sha256:a628441dc30a123d1b21dd066c0aaaab14ba40815c96ce8228bd6ed75273630f",
+      "source_dmo_sha256": "sha256:8d206ee20450fe5c7973e2fe476ca3eab87176eba20ab1ebb7d137c411df127b",
+      "playback_dmo_sha256": "sha256:6f2d645c3109f73b77ef55c7e7e7941f7f1d2f73dccd5a71adc3051d4a360989",
+      "recording_outcome": "natural_win",
+      "gameplay_input_commands_preserved": true,
+      "recording_process_memory_writes": 0,
+      "recording_host_restored_exactly": true,
+      "collector_board_seed_mutation": false
+    }
+  },
+  "host_restore": {
+    "artifact": "D:/ZumaGolden/diagnostics/c172-host-post-v1.json",
+    "artifact_sha256": "sha256:b33cc5442f7cc7a8c70f1cb11b2b840266e0964310b58df9994f8af7ec0990b5",
+    "artifact_bytes": 33118,
+    "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_restored_exactly": true,
+    "residual_game_process_count": 0
+  },
+  "decision": {
+    "c172_is_confirmatory": true,
+    "c169_remains_forensic_only": true,
+    "reconciled_simulator_diff_may_be_preregistered": true,
+    "mtrand_proof_not_yet_derived": true,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

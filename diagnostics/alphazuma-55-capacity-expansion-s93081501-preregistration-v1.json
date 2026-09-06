@@ -1,0 +1,134 @@
+{
+  "schema": "zuma-rl.alphazuma-55-capacity-expansion-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_REPLICATE_TRAINING",
+  "created_utc": "2026-08-15T05:26:49.9432034Z",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "objective": "Use verified spare compute for one independent exact-recipe V1-frontier replicate while preserving one-policy evaluation and all formal seed, Gate, ranking, environment, and restoration semantics.",
+  "authorization": {
+    "user_authorized_additional_load": true,
+    "training_gpu_power_limits_watts": {
+      "cuda:0": 550,
+      "cuda:1": 250
+    },
+    "power_limits_may_not_be_raised_by_this_expansion": true
+  },
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "predecision_evidence": {
+    "formal_selection_final_and_continuous_roots_absent": true,
+    "formal_controller_phase": "WAITING_FOR_TRAINING",
+    "formal_seed_consumption_before_decision": false,
+    "continuous_telemetry_window_seconds": 30,
+    "wsl_logical_processors": 48,
+    "observed_cpu_idle_percent_range": [65, 86],
+    "observed_gpu_memory_mib": {
+      "cuda:0": 7391,
+      "cuda:1": 9480
+    },
+    "observed_gpu_temperature_c_range": [40, 55],
+    "observed_gpu_peak_power_watts": {
+      "cuda:0": 262,
+      "cuda:1": 175
+    },
+    "training_coverage_at_decision": {
+      "speed_frontier": 12,
+      "v11_balanced": 13,
+      "v1_frontier": 14,
+      "distilled_ppo": 10
+    },
+    "interpretation": "The host has substantial CPU, VRAM, thermal, and power headroom; an independent replica increases search diversity without changing any running model in place."
+  },
+  "replicate_route": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-v1-frontier-replicate-s88081501-preregistration-v1.json",
+    "sha256": "sha256:3044c0c33a44230cc9aa0f4207ad043dd2c6b0f09746970e5c336b93bb22ab6a",
+    "run_id": "alphazuma55-v1-frontier-replicate-5090",
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-v1-frontier-replicate-s88081501-v1",
+    "device": "cuda:0",
+    "model_seed": 88081501,
+    "episode_seed_first": 1534000000,
+    "episode_seed_last": 1537999999,
+    "normalized_exact_replica_of": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-v1-frontier-s87081501-preregistration-v1.json",
+      "sha256": "sha256:81decbb22039957342d1419efbd4a53f4ddf70147b6f96a50e91fab62de19fbe"
+    },
+    "permitted_differences_only": [
+      "created_utc",
+      "run id and description",
+      "run directory",
+      "device",
+      "model seed",
+      "episode seed namespace"
+    ],
+    "normalized_exact_replica_verified": true,
+    "all_five_route_seed_namespaces_pairwise_disjoint": true,
+    "validate_only": {
+      "status": "VALID",
+      "levels_verified": 55,
+      "observation_shape": [22833],
+      "action_nvec": [4, 180],
+      "base_environment_unchanged": true,
+      "observation_space_unchanged": true,
+      "action_space_unchanged": true
+    }
+  },
+  "training_contract": {
+    "start_only_after_this_file_is_frozen": true,
+    "no_in_place_change_to_the_other_four_routes": true,
+    "same_training_stop_utc": "2026-08-17T09:30:00Z",
+    "failure_is_recorded_without_replacement_or_hidden_restart": true,
+    "recoverable_process_restart_must_use_the_exact_frozen_route": true
+  },
+  "postprocess_supersession": {
+    "current_deployment": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-deployment-s88081503-preregistration-v1.json",
+      "sha256": "sha256:beb1876545ecf80db4b1e3424b4e5ccade6cec179952350bd7d4e676a2ad6122"
+    },
+    "new_postprocess_preregistration": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-s89081703-preregistration-v1.json",
+    "new_deployment_preregistration": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-deployment-s88081504-preregistration-v1.json",
+    "new_deployment_output_root": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/postprocess-deployment-s88081504-v1",
+    "new_formal_outputs": {
+      "controller": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/postprocess-s89081703-v1",
+      "selection": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/selection-s89081703-v1",
+      "final_blind": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/final-blind-s89081703-v1",
+      "continuous": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/continuous-s89081703-v1"
+    },
+    "new_independent_audit_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-independent-final-audit-s89081703-v1.json",
+    "registered_route_count": 5,
+    "replicate_route_must_be_included_before_any_formal_seed": true,
+    "all_other_routes_and_three_migrations_unchanged": true,
+    "selection_and_final_ranking_rules_unchanged": true,
+    "selection_final_and_continuous_seed_ranges_unchanged": true,
+    "environment_and_human_input_contract_unchanged": true,
+    "evaluation_parallelism_unchanged": true,
+    "training_stop_and_final_deadline_unchanged": true,
+    "gpu_and_windows_power_restoration_contract_unchanged": true
+  },
+  "safe_switch_gate": {
+    "wait_for_milestone_controller_to_reach_terminal_complete_or_error": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/distilled-milestone-controller-s92081502-v1/controller_status.json",
+    "old_controller_must_still_equal": "WAITING_FOR_TRAINING",
+    "old_selection_final_and_continuous_roots_must_be_absent": true,
+    "save_old_controller_and_deployer_status_hashes": true,
+    "stop_old_controller_and_deployer_before_starting_new_deployer": true,
+    "verify_old_processes_absent": true,
+    "write_immutable_withdrawal_receipt": true,
+    "validate_new_postprocess_and_deployment_before_launch": true,
+    "never_run_old_and_new_formal_evaluations_concurrently": true
+  },
+  "formal_seed_embargo": {
+    "selection": [1600000000, 1600000219],
+    "final_blind": [1700000000, 1700000439],
+    "continuous": [1800000000, 1800000219],
+    "must_remain_unconsumed_until_all_five_candidate_route_hashes_are_frozen": true
+  },
+  "authority_boundary": {
+    "may_add_exact_registered_replicate": true,
+    "may_supersede_waiting_postprocess_before_formal_seeds": true,
+    "may_not_change_reward_or_environment": true,
+    "may_not_change_any_gate_or_ranking": true,
+    "may_not_use_training_or_validation_results_to_remove_the_registered_replicate": true,
+    "may_not_claim_training_coverage_as_final_55_level_success": true
+  }
+}

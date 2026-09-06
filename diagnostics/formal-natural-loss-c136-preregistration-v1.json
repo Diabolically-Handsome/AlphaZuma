@@ -1,0 +1,109 @@
+{
+  "schema": "zuma-rl.pc-formal-natural-loss-ensemble-preregistration",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T07:05:08.0931182Z",
+  "evidence_classification": "fresh-formal-prelocalized-natural-seed-ensemble",
+  "purpose": "Collect three independent zero-RNG-write retail replays over one fixed terminal window and retain every outcome.",
+  "selection_policy": {
+    "classification": "prelocalized-not-holdout",
+    "formal_output_existed_at_freeze": false,
+    "window_fixed_before_any_formal_launch": true,
+    "run_count_fixed_before_any_formal_launch": 3,
+    "all_runs_execute_regardless_of_prior_outcomes": true,
+    "no_run_may_be_selected_or_discarded_by_feature_presence": true
+  },
+  "selection_basis": {
+    "diagnostic_trajectory": {
+      "path": "diagnostics/c123-terminal-window-u8750-u8900-v2/attempt-01/trajectory/index.json",
+      "bytes": 144308,
+      "sha256": "sha256:987808e51a40bfce398df728732f9a2a01aa2b1a6b4e09713594a48b43184a35",
+      "captured_start_update": 8750,
+      "captured_end_update": 8900,
+      "role": "diagnostic-only prelocalization; never submitted to Fidelity Gate"
+    },
+    "diagnostic_memory_probe": {
+      "path": "diagnostics/c123-terminal-window-u8750-u8900-v2/attempt-01/memory-probe.json",
+      "bytes": 217659,
+      "sha256": "sha256:3ba6abcea4f308c34d761f4d51ac6fca48ce9ae2652cce47066e34522951076a",
+      "observed_at_u8900": {
+        "score": 9010,
+        "score_target": 9650,
+        "chain_front_distance": 3750.0,
+        "decoded_curve_end": 3758,
+        "chain_ball_count": 103,
+        "pretrigger_advance": 0.125
+      }
+    }
+  },
+  "fixed_window": {
+    "features_sought": [
+      "natural_loss"
+    ],
+    "slowdown_update": 8870,
+    "freeze_update": 8880,
+    "trajectory_end_update": 9200,
+    "tick_count": 321,
+    "acceptance_independent_of_feature_presence": true
+  },
+  "source": {
+    "dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "runtime_executable_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "plan": {
+      "path": "diagnostics/full-state-natural-strict-plan-c111-v1/plan.json",
+      "bytes": 13858,
+      "sha256": "sha256:9910710ce9069bcafea8ab77d08b2245c593c898a510d3da0e1dd4907f13aaa8",
+      "launch_mode": "direct_byte_identical_natural_seed_strict_command_broker",
+      "rng_process_memory_write_count_required": 0
+    },
+    "prestate": {
+      "path": "diagnostics/full-state-natural-strict-plan-c111-v1/protocol/pre-template.json",
+      "bytes": 16964,
+      "sha256": "sha256:81de1c356b0cd189003b31cc5e80952ebd2dad9c6815745122113c17504fdcd7"
+    }
+  },
+  "run_order": [
+    "c136l1",
+    "c136l2",
+    "c136l3"
+  ],
+  "runs": [
+    {
+      "id": "c136l1",
+      "session_nonce": "c136l100000000000000000000000000",
+      "output_root": "formal-full-state-c136l1-natural-terminal-u8880-u9200-v1",
+      "host_pre_output": "diagnostics/formal-full-state-c136l1-host-pre-v1.json",
+      "host_post_output": "diagnostics/formal-full-state-c136l1-host-post-v1.json"
+    },
+    {
+      "id": "c136l2",
+      "session_nonce": "c136l200000000000000000000000000",
+      "output_root": "formal-full-state-c136l2-natural-terminal-u8880-u9200-v1",
+      "host_pre_output": "diagnostics/formal-full-state-c136l2-host-pre-v1.json",
+      "host_post_output": "diagnostics/formal-full-state-c136l2-host-post-v1.json"
+    },
+    {
+      "id": "c136l3",
+      "session_nonce": "c136l300000000000000000000000000",
+      "output_root": "formal-full-state-c136l3-natural-terminal-u8880-u9200-v1",
+      "host_pre_output": "diagnostics/formal-full-state-c136l3-host-pre-v1.json",
+      "host_post_output": "diagnostics/formal-full-state-c136l3-host-post-v1.json"
+    }
+  ],
+  "decision_rules": {
+    "each_run_has_exactly_one_startup_attempt": true,
+    "failed_runs_and_partial_outputs_are_retained": true,
+    "all_three_declared_runs_are_launched_even_if_an_earlier_run_contains_natural_loss": true,
+    "feature_absence_does_not_permit_additional_runs": true,
+    "external_input_is_fatal_for_that_run": true,
+    "formal_collection_requires_zero_external_input_events": true,
+    "formal_collection_requires_zero_gameplay_or_rng_memory_writes": true,
+    "formal_collection_requires_exact_host_state_restore": true,
+    "only_independently_audited_runs_may_enter_fidelity_suite": true
+  },
+  "non_authorizations_before_live_audit_and_diff_pass": [
+    "natural_loss",
+    "fidelity_gate_open",
+    "large_scale_original_transfer_training_start"
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "schema": "zuma-rl.actor-capacity-qualification",
+  "version": 1,
+  "created_utc": "2026-08-04T01:28:48.361Z",
+  "status": "PASS_FOR_CAPPED_DIAGNOSTIC_TRAINING",
+  "level": "Jungle2",
+  "episode_max_ticks": 12000,
+  "selected_max_balls": 768,
+  "triggering_incident": {
+    "audit": "diagnostics/ppo-jungle2-c91-c92-initial-baseline-s20260804-v1-failure-audit.json",
+    "audit_sha256": "sha256:cc30e8192f322b8cb51c5f8433335096f060098f84a40dcb95fda3378889d75e",
+    "observed_visible_balls": 193,
+    "previous_capacity": 192
+  },
+  "stress_method": {
+    "seed_base": 20260820,
+    "trajectory_count": 8,
+    "policies": [
+      "fire_fixed_0",
+      "fire_fixed_45",
+      "fire_rotate_17",
+      "fire_rotate_37",
+      "random_all_a",
+      "random_all_b",
+      "fire_random_a",
+      "fire_random_b"
+    ],
+    "parallel_processes": 8,
+    "dynamics": "RevengeSimulator native frame_skip=1",
+    "capacity_measurement": "RevengeEnv._visible_balls after every native tick",
+    "optimization": "Per-tick zero padding of the fixed actor vector was omitted; a separate real 490-ball actor-vector construction test covers packing.",
+    "discarded_attempt": "An earlier synchronous full-vector stress attempt timed out before emitting a result and has no qualification role."
+  },
+  "stress_result": {
+    "tested_capacity": 512,
+    "status": "PASS_WITH_INSUFFICIENT_SELECTION_MARGIN",
+    "peak_visible_balls": 490,
+    "headroom_at_512": 22,
+    "maximum_accepted_fire_count": 571,
+    "rows": [
+      {"policy":"fire_fixed_0","max_visible_balls":461,"max_total_balls":461,"end_tick":12000,"end_score":4500,"accepted_fire":571,"terminal":"truncated"},
+      {"policy":"fire_fixed_45","max_visible_balls":490,"max_total_balls":490,"end_tick":12000,"end_score":3310,"accepted_fire":571,"terminal":"truncated"},
+      {"policy":"fire_rotate_17","max_visible_balls":413,"max_total_balls":413,"end_tick":12000,"end_score":13200,"accepted_fire":571,"terminal":"truncated"},
+      {"policy":"fire_rotate_37","max_visible_balls":370,"max_total_balls":370,"end_tick":12000,"end_score":4330,"accepted_fire":571,"terminal":"truncated"},
+      {"policy":"random_all_a","max_visible_balls":342,"max_total_balls":342,"end_tick":12000,"end_score":6260,"accepted_fire":519,"terminal":"truncated"},
+      {"policy":"random_all_b","max_visible_balls":348,"max_total_balls":348,"end_tick":10354,"end_score":3090,"accepted_fire":447,"terminal":"loss"},
+      {"policy":"fire_random_a","max_visible_balls":360,"max_total_balls":360,"end_tick":12000,"end_score":5890,"accepted_fire":571,"terminal":"truncated"},
+      {"policy":"fire_random_b","max_visible_balls":378,"max_total_balls":378,"end_tick":12000,"end_score":7860,"accepted_fire":571,"terminal":"truncated"}
+    ]
+  },
+  "selection": {
+    "capacity": 768,
+    "headroom_over_observed_peak": 278,
+    "headroom_ratio_over_observed_peak": 0.5673469387755102,
+    "reason": "512 left only 22 slots. Capacity 768 covers the observed stress peak with substantial margin and exceeds the sum of the 571-shot continuous-fire count and a conservative base-chain allowance, while retaining fail-closed overflow behavior.",
+    "hard_global_bound_claimed": false,
+    "overflow_behavior": "RuntimeError; no silent truncation"
+  },
+  "qualification": {
+    "real_490_ball_actor_vector": "PASS",
+    "targeted_tests": "45 passed",
+    "full_suite": "1099 passed, 1 skipped, 1 warning",
+    "train_py_sha256": "sha256:5a6d1a6a3c63253f2d675cf5584df157b4be497b0c3ead3314d77a18b5b976cb",
+    "train_tests_sha256": "sha256:cd0821b78a3ef9979ec0158364377bd26250927e664716b0676609458c7d2bda",
+    "revenge_env_tests_sha256": "sha256:07abd3bf523a7362c25b7da196501c30d93fc30924751287cb97b866411fdd86"
+  },
+  "scope_limit": "This qualifies max_balls=768 only for the fixed 12000-tick Jungle2 diagnostic run. It does not establish a universal multi-level observation bound or open the Fidelity Gate."
+}

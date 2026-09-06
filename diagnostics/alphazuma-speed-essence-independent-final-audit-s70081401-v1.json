@@ -1,0 +1,61 @@
+{
+  "schema": "zuma-rl.alphazuma-speed-essence-independent-final-audit",
+  "version": 1,
+  "status": "PASS",
+  "completed_utc": "2026-08-14T23:57:05.408710+00:00",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-speed-essence-campaign-s70081401-preregistration-v1.json",
+    "sha256": "sha256:5de3a8e4205d5a665caa840f1f3f8115da792ee22a3dd6c29d5691cb64cf204c"
+  },
+  "execution_receipt": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-speed-essence-postprocess-execution-s70081401-receipt-v1.json",
+    "sha256": "sha256:1446ab12281c2de0d2163ada78a9a2a93bee0c9441541ac746475d6f84f9379a"
+  },
+  "checks": [
+    "execution_artifact_hashes",
+    "six_route_candidate_reconstruction",
+    "selection_attempt_and_seed_matrix",
+    "independent_robust_and_speed_rankings",
+    "final_manifest_role_deduplication",
+    "final_blind_attempt_and_seed_matrix",
+    "report_metrics_and_paired_results",
+    "record_video_poster_sidecar_and_trajectory_hashes"
+  ],
+  "selection": {
+    "candidate_count": 14,
+    "robust_selected": "essence-v1-speed-fixed-5090-final-7813504",
+    "speed_selected": "essence-v1-speed-fixed-5090-final-7813504",
+    "attempt_rows": 504,
+    "shard_sha256": [
+      "sha256:70cfaadec853e7724981a91e4e63544bae1bacadd44de0de64c16970f94804be",
+      "sha256:64adf12fd4c9aa0b8ebd5fd8a97ff57c0c7ea1921f5dd0ab359314cd17e18599"
+    ]
+  },
+  "final_blind": {
+    "model_count": 3,
+    "attempt_rows": 408,
+    "shard_sha256": [
+      "sha256:8888e209bb890910fd8ef647b02529a9f116f356aae825f8b7e9e4715174049c",
+      "sha256:963c5aaf15a2e3dcba64a6a46ccd3cccd045fd0c823cbfe74bb59eb4917e7229"
+    ],
+    "new_level_bests": 3
+  },
+  "artifacts": {
+    "controller_status": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-speed-essence-postprocess-s70081401-v1/controller_status.json",
+      "sha256": "sha256:362e591b4d1aeabb1e4f1d874581d3fa69365a5e2718b1946321c613c34e306b"
+    },
+    "selection_decision": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-speed-essence-postprocess-s70081401-v1/selection-decision.json",
+      "sha256": "sha256:dd0bffa123bbf09625fc90b2130045650cd92e6c7d4358ca3b01ef1e77249037"
+    },
+    "final_report": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-speed-essence-postprocess-s70081401-v1/final_report.json",
+      "sha256": "sha256:8cca213fca66b48268d15ca88b7a972b3034a6de846918aaf9f166b74f12cd92"
+    },
+    "record_videos_manifest": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-speed-essence-postprocess-s70081401-v1/record-videos-manifest.json",
+      "sha256": "sha256:91dfec4248d9ef52557e63e37aca2210dd0f080ce5a34a28749945cbc6e65224"
+    }
+  }
+}

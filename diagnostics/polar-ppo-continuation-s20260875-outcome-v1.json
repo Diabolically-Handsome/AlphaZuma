@@ -1,0 +1,88 @@
+{
+  "schema": "zuma-rl.polar-ppo-continuation-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T11:29:36.818Z",
+  "status": "INFRASTRUCTURE_ABORT",
+  "decision": "RERUN_EXACT_RECIPE_WITH_FRESH_SEEDS_AND_DETACHED_LOGGED_SUPERVISION",
+  "preregistration": {
+    "path": "diagnostics/polar-ppo-continuation-s20260875-preregistration-v1.json",
+    "sha256": "sha256:69ca9081597808c88078d5f39ee3fd241ab8dc0143dc2269cfd95d9f842474b7",
+    "status": "FROZEN_BEFORE_RUN_OUTPUT"
+  },
+  "artifacts": {
+    "run_dir": "D:/ZumaTraining/screening-polar-ppo-continuation-s20260875-v1",
+    "config_sha256": "sha256:8c22f98204c10d35d9e320f20268e402dde08923fcfd010b002b6dc5279547b3",
+    "pretrain_deterministic_sha256": "sha256:ea450119048af29513e422af5ef2f6ef64e6bb79237333a2d011a9db0043932a",
+    "pretrain_stochastic_sha256": "sha256:7c4d03e24a3ffdbe67720ab221cff0c979bce7c06d3503de18d8356a6470a58c",
+    "failure_sha256": "sha256:67fdcb9e2f42d97ad2dccafac29b495715ad03a9cf58c487c7c6a5d437b91380",
+    "emergency_model_sha256": "sha256:4d23453006d3b5d41f79c0b3219c0d58377a96f7e21c7f29a9fb91dfd675ffbf"
+  },
+  "results": {
+    "pipeline": {
+      "pass": false,
+      "completion_receipt_present": false,
+      "failure_receipt_status": "ABORTED",
+      "exception_type": "EOFError",
+      "exception_message": "",
+      "effective_steps_before_abort": 4724,
+      "planned_effective_steps": 16384,
+      "emergency_model_saved": true
+    },
+    "pretrain_deterministic": {
+      "wins": 8,
+      "episodes": 8,
+      "truncations": 0,
+      "mean_reward": 31.67745,
+      "mean_episode_length": 1600.5,
+      "precondition_pass": true
+    },
+    "pretrain_stochastic": {
+      "wins": 8,
+      "episodes": 8,
+      "truncations": 0,
+      "mean_reward": 49.562525,
+      "mean_episode_length": 3374.75
+    }
+  },
+  "incident_analysis": {
+    "behavioral_gate_interpretable": false,
+    "reason": "the process ended before the requested update budget and before either post-training boundary evaluation",
+    "resource_exhaustion_evidence": {
+      "linux_memory_available_after_incident": "61 GiB",
+      "linux_swap_used": "0 B",
+      "oom_or_gpu_oom_observed": false
+    },
+    "supervision_event": {
+      "host_shell_wait_timeout_seconds": 120,
+      "host_wait_ended_before_training_process": true,
+      "training_process_temporarily_survived_the_host_wait_timeout": true,
+      "original_child_stderr_retained": false
+    },
+    "controlled_reproduction": {
+      "run_dir": "D:/ZumaTraining/infrastructure-polar-ppo-subproc-s20260874-v2",
+      "same_initial_model": true,
+      "same_four_process_vectorization": true,
+      "same_rollout_steps": 512,
+      "same_batch_size": 512,
+      "same_learning_rate": 0.00001,
+      "effective_steps": 8192,
+      "passed_original_failure_point": true,
+      "completion_status": "COMPLETE",
+      "completion_sha256": "sha256:b65bce4c0aa36af86485f70a0afff20134c755f602b3ab61481c04c6159cdb0f",
+      "stderr_bytes": 0,
+      "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "causal_assessment": "the exact multi-process recipe completed beyond 4724 steps when launched independently with persistent logs, making a supervision-channel interruption more likely than an environment, memory, or PPO defect; because the failed run's child stderr was not retained, this remains a supported inference rather than a definitive root-cause proof"
+  },
+  "authorization": {
+    "allowed": "one exact-recipe rerun with entirely fresh training, environment, and stochastic-action seeds under detached logged supervision",
+    "forbidden": [
+      "reuse_s20260875_as_fresh_evidence",
+      "treat_partial_emergency_model_as_candidate",
+      "change_learning_recipe_based_on_this_abort",
+      "large_scale_training",
+      "fidelity_gate_opening",
+      "original_transfer_certification"
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "schema": "zuma-rl.c158-natural-loss-simulator-diff-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_CODE_CHANGE_OR_DIFF_OUTPUT",
+  "created_utc": "2026-08-10T12:16:56.0054903Z",
+  "purpose": "Run the simulator from the exact natural c158 pretrigger midstate and compare every tick through empty-chain loss, replacing only the obsolete injected-terminal setup assumption.",
+  "classification": "preregistered-natural-source-simulator-diff-tooling-repair",
+  "parents": {
+    "c160_success_receipt": "diagnostics/c160-c158-natural-loss-source-packaging-success-receipt-v1.json",
+    "c160_success_receipt_sha256": "sha256:8a91af77259d99115725966f24ef012d9117ad518546c390f029dfaea225830b",
+    "source_manifest_sha256": "sha256:706b8e9d18cf8bdbed2b7d9b9adab052258638ed8955a8199e2cb578f89f23b1",
+    "mechanism_audit_sha256": "sha256:148cdcabf8ad633cfdc73bf53952888bc1e136f18a825bae6d6426949b218b26",
+    "source_fingerprint": "sha256:0feed280a4662b83a1b9072664f54b17b492495e8a81d926df43e35e00218edf"
+  },
+  "immutable_source": {
+    "trajectory": "D:/ZumaGolden/formal-full-state-c155-natural-loss-c158-campaign-v1/attempt-01/source/attempt-01/trajectory/index.json",
+    "trajectory_sha256": "sha256:a5cd4410676579f0ac75ec0bb69f18d483c026cde14566284ad10a24e2b60ada",
+    "captured_start_update": 11200,
+    "captured_end_update": 11830,
+    "selected_start_update": 11341,
+    "selected_end_update": 11519,
+    "selected_tick_count": 179,
+    "selected_window_source": "machine-authorized natural_loss proof",
+    "source_bytes_modified": false
+  },
+  "observed_tool_failure_before_change": {
+    "error": "loss_simulator_injected_terminal_not_at_curve_end",
+    "source_terminal_ball_id": 176,
+    "source_terminal_pretrigger_distance": 3756.875,
+    "source_terminal_reset_distance": 3757.0,
+    "decoded_curve_end": 3757.0,
+    "inferred_pretrigger_advance": 0.125,
+    "root_cause": "The simulator builder was written for a diagnostic injection whose first terminal ball was already at curve end; the natural retail source starts one exact movement tick earlier."
+  },
+  "permitted_changes": {
+    "src/zuma_rl/pc_loss_sequence.py": [
+      "Infer advance_speed from identities shared by the first two selected source frames before validating terminal setup.",
+      "Require terminal_pretrigger_distance plus the exact inferred advance_speed to equal decoded curve end; continue rejecting any other terminal geometry.",
+      "Load the unmodified source pretrigger midstate and retain every existing per-tick identity, count, color, contact, suck_count, update_count, RNG, timer, lock, event, and zero-waypoint-error comparison."
+    ],
+    "tools/compare_pc_loss_sequence.py": [
+      "Add explicit selected start/end update arguments.",
+      "Require the selected range to exist contiguously inside the captured immutable trajectory.",
+      "Run both oracle and simulator diff on exactly the selected range while recording captured and selected bounds in the output."
+    ],
+    "tests/test_pc_loss_sequence.py": [
+      "Add a positive natural pretrigger terminal-step test and negative wrong-step test without installed-game dependence."
+    ]
+  },
+  "forbidden_changes": [
+    "No c158 source or mechanism-audit artifact edit.",
+    "No simulator loss behavior change under this preregistration; only exact source-midstate construction and comparison-window selection may change.",
+    "No tolerance above exact zero waypoint error in the final diff.",
+    "No identity, removal, suck recurrence, RNG, score, shooter, pending-chain, timer, or outcome check removal.",
+    "No Gate threshold or evidence authorization change."
+  ],
+  "frozen_code_before_change": {
+    "src/zuma_rl/pc_loss_sequence.py": "sha256:388983e2107559e08a3181a8f847d80f23727ff16ac321587549c778b6be2537",
+    "tools/compare_pc_loss_sequence.py": "sha256:548788ad373e91fc2145727afc0d4fe8397b9699a5f76916bb5aa6d261eeae51",
+    "tests/test_pc_loss_sequence.py": "sha256:71f9d80be6c016ea3ad97ee8c17137d8bd335cf6d481f67e37af73c3e39d8e73"
+  },
+  "output": {
+    "path": "D:/ZumaGolden/diagnostics/jungle2-c158-u11341-u11519-natural-loss-diff-v1.json",
+    "absent_at_freeze": true,
+    "schema": "zuma-rl.pc-loss-simulator-diff",
+    "version": 1
+  },
+  "fixed_command": ".\\.venv-win\\Scripts\\python.exe tools\\compare_pc_loss_sequence.py --trajectory D:\\ZumaGolden\\formal-full-state-c155-natural-loss-c158-campaign-v1\\attempt-01\\source\\attempt-01\\trajectory\\index.json --root \"D:\\SteamLibrary\\steamapps\\common\\Zuma's Revenge\" --level Jungle2 --curve-index 0 --start-update 11341 --end-update 11519 --trigger-ball-id 176 --decoded-curve-end 3757 --expected-trigger-update 11343 --expected-chain-empty-update 11519 --expected-pending-count 1 --expected-pretrigger-advance 0.125 --output D:\\ZumaGolden\\diagnostics\\jungle2-c158-u11341-u11519-natural-loss-diff-v1.json",
+  "acceptance": {
+    "status": "PASS",
+    "start_update": 11341,
+    "reset_update": 11342,
+    "trigger_update": 11343,
+    "empty_update": 11519,
+    "end_update": 11519,
+    "ticks_compared": 178,
+    "maximum_waypoint_error": 0.0,
+    "initial_chain_count": 105,
+    "pending_ball_count": 1,
+    "score": 7950,
+    "shooter_colors_after_reset": [3, 3],
+    "post_empty_pc_ticks_excluded": 0,
+    "inferred_advance_speed": 0.125,
+    "oracle_status": "PASS",
+    "oracle_ticks_from_trigger_to_empty": 176,
+    "removal_coverage_exact": true
+  },
+  "required_tests": {
+    "targeted": "PASS",
+    "full_suite": "PASS before diff execution",
+    "implementation_receipt_required_before_diff": true
+  },
+  "decision_rule": {
+    "pass": "Every frozen acceptance value and all unchanged exact comparisons pass on the single output.",
+    "simulator_mismatch": "Retain the exception and evidence, create no output, then preregister a separate simulator-behavior repair; do not weaken this diff.",
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

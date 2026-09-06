@@ -1,0 +1,67 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-live-tensorboard-audit-receipt",
+  "version": 1,
+  "completed_utc": "2026-08-14T03:36:58.5094855Z",
+  "status": "PASS",
+  "classification": "live_training_diagnostic_only",
+  "immutable_snapshot": {
+    "path": "D:\\ZumaTraining\\alphazuma-v1.1-live-tensorboard-audit-0335z-s63081301-v1",
+    "created_utc": "2026-08-14T03:36:02.2941045Z",
+    "run_directories": 7,
+    "event_files": 7,
+    "status_files": 7,
+    "copied_files": 14,
+    "copied_bytes": 4571074
+  },
+  "source_audit": {
+    "path": "D:\\ZumaTraining\\alphazuma-v1.1-live-tensorboard-audit-0335z-s63081301-v1\\audit.json",
+    "created_utc": "2026-08-14T03:36:15.874809Z",
+    "sha256": "sha256:30694d13b3dcff02afedfed8b5a58ff96ae413840fd869c0dbb85534e4ba44ea"
+  },
+  "tool": {
+    "path": "tools/audit_alphazuma_v11_tensorboard.py",
+    "sha256": "sha256:9eec5f90e0f61d668524ea5795fa2007dccc94f5a1db4ec52962fecd1add6378"
+  },
+  "tests": {
+    "path": "tests/test_audit_alphazuma_v11_tensorboard.py",
+    "sha256": "sha256:a5d1bbc02d70d5b3d3fea8c9b42e6e106c0780fa1ec2c7e76d004b9b46059696",
+    "result": "3_passed"
+  },
+  "validation": {
+    "runs": 7,
+    "passed": 7,
+    "failed": 0,
+    "expected_scalar_streams": 84,
+    "missing_scalar_streams": 0,
+    "nonfinite_scalar_streams": 0,
+    "structural_errors": 0,
+    "diagnostic_warnings": 0,
+    "copied_status_and_event_files_independently_double_hashed": 14,
+    "double_hash_mismatches": 0
+  },
+  "recent_means": [
+    {"run": "frontier-adaptive-5090-oom-recovery", "fps": 401.0, "approx_kl": 0.000012093935242774024, "clip_fraction": 0.0, "explained_variance": 0.7656599402427673, "entropy_loss": -1.5340030014514923, "value_loss": 0.05923231265041977},
+    {"run": "frontier-fixed-5080-oom-recovery", "fps": 413.1, "approx_kl": 0.000012488424840739753, "clip_fraction": 0.0, "explained_variance": 0.6993494123220444, "entropy_loss": -1.4208523631095886, "value_loss": 0.10754969222471118},
+    {"run": "memdense-adaptive-5090-a", "fps": 232.0, "approx_kl": 0.005056891252752394, "clip_fraction": 0.028840942494571208, "explained_variance": 0.7080492973327637, "entropy_loss": -1.0632778614759446, "value_loss": 0.09222360241692514},
+    {"run": "memdense-fixed-5090-b", "fps": 230.0, "approx_kl": 0.005338615539949387, "clip_fraction": 0.026315917959436774, "explained_variance": 0.6841764122247695, "entropy_loss": -1.374159860610962, "value_loss": 0.0923993744654581},
+    {"run": "memdense-adaptive-5080-a", "fps": 226.0, "approx_kl": 0.005216164735611528, "clip_fraction": 0.026917724637314677, "explained_variance": 0.7366839081048966, "entropy_loss": -1.0772529393434525, "value_loss": 0.08612939942395315},
+    {"run": "memdense-fixed-5080-b", "fps": 222.0, "approx_kl": 0.004753822553902864, "clip_fraction": 0.027461547730490567, "explained_variance": 0.6149632006883621, "entropy_loss": -0.9350588977336883, "value_loss": 0.11804604106582701},
+    {"run": "ultradense-zero-win-5090-c", "fps": 124.0, "approx_kl": 0.003957867552526295, "clip_fraction": 0.019052734575234355, "explained_variance": 0.6929184198379517, "entropy_loss": -1.070962241292, "value_loss": 0.14381730321329086}
+  ],
+  "difficult_level_training_flow": [
+    {"level": "Jungle7", "episodes": 547, "wins": 4, "routes_with_win": 2, "episodes_since_0304z": 89, "wins_since_0304z": 0},
+    {"level": "village6", "episodes": 589, "wins": 1, "routes_with_win": 1, "episodes_since_0304z": 81, "wins_since_0304z": 0},
+    {"level": "village10", "episodes": 644, "wins": 0, "routes_with_win": 0, "episodes_since_0304z": 82, "wins_since_0304z": 0}
+  ],
+  "interpretation": {
+    "numerical_divergence_detected": false,
+    "policy_entropy_collapse_detected": false,
+    "difficulty_starvation_detected": false,
+    "new_difficult_level_training_win_since_0304z": false,
+    "performance_improvement_claimed": false,
+    "reason": "All optimizer streams remain fresh and finite, and difficult levels continue receiving episodes. On-policy training outcomes are diagnostic and cannot substitute for frozen blind evaluation."
+  },
+  "training_or_evaluation_semantics_changed": false,
+  "formal_seed_consumption": "none",
+  "formal_gate_effect": "none"
+}

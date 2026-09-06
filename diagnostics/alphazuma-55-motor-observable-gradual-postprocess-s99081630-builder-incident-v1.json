@@ -1,0 +1,40 @@
+{
+  "schema": "zuma-rl.alphazuma-55-motor-observable-gradual-postprocess-builder-incident",
+  "version": 1,
+  "status": "PLAN_FROZEN_REPORTING_ONLY_FAILURE",
+  "observed_utc": "2026-08-16T08:31:35.1464159Z",
+  "classification": "post_write_console_reporting_name_error",
+  "error_type": "NameError",
+  "error": "name 'json' is not defined",
+  "boundary": {
+    "failure_location": "after atomic plan creation, while printing the build summary",
+    "plan_bytes_complete": true,
+    "plan_validation_passed": true,
+    "checkpoint_inference_started": false,
+    "training_validation_seed_consumption": "NONE",
+    "formal_selection_seed_consumption": "NONE",
+    "formal_final_blind_seed_consumption": "NONE",
+    "builder_must_remain_unmodified_because_plan_binds_its_hash": true
+  },
+  "artifacts": {
+    "builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_motor_observable_gradual_postprocess_plan_v1.py",
+      "sha256": "sha256:c06cb4e0ce8178618eaf424da45104e714127adc0d543972374457f618c7f201"
+    },
+    "plan": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-postprocess-s99081630-plan-v1.json",
+      "sha256": "sha256:e8e8f1b7bf4c9a73e353d6c278523e005790565753d42ad293ce1c47be2cbe67"
+    },
+    "controller": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_motor_observable_gradual_postprocess_v1.py",
+      "sha256": "sha256:620448a9c821673ccb4e5873c43d6a2477f49e3d07740b5a4242f6e8fdc6bf8e"
+    }
+  },
+  "validation": {
+    "status": "VALID",
+    "screen_candidates": 17,
+    "screen_attempts": 204,
+    "maximum_full55_attempts": 275,
+    "formal_seed_consumption": false
+  }
+}

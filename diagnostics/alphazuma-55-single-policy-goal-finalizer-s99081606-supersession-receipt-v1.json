@@ -1,0 +1,40 @@
+{
+  "schema": "zuma-rl.alphazuma-55-single-policy-goal-finalizer-supersession-receipt",
+  "version": 1,
+  "status": "SUPERSEDED_WATCHER_STOPPED",
+  "created_utc": "2026-08-16T01:02:00Z",
+  "superseded": {
+    "finalizer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-single-policy-goal-finalizer-s99081554-preregistration-v2.json",
+      "sha256": "sha256:55cc5983104284ab4e8af4aa79e37b8f1e51d270983fd68941c60f45be98aee3"
+    },
+    "watcher_pid": 211885,
+    "last_status": "RUNNING",
+    "last_phase": "WAITING_FOR_CAMPAIGN_AUDITS",
+    "last_updated_utc": "2026-08-16T00:57:28.576584+00:00",
+    "selection_blocked_by": "polar-intent-dagger-successor-s99081551",
+    "error": null,
+    "alive_after_sigterm": false
+  },
+  "replacement": {
+    "finalizer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-single-policy-goal-finalizer-s99081606-preregistration-v3.json",
+      "sha256": "sha256:a7fd5c8f3c1c7a2aebc67fcad64aac1276155b77a0734866de62b6ba48609f2b"
+    },
+    "goal_audit_plan": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-single-policy-goal-audit-s99081605-preregistration-v3.json",
+      "sha256": "sha256:61b54cf6702f2ebbb75c97117521b997a7dc61b3cda88f931dbf2647e0a9db52"
+    },
+    "watcher_pid": 233917,
+    "status": "RUNNING",
+    "phase": "WAITING_FOR_CAMPAIGN_AUDITS",
+    "selection_blocked_by": "polar-intent-autonomy-successor-s99081603"
+  },
+  "boundaries": {
+    "training_processes_stopped": false,
+    "campaign_controllers_stopped": false,
+    "formal_seed_consumption_caused": false,
+    "power_restore_requested": false,
+    "reason": "prevent the superseded five-route watcher from finalizing or restoring power without observing the new highest-priority autonomy route"
+  }
+}

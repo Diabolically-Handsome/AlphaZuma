@@ -1,0 +1,88 @@
+{
+  "schema": "zuma-rl.pc-handoff-rng-state-smoke-outcome",
+  "version": 20,
+  "status": "PASS_HANDOFF_RNG_TELEMETRY_TOOL_QUALIFIED_SEMANTIC_RESULT_QUARANTINED",
+  "created_utc": "2026-08-05T18:45:22.337Z",
+  "id": "handoff-rng-state-smoke-v20-outcome",
+  "parent_preregistration": {
+    "path": "diagnostics/handoff-rng-state-smoke-preregistration-v20.json",
+    "sha256": "sha256:c9361064b634a3d72626fc5093b6cdd6ee757b8eae7270ff55ac9c4d4d1637af"
+  },
+  "execution_binding": {
+    "path": "diagnostics/handoff-rng-state-smoke-execution-binding-v20.json",
+    "sha256": "sha256:511df24806d7c1e5aba861d8b9efe04d3de6f71b7b25b85a825455cc3f830b37",
+    "session_nonce": "2388e50ee5364de4a4e27fd40c5568f1"
+  },
+  "execution": {
+    "run_root": "D:/ZumaGolden/diagnostics/handoff-rng-state-smoke-e01-v20",
+    "attempt_count": 1,
+    "selected_attempt": 1,
+    "collector_status": "PASS",
+    "observer_status": "PASS",
+    "attempts_sha256": "sha256:44a7fde94ca19ff782dc8c4152b19e7ac260c9ccd2e0bf2a4247609c5707a233",
+    "memory_probe_sha256": "sha256:f9ea29662e5dcb845882283a1803a4f2f00abe6062958453cc3f5e6970ce4134",
+    "ready_sha256": "sha256:98a87f5ac9a3e617afc4849b1ad6e4c228a1b77ffca2488f709411694d1c590b",
+    "observer_sha256": "sha256:26981ce51c2dd8167aa4980dd636904c919ae34803bd44e1b8d87181c066223e"
+  },
+  "tool_acceptance": {
+    "all_checks_pass": true,
+    "observer_hit_count": 1,
+    "ready_version": 2,
+    "ready_handoff_verified": true,
+    "ready_observe_handoff_rng_state": true,
+    "handoff_state_schema": "zuma-rl.pc-global-mtrand-handoff-state",
+    "handoff_state_version": 1,
+    "handoff_state_address": 10687424,
+    "handoff_state_bytes": 2500,
+    "handoff_state_ready_hash_match": true,
+    "handoff_state_ready_index_match": true,
+    "handoff_state_ready_timestamp_match": true,
+    "handoff_state_draw_count_reconstructed": true,
+    "handoff_state_process_memory_reads": 1,
+    "handoff_state_process_memory_read_bytes": 2500,
+    "handoff_state_process_memory_writes": 0,
+    "handoff_state_process_memory_mutation": false,
+    "boundary_draw_count_reconstruction_status": "PASS",
+    "observer_process_memory_writes": 0,
+    "observer_process_memory_mutation": false,
+    "observer_state_correction_count": 0,
+    "hardware_breakpoint_restored": true,
+    "debugger_detach_error": null,
+    "persistent_file_modified": false
+  },
+  "quarantined_semantic_observation": {
+    "handoff_draw_count": 1465,
+    "handoff_index": 217,
+    "handoff_state_sha256": "sha256:bd5a2a41a29aa2bdc5132672252202ef8f2420a45d7a0068173ad989ac3e48aa",
+    "boundary_live_pre_draw_count": 1662,
+    "boundary_live_pre_index": 414,
+    "boundary_state_sha256": "sha256:c0d2599105a0ba4ee7623f4991a704c0260548dbf7fc47b1041dbfd1e45e2422",
+    "expected_boundary_draw_count": 1662,
+    "signed_boundary_minus_expected": 0,
+    "handoff_to_boundary_draw_increment": 197,
+    "semantic_class": "EXACT",
+    "single_run_threshold_selection_forbidden": true,
+    "correlation_series_credit": false
+  },
+  "host_safety": {
+    "canonical_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "pre_state_root_match": true,
+    "post_state_root_match": true,
+    "host_pre_sha256": "sha256:13753b6083c4ff2a48276c5596f791bd891dfc89df4cdf098c8c71377a7f730d",
+    "host_post_sha256": "sha256:76769b4e3103ae5156004ca24c107cc7c40c7d2eb59d8e3eaaf79a989ca2e075",
+    "residual_retail_process_count": 0
+  },
+  "decision": {
+    "tool_qualified": true,
+    "next_action": "Freeze a fresh multi-run handoff-to-boundary RNG correlation series before selecting any readiness predicate or modifying transport.",
+    "pc_golden_credit": false,
+    "fidelity_gate_change": false,
+    "formal_transport_change": false,
+    "large_scale_training_start": false
+  },
+  "tooling_validation": {
+    "focused_tests": "PASS_62",
+    "native_full_suite": "PASS_1164_SKIPPED_12_EXIT_0"
+  },
+  "non_authorizations": ["pc_golden_credit", "fidelity_gate_change", "formal_transport_change", "large_scale_training_start"]
+}

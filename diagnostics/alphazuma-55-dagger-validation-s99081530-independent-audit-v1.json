@@ -1,0 +1,85 @@
+{
+  "schema": "zuma-rl.alphazuma-55-training-validation-audit",
+  "version": 1,
+  "status": "PASS",
+  "audited_utc": "2026-08-15T15:16:38.588946+00:00",
+  "formal_selection_authority": false,
+  "training_recipe_change_authority": false,
+  "artifacts": {
+    "master": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+      "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+    },
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-dagger-validation-s99081530-preregistration-v1.json",
+      "sha256": "sha256:cf63db5101a5d4df6b14ad2d705eeee00f1a00dd64b63f1613e291bf7df16bb1"
+    },
+    "models_manifest": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-dagger-validation-s99081530-models-v1.json",
+      "sha256": "sha256:279d51e952cba68525e56d078649ade161974a652f268c8ef2dc7db06243b7b7"
+    },
+    "matrix_shard": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-dagger-validation-s99081530-v1/matrix-shard-00-of-01.json",
+      "sha256": "sha256:964d46d666a4f9517fd9fe757f32ffd8d83d59e4f30d3dd3f9388d74eba6d024"
+    },
+    "auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_training_validation.py",
+      "sha256": "sha256:3621dcb64c3342e3954533d22401f258fe6c72ac49d164456455ad77ea54aa67"
+    }
+  },
+  "matrix": {
+    "levels": 55,
+    "attempts_per_model": 55,
+    "models": 3,
+    "completed_attempts": 165,
+    "seed_plan": {
+      "registry": "training_validation",
+      "base_seed": 1550000800,
+      "last_seed": 1550000854
+    },
+    "runtime": {
+      "python": "3.12.3",
+      "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "parallel_envs": 24,
+      "total_vector_transitions": 1133759,
+      "wall_seconds": 2006.2203471949979
+    }
+  },
+  "model_summaries": [
+    {
+      "model_id": "dagger-source",
+      "model_sha256": "sha256:97ada7f7eadf8be03036a4036c64a1d27052b7dd1e21bb00ce2e3b2f66b18905",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "dagger-round-01",
+      "model_sha256": "sha256:fab7ae45948f89c9ddd9392dc41261a74b5f265fe0314b3817c033f4156a23ce",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "dagger-final",
+      "model_sha256": "sha256:dc77c37f92fdab7a0680c32ec563429b08c5fedd7e94aef9fc45d38b848f1f4c",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    }
+  ],
+  "paired_comparison": null,
+  "interpretation_boundary": "This PASS proves artifact integrity and a paired training-health signal only; it is not selection, final blind, or continuous-campaign evidence."
+}

@@ -1,0 +1,123 @@
+{
+  "schema": "zuma-rl.retail-natural-loss-board-only-replacement-preregistration",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T09:03:11.8752440Z",
+  "purpose": "Acquire certifying natural-loss recordings from the source-observed Board teardown and replacement sequence without requiring a Shooter object during the interval in which retail destroys it.",
+  "classification": "observation-layer-correction-preregistered-before-implementation",
+  "failed_frozen_predecessor": {
+    "preregistration_sha256": "sha256:c8c639fb34262f0f85f20fc22b5869a65144bd254becddc7bdd17dfb3ef63a37",
+    "implementation_sha256": "sha256:5ec8943f29829dbec5f6ef84a5430b87ce5e0c5351bbcab3cf9d8b0164fe6bf8",
+    "root_cause": "All three c143 runs observed the retail Board throughout loss and replacement through require_shooter=false snapshots, but the decision path only evaluated clock-reset transitions after a require_shooter=true snapshot resumed.",
+    "runs": [
+      {
+        "id": "c143a1",
+        "status": "INCOMPLETE",
+        "result_sha256": "sha256:86d37d24e87e7a69c494f9841e29cfcf3f1bb1c6a7d256f04ef1579a6405620f",
+        "autoplay_log_sha256": "sha256:50cec8ec933d73a2982f90e951e8857968242a8e891e4ac47ed303ab925897f5",
+        "dmo_sha256": "sha256:08dfc2d358a27a42bbef27edc2eaa4c4a39df50d00d8c7e6a5ebadc99bb531af"
+      },
+      {
+        "id": "c143a2",
+        "status": "INCOMPLETE",
+        "result_sha256": "sha256:8eafe363d91eeb0b4fa40778f6f234411afd1f4e125b8777b5353b85cd9499dc",
+        "autoplay_log_sha256": "sha256:791bf2acf8abca5470cd129c1181759b6c87364ff7d7f26c1148d8dd82b33248",
+        "dmo_sha256": "sha256:2a2a79d6d53cb93b92d6c414547407199de51e91916ca7c4c091e7c21ea210cf"
+      },
+      {
+        "id": "c143a3",
+        "status": "INCOMPLETE",
+        "result_sha256": "sha256:8a7e8ff3688061330f028b5ede99a9d27cc95a01f1f9a451ae0295b25c3cccad",
+        "autoplay_log_sha256": "sha256:b5debb5e2c9610485844ca418141dea2d5c83d776622832df465817679c8315a",
+        "dmo_sha256": "sha256:2528565dc84e335785fe3286864301e95825691338bd5b3fe781fee676ba6659"
+      }
+    ],
+    "common_observation": {
+      "action_count": 0,
+      "swap_count": 0,
+      "final_score": 7950,
+      "final_score_target": 9616,
+      "final_native_game_time": 357,
+      "final_pending_ball_count": 1,
+      "final_curve_plan_exhausted": true,
+      "host_restored": true,
+      "process_memory_writes": 0,
+      "mtrand_trace_status": "PASS"
+    }
+  },
+  "frozen_loss_contract": {
+    "receipt_kind": "natural_loss_board_replacement_transition_v2",
+    "before_board": {
+      "snapshot_mode": "complete_board_with_shooter",
+      "native_game_time_minimum": 1000,
+      "score_below_positive_target": true
+    },
+    "teardown": {
+      "minimum_complete_snapshot_unavailable_observations": 1,
+      "board_only_snapshot_mode": "read_live_board(require_shooter=false)",
+      "native_clock_reset_maximum": 1000,
+      "minimum_native_clock_reset": 1000,
+      "zero_score_target_state_observed_after_clock_reset": true
+    },
+    "replacement_ready_board": {
+      "snapshot_mode": "board_only_no_shooter",
+      "native_game_time_maximum": 1000,
+      "score_target_positive": true,
+      "curve_plan_exhausted": false,
+      "combined_ball_population_positive": true,
+      "runtime_flag_157_observed_value": false,
+      "runtime_flag_157_is_not_activity_evidence": true
+    },
+    "gameplay_policy": "idle",
+    "action_count": 0,
+    "swap_count": 0,
+    "fruit_shot_count": 0,
+    "zero_target_state_is_neither_win_nor_loss": true
+  },
+  "implementation_boundary": {
+    "allowed": [
+      "Evaluate the already frozen clock-reset fields on require_shooter=false Board snapshots.",
+      "Latch the observed zero-target teardown state before accepting a positive-target non-exhausted replacement Board.",
+      "Emit and independently validate the v2 receipt fields.",
+      "Increase the normal retail UI exit settle delay from 1.0 to 5.0 seconds so the source-observed replacement Board can become interactive."
+    ],
+    "forbidden": [
+      "Any process-memory write.",
+      "Any gameplay input under the idle policy.",
+      "Outcome inference from timeout, label, window closure, or Board+0x157.",
+      "Retroactive PASS for c143 or c142.",
+      "Fidelity Gate credit before a source-bound two-run formal replay."
+    ]
+  },
+  "retail_contract": {
+    "runtime_executable": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "changedir": "D:/SteamLibrary/steamapps/common/Zuma's Revenge",
+    "prestate_dir": "D:/ZumaGolden/session-20260728-203153/native-windowed-record-001-prestate-reconstructed",
+    "expected_score_target": 9650,
+    "minimum_entry_score": 7000,
+    "maximum_gameplay_seconds": 180.0,
+    "rng_monitor_stop_native_time": 500,
+    "mtrand_trace_kind": "global_wrapper_entry",
+    "navigation_updates": [1622, 2422, 3108],
+    "navigation_points": [[400.0, 533.0], [633.0, 281.0], [399.0, 456.0]],
+    "prelaunch_cursor_screen_point": [100, 100],
+    "replacement_ui_settle_seconds": 5.0,
+    "process_memory_writes_required": 0,
+    "host_state_restore_required": true
+  },
+  "run_order": ["c144a1", "c144a2", "c144a3"],
+  "runs": [
+    {"id": "c144a1", "output_root": "D:/ZumaGolden/record-c144a1-idle-natural-loss-board-only-v2"},
+    {"id": "c144a2", "output_root": "D:/ZumaGolden/record-c144a2-idle-natural-loss-board-only-v2"},
+    {"id": "c144a3", "output_root": "D:/ZumaGolden/record-c144a3-idle-natural-loss-board-only-v2"}
+  ],
+  "decision_rules": {
+    "every_declared_run_executes_in_order": true,
+    "no_retry_or_replacement_under_this_preregistration": true,
+    "first_passing_run_by_frozen_order_is_primary": true,
+    "failed_outputs_are_retained": true,
+    "all_passing_runs_must_emit_the_v2_receipt": true,
+    "no_fidelity_credit_before_source_bound_two_run_formal_replay": true
+  }
+}

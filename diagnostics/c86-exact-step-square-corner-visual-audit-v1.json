@@ -1,0 +1,117 @@
+{
+  "schema": "zuma-rl.pc-exact-step-square-corner-visual-audit",
+  "version": 1,
+  "id": "c86-u3664-u3684-exact-step-square-corner-independent-diagnostic",
+  "created_utc": "2026-08-03T21:19:35Z",
+  "status": "PASS_DIAGNOSTIC",
+  "gate_effect": "none",
+  "parent_preregistration": {
+    "path": "diagnostics/c86-exact-step-square-corner-visual-preregistration-v1.json",
+    "sha256": "sha256:c36044e571d5ac157091d165a6fa4a05214ede1470a8ec638c22de1ee54fe0de"
+  },
+  "tooling": {
+    "collector": {
+      "path": "tools/collect_pc_memory_probe.py",
+      "sha256": "sha256:db76e998fd9d9b0d0fc2fdf0ffc771eac86b59f1972b076e370c112f06e36018"
+    },
+    "pair_comparator": {
+      "path": "tools/compare_pc_step_visual_trajectories.py",
+      "sha256": "sha256:977183e5a2fc83aebdc13c0c61e3b1be8dbc1abecb0230d27802c96bbd70b4a5"
+    },
+    "targeted_tests": {
+      "count": 38,
+      "status": "PASS"
+    },
+    "full_suite": {
+      "status": "PASS",
+      "warning_count": 1
+    }
+  },
+  "independent_runs": {
+    "a": {
+      "output_root": "D:/ZumaGolden/memory-followup-c86-exact-step-square-corners-a-v1",
+      "attempts_sha256": "sha256:807e9a30d19fa20f2e7935b59e9978c88573706c658c9fa52fec73fa69840e13",
+      "attempt_count": 1,
+      "attempt_status": "PASS",
+      "process_id": 56356,
+      "memory_probe_sha256": "sha256:f783b06322ca7b64a0214f9e8926d8beb7eda3b140621da1b06f585f79d1b7d1",
+      "trajectory_index_sha256": "sha256:74f50f8657e398df7a28ba83615b9f8de3c5d016dca69f2ec8ec8488123d3e57",
+      "dwm_corner_preference_status": "verified",
+      "dwm_corner_preference_value": "DWMWCP_DONOTROUND",
+      "warmup_frame_sha256": "sha256:401544344c4d19a0a9ac66712235dd486d14169f394b3ddf6b99664ab275815b",
+      "host_postcheck": {
+        "path": "D:/ZumaGolden/diagnostics/c86-a-host-postcheck-v1.json",
+        "sha256": "sha256:eb54a5edb86ed90cdd8d1b36cf3ed41771655ba2a42914c5c665a24eee5c7bdd",
+        "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061"
+      }
+    },
+    "b": {
+      "output_root": "D:/ZumaGolden/memory-followup-c86-exact-step-square-corners-b-v1",
+      "attempts_sha256": "sha256:b6cca6baede2fa82bb2d349a9bc32d8c31b3b28d59cbe44d7fca8a2e0929a8c7",
+      "attempt_count": 1,
+      "attempt_status": "PASS",
+      "process_id": 56140,
+      "memory_probe_sha256": "sha256:f02c7f6cd8a117633d2d515fae6886dbed15be6b378f9067d09828ffd1a22e74",
+      "trajectory_index_sha256": "sha256:909b0e64ea6faccf1e98eacd5f679305022cf1f524d623928f33a83f2638f083",
+      "dwm_corner_preference_status": "verified",
+      "dwm_corner_preference_value": "DWMWCP_DONOTROUND",
+      "warmup_frame_sha256": "sha256:401544344c4d19a0a9ac66712235dd486d14169f394b3ddf6b99664ab275815b",
+      "host_postcheck": {
+        "path": "D:/ZumaGolden/diagnostics/c86-b-host-postcheck-v1.json",
+        "sha256": "sha256:79d6ffc3c8930249dba641a509a63bc66ea46903dc9385069c9f38ab6af248c7",
+        "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061"
+      }
+    },
+    "distinct_process_ids": true,
+    "game_or_tracer_process_remaining": false
+  },
+  "frozen_pair_comparison": {
+    "path": "D:/ZumaGolden/diagnostics/c86-exact-step-square-corners-comparison-v1.json",
+    "sha256": "sha256:f5fe7175033c2b3109396b74d02eae4e6339a504e5b9bbbd10118b0ee661bc24",
+    "status": "PASS",
+    "same_protocol": true,
+    "sample_phase": "post_update_safe_delete_complete",
+    "update_range": [
+      3664,
+      3684
+    ],
+    "retained_tick_count": 21,
+    "normalized_gameplay_and_rng_memory_exact_all_ticks": true,
+    "exact_ball_render_state_all_ticks": true,
+    "full_800x600_rgb_exact_all_ticks": true,
+    "maximum_mismatched_rgb_pixel_count": 0
+  },
+  "supplemental_preregistered_bgra_check": {
+    "method": "sha256_equality_of_each_lossless_32_bit_bgra_bmp_artifact",
+    "matched_artifact_count": 21,
+    "required_artifact_count": 21,
+    "full_bmp_bytes_exact_all_ticks": true,
+    "interpretation": "pixel_bytes_including_alpha_and_bmp_layout_are_identical_for_every_retained_tick"
+  },
+  "mechanism_finding": {
+    "verdict": "EXACT_STEP_PLUS_VERIFIED_SQUARE_DWM_CORNERS_REMOVES_THE_OBSERVED_VISUAL_NONDETERMINISM",
+    "evidence": [
+      "Two independent retail processes reached exact normalized gameplay, RNG, and Ball render-driving state at all 21 retained updates.",
+      "Every paired 800x600 RGB frame had zero mismatched pixels.",
+      "Every paired lossless 32-bit BMP had the same SHA-256, proving equality of BGRA payload and file layout.",
+      "Both windows independently reported DWMWCP_DONOTROUND before retained capture.",
+      "Both host states restored to the frozen root and no game or tracer process remained."
+    ],
+    "bounded_inference": "This validates a diagnostic transport recipe; it is not itself a PC Golden package and does not retroactively change C83-C85."
+  },
+  "decision": {
+    "c86_status": "PASS_DIAGNOSTIC_TRANSPORT_CANDIDATE",
+    "c83_c85_status_unchanged": "FAIL",
+    "pc_golden_status": "NOT_CREATED",
+    "front_insertion_gate_credit": "NOT_GRANTED",
+    "fidelity_gate_status": "CLOSED",
+    "next_step": "implement_and_test_a_formal_exact_step_pc_golden_packaging_path_then_preregister_a_new_fresh_holdout"
+  },
+  "non_authorizations": [
+    "pc_golden",
+    "front_insertion_gate_credit",
+    "fidelity_gate_open",
+    "training_start",
+    "reclassification_of_c83_c85"
+  ]
+}

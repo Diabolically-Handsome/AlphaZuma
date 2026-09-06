@@ -1,0 +1,73 @@
+{
+  "schema": "zuma-rl.pc-front-insertion-render-settled-late-arm-infrastructure-retry-preregistration",
+  "version": 1,
+  "id": "c74-front-insertion-u3664-u3684-render-settled-late-arm-infrastructure-retry",
+  "created_utc": "2026-08-03T18:48:00Z",
+  "status": "FROZEN_BEFORE_PREPARE_AND_COLLECTION",
+  "classification": "fresh-same-recipe-retry-after-preanchor-second-run-infrastructure-failure",
+  "gate_effect": "none_until_pc_golden_and_source_bound_mechanism_audit_both_pass",
+  "inherited_scientific_contract": {
+    "path": "diagnostics/c73-front-insertion-render-settled-late-arm-retry-preregistration-v1.json",
+    "sha256": "sha256:ed6f6e78b67e896985bc23211493aa54c867a92815741512b39ced1a52ca5a60",
+    "all_scientific_and_acceptance_fields_inherited": true
+  },
+  "parent_failure": {
+    "path": "diagnostics/c73-front-insertion-render-settled-late-arm-failure-audit-v1.json",
+    "sha256": "sha256:ba5d1cda9869ac4fe197c02a00a55bff5e67dabef95aa546a90206e286d69cb4",
+    "failure_update": 246,
+    "board_anchor_update": 3121,
+    "observer_arm_window": [
+      3566,
+      3568
+    ],
+    "failure_preceded_scientific_intervention": true,
+    "c73_data_reuse_forbidden": true
+  },
+  "fresh_outputs": {
+    "session_root": "D:/ZumaGolden/campaign-c74-natural-win-v8-front-insertion-render-settled-late-arm-u3569-u3710",
+    "session_nonce": "5c445739774a41a7a95cbbb7ead7c335",
+    "case_root": "D:/ZumaGolden/cases/jungle2-natural-front-insertion-c74-render-settled-provenance-v1",
+    "case_id": "jungle2_natural_front_insertion_c74_render_settled_provenance_v1",
+    "verified_absent_at_freeze": true
+  },
+  "frozen_execution_core": {
+    "dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "required_host_pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "framework_state_poll_arm_window": [
+      3566,
+      3568
+    ],
+    "capture_wait_update": 3569,
+    "required_update_range": [
+      3664,
+      3684
+    ],
+    "render_settle_delay_ns": 400000,
+    "pixel_comparison": "exact_full_800x600_bgra",
+    "gameplay_mtrand_sync": null,
+    "inter_run_cooldown_seconds": 0.0,
+    "maximum_hits": 100000
+  },
+  "plan_identity_rule": {
+    "reference_plan": "D:/ZumaGolden/campaign-c73-natural-win-v8-front-insertion-render-settled-late-arm-u3569-u3710/plan.json",
+    "reference_plan_sha256": "sha256:993e77599421c269b9a8a53190fd7a88ef565770cd5c2c0221f872cb519375d6",
+    "only_allowed_recursive_difference": "session_nonce",
+    "required_difference_count": 1
+  },
+  "acceptance": {
+    "require_both_strict_replays_complete_without_boundary_failures": true,
+    "require_actual_arm_update_inside_3566_through_3568_each_run": true,
+    "require_poll_quality_contract_each_run": true,
+    "require_distinct_process_instances": true,
+    "require_exact_protocol_and_host_restore": true,
+    "require_exact_full_frame_match_for_all_21_target_updates": true,
+    "require_pc_golden_verifier_status": "PASS",
+    "require_source_bound_front_insertion_mechanism_audit": "PASS"
+  },
+  "decision_rules": {
+    "no_posthoc_plan_capture_mapping_threshold_range_or_pixel_change": true,
+    "failed_or_missed_c74_session_is_immutable": true,
+    "front_insertion_gate_credit_only_after_all_acceptance_requirements_pass": true
+  }
+}

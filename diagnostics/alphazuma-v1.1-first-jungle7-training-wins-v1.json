@@ -1,0 +1,142 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-training-flow-milestone",
+  "version": 1,
+  "status": "TRAINING_FLOW_MILESTONE",
+  "created_utc": "2026-08-14T01:40:51.9051418+00:00",
+  "classification": "non_iid_moving_policy_training_diagnostic_only",
+  "scope": {
+    "formal_selection_seed_consumed": false,
+    "formal_final_blind_seed_consumed": false,
+    "performance_claim_allowed": false,
+    "recipe_change_authorized": false
+  },
+  "baseline_context": {
+    "source": "diagnostics/alphazuma-v1.1-frontier-postprocess-s51081301-preregistration-v1.json",
+    "baseline_model_id": "baseline-v1",
+    "baseline_model_sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579",
+    "previously_zero_win_level_ids": [
+      "Jungle7",
+      "village6",
+      "village10"
+    ]
+  },
+  "snapshot": {
+    "evidence_root": "D:\\ZumaTraining\\alphazuma-v1.1-first-jungle7-training-wins-s54081302-v1",
+    "source_count": 7,
+    "total_steps_this_run": 12687688,
+    "oldest_source_updated_utc": "2026-08-14T01:40:27.040376+00:00",
+    "newest_source_updated_utc": "2026-08-14T01:40:43.051219+00:00"
+  },
+  "aggregate": [
+    {
+      "level": "Jungle7",
+      "episodes": 221,
+      "wins": 4,
+      "losses": 207,
+      "truncations": 10,
+      "routes_with_win": 2
+    },
+    {
+      "level": "village6",
+      "episodes": 302,
+      "wins": 0,
+      "losses": 302,
+      "truncations": 0,
+      "routes_with_win": 0
+    },
+    {
+      "level": "village10",
+      "episodes": 352,
+      "wins": 0,
+      "losses": 338,
+      "truncations": 14,
+      "routes_with_win": 0
+    }
+  ],
+  "winning_routes": [
+    {
+      "run": "alphazuma-v1.1-frontier-fixed-oom-recovery-s47081302-v1",
+      "level": "Jungle7",
+      "episodes": 48,
+      "wins": 3,
+      "losses": 44,
+      "truncations": 1
+    },
+    {
+      "run": "alphazuma-v1.1-ultradense-zero-win-5090-c-s50081301-v1",
+      "level": "Jungle7",
+      "episodes": 33,
+      "wins": 1,
+      "losses": 28,
+      "truncations": 4
+    }
+  ],
+  "sources": [
+    {
+      "run": "alphazuma-v1.1-frontier-adaptive-oom-recovery-s47081301-v1",
+      "snapshot_path": "D:\\ZumaTraining\\alphazuma-v1.1-first-jungle7-training-wins-s54081302-v1\\status-snapshots\\alphazuma-v1.1-frontier-adaptive-oom-recovery-s47081301-v1.training_status.json",
+      "snapshot_sha256": "sha256:fea6cc1905a1de1c209dd776da49ba6c70ddf40d717793533a57e8d4950f70d1",
+      "updated_utc": "2026-08-14T01:40:27.040376+00:00",
+      "steps_this_run": 2960496
+    },
+    {
+      "run": "alphazuma-v1.1-frontier-fixed-oom-recovery-s47081302-v1",
+      "snapshot_path": "D:\\ZumaTraining\\alphazuma-v1.1-first-jungle7-training-wins-s54081302-v1\\status-snapshots\\alphazuma-v1.1-frontier-fixed-oom-recovery-s47081302-v1.training_status.json",
+      "snapshot_sha256": "sha256:a4029025455ba1fb3e48a8ab6b193a225a9298cdcef107e3719e3d4c9842b9e7",
+      "updated_utc": "2026-08-14T01:40:36.775442+00:00",
+      "steps_this_run": 3055728
+    },
+    {
+      "run": "alphazuma-v1.1-memdense-adaptive-5090-a-s48081301-v1",
+      "snapshot_path": "D:\\ZumaTraining\\alphazuma-v1.1-first-jungle7-training-wins-s54081302-v1\\status-snapshots\\alphazuma-v1.1-memdense-adaptive-5090-a-s48081301-v1.training_status.json",
+      "snapshot_sha256": "sha256:d9cbbc1ff3228bf86fa3170151ae6b2c588e5ae2f17249135aaf62d7417b23f3",
+      "updated_utc": "2026-08-14T01:40:29.119435+00:00",
+      "steps_this_run": 1572880
+    },
+    {
+      "run": "alphazuma-v1.1-memdense-fixed-5090-b-s48081302-v1",
+      "snapshot_path": "D:\\ZumaTraining\\alphazuma-v1.1-first-jungle7-training-wins-s54081302-v1\\status-snapshots\\alphazuma-v1.1-memdense-fixed-5090-b-s48081302-v1.training_status.json",
+      "snapshot_sha256": "sha256:135a753a752ab34cc1f468e5dcab577a710b1cdbc2600fb28c653fb03a27f93c",
+      "updated_utc": "2026-08-14T01:40:28.958809+00:00",
+      "steps_this_run": 1486864
+    },
+    {
+      "run": "alphazuma-v1.1-memdense-adaptive-5080-a-s48081303-v1",
+      "snapshot_path": "D:\\ZumaTraining\\alphazuma-v1.1-first-jungle7-training-wins-s54081302-v1\\status-snapshots\\alphazuma-v1.1-memdense-adaptive-5080-a-s48081303-v1.training_status.json",
+      "snapshot_sha256": "sha256:d615d8a45ffeba0c395e4e6ba6d28fa71c1842ced4e1eb9229d9ecd771fea151",
+      "updated_utc": "2026-08-14T01:40:41.067796+00:00",
+      "steps_this_run": 1523728
+    },
+    {
+      "run": "alphazuma-v1.1-memdense-fixed-5080-b-s48081304-v1",
+      "snapshot_path": "D:\\ZumaTraining\\alphazuma-v1.1-first-jungle7-training-wins-s54081302-v1\\status-snapshots\\alphazuma-v1.1-memdense-fixed-5080-b-s48081304-v1.training_status.json",
+      "snapshot_sha256": "sha256:006d6a533a3006de66b1ad70dd039a7113504009dc5fc2c183a47a42d94ce583",
+      "updated_utc": "2026-08-14T01:40:29.554644+00:00",
+      "steps_this_run": 1458192
+    },
+    {
+      "run": "alphazuma-v1.1-ultradense-zero-win-5090-c-s50081301-v1",
+      "snapshot_path": "D:\\ZumaTraining\\alphazuma-v1.1-first-jungle7-training-wins-s54081302-v1\\status-snapshots\\alphazuma-v1.1-ultradense-zero-win-5090-c-s50081301-v1.training_status.json",
+      "snapshot_sha256": "sha256:dccbb6eb9f9d8da2a315340d6b7a25134be177fe58d6a06ebccd6ec31745bd33",
+      "updated_utc": "2026-08-14T01:40:43.051219+00:00",
+      "steps_this_run": 629800
+    }
+  ],
+  "integrity_expectations": {
+    "source_count_equals_seven": true,
+    "all_snapshot_hashes_must_revalidate": true,
+    "each_level_episodes_equal_wins_plus_losses_plus_truncations": true,
+    "total_steps_equals_sum_of_source_steps": true
+  },
+  "interpretation": {
+    "positive_signal": "Two distinct route families produced Jungle7 wins in the live training flow, including the ultradense zero-win specialist.",
+    "negative_signal": "village6 and village10 remain unsolved in this snapshot.",
+    "formal_gate_effect": "none",
+    "decision": "Continue the frozen seven-route recipe and defer model claims to frozen selection and final blind evaluation."
+  },
+  "excluded_incomplete_artifact": {
+    "path": "D:\\ZumaTraining\\alphazuma-v1.1-first-jungle7-training-wins-s54081301-v1",
+    "authoritative": false,
+    "reason": "Snapshot attempt stopped after one file because the host .NET runtime lacked the requested hexadecimal formatting API."
+  }
+}

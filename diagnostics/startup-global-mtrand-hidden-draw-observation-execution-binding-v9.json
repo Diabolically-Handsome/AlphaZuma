@@ -1,0 +1,81 @@
+{
+  "schema": "zuma-rl.pc-startup-global-mtrand-hidden-draw-diagnostic-execution-binding",
+  "version": 9,
+  "status": "BOUND_BEFORE_RUN_OUTPUTS",
+  "created_utc": "2026-08-04T20:56:26.196Z",
+  "id": "startup-global-mtrand-hidden-draw-observation-e02-o308-o309-v9-execution",
+  "session_nonce": "838ea85a261e4f469399370035173ee8",
+  "parent_preregistration": "diagnostics/startup-global-mtrand-hidden-draw-observation-preregistration-v9.json",
+  "parent_preregistration_sha256": "sha256:98b1c491b2bc9524efcc6480d9ae2ef7a03be1eb2738da3c94d198b2810aedf7",
+  "scientific_parent": "diagnostics/startup-global-mtrand-observation-outcome-v7.json",
+  "scientific_parent_sha256": "sha256:b6a23a3f5bbae4789c243cfb33afa1d9cc8cbf6a66ef570194b8d96644cfe240",
+  "invalid_predecessor": "diagnostics/startup-global-mtrand-hidden-draw-observation-invalid-outcome-v8.json",
+  "invalid_predecessor_sha256": "sha256:3dfa017d0e7ee2ce971a859a85df6dd4a01579f2be934af397d240cf10dce5d3",
+  "hash_recheck": {
+    "collector_plan_sha256": "sha256:5a7ba58eccd7e0d1b1008ac089cce59c167a26ba8bc359ef76f3dcd2bea8c0db",
+    "playback_dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "replay_pre_snapshot_sha256": "sha256:06d243f34ecf209c6296659fd4cc3c0a6c299c203cc8b4e342f55cc001c32842",
+    "global_mtrand_source_trace_sha256": "sha256:4de39ac6a0e800323949e0095fc2fd3e924ea41a670ceb5d75a0ecb25b5c15a4",
+    "startup_oracle_semantic_sha256": "sha256:4342d275f7ed0aa561171b4522aaf1ab7d92fb0b83aa293213b519f867e380fb",
+    "collector_sha256": "sha256:a137d9c4ed1d113b96ebd97257ff61727d261daea573e2520b41e356e84d483c",
+    "tracer_sha256": "sha256:6586859c0eab6d29673f2a8ca05b0c80f6b59c87b8c985cd24c50423ab72d10d",
+    "global_oracle_loader_sha256": "sha256:813ef37279e7b00bade0dc73ecdb405841fdaff5b85a5b85727eb059a0485269",
+    "collector_test_sha256": "sha256:48bd9b15a00904280280ecbda7ccda0ea3d88841391ce8b1f24f4787187ebc07",
+    "tracer_test_sha256": "sha256:eab284b79a4e465dc89d15a3890409510b38c67b4b8b76193605d9bf688273f9",
+    "global_oracle_test_sha256": "sha256:50e3e2df66943f3bf5c3e331eca11302b1aa9a3e58882d8cf3a895732a2a4243"
+  },
+  "preflight": {
+    "tooling_python_compile": "PASS",
+    "focused_native_tests": "PASS_63",
+    "native_full_suite": "PASS_1162_COLLECTED_EXIT_0",
+    "hidden_stack_helper_regression": "PASS",
+    "offline_startup_oracle_reconstruction": "PASS_312_CALLS",
+    "hidden_interval_source_reconstruction": "PASS_227_DRAWS",
+    "wrapper_prefix": "PASS_bac013a300",
+    "read_only_process_memory_contract": "PASS",
+    "source_anchor_suppression": "PASS",
+    "two_hardware_breakpoint_restore_enforcement": "PASS",
+    "receipt_provenance_and_histogram_validation": "PASS",
+    "host_recovered_from_invalid_v8": "PASS_STATE_ROOT_MATCH"
+  },
+  "fixed_contract": {
+    "source_order_first": 0,
+    "source_order_last": 311,
+    "expected_wrapper_hit_count": 312,
+    "source_update_last": 3121,
+    "selection_end_at_update": 3121,
+    "seed": 23557968,
+    "maximum_draws": 100000,
+    "hidden_draw_start_after_source_order": 308,
+    "hidden_draw_stop_before_source_order": 309,
+    "source_expected_hidden_draw_count": 227,
+    "source_expected_total_index_write_count": 228,
+    "process_memory_writes_required": 0,
+    "hardware_breakpoints_restored_required": true,
+    "diagnostic_disable_source_bound_board_anchor": true,
+    "freeze_update": 3425,
+    "slowdown_update": 3415,
+    "trajectory_end_update": 3425,
+    "maximum_attempts": 3,
+    "outer_runner_timeout_seconds": 900
+  },
+  "execution_rule": {
+    "capture_fresh_host_pre_after_this_binding": true,
+    "retain_every_attempt": true,
+    "do_not_change_thresholds_after_outputs_exist": true,
+    "semantic_draw_deficit_is_the_measurement_not_a_collection_failure": true,
+    "restore_host_state_after_run": true
+  },
+  "output_absence_recheck": {
+    "run": true,
+    "host_pre_snapshot": true,
+    "host_post_snapshot": true,
+    "outcome": true
+  },
+  "non_authorizations": [
+    "pc_golden_credit",
+    "fidelity_gate_change",
+    "formal_transport_change",
+    "large_scale_training_start"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "schema": "zuma-rl.c164-fruit-collection-simulator-diff-failure-receipt",
+  "version": 1,
+  "status": "FAIL_CLOSED_GLOBAL_MTRAND_VISUAL_DRAW_GAP",
+  "created_utc": "2026-08-10T12:56:30.7238974Z",
+  "preregistration": {
+    "path": "diagnostics/c166-c164-fruit-collection-simulator-diff-preregistration-v1.json",
+    "sha256": "sha256:081393273a879a7f4b7b3d0e784ef2597d32cebcd32760df658e10d1b4023f57"
+  },
+  "failed_output": {
+    "path": "D:/ZumaGolden/diagnostics/jungle2-c164-u5278-u5305-fruit-collection-diff-v1.json",
+    "bytes": 60572,
+    "sha256": "sha256:b6b86a0cc200d9eeef6f7c54c95f6aa3d0706d8ddb3fa47f9a057f4da3b48ad9",
+    "status": "FAIL",
+    "start_update": 5278,
+    "end_update": 5305,
+    "compared_tick_count": 27,
+    "failed_tick_count": 27,
+    "global_mtrand_policy": "exact_no_reconciliation"
+  },
+  "isolated_evidence": {
+    "fruit_state_mismatches_empty_tick_count": 27,
+    "latent_mismatches_empty_tick_count": 27,
+    "active_identity_exact_tick_count": 27,
+    "fired_identity_exact_tick_count": 27,
+    "staging_identity_exact_tick_count": 27,
+    "score_exact_tick_count": 27,
+    "qrand_exact_tick_count": 27,
+    "thread_crt_rand_exact_tick_count": 27,
+    "shooter_exact_without_synchronization_tick_count": 27,
+    "maximum_position_error_px": 0.000030517578125,
+    "gameplay_state_exact_before_global_rng_through_update": 5300,
+    "gameplay_state_exact_before_global_rng_tick_count": 22,
+    "first_mismatch": {
+      "framework_update": 5279,
+      "fruit_collection_event_exact": true,
+      "score_before": 8810,
+      "score_after": 9310,
+      "score_delta": 500,
+      "fruits_collected": 1,
+      "hits": 0,
+      "powerups_triggered": 0,
+      "fruit_state_mismatches": {},
+      "global_mtrand_index_pc": 409,
+      "global_mtrand_index_simulator": 403,
+      "isolated_missing_draw_count": 6
+    },
+    "second_visual_draw_gap": {
+      "framework_update": 5295,
+      "global_mtrand_index_pc": 410,
+      "global_mtrand_index_simulator": 403,
+      "cumulative_missing_draw_count": 7
+    },
+    "first_downstream_gameplay_consequence": {
+      "framework_update": 5301,
+      "global_mtrand_index_pc": 412,
+      "global_mtrand_index_simulator": 406,
+      "pending_colors_pc": [0],
+      "pending_colors_simulator": [3],
+      "cause_classification": "shared_global_mtrand_stream_offset_after_unmodeled_visual_score_particle_draws"
+    }
+  },
+  "interpretation": {
+    "fruit_projectile_collision_semantics_falsified": false,
+    "fruit_collection_score_semantics_falsified": false,
+    "fruit_collection_animation_semantics_falsified": false,
+    "exact_no_reconciliation_contract_passed": false,
+    "candidate_next_step": "independently bind the retail MTRand call trace to the existing external-visual reconciliation allowlist, then preregister a new output using reconciliation",
+    "simulator_core_change_authorized": false
+  },
+  "decision": {
+    "failed_output_retained": true,
+    "same_output_not_reused": true,
+    "code_changed_after_failure": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

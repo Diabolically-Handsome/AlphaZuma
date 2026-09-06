@@ -1,0 +1,164 @@
+{
+  "schema": "zuma-rl.polar-ppo-identity-confirmation-preregistration",
+  "version": 1,
+  "created_utc": "2026-08-04T12:04:18.773Z",
+  "status": "FROZEN_BEFORE_RUN_OUTPUT",
+  "classification": "fresh_seed_exact_recipe_identity_corrected_confirmation",
+  "hypotheses": {
+    "null": "the 16384-step continuation recipe does not preserve capability when paired episodes are compared by stable vector-stream identity",
+    "alternative": "an independent exact-recipe run preserves capability and passes identity-aware paired-retention criteria"
+  },
+  "design": {
+    "run_dir": "/mnt/d/ZumaTraining/confirmation-identity-polar-ppo-s20260878-v1",
+    "expected_run_dir_absent": true,
+    "execution_supervision": {
+      "mode": "detached_hidden_wsl_process_with_persistent_stdout_and_stderr",
+      "stdout_path": "D:/ZumaTraining/confirmation-identity-polar-ppo-s20260878-v1.stdout.log",
+      "stderr_path": "D:/ZumaTraining/confirmation-identity-polar-ppo-s20260878-v1.stderr.log",
+      "expected_log_paths_absent": true
+    },
+    "input_model": {
+      "path": "D:/ZumaTraining/screening-teacher-offline-polar90-s20260873-v1/refined_model.zip",
+      "sha256": "sha256:f03dee97cb5a3e2ce3abcf4324137fe6ed9b68e827765b4a7b6adfa63cafb8f7",
+      "same_as_prior_screen": true,
+      "actor_observable_only": true
+    },
+    "exact_recipe": {
+      "environment": "ZumaRevenge-v0",
+      "level": "Jungle2",
+      "profile_mode": "tutorials_completed",
+      "hard": false,
+      "curve_index": 0,
+      "aim_bins": 180,
+      "action_mode": "factorized",
+      "actor_observable_retail_rejection_mask": true,
+      "frame_skip": 1,
+      "max_ticks": 12000,
+      "training_time_limit_steps": 0,
+      "max_balls": 768,
+      "score_reward_scale": 0.01,
+      "algorithm": "MaskablePPO",
+      "total_effective_steps": 16384,
+      "num_envs": 4,
+      "vector_env": "SubprocVecEnv",
+      "rollout_steps_per_env": 512,
+      "batch_size": 512,
+      "learning_rate": 0.00001,
+      "entropy_coef": 0.0,
+      "checkpoint_every_effective_steps": 8192,
+      "periodic_eval_disabled_within_horizon": true
+    },
+    "independent_seeds": {
+      "training_seed": 20260878,
+      "boundary_environment_seed": 20270878,
+      "stochastic_action_sampling_seed": 20280878,
+      "json_files_searched": 354,
+      "seed_search_hits_before_freeze": 0
+    },
+    "boundary_evaluation": {
+      "receipt_schema_version": 3,
+      "episodes_per_boundary": 8,
+      "eval_num_envs": 4,
+      "seed_protocol": "vec_env_seed_once_continuous_resets",
+      "episode_identity_protocol": "vector_env_index_and_per_env_episode_ordinal",
+      "same_identity_sets_required_pre_and_post": true,
+      "deterministic_and_stochastic": true,
+      "stochastic_rng_isolated_from_training": true,
+      "win_classifier": "episode_reward_gt_10_and_episode_length_lt_12000",
+      "truncation_classifier": "episode_length_eq_12000"
+    },
+    "comparison_artifacts": {
+      "tool": "tools/compare_ppo_boundaries.py",
+      "tool_sha256": "sha256:c3d6d3bc02d0de6901d5d265db966dd015bda87473a10154a92c9439a17efeca",
+      "module": "src/zuma_rl/boundary_evidence.py",
+      "module_sha256": "sha256:b0d5c7d5d5f6dfc2447e7927b97eb5872eddf62cca1f8e9d440699ee2ab7fad6",
+      "deterministic_output": "D:/ZumaTraining/confirmation-identity-polar-ppo-s20260878-v1/deterministic_comparison.json",
+      "stochastic_output": "D:/ZumaTraining/confirmation-identity-polar-ppo-s20260878-v1/stochastic_comparison.json",
+      "outputs_expected_absent_before_run": true,
+      "severe_regression_threshold": 5.0
+    },
+    "resources": {
+      "cuda_visible_devices": "0",
+      "expected_cuda_device": "NVIDIA GeForce RTX 5090",
+      "rtx_5080_excluded": true,
+      "cpu_thread_budget": 8
+    }
+  },
+  "acceptance": {
+    "confirmation_run": {
+      "completion_receipt_status": "COMPLETE",
+      "effective_steps_exactly": 16384,
+      "all_four_v3_boundary_receipts_required": true,
+      "both_identity_aware_comparisons_required": true,
+      "input_model_hash_must_match": true,
+      "failure_receipt_forbidden": true,
+      "stderr_bytes": 0,
+      "pretrain_deterministic_wins_at_least": 6,
+      "posttrain_deterministic_wins_at_least": 6,
+      "posttrain_deterministic_wins_no_less_than_pretrain_minus": 1,
+      "posttrain_deterministic_truncations_at_most": 1,
+      "posttrain_deterministic_mean_reward_at_least_pretrain_minus": 2.0,
+      "identity_paired_deterministic_reward_regressions_exceeding_5_at_most": 2,
+      "posttrain_stochastic_wins_no_less_than_pretrain_minus": 1,
+      "posttrain_stochastic_truncations_no_more_than_pretrain_plus": 1,
+      "posttrain_stochastic_mean_reward_at_least_pretrain_minus": 2.0
+    },
+    "screen_plus_confirmation_aggregate": {
+      "screen_status_required": "SMALL_PPO_CONTINUATION_PASS",
+      "corrected_confirmation_must_pass": true,
+      "posttrain_deterministic_wins_at_least": 13,
+      "deterministic_episodes": 16,
+      "posttrain_deterministic_truncations_at_most": 2,
+      "mean_of_run_level_deterministic_reward_deltas_at_least": 0.0,
+      "posttrain_stochastic_wins_at_least": 14,
+      "stochastic_episodes": 16,
+      "posttrain_stochastic_truncations_at_most": 2,
+      "mean_of_run_level_stochastic_reward_deltas_at_least": 0.0
+    },
+    "promotion_rule": "a confirmation and aggregate pass authorizes one preregistered 98304-step closed-gate scale-stability screen; it still does not authorize large-scale transfer training",
+    "rejection_rule": "if any corrected confirmation or aggregate criterion fails, do not scale and diagnose the identity-specific failures"
+  },
+  "evidence_anchor": {
+    "screen_outcome": {
+      "path": "diagnostics/polar-ppo-continuation-s20260876-outcome-v1.json",
+      "sha256": "sha256:425fe854f99a3fb37b33bc9fb293234a3b6f1682f54338157c4dd458fdcce3e9",
+      "status": "SMALL_PPO_CONTINUATION_PASS"
+    },
+    "defective_confirmation_outcome": {
+      "path": "diagnostics/polar-ppo-continuation-confirmation-s20260877-outcome-v1.json",
+      "sha256": "sha256:6e3be3241c212e6930af7f7cf67b83c0ecfe9f47afd47d34f7cb576c98e3a6ec",
+      "status": "PREREGISTERED_CONFIRMATION_FAIL_DESIGN_DEFECT",
+      "used_as_certification_evidence": false
+    },
+    "identity_kat": {
+      "run_dir": "D:/ZumaTraining/infrastructure-boundary-identity-v3-s20260874-v1",
+      "completion_sha256": "sha256:35345a4ecacf127b63ba01ef85b09c78b8a3b63812b9509c5e68654efebb8476",
+      "deterministic_comparison_sha256": "sha256:ebf7b8d9718b905873c03c5a9dd248655f77ba7e8a4940c99e1f7120e313384d",
+      "stochastic_comparison_sha256": "sha256:337559b30075136191827931625e2a9c17f818ea24f96e383367201d053774db",
+      "real_completion_order_changed_pre_to_post": true,
+      "status": "PASS"
+    },
+    "regression": {
+      "wsl_full_pytest": "PASS_1124",
+      "process_exit_code": 0,
+      "warning_count": 1,
+      "warning_classification": "known Gymnasium missing EnvSpec render-mode warning"
+    }
+  },
+  "source_hashes": {
+    "train.py": "sha256:d3cbb243b7f0e52e1b52b23196f2e389ad4f5ca1b4cade2d9b843e793528c345",
+    "boundary_evidence.py": "sha256:b0d5c7d5d5f6dfc2447e7927b97eb5872eddf62cca1f8e9d440699ee2ab7fad6",
+    "compare_ppo_boundaries.py": "sha256:c3d6d3bc02d0de6901d5d265db966dd015bda87473a10154a92c9439a17efeca",
+    "revenge_features.py": "sha256:863e956fa99f25aff2c56700ea4ea7b2acd601cfd032136078e424a5204a3a08",
+    "revenge_env.py": "sha256:ff18c84e8b73459994aa738fe3a767c019de452a898d8506531978a12c40b849",
+    "test_train_gate.py": "sha256:b6d3f38fd3889aa13e955993d590ff2977e6d812561d0af187124519c80f36da",
+    "test_boundary_evidence.py": "sha256:0f0c755a30cb299ed39a469986e3b791dc102f042d80f169856ff2ed3dbc7e48"
+  },
+  "non_authorizations": [
+    "98304_step_scale_screen_before_pass",
+    "large_scale_training",
+    "fidelity_gate_opening",
+    "original_transfer_certification",
+    "visual_policy_training"
+  ]
+}

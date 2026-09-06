@@ -1,0 +1,29 @@
+{
+  "schema": "zuma-rl.alphazuma-55-bounded-swap-recovery-launch-receipt",
+  "version": 1,
+  "status": "WAITING_FOR_CUDA1_PREDECESSOR_EXIT",
+  "observed_utc": "2026-08-16T17:01:02.2061507Z",
+  "incident": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-headonly-allaim-s99081646-swap-pressure-incident-v1.json"
+  },
+  "recovery": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/recover_alphazuma_55_swap_before_headonly_allaim_launch_v1.sh",
+    "sha256": "sha256:e174f82e40f81a2b918a6d7dcb62c64b288e7bc48259b41cdb11b2e1f4fcb40f",
+    "windows_launcher_pid": 23652,
+    "wsl_root_pid": 418176,
+    "blocking_pid": 390568,
+    "minimum_available_memory_before_reload_gib": 20,
+    "swap_device": "/dev/sdc"
+  },
+  "logs": {
+    "stdout": "/mnt/d/ZumaTraining/alphazuma-55-headonly-allaim-s99081646-swap-recovery.stdout.log",
+    "stderr": "/mnt/d/ZumaTraining/alphazuma-55-headonly-allaim-s99081646-swap-recovery.stderr.log"
+  },
+  "authority_boundary": {
+    "training_process_termination": false,
+    "training_recipe_changed": false,
+    "historical_data_touched": false,
+    "formal_seed_consumption": "NONE",
+    "power_restore_authority": false
+  }
+}

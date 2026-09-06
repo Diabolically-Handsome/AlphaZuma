@@ -1,0 +1,70 @@
+{
+  "schema": "zuma-rl.pc-gameplay-mtrand-call-trace-preregistered-outcome",
+  "version": 1,
+  "status": "FAIL_FROZEN_PENDING_CALL_STACK_CONTRACT",
+  "created_utc": "2026-08-10T13:09:17.5140735Z",
+  "preregistration": {
+    "artifact": "diagnostics/c169-c164-fruit-collection-mtrand-trace-attempt2-preregistration-v1.json",
+    "artifact_sha256": "sha256:bf694175ea3e1e6f8f0e29ddd9c96d03454a838ef96ffb9eca2b79c3b871ea8d"
+  },
+  "collector_result": {
+    "status": "PASS",
+    "attempt_count": 1,
+    "process_id": 29944,
+    "attempts_sha256": "sha256:44d9e6f023b4cd59874e08c9418fdf2c80e051f1077f4cfa34a9b6f33509091a",
+    "memory_probe_sha256": "sha256:d9c652946360a3243480179b5c7b1efae456adf362d6d70befb2675c96fcc49d",
+    "strict_replay_sha256": "sha256:441478918b93dc406b8d737b027544d64ea8d4f12978acbd164f0be69f4904fc",
+    "external_input_guard_sha256": "sha256:818ebe0e3a437a13501fce9bbca36e0d437788963a9a38fbaf2ebe70ab2e415c",
+    "external_input_event_count": 0,
+    "diagnostic_mutation": null,
+    "trajectory_sha256": "sha256:afafcc0855d8c7854acb3aac0f608b5c264c89fccb40afd111f66b7c6fc78b79",
+    "trace_sha256": "sha256:48afd1faf452313b98201a33884353e5dcace0ecfde0aeb5691690d119325008"
+  },
+  "trace_result": {
+    "status": "PASS",
+    "start_update": 5278,
+    "end_update": 5305,
+    "tick_count": 28,
+    "call_count": 9,
+    "complete_sequence_equals_frozen_expectation": true,
+    "outputs_and_full_mtrand_states_equal_frozen_source": true,
+    "omitted_visual_calls": {
+      "count": 7,
+      "all_satisfy_frozen_stack_contract": true,
+      "score_digit_transition_count": 6,
+      "score_digit_wobble_count": 1
+    },
+    "modeled_pending_ball_calls": {
+      "count": 2,
+      "direct_callers_exact": true,
+      "near_gameplay_ancestors_exact": true,
+      "frozen_outer_ancestor_0x0065de83_present": false,
+      "all_satisfy_frozen_stack_contract": false
+    }
+  },
+  "failed_acceptance_checks": [
+    "all_calls_satisfy_frozen_classification_contract"
+  ],
+  "finding": "The seven reconciled visual draws satisfy the frozen native stack contract exactly. Both later pending-ball calls retain their direct callers and near gameplay ancestors but the sampled stack ends before the additionally frozen outer 0x0065de83 frame. Under c167 this attempt is forensic only and cannot certify the reconciliation proof.",
+  "unwritten_postprocessing": {
+    "global_rng_call_trace_alignment": true,
+    "source_bound_compact_overlap": true,
+    "reason": "scientific stack acceptance already failed"
+  },
+  "host_restore": {
+    "artifact": "D:/ZumaGolden/diagnostics/c169-host-post-v1.json",
+    "artifact_sha256": "sha256:4043160cb4f5fc8fe07aacfd4a5554de2b97a0b72d451d3c333c9b417d550fe4",
+    "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_restored_exactly": true,
+    "residual_game_process_count": 0
+  },
+  "decision": {
+    "attempt_retained": true,
+    "use": "hypothesis_generation_only",
+    "same_output_root_not_reused": true,
+    "revised_stack_contract_requires_independent_static_justification_and_new_preregistration": true,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

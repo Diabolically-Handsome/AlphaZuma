@@ -1,0 +1,142 @@
+{
+  "schema": "zuma-rl.teacher-policy-anchor-scale-stability-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T16:28:22.064Z",
+  "status": "SCALE_STABILITY_SCREEN_FAIL",
+  "decision": "DO_NOT_PROMOTE_REVISE_FUTURE_SCALE_DECISION_DESIGN",
+  "preregistration": {
+    "path": "diagnostics/teacher-policy-anchor-c1000-scale98k-n32-s20260930-preregistration-v1.json",
+    "sha256": "sha256:c865f875d31ccb8f72df33face3cf63c51ae588c031733b2f6d15b7b7c6feb45",
+    "status": "FROZEN_BEFORE_RUN_OUTPUT"
+  },
+  "independence": {
+    "classification": "fresh_pre_reserved_closed_gate_98304_step_scale_stability_screen",
+    "seed_family": 20260930,
+    "prior_run_artifacts_using_seed_family": 0,
+    "replacement_seed_selection_after_baseline": false
+  },
+  "acceptance_results": {
+    "pipeline": {
+      "pass": false,
+      "completion_status": "COMPLETE",
+      "effective_steps": 98304,
+      "optimizer_reset_status": "PASS",
+      "teacher_anchor_installation_status": "INSTALLED",
+      "teacher_anchor_verification_status": "PASS",
+      "teacher_policy_bitwise_unchanged": true,
+      "current_policy_bitwise_changed": true,
+      "teacher_anchor_train_calls": 48,
+      "teacher_anchor_minibatches": 192,
+      "teacher_anchor_samples": 98304,
+      "teacher_anchor_mean_forward_kl": 0.000006675925556365314,
+      "teacher_anchor_mean_forward_kl_limit": 0.000003,
+      "teacher_anchor_mean_forward_kl_pass": false,
+      "teacher_anchor_max_sample_forward_kl": 0.0010660866973921657,
+      "teacher_anchor_max_sample_forward_kl_limit": 0.0002,
+      "teacher_anchor_max_sample_forward_kl_pass": false,
+      "six_exact_nonempty_checkpoints": true,
+      "all_four_v4_boundaries": true,
+      "both_v2_identity_comparisons": true,
+      "stderr_bytes": 0
+    },
+    "precondition": {
+      "pass": false,
+      "pretrain_deterministic_wins": 21,
+      "required_wins": 24,
+      "episodes": 32
+    },
+    "deterministic_retention": {
+      "pass": false,
+      "pretrain": {"wins": 21, "losses": 7, "truncations": 4, "mean_reward": 27.5272625},
+      "posttrain": {"wins": 22, "losses": 7, "truncations": 3, "mean_reward": 28.1553125},
+      "mean_reward_delta": 0.62805,
+      "paired_reward_improvements": 9,
+      "paired_reward_regressions": 9,
+      "paired_reward_regressions_exceeding_5": 6,
+      "checks": {
+        "posttrain_wins_at_least_24": false,
+        "posttrain_wins_no_less_than_pretrain_minus_2": true,
+        "posttrain_losses_plus_truncations_at_most_8": false,
+        "posttrain_truncations_at_most_4": true,
+        "posttrain_mean_reward_at_least_pretrain_minus_1_5": true,
+        "paired_reward_regressions_exceeding_5_at_most_8": true
+      }
+    },
+    "stochastic_retention": {
+      "pass": true,
+      "pretrain": {"wins": 32, "losses": 0, "truncations": 0, "mean_reward": 37.337084375},
+      "posttrain": {"wins": 32, "losses": 0, "truncations": 0, "mean_reward": 37.6640875},
+      "mean_reward_delta": 0.327003125,
+      "paired_reward_improvements": 6,
+      "paired_reward_regressions": 9,
+      "paired_reward_regressions_exceeding_5": 5,
+      "all_frozen_checks_pass": true
+    },
+    "overall": {
+      "pass": false,
+      "post_hoc_override_applied": false,
+      "failed_frozen_requirements": [
+        "teacher_anchor_mean_forward_kl_at_most_0_000003",
+        "teacher_anchor_max_sample_forward_kl_at_most_0_0002",
+        "pretrain_deterministic_wins_at_least_24",
+        "posttrain_deterministic_wins_at_least_24",
+        "posttrain_deterministic_losses_plus_truncations_at_most_8"
+      ]
+    }
+  },
+  "diagnostic_observations_non_authoritative": {
+    "behavior": "despite the formal failure, 98304-step training improved deterministic wins 21-to-22, reduced truncations 4-to-3, increased deterministic mean reward by 0.62805, and preserved stochastic 32-of-32 wins with mean reward plus 0.327003125",
+    "factor_drift_report_sha256": "sha256:2fb1b222485e6fbce81123ab71081b665378774d68913435d75bc9d75a518a0d",
+    "frozen_dataset_verb_argmax_flips": 0,
+    "frozen_dataset_aim_argmax_flips": 4,
+    "frozen_dataset_semantic_argmax_flips": 2,
+    "teacher_label_verb_accuracy_unchanged": true,
+    "teacher_label_fire_aim_accuracy_delta": -0.0013157894736841874,
+    "value_function_mean_signed_delta": 2.2470903759925345,
+    "value_function_pearson_correlation": 0.31494914559492815,
+    "kl_trajectory": {
+      "path": "diagnostics/teacher-policy-anchor-c1000-scale98k-s20260930-kl-trajectory-v1.json",
+      "event_sha256": "sha256:411536bd2e7ee3909f8fe1a317d09c59b829c3ca6f543083160a6f11f94d5abd",
+      "first_block_mean": 0.0000014722277157375174,
+      "final_block_mean": 0.000011827588553257686
+    }
+  },
+  "bounded_inference": "the fixed coefficient-1000 recipe remains behaviorally capable and slightly improves this difficult population, but the frozen scale decision fails because initial deterministic argmax strength is seed-sensitive and raw KL grows with useful long-horizon learning; neither failed criterion may be removed retrospectively",
+  "future_design_authorization": {
+    "authorized": "freeze one future-only scale decision that treats stochastic policy performance as the primary capability precondition, deterministic behavior by paired noninferiority, and raw KL as a catastrophic-divergence guard rather than a short-horizon stationarity target",
+    "required": "use one new predeclared seed family and forbid replacement after observing its baseline",
+    "not_authorized": "current run promotion or original-transfer training"
+  },
+  "artifacts": {
+    "run_dir": "D:/ZumaTraining/scale-teacher-anchor-c1000-s20260930-98k-n32-v1",
+    "config_sha256": "sha256:3bfb3be1e395bb27d0bc1a3ee7a4599f0d18c97560ac90fd8d4274e020956ab3",
+    "completion_sha256": "sha256:be9c77e8d6900b9244140ee6b5e3a3c44f920449636d06def25fa38ad465076c",
+    "optimizer_reset_sha256": "sha256:eaca6a6bc3fee4d8ce4a5a4877b38a823b2d2d90ae9c87fb14cd54d9bca4219d",
+    "teacher_anchor_installation_sha256": "sha256:166deb0d205c0522fe428c86b9846a6969d7bbc107a6f86d8804774d22668111",
+    "teacher_anchor_verification_sha256": "sha256:b48b4d1a5232caec03bec8121092d9bf9059ad6c825ccad16d9a1c5523d9a6fd",
+    "pretrain_deterministic_sha256": "sha256:01f8b2950c1a83456b8450d8f5bad0fa071bc816bbefe549598d3af50b384112",
+    "posttrain_deterministic_sha256": "sha256:427db1ac2c8ed90381abb80f040835e8297e8c465db2a792fa7317c077cffc8c",
+    "pretrain_stochastic_sha256": "sha256:643d7b391dca3c9830b07463194ce8e3d1ba68c066c99ab10d1e5283ebba1aed",
+    "posttrain_stochastic_sha256": "sha256:570bfaf8efdef1eaef324dd9454beb0f13b8dce45acc05e35187f8e40bfc9089",
+    "deterministic_comparison_sha256": "sha256:9a5027fde156fa3ae6c71d6f302567c37aec0b7206b5a45b9c12423e75f76094",
+    "stochastic_comparison_sha256": "sha256:1bfa88777af4349d8851afa63c06c26af76938be722187cd9a5ce18e90869165",
+    "final_model_sha256": "sha256:aa31f40f9b262007181793f3bc66718badd900547ec7852447277d752821fb2f",
+    "stdout_sha256": "sha256:19694d77d4ec029aa570d78dc54605075d494534b1b06e79b310581df253566d",
+    "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "factor_drift_report_sha256": "sha256:2fb1b222485e6fbce81123ab71081b665378774d68913435d75bc9d75a518a0d",
+    "checkpoint_sha256_by_step": {
+      "16384": "sha256:99c0fcffd140d71b7466d32f0600320bf879ca98e86b2af053380ff8e10ee5e1",
+      "32768": "sha256:414ea7185764bb69a3e54d1dd3ff89d0e61b9de998d1cc9cec4a9baebd0dd0da",
+      "49152": "sha256:4078c99239c0840e81ad858e221e68511d5c63a6df4aa70cbb1e6a02976786d6",
+      "65536": "sha256:9be7fbd7e47a9ac3afd1c93138027c008ef0d15f1236d08741a9be6c1c3419fd",
+      "81920": "sha256:39336cb28455c545f780ae59516321e57aa33f778f19cded229f0099c80a0d13",
+      "98304": "sha256:7de58c44bc9e4f5ba20017bbc7d0134da214669059978992ee5104010362b839"
+    }
+  },
+  "non_authorizations": [
+    "reinterpreting_this_scale_screen_as_a_pass",
+    "large_scale_original_transfer_training",
+    "fidelity_gate_opening",
+    "original_transfer_certification"
+  ]
+}

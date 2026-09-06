@@ -1,0 +1,125 @@
+{
+  "schema": "zuma-rl.optimizer-reset-ppoepoch1-screen-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T13:41:30.276Z",
+  "status": "PPO_EPOCH1_MECHANISM_SCREEN_FAIL",
+  "decision": "DO_NOT_CONFIRM_HALVE_LEARNING_RATE_AND_REPEAT_CONSUMED_CONTROL",
+  "preregistration": {
+    "path": "diagnostics/optimizer-reset-ppoepoch1-paired-s20260882-preregistration-v1.json",
+    "sha256": "sha256:3cc3258801f8a307c72afaebff5a49628a19806e7217089bff52940264a5fab2",
+    "status": "FROZEN_BEFORE_RUN_OUTPUT"
+  },
+  "artifacts": {
+    "run_dir": "D:/ZumaTraining/screening-optimizer-reset-ppoepoch1-paired-s20260882-v1",
+    "config_sha256": "sha256:2b04e80929f880b8fca1be1f7046333fa7dbdc9dfdeebbbaebb7df2dbb9fa9a5",
+    "completion_sha256": "sha256:ab37940e9f37106dcc99d6a1e2d67ca869ead2f3538fa69300a819a1f50fd3cd",
+    "optimizer_reset_sha256": "sha256:eaca6a6bc3fee4d8ce4a5a4877b38a823b2d2d90ae9c87fb14cd54d9bca4219d",
+    "pretrain_deterministic_sha256": "sha256:f1a6f5f33f303c3105645f443c13e5f58a6dd44e761060bb7255e17cbf510c40",
+    "pretrain_stochastic_sha256": "sha256:a1548fc87009f61b467fc388f998563f276ac47fa90466ba4ed4799cdea1a0c0",
+    "posttrain_deterministic_sha256": "sha256:07c4624b9cb06a624d55da187c8178ec1f3058cad06ad19bcc5d3d324e1d76bc",
+    "posttrain_stochastic_sha256": "sha256:d7a555a776472fff8a2133ae8eafc81da51ee90c4ef7dcb40972dcf7022b60c4",
+    "deterministic_comparison_sha256": "sha256:0125e0cd9fe1f8f5d345ba5670fdb04171c22afa92bc06afe891920a84b44731",
+    "stochastic_comparison_sha256": "sha256:b7c5072461e56da8676dca97b1aa6bba8289d4c6161de77b1ec4bee92284c641",
+    "final_model_sha256": "sha256:b9de169f5e75b06249a4e4378a22d3fdb307b38b66bc741596a4ad408cf14b09",
+    "stdout_sha256": "sha256:8a2af6130d3c647ca88cad79a279f4c297fbff5f1bdf7afea750387912ad789f",
+    "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "acceptance_results": {
+    "pipeline": {
+      "pass": true,
+      "completion_status": "COMPLETE",
+      "effective_steps": 16384,
+      "optimizer_reset_status": "PASS",
+      "boundary_receipt_version": 4,
+      "comparison_version": 2,
+      "outcome_source": "terminal_info",
+      "identity_sets_match": true,
+      "failure_receipt_present": false,
+      "stderr_bytes": 0
+    },
+    "baseline_reproduction": {
+      "pass": true,
+      "deterministic_rewards_lengths_and_pairing_keys_exact": true,
+      "stochastic_rewards_lengths_and_pairing_keys_exact": true,
+      "deterministic_mean_reward": 32.066425,
+      "stochastic_mean_reward": 36.2383125
+    },
+    "precondition": {
+      "pass": true,
+      "deterministic_wins": 6,
+      "required_wins": 6
+    },
+    "deterministic_retention": {
+      "pass": true,
+      "pretrain_wins": 6,
+      "posttrain_wins": 6,
+      "posttrain_losses": 1,
+      "posttrain_truncations": 1,
+      "pretrain_mean_reward": 32.066425,
+      "posttrain_mean_reward": 32.9225875,
+      "mean_reward_delta": 0.8561624999999964,
+      "paired_regressions_exceeding_5": 2,
+      "allowed_paired_regressions_exceeding_5": 2
+    },
+    "stochastic_retention": {
+      "pass": false,
+      "pretrain_wins": 8,
+      "posttrain_wins": 8,
+      "posttrain_losses": 0,
+      "posttrain_truncations": 0,
+      "pretrain_mean_reward": 36.2383125,
+      "posttrain_mean_reward": 37.3892375,
+      "mean_reward_delta": 1.1509250000000009,
+      "paired_regressions_exceeding_5": 3,
+      "allowed_paired_regressions_exceeding_5": 2,
+      "sole_failed_clause": "identity_paired_reward_regressions_exceeding_5_at_most"
+    },
+    "mechanism_effect_relative_to_ten_epochs": {
+      "pass": true,
+      "ten_epoch_deterministic_mean_reward_delta": -3.645575,
+      "one_epoch_deterministic_mean_reward_delta": 0.8561624999999964,
+      "ten_epoch_deterministic_severe_regressions": 4,
+      "one_epoch_deterministic_severe_regressions": 2
+    },
+    "overall": {
+      "pass": false,
+      "reason": "the frozen stochastic identity-paired severe-regression count was 3 against a maximum of 2",
+      "post_hoc_override_applied": false
+    }
+  },
+  "consumed_dataset_drift_audit": {
+    "classification": "diagnostic_only_not_certification_evidence",
+    "teacher_baseline": {
+      "verb_accuracy": 0.9753336029114436,
+      "fire_aim_exact_accuracy": 0.6618421052631579,
+      "fire_aim_mean_circular_bin_error": 9.453947368421053
+    },
+    "one_epoch": {
+      "report_sha256": "sha256:202c8df4b2a3ed0923fc699b6204fc067ba441a85cce4ca9945f756e6f90a587",
+      "verb_accuracy": 0.9769510715729883,
+      "fire_aim_exact_accuracy": 0.6526315789473685,
+      "fire_aim_mean_circular_bin_error": 9.310526315789474,
+      "fire_predicted_unique_aim_bins": 159
+    },
+    "ten_epoch": {
+      "report_sha256": "sha256:9ef157be6bf8b72006eae7c81b3879b33db4ee3fcf1316b0ed4be88780fcd2c5",
+      "verb_accuracy": 0.9627982207844723,
+      "fire_aim_exact_accuracy": 0.6342105263157894,
+      "fire_aim_mean_circular_bin_error": 9.919736842105262,
+      "fire_predicted_unique_aim_bins": 155
+    }
+  },
+  "bounded_inference": "one epoch removes the deterministic retention failure and largely preserves the supervised polar policy, but the stochastic trajectory distribution still changes enough for one extra paired severe regression; this is a narrow update-magnitude failure rather than evidence that the representation or optimizer reset is ineffective",
+  "next_action": {
+    "authorized": "freeze and run a one-epoch, 5e-6 learning-rate screen on the same consumed control streams",
+    "reason": "halving the remaining update magnitude is the smallest one-factor intervention and retains more learning signal than an immediate larger reduction",
+    "forbidden": "do not launch a fresh-seed confirmation or 98304-step scale screen"
+  },
+  "non_authorizations": [
+    "fresh_seed_confirmation",
+    "98304_step_scale_screen",
+    "large_scale_training",
+    "fidelity_gate_opening",
+    "original_transfer_certification"
+  ]
+}

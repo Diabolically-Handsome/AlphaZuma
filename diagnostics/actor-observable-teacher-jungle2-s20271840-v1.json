@@ -1,0 +1,288 @@
+{
+  "schema": "zuma-rl.actor-observable-teacher-benchmark",
+  "version": 1,
+  "created_utc": "2026-08-04T09:12:20.425Z",
+  "status": "PASS",
+  "teacher_contract": {
+    "dynamic_inputs": "RevengeEnv actor observation only",
+    "static_inputs": [
+      "feature layout",
+      "logical canvas size",
+      "fixed shooter position",
+      "collision radius"
+    ],
+    "privileged_dynamic_state": false
+  },
+  "environment": {
+    "level": "Jungle2",
+    "profile_mode": "tutorials_completed",
+    "aim_bins": 180,
+    "max_ticks": 12000,
+    "max_balls": 768,
+    "frame_skip": 1
+  },
+  "evaluation": {
+    "seed": 20271840,
+    "seed_protocol": "seed_first_reset_then_continuous_resets",
+    "episode_count": 16
+  },
+  "summary": {
+    "wins": 16,
+    "losses": 0,
+    "truncations": 0,
+    "mean_reward": 35.81221249999992,
+    "mean_score": 2599.375,
+    "mean_ticks": 1815.375
+  },
+  "episodes": [
+    {
+      "episode_index": 0,
+      "initial_seed": 20271840,
+      "reward": 35.71010000000037,
+      "score": 2590,
+      "ticks": 1899,
+      "outcome": "win",
+      "terminated": true,
+      "truncated": false,
+      "action_counts": {
+        "wait": 1784,
+        "fire": 86,
+        "swap": 29
+      }
+    },
+    {
+      "episode_index": 1,
+      "initial_seed": null,
+      "reward": 29.144300000000317,
+      "score": 1930,
+      "ticks": 1557,
+      "outcome": "win",
+      "terminated": true,
+      "truncated": false,
+      "action_counts": {
+        "wait": 1465,
+        "fire": 71,
+        "swap": 21
+      }
+    },
+    {
+      "episode_index": 2,
+      "initial_seed": null,
+      "reward": 30.019200000000282,
+      "score": 2020,
+      "ticks": 1808,
+      "outcome": "win",
+      "terminated": true,
+      "truncated": false,
+      "action_counts": {
+        "wait": 1702,
+        "fire": 80,
+        "swap": 26
+      }
+    },
+    {
+      "episode_index": 3,
+      "initial_seed": null,
+      "reward": 28.7724000000002,
+      "score": 1890,
+      "ticks": 1276,
+      "outcome": "win",
+      "terminated": true,
+      "truncated": false,
+      "action_counts": {
+        "wait": 1196,
+        "fire": 57,
+        "swap": 23
+      }
+    },
+    {
+      "episode_index": 4,
+      "initial_seed": null,
+      "reward": 37.546400000000276,
+      "score": 2770,
+      "ticks": 1536,
+      "outcome": "win",
+      "terminated": true,
+      "truncated": false,
+      "action_counts": {
+        "wait": 1443,
+        "fire": 70,
+        "swap": 23
+      }
+    },
+    {
+      "episode_index": 5,
+      "initial_seed": null,
+      "reward": 35.469500000000224,
+      "score": 2560,
+      "ticks": 1305,
+      "outcome": "win",
+      "terminated": true,
+      "truncated": false,
+      "action_counts": {
+        "wait": 1223,
+        "fire": 58,
+        "swap": 24
+      }
+    },
+    {
+      "episode_index": 6,
+      "initial_seed": null,
+      "reward": 61.75689999999642,
+      "score": 5200,
+      "ticks": 2431,
+      "outcome": "win",
+      "terminated": true,
+      "truncated": false,
+      "action_counts": {
+        "wait": 2280,
+        "fire": 111,
+        "swap": 40
+      }
+    },
+    {
+      "episode_index": 7,
+      "initial_seed": null,
+      "reward": 35.44880000000025,
+      "score": 2560,
+      "ticks": 1512,
+      "outcome": "win",
+      "terminated": true,
+      "truncated": false,
+      "action_counts": {
+        "wait": 1421,
+        "fire": 68,
+        "swap": 23
+      }
+    },
+    {
+      "episode_index": 8,
+      "initial_seed": null,
+      "reward": 38.11240000000032,
+      "score": 2830,
+      "ticks": 1876,
+      "outcome": "win",
+      "terminated": true,
+      "truncated": false,
+      "action_counts": {
+        "wait": 1762,
+        "fire": 86,
+        "swap": 28
+      }
+    },
+    {
+      "episode_index": 9,
+      "initial_seed": null,
+      "reward": 29.904000000000543,
+      "score": 2020,
+      "ticks": 2960,
+      "outcome": "win",
+      "terminated": true,
+      "truncated": false,
+      "action_counts": {
+        "wait": 2818,
+        "fire": 108,
+        "swap": 34
+      }
+    },
+    {
+      "episode_index": 10,
+      "initial_seed": null,
+      "reward": 47.56579999999785,
+      "score": 3770,
+      "ticks": 1342,
+      "outcome": "win",
+      "terminated": true,
+      "truncated": false,
+      "action_counts": {
+        "wait": 1260,
+        "fire": 61,
+        "swap": 21
+      }
+    },
+    {
+      "episode_index": 11,
+      "initial_seed": null,
+      "reward": 31.939800000000247,
+      "score": 2210,
+      "ticks": 1602,
+      "outcome": "win",
+      "terminated": true,
+      "truncated": false,
+      "action_counts": {
+        "wait": 1502,
+        "fire": 73,
+        "swap": 27
+      }
+    },
+    {
+      "episode_index": 12,
+      "initial_seed": null,
+      "reward": 37.03700000000026,
+      "score": 2720,
+      "ticks": 1630,
+      "outcome": "win",
+      "terminated": true,
+      "truncated": false,
+      "action_counts": {
+        "wait": 1533,
+        "fire": 74,
+        "swap": 23
+      }
+    },
+    {
+      "episode_index": 13,
+      "initial_seed": null,
+      "reward": 27.341200000000274,
+      "score": 1750,
+      "ticks": 1588,
+      "outcome": "win",
+      "terminated": true,
+      "truncated": false,
+      "action_counts": {
+        "wait": 1487,
+        "fire": 71,
+        "swap": 30
+      }
+    },
+    {
+      "episode_index": 14,
+      "initial_seed": null,
+      "reward": 28.627900000000547,
+      "score": 1890,
+      "ticks": 2721,
+      "outcome": "win",
+      "terminated": true,
+      "truncated": false,
+      "action_counts": {
+        "wait": 2579,
+        "fire": 115,
+        "swap": 27
+      }
+    },
+    {
+      "episode_index": 15,
+      "initial_seed": null,
+      "reward": 38.599700000000354,
+      "score": 2880,
+      "ticks": 2003,
+      "outcome": "win",
+      "terminated": true,
+      "truncated": false,
+      "action_counts": {
+        "wait": 1879,
+        "fire": 92,
+        "swap": 32
+      }
+    }
+  ],
+  "source_hashes": {
+    "revenge_teacher.py": "sha256:9a7d343f824e29b0074053440a93ec4456e7584c433342fff850afd89bb1f3a5",
+    "revenge_env.py": "sha256:ff18c84e8b73459994aa738fe3a767c019de452a898d8506531978a12c40b849"
+  },
+  "non_authorizations": [
+    "large_scale_training",
+    "fidelity_gate_opening",
+    "original_transfer_certification"
+  ]
+}

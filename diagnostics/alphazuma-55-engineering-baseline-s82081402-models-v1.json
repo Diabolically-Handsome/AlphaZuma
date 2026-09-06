@@ -1,0 +1,32 @@
+{
+  "schema": "zuma-rl.zero-shot-models-manifest",
+  "version": 1,
+  "status": "FROZEN",
+  "created_utc": "2026-08-15T02:02:27.302967+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "stage": "engineering",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "models": [
+    {
+      "id": "speed-essence-full55",
+      "training_steps": 7813504,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/speed-essence-full55-v1.zip",
+      "sha256": "sha256:cfa2d352dacb5b5b1bddccd8445ae19693cd1bd1a7fa2a0e0d967e4addbf9094"
+    },
+    {
+      "id": "v1-full55",
+      "training_steps": 13631488,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v1-full55-v1.zip",
+      "sha256": "sha256:aa590502630e22bd4601bbca43befa519c532183a1268e3c453796e82a6dc0e7"
+    },
+    {
+      "id": "v11-full55",
+      "training_steps": 33772736,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1.zip",
+      "sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d"
+    }
+  ]
+}

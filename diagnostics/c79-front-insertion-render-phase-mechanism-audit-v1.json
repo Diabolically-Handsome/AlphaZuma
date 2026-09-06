@@ -1,0 +1,225 @@
+{
+  "schema": "zuma-rl.pc-front-insertion-render-phase-mechanism-audit",
+  "version": 1,
+  "id": "c79-front-insertion-u3684-exact-memory-post-surface-audit",
+  "created_utc": "2026-08-03T20:03:29Z",
+  "classification": "pass-strong-render-surface-phase-evidence-diagnostic-only",
+  "status": "PASS",
+  "gate_effect": "none",
+  "parent_chain": {
+    "c78_failure_audit": {
+      "path": "diagnostics/c78-front-insertion-render-settled-finite-retry-visual-failure-audit-v1.json",
+      "sha256": "sha256:8569cc3ddd2945d6885604eefac939408381583b6c8dbf19412867d079b158d2"
+    },
+    "c79_preregistration": {
+      "path": "diagnostics/c79-front-insertion-render-phase-diagnostic-preregistration-v1.json",
+      "sha256": "sha256:0b14b2f69d6992c47305412eb46354476afbda504c1c3273acf2741d4fc8811d"
+    },
+    "independent_transport_mask": {
+      "preregistration": {
+        "path": "diagnostics/c65-render-transport-preregistration-v1.json",
+        "sha256": "sha256:e28cf5ce21428cc64fca82e822d818bb9797e743511f58d660efeaf703b5d8cb"
+      },
+      "execution_binding": {
+        "path": "diagnostics/c66-render-transport-execution-binding-v1.json",
+        "sha256": "sha256:8fabe40f33cc8cc0e0bc03e807ed9a9a796845dbfee4ef7ad88757d5642174e6"
+      },
+      "holdout": {
+        "path": "D:/ZumaGolden/diagnostics/c66-render-transport-holdout-v1.json",
+        "sha256": "sha256:2c01c7f14c7e636db2fd06d904a9beb927de0f09e828d9bba85dd9e0c98481dd",
+        "status": "PASS"
+      }
+    }
+  },
+  "tooling": {
+    "collector": {
+      "path": "tools/collect_pc_memory_probe.py",
+      "sha256": "sha256:f1d41e712644ae09d1ad055218baaaa760e427fc471fd12be57b1ca28092d0ec"
+    },
+    "frozen_pair_comparator": {
+      "path": "tools/compare_pc_step_visual_trajectories.py",
+      "sha256": "sha256:977183e5a2fc83aebdc13c0c61e3b1be8dbc1abecb0230d27802c96bbd70b4a5",
+      "report_schema_version": 2
+    },
+    "posthoc_localizer": {
+      "path": "tools/localize_pc_step_visual_mechanism.py",
+      "sha256": "sha256:6ac42bf6802e0fc0f4dca29435c0f06216c7158d5c45c9f511e90cad1e21f440",
+      "classification": "posthoc-localization-only"
+    },
+    "verification": {
+      "targeted_status": "PASS",
+      "targeted_test_count": 38,
+      "full_suite_status": "PASS",
+      "full_suite_warning_count": 1
+    }
+  },
+  "independent_collections": {
+    "fixed_window": {
+      "probe_update": 3660,
+      "end_update": 3690,
+      "tick_count": 31,
+      "target_update": 3684,
+      "trajectory_mode": "rng-plus-exact-ball-render-state",
+      "visual_snapshot_count_each_run": 31
+    },
+    "run_a": {
+      "output_root": "D:/ZumaGolden/memory-followup-c78-front-insertion-render-phase-a-v1",
+      "attempts_sha256": "sha256:2634efb0b26afa957c89689f793b87c2235243748ef736960693a48c97404822",
+      "attempt_count": 1,
+      "attempt_status": "PASS",
+      "process_id": 12464,
+      "memory_probe_sha256": "sha256:c27e1be79a726ab307a523f0b841f87723f8dabc22ee673653eeb750bc06540c",
+      "trajectory_index_sha256": "sha256:c3e9a17b1d1f4d33bcee9e6766eaf7ddacabcce4eea146f1b2ac63429ee4bed5",
+      "rng_analysis": {
+        "path": "D:/ZumaGolden/diagnostics/c79-front-insertion-render-phase-a-rng-analysis-v1.json",
+        "sha256": "sha256:801c542a3218612b1dce0b61f235d4341e43f8ef93faadc9be9abe3d64590a62",
+        "status": "PASS",
+        "tick_count": 31,
+        "transition_count": 30,
+        "mtrand_call_count": 14
+      },
+      "host_postcheck": {
+        "path": "D:/ZumaGolden/diagnostics/c79-a-host-postcheck-v1.json",
+        "sha256": "sha256:5ea8a0086de6dafbbe20677cfb4b7b833e5536421a1d9e398aecd970b49526da",
+        "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061"
+      }
+    },
+    "run_b": {
+      "output_root": "D:/ZumaGolden/memory-followup-c78-front-insertion-render-phase-b-v1",
+      "attempts_sha256": "sha256:e62cf92ac16862e25e64a8703a0ae8120e114d0332b469c5989208e7ce1e1a7b",
+      "attempt_count": 1,
+      "attempt_status": "PASS",
+      "process_id": 49748,
+      "memory_probe_sha256": "sha256:5bb006a818cfd2f8965e40721d376214948061e6701117b68bc88d799cad8248",
+      "trajectory_index_sha256": "sha256:6d749c6ff919fcf02515beb50e4e5146c38c9369d5db4c973dbba25943f05490",
+      "rng_analysis": {
+        "path": "D:/ZumaGolden/diagnostics/c79-front-insertion-render-phase-b-rng-analysis-v1.json",
+        "sha256": "sha256:801c542a3218612b1dce0b61f235d4341e43f8ef93faadc9be9abe3d64590a62",
+        "status": "PASS",
+        "tick_count": 31,
+        "transition_count": 30,
+        "mtrand_call_count": 14
+      },
+      "host_postcheck": {
+        "path": "D:/ZumaGolden/diagnostics/c79-b-host-postcheck-v1.json",
+        "sha256": "sha256:bf54886a38d6c8cc8ea46d8003cfb45c8907539e736d412cf9c087d3ab6b1c79",
+        "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061"
+      }
+    },
+    "distinct_process_ids": true,
+    "game_or_tracer_process_remaining": false
+  },
+  "frozen_pair_comparison": {
+    "path": "D:/ZumaGolden/diagnostics/c79-front-insertion-exact-step-memory-visual-comparison-v2.json",
+    "sha256": "sha256:e1359ef09db0f1e3de33f5f6e5016ffe31478e74b6d33aa3dd272070c12e0a87",
+    "status": "FAIL",
+    "status_interpretation": "The comparator requires full RGB equality as well as memory equality; its FAIL is retained and is not an infrastructure failure.",
+    "same_protocol": true,
+    "distinct_process_ids": true,
+    "normalized_rng_trajectory_exact_all_31_ticks": true,
+    "first_memory_mismatch_update": null,
+    "exact_ball_render_state_all_31_ticks": true,
+    "first_ball_render_state_mismatch_update": null,
+    "render_state_fields": [
+      "curve_distance_float32_bits",
+      "orientation_float32_bits",
+      "previous_orientation_float32_bits",
+      "angular_step_float32_bits",
+      "position_x_float32_bits",
+      "position_y_float32_bits",
+      "scale_float32_bits",
+      "radius_float32_bits",
+      "flags_b4_through_c2",
+      "ball_identity",
+      "colour",
+      "powerup_types",
+      "intrusive_list_order"
+    ],
+    "full_rgb_exact_all_ticks": false,
+    "matched_rgb_tick_count": 0,
+    "mismatched_rgb_tick_count": 31
+  },
+  "target_memory_state": {
+    "framework_update": 3684,
+    "both_runs_exact": true,
+    "score": 8000,
+    "displayed_score": 7950,
+    "chain_ball_count": 60,
+    "pending_ball_count": 1,
+    "inserting_ball_count": 0,
+    "fired_bullet_count": 0,
+    "global_mtrand_index": 549,
+    "current_ball_id": 47,
+    "current_color_id": 0,
+    "next_ball_id": 75,
+    "next_color_id": 2,
+    "lowest_visible_chain_centres": {
+      "maximum_position_y": 564.7935791015625,
+      "ball_id": 27,
+      "position_x": 316.10040283203125,
+      "radius": 18.0,
+      "scale": 1.0,
+      "exact_between_runs": true
+    }
+  },
+  "posthoc_pixel_localization": {
+    "path": "D:/ZumaGolden/diagnostics/c79-front-insertion-render-phase-localization-posthoc-v1.json",
+    "sha256": "sha256:2d87a2d12a0e2cedae7892d3effacf39f4e9c7ce0bef2865137d64ed4a771560",
+    "status": "PASS",
+    "frozen_comparison_recomputed_exactly": true,
+    "initial_capture": {
+      "update": 3660,
+      "mismatched_pixel_count": 479860,
+      "run_a_dominant_rgb": [255, 255, 255],
+      "run_a_dominant_fraction": 0.999825,
+      "classification": "cold-capture-white-surface-diagnostic-only"
+    },
+    "post_initial_window": {
+      "update_range": [3661, 3690],
+      "tick_count": 30,
+      "mismatch_coordinate_set_exactly_stable_every_tick": true,
+      "observed_pixel_count": 67,
+      "observed_mask_sha256": "sha256:e14aa0cb34f398939fe935adc8cecf9a3afa0e899b84f865f158ffc7c0ddfc83",
+      "c65_c66_frozen_pixel_count": 66,
+      "c65_c66_frozen_mask_sha256": "sha256:5e88cfacf441a56a5de6636fd3fe1259c9c844fc8494a992655d92e3a970530b",
+      "observed_is_exact_frozen_mask_superset": true,
+      "only_extra_coordinate_xy": [797, 597],
+      "mask_expansion_authorized": false
+    },
+    "u3684_reference_comparison": {
+      "c78_intermediate_r1_seq72": {
+        "artifact_sha256": "sha256:f67a43bc2d4fe4f56d4998dd39f1b3ac65b29ad7676d41e3699019b86f6a58ca",
+        "outside_observed_mask_mismatch_count_each_c79_run": 73627
+      },
+      "c78_pre_r2_seq73": {
+        "artifact_sha256": "sha256:0d892bdf8f69be9656c888304ad8d5f6cb37a0887d546f0ec7eaca8d46b43d72",
+        "outside_observed_mask_mismatch_count_each_c79_run": 73987
+      },
+      "c78_post_r2_seq74": {
+        "artifact_sha256": "sha256:1d482a13d29a99eb048587dc43f1fb07dbae4437ce671430abb3e7c8055881a2",
+        "outside_observed_mask_mismatch_count_each_c79_run": 0
+      },
+      "finding": "Both exact-step C79 u3684 surfaces are the C78 post-transition +50 surface outside the stable 67-coordinate transport set."
+    }
+  },
+  "mechanism_finding": {
+    "verdict": "DISPLAYED_SURFACE_PHASE_DIVERGENCE_NOT_INTERNAL_BALL_STATE_DIVERGENCE",
+    "evidence": [
+      "Independent processes match all loaded gameplay and RNG state at every retained update.",
+      "Independent processes match exact float32 render-driving Ball geometry and flags at every retained update, including u3684.",
+      "C79 u3684 maps to the C78 post-transition surface outside a stable transport set, while C78 also exposed pre and intermediate surfaces under the same framework-update assignment.",
+      "C78 immediately reconverged and C79 restored the exact host state after both runs."
+    ],
+    "bounded_inference": "C78 internal Ball bytes were not sampled contemporaneously, so this is strong independent mechanism evidence rather than retrospective byte-for-byte proof about those two historical processes.",
+    "method_consequence": "A framework update plus fixed render-settle delay is not a single-valued selector for the displayed surface at this transition. The PC Golden contract must bind a terminal presented surface to an exact semantic memory state or to an ordered present bracket; it must not widen the gameplay-area mask."
+  },
+  "decision": {
+    "c79_status": "PASS_DIAGNOSTIC_RENDER_PHASE_MECHANISM",
+    "c78_status_unchanged": "FAIL_VISUAL_BOUNDARY_TRANSIENT",
+    "pc_golden_status": "NOT_CREATED",
+    "front_insertion_gate_credit": "NOT_GRANTED",
+    "fidelity_gate_status": "CLOSED",
+    "mask_change": "FORBIDDEN_FROM_C79",
+    "next_step": "Preregister a fresh exact-semantic-state-anchored terminal-surface holdout. Require independent runs to reach the same post-state and the same terminal surface outside the unchanged C65/C66 mask, while retaining all pre/intermediate surfaces as ordered bracket evidence."
+  }
+}

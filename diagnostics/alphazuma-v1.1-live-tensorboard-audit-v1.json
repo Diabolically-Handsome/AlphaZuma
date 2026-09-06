@@ -1,0 +1,106 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-live-tensorboard-audit-receipt",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-14T02:07:58.722387+00:00",
+  "classification": "live_training_diagnostic_only",
+  "formal_gate_effect": "none",
+  "auditor": {
+    "path": "tools/audit_alphazuma_v11_tensorboard.py",
+    "sha256": "sha256:9eec5f90e0f61d668524ea5795fa2007dccc94f5a1db4ec52962fecd1add6378"
+  },
+  "tests": {
+    "path": "tests/test_audit_alphazuma_v11_tensorboard.py",
+    "sha256": "sha256:a5d1bbc02d70d5b3d3fea8c9b42e6e106c0780fa1ec2c7e76d004b9b46059696",
+    "passed": 3,
+    "failed": 0
+  },
+  "evidence": {
+    "snapshot_root": "D:\\ZumaTraining\\alphazuma-v1.1-live-tensorboard-audit-s56081301-v1\\snapshots",
+    "audit_path": "D:\\ZumaTraining\\alphazuma-v1.1-live-tensorboard-audit-s56081301-v1\\audit.json",
+    "audit_sha256": "sha256:c21097198e2cf70f3216aa4c71a280c09ccd2232437bf095dae138aecbdfccf9",
+    "audit_bytes": 58514,
+    "snapshot_runs": 7,
+    "snapshot_event_files": 7,
+    "expected_scalar_streams": 84,
+    "recent_values_per_stream": 20
+  },
+  "summary": {
+    "runs": 7,
+    "passed": 7,
+    "failed": 0,
+    "missing_expected_tags": 0,
+    "nonfinite_tags": 0,
+    "structural_errors": 0,
+    "diagnostic_warnings": 0
+  },
+  "routes": [
+    {
+      "run_id": "frontier-adaptive-5090-oom-recovery",
+      "approx_kl_recent_mean": 0.000013,
+      "clip_fraction_recent_mean": 0.0,
+      "explained_variance_recent_mean": 0.6078,
+      "entropy_loss_recent_mean": -1.4609,
+      "value_loss_recent_mean": 0.124,
+      "status": "PASS"
+    },
+    {
+      "run_id": "frontier-fixed-5080-oom-recovery",
+      "approx_kl_recent_mean": 0.000012,
+      "clip_fraction_recent_mean": 0.0,
+      "explained_variance_recent_mean": 0.6800,
+      "entropy_loss_recent_mean": -1.4852,
+      "value_loss_recent_mean": 0.124,
+      "status": "PASS"
+    },
+    {
+      "run_id": "memdense-adaptive-5090-a",
+      "approx_kl_recent_mean": 0.005058,
+      "clip_fraction_recent_mean": 0.0271,
+      "explained_variance_recent_mean": 0.5784,
+      "entropy_loss_recent_mean": -1.1552,
+      "value_loss_recent_mean": 0.093,
+      "status": "PASS"
+    },
+    {
+      "run_id": "memdense-fixed-5090-b",
+      "approx_kl_recent_mean": 0.005335,
+      "clip_fraction_recent_mean": 0.0295,
+      "explained_variance_recent_mean": 0.7340,
+      "entropy_loss_recent_mean": -1.1942,
+      "value_loss_recent_mean": 0.092,
+      "status": "PASS"
+    },
+    {
+      "run_id": "memdense-adaptive-5080-a",
+      "approx_kl_recent_mean": 0.005010,
+      "clip_fraction_recent_mean": 0.0276,
+      "explained_variance_recent_mean": 0.6925,
+      "entropy_loss_recent_mean": -1.1051,
+      "value_loss_recent_mean": 0.068,
+      "status": "PASS"
+    },
+    {
+      "run_id": "memdense-fixed-5080-b",
+      "approx_kl_recent_mean": 0.004584,
+      "clip_fraction_recent_mean": 0.0274,
+      "explained_variance_recent_mean": 0.6975,
+      "entropy_loss_recent_mean": -0.9826,
+      "value_loss_recent_mean": 0.086,
+      "status": "PASS"
+    },
+    {
+      "run_id": "ultradense-zero-win-5090-c",
+      "approx_kl_recent_mean": 0.004252,
+      "clip_fraction_recent_mean": 0.0166,
+      "explained_variance_recent_mean": 0.7787,
+      "entropy_loss_recent_mean": -1.5069,
+      "value_loss_recent_mean": 0.099,
+      "status": "PASS"
+    }
+  ],
+  "snapshot_timing_note": "Each training_status file was copied immediately before its event file. TensorBoard could therefore advance by 2,544 to 9,280 steps during copying; every absolute lag remained far inside the structural bound and all event ages were 20.6 to 32.0 seconds.",
+  "interpretation": "All seven optimizers are emitting fresh, finite, numerically stable PPO metrics. This rules out silent NaN failure, stale TensorBoard streams, invalid clip fractions, nonpositive learning rates, and obvious KL or value-function instability at this snapshot; it does not claim blind performance improvement.",
+  "training_or_evaluation_semantics_changed": false,
+  "formal_seed_consumption": "none"
+}

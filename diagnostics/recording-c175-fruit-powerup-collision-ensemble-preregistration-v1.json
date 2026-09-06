@@ -1,0 +1,119 @@
+{
+  "schema": "zuma-rl.retail-fruit-powerup-collision-recording-ensemble-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_FIRST_PROCESS_LAUNCH",
+  "created_utc": "2026-08-10T13:40:56.5981243Z",
+  "purpose": "Acquire a fixed ensemble of fresh natural retail Jungle2 DMO candidates in which ordinary autoplay preferentially completes an active-chain type-0 proximity-bomb run only while an uncollected fruit lies strictly within the native 108-pixel static TreasurePoint radius.",
+  "classification": "candidate-recording-not-pc-golden",
+  "parents": {
+    "controller_preregistration": {
+      "path": "diagnostics/c174-fruit-powerup-collision-acquisition-controller-preregistration-v1.json",
+      "sha256": "sha256:9505babdd4b2b378bf17e366f884cb77d6483122d01d28094bffb1f72f46a60d"
+    },
+    "controller_qualification": {
+      "path": "diagnostics/c174-fruit-powerup-collision-acquisition-controller-qualification-v1.json",
+      "sha256": "sha256:405dd525af438d65786abc85de49ba408f1b5676353db42e41d3c338bf8bcb45",
+      "status": "PASS"
+    }
+  },
+  "frozen_implementation": {
+    "record_controller": {
+      "path": "tools/record_autoplay_zuma.py",
+      "bytes": 71066,
+      "sha256": "sha256:438b74c5f6fc8190c9835852a86dfba5c04e25c9b963f98c8d2564b5123d614f"
+    },
+    "live_controller": {
+      "path": "tools/autoplay_live_zuma.py",
+      "bytes": 88005,
+      "sha256": "sha256:56aaa9684a8130af16b974aeca96beded709da9c181cc2f614d263eb808c19fd"
+    },
+    "focused_tests": {
+      "collected": 92,
+      "status": "PASS"
+    },
+    "full_tests": {
+      "collected": 1551,
+      "status": "PASS"
+    }
+  },
+  "retail_contract": {
+    "runtime_executable": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+    "runtime_bytes": 6657328,
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "changedir": "D:/SteamLibrary/steamapps/common/Zuma's Revenge",
+    "prestate_dir": "D:/ZumaGolden/session-20260728-203153/native-windowed-record-001-prestate-reconstructed",
+    "prestate_files": [
+      ["adv_in_game2.sav", 6748, "sha256:0009b6b3309aaa1bd6689e8093d66f36fea43648ebc3ad66ec911ddf1ee23539"],
+      ["user2.dat", 2225, "sha256:8bfbb6b7321169c19539f9c0e580bf0de7436f60bd1e0f7f63433e07aa0cd672"],
+      ["users.dat", 54, "sha256:99a6996f6105eccc3e1bb2f95b5d2ec2a1d261e6d63aa22cc213e5c88f3e26f6"]
+    ],
+    "expected_score_target": 9650,
+    "minimum_entry_score": 7000,
+    "maximum_gameplay_seconds": 180.0,
+    "expected_outcome": "natural_win",
+    "gameplay_policy": "autoplay",
+    "fruit_policy": "bomb",
+    "navigation": {
+      "title_start_update": 1622,
+      "title_start_point": [400.0, 533.0],
+      "adventure_update": 2422,
+      "adventure_point": [633.0, 281.0],
+      "continue_game_update": 3108,
+      "continue_game_point": [399.0, 456.0],
+      "prelaunch_cursor_screen_point": [100, 100]
+    },
+    "rng_monitor_stop_native_time": 500,
+    "gameplay_mtrand_trace": true,
+    "mtrand_trace_kind": "global_wrapper_entry",
+    "controlled_crt_rand_seed": null,
+    "offline_dmo_seed_edit": false,
+    "process_memory_writes_required": 0,
+    "host_state_exact_restore_required": true
+  },
+  "ensemble": {
+    "attempt_count": 8,
+    "run_order": [
+      "c175a1",
+      "c175a2",
+      "c175a3",
+      "c175a4",
+      "c175a5",
+      "c175a6",
+      "c175a7",
+      "c175a8"
+    ],
+    "output_roots": [
+      "D:/ZumaGolden/record-c175a1-autoplay-fruit-bomb-v1",
+      "D:/ZumaGolden/record-c175a2-autoplay-fruit-bomb-v1",
+      "D:/ZumaGolden/record-c175a3-autoplay-fruit-bomb-v1",
+      "D:/ZumaGolden/record-c175a4-autoplay-fruit-bomb-v1",
+      "D:/ZumaGolden/record-c175a5-autoplay-fruit-bomb-v1",
+      "D:/ZumaGolden/record-c175a6-autoplay-fruit-bomb-v1",
+      "D:/ZumaGolden/record-c175a7-autoplay-fruit-bomb-v1",
+      "D:/ZumaGolden/record-c175a8-autoplay-fruit-bomb-v1"
+    ],
+    "all_output_roots_absent_at_freeze": true,
+    "attempts_sequential": true,
+    "all_declared_attempts_execute_before_feature_analysis": true,
+    "no_early_stop_on_target_feature": true,
+    "no_retry_or_replacement_under_this_preregistration": true,
+    "retain_every_started_attempt": true
+  },
+  "command_template": ".venv-win/Scripts/python.exe tools/record_autoplay_zuma.py --output-root {OUTPUT_ROOT} --runtime-executable D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe --changedir \"D:/SteamLibrary/steamapps/common/Zuma's Revenge\" --prestate-dir D:/ZumaGolden/session-20260728-203153/native-windowed-record-001-prestate-reconstructed --expected-score-target 9650 --minimum-entry-score 7000 --maximum-gameplay-seconds 180 --expected-outcome natural_win --gameplay-policy autoplay --fruit-policy bomb --rng-monitor-stop-native-time 500 --gameplay-mtrand-trace --mtrand-trace-kind global_wrapper_entry --title-start-update 1622 --adventure-update 2422 --continue-game-update 3108 --title-start-point 400 533 --adventure-point 633 281 --continue-game-point 399 456 --prelaunch-cursor-screen-point 100 100",
+  "post_ensemble_analysis": {
+    "controller_log_is_certifying_evidence": false,
+    "first_analysis": "Count trigger_fruit_proximity_bomb decisions only after all eight attempts finish.",
+    "candidate_selection": "Use the earliest run in frozen run_order with a controller bomb decision and intact natural-win/provenance contract; event presence is only a locator for later source-bound native replay.",
+    "if_no_candidate": "Close c175 as a retained acquisition failure before freezing any follow-up acquisition design.",
+    "formal_full_state_source_bound_replay_required": true,
+    "machine_mechanism_audit_required": true,
+    "exact_simulator_diff_required": true,
+    "pc_golden_authentication_required": true
+  },
+  "decision": {
+    "candidate_recording_gate_credit": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

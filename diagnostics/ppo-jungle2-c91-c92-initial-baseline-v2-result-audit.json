@@ -1,0 +1,116 @@
+{
+  "schema": "zuma-rl.ppo-diagnostic-result-audit",
+  "version": 1,
+  "created_utc": "2026-08-04T01:48:33.134Z",
+  "run_id": "ppo-jungle2-c91-c92-initial-baseline-s20260804-v2",
+  "status": "COMPLETE_POSITIVE_INITIAL_LEARNING_SIGNAL",
+  "classification": "diagnostic_non_transferable",
+  "preregistration": {
+    "path": "diagnostics/ppo-jungle2-c91-c92-initial-baseline-preregistration-v2.json",
+    "sha256": "sha256:f2b239534c14aae0c8e5223e65f2bf8aba429037cf783863625323efecefe8f1",
+    "maximum_runs": 1,
+    "runs_consumed": 1
+  },
+  "dependencies": {
+    "pc_golden_manifest_sha256": "sha256:5b1685882984d00414c26e65a6c83f665845452ff68eb49599e423e7e54363bc",
+    "pc_golden_verification_sha256": "sha256:74c50253bae90c5445f5fa2029ac52cf64f28b67ae15b13ceb3329fb1a2aaadf",
+    "capacity_qualification_sha256": "sha256:487a4dd8cfc03a7d0bc7db3c5446152867b3ca48e9d00ec828c5166fd87d2755",
+    "train_py_sha256": "sha256:5a6d1a6a3c63253f2d675cf5584df157b4be497b0c3ead3314d77a18b5b976cb"
+  },
+  "execution": {
+    "exit_code": 0,
+    "requested_timesteps": 98304,
+    "completed_timesteps": 98304,
+    "num_envs": 8,
+    "frame_skip": 1,
+    "max_ticks": 12000,
+    "max_balls": 768,
+    "physical_gpu": "NVIDIA GeForce RTX 5090",
+    "training_elapsed_seconds_from_sb3": 214,
+    "end_to_end_wall_seconds": 726.3,
+    "failure_receipt_present": false,
+    "residual_python_process_count": 0
+  },
+  "paired_boundary_evaluation": {
+    "seed": 20270804,
+    "episode_count": 4,
+    "deterministic": true,
+    "pretrain": {
+      "mean_reward": -4.748375,
+      "reward_std": 4.955926880198597,
+      "mean_episode_length": 5233.75,
+      "episode_rewards": [3.0758, -10.4892, -4.8154, -6.7647],
+      "episode_lengths": [5242, 7892, 5154, 2647],
+      "inferred_terminal_results": ["loss", "loss", "loss", "loss"],
+      "inferred_scores": [1360, 30, 570, 350]
+    },
+    "posttrain": {
+      "mean_reward": 40.229425,
+      "reward_std": 22.44817481426664,
+      "mean_episode_length": 10955.75,
+      "episode_rewards": [18.6177, 38.2, 77.2, 26.9],
+      "episode_lengths": [7823, 12000, 12000, 12000],
+      "inferred_terminal_results": ["loss", "truncated", "truncated", "truncated"],
+      "inferred_scores": [2940, 3940, 7840, 2810]
+    },
+    "paired_change": {
+      "reward_deltas": [15.5419, 48.6892, 82.0154, 33.6647],
+      "mean_reward_delta": 44.9778,
+      "mean_episode_length_delta": 5722.0,
+      "positive_pair_count": 4,
+      "pair_count": 4,
+      "paired_delta_sample_sd": 28.166272645015233,
+      "paired_delta_standard_error": 14.083136322507617,
+      "descriptive_t95_df3_interval": [0.15897484762435, 89.79662515237565],
+      "one_sided_exact_sign_p": 0.0625,
+      "formal_significance_claim": false
+    },
+    "outcome_inference": "For 12000-step episodes the TimeLimit boundary implies truncation. Shorter episodes are distinguished by the frozen reward equation and Jungle2 score target 1700; the only nonnegative win-score solution is impossible for the observed first posttrain return, so it is a loss.",
+    "win_count": 0
+  },
+  "final_training_metrics": {
+    "step": 98304,
+    "fps": 458.0,
+    "rollout_episode_reward_mean": 39.055824279785156,
+    "rollout_episode_length_mean": 11566.75,
+    "approx_kl": 0.021171029657125473,
+    "clip_fraction": 0.2939453125,
+    "entropy_loss": -6.002254009246826,
+    "explained_variance": 0.8115054368972778,
+    "policy_gradient_loss": -0.029679173603653908,
+    "value_loss": 0.014131905511021614
+  },
+  "model_load_smoke": {
+    "status": "PASS",
+    "model_num_timesteps": 98304,
+    "observation_shape": [21215],
+    "deterministic_action": [1, 67],
+    "one_step_reward": -0.0001,
+    "one_step_terminated": false,
+    "one_step_truncated": false
+  },
+  "artifacts": {
+    "run_root": "D:/ZumaTraining/diagnostic-jungle2-c91-c92-baseline-s20260804-v2",
+    "config": {"bytes":2879,"sha256":"sha256:3320fd281ce552ea3f06915bc3e9eec443835c88f61a7df36673a337b74652ce"},
+    "final_model": {"bytes":133713888,"sha256":"sha256:c43aabe4f4d95d68e0f0029621fa187345d1f58412a0acee73141709de4397d0"},
+    "pretrain_evaluation": {"bytes":427,"sha256":"sha256:573b8f50b4743500109bd454ec80db2e82db12756f46997e5963597862c1ce9e"},
+    "posttrain_evaluation": {"bytes":427,"sha256":"sha256:742f540dba65f4def314fe56debb5ee80f868ab8b85d7586f1b22ab184e74e1f"},
+    "tensorboard": {"bytes":14192,"sha256":"sha256:83e71778719655e6279c7e1cc121d49d8432f118beac1a9bfe0c7e455e09085c"},
+    "checkpoints": [
+      {"step":16384,"sha256":"sha256:d6cbb21248c29041ad6ab1d33709970c85bc7bb2ca5209e181dcda112aa9778a"},
+      {"step":32768,"sha256":"sha256:187f62354d42e547ca211d01e37fb2fe08691d9c7a3d768ad8f871520c5b9ebf"},
+      {"step":49152,"sha256":"sha256:6374b548b289bd910cc0590cff3ff863b2716aafa8affda61106e45f27c766b3"},
+      {"step":65536,"sha256":"sha256:174d7660b729b509230c6e9f11e68ad9efc10a987ce97dfdc675c347cc89b997"},
+      {"step":81920,"sha256":"sha256:dd8116f2791117c85c85a317e12a71bbbcdb7d3aaab1daeb99cc753b0b0c05d0"},
+      {"step":98304,"sha256":"sha256:57dc7e001f7b393f87029dbdd87cfa706a44132cb01b51719915ae5e39ad6af2"}
+    ]
+  },
+  "decision": {
+    "initial_learning_signal": true,
+    "jungle2_solved": false,
+    "policy_transfer_certified": false,
+    "fidelity_gate_open": false,
+    "reason": "All four paired rewards improved substantially and the model now scores and survives, but no evaluation episode won, n=4 is exploratory, and the single PC Golden covers only one exact-step Jungle2 window with no retained input edges."
+  },
+  "next_action": "Preserve this model as the initial baseline. Expand certifying PC Golden coverage across input-bearing shot/swap, match/explosion, powerup, loss, win, and additional-level cases before any large-scale original-transfer training."
+}

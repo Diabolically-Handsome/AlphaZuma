@@ -1,0 +1,73 @@
+{
+  "schema": "zuma-rl.pc-fruit-bomb-native-tick-telemetry-qualification",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T14:24:29.1810511Z",
+  "classification": "qualified-read-only-locator-telemetry-not-certifying-evidence",
+  "preregistration": {
+    "path": "diagnostics/c178-fruit-bomb-native-tick-telemetry-preregistration-v1.json",
+    "sha256": "sha256:1e82c4f13eb6f230ea02e513f5b4a98397a8b18f2a75dfe44398dd5a075b8201",
+    "frozen_before_implementation": true
+  },
+  "implementation": {
+    "sampling_key": ["board_address", "native_game_time"],
+    "sample_condition": "fruit active or active type-0 chain ball present",
+    "distance_geometry": "static TreasurePoint point_x and point_y",
+    "strict_radius_px": 108.0,
+    "action_selection_changed": false,
+    "process_memory_writes": 0,
+    "input_transport_changed": false,
+    "simulator_core_changed": false,
+    "fidelity_gate_policy_changed": false,
+    "training_gate_policy_changed": false
+  },
+  "post_implementation_files": [
+    {
+      "path": "tools/autoplay_live_zuma.py",
+      "bytes": 98781,
+      "sha256": "sha256:2daec658fde375c2fa51f55c46c7d73db018474abd3e33b9a544587ed99a5e34"
+    },
+    {
+      "path": "tests/test_autoplay_live_zuma.py",
+      "bytes": 28228,
+      "sha256": "sha256:539e2adcb5af1550737da1f201d9d2624e2df99f64c91696e71043a121d94886"
+    }
+  ],
+  "checks": [
+    {
+      "name": "python_compile",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "focused_pytest",
+      "command": ".venv-win/Scripts/python.exe -m pytest tests/test_autoplay_live_zuma.py tests/test_record_autoplay_zuma.py -q",
+      "collected_tests": 101,
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "full_pytest",
+      "command": ".venv-win/Scripts/python.exe -m pytest -q",
+      "collected_tests": 1560,
+      "exit_code": 0,
+      "status": "PASS",
+      "known_warning": "Gymnasium could not test alternate render modes because the environment has no spec"
+    }
+  ],
+  "required_behavior_results": {
+    "fruit_only_observation": "PASS",
+    "bomb_only_observation": "PASS",
+    "temporal_overlap_exact_distance": "PASS",
+    "strict_radius_boundary_outside": "PASS",
+    "inactive_empty_state_suppressed": "PASS",
+    "existing_action_regressions": "PASS"
+  },
+  "decision": {
+    "telemetry_qualified_for_fresh_diagnostic_capture": true,
+    "telemetry_is_pc_golden": false,
+    "fidelity_gate_open": false,
+    "training_gate_open": false,
+    "training_start": false
+  }
+}

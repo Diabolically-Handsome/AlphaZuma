@@ -1,0 +1,148 @@
+{
+  "schema": "zuma-rl.aim-path-freeze-paired-preregistration",
+  "version": 1,
+  "created_utc": "2026-08-04T12:29:16.412Z",
+  "status": "FROZEN_BEFORE_RUN_OUTPUT",
+  "classification": "consumed_seed_paired_recipe_mechanism_screen_not_generalization",
+  "hypotheses": {
+    "null": "bitwise freezing the aim path does not reduce identity-specific capability drift on the previously failing seed stream",
+    "alternative": "the same PPO recipe with a frozen aim path materially reduces severe paired regressions while retaining stochastic capability"
+  },
+  "design": {
+    "run_dir": "/mnt/d/ZumaTraining/screening-aim-path-freeze-paired-s20260878-v1",
+    "expected_run_dir_absent": true,
+    "seed_classification": {
+      "training_seed": 20260878,
+      "boundary_environment_seed": 20270878,
+      "stochastic_action_sampling_seed": 20280878,
+      "reused_from_failed_identity_confirmation": true,
+      "fresh_seed_claim_forbidden": true,
+      "purpose": "controlled same-seed mechanism comparison"
+    },
+    "input_model": {
+      "path": "D:/ZumaTraining/screening-teacher-offline-polar90-s20260873-v1/refined_model.zip",
+      "sha256": "sha256:f03dee97cb5a3e2ce3abcf4324137fe6ed9b68e827765b4a7b6adfa63cafb8f7"
+    },
+    "recipe": {
+      "environment": "ZumaRevenge-v0",
+      "level": "Jungle2",
+      "profile_mode": "tutorials_completed",
+      "aim_bins": 180,
+      "factorized_actions": true,
+      "actor_observable_retail_rejection_mask": true,
+      "frame_skip": 1,
+      "max_ticks": 12000,
+      "training_time_limit_steps": 0,
+      "max_balls": 768,
+      "algorithm": "MaskablePPO",
+      "total_effective_steps": 16384,
+      "num_envs": 4,
+      "rollout_steps_per_env": 512,
+      "batch_size": 512,
+      "learning_rate": 0.00001,
+      "entropy_coef": 0.0,
+      "freeze_aim_path": true,
+      "frozen_parameters": [
+        "all feature_extractor parameters",
+        "action_net aim weight rows",
+        "action_net aim bias rows"
+      ],
+      "trainable_policy_components": [
+        "action_net verb rows",
+        "value mlp",
+        "value output"
+      ],
+      "loaded_optimizer_momentum_for_frozen_parameters_zeroed": true
+    },
+    "boundary_evaluation": {
+      "receipt_schema_version": 3,
+      "episodes_per_boundary": 8,
+      "eval_num_envs": 4,
+      "episode_identity_protocol": "vector_env_index_and_per_env_episode_ordinal",
+      "deterministic_and_stochastic": true
+    },
+    "comparison": {
+      "tool_sha256": "sha256:c3d6d3bc02d0de6901d5d265db966dd015bda87473a10154a92c9439a17efeca",
+      "severe_regression_threshold": 5.0,
+      "deterministic_output": "D:/ZumaTraining/screening-aim-path-freeze-paired-s20260878-v1/deterministic_comparison.json",
+      "stochastic_output": "D:/ZumaTraining/screening-aim-path-freeze-paired-s20260878-v1/stochastic_comparison.json"
+    },
+    "resources": {
+      "cuda_visible_devices": "0",
+      "expected_cuda_device": "NVIDIA GeForce RTX 5090",
+      "rtx_5080_excluded": true,
+      "cpu_thread_budget": 8
+    }
+  },
+  "acceptance": {
+    "pipeline": {
+      "completion_receipt_status": "COMPLETE",
+      "effective_steps_exactly": 16384,
+      "all_four_v3_boundary_receipts_required": true,
+      "both_identity_comparisons_required": true,
+      "aim_path_install_receipt_required": true,
+      "aim_path_verification_status": "PASS",
+      "aim_path_bitwise_unchanged": true,
+      "failure_receipt_forbidden": true,
+      "stderr_bytes": 0
+    },
+    "replayed_precondition": {
+      "pretrain_deterministic_receipt_sha256": "sha256:4a2c6bc171ea11602baccc900d46cba8e42f8177e759b5e91182fcf77ba091d4",
+      "pretrain_stochastic_receipt_sha256": "sha256:876831fbcecf6a804d8390ab17e848cfbd2f211ce8d160b58173fa587b8c881b",
+      "reason": "the same initial model and seed streams must reproduce before the recipe comparison is interpretable"
+    },
+    "deterministic_retention": {
+      "posttrain_wins_at_least": 7,
+      "posttrain_losses_plus_truncations_at_most": 1,
+      "posttrain_truncations_at_most": 1,
+      "posttrain_mean_reward_at_least_pretrain_minus": 1.0,
+      "identity_paired_reward_regressions_exceeding_5_at_most": 1
+    },
+    "stochastic_retention": {
+      "posttrain_wins_at_least": 8,
+      "posttrain_truncations": 0,
+      "posttrain_mean_reward_at_least_pretrain_minus": 1.0,
+      "identity_paired_reward_regressions_exceeding_5_at_most": 1
+    },
+    "mechanism_effect": {
+      "unfrozen_deterministic_severe_regressions": 3,
+      "frozen_deterministic_severe_regressions_at_most": 1,
+      "unfrozen_posttrain_deterministic_wins": 7,
+      "frozen_posttrain_deterministic_wins_at_least": 7
+    },
+    "promotion_rule": "a pass authorizes one preregistered fresh-seed 16384-step confirmation of the frozen-aim-path recipe; it does not authorize the 98304-step screen",
+    "rejection_rule": "if the controlled mechanism screen fails, do not carry aim freezing forward and evaluate lower PPO update intensity or supervised anchoring"
+  },
+  "evidence_anchor": {
+    "unfrozen_identity_outcome": {
+      "path": "diagnostics/polar-ppo-identity-confirmation-s20260878-outcome-v1.json",
+      "sha256": "sha256:c17d4ee417d683bb24de9e514ed65adc1ae160311a3bc934a3affe4a81f2a351",
+      "status": "IDENTITY_CONFIRMATION_FAIL",
+      "deterministic_severe_regressions": 3
+    },
+    "freeze_kat": {
+      "run_dir": "D:/ZumaTraining/infrastructure-aim-path-freeze-s20260874-v1",
+      "completion_sha256": "sha256:bf1734fdae33dfbd5ecdc2ff8a05026c9d9fcea065490f40aeec8e14fedfb1e8",
+      "install_receipt_sha256": "sha256:3f787ecbff1902a5e6c3a6429e59053fc9ffd142e7e9bbaa6793f53bf07dc217",
+      "verification_receipt_sha256": "sha256:12116386f50e7541429059d884b28e3291b026f86c35830696c7093bc8ae602e",
+      "status": "PASS"
+    },
+    "regression": {
+      "wsl_full_pytest": "PASS_1126",
+      "process_exit_code": 0
+    }
+  },
+  "source_hashes": {
+    "train.py": "sha256:2290d546e5194aca2eb82b1d1caeffec9e7b4b216ae2ed186fe98517738b6ac8",
+    "boundary_evidence.py": "sha256:b0d5c7d5d5f6dfc2447e7927b97eb5872eddf62cca1f8e9d440699ee2ab7fad6",
+    "compare_ppo_boundaries.py": "sha256:c3d6d3bc02d0de6901d5d265db966dd015bda87473a10154a92c9439a17efeca",
+    "test_train_gate.py": "sha256:e0a0a02c8478b00b552d797a20be972ac97fa109eab61b49dd1cedd9afbdd6a4"
+  },
+  "non_authorizations": [
+    "fresh_seed_evidence",
+    "98304_step_scale_screen",
+    "large_scale_training",
+    "fidelity_gate_opening",
+    "original_transfer_certification"
+  ]
+}

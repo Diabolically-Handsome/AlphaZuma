@@ -1,0 +1,74 @@
+{
+ "schema": "zuma-rl.alphazuma-55-macro-ppo-run-outcome",
+ "version": 1,
+ "run_id": "timepolish-jungle1",
+ "preregistration": {
+  "path": "/mnt/c/Users/Laure/Documents/\u7956\u739b/diagnostics/alphazuma-55-timepolish-jungle1-s99081706-preregistration-v1.json",
+  "sha256": "sha256:08da87aa979757e1338962631c59f0f67d8feba73ba400773c81f9715c96f69c"
+ },
+ "status": "CONCLUDED_BY_STAGNATION_CLAUSE",
+ "decision": "SUCCESS_TIER_1",
+ "stopped_utc": "2026-08-19T20:35:29.759235+00:00",
+ "reason": "Stagnation clause (early_stop_rules.b) fired: three consecutive checkpoint evals (1834k: 3262, 2096k: 3523, 2359k: 3287) did not improve on the best median 3058 at checkpoint 1572720. Best checkpoint declared champion. Tier 1 ACHIEVED: median win ticks 3058 < teacher 3134 at 16/16 win rate (the student now beats its teacher at the median with zero reliability loss). Tier 2/3 not reached in checkpoint evals (fastest eval win 1557 vs 774 target); record attempt proceeds via golden-seed rescan with this champion.",
+ "checkpoint_eval_series": [
+  {
+   "ckpt": 262120,
+   "win_rate": 1.0,
+   "median": 4079,
+   "fastest": 1747
+  },
+  {
+   "ckpt": 524240,
+   "win_rate": 1.0,
+   "median": 3651,
+   "fastest": 1557
+  },
+  {
+   "ckpt": 786360,
+   "win_rate": 0.938,
+   "median": 3314,
+   "fastest": 1730
+  },
+  {
+   "ckpt": 1048480,
+   "win_rate": 1.0,
+   "median": 3747,
+   "fastest": 2279
+  },
+  {
+   "ckpt": 1310600,
+   "win_rate": 1.0,
+   "median": 3412,
+   "fastest": 2315
+  },
+  {
+   "ckpt": 1572720,
+   "win_rate": 1.0,
+   "median": 3058,
+   "fastest": 2203
+  },
+  {
+   "ckpt": 1834840,
+   "win_rate": 1.0,
+   "median": 3262,
+   "fastest": 1843
+  },
+  {
+   "ckpt": 2096960,
+   "win_rate": 1.0,
+   "median": 3523,
+   "fastest": 1771
+  },
+  {
+   "ckpt": 2359080,
+   "win_rate": 1.0,
+   "median": 3287,
+   "fastest": 1961
+  }
+ ],
+ "champion": {
+  "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle1-s99081706-v1/checkpoints/timepolish-jungle1_1572720_steps.zip",
+  "sha256": "sha256:611b3cbda00587c6d70bbd3f3458daa394036b76ea2b7ede8b964a8da7bb7e12"
+ },
+ "formal_seed_consumption": false
+}

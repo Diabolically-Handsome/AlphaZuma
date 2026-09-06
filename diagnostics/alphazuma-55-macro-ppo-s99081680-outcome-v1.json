@@ -1,0 +1,26 @@
+{
+ "schema": "zuma-rl.alphazuma-55-macro-ppo-run-outcome",
+ "version": 1,
+ "run_id": "macro-ppo-5090",
+ "preregistration": {
+  "path": "/mnt/c/Users/Laure/Documents/\u7956\u739b/diagnostics/alphazuma-55-macro-ppo-s99081680-preregistration-v1.json",
+  "sha256": "sha256:fcd2f536c9a0596cdd7b23180d38fd16ff51917a009f157c65ed5259cc2068fa"
+ },
+ "status": "STOPPED_EARLY_ENGINEERING_DECISION",
+ "decision": "FAIL",
+ "stopped_utc": "2026-08-17T20:35:24.991957+00:00",
+ "reason": "tier_0_sanity fire-rate clause breached at two consecutive checkpoints: policy collapsed into the never-fire attractor (ckpt 786432: 94 shots/12 eps, score 5050, transient improvement over init 73/2090; ckpt 1572864: 10 shots/12 eps, score 240, six of twelve episodes fired zero shots, wait_hold dominant). Root mechanism: truncation-neutral reward makes stall-to-truncation (~-2.4) dominate fire-and-die (-10) while the fresh value head generates early negative advantages on fire actions; entropy_coef 0.002 cannot escape the attractor.",
+ "prereg_deviation_note": "the frozen document had no explicit early-stop clause; stopping at 2x tier-0 breach is an engineering deviation recorded here rather than silent. Successor run must preregister the early-stop rule explicitly.",
+ "evidence": [
+  {
+   "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-s99081680-v1/eval-macro-native-ckpt786k/completion.json",
+   "sha256": "sha256:54a7dadd435e9c2dfebcf7e6abbd684863c35bee33df6b6132020f44aaefbda9"
+  },
+  {
+   "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-s99081680-v1/eval-macro-native-ckpt1572k/completion.json",
+   "sha256": "sha256:452656891019a789d3b48e236ad2ce9a4041862e1ac023ae2e1e2263c4e2b2a4"
+  }
+ ],
+ "successor": "alphazuma-55-macro-ppo-s99081682 (entropy 0.01, lr 1e-5, ppo_epochs 2, explicit early-stop clause)",
+ "formal_seed_consumption": false
+}

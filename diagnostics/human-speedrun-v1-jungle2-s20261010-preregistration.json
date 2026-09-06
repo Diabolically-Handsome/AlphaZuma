@@ -1,0 +1,61 @@
+{
+  "schema": "zuma-rl.human-speedrun-training-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_TRAINING",
+  "date": "2026-08-12",
+  "objective": "fine-tune AlphaZuma V1 for a sub-12-second Jungle2 run under the elite-human-v1 actuator",
+  "source_model": {
+    "path": "/mnt/d/ZumaTraining/pc-golden-jungle2-transfer-s20260950-98k-v1/final_model.zip",
+    "sha256": "sha256:7869b4306a1f05128cd8fbff978361ba1969454dceaf28b5fb611d8965baa97b"
+  },
+  "source_code": {
+    "human_speedrun.py_sha256": "sha256:d2df69821ce5f5e837a962cfc6efdafaf152baf06a30fb8c6d2c04ddec6517dd",
+    "train_human_speedrun.py_sha256": "sha256:48a9934ccf504167c187aa57043421e916c2bfa7bb185a0ba69a5e7f48cf80cb"
+  },
+  "training": {
+    "level": "Jungle2",
+    "seed": 20261010,
+    "total_steps": 2621440,
+    "num_envs": 4,
+    "device": "cuda:0",
+    "rollout_steps": 512,
+    "batch_size": 512,
+    "ppo_epochs": 1,
+    "learning_rate": 0.000005,
+    "entropy_coef": 0.0,
+    "checkpoint_every": 262144,
+    "evaluation_during_training": false,
+    "early_stopping": false,
+    "optimizer_state_reset": true,
+    "teacher_anchor": false
+  },
+  "environment": {
+    "native_tick_hz": 100,
+    "frame_skip": 1,
+    "max_ticks": 12000,
+    "max_balls": 768,
+    "input_profile": {
+      "id": "elite-human-v1",
+      "reaction_delay_ticks": 12,
+      "max_aim_speed_degrees_per_second": 1080.0,
+      "max_aim_acceleration_degrees_per_second_squared": 18000.0,
+      "min_button_interval_ticks": 5
+    },
+    "reward_profile": {
+      "id": "win-time-score-v1",
+      "win_reward": 10.0,
+      "failure_reward": -10.0,
+      "time_penalty_per_native_tick": -0.0001,
+      "score_progress_reward_cap": 0.01
+    }
+  },
+  "posttraining_protocol": {
+    "training_output_is_not_itself_a_record": true,
+    "first_screen": "fixed unconsumed deterministic seeds",
+    "record_threshold_ticks_exclusive": 1200,
+    "candidate_must_be_replayed_deterministically": true,
+    "publish_checkpoint_hash_seed_attempt_count_and_replay": true,
+    "no_recipe_change_based_on_intermediate_checkpoints": true
+  },
+  "run_directory": "/mnt/d/ZumaTraining/human-speedrun-v1-jungle2-s20261010-2621k-v1"
+}

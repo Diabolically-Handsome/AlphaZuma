@@ -1,0 +1,112 @@
+{
+  "schema": "zuma-rl.pc-clean-late-handoff-priority-window-screen-outcome",
+  "version": 28,
+  "status": "PASS_SCREEN_EXPAND_B_5_OF_6_VS_A_3_OF_6_CAUSAL_NOT_ESTABLISHED",
+  "created_utc": "2026-08-05T21:22:35.6315263Z",
+  "id": "clean-late-handoff-priority-window-screen-v28-outcome",
+  "parent_preregistration": {
+    "path": "diagnostics/clean-late-handoff-priority-window-screen-preregistration-v28.json",
+    "sha256": "sha256:649326b9e12c5b181d16a9bd4541bae33632fc01b5bc1a8fe756718afc9158cb"
+  },
+  "execution_binding": {
+    "path": "diagnostics/clean-late-handoff-priority-window-screen-execution-binding-v28.json",
+    "sha256": "sha256:c17d3bf5fd9b2424601481bad36d6e442e7217681d9414fcee51cc8157c33486",
+    "session_nonce": "20529b6f72784b0984a460002d16563a"
+  },
+  "selected_manifest": {
+    "path": "diagnostics/clean-late-handoff-priority-window-screen-selected-manifest-v28.json",
+    "sha256": "sha256:1e90d43ea7bc7d92c51eaabff41c562bd68946f7dd319462a928746db0a552cf",
+    "run_count": 12,
+    "all_selected_hashes_reverified": true
+  },
+  "execution": {
+    "fixed_run_count": 12,
+    "valid_run_count": 12,
+    "total_attempt_count": 13,
+    "pre_handoff_infrastructure_retry_count": 1,
+    "pre_handoff_retry_run": "b01",
+    "retry_error": "trace_exited_before_global_mtrand_call_sync_ready:exit=1",
+    "retry_ready_receipt_existed": false,
+    "semantic_retry_count": 0,
+    "post_ready_retry_count": 0,
+    "all_selected_attempts_first_valid": true,
+    "actual_handoff_update": 3009,
+    "actual_detached_after_update": 3009
+  },
+  "primary_screen_result": {
+    "A_control": {
+      "valid_runs": 6,
+      "handoff_exact_runs": 2,
+      "handoff_exact_fraction": 0.3333333333333333,
+      "handoff_exact_wilson_95_interval": [0.09677141110578043, 0.7000066848616079],
+      "boundary_exact_runs": 3,
+      "boundary_exact_fraction": 0.5,
+      "boundary_exact_wilson_95_interval": [0.1876163064826506, 0.8123836935173494]
+    },
+    "B_bias_u1802": {
+      "valid_runs": 6,
+      "handoff_exact_runs": 3,
+      "handoff_exact_fraction": 0.5,
+      "handoff_exact_wilson_95_interval": [0.1876163064826506, 0.8123836935173494],
+      "boundary_exact_runs": 5,
+      "boundary_exact_fraction": 0.8333333333333334,
+      "boundary_exact_wilson_95_interval": [0.4364971778135299, 0.9699466302516934]
+    },
+    "boundary_two_sided_fisher_exact_p": 0.5454545454545454,
+    "boundary_one_sided_B_greater_p": 0.2727272727272727,
+    "handoff_two_sided_fisher_exact_p": 1.0,
+    "handoff_one_sided_B_greater_p": 0.5,
+    "causal_effect_established": false
+  },
+  "observed_distributions": {
+    "A_control_handoff_draws": [1563, 1554, 1548, 1563, 1562, 1552],
+    "A_control_boundary_draws": [1662, 1644, 1639, 1662, 1662, 1639],
+    "B_bias_u1802_handoff_draws": [1550, 1563, 1563, 1563, 1562, 1562],
+    "B_bias_u1802_boundary_draws": [1640, 1662, 1662, 1662, 1662, 1662],
+    "B_nonexact_run": {"run": "b01", "handoff_draw": 1550, "boundary_draw": 1640, "boundary_deficit": 22},
+    "interpretation": "The bias arm met the preregistered five-of-six expansion branch at the source boundary, but it did not stabilize the earlier handoff state and the arm difference is compatible with sampling noise."
+  },
+  "priority_and_safety_validity": {
+    "all_6_controls_have_zero_apply_events": true,
+    "all_6_controls_have_zero_restore_events": true,
+    "all_6_bias_runs_have_one_apply_event_at_update_0": true,
+    "all_6_bias_runs_have_one_restore_event_at_update_1809": true,
+    "all_12_handoff_main_thread_priorities_zero": true,
+    "all_12_boundary_main_thread_priorities_zero": true,
+    "all_12_handoff_main_thread_base_priorities_zero": true,
+    "all_12_boundary_main_thread_base_priorities_zero": true,
+    "all_12_ready_v2_handoffs_verified": true,
+    "all_12_observer_process_memory_writes_zero": true,
+    "all_12_state_correction_counts_zero": true,
+    "all_12_hardware_breakpoints_restored": true,
+    "all_12_debugger_detach_errors_null": true,
+    "all_12_persistent_file_modified_false": true
+  },
+  "host_safety": {
+    "canonical_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_pre_sha256": "sha256:05da45b424d923313d36926534b605eed3f47f9adcdfc417f73d07539bb85d8b",
+    "host_post_sha256": "sha256:dd6ad43cd93ad67313456a6e1bfa2da3bccc5a3269072aacc60a707a64a72fe7",
+    "all_12_after_run_state_roots_match": true,
+    "host_pre_state_root_match": true,
+    "host_post_state_root_match": true,
+    "residual_retail_process_count": 0
+  },
+  "decision": {
+    "preregistered_branch": "EXPAND_CLEAN_RANDOMIZED_REPLICATION",
+    "reason": "B produced five exact source boundaries and exceeded the nonperfect A arm while all safety contracts passed.",
+    "qualification": "screening_signal_only",
+    "priority_bias_causal_claim": false,
+    "priority_bias_transport_qualified": false,
+    "pc_golden_credit": false,
+    "fidelity_gate_change": false,
+    "formal_transport_change": false,
+    "large_scale_training_start": false,
+    "next_action": "Freeze an independent, adequately powered clean randomized replication before deciding whether to translate the scheduler signal into a DMO-native timing mechanism."
+  },
+  "non_authorizations": [
+    "pc_golden_credit",
+    "fidelity_gate_change",
+    "formal_transport_change",
+    "large_scale_training_start"
+  ]
+}

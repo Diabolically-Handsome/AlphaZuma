@@ -1,0 +1,79 @@
+{
+  "schema": "zuma-rl.c183-fruit-powerup-collision-reconciliation-2048-success-receipt",
+  "version": 1,
+  "status": "PASS_UNBOUND_PENDING_NATIVE_CALL_TRACE_PROOF",
+  "created_utc": "2026-08-10T15:44:48.9043424Z",
+  "preregistration": {
+    "artifact": "diagnostics/c190-c183-fruit-powerup-collision-reconciliation-2048-preregistration-v1.json",
+    "artifact_bytes": 6209,
+    "artifact_sha256": "sha256:19dddd48b461aa55456cc100aa0ae54549fdfb6f056ac49565688ae225c8a3df"
+  },
+  "unbound_diff": {
+    "artifact": "D:/ZumaGolden/diagnostics/jungle2-c183-u8213-u8260-fruit-powerup-collision-diff-v5-reconciled-unbound.json",
+    "artifact_bytes": 112539,
+    "artifact_sha256": "sha256:454458b782fa0764e9c4dc530f50833a1b74f513cc214b63d9eb68cae6ec388a",
+    "status": "PASS",
+    "failure_count": 0,
+    "compared_tick_count": 47,
+    "pass_tick_count": 47,
+    "gameplay_state_exact_before_global_rng_tick_count": 47,
+    "global_mtrand_exact_after_reconciliation_tick_count": 47,
+    "qrand_exact_tick_count": 47,
+    "thread_crt_exact_tick_count": 47,
+    "shooter_exact_tick_count": 47,
+    "synchronize_shooter": false
+  },
+  "reconciliation": {
+    "policy": "conditional_external_mtrand_reconciliation_v2",
+    "classification": "unclassified_until_bound_call_trace_proof",
+    "maximum_draws_per_tick": 2048,
+    "reconciled_tick_count": 27,
+    "total_reconciled_draw_count": 3587,
+    "maximum_reconciled_draw_count": 1220,
+    "rows_equal_frozen_c190_rows": true,
+    "all_rows_reached_source_full_state_exactly": true
+  },
+  "joint_event_tick": {
+    "framework_update": 8234,
+    "inserted": 1,
+    "matches": 1,
+    "balls_exploded": 9,
+    "powerups_triggered": 1,
+    "fruits_collected": 1,
+    "score_delta_pc": 590,
+    "score_delta_simulator": 590,
+    "fruit_state_mismatches": {},
+    "curve_state_mismatches": {},
+    "gameplay_state_matched_before_global_rng": true
+  },
+  "source_features": {
+    "required_present": [
+      "powerup_proximity_bomb",
+      "fruit_powerup_collision",
+      "fruit_collection_animation"
+    ],
+    "all_required_present": true
+  },
+  "transactional_restoration": {
+    "curve_feed_plan_exhausted_restored": true,
+    "curve_plan_state_restored": true,
+    "curve_runtime_state_restored": true,
+    "fruit_runtime_state_restored": true,
+    "global_mtrand_state_restored": true,
+    "initial_free_projectile_state_restored": true,
+    "native_game_time_restored": true,
+    "powerup_manager_state_restored": true,
+    "shooter_rng_state_restored": true
+  },
+  "decision": {
+    "unbound_simulator_diff_pass": true,
+    "native_call_trace_proof_pending": true,
+    "bound_simulator_diff_pending": true,
+    "fruit_powerup_collision_simulator_diff_credit": false,
+    "fruit_collection_animation_simulator_diff_credit": false,
+    "pc_golden_authentication_pending": true,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

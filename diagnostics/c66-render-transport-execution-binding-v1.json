@@ -1,0 +1,34 @@
+{
+  "schema": "zuma-rl.pc-render-transport-execution-binding",
+  "version": 1,
+  "classification": "preregistered-independent-diagnostic-not-pc-golden",
+  "gate_effect": "none",
+  "status": "FROZEN_RETRY_AFTER_INFRASTRUCTURE_INVALIDATION",
+  "frozen_utc": "2026-08-02T15:26:00Z",
+  "parent": {
+    "artifact": "C:\\Users\\Laure\\Documents\\\u7956\u739b\\diagnostics\\c65-render-transport-preregistration-v1.json",
+    "sha256": "sha256:e28cf5ce21428cc64fca82e822d818bb9797e743511f58d660efeaf703b5d8cb"
+  },
+  "invalidated_attempt": {
+    "session_root": "D:\\ZumaGolden\\campaign-c65-natural-win-v8-affinity1-physicalcore1-5khz-render-holdout-u4180-4380",
+    "failure_artifact": "D:\\ZumaGolden\\campaign-c65-natural-win-v8-affinity1-physicalcore1-5khz-render-holdout-u4180-4380\\collection-failure.json",
+    "failure_sha256": "sha256:5d39533f76d9e723abec3ca6350843f3a9f1dd84f81e8f46cff1e6343048f060",
+    "reason": "collection_failed_before_second_capture",
+    "expected_host_restored_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "comparison_performed": false
+  },
+  "holdout_session_root": "D:\\ZumaGolden\\campaign-c66-natural-win-v8-affinity1-physicalcore1-5khz-render-holdout-u4180-4380",
+  "amendments": [
+    "holdout_session_root"
+  ],
+  "frozen_parent_fields_unchanged": [
+    "pilot",
+    "holdout.dmo_sha256",
+    "holdout.protocol_pre_state_root",
+    "holdout.runtime_executable_sha256",
+    "holdout.capture",
+    "comparison",
+    "acceptance",
+    "interpretation"
+  ]
+}

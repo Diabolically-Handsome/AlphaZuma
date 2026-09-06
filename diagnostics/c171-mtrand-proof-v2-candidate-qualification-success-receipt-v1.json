@@ -1,0 +1,48 @@
+{
+  "schema": "zuma-rl.pc-mtrand-reconciliation-proof-candidate-qualification-success-receipt",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T13:17:15.9201056Z",
+  "preregistration": {
+    "artifact": "diagnostics/c171-mtrand-proof-v2-candidate-qualification-preregistration-v1.json",
+    "artifact_sha256": "sha256:f56250d4af48679e8372cf9dcb504aef5dce8e2d959f1239856ec3356b64e803"
+  },
+  "qualified_candidate": {
+    "src/zuma_rl/pc_mtrand_reconciliation.py": "sha256:d9781e7626b1f981aa82ce220dd96e55ac074722d83873ba8990617aec4e3ac7",
+    "src/zuma_rl/retail_dmo_provenance.py": "sha256:f436003093e804e9a3d15f8f7b80b64f1a65697a28a18d1392d554a706380869",
+    "tests/test_pc_mtrand_reconciliation.py": "sha256:0ba2d3d5cdd3e4f4587c7744ad7392f1380096977126f11ced362433e49c40b1",
+    "tools/derive_pc_mtrand_reconciliation_proof.py": "sha256:793560ed8691a75e9b3b2d6a0abeca2f8117dec0c9a6f20e8f64e3153cf48239",
+    "tools/bind_pc_mtrand_reconciliation_proof.py": "sha256:e6dccde3970daf4934d08be700a5dfdc9887905938ac605822eac90677af5e45",
+    "hashes_unchanged_after_qualification": true
+  },
+  "checks": {
+    "python_compile": "PASS",
+    "targeted_mtrand_and_fidelity_gate_tests": "PASS_17",
+    "canonical_v2_compat_proof_reverification": {
+      "status": "PASS",
+      "proof_sha256": "sha256:a63b0853c6b8a8b0aa2bc2fb5b400310d5cba46ee893737452a08e3ca8c9302d",
+      "bound_report_sha256": "sha256:70f5ab7ebafc9d0b34e275cdcdc51a20e5c14f54d2f90b5430b1e1ee5a407d08",
+      "proof_object_equals_recomputation": true,
+      "trace_window_count": 1,
+      "reconciled_draw_count": 17
+    },
+    "full_pytest_suite": "PASS",
+    "full_suite_warning_count": 1,
+    "warning_is_existing_gymnasium_render_spec_warning": true
+  },
+  "qualified_contract": {
+    "pending_ball_near_stack_requires_gameplay_ancestors": true,
+    "caller_only_labels_rejected": true,
+    "runtime_static_callsite_verification_required": true,
+    "nonlegacy_dmo_requires_recomputed_v2_retail_transport_provenance": true,
+    "arbitrary_nonlegacy_dmo_hashes_rejected": true,
+    "legacy_v2_compat_proof_preserved": true
+  },
+  "decision": {
+    "fresh_c164_trace_may_be_preregistered": true,
+    "c169_remains_forensic_only": true,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

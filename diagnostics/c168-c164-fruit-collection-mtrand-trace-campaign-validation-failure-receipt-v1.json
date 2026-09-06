@@ -1,0 +1,33 @@
+{
+  "schema": "zuma-rl.pc-gameplay-mtrand-call-trace-campaign-validation-failure-receipt",
+  "version": 1,
+  "status": "FAIL_CLOSED_BEFORE_OUTPUT_OR_PROCESS_LAUNCH",
+  "created_utc": "2026-08-10T13:03:35.2896219Z",
+  "preregistration": {
+    "artifact": "diagnostics/c168-c164-fruit-collection-mtrand-trace-transport-campaign-preregistration-v1.json",
+    "artifact_sha256": "sha256:bc0772aca9b6e763d6aea164711529fb9250991946c150c88f4b569f60f09019"
+  },
+  "failed_step": {
+    "error_type": "ProbeError",
+    "error": "diagnostic_source_bound_replay_contract_invalid",
+    "cause": "collect_pc_memory_probe requires maximum_attempts exactly 1 for every diagnostic_source_bound_replay invocation",
+    "requested_maximum_attempts": 7,
+    "failure_at_argument_validation": true,
+    "output_root_created": false,
+    "game_process_launched": false,
+    "target_window_observed": false
+  },
+  "post_failure_observation": {
+    "residual_game_process_count": 0,
+    "host_state_change_possible": false,
+    "scientific_attempt_count_increment": 0
+  },
+  "decision": {
+    "same_invalid_command_not_retried": true,
+    "future_transport_attempts_must_each_use_a_new_preregistered_single-attempt_output_root": true,
+    "code_changed": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "schema": "zuma-rl.overnight-multilevel-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_TRAINING",
+  "frozen_utc": "2026-08-13T23:38:00Z",
+  "id": "alphazuma-v1.1-main-oom-recovery-s47081301-v1",
+  "objective": "Resume the two primary V1.1 lineages from their last intact periodic checkpoints after the preserved WSL global-OOM incident, restoring policy and Adam state bitwise while using new disjoint episode seeds and output directories.",
+  "scope": {
+    "release_line": "AlphaZuma V1.1",
+    "post_incident_recovery": true,
+    "state_policy": true,
+    "single_frog_control_contract_only": true,
+    "two_curve_levels_included": ["Jungle9", "village6"],
+    "moving_or_multiple_frog_training_included": false,
+    "original_client_visual_control": false,
+    "architecture_changed": false,
+    "reward_changed": false,
+    "human_input_limits_changed": false,
+    "optimizer_state_must_restore_bitwise": true
+  },
+  "trainer": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/train_overnight_multilevel.py",
+    "sha256": "sha256:2886a72a7348e492f4d34f4ef9733eee1668df24e17cc896ace0094267d371ba"
+  },
+  "incident": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-v1.1-wsl-oom-incident-v1.json",
+    "sha256": "sha256:d3b95781adca861c51d3426aba9487bd9729ed454066b8524ef5e8934069b975",
+    "wsl_memory_before_kb": 65582876,
+    "wsl_memory_after_kb": 98864896,
+    "wsl_processors": 48,
+    "wsl_swap_kb": 16777216,
+    "wsl_config_sha256": "sha256:f0b2e2bb9796e3e2bb87536fe6dbc7a6651a3e15686ae3dcb9e610e3ab64912e"
+  },
+  "initial_model": {
+    "id": "alphazuma-v1-published-champion-adaptive-mid-13631488",
+    "training_steps": 13631488,
+    "path": "/mnt/d/ZumaTraining/overnight-v11-adaptive-recovery-s43081301-v1/checkpoints/adaptive-5090-recovery_13631488_steps.zip",
+    "sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579"
+  },
+  "levels": [
+    {"id": "Jungle1", "display_name": "Shipwrecked!", "curve_count": 1, "curve_names": ["Jungle1\\Jungle1"]},
+    {"id": "Jungle2", "display_name": "Castaway", "curve_count": 1, "curve_names": ["Jungle2\\Jungle2"]},
+    {"id": "Jungle3", "display_name": "Echo Beach", "curve_count": 1, "curve_names": ["Jungle3\\Jungle3"]},
+    {"id": "Jungle4", "display_name": "Bones of an Idol", "curve_count": 1, "curve_names": ["Jungle4\\Jungle4"]},
+    {"id": "jungle6", "display_name": "Jungle Clearing", "curve_count": 1, "curve_names": ["Jungle6\\Jungle6"]},
+    {"id": "Jungle7", "display_name": "Sand Trap", "curve_count": 1, "curve_names": ["Jungle7\\Jungle7"]},
+    {"id": "Jungle8", "display_name": "Nasal Passage", "curve_count": 1, "curve_names": ["Jungle8\\Jungle8"]},
+    {"id": "Jungle9", "display_name": "Creeper Copse", "curve_count": 2, "curve_names": ["Jungle9\\Jungle9-1", "Jungle9\\Jungle9-2"]},
+    {"id": "Jungle10", "display_name": "Darkness Falls", "curve_count": 1, "curve_names": ["Jungle10\\Jungle10"]},
+    {"id": "village1", "display_name": "Watering Hole", "curve_count": 1, "curve_names": ["Village1"]},
+    {"id": "village2", "display_name": "Overgrown Plaza", "curve_count": 1, "curve_names": ["Village2"]},
+    {"id": "village4", "display_name": "Sandspirals", "curve_count": 1, "curve_names": ["Village4v2"]},
+    {"id": "village5", "display_name": "Abandoned Well", "curve_count": 1, "curve_names": ["Village5"]},
+    {"id": "village6", "display_name": "Face Your Fear", "curve_count": 2, "curve_names": ["Village6-1", "Village6-2"]},
+    {"id": "village7", "display_name": "Seven Sides (minus one)", "curve_count": 1, "curve_names": ["Village7"]},
+    {"id": "village8", "display_name": "Vines of Vengeance", "curve_count": 1, "curve_names": ["Village8"]},
+    {"id": "village10", "display_name": "The Horseshoe", "curve_count": 1, "curve_names": ["Village10\\Village10v2"]}
+  ],
+  "environment": {
+    "profile_mode": "tutorials_completed",
+    "hard": false,
+    "curve_index": 0,
+    "base_config": {
+      "aim_bins": 180,
+      "action_mode": "factorized",
+      "frame_skip": 1,
+      "max_ticks": 12000,
+      "max_balls": 768,
+      "max_projectiles": 32,
+      "max_curves": 2,
+      "score_reward_scale": 0.01,
+      "step_penalty": -0.0001,
+      "win_reward": 10,
+      "loss_reward": -10,
+      "privileged_debug": false,
+      "render_width": 400,
+      "render_height": 300
+    },
+    "input_profile": {
+      "profile_id": "elite-human-v1",
+      "reaction_delay_ticks": 12,
+      "max_aim_speed_degrees_per_second": 1080,
+      "max_aim_acceleration_degrees_per_second_squared": 18000,
+      "min_button_interval_ticks": 5
+    },
+    "reward_profile": {
+      "profile_id": "win-time-score-v1",
+      "win_reward": 10,
+      "failure_reward": -10,
+      "time_penalty_per_native_tick": -0.0001,
+      "score_progress_reward_cap": 0.01
+    }
+  },
+  "runs": [
+    {
+      "id": "frontier-adaptive-5090-oom-recovery",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-v1.1-frontier-adaptive-oom-recovery-s47081301-v1",
+      "device": "cuda:0",
+      "seed": 47081301,
+      "episode_seed_base": 930000000,
+      "episode_seed_stride": 250000,
+      "total_steps": 60000000,
+      "num_envs": 16,
+      "rollout_steps": 256,
+      "batch_size": 512,
+      "ppo_epochs": 1,
+      "learning_rate": 0.000005,
+      "entropy_coef": 0,
+      "checkpoint_every": 524288,
+      "initial_weights": {
+        "Jungle1": 0.5, "Jungle2": 2.5, "Jungle3": 0.5, "Jungle4": 0.5,
+        "jungle6": 0.5, "Jungle7": 6, "Jungle8": 0.5, "Jungle9": 4,
+        "Jungle10": 0.75, "village1": 0.75, "village2": 0.75,
+        "village4": 2.5, "village5": 5, "village6": 7, "village7": 2.5,
+        "village8": 4, "village10": 7
+      },
+      "adaptive": {
+        "enabled": true,
+        "update_every_steps": 262144,
+        "rolling_episodes": 64,
+        "minimum_episodes": 4,
+        "minimum_weight": 0.5,
+        "maximum_weight": 8,
+        "anchor_level": "Jungle2"
+      },
+      "resume_model": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-frontier-adaptive-s44081301-v1/checkpoints/frontier-adaptive-5090_16777216_steps.zip",
+        "sha256": "sha256:7823840418e94525543983d0b05f0660af9c107734909caea936eeb15e042b8d",
+        "timesteps": 16777216,
+        "source_run_id": "frontier-adaptive-5090"
+      },
+      "resume_curriculum": {
+        "weights": {
+          "Jungle1": 1.8,
+          "Jungle2": 2.5,
+          "Jungle3": 1.3821428571428573,
+          "Jungle4": 1.215,
+          "jungle6": 1.475,
+          "Jungle7": 4.617021276595745,
+          "Jungle8": 0.5,
+          "Jungle9": 3.65,
+          "Jungle10": 1.5625,
+          "village1": 1.4696428571428573,
+          "village2": 1.486029411764706,
+          "village4": 2.6477272727272725,
+          "village5": 4.2524999999999995,
+          "village6": 5.018548387096774,
+          "village7": 2.463888888888889,
+          "village8": 3.1468749999999996,
+          "village10": 5.009375
+        },
+        "rolling_outcome_order_restored": false,
+        "reason": "The callback does not checkpoint ordered rolling outcomes; the last published weights are restored exactly and fresh recovery outcomes drive later updates."
+      }
+    },
+    {
+      "id": "frontier-fixed-5080-oom-recovery",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-v1.1-frontier-fixed-oom-recovery-s47081302-v1",
+      "device": "cuda:1",
+      "seed": 47081302,
+      "episode_seed_base": 940000000,
+      "episode_seed_stride": 250000,
+      "total_steps": 60000000,
+      "num_envs": 16,
+      "rollout_steps": 256,
+      "batch_size": 512,
+      "ppo_epochs": 1,
+      "learning_rate": 0.000005,
+      "entropy_coef": 0,
+      "checkpoint_every": 524288,
+      "initial_weights": {
+        "Jungle1": 0.5, "Jungle2": 2.5, "Jungle3": 0.5, "Jungle4": 0.5,
+        "jungle6": 0.5, "Jungle7": 6, "Jungle8": 0.5, "Jungle9": 4,
+        "Jungle10": 0.75, "village1": 0.75, "village2": 0.75,
+        "village4": 2.5, "village5": 5, "village6": 7, "village7": 2.5,
+        "village8": 4, "village10": 7
+      },
+      "adaptive": {
+        "enabled": false,
+        "update_every_steps": 262144,
+        "rolling_episodes": 64,
+        "minimum_episodes": 4,
+        "minimum_weight": 0.5,
+        "maximum_weight": 8,
+        "anchor_level": "Jungle2"
+      },
+      "resume_model": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-frontier-fixed-s44081302-v1/checkpoints/frontier-fixed-5080_15728640_steps.zip",
+        "sha256": "sha256:cbd3653264ed73884fb6a56926030c00600fb5f3866f1e0945d14e3ffe4f86f2",
+        "timesteps": 15728640,
+        "source_run_id": "frontier-fixed-5080"
+      }
+    }
+  ],
+  "seed_isolation": {
+    "adaptive_recovery_episode_range": [930000000, 933999999],
+    "fixed_recovery_episode_range": [940000000, 943999999],
+    "all_preincident_training_ranges_end_at": 909999999,
+    "selection_seed_base_reserved": 910000000,
+    "final_blind_seed_base_reserved": 1010000000,
+    "no_overlap": true
+  },
+  "schedule": {
+    "training_stop_utc": "2026-08-14T12:00:00Z",
+    "training_stop_local": "2026-08-14T08:00:00-04:00",
+    "reserved_for_selection_and_reporting_seconds": 9000,
+    "goal_end_utc": "2026-08-14T14:30:00Z",
+    "goal_end_local": "2026-08-14T10:30:00-04:00"
+  },
+  "implementation": {
+    "revenge_core": {"path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_core.py", "sha256": "sha256:2652b12d396d47f70875323ab7157c64d68d5067ff762cc723a2aba99329dae3"},
+    "revenge_env": {"path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_env.py", "sha256": "sha256:8c4e49e31725a5c47b3dd4933c6e3b9195bcbddc717e5390bf4e5a56f0d6e8d0"},
+    "human_speedrun": {"path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/human_speedrun.py", "sha256": "sha256:d2df69821ce5f5e837a962cfc6efdafaf152baf06a30fb8c6d2c04ddec6517dd"}
+  }
+}

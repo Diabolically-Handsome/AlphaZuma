@@ -1,0 +1,55 @@
+{
+  "schema": "zuma-rl.retail-fruit-powerup-preservation-recording-ensemble-execution-receipt",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T14:20:28.6082935Z",
+  "classification": "completed-fixed-ensemble-before-target-feature-analysis",
+  "preregistration": {
+    "path": "diagnostics/recording-c177-fruit-powerup-preservation-ensemble-preregistration-v1.json",
+    "sha256": "sha256:b1b18e8175f75a6ab9746ae32029f678053f0a81c802aecd3e4423b19c9c53be"
+  },
+  "target_feature_analysis_performed_before_this_receipt": false,
+  "attempt_fields": [
+    "id",
+    "result_bytes",
+    "result_sha256",
+    "dmo_bytes",
+    "dmo_sha256",
+    "autoplay_bytes",
+    "autoplay_sha256",
+    "rng_monitor_sha256",
+    "global_trace_sha256",
+    "gameplay_elapsed_seconds",
+    "final_score"
+  ],
+  "attempts": [
+    ["c177a1", 21008, "sha256:a69bd8e49276212374be72cc9a76bcc9e05b3f902217407d3ccf2b90b97d6fcd", 21666, "sha256:de405487271a5fd2b1718333a839b2c727c43b013745d9fa9465bab2cadc4554", 90432, "sha256:3178d7daa3ea397a082362a2d316d3ea677ff41772c5992db5e7434df0815670", "sha256:c1a06f8b004ccbaee5ac41d5d2b824933c8398b28ea4cca7e22df4dd677c7eb0", "sha256:28cdf2ea736810b03b139cf17532f466b68f167b8812fbd1a77ddca23c50e26f", 41.26500000001397, 9860],
+    ["c177a2", 21001, "sha256:7d7e211ec7577d83dc65beb724c11f315453d72380f44482e37391817de4b4fe", 21805, "sha256:0e12355da7d135d1197c23c55bc3c2d9374c3a76e2529cc24cd848ed582000cd", 112069, "sha256:80c08197b7673808b9dcb6038907310b49496bbc6f2d43030efb788226dea11d", "sha256:4be8834b4088efd95524815eb98cf3dbbcb920f1e00fa8ed96e72cd6f4c35927", "sha256:63e55fcd6d71562734aac7a7183643f86243d5cc40c67ab0962d3a204328415b", 46.29700000002049, 9800],
+    ["c177a3", 20998, "sha256:a8c07256741d0c7b0859daf74ee78e04d69244aba34abae28ab128972f8b0f3a", 21680, "sha256:4441c5c704b329d2c2c610a5930408bf7c1b9c0afb82098c221276f1b68f14e9", 93831, "sha256:c5f8d6ab3939ba1974ba45c786180146e1a315bf88284b0e5d14dfe3be2505fd", "sha256:d9da0a8b88aee253f9fedaf104eebb25d8ccd916a94cbaf701972ea6dc48a1d5", "sha256:a722052289f680c1bb4426256d8df8d92472d012cb78dd5f9675c0f34479b7d2", 44.65700000000652, 10220],
+    ["c177a4", 21013, "sha256:393494ab9d77b1c68f81b179b2052519c51e15f8bd08c23af5d9a868b54d5a8f", 21863, "sha256:a2644e1c1d79aace9ba4ec6724035bf1daf75b04f9bc0f5a1598f9e99e619749", 115986, "sha256:59b40dbdb61056c53fac1334fb9e4abe10fd30eaf2471ad92518f95c6ac6cee9", "sha256:9ebb1cdaf33ba3e69fae19bca99a859dac62f661e535e4f540b5066497e8da14", "sha256:8e1968e36d312b920a1679d0e1dfd67ff8098eae2a2f3004e1eb23d63146f5b1", 55.29599999997299, 9940],
+    ["c177a5", 21010, "sha256:dd3bbc3cedbccdbd64cafcb806dc3d09c72cac83dc32c41c1e371f2d0e36493f", 21780, "sha256:dbf11a66b75fab359838fc0c7f197e20109ae355cf2dc3fd7df742147a2e1a8e", 107235, "sha256:8ebcd15bf0a50e4e4a811334f41754a17690c2f71b15c6e777509fd6bb9c50c6", "sha256:a6fc0a8712bb7e7570146897a164044dd52efb0052439425527ee9f754788e50", "sha256:10d65e78ae0472995426ca318fdb0a5234942a1f6a745e7cb46b053666c445d8", 47.92200000002049, 10040],
+    ["c177a6", 20995, "sha256:bbe2fab6b56e723faf3926d91a88e6036b6f11e3eda08f66658b4c098ab85eb0", 21644, "sha256:e7b3e7402ac37082341d86a03fe6312fa1940d2a7de14a3a178db4af81035f9c", 86472, "sha256:505610f3726d8f1e1a3f3ae50a32ea9a4d6e84a1f7edfd379785f2695ad8c984", "sha256:619302a3fbb4433a166729721e32b4370afe425dd5bec5c198b707c3d9b9a7fb", "sha256:95672ff67a67f8f014a817a1b28a0ab923c05dde99bd3dd08119926c70173dfe", 40.60899999999674, 9700],
+    ["c177a7", 20997, "sha256:b8b70c95e95b2be6c79f9cc8607120889112039cc6c4cf7b2a36999866b22e6f", 21671, "sha256:87ebbd38a199890156b4fd3c85be39d1431780a9b3e0d04b3e323d00f2a64796", 90489, "sha256:e38067005eb3f8e5bdba5c60e4e512253e948e220a574391b7b301e6b7312171", "sha256:1dd20fa62e4be1b97b3f3b899b29c4a68d43c568d105d61fec0bfe3db195d9f0", "sha256:135140d7e4a6eecee8e2296b824f1af120ec4c22a4b911966cf5fecd01d82400", 37.875, 10240],
+    ["c177a8", 20996, "sha256:d7668492679894e6808a7279045b35b60417b8ed0b8645f0121a4a92e34a60fa", 21747, "sha256:46abd8c4a1bcb11cf04ab0d057324d19cf606a23f2f2624321aea959451b6f2e", 98883, "sha256:95bd611ebb7967c379f801f22112ef1da56520e550133fc6c37e13b874191e5c", "sha256:7c61c9b61c390822275e3d01eae2bbabb3257ffb36760d2666fb6a0002ecec1f", "sha256:8af8fb798b229c703265fc6b8d90e95c343723718bc2510c1f6419486b130549", 44.25, 10010]
+  ],
+  "common_contract": {
+    "completed_attempts": 8,
+    "recording_status_passes": 8,
+    "natural_wins": 8,
+    "normal_exits": 8,
+    "global_trace_passes": 8,
+    "zero_process_memory_write_attempts": 8,
+    "host_pre_and_restored_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_exact_restores": 8,
+    "controlled_crt_rand_seed": null,
+    "active_game_process_count_after_ensemble": 0
+  },
+  "decision": {
+    "all_declared_attempts_completed": true,
+    "target_feature_analysis_now_permitted": true,
+    "recordings_are_pc_golden": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "schema": "zuma-rl.training-timelimit-screening-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T09:03:35.626Z",
+  "status": "EPISODE_DIVERSITY_SCREEN_FAIL",
+  "decision": {
+    "episode_diversity_mechanism_supported": false,
+    "training_time_limit_2048_rejected_as_standalone_recipe": true,
+    "large_scale_training_authorized": false,
+    "fresh_seed_confirmation_authorized": false,
+    "reason": "the pipeline and baseline replay passed, but both full-horizon modes declined from initialization and the stochastic endpoint was also worse than the matched 98304-step control",
+    "next_experiment": "actor_observable_teacher_capacity_and_action_semantic_credit_assignment_diagnostic"
+  },
+  "diagnostics": {
+    "classification": "failure_conditioned_closed_gate_episode_diversity_mechanism_screen",
+    "formal_significance_claim": false,
+    "supported": [
+      "the training-only boundary changed neither pretrain evaluation receipt nor full-horizon evaluation semantics",
+      "the curriculum improved endpoint critic explained variance from 0.012631893 to 0.477172315 on the matched seed",
+      "improved critic fit and more reset boundaries did not recover deterministic or stochastic policy quality",
+      "episode-boundary scarcity is therefore not a sufficient explanation for the failed PPO recipe"
+    ],
+    "monitoring_note": "Gymnasium TimeLimit is outside the make_vec_env Monitor wrapper, so curriculum truncations affect PPO correctly but do not populate rollout episode summary scalars",
+    "unresolved": [
+      "whether the flat padded MLP actor lacks an efficient entity and geometry inductive bias",
+      "whether 180-way aim credit is too dilute when optimized jointly with per-tick verb actions",
+      "whether actor-observable behavior cloning can provide a stable policy initialization before RL fine-tuning"
+    ],
+    "tensorboard_endpoint": {
+      "curriculum_explained_variance": 0.477172315120697,
+      "control_explained_variance": 0.012631893157958984,
+      "curriculum_entropy_loss": -5.10662317276001,
+      "control_entropy_loss": -4.867712497711182
+    }
+  },
+  "evidence": {
+    "preregistration": {
+      "path": "diagnostics/training-timelimit2048-screening-s20260811-preregistration-v1.json",
+      "sha256": "sha256:ecbc8c08bdd972cc825206d06bb533a9acb32976e296faf43c5e98662d5c56f8"
+    },
+    "run": {
+      "root": "D:/ZumaTraining/curriculum-timelimit2048-jungle2-masked-ent000-s20260811-v1",
+      "status": "COMPLETE",
+      "failure_receipt_present": false,
+      "artifacts": {
+        "config": "sha256:18f1a0236d0b761a42d8043f1cd575ecffb550a8ffe6e4495fc3a12449395970",
+        "completion": "sha256:797873eab4c0dffe9910a17bbffc17e7a2e43c44688897956be96ccb10c2fb86",
+        "final_model": "sha256:bd0c469d7ecc422177b8530c097cd615e4cd242d9f484879320a2f990780caf5",
+        "pretrain_deterministic": "sha256:c2d1cd7c16e065c220cb52fe5245ee24dad8a0d243b82a99e26454798508b471",
+        "pretrain_stochastic": "sha256:a574110caea42a912f9ae305518e773114b76e00a0addb31ba690da86eead825",
+        "posttrain_deterministic": "sha256:20c1c759dfad047661b284f08fe77fb651bd3c46d7aabc5af3a2897cd18f40c7",
+        "posttrain_stochastic": "sha256:6cb6b28eb8fd7e9fef194eb223b08d812703d8313f3e588d5d738a937cb252a1"
+      }
+    },
+    "matched_control": {
+      "root": "D:/ZumaTraining/horizon98304-jungle2-masked-ent000-s20260811-v1",
+      "deterministic_posttrain_mean": -10.6399,
+      "stochastic_posttrain_mean": 47.419575
+    }
+  },
+  "results": {
+    "baseline_receipts_byte_identical": {
+      "deterministic": true,
+      "stochastic": true
+    },
+    "deterministic": {
+      "pretrain_mean": 4.85145,
+      "posttrain_mean": -2.8251875,
+      "mean_delta": -7.6766375,
+      "paired_improved_count": 2,
+      "paired_deltas": [2.2142, -6.1867, -24.0816, -6.8455, 4.9732, -18.5693, -4.5556, -8.3618],
+      "matched_control_advantage": 7.8147125,
+      "status": "FAIL"
+    },
+    "stochastic": {
+      "pretrain_mean": 52.0212625,
+      "posttrain_mean": 40.5658875,
+      "mean_delta": -11.455375,
+      "paired_improved_count": 2,
+      "paired_deltas": [1.6043, -39.5473, -31.9, -21.1, 24.3, -4.7, -14.3, -6.0],
+      "matched_control_advantage": -6.8536875,
+      "status": "FAIL"
+    },
+    "preregistered_acceptance": {
+      "pipeline": "PASS",
+      "baseline_replay": "PASS_2_OF_2_BYTE_IDENTICAL",
+      "within_curriculum_deterministic": "FAIL_2_OF_6_AND_MEAN_DECLINED",
+      "within_curriculum_stochastic": "FAIL_2_OF_5_AND_MEAN_DECLINED",
+      "matched_control_deterministic": "PASS",
+      "matched_control_stochastic": "FAIL",
+      "promotion": "FAIL",
+      "rejection_rule": "PASS_TRAINING_TIME_LIMIT_2048_REJECTED"
+    }
+  }
+}

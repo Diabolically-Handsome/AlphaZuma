@@ -1,0 +1,115 @@
+{
+  "schema": "zuma-rl.retail-targeted-recording-ensemble-preregistration",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T07:38:19.4148220Z",
+  "purpose": "Acquire independent ordinary-input DMO candidates for natural skull loss and projectile fruit collection without selecting the number of recordings from observed feature presence.",
+  "classification": "candidate-recording-not-pc-golden",
+  "frozen_implementation": {
+    "record_controller": {
+      "path": "tools/record_autoplay_zuma.py",
+      "bytes": 45375,
+      "sha256": "sha256:3a78d173bf3a889efc9c25993d7fa00193ac53db3d73411c9455a169012c8681"
+    },
+    "live_controller": {
+      "path": "tools/autoplay_live_zuma.py",
+      "bytes": 39032,
+      "sha256": "sha256:b95fbb7e3a2eba6aa0771d8780b61df85295b1516a6159650ef432795f90e7e0"
+    },
+    "focused_test_count": 32
+  },
+  "retail_contract": {
+    "runtime_executable": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "changedir": "D:/SteamLibrary/steamapps/common/Zuma's Revenge",
+    "prestate_dir": "D:/ZumaGolden/session-20260728-203153/native-windowed-record-001-prestate-reconstructed",
+    "prestate_files": [
+      ["adv_in_game2.sav", 6748, "sha256:0009b6b3309aaa1bd6689e8093d66f36fea43648ebc3ad66ec911ddf1ee23539"],
+      ["adv_in_game2.sav.provenance.json", 801, "sha256:29e7fcd7f87914b816a562286c4fc210b6310a1a4e1e01411d0151bf249e48cb"],
+      ["user2.dat", 2225, "sha256:8bfbb6b7321169c19539f9c0e580bf0de7436f60bd1e0f7f63433e07aa0cd672"],
+      ["user2.dat.provenance.json", 792, "sha256:8732ff01dffb4bfc786f65c950f66f39a88c50f60874ea939fe34622ea99b0a0"],
+      ["users.dat", 54, "sha256:99a6996f6105eccc3e1bb2f95b5d2ec2a1d261e6d63aa22cc213e5c88f3e26f6"],
+      ["users.dat.provenance.json", 787, "sha256:a8acee0681ca91168fa45a92cf8ac5c6c11789f6e948a5efeb13e97dfe8b6b53"]
+    ],
+    "expected_score_target": 9650,
+    "minimum_entry_score": 7000,
+    "maximum_gameplay_seconds": 180.0,
+    "navigation": {
+      "title_start_update": 1622,
+      "title_start_point": [400.0, 533.0],
+      "adventure_update": 2422,
+      "adventure_point": [633.0, 281.0],
+      "continue_game_update": 3108,
+      "continue_game_point": [399.0, 456.0],
+      "prelaunch_cursor_screen_point": [100, 100]
+    },
+    "rng_monitor_stop_native_time": 500,
+    "gameplay_mtrand_trace": true,
+    "mtrand_trace_kind": "global_wrapper_entry",
+    "controlled_crt_rand_seed": null,
+    "process_memory_writes_required": 0,
+    "host_state_restore_required": true
+  },
+  "run_order": [
+    "c137a1",
+    "c137a2",
+    "c137a3",
+    "c138a1",
+    "c138a2",
+    "c138a3"
+  ],
+  "runs": [
+    {
+      "id": "c137a1",
+      "output_root": "D:/ZumaGolden/record-c137a1-idle-natural-loss-v1",
+      "expected_outcome": "natural_loss",
+      "gameplay_policy": "idle",
+      "fruit_policy": "ignore"
+    },
+    {
+      "id": "c137a2",
+      "output_root": "D:/ZumaGolden/record-c137a2-idle-natural-loss-v1",
+      "expected_outcome": "natural_loss",
+      "gameplay_policy": "idle",
+      "fruit_policy": "ignore"
+    },
+    {
+      "id": "c137a3",
+      "output_root": "D:/ZumaGolden/record-c137a3-idle-natural-loss-v1",
+      "expected_outcome": "natural_loss",
+      "gameplay_policy": "idle",
+      "fruit_policy": "ignore"
+    },
+    {
+      "id": "c138a1",
+      "output_root": "D:/ZumaGolden/record-c138a1-autoplay-fruit-collect-v1",
+      "expected_outcome": "natural_win",
+      "gameplay_policy": "autoplay",
+      "fruit_policy": "collect"
+    },
+    {
+      "id": "c138a2",
+      "output_root": "D:/ZumaGolden/record-c138a2-autoplay-fruit-collect-v1",
+      "expected_outcome": "natural_win",
+      "gameplay_policy": "autoplay",
+      "fruit_policy": "collect"
+    },
+    {
+      "id": "c138a3",
+      "output_root": "D:/ZumaGolden/record-c138a3-autoplay-fruit-collect-v1",
+      "expected_outcome": "natural_win",
+      "gameplay_policy": "autoplay",
+      "fruit_policy": "collect"
+    }
+  ],
+  "decision_rules": {
+    "every_declared_run_executes_in_order": true,
+    "no_retry_or_replacement_under_this_preregistration": true,
+    "feature_presence_does_not_change_run_count": true,
+    "failed_and_partial_outputs_are_retained": true,
+    "recording_pass_is_defined_only_by_declared_retail_outcome_and_transaction_integrity": true,
+    "fruit_shot_or_collection_presence_is_analyzed_only_after_each_recording_finishes": true,
+    "candidate_recordings_receive_no_fidelity_gate_credit": true,
+    "later_replay_sources_require_separate_fixed-window_preregistration_and_audit": true
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "schema": "zuma-rl.retail-natural-loss-board-identity-replacement-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_IMPLEMENTATION_AND_OUTPUT",
+  "created_utc": "2026-08-10T10:02:28.6610907Z",
+  "purpose": "Replace the sampling-fragile requirement to observe a transient zero score target with a direct read-only proof that retail replaced the lost Board object, then require the replacement Board to remain coherent while its native clock advances.",
+  "classification": "observation-protocol-correction-no-retroactive-credit",
+  "trigger": {
+    "parent_method_preregistration": "diagnostics/c148-low-perturbation-board-callsite-source-preregistration-v1.json",
+    "failed_run": "c148a1",
+    "failed_output_root": "D:/ZumaGolden/record-c148a1-idle-natural-loss-board-callsite-v1",
+    "result_sha256": "sha256:eedfdbd1332fd77c126b40708aa4c5a8fdd3ef29284e38782650864a0bd0ac2c",
+    "autoplay_log_sha256": "sha256:dd7b068a31c93a2929177b8204e7db950587bc28cbb7aa64d6de6183ff97e05e",
+    "dmo_sha256": "sha256:32cac92bfca0e3ffce5e25760366f9664bb28b79a54d32fbb0ed62e9e178286e",
+    "board_callsite_trace_sha256": "sha256:40b4a10304b5a250e868c27564099ac4e66339fe3ba9ca8d8efdbce269b41871",
+    "derived_rng_monitor_sha256": "sha256:f26f5c7d9b4eab7dd0df548b96d0100f91579ca9fda2c2ce65553131e9a4f4b5",
+    "observed_old_board": {
+      "native_game_time": 8312,
+      "score": 7950,
+      "score_target": 9650,
+      "curve_plan_exhausted": true
+    },
+    "observed_rollback_candidate": {
+      "native_game_time": 62,
+      "score_target": 9650,
+      "curve_plan_exhausted": true,
+      "board_unavailable_count": 1
+    },
+    "observed_replacement_board": {
+      "first_native_game_time": 0,
+      "score_target": 9616,
+      "pending_ball_count": 10,
+      "curve_plan_exhausted": false,
+      "runtime_active": false,
+      "observed_consecutively_through_native_game_time_at_least": 415
+    },
+    "root_cause": "The v2 receipt required a 10 ms polling loop to sample the transient zero-target teardown state. c148a1 observed the complete rollback and a coherent replacement Board for hundreds of native updates, but did not sample that transient and therefore correctly remained INCOMPLETE under v2."
+  },
+  "preimplementation_code": {
+    "tools/autoplay_live_zuma.py": "sha256:bbfdb8fb47e5220aa564e4c1c849523acf1dc6b31aa1de8b57c55553cb8851c5",
+    "src/zuma_rl/retail_dmo_provenance.py": "sha256:3ac202e1f8c6a41a5983474aaefbb0206f79158fd71febdb7aba12028242d06b",
+    "tests/test_autoplay_live_zuma.py": "sha256:4c258eb5ba9efcc21fd93d4aa1c79b5e0733ec814c6636b308e32803413fdbc6",
+    "tests/test_retail_dmo_provenance.py": "sha256:90a26499727c4f45eab116c81d0ae3c236e9839935d23c917b04b3c6cc84a1a2"
+  },
+  "frozen_v3_loss_contract": {
+    "receipt_kind": "natural_loss_board_identity_replacement_transition_v3",
+    "observation_mode": "read_live_board(require_shooter=false)",
+    "process_memory_access": "read_only",
+    "before_board": {
+      "board_address_positive": true,
+      "native_game_time_minimum": 1000,
+      "score_below_positive_target": true
+    },
+    "clock_reset": {
+      "minimum_board_unavailable_observations": 1,
+      "post_reset_native_game_time_maximum": 1000,
+      "minimum_native_game_time_reset": 1000
+    },
+    "replacement_identity": {
+      "replacement_board_address_positive": true,
+      "replacement_board_address_must_differ_from_before_board": true,
+      "score_target_positive": true,
+      "curve_plan_exhausted": false,
+      "combined_ball_population_positive": true,
+      "runtime_flag_157_observed_value": false,
+      "runtime_flag_157_is_not_activity_evidence": true
+    },
+    "replacement_stability": {
+      "minimum_snapshots_on_same_replacement_address": 2,
+      "minimum_native_game_time_advance": 5,
+      "replacement_address_must_remain_constant": true,
+      "score_target_must_remain_positive_and_constant": true,
+      "curve_plan_must_remain_non_exhausted": true,
+      "combined_ball_population_must_remain_positive": true,
+      "final_state_board_address_must_match_confirmed_replacement": true
+    },
+    "zero_target_teardown": {
+      "may_be_logged_as_optional_corroboration": true,
+      "required_for_v3_confirmation": false,
+      "cannot_independently_certify_win_or_loss": true
+    },
+    "gameplay_policy": "idle",
+    "action_count": 0,
+    "swap_count": 0,
+    "fruit_shot_count": 0,
+    "process_memory_writes": 0
+  },
+  "implementation_boundary": {
+    "allowed": [
+      "Include the already read Board address in compact transition and final-state receipts.",
+      "Latch the first coherent replacement state whose Board address differs from the mature pre-loss Board.",
+      "Confirm only after a second coherent state at the same replacement address and at least five native updates of progress.",
+      "Retain zero-target observations as optional corroboration fields when sampled.",
+      "Add an independent fail-closed provenance validator for the v3 receipt while preserving v1, v2, and stable-terminal compatibility."
+    ],
+    "forbidden": [
+      "Any process-memory write or gameplay input under the idle policy.",
+      "Outcome inference from timeout, labels, window closure, score-target change alone, or Board+0x157.",
+      "Accepting an unchanged, null, or reused old Board address as identity replacement.",
+      "Retroactive PASS for c148a1 or any earlier output.",
+      "Retry selection, threshold weakening after output, Fidelity Gate credit, or training before source-bound formal replay."
+    ]
+  },
+  "tooling_acceptance": {
+    "v3_positive_unit_case": true,
+    "unchanged_address_rejected": true,
+    "null_or_invalid_address_rejected": true,
+    "single_snapshot_rejected": true,
+    "insufficient_native_advance_rejected": true,
+    "replacement_address_change_during_confirmation_rejected": true,
+    "exhausted_or_empty_replacement_rejected": true,
+    "v1_v2_and_stable_terminal_legacy_tests_unchanged": true,
+    "focused_tests_and_py_compile_pass": true
+  },
+  "diagnostic_source_run": {
+    "id": "c149a1",
+    "output_root": "D:/ZumaGolden/record-c149a1-idle-natural-loss-board-identity-v3",
+    "output_root_absent_at_freeze": true,
+    "runtime_executable": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "changedir": "D:/SteamLibrary/steamapps/common/Zuma's Revenge",
+    "prestate_dir": "D:/ZumaGolden/session-20260728-203153/native-windowed-record-001-prestate-reconstructed",
+    "expected_outcome": "natural_loss",
+    "gameplay_policy": "idle",
+    "fruit_policy": "ignore",
+    "expected_score_target": 9650,
+    "minimum_entry_score": 7000,
+    "maximum_gameplay_seconds": 180.0,
+    "controlled_crt_rand_seed": null,
+    "rng_poll_monitor_disabled": true,
+    "mtrand_trace_kind": "board_global_precall",
+    "navigation_updates": [1622, 2422, 3108],
+    "process_memory_writes_required": 0,
+    "host_state_restore_required": true,
+    "maximum_started_attempts": 1
+  },
+  "post_recording_diagnostic": {
+    "normalize_only_the_known_duplicate_startup_registry_read": true,
+    "prepare_new_source_bound_plan": true,
+    "finite_stop_must_be_an_exact_DMO_command_boundary_after_the_source_anchor": true,
+    "run_one_new_strict_source_bound_diagnostic": true,
+    "required_success": {
+      "global_precall_changed": false,
+      "global_precall_bytes_written": 0,
+      "global_precall_process_memory_mutation": false,
+      "global_postcall_natural_state_match": true,
+      "global_postcall_bytes_written": 0,
+      "strict_trace_status": "PASS",
+      "host_state_restored": true
+    }
+  },
+  "decision_rule": {
+    "pass": "Freeze a separate confirmatory source ensemble before any formal natural-loss replay or Gate credit.",
+    "fail": "Retain the sole output and localize the exact failed v3 invariant; do not retry-select or relax the frozen identity/stability contract.",
+    "c149a1_may_receive_fidelity_credit": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "large_scale_training_start": false
+  }
+}

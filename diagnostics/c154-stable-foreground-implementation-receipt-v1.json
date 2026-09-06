@@ -1,0 +1,60 @@
+{
+  "schema": "zuma-rl.retail-stable-foreground-implementation-receipt",
+  "version": 1,
+  "status": "PASS_BEFORE_OUTPUT",
+  "created_utc": "2026-08-10T10:52:55.5080850Z",
+  "preregistration": {
+    "path": "diagnostics/c154-stable-foreground-target-write-preregistration-v1.json",
+    "sha256": "sha256:17c60aca04ad9805595f7b460702c06e73260ee3f7a7be6ce02426fa60e5c901"
+  },
+  "implementation": {
+    "required_continuous_foreground_seconds": 0.15,
+    "poll_interval_seconds_maximum": 0.01,
+    "stability_timeout_seconds": 2.0,
+    "foreground_loss_behavior": "Reset the interval, reacquire through the verified helper, and begin a new interval.",
+    "sendinput_boundary": "send_mouse_click is not entered past activation until both acquisition and stability receipts report verified=true.",
+    "additional_keyboard_inputs": 0,
+    "additional_mouse_inputs": 0,
+    "process_memory_writes": 0
+  },
+  "code": [
+    {
+      "path": "tools/autoplay_live_zuma.py",
+      "bytes": 83030,
+      "sha256": "sha256:6711d208cf0181782b9f9b5c1197f642ebf67a4174c51985b76d14db34d4a77f"
+    },
+    {
+      "path": "tests/test_autoplay_live_zuma.py",
+      "bytes": 19300,
+      "sha256": "sha256:465d3426d91e473d34fb831fb9daf0fac8f36ecfd8a7c116c040185dc4818c72"
+    },
+    {
+      "path": "tools/trace_popcap_gameplay_mtrand.py",
+      "bytes": 84726,
+      "sha256": "sha256:3509c1a2a07efb83e98303942bf7d7bfdda0f26f01c6f5855982e9ff061544f3"
+    },
+    {
+      "path": "tools/record_autoplay_zuma.py",
+      "bytes": 55097,
+      "sha256": "sha256:aebee6245a460c5c270e7033532668597156907862a446ebdcbe63d2a9cc31e1"
+    }
+  ],
+  "verification": {
+    "py_compile": "PASS",
+    "continuous_interval_without_loss": "PASS",
+    "two_losses_reset_timer_and_reacquire_twice": "PASS",
+    "stability_timeout_fails_before_sendinput": "PASS",
+    "autoplay_and_trace_focused_tests_passed": 75,
+    "probe_and_provenance_tests_passed": 128,
+    "integration_tests_passed": 203,
+    "failures": 0
+  },
+  "safety": {
+    "c153_output_unchanged": true,
+    "c154_output_root_created": false,
+    "target_write_trace_contract_changed": false,
+    "navigation_click_count_points_or_updates_changed": false,
+    "gate_change": false,
+    "training_start": false
+  }
+}

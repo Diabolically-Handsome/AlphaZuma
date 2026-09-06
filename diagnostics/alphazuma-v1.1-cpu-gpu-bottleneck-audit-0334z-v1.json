@@ -1,0 +1,61 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-live-cpu-gpu-bottleneck-audit",
+  "version": 1,
+  "created_utc": "2026-08-14T03:34:21.1300977Z",
+  "status": "PASS",
+  "classification": "short_live_operational_diagnostic_only",
+  "system": {
+    "wsl_logical_processors": 48,
+    "power_plan": "High performance",
+    "training_process_count": 7
+  },
+  "training_process_snapshot": {
+    "process_cpu_percent": [90.4, 90.1, 90.1, 89.6, 86.7, 80.0, 78.8],
+    "threads_per_process": [7, 7, 7, 7, 7, 7, 7],
+    "allowed_cpu_list_for_every_process": "0-47",
+    "incorrect_single_core_pinning_detected": false
+  },
+  "joint_sample": {
+    "sample_count": 12,
+    "nominal_sampling_interval_seconds": 5,
+    "host_cpu_percent": {
+      "mean": 22.13,
+      "maximum": 28.02
+    },
+    "gpus": [
+      {
+        "index": 0,
+        "model": "NVIDIA GeForce RTX 5090",
+        "utilization_percent_mean": 78.25,
+        "power_watts_mean": 241.86,
+        "sm_clock_mhz_mean": 2947.67,
+        "temperature_celsius_after_sample": 51
+      },
+      {
+        "index": 1,
+        "model": "NVIDIA GeForce RTX 5080",
+        "utilization_percent_mean": 74.25,
+        "power_watts_mean": 149.47,
+        "sm_clock_mhz_mean": 2902.0,
+        "temperature_celsius_after_sample": 56
+      }
+    ],
+    "aggregate_gpu_utilization_percent_mean": 76.25
+  },
+  "interpretation": {
+    "host_cpu_saturation_detected": false,
+    "gpu_clock_throttling_detected": false,
+    "training_process_affinity_fault_detected": false,
+    "remaining_gpu_idle_time_consistent_with_sequential_environment_interaction": true,
+    "strict_causal_claim": false
+  },
+  "decision": {
+    "change_process_affinity": false,
+    "change_frozen_training_recipe": false,
+    "add_training_route_or_filler_work": false,
+    "retain_current_seven_route_portfolio": true,
+    "reason": "Observed utilization is already close to the requested approximately 80 percent target; increasing rollout concurrency or candidate routes would alter the frozen training semantics and selection population."
+  },
+  "formal_seed_consumption": "none",
+  "formal_gate_effect": "none"
+}

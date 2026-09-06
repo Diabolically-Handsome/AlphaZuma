@@ -1,0 +1,69 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-live-tensorboard-audit-receipt",
+  "version": 1,
+  "completed_utc": "2026-08-14T05:08:52.6393918Z",
+  "status": "PASS",
+  "classification": "live_training_diagnostic_only",
+  "immutable_snapshot": {
+    "path": "D:\\ZumaTraining\\alphazuma-v1.1-live-tensorboard-audit-0508z-s66081301-v1",
+    "created_utc": "2026-08-14T05:08:15.6378818Z",
+    "run_directories": 7,
+    "event_files": 7,
+    "status_files": 7,
+    "copied_files": 14,
+    "copied_bytes": 6415463
+  },
+  "source_audit": {
+    "path": "D:\\ZumaTraining\\alphazuma-v1.1-live-tensorboard-audit-0508z-s66081301-v1\\audit.json",
+    "created_utc": "2026-08-14T05:08:27.936048Z",
+    "sha256": "sha256:c07c142fd9b4bb4895ef1e4bf47ba36eca4853717645f76abe645bf488b5ecd7"
+  },
+  "tool": {
+    "path": "tools/audit_alphazuma_v11_tensorboard.py",
+    "sha256": "sha256:9eec5f90e0f61d668524ea5795fa2007dccc94f5a1db4ec52962fecd1add6378"
+  },
+  "tests": {
+    "path": "tests/test_audit_alphazuma_v11_tensorboard.py",
+    "sha256": "sha256:a5d1bbc02d70d5b3d3fea8c9b42e6e106c0780fa1ec2c7e76d004b9b46059696",
+    "most_recent_result": "3_passed"
+  },
+  "validation": {
+    "runs": 7,
+    "passed": 7,
+    "failed": 0,
+    "expected_scalar_streams": 84,
+    "missing_scalar_streams": 0,
+    "nonfinite_scalar_streams": 0,
+    "structural_errors": 0,
+    "diagnostic_warnings": 0,
+    "maximum_event_age_seconds": 28.191792,
+    "maximum_status_age_seconds": 48.97678,
+    "copied_status_and_event_files_independently_double_hashed": 14,
+    "double_hash_mismatches": 0
+  },
+  "recent_means": [
+    {"run": "frontier-adaptive-5090-oom-recovery", "fps": 398.0, "approx_kl": 0.000011137180035802884, "clip_fraction": 0.0, "explained_variance": 0.7526311695575714, "entropy_loss": -1.4592596650123597, "value_loss": 0.10232149198418483},
+    {"run": "frontier-fixed-5080-oom-recovery", "fps": 410.1, "approx_kl": 0.000011772588004532736, "clip_fraction": 0.0, "explained_variance": 0.7551027595996856, "entropy_loss": -1.3960248827934265, "value_loss": 0.07177836437476799},
+    {"run": "memdense-adaptive-5090-a", "fps": 231.0, "approx_kl": 0.004740096349269152, "clip_fraction": 0.027284546103328467, "explained_variance": 0.6821362465620041, "entropy_loss": -0.9011176556348801, "value_loss": 0.09006401859223842},
+    {"run": "memdense-fixed-5090-b", "fps": 230.0, "approx_kl": 0.005400707758963108, "clip_fraction": 0.03121521007269621, "explained_variance": 0.7605241417884827, "entropy_loss": -1.1537163138389588, "value_loss": 0.08562188280047849},
+    {"run": "memdense-adaptive-5080-a", "fps": 226.0, "approx_kl": 0.004963108489755541, "clip_fraction": 0.028461914416402577, "explained_variance": 0.6682725310325622, "entropy_loss": -0.9896416038274765, "value_loss": 0.10142131841275841},
+    {"run": "memdense-fixed-5080-b", "fps": 222.0, "approx_kl": 0.005186137463897467, "clip_fraction": 0.03272766098380089, "explained_variance": 0.8340093195438385, "entropy_loss": -1.0078305393457412, "value_loss": 0.05458374916343019},
+    {"run": "ultradense-zero-win-5090-c", "fps": 124.0, "approx_kl": 0.004640849016141146, "clip_fraction": 0.024379882519133388, "explained_variance": 0.6971137404441834, "entropy_loss": -1.09208901822567, "value_loss": 0.10730233549838886}
+  ],
+  "difficult_level_training_flow": [
+    {"level": "Jungle7", "episodes": 764, "wins": 7, "routes_with_win": 3, "episodes_since_0336z": 217, "wins_since_0336z": 3, "new_routes_with_win_since_0336z": 1},
+    {"level": "village6", "episodes": 837, "wins": 1, "routes_with_win": 1, "episodes_since_0336z": 248, "wins_since_0336z": 0, "new_routes_with_win_since_0336z": 0},
+    {"level": "village10", "episodes": 870, "wins": 0, "routes_with_win": 0, "episodes_since_0336z": 226, "wins_since_0336z": 0, "new_routes_with_win_since_0336z": 0}
+  ],
+  "interpretation": {
+    "numerical_divergence_detected": false,
+    "policy_entropy_collapse_detected": false,
+    "difficulty_starvation_detected": false,
+    "new_jungle7_training_wins_since_0336z": true,
+    "performance_improvement_claimed": false,
+    "reason": "All optimizer streams remain fresh and finite. Jungle7 training wins increased, but on-policy training outcomes cannot substitute for frozen blind evaluation."
+  },
+  "training_or_evaluation_semantics_changed": false,
+  "formal_seed_consumption": "none",
+  "formal_gate_effect": "none"
+}

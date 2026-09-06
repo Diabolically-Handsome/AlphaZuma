@@ -1,0 +1,96 @@
+{
+  "schema": "zuma-rl.alphazuma-55-recovery-intervention-probe-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_PROBE",
+  "created_utc": "2026-08-16T20:18:04.9851997Z",
+  "purpose": "Test whether a student-first persistent-disagreement controller can recover policy-induced states with bounded teacher execution before any recovery-focused training is authorized.",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "probe": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/probe_alphazuma_55_recovery_intervention_v1.py",
+    "sha256": "sha256:08fcb31909235afbe0e56fc8c3b7806ad8a09f97e6bacba641a3522aa6c43ca0"
+  },
+  "controller": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/alphazuma_55_recovery_intervention_v1.py",
+    "sha256": "sha256:178d5875bdec9cfe55557eb67ff8d9e2483a4587e51dc6d522f48930f77f0168"
+  },
+  "source": {
+    "id": "motor-v3-source-final",
+    "completion_path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-replay-s99081616-v3/completion.json",
+    "completion_sha256": "sha256:c8a5874a977f2a4bb3ef4ea1422cb8439df75ca3e53ad50a87c23a6eac03d109",
+    "model_path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-replay-s99081616-v3/final_model.zip",
+    "model_sha256": "sha256:a93a219f923708a3f7de4b9d149c84d0d755dce56f97cc3edf440ecfb2b485bf",
+    "selection_rule": "frozen motor-observable V3 source baseline; no result-conditioned candidate substitution"
+  },
+  "levels": [
+    "Jungle1",
+    "Jungle9",
+    "village3",
+    "village8",
+    "city1",
+    "city9",
+    "Coast1",
+    "Coast9",
+    "grotto1",
+    "grotto9",
+    "volcano1",
+    "volcano9"
+  ],
+  "level_selection_rule": "the pre-existing fixed 12-level cross-world screen panel; chosen before this probe and not from the probe outcomes",
+  "paired_probe": {
+    "modes": [
+      "student_only",
+      "recovery_intervention"
+    ],
+    "seed_registry": "engineering_and_calibration",
+    "seed_base": 1400910000,
+    "seed_last": 1400910011,
+    "paired_modes_share_identical_task_seeds": true,
+    "deterministic_student_inference": true,
+    "device": "cuda:1",
+    "parallel_envs": 12,
+    "max_ticks": 30000,
+    "controller_config": {
+      "disagreement_grace_ticks": 12,
+      "minimum_teacher_ticks": 96,
+      "maximum_teacher_ticks": 600,
+      "stable_agreement_ticks": 24,
+      "handoff_cooldown_ticks": 96,
+      "minimum_score_gain": 30,
+      "minimum_chain_reduction": 2,
+      "score_stall_trigger_ticks": 300,
+      "chain_growth_trigger": 4,
+      "fire_aim_disagreement_bins": 4
+    },
+    "student_state_exposure": "student executes the first 11 consecutive semantic disagreements before a trigger on the 12th",
+    "teacher_execution": "bounded recovery burst only after trigger",
+    "handoff": "student-only protected cooldown after a recovered or forced teacher burst",
+    "runtime_student_policy_uses_teacher": false
+  },
+  "acceptance": {
+    "intervention_wins_must_exceed_student_only": true,
+    "intervention_total_score_must_exceed_student_only": true,
+    "minimum_paired_score_improvements": 6,
+    "minimum_interventions": 6,
+    "minimum_recovery_successes": 1,
+    "maximum_teacher_execution_fraction": 0.6
+  },
+  "interpretation_boundary": {
+    "pass_means": "the intervention mechanism is useful enough to freeze a separate recovery-priority DAgger training pilot",
+    "pass_does_not_mean": "the student learned from the intervention or any candidate is promotable",
+    "fail_means": "do not train on this exact intervention recipe",
+    "simulator_world_record_claim": false
+  },
+  "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-recovery-intervention-probe-s99081656-v1",
+  "authority_boundary": {
+    "classification": "paired_engineering_mechanism_probe_only",
+    "training_authority": false,
+    "candidate_authority": false,
+    "formal_selection_seed_consumption": false,
+    "formal_final_blind_seed_consumption": false,
+    "continuous_campaign_seed_consumption": false,
+    "power_change_authority": false
+  }
+}

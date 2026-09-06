@@ -1,0 +1,35 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-host-overnight-availability-audit",
+  "version": 1,
+  "status": "PASS_NO_CHANGE_REQUIRED",
+  "completed_utc": "2026-08-14T00:37:30Z",
+  "power_plan": {
+    "guid": "381b4222-f694-41f0-9685-ff5bb260df2e",
+    "name": "Balanced",
+    "ac_standby_idle_seconds": 0,
+    "ac_hibernate_idle_seconds": 0,
+    "automatic_ac_sleep_disabled": true,
+    "automatic_ac_hibernation_disabled": true,
+    "hybrid_sleep_enabled_but_no_idle_transition_scheduled": true
+  },
+  "restart_state": {
+    "windows_update_reboot_required": false,
+    "component_servicing_reboot_pending": false,
+    "pending_file_rename_operations": true,
+    "pending_file_rename_sources": ["Windows print-driver staging", "Microsoft Edge temporary update files"],
+    "pending_file_rename_is_not_a_scheduled_reboot_marker": true
+  },
+  "windows_update_active_hours": {
+    "start_local_hour": 7,
+    "end_local_hour": 1,
+    "smart_active_hours_state": 1,
+    "no_reboot_pending_so_policy_change_not_justified": true
+  },
+  "validation": {
+    "host_will_not_idle_sleep_on_ac": true,
+    "host_will_not_idle_hibernate_on_ac": true,
+    "no_current_update_reboot_requirement": true,
+    "no_power_setting_change_made": true,
+    "all_checks_passed": true
+  }
+}

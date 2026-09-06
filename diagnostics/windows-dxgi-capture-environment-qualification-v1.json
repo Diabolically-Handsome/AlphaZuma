@@ -1,0 +1,49 @@
+{
+  "schema": "zuma-rl.windows-dxgi-capture-environment-qualification",
+  "version": 1,
+  "status": "PASS_DIAGNOSTIC_METHOD_QUALIFICATION",
+  "created_utc": "2026-08-04T03:04:00.000Z",
+  "environment": {
+    "python_version": "3.12.10",
+    "interpreter": "C:/Users/Laure/Documents/祖玛/.venv-win/Scripts/python.exe",
+    "interpreter_sha256": "sha256:0b471133e110cfb53a061cad528ce8e517d7b9ac41a0a396c39ad795a487fc14",
+    "isolated_venv": true
+  },
+  "locked_requirements": {
+    "path": "tools/windows-capture-requirements.txt",
+    "sha256": "sha256:576aa62950bba9b71590f7e45adf6ebd6b499d136ef3633992b47e8cb0c48718",
+    "require_hashes_install_passed": true,
+    "packages": {
+      "comtypes": "1.4.16",
+      "dxcam": "0.3.0",
+      "numpy": "2.5.1"
+    }
+  },
+  "dxgi_device_kat": {
+    "device_index": 0,
+    "output_index": 0,
+    "output_color": "BGRA",
+    "create_status": "PASS",
+    "release_status": "PASS",
+    "camera_type": "DXCamera"
+  },
+  "native_test_suite": {
+    "status": "PASS",
+    "passed": 147,
+    "skipped": 1,
+    "files": [
+      "tests/test_capture_dxgi.py",
+      "tests/test_encode_dxgi_capture.py",
+      "tests/test_collect_pc_memory_probe.py",
+      "tests/test_pc_external_input.py",
+      "tests/test_pc_exact_step_evidence.py",
+      "tests/test_verify_pc_capture_render_transport.py"
+    ]
+  },
+  "failure_boundary": {
+    "predecessor_audit": "diagnostics/c93-c94-exact-step-golden-formal-invalidation-audit-v1.json",
+    "fixed_missing_dependency": "dxcam",
+    "predecessor_outputs_reusable": false
+  },
+  "authorization": "diagnostic_method_qualification_only_no_pc_golden_credit"
+}

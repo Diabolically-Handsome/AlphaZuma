@@ -1,0 +1,115 @@
+{
+  "schema": "zuma-rl.alphazuma-55-training-validation-audit",
+  "version": 1,
+  "status": "PASS",
+  "audited_utc": "2026-08-16T05:02:39.320243+00:00",
+  "formal_selection_authority": false,
+  "training_recipe_change_authority": false,
+  "artifacts": {
+    "master": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+      "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+    },
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-replay-anchor-validation-s99081608-preregistration-v1.json",
+      "sha256": "sha256:33d26ee028b4ef73b3b0441509e626147749195a0843b4741ce7ecc1ceaebee2"
+    },
+    "models_manifest": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-replay-anchor-validation-s99081608-models-v1.json",
+      "sha256": "sha256:053e0b23cd7cce9b43f8b3a722223198b38ec16c915bbb0527ebb7560a3c048a"
+    },
+    "matrix_shard": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-replay-anchor-validation-s99081608-v1/matrix-shard-00-of-01.json",
+      "sha256": "sha256:6da407d38d6049b9e119060fd01b69b9da615d39428584b85a170d8c10ec1169"
+    },
+    "auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_training_validation.py",
+      "sha256": "sha256:3621dcb64c3342e3954533d22401f258fe6c72ac49d164456455ad77ea54aa67"
+    }
+  },
+  "matrix": {
+    "levels": 55,
+    "attempts_per_model": 55,
+    "models": 5,
+    "completed_attempts": 275,
+    "seed_plan": {
+      "registry": "training_validation",
+      "base_seed": 1550002200,
+      "last_seed": 1550002254
+    },
+    "runtime": {
+      "python": "3.12.3",
+      "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "parallel_envs": 24,
+      "total_vector_transitions": 2398173,
+      "wall_seconds": 4806.06740778299
+    }
+  },
+  "model_summaries": [
+    {
+      "model_id": "polar-intent-replay-anchor-source-wide-final",
+      "model_sha256": "sha256:9533690041859e73e0ae8f072e4a8ff05a9e316c29a974d666878e4e5bb0b424",
+      "attempts": 55,
+      "wins": 1,
+      "losses": 54,
+      "truncations": 0,
+      "cleared_levels": 1,
+      "winning_levels": [
+        {
+          "level_id": "Jungle1",
+          "seed": 1550002200,
+          "ticks": 7402,
+          "score": 2220,
+          "trajectory_sha256": "sha256:0f56ebc2dfc77844c10c0697ade250e3512dc919cf43ccf442e9940088842223"
+        }
+      ],
+      "median_winning_ticks": 7402
+    },
+    {
+      "model_id": "polar-intent-replay-anchor-source-dagger-final",
+      "model_sha256": "sha256:27c425e1507d40e5bdc59768b892e27d6c9f3616ce5b169a6073b380bacc6cf0",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "polar-intent-replay-anchor-round-00",
+      "model_sha256": "sha256:141f3ca7126caf504642d92fb88c56224b03e9c9d13b1afab9e1fb48956274fc",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "polar-intent-replay-anchor-round-01",
+      "model_sha256": "sha256:4c379a7b5db2d86a6324371b1f3d5cf16f92efea0bced5a9844a7cbc42f4fc19",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "polar-intent-replay-anchor-round-02",
+      "model_sha256": "sha256:2685ab0af8f1820cfd3d639f46f4980084f1cedb4d10fb88a0ed94dc4c3a640e",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    }
+  ],
+  "paired_comparison": null,
+  "interpretation_boundary": "This PASS proves artifact integrity and a paired training-health signal only; it is not selection, final blind, or continuous-campaign evidence."
+}

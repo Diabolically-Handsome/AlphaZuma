@@ -1,0 +1,107 @@
+{
+  "schema": "zuma-rl.alphazuma-55-weekend-deadline-outcome",
+  "version": 1,
+  "status": "DEADLINE_REACHED_WITHOUT_55_LEVEL_MODEL",
+  "deadline_utc": "2026-08-16T20:00:00Z",
+  "captured_utc": "2026-08-16T20:04:17.956460Z",
+  "goal_achieved": false,
+  "training_route": {
+    "campaign_id": "alphazuma-55-motor-observable-gradual-headonly-allaim-s99081646-v1",
+    "status": "COMPLETE",
+    "final_model_sha256": "sha256:fd02ba89e6d3d51add548d8a7021564871401e5e5de3886daa87ea71fa518f43",
+    "teacher_mixed_wins_by_teacher_execution_probability": {
+      "1.0": 55,
+      "0.9": 39,
+      "0.7": 16,
+      "0.5": 9
+    },
+    "formal_seed_consumption": false
+  },
+  "engineering_screen": {
+    "status": "ERROR_DEADLINE_TIMEOUT",
+    "error": "SCREEN evaluation exceeded deadline",
+    "controller_status_sha256": "sha256:ba702fcd843b662fa5f5cc4b6302c10fd15990568d6c31bc1fc8c44227a432c0",
+    "failure_sha256": "sha256:4f88185b999740ef69caf9a18b808e550db99fd3c53550f2b21bb7e29c6f9fe1",
+    "completed_attempts": 78,
+    "expected_attempts": 204,
+    "complete_ranking_available": false,
+    "gate_started": false,
+    "formal_seed_consumption": "NONE",
+    "shards": [
+      {
+        "index": 0,
+        "completed_attempts": 24,
+        "expected_attempts": 102,
+        "artifact_sha256": "sha256:b79a1638f6f53812d587c067148e4af4388e1ab41d952e79b041fa668eaa7c1d"
+      },
+      {
+        "index": 1,
+        "completed_attempts": 54,
+        "expected_attempts": 102,
+        "artifact_sha256": "sha256:fe89401932f8589c9675a3f5fe5aadb6bbbaab8d2509e66d02e370bedb749a21"
+      }
+    ],
+    "fully_observed_models": [
+      {
+        "id": "motor-v3-source-final",
+        "wins": 1,
+        "attempts": 12,
+        "winning_levels": ["Jungle1"]
+      },
+      {
+        "id": "headonly-allaim-gradual-r00-e03",
+        "wins": 0,
+        "attempts": 12,
+        "winning_levels": []
+      },
+      {
+        "id": "headonly-allaim-gradual-r00-e06",
+        "wins": 1,
+        "attempts": 12,
+        "winning_levels": ["Jungle1"]
+      },
+      {
+        "id": "headonly-allaim-gradual-r00-e09",
+        "wins": 0,
+        "attempts": 12,
+        "winning_levels": []
+      }
+    ],
+    "partial_results_are_not_a_final_ranking": true,
+    "evaluation_processes_alive_after_timeout": false
+  },
+  "diagnosis": {
+    "classic_overfitting_supported": false,
+    "primary_failure_mode": "closed-loop covariate shift and recovery-state undercoverage",
+    "support": [
+      "teacher-mixed wins collapse as teacher execution probability decreases",
+      "freezing the representation and training only the action head did not recover autonomous play",
+      "adding all-action aim supervision to head-only training did not create positive interaction",
+      "later and harder levels remain underrepresented under fixed per-level sample caps"
+    ]
+  },
+  "power_restore": {
+    "automatic_watcher_status": "FAILED_AFTER_PARTIAL_RESTORE",
+    "automatic_watcher_error": "Get-FileHash was unavailable and non-elevated nvidia-smi could not set power limits",
+    "elevated_guard_status": "RESTORED_ON_REQUEST",
+    "elevated_guard_receipt_sha256": "sha256:63980cc913b0622a54db91f9f0f172fbe5cb11af04d9ee38a072ea8e49ee1179",
+    "elevated_power_plan_guard_status": "RESTORED_ON_REQUEST",
+    "elevated_power_plan_guard_receipt_sha256": "sha256:1334bf528525e94beb9a1c5db1fadca3c4e45be8ee733c65efbd7c766ba26d76",
+    "gpu_and_power_plan_guard_processes_exited": true,
+    "final_gpu_power_limits_watts": {
+      "RTX_5090": 600,
+      "RTX_5080": 400
+    },
+    "final_windows_power_scheme_guid": "381b4222-f694-41f0-9685-ff5bb260df2e",
+    "final_windows_power_scheme": "Balanced",
+    "verified": true,
+    "verified_utc": "2026-08-16T20:04:17.956460Z"
+  },
+  "resources": {
+    "wsl_available_memory_mib": 40968,
+    "wsl_swap_used_mib": 0,
+    "wsl_root_available_gib": 26,
+    "d_drive_available_gib": 671,
+    "historical_alphaxiang_data_touched": false
+  }
+}

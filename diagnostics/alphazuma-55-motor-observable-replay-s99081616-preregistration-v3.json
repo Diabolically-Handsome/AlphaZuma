@@ -1,0 +1,324 @@
+{
+  "schema": "zuma-rl.alphazuma-55-motor-observable-replay-preregistration",
+  "version": 2,
+  "status": "FROZEN_BEFORE_TRAINING",
+  "created_utc": "2026-08-16T04:20:38.543901+00:00",
+  "campaign_id": "alphazuma-55-motor-observable-replay-s99081616-v3",
+  "objective": "Test actor-visible deterministic motor state after replacing the brittle all-or-nothing teacher-anchor precondition with a frozen per-level retry ledger that still requires 55/55 coverage before optimization.",
+  "decision_evidence_available_before_freeze": {
+    "paired_epoch_curve": {
+      "epoch_10_wins": 6,
+      "epoch_20_wins": 3,
+      "epoch_30_wins": 1,
+      "attempts_per_checkpoint": 55,
+      "classification": "consumed training-validation evidence"
+    },
+    "pure_student_autonomy": {
+      "wins": 0,
+      "attempts": 220,
+      "classification": "consumed engineering evidence"
+    },
+    "replay_anchor_round_02": {
+      "wins": 0,
+      "attempts": 55,
+      "teacher_execution_probability": 0.0,
+      "classification": "consumed engineering evidence"
+    },
+    "interface_finding": "HumanSpeedrunWrapper leaves aim velocity, delayed aim, aim queue, button queue, cooldown, and previous desired verb outside the actor observation although they affect the next executed action."
+  },
+  "hypotheses": {
+    "alternative": "actor-visible deterministic motor state materially improves autonomous closed-loop coverage",
+    "null": "the remaining failure is dominated by representation, objective, or capacity rather than partial observability"
+  },
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "builder": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_motor_observable_replay_v3.py",
+    "sha256": "sha256:dc61f3834032c4d8b0fc2ef7d727f379b71c0cff911ff5862bf709ca12cccb1d"
+  },
+  "trainer": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_motor_observable_replay_v3.py",
+    "sha256": "sha256:3d669431dfc9dfa018fd1a830f6542c34255d09ccf70e629e2b16e4edf1bb412"
+  },
+  "implementation": {
+    "motor_observation_wrapper": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/observable_human_speedrun.py",
+      "sha256": "sha256:1c0326c530ed797e4426965c241298b768b6689133762055cd3f9216b74258de"
+    },
+    "migration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/motor_observable_migration.py",
+      "sha256": "sha256:5ed6d7a92309efb71a0084e8312e224264b73deae55387d4cc500a2875301f09"
+    },
+    "human_input_wrapper": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/human_speedrun.py",
+      "sha256": "sha256:d2df69821ce5f5e837a962cfc6efdafaf152baf06a30fb8c6d2c04ddec6517dd"
+    },
+    "legacy_distillation_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55.py",
+      "sha256": "sha256:13ac1883fc9dc9541193dbca0da3b94fa91c7476e07873d22bec51a7a330b38a"
+    },
+    "settled_v3_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_settled_v3.py",
+      "sha256": "sha256:42e8c5274b4674c60b17d80470cbf29d5f4f09adc079f128f587f0e085f0a1be"
+    },
+    "polar_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_polar_v1.py",
+      "sha256": "sha256:9b5a4cc441cac232e7f8df1486e8c774acaa0ac7f7d54951c244b4940390d875"
+    },
+    "polar_wide_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_polar_wide_v1.py",
+      "sha256": "sha256:6ecfebc751af35c33469bace5aea47d80bc6162a9c1500cd71410ce94337f715"
+    },
+    "raw_intent_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_polar_intent_wide_v1.py",
+      "sha256": "sha256:186fa0eb1a015ac9ba2f089b36269c41b994661a6c4f0f09090bcb2aab0a7fd2"
+    },
+    "raw_intent_dagger_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_polar_intent_dagger_v1.py",
+      "sha256": "sha256:4f8dad5c8d5445261cfa1ee8e00743aa71c545f84f6ef3ebbb47631488202e01"
+    },
+    "features": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_features.py",
+      "sha256": "sha256:d878d7ec034bfe1d0b9c8f16bf2fcc787a05de5ac404eb4f1685c4f5a46646a0"
+    },
+    "environment": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_env.py",
+      "sha256": "sha256:d95407a7127ecc4e580aef041426d012edf5ea8dfa2fa8c4405c398445b1132e"
+    },
+    "core": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_core.py",
+      "sha256": "sha256:7718ae186c173127ac82e488413857dc6c82d2e41c1dfb5e94ca553a1a3abff6"
+    },
+    "scope": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/alphazuma_55.py",
+      "sha256": "sha256:ba316c4537fd62d4c34cfc1c40d722d5d9b5f38ba954e691acea83ab51837649"
+    },
+    "v2_replay_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_motor_observable_replay_v2.py",
+      "sha256": "sha256:e48db81d190756fe1bbeb1d559d8724c6fd10a2aa71352e2c62118894766f451"
+    }
+  },
+  "source": {
+    "model_path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-wide-s99081540-v1/epoch_10_model.zip",
+    "model_sha256": "sha256:97ec109d29d1493a795a427deb77efb4c905426c530a1365ce2fc89cdf1e92ff",
+    "selection_audit_path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-wide-validation-s99081544-audit-v1.json",
+    "selection_audit_sha256": "sha256:03cdc83259d308fa3abadef80e344cba384ea4c7deca458b8eb1c9d5cc3b5af2",
+    "model_id": "polar-intent-wide-epoch-10",
+    "selection_rule": "best wins and coverage in the already-consumed paired epoch-10/20/30 engineering matrix; fixed before this route"
+  },
+  "levels": [
+    "Jungle1",
+    "Jungle2",
+    "Jungle3",
+    "Jungle4",
+    "jungle6",
+    "Jungle7",
+    "Jungle8",
+    "Jungle9",
+    "Jungle10",
+    "village1",
+    "village2",
+    "village3",
+    "village4",
+    "village5",
+    "village6",
+    "village7",
+    "village8",
+    "village10",
+    "city1",
+    "city2",
+    "city3",
+    "city4",
+    "city5",
+    "city6",
+    "city7",
+    "city9",
+    "city10",
+    "Coast1",
+    "Coast2",
+    "Coast3",
+    "Coast4",
+    "Coast5",
+    "Coast6",
+    "Coast7",
+    "Coast9",
+    "Coast10",
+    "grotto1",
+    "grotto2",
+    "grotto3",
+    "grotto4",
+    "grotto5",
+    "grotto6",
+    "grotto7",
+    "grotto9",
+    "grotto10",
+    "volcano1",
+    "volcano2",
+    "volcano3",
+    "volcano4",
+    "volcano5",
+    "volcano6",
+    "volcano7",
+    "volcano8",
+    "volcano9",
+    "volcano10"
+  ],
+  "run": {
+    "id": "alphazuma55-motor-observable-replay-v3-5080",
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-replay-s99081616-v3",
+    "device": "cuda:1",
+    "policy_architecture": "entity_polar_intent_motor_observable_replay",
+    "motor_observation_profile": "motor-observable-v1",
+    "learned_features_dim": 1024,
+    "model_seed": 1543002800,
+    "anchor_seed_base": 1543002000,
+    "student_seed_base": 1543002495,
+    "student_seed_last_consumed": 1543002659,
+    "anchor_teacher_passes": 3,
+    "student_rounds": 3,
+    "teacher_execution_probabilities": [
+      0.5,
+      0.1,
+      0.0
+    ],
+    "parallel_envs": 24,
+    "max_ticks": 30000,
+    "reservoir_capacity_by_verb": {
+      "wait": 256,
+      "fire": 256,
+      "swap": 192,
+      "hop": 192
+    },
+    "sample_stride_by_verb": {
+      "wait": 4,
+      "fire": 1,
+      "swap": 1,
+      "hop": 1
+    },
+    "target_batch_fraction_by_verb": {
+      "wait": 0.45,
+      "fire": 0.35,
+      "swap": 0.15,
+      "hop": 0.05
+    },
+    "batch_size": 512,
+    "capacity_eval_batch_size": 128,
+    "epochs_per_round": 4,
+    "checkpoint_interval_epochs": 1,
+    "learning_rate": 1e-05,
+    "verb_loss_weight": 2.0,
+    "max_grad_norm": 0.5,
+    "aim_loss_scope": "fire_only",
+    "aim_loss_mode": "circular_smoothed",
+    "aim_smoothing_sigma": 1.5,
+    "aim_distance_weight": 0.5,
+    "aim_head_identity_scale": 5.0,
+    "teacher_anchor_replayed_every_round": true,
+    "aggregate_student_states_across_rounds": true,
+    "raw_teacher_intent_labels": true,
+    "training_mask_relaxation": "unmask_only_the_teacher_target_verb",
+    "exact_action_masks_for_environment_execution": true,
+    "exact_action_masks_for_online_policy_inference": true,
+    "label_aim_must_remain_exact_mask_legal": true,
+    "final_runtime_teacher_calls_forbidden": true,
+    "anchor_seed_last_reserved": 1543002494,
+    "anchor_retry_policy": {
+      "attempts_per_level": 3,
+      "first_attempt_mode": "paired_full55_batch",
+      "retry_mode": "failed_levels_only_fixed_seed",
+      "sample_retention": "all_attempts",
+      "pass_requirement": "at_least_one_win_for_each_of_55_levels",
+      "seed_formula": "anchor_seed_base + pass_index*(55*attempts_per_level) + attempt_index*55 + level_index",
+      "failed_attempts_are_not_hidden": true,
+      "retry_selection_uses_only_current_attempt_outcome": true
+    }
+  },
+  "frozen_engineering_validation": {
+    "registry": "training_validation",
+    "checkpoint_screen": {
+      "base_seed": 1550002400,
+      "last_seed": 1550002411,
+      "levels": 12,
+      "candidate_rule": "source plus every per-epoch checkpoint; rank without using the full55 gate seeds"
+    },
+    "full55_gate": {
+      "base_seed": 1550002500,
+      "last_seed": 1550002554,
+      "levels": 55,
+      "maximum_candidates": 5,
+      "minimum_wins": 35,
+      "minimum_cleared_levels": 35
+    },
+    "formal_seed_consumption": false,
+    "seed_reuse_reason": "V2 postprocess failed while waiting for training; no candidate, screen, gate, or formal matrix artifact was created"
+  },
+  "authority_boundary": {
+    "classification": "motor_observable_retry_audited_engineering_training_only",
+    "current_campaign_candidate_authority": false,
+    "formal_selection_seed_consumption": false,
+    "formal_final_blind_seed_consumption": false,
+    "continuous_campaign_seed_consumption": false
+  },
+  "predecessor_runtime_incident": {
+    "classification": "V2_ANCHOR_54_OF_55_ABORT_BEFORE_ANY_OPTIMIZATION",
+    "observed_utc": "2026-08-16T04:08:01.969095+00:00",
+    "artifacts": {
+      "preregistration": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-replay-s99081614-preregistration-v2.json",
+        "sha256": "sha256:d67a45937fbeba955f275dda83330588e1b50d24591f4cd232696b50cfac1431"
+      },
+      "config": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-replay-s99081614-v2/config.json",
+        "sha256": "sha256:f366459c50759d4fe848b4b565c120d837614ec8ae991730888fc2749e69321f"
+      },
+      "migration": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-replay-s99081614-v2/migration.json",
+        "sha256": "sha256:1094bf5f62e07a1716ee11f5327081c5e2586aa6138a85e71e405f9587fe9c68"
+      },
+      "training_status": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-replay-s99081614-v2/training_status.json",
+        "sha256": "sha256:70d8e9a79dcad9b0b01e402b21def8de94813f9ec346b8ed035f74e072620039"
+      },
+      "failure": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-replay-s99081614-v2/failure.json",
+        "sha256": "sha256:cf6fc46bb39a1ba25deccce100ca14fd6e233d23ffb03b750df7495076b1e903"
+      },
+      "stderr": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-replay-s99081614-launch.stderr.log",
+        "sha256": "sha256:53345b7d38276d8eadc18c9191762c9ce9843617282efc5916bc599e3f0ab6d4"
+      }
+    },
+    "facts": {
+      "anchor_pass": 0,
+      "wins": 54,
+      "expected_wins": 55,
+      "completed_anchor_passes": 0,
+      "completed_student_rounds": 0,
+      "model_checkpoints_created": 0,
+      "formal_seed_consumption": false
+    }
+  },
+  "engineering_seed_reuse_evidence": {
+    "classification": "UNCONSUMED_TRAINING_VALIDATION_SEEDS",
+    "controller_status": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-postprocess-s99081615-v1/controller_status.json",
+      "sha256": "sha256:62b1453f7ff68be73aa00caffdb67ad483d56448b4e11e463d01d85ce149607a"
+    },
+    "failure": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-postprocess-s99081615-v1/failure.json",
+      "sha256": "sha256:e1daac9a56e92330c3dde520f4f1cdb2b61caddbc08b1c7a157e85940d18899a"
+    },
+    "matrix_artifacts_present": false,
+    "formal_seed_consumption": "NONE"
+  },
+  "post_hoc_disclosure": {
+    "trigger": "observed_v2_anchor_54_of_55",
+    "classification": "post_hoc_training-precondition correction frozen before any V3 seed or model update",
+    "new_training_seeds_unseen_before_freeze": true,
+    "all_attempt_samples_retained": true,
+    "per_pass_55_of_55_teacher_coverage_still_required": true,
+    "formal_gate_unchanged": true
+  }
+}

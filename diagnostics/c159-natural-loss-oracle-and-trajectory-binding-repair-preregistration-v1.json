@@ -1,0 +1,93 @@
+{
+  "schema": "zuma-rl.natural-loss-oracle-and-trajectory-binding-repair-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_CODE_CHANGE",
+  "created_utc": "2026-08-10T12:10:45.7627119Z",
+  "purpose": "Repair two independently identified schema/semantic defects that prevent the immutable c158 formal retail source from being consumed, without changing its bytes, window, feature thresholds, or any unrelated mechanism rule.",
+  "classification": "evidence-driven-validator-repair-no-posthoc-feature-credit",
+  "parent_source": {
+    "c158_success_receipt": "diagnostics/c158-c155-natural-loss-formal-source-success-receipt-v1.json",
+    "c158_success_receipt_sha256": "sha256:9ac0eb253afbfc8e7c43ad307745be63a1399fad43de98c2ad8a0ad69be7ab78",
+    "memory_probe_sha256": "sha256:8ffce51245f5f74307a74f1135de3009a7746c67d9a34dd12fea1e8dc0f072f4",
+    "trajectory_index_sha256": "sha256:a5cd4410676579f0ac75ec0bb69f18d483c026cde14566284ad10a24e2b60ada",
+    "strict_replay_sha256": "sha256:ac55b93740fd489deaac390b33792fa120b1a56762397bf60e674df48c664243",
+    "source_is_immutable": true
+  },
+  "defect_1_trajectory_binding": {
+    "observed_error": "mechanism_audit_trajectory_binding_fields_invalid",
+    "producer_schema": "zuma-rl.pc-memory-trajectory",
+    "producer_version": 2,
+    "producer_binding_fields": [
+      "artifact",
+      "artifact_sha256",
+      "end_update",
+      "freeze_update",
+      "schema",
+      "start_update",
+      "tick_count",
+      "version"
+    ],
+    "consumer_current_required_fields_omit": "freeze_update",
+    "c158_freeze_update": 11200,
+    "c158_start_update": 11200,
+    "repair_rule": "Accept exactly the existing required field set with optional freeze_update; reject every other extra or missing field; when freeze_update is present require an integer equal to start_update and the first loaded frame update.",
+    "semantic_weakening": false
+  },
+  "defect_2_terminal_pretrigger_motion": {
+    "observed_error": "loss_sequence_trigger_ball_transition_invalid",
+    "decoded_curve_end": 3757.0,
+    "expected_pretrigger_advance": 0.125,
+    "source_pretrigger_update": 11341,
+    "source_terminal_ball_id": 176,
+    "source_pretrigger_distance": 3756.875,
+    "source_reset_update": 11342,
+    "source_reset_distance": 3757.0,
+    "source_trigger_update": 11343,
+    "source_trigger_ball_removed": true,
+    "current_incorrect_rule": "The trigger ball must equal decoded_curve_end in both the initial and before frames.",
+    "replacement_rule": "The trigger ball must be the final active-chain entity in both frames, have suck_count zero, advance by exactly expected_pretrigger_advance from the initial frame to the before frame, equal decoded_curve_end in the before frame, and be absent at trigger.",
+    "unchanged_survivor_rule": "Every surviving ball must still advance by exactly expected_pretrigger_advance and enter suck_count 1 with unchanged update_count.",
+    "unchanged_recurrence_rule": "All subsequent removals and distances must still satisfy speed equals previous_suck_count shifted right by two, counter increments by one, exact topology, locked score/shooter/pending state, and complete removal coverage.",
+    "diagnostic_isolation_result": "Changing only a non-evidence diagnostic copy of update 11341 terminal distance from 3756.875 to the obsolete 3757.0 assumption makes the remaining 179-frame oracle pass, isolating this single rule.",
+    "semantic_weakening": false,
+    "semantic_correction": "Require the same pretrigger advance for the terminal ball that the oracle already requires for every survivor."
+  },
+  "frozen_code_before_change": {
+    "src/zuma_rl/pc_mechanism_audit.py": "sha256:78dc15bf624d0c75cb456d41e0b65003706617c728dc0333387359a9aca2a360",
+    "src/zuma_rl/pc_loss_sequence.py": "sha256:e31240476171fe1b5fde40aa5993ab24e5cbd5378cb6e23816b5778622423115",
+    "tests/test_pc_mechanism_audit.py": "sha256:0fafe05219226b3b3218bb88ed843e02e3a6b1ffb20b2a8378fa5d49df07e4ab",
+    "tests/test_pc_loss_sequence.py": "sha256:9828a65abe1ca9e7154ece615b21f2c5e742f8e8210ec93320c034ede8f3646b"
+  },
+  "permitted_code_changes": [
+    "Update _trajectory_from_probe field validation exactly as defect_1_trajectory_binding.repair_rule specifies.",
+    "Update verify_loss_sequence_frames trigger-ball pretrigger distance validation exactly as defect_2_terminal_pretrigger_motion.replacement_rule specifies.",
+    "Correct synthetic natural-loss fixtures so their trigger ball advances into the curve end on the reset frame.",
+    "Add positive and negative tests for freeze_update binding and moving-versus-stationary terminal pretrigger behavior."
+  ],
+  "forbidden_changes": [
+    "No c158 artifact edit or normalization.",
+    "No natural-loss trigger flag, f54, pending count, curve-end, recurrence, score, shooter, RNG, or empty-chain criterion change.",
+    "No simulator behavior change in this repair.",
+    "No PC Golden, mechanism audit plan, Fidelity Gate, or Training Gate threshold change.",
+    "No feature-specific exception keyed to c158 path, hash, update, ball id, score, or level."
+  ],
+  "required_tests": {
+    "targeted_existing_and_new_tests": "PASS",
+    "full_suite": "PASS",
+    "independent_c158_probe_binding": "PASS",
+    "independent_c158_native_feature_derivation": "natural_loss exactly once",
+    "c158_expected_trigger_update": 11343,
+    "c158_expected_empty_update": 11519,
+    "c158_expected_initial_chain_count": 105,
+    "c158_expected_ticks_from_trigger_to_empty": 176,
+    "implementation_receipt_required_before_packaging": true
+  },
+  "decision_rule": {
+    "repair_pass": "All required tests pass and the unmodified c158 source independently derives exactly one natural_loss proof with every unchanged recurrence condition.",
+    "repair_fail": "Retain test output, do not package the source, and do not weaken another condition under this preregistration.",
+    "formal_source_credit_before_repair_pass": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

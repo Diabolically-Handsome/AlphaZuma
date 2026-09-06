@@ -1,0 +1,15 @@
+{
+  "cases": [
+    {
+      "id": "c132c1-proximity-fruit-expiry",
+      "manifest_path": "sources/c132c1-u5745-u5890-source-bound-proximity-fruit-expiry-v1.json",
+      "memory_probe_path": "formal-full-state-c132c1-proximity-fruit-expiry-u5745-u5890-v1/attempt-01/memory-probe.json",
+      "window": {
+        "end_update": 5890,
+        "start_update": 5745
+      }
+    }
+  ],
+  "schema": "zuma-rl.pc-mechanism-audit-plan",
+  "version": 1
+}

@@ -1,0 +1,78 @@
+{
+  "schema": "zuma-rl.pc-gameplay-mtrand-proof-derivation-binding-success-receipt",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T16:49:23.1308435Z",
+  "preregistration": {
+    "artifact": "diagnostics/c198-c183-fruit-powerup-collision-mtrand-proof-derivation-binding-preregistration-v1.json",
+    "artifact_bytes": 5810,
+    "artifact_sha256": "sha256:5048cd982018e4cb5bd1c8c66cb7c57b28f429496bc1d93d841578e3fda86a59"
+  },
+  "proof": {
+    "artifact": "D:/ZumaGolden/diagnostics/jungle2-c183-u8213-u8260-fruit-powerup-collision-mtrand-proof-v1-confirmatory.json",
+    "artifact_bytes": 1014335,
+    "artifact_sha256": "sha256:60246c7d4371fee56569ab6f4149d64e6aebfec38ef3023f26f6a796e9aed569",
+    "status": "PASS",
+    "classification": "complete-native-call-sequence-visual-omission-decomposition",
+    "reconciled_tick_count": 27,
+    "reconciled_draw_count": 3587,
+    "native_call_count": 3587,
+    "modeled_gameplay_call_count": 0,
+    "semantic_call_counts": {
+      "pi_effect_particle_update": 9,
+      "pil_particle_emitter_update": 3562,
+      "score_digit_transition": 14,
+      "shadow_canopy_animation": 2
+    },
+    "headless_systems_omitted": [
+      "pi_effect_particle_update",
+      "score_digit_transition",
+      "score_digit_wobble",
+      "shadow_canopy_animation",
+      "pil_particle_emitter_update"
+    ],
+    "pil_static_surface_present": true,
+    "pil_verified_direct_call_site_count": 11,
+    "source_bound_original_replay_verified": true,
+    "external_input_event_count": 0
+  },
+  "bound_diff": {
+    "artifact": "D:/ZumaGolden/diagnostics/jungle2-c183-u8213-u8260-fruit-powerup-collision-diff-v6-reconciled-bound.json",
+    "artifact_bytes": 113044,
+    "artifact_sha256": "sha256:6bdab2ad7e7aed609d7b883e676d30889e2e58ffd99b07d891575890ca0279ad",
+    "status": "PASS",
+    "version": 5,
+    "start_update": 8213,
+    "end_update": 8260,
+    "compared_tick_count": 47,
+    "reconciled_tick_count": 27,
+    "total_reconciled_draw_count": 3587,
+    "proof_artifact_sha256_exact": true,
+    "reconciliation_transcript_sha256": "sha256:cfaa0cf040ed967ef8bb44da1d813f8488640bf0d59399fd954f7762b6f3f329",
+    "reconciliation_transcript_binding_exact": true
+  },
+  "independent_verification": {
+    "full_proof_object_recomputed_equal": true,
+    "proof_file_hash_recomputed_equal": true,
+    "bound_diff_proof_descriptor_recomputed_equal": true,
+    "runtime_static_surface_recomputed_equal": true,
+    "trace_window_source_binding_recomputed_equal": true,
+    "all_27_reconciliation_rows_recomputed_equal": true,
+    "all_3587_native_call_classifications_recomputed_equal": true
+  },
+  "immutability": {
+    "unbound_diff": "D:/ZumaGolden/diagnostics/jungle2-c183-u8213-u8260-fruit-powerup-collision-diff-v5-reconciled-unbound.json",
+    "unbound_diff_bytes": 112539,
+    "unbound_diff_sha256_before_and_after": "sha256:454458b782fa0764e9c4dc530f50833a1b74f513cc214b63d9eb68cae6ec388a",
+    "unbound_diff_unchanged": true,
+    "c193_and_c195_contaminated_traces_not_used": true,
+    "certifying_trace_root": "diagnostics/c197-c183-confirmatory-source-bound-rng-trace-u8213-u8260-v1/attempt-01"
+  },
+  "authorization": {
+    "bomb_fruit_bound_diff_eligible_for_pc_golden_authorization": true,
+    "bomb_fruit_pc_golden_authorization_requires_separate_preregistration": true,
+    "fidelity_gate_change_before_authorization": false,
+    "training_gate_change_before_authorization": false,
+    "training_start": false
+  }
+}

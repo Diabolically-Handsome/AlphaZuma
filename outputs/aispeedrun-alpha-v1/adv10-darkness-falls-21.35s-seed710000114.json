@@ -1,0 +1,135 @@
+{
+  "schema": "zuma-rl.paired-multimodel-level-video",
+  "version": 1,
+  "status": "COMPLETE",
+  "source": {
+    "aggregate": "/mnt/d/ZumaTraining/overnight-v11-recovery-postprocess-s43081301-v1/morning-target-evaluation/aggregate.json",
+    "aggregate_sha256": "sha256:b82e017511d39540f17e28ab50bfa451cdac9804f2b67b7764762eb94d8621c8",
+    "preregistration": "/mnt/d/ZumaTraining/overnight-v11-recovery-postprocess-s43081301-v1/morning-target-preregistration.json",
+    "preregistration_sha256": "sha256:55543e20ecae3fac92072d8c40fcb65c686183cd292128d7504aa76eb0a4d3ad",
+    "models_manifest": "/mnt/d/ZumaTraining/overnight-v11-recovery-postprocess-s43081301-v1/morning-blind-models-manifest.json",
+    "models_manifest_sha256": "sha256:5f9c76008d70e6ce8c156916d6a1b214ad34509399a3142f44d4158e382408e0"
+  },
+  "selection": {
+    "rule": "fastest winning formal blind attempt for level across frozen models",
+    "requested_level_id": "Jungle10",
+    "requested_model_id": null
+  },
+  "candidate": {
+    "model_id": "selected-overnight",
+    "training_steps": 16252928,
+    "model_sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579",
+    "seed": 710000114,
+    "outcome": "win",
+    "native_outcome": null,
+    "time_limit_truncated": false,
+    "ticks": 2135,
+    "seconds": 21.35,
+    "score": 3280,
+    "reward": 9.796500000000007,
+    "decisions": 2135,
+    "desired_action_counts": {
+      "wait": 2023,
+      "fire": 63,
+      "swap": 49
+    },
+    "executed_action_counts": {
+      "wait": 2023,
+      "fire": 63,
+      "swap": 49
+    },
+    "trajectory_sha256": "sha256:4484f9738305d878bd3c297cdd1968a81400bb7f61bc2e1033c09a8bf21fddbd",
+    "level_id": "Jungle10",
+    "display_name": "Darkness Falls",
+    "curve_count": 1,
+    "attempt_index": 2
+  },
+  "model": {
+    "path": "/mnt/d/ZumaTraining/overnight-v11-adaptive-recovery-s43081301-v1/checkpoints/adaptive-5090-recovery_13631488_steps.zip",
+    "sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579",
+    "device": "cuda:0"
+  },
+  "verification": {
+    "identity_fields": [
+      "outcome",
+      "ticks",
+      "score",
+      "trajectory_sha256",
+      "decisions",
+      "desired_action_counts",
+      "executed_action_counts"
+    ],
+    "pre_render_matches_formal_attempt": true,
+    "rendered_matches_formal_attempt": true,
+    "pre_render": {
+      "model_id": "selected-overnight",
+      "training_steps": 16252928,
+      "model_sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579",
+      "seed": 710000114,
+      "outcome": "win",
+      "native_outcome": null,
+      "time_limit_truncated": false,
+      "ticks": 2135,
+      "seconds": 21.35,
+      "score": 3280,
+      "reward": 9.796500000000007,
+      "decisions": 2135,
+      "desired_action_counts": {
+        "wait": 2023,
+        "fire": 63,
+        "swap": 49
+      },
+      "executed_action_counts": {
+        "wait": 2023,
+        "fire": 63,
+        "swap": 49
+      },
+      "trajectory_sha256": "sha256:4484f9738305d878bd3c297cdd1968a81400bb7f61bc2e1033c09a8bf21fddbd",
+      "qualifies_sub_12": false
+    },
+    "rendered": {
+      "model_id": "selected-overnight",
+      "training_steps": 16252928,
+      "model_sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579",
+      "seed": 710000114,
+      "outcome": "win",
+      "native_outcome": null,
+      "time_limit_truncated": false,
+      "ticks": 2135,
+      "seconds": 21.35,
+      "score": 3280,
+      "reward": 9.796500000000007,
+      "decisions": 2135,
+      "desired_action_counts": {
+        "wait": 2023,
+        "fire": 63,
+        "swap": 49
+      },
+      "executed_action_counts": {
+        "wait": 2023,
+        "fire": 63,
+        "swap": 49
+      },
+      "trajectory_sha256": "sha256:4484f9738305d878bd3c297cdd1968a81400bb7f61bc2e1033c09a8bf21fddbd",
+      "qualifies_sub_12": false
+    }
+  },
+  "video": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/outputs/aispeedrun-alpha-v1/adv10-darkness-falls-21.35s-seed710000114.mp4",
+    "sha256": "sha256:a286d8d439ae79798674126d96655d5d9146059d7e1418edfe4e3547fcca74cb",
+    "bytes": 1772727,
+    "codec": "h264/libx264",
+    "pixel_format": "yuv420p",
+    "width": 800,
+    "height": 736,
+    "fps": 50,
+    "frame_stride_native_ticks": 2,
+    "gameplay_frame_count": 1069,
+    "frame_count": 1169,
+    "decoded_frame_count": 1169,
+    "duration_seconds": 23.38,
+    "final_hold_seconds": 2.0,
+    "poster": "/mnt/c/Users/Laure/Documents/祖玛/outputs/aispeedrun-alpha-v1/adv10-darkness-falls-21.35s-seed710000114-poster.png",
+    "poster_sha256": "sha256:576baafc88b6e481d57ff6c6c23cd7f5dd30f3a5ef594b0f2a22e63425f1b24f"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "schema": "zuma-rl.c155-natural-loss-transport-source-bound-replay-preregistration-amendment",
+  "version": 1,
+  "status": "FROZEN_BEFORE_DERIVED_ARTIFACT_OR_REPLAY_OUTPUT",
+  "created_utc": "2026-08-10T11:29:06.3150557Z",
+  "parent_path": "diagnostics/c156-c155-transport-source-bound-replay-preregistration-v1.json",
+  "parent_sha256": "sha256:65bad45bb5b0e6b12e7be62d4c27aac5c5e57acdf0e1e35f57b76ba09810cee1",
+  "reason": "Correct only the hexadecimal letter case of the pinned direct-runtime SHA-256 text before any derived output; the 256-bit value, all paths, parameters, commands, acceptance criteria, and output absence remain unchanged.",
+  "only_change": {
+    "field": "base_plan.direct_runtime_sha256",
+    "from": "sha256:2181ce2bfbfcB4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "to": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "semantic_digest_unchanged": true
+  },
+  "output_absence_reconfirmed": {
+    "D:/ZumaGolden/diagnostics/normalized-c155a1-natural-loss-v1.dmo": true,
+    "D:/ZumaGolden/diagnostics/base-c155-natural-loss-source-bound-plan-v1": true,
+    "D:/ZumaGolden/diagnostics/full-state-source-bound-natural-loss-c155-plan-v1-stop3182": true,
+    "D:/ZumaGolden/diagnostics/c156-c155-natural-loss-localization-u11780-u11920-v1": true
+  }
+}

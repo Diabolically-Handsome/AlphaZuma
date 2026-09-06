@@ -1,0 +1,16 @@
+{
+  "schema": "zuma-rl.pc-memory-followup-plan",
+  "version": 1,
+  "tasks": [
+    {
+      "id": "c35-natural-long-memory",
+      "session_path": "campaign-c35-natural-win-v8-third-seed-cooldown132-pc-golden-20260802",
+      "session_plan_sha256": "sha256:14d887dd4372a9cdae2d570c9b76fb03f2f287390fbcea1b5d40a5ca055204e2",
+      "output_path": "memory-followup-c35-natural-long-u3429-u5476-v1",
+      "slowdown_update": 3421,
+      "probe_update": 3429,
+      "trajectory_end_update": 5476,
+      "maximum_attempts": 3
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "schema": "zuma-rl.pc-handoff-rng-readiness-smoke-preregistration",
+  "version": 26,
+  "status": "FROZEN_BEFORE_RUN_OUTPUTS",
+  "created_utc": "2026-08-05T20:23:16.0213318Z",
+  "id": "handoff-rng-readiness-smoke-v26",
+  "session_nonce": "13a8d1a147b64256ba4c1988b82fa3e2",
+  "question": "Can a bounded read-only wait, while the inherited main-thread suspension is still held at the update-3009 handoff, observe the independently frozen natural MTRand readiness state and then preserve the source-exact update-3121 boundary?",
+  "evidence_classification": "tool-qualification-smoke-semantic-result-quarantined-no-pc-golden-credit",
+  "trigger": {
+    "outcome": "diagnostics/late-handoff-rng-replication-outcome-v25.json",
+    "status": "FAIL_13_OF_20_SOURCE_EXACT_LATE_HANDOFF_NOT_QUALIFIED",
+    "valid_runs": 20,
+    "exact_runs": 13,
+    "deficit_runs": 7,
+    "dominant_exact_handoff_draw_count": 1563,
+    "dominant_exact_post_handoff_increment": 99
+  },
+  "independent_target": {
+    "seed": 23557968,
+    "draw_count": 1563,
+    "index": 315,
+    "words_sha256": "sha256:c67b5898eeb9e1338f7b28f644b51cbceb0f5e2adb4c3c7e879931e8d864e84f",
+    "state_sha256": "sha256:a923e8d806f447b2c04c6936238f90c84ba42296a1faf9ef77a4ae8f35858ccf",
+    "derivation": "PopCapMTRandom seeded with 23557968 and advanced exactly 1563 draws; the first 2496 bytes and full 2500-byte little-endian retail state were hashed independently before any V26 output existed",
+    "consumed_run_selection": false
+  },
+  "fixed_inputs": {
+    "collector_plan": {
+      "path": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/plan.json",
+      "sha256": "sha256:5a7ba58eccd7e0d1b1008ac089cce59c167a26ba8bc359ef76f3dcd2bea8c0db"
+    },
+    "replay_dmo": {
+      "path": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/inputs/input.dmo",
+      "sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7"
+    },
+    "replay_pre_snapshot": {
+      "path": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/protocol/pre.json",
+      "sha256": "sha256:06d243f34ecf209c6296659fd4cc3c0a6c299c203cc8b4e342f55cc001c32842"
+    },
+    "host_restore_snapshot": {
+      "path": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/safety/host-pre.json",
+      "sha256": "sha256:c48bd69be03fc6e2fdf1a400b571f0f0294a5fadda1c48e08c1bd6d1dd093f46",
+      "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061"
+    },
+    "global_mtrand_source_trace": {
+      "path": "D:/ZumaGolden/autoplay-jungle2-natural-win-v8-globaloracle-20260802-0250/global-mtrand-calls.json",
+      "sha256": "sha256:4de39ac6a0e800323949e0095fc2fd3e924ea41a670ceb5d75a0ecb25b5c15a4",
+      "seed": 23557968
+    },
+    "runtime": {
+      "path": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+      "sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20"
+    }
+  },
+  "fixed_run_contract": {
+    "output_root": "D:/ZumaGolden/diagnostics/handoff-rng-readiness-smoke-f01-v26",
+    "maximum_attempts": 3,
+    "retryable": "only infrastructure failure before a validated transactional ready-v2 receipt",
+    "semantic_result_never_triggers_retry": true,
+    "probe_update": 3425,
+    "slowdown_update": 3415,
+    "trajectory_end_update": 3425,
+    "trajectory_mode": "rng",
+    "trace_detach_update": 3008,
+    "expected_actual_handoff_update": 3009,
+    "trace_reattach_update": 3501,
+    "global_mtrand_call_start_after_update": 3008,
+    "global_mtrand_call_end_at_update": 3121,
+    "expected_boundary_pre_draw_count": 1662,
+    "observe_boundary_only": true,
+    "observe_boundary_thread_runtime": true,
+    "observe_handoff_thread_runtime": true,
+    "observe_handoff_rng_state": true,
+    "handoff_rng_readiness_wait": {
+      "target_words_sha256": "sha256:c67b5898eeb9e1338f7b28f644b51cbceb0f5e2adb4c3c7e879931e8d864e84f",
+      "minimum_index": 315,
+      "timeout_seconds": 0.25,
+      "poll_interval_seconds": 0.001,
+      "main_thread_suspended": true,
+      "process_memory_writes": 0,
+      "timeout_or_block_mismatch_still_publishes_ready": true
+    },
+    "diagnostic_disable_source_bound_board_anchor": true,
+    "skip_repaint_guard": true,
+    "skip_frozen_snapshot": true,
+    "global_sync_timeout_seconds": 900
+  },
+  "validity_contract": {
+    "collector_status": "PASS",
+    "observer_status": "PASS",
+    "ready_version": 2,
+    "ready_handoff_verified": true,
+    "actual_handoff_update": 3009,
+    "actual_detached_after_update": 3009,
+    "readiness_receipt_contract_pass": true,
+    "observer_process_memory_writes": 0,
+    "observer_state_correction_count": 0,
+    "hardware_breakpoint_restored": true,
+    "debugger_detach_error": null,
+    "persistent_file_modified": false,
+    "host_state_restored": true,
+    "residual_retail_process_count": 0
+  },
+  "decision_rule": {
+    "tool_qualification_pass": "The run is valid, the wait receipt is bound to ready-v2 and the final handoff snapshot, all wait and observer memory writes are zero, debugger and host restoration pass, and no residual retail process remains.",
+    "candidate_smoke_pass": "Tool qualification passes, readiness status is TARGET_REACHED, final handoff draw count is at least 1563 in the frozen word block, and the update-3121 boundary is source exact at draw 1662.",
+    "if_candidate_smoke_pass": "Freeze an independent fixed-size replication before any replication outputs; do not award PC Golden or Gate credit from this smoke.",
+    "if_candidate_smoke_fail": "Do not retry on semantics and do not promote this intervention; diagnose the frozen failure mode.",
+    "pc_golden_credit": false,
+    "fidelity_gate_change": false,
+    "formal_transport_change": false,
+    "large_scale_training_start": false
+  },
+  "tooling": {
+    "global_boundary_tool_sha256": "sha256:8ab14f90aab69e014089363204732199ea7f5c8e5f0efba8d1008d8744d78a5d",
+    "collector_sha256": "sha256:becadf38599b7e324ac98adb4cc46e54aa068e535a9510d9dece75d140338ed6",
+    "synchronizer_test_sha256": "sha256:176d46ed725316ccc40c153cf3c9b9ff7d6291a1b452176bcefb8b736ea38e68",
+    "collector_test_sha256": "sha256:889e138ca37dd5f75567c9099ae4460505b862b60d9cc01a9a97942ada8715d2",
+    "focused_tests": "PASS_63",
+    "native_full_suite": "PASS_1167_SKIPPED_12_EXIT_0"
+  },
+  "preflight": {
+    "live_host_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "runtime_process_count": 0,
+    "input_and_tool_hashes_match": true,
+    "all_declared_outputs_absent": true
+  },
+  "outputs": {
+    "host_pre": "D:/ZumaGolden/diagnostics/handoff-rng-readiness-smoke-host-pre-v26.json",
+    "host_post": "D:/ZumaGolden/diagnostics/handoff-rng-readiness-smoke-host-post-v26.json",
+    "execution_binding": "diagnostics/handoff-rng-readiness-smoke-execution-binding-v26.json",
+    "outcome": "diagnostics/handoff-rng-readiness-smoke-outcome-v26.json"
+  },
+  "non_authorizations": [
+    "pc_golden_credit",
+    "fidelity_gate_change",
+    "formal_transport_change",
+    "large_scale_training_start"
+  ]
+}

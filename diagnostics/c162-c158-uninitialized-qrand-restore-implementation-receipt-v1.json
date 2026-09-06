@@ -1,0 +1,68 @@
+{
+  "schema": "zuma-rl.c158-uninitialized-qrand-restore-implementation-receipt",
+  "version": 1,
+  "status": "PASS_BEFORE_DIFF_OUTPUT",
+  "created_utc": "2026-08-10T12:25:30.2508695Z",
+  "preregistration": "diagnostics/c162-c158-uninitialized-qrand-restore-preregistration-v1.json",
+  "preregistration_sha256": "sha256:dac9400e4751dad1b72ec7a41eac35a743beebf0655de9df753d495bfb19576a",
+  "implementation": {
+    "src/zuma_rl/revenge_core.py_before": "sha256:0533d0e3f0bd6457da0425b6b3eb4bc8f7db9de239b647f10b5dec06f1803a60",
+    "src/zuma_rl/revenge_core.py_after": "sha256:5a8f9cb5c5eeba9f7644463053b53c0d2009515e736fe887f767ee7aa2953248",
+    "tests/test_revenge_core.py_before": "sha256:0dbccfc005d270506ca3bc76ee6daf1faa3a65c59c1d6888a2638021b875a096",
+    "tests/test_revenge_core.py_after": "sha256:a9a23a43ca9961d58b1d535838061deaf52ee46b39da430c4e6e15372ac8bad4",
+    "src/zuma_rl/pc_loss_sequence.py_unchanged": "sha256:0da3747d4931438eed86e1797303aba83306b226fea2b4d6b9b4ed1c4676c42b",
+    "tools/compare_pc_loss_sequence.py_unchanged": "sha256:661a8a1371514030ab4694607dd2e8f357209d5c22e838799668ff4b327cddc4",
+    "loss_dynamics_modified": false,
+    "rng_choice_dynamics_modified": false,
+    "source_artifact_modified": false,
+    "comparison_tolerance_modified": false,
+    "gate_logic_modified": false
+  },
+  "implemented_contract": {
+    "all_empty_vectors_accepted_only_for_update_count_0_selected_index_minus_1": true,
+    "factory_equivalent_zero_arrays_restored": true,
+    "allowed_support_restored_to_none": true,
+    "restore_consumes_rng_draws": false,
+    "partial_empty_vectors_rejected": true,
+    "noncanonical_empty_scalar_state_rejected": true,
+    "initialized_state_validation_retained": true,
+    "padding_or_fitting": false
+  },
+  "c158_oracle_test": {
+    "pre_reset_thread_crt_rand_state": 1020014204,
+    "post_reset_thread_crt_rand_state": 3527905494,
+    "post_reset_current_color_id": 0,
+    "post_reset_next_color_id": 2,
+    "post_reset_qrand_update_count": 2,
+    "post_reset_qrand_selected_index": 2,
+    "post_reset_qrand_vectors_exact": true,
+    "status": "PASS"
+  },
+  "tests": {
+    "py_compile": "PASS",
+    "focused_command": ".\\.venv-win\\Scripts\\python.exe -m pytest -q tests\\test_revenge_core.py -k \"qrand_restores_c158 or qrand_rejects_noncanonical or qrand_rejects_partially or qrand_replays_captured\"",
+    "focused_status": "PASS",
+    "focused_passed_count": 5,
+    "targeted_command": ".\\.venv-win\\Scripts\\python.exe -m pytest -q tests\\test_revenge_core.py",
+    "targeted_status": "PASS",
+    "targeted_collected_count": 97,
+    "full_command": ".\\.venv-win\\Scripts\\python.exe -m pytest -q",
+    "full_status": "PASS",
+    "full_exit_code": 0,
+    "full_collected_test_count": 1540,
+    "collection_file_count": 109,
+    "warnings": 1,
+    "warning_classification": "preexisting Gymnasium render-mode spec warning"
+  },
+  "output_preflight": {
+    "path": "D:/ZumaGolden/diagnostics/jungle2-c158-u11341-u11519-natural-loss-diff-v2.json",
+    "absent": true,
+    "single_execution_authorized": true
+  },
+  "decision": {
+    "diff_execution_authorized": true,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

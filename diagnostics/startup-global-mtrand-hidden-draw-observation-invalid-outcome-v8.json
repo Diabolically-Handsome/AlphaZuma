@@ -1,0 +1,70 @@
+{
+  "schema": "zuma-rl.pc-startup-global-mtrand-hidden-draw-diagnostic-invalid-outcome",
+  "version": 8,
+  "created_utc": "2026-08-04T20:54:33.936Z",
+  "status": "INVALID_TOOLING_DEFECT_HOST_RESTORED",
+  "decision": {
+    "result": "DO_NOT_USE_ANY_V8_OUTPUT_AS_RNG_EVIDENCE",
+    "pc_golden_credit": false,
+    "fidelity_gate_change": false,
+    "formal_transport_change": false,
+    "large_scale_training_start": false
+  },
+  "parent_preregistration": "diagnostics/startup-global-mtrand-hidden-draw-observation-preregistration-v8.json",
+  "parent_preregistration_sha256": "sha256:1c124badf356a79a76667317f19af563a8ce9208d317d8fc5c8c13e07f6ea9ca",
+  "parent_execution_binding": "diagnostics/startup-global-mtrand-hidden-draw-observation-execution-binding-v8.json",
+  "parent_execution_binding_sha256": "sha256:49a7993a0559b0abcd4f1d51037dc0f3370a18b1a8c5a5c3ad4eb32a043b8fb4",
+  "run": {
+    "path": "D:/ZumaGolden/diagnostics/startup-global-mtrand-hidden-draw-observation-e01-o308-o309-v8",
+    "attempts_sha256": "sha256:016ad0c30cce40dd2cf4789fb0e92943b44a62b0252014dd63a155bf1e4834bf",
+    "completed_attempt_count": 1,
+    "partial_attempt_count": 1,
+    "validated_success_count": 0
+  },
+  "incidents": [
+    {
+      "attempt": 1,
+      "classification": "RETRYABLE_PRE_TARGET_STARTUP_SERVICE_RACE",
+      "last_framework_update": 390,
+      "target_interval_entered": false,
+      "failure": "service payload forced read changed its prepared command",
+      "strict_log_sha256": "sha256:a31beaf19ffe3349dd872cbf3c1533215b38c059222042a3e50ad098862edc16"
+    },
+    {
+      "attempt": 2,
+      "classification": "NON_SEMANTIC_TOOLING_EXCEPTION_AT_FIRST_HIDDEN_WRITE",
+      "target_interval_entered": true,
+      "exception_type": "NameError",
+      "exception": "name '_stack_code_words' is not defined",
+      "source_file": "tools/trace_popcap_demo_commands.py",
+      "failing_operation": "format the first DR1 MTRand-index write stack evidence",
+      "strict_log_sha256": "sha256:8bf99d925acfa78e0f726869e01d4acc770f6101d4cc86bb737cca05147f2645",
+      "semantic_interpretation_allowed": false
+    }
+  ],
+  "external_runner_incident": {
+    "classification": "OUTER_COMMAND_TIMEOUT_AFTER_120_SECONDS",
+    "effect": "the detached collector and retail process remained alive after the caller timed out",
+    "response": "verified exact PIDs and command lines, terminated only the bound collector and retail process, then explicitly restored the frozen host snapshot"
+  },
+  "recovery": {
+    "host_pre_snapshot": "D:/ZumaGolden/diagnostics/startup-global-mtrand-hidden-draw-observation-host-pre-v8.json",
+    "host_pre_snapshot_sha256": "sha256:2c7b8c3fc800df46caa5b99815b767000772485ddd6839056f7c63eae500da54",
+    "host_pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_recovered_snapshot": "D:/ZumaGolden/diagnostics/startup-global-mtrand-hidden-draw-observation-host-recovered-after-invalid-v8.json",
+    "host_recovered_snapshot_sha256": "sha256:edde50cfb35f85d7b7f4bf4950fb9a4a945b0a528ac4902a5fdd554d49b1f056",
+    "host_recovered_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "state_root_match": true,
+    "residual_retail_process_count": 0
+  },
+  "correction": {
+    "old_tracer_sha256": "sha256:7bab84fa47934d8b795058c66c4ae352c57e9cd36e37f8fce805bbc76340f5da",
+    "new_tracer_sha256": "sha256:6586859c0eab6d29673f2a8ca05b0c80f6b59c87b8c985cd24c50423ab72d10d",
+    "change": "replace the nonexistent hidden-write stack helper with a bounded wrapper over the existing _stack_code_candidates implementation",
+    "regression_test": "test_startup_hidden_draw_stack_code_uses_bounded_candidate_scan",
+    "new_tracer_test_sha256": "sha256:eab284b79a4e465dc89d15a3890409510b38c67b4b8b76193605d9bf688273f9",
+    "focused_native_tests": "PASS_63",
+    "native_full_suite": "PASS_1162_COLLECTED_EXIT_0"
+  },
+  "next_action": "freeze a new V9 preregistration and execution binding with new tooling hashes, a new host snapshot, and a new output root"
+}

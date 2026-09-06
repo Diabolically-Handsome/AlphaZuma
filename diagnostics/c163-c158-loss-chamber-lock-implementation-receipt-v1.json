@@ -1,0 +1,54 @@
+{
+  "schema": "zuma-rl.c158-loss-chamber-lock-implementation-receipt",
+  "version": 1,
+  "status": "PASS_BEFORE_DIFF_OUTPUT",
+  "created_utc": "2026-08-10T12:29:39.8781817Z",
+  "preregistration": "diagnostics/c163-c158-loss-chamber-lock-preregistration-v1.json",
+  "preregistration_sha256": "sha256:7673e75758c31eb3f8d4bdeb5fef4f2ab3caf57bbdcdd58bb37a7280b808626b",
+  "implementation": {
+    "src/zuma_rl/revenge_core.py_before": "sha256:5a8f9cb5c5eeba9f7644463053b53c0d2009515e736fe887f767ee7aa2953248",
+    "src/zuma_rl/revenge_core.py_after": "sha256:0229faec8c7b3fb05f64831bcc93565ef072184d48bb96c489b767d6c55628ad",
+    "tests/test_revenge_core.py_before": "sha256:a9a23a43ca9961d58b1d535838061deaf52ee46b39da430c4e6e15372ac8bad4",
+    "tests/test_revenge_core.py_after": "sha256:61c72424c5883a7fbae33f65f12d7742e7e1c0ad81741a6de1a098a0671c576c",
+    "src/zuma_rl/pc_loss_sequence.py_unchanged": "sha256:0da3747d4931438eed86e1797303aba83306b226fea2b4d6b9b4ed1c4676c42b",
+    "tools/compare_pc_loss_sequence.py_unchanged": "sha256:661a8a1371514030ab4694607dd2e8f357209d5c22e838799668ff4b327cddc4",
+    "skull_entry_reset_modified": false,
+    "loss_suction_modified": false,
+    "rng_choice_arithmetic_modified": false,
+    "normal_gameplay_color_reselection_modified": false,
+    "source_artifact_modified": false,
+    "gate_logic_modified": false
+  },
+  "implemented_contract": {
+    "skull_entry_pending_chamber_reselection_blocked": true,
+    "loss_started_chamber_reselection_blocked": true,
+    "locked_chamber_exact": true,
+    "locked_qrand_scalars_and_vectors_exact": true,
+    "locked_thread_crt_state_exact": true,
+    "normal_gameplay_reselection_regression_retained": true
+  },
+  "tests": {
+    "py_compile": "PASS",
+    "focused_command": ".\\.venv-win\\Scripts\\python.exe -m pytest -q tests\\test_revenge_core.py -k \"check_gun_colors\"",
+    "focused_status": "PASS",
+    "focused_passed_count": 3,
+    "full_command": ".\\.venv-win\\Scripts\\python.exe -m pytest -q",
+    "full_status": "PASS",
+    "full_exit_code": 0,
+    "full_collected_test_count": 1542,
+    "collection_file_count": 109,
+    "warnings": 1,
+    "warning_classification": "preexisting Gymnasium render-mode spec warning"
+  },
+  "output_preflight": {
+    "path": "D:/ZumaGolden/diagnostics/jungle2-c158-u11341-u11519-natural-loss-diff-v3.json",
+    "absent": true,
+    "single_execution_authorized": true
+  },
+  "decision": {
+    "diff_execution_authorized": true,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

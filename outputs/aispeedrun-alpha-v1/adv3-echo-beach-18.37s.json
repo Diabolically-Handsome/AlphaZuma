@@ -1,0 +1,135 @@
+{
+  "schema": "zuma-rl.paired-multimodel-level-video",
+  "version": 1,
+  "status": "COMPLETE",
+  "source": {
+    "aggregate": "/mnt/d/ZumaTraining/overnight-v11-recovery-postprocess-s43081301-v1/morning-target-evaluation/aggregate.json",
+    "aggregate_sha256": "sha256:b82e017511d39540f17e28ab50bfa451cdac9804f2b67b7764762eb94d8621c8",
+    "preregistration": "/mnt/d/ZumaTraining/overnight-v11-recovery-postprocess-s43081301-v1/morning-target-preregistration.json",
+    "preregistration_sha256": "sha256:55543e20ecae3fac92072d8c40fcb65c686183cd292128d7504aa76eb0a4d3ad",
+    "models_manifest": "/mnt/d/ZumaTraining/overnight-v11-recovery-postprocess-s43081301-v1/morning-blind-models-manifest.json",
+    "models_manifest_sha256": "sha256:5f9c76008d70e6ce8c156916d6a1b214ad34509399a3142f44d4158e382408e0"
+  },
+  "selection": {
+    "rule": "fastest winning formal blind attempt for level across frozen models",
+    "requested_level_id": "Jungle3",
+    "requested_model_id": null
+  },
+  "candidate": {
+    "model_id": "selected-overnight",
+    "training_steps": 16252928,
+    "model_sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579",
+    "seed": 710000031,
+    "outcome": "win",
+    "native_outcome": null,
+    "time_limit_truncated": false,
+    "ticks": 1837,
+    "seconds": 18.37,
+    "score": 2170,
+    "reward": 9.826300000000003,
+    "decisions": 1837,
+    "desired_action_counts": {
+      "wait": 1743,
+      "fire": 54,
+      "swap": 40
+    },
+    "executed_action_counts": {
+      "wait": 1743,
+      "fire": 54,
+      "swap": 40
+    },
+    "trajectory_sha256": "sha256:4fb227959bd09030a0e82403bfd8d61ba161d2ae88b800a5eab076ba829ce8a4",
+    "level_id": "Jungle3",
+    "display_name": "Echo Beach",
+    "curve_count": 1,
+    "attempt_index": 15
+  },
+  "model": {
+    "path": "/mnt/d/ZumaTraining/overnight-v11-adaptive-recovery-s43081301-v1/checkpoints/adaptive-5090-recovery_13631488_steps.zip",
+    "sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579",
+    "device": "cuda:1"
+  },
+  "verification": {
+    "identity_fields": [
+      "outcome",
+      "ticks",
+      "score",
+      "trajectory_sha256",
+      "decisions",
+      "desired_action_counts",
+      "executed_action_counts"
+    ],
+    "pre_render_matches_formal_attempt": true,
+    "rendered_matches_formal_attempt": true,
+    "pre_render": {
+      "model_id": "selected-overnight",
+      "training_steps": 16252928,
+      "model_sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579",
+      "seed": 710000031,
+      "outcome": "win",
+      "native_outcome": null,
+      "time_limit_truncated": false,
+      "ticks": 1837,
+      "seconds": 18.37,
+      "score": 2170,
+      "reward": 9.826300000000003,
+      "decisions": 1837,
+      "desired_action_counts": {
+        "wait": 1743,
+        "fire": 54,
+        "swap": 40
+      },
+      "executed_action_counts": {
+        "wait": 1743,
+        "fire": 54,
+        "swap": 40
+      },
+      "trajectory_sha256": "sha256:4fb227959bd09030a0e82403bfd8d61ba161d2ae88b800a5eab076ba829ce8a4",
+      "qualifies_sub_12": false
+    },
+    "rendered": {
+      "model_id": "selected-overnight",
+      "training_steps": 16252928,
+      "model_sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579",
+      "seed": 710000031,
+      "outcome": "win",
+      "native_outcome": null,
+      "time_limit_truncated": false,
+      "ticks": 1837,
+      "seconds": 18.37,
+      "score": 2170,
+      "reward": 9.826300000000003,
+      "decisions": 1837,
+      "desired_action_counts": {
+        "wait": 1743,
+        "fire": 54,
+        "swap": 40
+      },
+      "executed_action_counts": {
+        "wait": 1743,
+        "fire": 54,
+        "swap": 40
+      },
+      "trajectory_sha256": "sha256:4fb227959bd09030a0e82403bfd8d61ba161d2ae88b800a5eab076ba829ce8a4",
+      "qualifies_sub_12": false
+    }
+  },
+  "video": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/outputs/aispeedrun-alpha-v1/adv3-echo-beach-18.37s.mp4",
+    "sha256": "sha256:697cb53952b7e4e6d6e02690f25703350b46a95f83a2d1fa050ab10437bc81bf",
+    "bytes": 1276822,
+    "codec": "h264/libx264",
+    "pixel_format": "yuv420p",
+    "width": 800,
+    "height": 736,
+    "fps": 50,
+    "frame_stride_native_ticks": 2,
+    "gameplay_frame_count": 920,
+    "frame_count": 1020,
+    "decoded_frame_count": 1020,
+    "duration_seconds": 20.4,
+    "final_hold_seconds": 2.0,
+    "poster": "/mnt/c/Users/Laure/Documents/祖玛/outputs/aispeedrun-alpha-v1/adv3-echo-beach-18.37s-poster.png",
+    "poster_sha256": "sha256:3a482a8100e83c98dc75b89759bd533f5c882c8446c7df1f4c5cd9d54e662bc9"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "schema": "zuma-rl.optimizer-reset-paired-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T12:55:44.810Z",
+  "status": "OPTIMIZER_RESET_MECHANISM_PASS",
+  "decision": "AUTHORIZE_FRESH_SEED_OPTIMIZER_RESET_CONFIRMATION",
+  "preregistration": {
+    "path": "diagnostics/optimizer-reset-paired-s20260878-preregistration-v1.json",
+    "sha256": "sha256:8dd8dfb9981872480ab1085d73a338b43bc518eee63773997f45ae15f4e9161f",
+    "status": "FROZEN_BEFORE_RUN_OUTPUT"
+  },
+  "artifacts": {
+    "run_dir": "D:/ZumaTraining/screening-optimizer-reset-paired-s20260878-v1",
+    "config_sha256": "sha256:0924897be954b01d61df6c19c8e11cff9a553167d4047d3a4d20d83cb3851d31",
+    "final_model_sha256": "sha256:7247e71846625e8d552fcaf5ddf64123466d81a85c75f0b0a93962b9d619a722",
+    "optimizer_reset_sha256": "sha256:eaca6a6bc3fee4d8ce4a5a4877b38a823b2d2d90ae9c87fb14cd54d9bca4219d",
+    "deterministic_comparison_sha256": "sha256:069c16ed530e7fbdf7f61eb34afb03051b7110c5f4c76c1a87654c5c53560d7c",
+    "stochastic_comparison_sha256": "sha256:5f04bf09fdf55a6e255386c120b60f758684158a3739e0bf3aef8231c6140d09",
+    "completion_sha256": "sha256:a24075ca5a62e19314f7c4f3718ab3f3ec542116a3a93a99ae6422e9836d2ffd",
+    "stdout_sha256": "sha256:a6823c79d3e1ca672c96ca446dabd3b881d7a541e949e0a9ae79e290d3b60fef",
+    "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "acceptance_results": {
+    "pipeline": {
+      "pass": true,
+      "completion_receipt_status": "COMPLETE",
+      "effective_steps": 16384,
+      "optimizer_reset_status": "PASS",
+      "optimizer_state_parameter_count_before": 20,
+      "optimizer_state_parameter_count_after": 0,
+      "model_parameters_bitwise_unchanged_by_reset": true,
+      "failure_receipt_present": false,
+      "stderr_bytes": 0
+    },
+    "replayed_precondition": {
+      "pass": true,
+      "deterministic_receipt_hash_exactly_reproduced": true,
+      "stochastic_receipt_hash_exactly_reproduced": true
+    },
+    "deterministic_retention": {
+      "pass": true,
+      "pretrain_wins": 7,
+      "posttrain_wins": 7,
+      "posttrain_losses": 0,
+      "posttrain_truncations": 1,
+      "pretrain_mean_reward": 32.5993875,
+      "posttrain_mean_reward": 34.68935,
+      "mean_reward_delta": 2.0899625,
+      "paired_improvements": 4,
+      "paired_regressions": 4,
+      "paired_regressions_exceeding_5": 1
+    },
+    "stochastic_retention": {
+      "pass": true,
+      "pretrain_wins": 8,
+      "posttrain_wins": 8,
+      "posttrain_truncations": 0,
+      "pretrain_mean_reward": 35.657575,
+      "posttrain_mean_reward": 37.8681875,
+      "mean_reward_delta": 2.2106125,
+      "paired_improvements": 4,
+      "paired_regressions": 4,
+      "paired_regressions_exceeding_5": 0
+    },
+    "mechanism_effect": {
+      "pass": true,
+      "unreset_deterministic_severe_regressions": 3,
+      "reset_deterministic_severe_regressions": 1,
+      "unreset_posttrain_deterministic_wins": 7,
+      "reset_posttrain_deterministic_wins": 7,
+      "unreset_deterministic_mean_reward_delta": -1.3714875,
+      "reset_deterministic_mean_reward_delta": 2.0899625,
+      "unreset_stochastic_mean_reward_delta": 0.4681125,
+      "reset_stochastic_mean_reward_delta": 2.2106125
+    },
+    "overall": {
+      "pass": true,
+      "all_preregistered_hard_gates_pass": true
+    }
+  },
+  "bounded_inference": "on the same consumed difficult training and boundary seed streams, replacing the inherited supervised Adam state with a fresh optimizer state reduced deterministic severe paired regressions from three to one and improved both deterministic and stochastic mean return; this isolates optimizer-objective transition as a useful mechanism but is not fresh-seed evidence",
+  "next_action": {
+    "authorized": "one preregistered fresh-seed 16384-step identity-aware confirmation using optimizer reset and no aim freeze",
+    "forbidden": "do not launch the 98304-step scale screen until fresh confirmation passes"
+  },
+  "non_authorizations": [
+    "fresh_seed_claim",
+    "98304_step_scale_screen",
+    "large_scale_training",
+    "fidelity_gate_opening",
+    "original_transfer_certification"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema": "zuma-rl.pc-targeted-capture-execution-amendment",
+  "version": 1,
+  "id": "c67-front-insertion-u3664-u3684-amendment-1",
+  "parent_preregistration": {
+    "path": "diagnostics/c67-front-insertion-capture-preregistration-v1.json",
+    "sha256": "sha256:8e12abf6834af698e6d778a238386753bdba6bf3c1bb3fbe93f21afc8b774f45"
+  },
+  "invalidated_prepare_attempt": {
+    "result": "window_repaint_guard_invalid",
+    "session_directory_created": false,
+    "game_launched": false,
+    "evidence_generated": false
+  },
+  "reason": "The collector requires repaint and capture wait to be inside one effect-free DMO corridor. The frozen target range lies in the later corridor bounded by effectful updates 3628 and 3685.",
+  "allowed_amendments": {
+    "session_root": {
+      "from": "D:/ZumaGolden/campaign-c67-natural-win-v8-front-insertion-u3600-u3720",
+      "to": "D:/ZumaGolden/campaign-c67-natural-win-v8-front-insertion-u3635-u3690"
+    },
+    "window_repaint_update": {
+      "from": 3170,
+      "to": 3630
+    },
+    "wait_until_framework_update": {
+      "from": 3600,
+      "to": 3635
+    },
+    "duration_seconds": {
+      "from": 1.2,
+      "to": 0.55
+    },
+    "framework_state_poll_arm_update": {
+      "from": 3595,
+      "to": 3630
+    }
+  },
+  "frozen_unchanged_fields": {
+    "required_update_range": [
+      3664,
+      3684
+    ],
+    "minimum_ticks": 21,
+    "allow_idle_input_window": true,
+    "startup_process_affinity_mask": 1,
+    "framework_state_poll_affinity_mask": 4,
+    "framework_state_poll_target_hz": 5000,
+    "inter_run_cooldown_seconds": 0.0
+  },
+  "post_input_followup_contract": {
+    "mode": "source_bound_post_input_blackout",
+    "implementation_sha256": "sha256:d9d5e8806cad595eca00b3cfd152b69ff595a9aee4530252470d6f7438379008",
+    "test_sha256": "sha256:0c60fc370590081b4486d2cedeb6c275e368579d0981d43bdcd0175a8efc13e8",
+    "test_result": "56 relevant tests passed"
+  }
+}

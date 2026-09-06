@@ -1,0 +1,97 @@
+{
+  "schema": "zuma-rl.alphazuma-55-dagger-source-selection",
+  "version": 1,
+  "status": "SELECTED",
+  "selected_utc": "2026-08-15T13:03:48.122967+00:00",
+  "selection_plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-dagger-source-selection-s99081528-plan-v1.json",
+    "sha256": "sha256:8c44bf8b0036809125b93fee61f000c34d3d09af3fbcdfaa48398b8fabe79835"
+  },
+  "independent_probe_audit": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-reanchor-probe-s99081527-independent-audit-v1.json",
+    "sha256": "sha256:5b12a48c1d8b86aa7fa9e0817744e18ffb60befc537f41fb58a557cfd804b7a5"
+  },
+  "final_matrix": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-reanchor-probe-s99081527-v1/matrix-shard-00-of-01.json",
+    "sha256": "sha256:256cd31351814e7535ec0b6774eb164a0c7a04d8f623c37ca923192997be8832"
+  },
+  "ranking_rule": {
+    "scope": "all_12_paired_probe_attempts_per_model",
+    "ordered_keys": [
+      {
+        "metric": "wins",
+        "direction": "descending"
+      },
+      {
+        "metric": "total_score",
+        "direction": "descending"
+      },
+      {
+        "metric": "median_winning_ticks",
+        "direction": "ascending",
+        "no_wins_value": "positive_infinity"
+      },
+      {
+        "metric": "model_sha256",
+        "direction": "ascending"
+      }
+    ],
+    "selection_count": 1,
+    "all_models_eligible": true,
+    "no_manual_override": true
+  },
+  "ranking": [
+    {
+      "rank": 1,
+      "model_id": "polar-additive-identity-scale-1",
+      "model_sha256": "sha256:97ada7f7eadf8be03036a4036c64a1d27052b7dd1e21bb00ce2e3b2f66b18905",
+      "attempts": 12,
+      "wins": 0,
+      "losses": 12,
+      "truncations": 0,
+      "total_score": 8230,
+      "median_winning_ticks": null
+    },
+    {
+      "rank": 2,
+      "model_id": "polar-additive-identity-scale-2",
+      "model_sha256": "sha256:0df656ad28f88ca7c1c4f745889bbe192b9eb127ca8c19ab60aca1286cc0b4a7",
+      "attempts": 12,
+      "wins": 0,
+      "losses": 12,
+      "truncations": 0,
+      "total_score": 6950,
+      "median_winning_ticks": null
+    },
+    {
+      "rank": 3,
+      "model_id": "polar-reset-identity-scale-5",
+      "model_sha256": "sha256:65ffe5d4db7962c2692114fc3d05100eea3f5497318952701393ccb7a7696d24",
+      "attempts": 12,
+      "wins": 0,
+      "losses": 12,
+      "truncations": 0,
+      "total_score": 6790,
+      "median_winning_ticks": null
+    },
+    {
+      "rank": 4,
+      "model_id": "settled-v3-multiseed-final",
+      "model_sha256": "sha256:ced0d6196fa27317e198d6c7a946fd21c9ed18d4d9574a02ea93ab8b4bcd116c",
+      "attempts": 12,
+      "wins": 0,
+      "losses": 12,
+      "truncations": 0,
+      "total_score": 6700,
+      "median_winning_ticks": null
+    }
+  ],
+  "selected_model": {
+    "id": "polar-additive-identity-scale-1",
+    "training_steps": 36027227,
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-reanchor-variants-s99081527-v1/polar-additive-identity-scale-1.zip",
+    "sha256": "sha256:97ada7f7eadf8be03036a4036c64a1d27052b7dd1e21bb00ce2e3b2f66b18905"
+  },
+  "formal_seed_consumption": false,
+  "formal_candidate_registration_authorized": false
+}

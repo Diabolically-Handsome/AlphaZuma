@@ -1,0 +1,66 @@
+{
+  "schema": "zuma-rl.retail-board-reset-trace-implementation-receipt",
+  "version": 1,
+  "status": "PASS_BEFORE_OUTPUT",
+  "created_utc": "2026-08-10T10:33:12.7621369Z",
+  "preregistration": {
+    "path": "diagnostics/c151-low-perturbation-board-reset-trace-preregistration-v1.json",
+    "sha256": "sha256:8e5a4ff555ea1fa86d31f5da121d04d802b863d7d4f04f5fe9a0b55624328e38"
+  },
+  "implemented": [
+    "A combined board_global_precall_and_reset trace kind starts at the exact Board global-MTRand call instruction.",
+    "After the first active-Board source candidate, DR0 is retargeted in the paused main-thread context to the frozen candidate reset entry without writing process memory.",
+    "The reset entry records ESI, the active Board pointer, the dynamic return address, static call site, two stack arguments, registers, and compact Board state.",
+    "A structurally valid entry retargets the same DR0 slot to the dynamic return address and records the paired post-reset state.",
+    "The original DR0, DR1, DR2, DR3, DR6, and DR7 values are restored in the paused return context before debugger detach.",
+    "The recorder accepts the combined trace as an exact source-anchor provider while keeping the source boundary explicitly identified as board_global_precall."
+  ],
+  "code": [
+    {
+      "path": "tools/trace_popcap_gameplay_mtrand.py",
+      "bytes": 70556,
+      "sha256": "sha256:5d66b5bd78241e834ef8feed5d06b8150ce21b7cdbbec256e42a515ae736d9b8"
+    },
+    {
+      "path": "tools/record_autoplay_zuma.py",
+      "bytes": 54683,
+      "sha256": "sha256:a5f305ff8174ea6c5eb87abdc4cb0674e711f7e5e1008edcb36c7b26b5e7ae17"
+    },
+    {
+      "path": "tests/test_record_autoplay_zuma.py",
+      "bytes": 11251,
+      "sha256": "sha256:a75f6cca27b0ec69e89db699ac1cab0a7dab321ef2c15b015890c63f10f0b30f"
+    }
+  ],
+  "verification": {
+    "py_compile": "PASS",
+    "focused_test_files": ["tests/test_record_autoplay_zuma.py"],
+    "focused_tests_passed": 28,
+    "integration_test_files": [
+      "tests/test_record_autoplay_zuma.py",
+      "tests/test_autoplay_live_zuma.py",
+      "tests/test_collect_pc_memory_probe.py",
+      "tests/test_retail_dmo_provenance.py"
+    ],
+    "integration_tests_passed": 192,
+    "failures": 0
+  },
+  "frozen_runtime_identities_preserved": {
+    "source_call_address": "0x0065B81C",
+    "source_instruction_hex": "e86fbcfbff",
+    "reset_entry_address": "0x00419A90",
+    "reset_entry_first_32_bytes_sha256": "sha256:5a8da3a3f64f779b8260c3dffd24affb179daa0f925b6808e9bce44394ea37a4",
+    "reset_native_clock_zero_address": "0x00419BAF",
+    "reset_native_clock_zero_instruction_hex": "c786c80e000000000000",
+    "reset_return_instruction_address": "0x00419E24",
+    "reset_return_instruction_hex": "c20800"
+  },
+  "safety": {
+    "software_breakpoint_patch": false,
+    "process_memory_write_code_added_for_combined_mode": false,
+    "maximum_simultaneous_hardware_breakpoints": 1,
+    "c151_output_root_created": false,
+    "gate_change": false,
+    "training_start": false
+  }
+}

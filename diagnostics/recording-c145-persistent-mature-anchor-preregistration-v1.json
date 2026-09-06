@@ -1,0 +1,101 @@
+{
+  "schema": "zuma-rl.retail-natural-loss-persistent-mature-anchor-preregistration",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T09:19:43.1757614Z",
+  "purpose": "Preserve the latest mature below-target pre-loss Board across low-clock complete snapshots so the already frozen v2 Board-only teardown and replacement contract can evaluate against its true pre-reset anchor.",
+  "classification": "state-lifetime-correction-preregistered-before-implementation",
+  "failed_frozen_predecessor": {
+    "preregistration_sha256": "sha256:d739f306220e7b4d7514dc8eac052db0df60db5576a7cc0213739a5dc947ccde",
+    "implementation_receipt_sha256": "sha256:5b17daf76342f7c75aa86bec093874a589af27291df203e121bd1e232f6976cf",
+    "root_cause": "A complete require_shooter=true snapshot could resume after the native clock had reset. That low-clock snapshot replaced last_stable_state before the next Board-only observation, discarding the mature old-Board anchor required by the reset test.",
+    "runs": [
+      {
+        "id": "c144a1",
+        "status": "INCOMPLETE",
+        "result_sha256": "sha256:4bff667419d48fdd1792a2f8c727028bb009a8f111d48dc37cbaa1737be8be9c",
+        "autoplay_log_sha256": "sha256:c99e061728c8d2ac31cbb3c9d4f16849daae931c0d63d7ebc54cf5c737d970ba",
+        "dmo_sha256": "sha256:9aae1a34c3db67b526937fbcce9a5961d18e347d2e0530787331dea332b733af"
+      },
+      {
+        "id": "c144a2",
+        "status": "INCOMPLETE",
+        "result_sha256": "sha256:9a937304009a36404964b40e668a66483370de3546c965673bc92f9e5bb9682f",
+        "autoplay_log_sha256": "sha256:595415a080d47f73e8dcbc54a01d306edbc29b40a9dd077d184f5b6954aeed4d",
+        "dmo_sha256": "sha256:4ca8490f6eb494c72b37aa9cbc4e869ef5368c97de9b9521f112d45b712acfce"
+      },
+      {
+        "id": "c144a3",
+        "status": "INCOMPLETE",
+        "result_sha256": "sha256:2a6e33fc83f27ee79fb4f22871e4e6a0151ca1adb97ae777b3ada2d2e6c23b41",
+        "autoplay_log_sha256": "sha256:5bde4f9c081cd69c63e50c38e6fd772635da85ddc1e1b69993a325448fdf5659",
+        "dmo_sha256": "sha256:9d70ab84a7efd07c0f5362fca247216a18a53d8b1d2224c20f95560e07d048c7"
+      }
+    ]
+  },
+  "frozen_v2_loss_contract_unchanged": {
+    "receipt_kind": "natural_loss_board_replacement_transition_v2",
+    "before_native_game_time_minimum": 1000,
+    "before_score_below_positive_target": true,
+    "minimum_complete_snapshot_unavailable_observations": 1,
+    "post_reset_native_game_time_maximum": 1000,
+    "minimum_native_clock_reset": 1000,
+    "zero_score_target_teardown_required": true,
+    "replacement_score_target_positive": true,
+    "replacement_curve_plan_exhausted": false,
+    "replacement_combined_ball_population_positive": true,
+    "gameplay_policy": "idle",
+    "action_count": 0,
+    "swap_count": 0,
+    "process_memory_writes": 0
+  },
+  "only_allowed_implementation_delta": {
+    "new_anchor": {
+      "name": "last_mature_below_target_state",
+      "updates_only_when": {
+        "native_game_time_minimum": 1000,
+        "score_target_positive": true,
+        "score_below_target": true,
+        "no_restart_candidate_already_latched": true
+      },
+      "accepted_snapshot_modes": [
+        "read_live_board(require_shooter=true)",
+        "read_live_board(require_shooter=false)"
+      ],
+      "must_not_be_overwritten_by_native_time_below_1000": true
+    },
+    "restart_candidate_uses_new_anchor": true,
+    "all_other_v2_conditions_unchanged": true,
+    "retail_ui_exit_settle_seconds_unchanged": 5.0
+  },
+  "retail_contract": {
+    "runtime_executable": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "changedir": "D:/SteamLibrary/steamapps/common/Zuma's Revenge",
+    "prestate_dir": "D:/ZumaGolden/session-20260728-203153/native-windowed-record-001-prestate-reconstructed",
+    "expected_score_target": 9650,
+    "minimum_entry_score": 7000,
+    "maximum_gameplay_seconds": 180.0,
+    "rng_monitor_stop_native_time": 500,
+    "mtrand_trace_kind": "global_wrapper_entry",
+    "navigation_updates": [1622, 2422, 3108],
+    "navigation_points": [[400.0, 533.0], [633.0, 281.0], [399.0, 456.0]],
+    "prelaunch_cursor_screen_point": [100, 100],
+    "process_memory_writes_required": 0,
+    "host_state_restore_required": true
+  },
+  "run_order": ["c145a1", "c145a2", "c145a3"],
+  "runs": [
+    {"id": "c145a1", "output_root": "D:/ZumaGolden/record-c145a1-idle-natural-loss-persistent-anchor-v2"},
+    {"id": "c145a2", "output_root": "D:/ZumaGolden/record-c145a2-idle-natural-loss-persistent-anchor-v2"},
+    {"id": "c145a3", "output_root": "D:/ZumaGolden/record-c145a3-idle-natural-loss-persistent-anchor-v2"}
+  ],
+  "decision_rules": {
+    "every_declared_run_executes_in_order": true,
+    "no_retry_or_replacement_under_this_preregistration": true,
+    "first_passing_run_by_frozen_order_is_primary": true,
+    "failed_outputs_are_retained": true,
+    "all_passing_runs_must_emit_the_v2_receipt": true,
+    "no_fidelity_credit_before_source_bound_two_run_formal_replay": true
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "schema": "zuma-rl.teacher-offline-aim-horizon-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T10:45:50.368Z",
+  "status": "CATEGORICAL_AIM_HORIZON_CAPACITY_FAIL",
+  "decision": "REJECT_MORE_OF_SAME_AS_NEXT_MECHANISM",
+  "preregistration": {
+    "path": "diagnostics/teacher-offline-aim-horizon90-s20274867-preregistration-v1.json",
+    "sha256": "sha256:2e5659783513601c4cd705a4b07f11f54492e3f27cbcfde7a27c06945d8ce296",
+    "status": "FROZEN_BEFORE_RUN_OUTPUT"
+  },
+  "artifacts": {
+    "run_dir": "D:/ZumaTraining/screening-teacher-offline-aim-horizon90-s20274867-v1",
+    "report_sha256": "sha256:ccfa95a5ae8ae018919b7c4d646e0548cd27f7fa417dd7ea6143f1672a6383a9",
+    "completion_sha256": "sha256:e26561cb7dc465520998bcc3026e83df2d313bc3b2d8f33a2edb353501d594d5",
+    "model_sha256": "sha256:75de187bd4920973cb8c2a8b29cb73bd7298629e8d18266385e42ebc12c486a1"
+  },
+  "acceptance_results": {
+    "pipeline": {
+      "pass": true,
+      "process_exit_code": 0,
+      "completion_receipt_status": "COMPLETE",
+      "report_status": "OFFLINE_COMPLETE"
+    },
+    "verb_retention": {
+      "pass": true,
+      "verb_accuracy": 0.9846340477153255,
+      "fire_recall": 0.9631578947368421,
+      "swap_recall": 0.9833887043189369
+    },
+    "optimization_capacity": {
+      "pass": false,
+      "fire_aim_exact_accuracy": 0.2578947368421053,
+      "required_exact_accuracy": 0.35,
+      "fire_aim_within_three_accuracy": 0.3513157894736842,
+      "required_within_three_accuracy": 0.55,
+      "fire_predicted_unique_aim_bins": 70,
+      "required_predicted_unique_aim_bins": 60,
+      "fire_aim_mean_circular_bin_error": 16.219736842105263,
+      "required_mean_error_at_most": 10.0,
+      "fire_aim_median_circular_bin_error": 8.0,
+      "fire_aim_p90_circular_bin_error": 45.0
+    },
+    "full_horizon_validation": {
+      "performed": false,
+      "reason": "preregistered_consumed_dataset_capacity_gate_failed"
+    }
+  },
+  "learning_curve": {
+    "input_fire_aim_exact_accuracy": 0.08157894736842106,
+    "output_fire_aim_exact_accuracy": 0.2578947368421053,
+    "first_epoch_mean_aim_loss": 4.402906703948974,
+    "last_epoch_mean_aim_loss": 3.299780321121216,
+    "bounded_inference": "categorical aim learning is active but does not exploit circular distance efficiently enough under the preregistered budget"
+  },
+  "next_action": {
+    "authorized": "screen a circularly structured aim objective on the same frozen input model and dataset",
+    "forbidden": "do not full-horizon evaluate this failed candidate and do not treat consumed-dataset gains as generalization"
+  },
+  "non_authorizations": [
+    "generalization_claim",
+    "held_out_environment_claim",
+    "large_scale_training",
+    "rl_recipe_promotion",
+    "fidelity_gate_opening",
+    "original_transfer_certification"
+  ]
+}

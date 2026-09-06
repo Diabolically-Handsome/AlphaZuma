@@ -1,0 +1,60 @@
+{
+  "schema": "zuma-rl.alphazuma-55-horizon-probe-incident",
+  "version": 1,
+  "status": "FROZEN_BEFORE_TERMINATING_HUNG_PROBE",
+  "created_utc": "2026-08-15T06:47:47.5508735Z",
+  "classification": "engineering_probe_observation_capacity_failure",
+  "preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-horizon-probe-s99081501-preregistration-v1.json",
+    "sha256": "sha256:86c4aa5c0ebaed53b022d53fde7e006639ce57dfb3318e03194caa72d4b1aac7"
+  },
+  "result_at_capture": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/horizon-probe-s99081501-v1/shard-00-of-01.json",
+    "sha256": "sha256:9ecd38f87a64e68ecf9bd42f8a9244afe4944beeb7d88270ad300699a1034fa6",
+    "status": "RUNNING",
+    "completed_attempts": 0,
+    "expected_attempts": 17,
+    "error": null,
+    "last_write_utc": "2026-08-15T06:26:46.3921363Z"
+  },
+  "process_at_capture": {
+    "pid": 43717,
+    "elapsed_seconds": 1149,
+    "cpu_time": "00:10:31",
+    "state": "Ssl+",
+    "worker_label": "ForkServerProcess-17",
+    "parent_did_not_exit_or_publish_error_after_worker_failure": true
+  },
+  "failure": {
+    "type": "RuntimeError",
+    "message": "actor observation capacity exceeded: 769 visible balls > max_balls=768; increase max_balls instead of silently truncating game state",
+    "source": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_env.py:450",
+    "call_chain": [
+      "stable_baselines3.common.vec_env.subproc_vec_env._worker",
+      "zuma_rl.human_speedrun.HumanSpeedrunWrapper.step",
+      "zuma_rl.revenge_env.RevengeEnv.step",
+      "zuma_rl.revenge_env.RevengeEnv._observation",
+      "zuma_rl.revenge_env.RevengeEnv._ball_observation"
+    ]
+  },
+  "bound_inputs": {
+    "evaluator_sha256": "sha256:d0011f9ad5c6837315007a7fb31e128fb315e4baddb45959c5f3b98d11a6a7e3",
+    "model_sha256": "sha256:4324ccf39b822ad946359e34c73a1afe62c7f00d73d4a2d1375a5b9e64a955bc",
+    "probe_max_ticks": 30000,
+    "max_balls": 768,
+    "formal_seed_consumption": false
+  },
+  "formal_risk": {
+    "severity": "HIGH",
+    "reason": "formal selection and final blind are configured for 180000 ticks with the same 768-ball actor capacity; one overflowing policy-seed environment can currently crash its whole vector batch instead of recording an explicit failed attempt",
+    "observation_space_may_not_be_resized_for_existing_models": true,
+    "required_resolution": "preserve the 768-ball actor interface and version the evaluator so exact observation-capacity overflow is recorded fail-closed per attempt without killing sibling environments or the complete matrix"
+  },
+  "authority_boundary": {
+    "training_recipe_changed": false,
+    "formal_gate_changed": false,
+    "formal_seeds_consumed": false,
+    "probe_output_must_not_be_overwritten": true,
+    "next_action": "terminate the exact hung engineering probe after evidence capture, then implement and test a versioned fail-closed evaluation path before any formal seed is consumed"
+  }
+}

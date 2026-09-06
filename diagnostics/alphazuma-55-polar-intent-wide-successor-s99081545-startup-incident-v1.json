@@ -1,0 +1,45 @@
+{
+  "schema": "zuma-rl.alphazuma-55-configured-successor-startup-incident",
+  "version": 1,
+  "status": "RECOVERED_WITH_IDENTICAL_FROZEN_SEMANTICS",
+  "recorded_utc": "2026-08-15T21:18:54.7767962Z",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-wide-successor-s99081545-preregistration-v1.json",
+    "sha256": "sha256:640eea8fb92f5026949b70a47d80e9de33ff3043ce832abd88204f02e46ee090"
+  },
+  "initial_launcher": {
+    "windows_pid": 17912,
+    "result": "ARGUMENT_QUOTING_FAILURE_BEFORE_CONTROLLER_START",
+    "cause": "Start-Process split the original-root argument at the space in Zuma's Revenge.",
+    "stdout": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-wide-successor-s99081545-controller-launcher-01.stdout.log",
+      "bytes": 0,
+      "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-wide-successor-s99081545-controller-launcher-01.stderr.log",
+      "bytes": 302,
+      "sha256": "sha256:292382eba8eb15302d479d7d33154c97c425955f19f108afb9cc514b2d011ee6"
+    },
+    "configured_output_root_created": false,
+    "formal_seed_consumption": "NONE"
+  },
+  "recovery": {
+    "change": "Quote only the same frozen original-root command argument.",
+    "training_recipe_changed": false,
+    "candidate_inventory_changed": false,
+    "promotion_gate_changed": false,
+    "formal_seed_matrix_changed": false,
+    "windows_controller_launcher_pid": 55128,
+    "wsl_controller_pid": 201845,
+    "windows_watcher_launcher_pid": 42264,
+    "wsl_watcher_pid": 201917,
+    "controller_phase": "WAITING_FOR_ENGINEERING_AUDIT",
+    "controller_formal_seed_consumption": "NONE"
+  },
+  "authority_boundary": {
+    "this_incident_does_not_modify_the_frozen_master": true,
+    "this_incident_does_not_authorize_policy_inference": true,
+    "power_restore_authority": false
+  }
+}

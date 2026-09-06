@@ -1,0 +1,60 @@
+{
+  "schema": "zuma-rl.alphazuma-55-macro-ppo-run-outcome",
+  "version": 1,
+  "run_id": "timepolish-jungle3",
+  "preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-timepolish-jungle3-s99081727-preregistration-v1.json",
+    "sha256": "sha256:5c0041cac0fb671c511414179ed94a373176002610da8dfa2299aaff57ec33b9"
+  },
+  "status": "INFRASTRUCTURE_INTERRUPTED",
+  "decision": "CHAMPION_IS_INIT_BC_NO_CLAUSE_EVALUATED_AGAINST_IT",
+  "stopped_utc": "2026-08-21T02:02:06Z",
+  "reason": "The orchestrator application restarted at ~02:02Z; the WSL session teardown killed the attached trainer at 1,032,920 of 2,000,000 steps (train-time win rate 86.3%, 2975/3446). No preregistered clause fired - this is an infrastructure death, receipted as such. Adjudication over the three on-disk checkpoints by the frozen best-checkpoint rule (lowest E[t] at-or-above floor 0.9325): all three checkpoints held 16/16, but none beat the init's E[t] 4660 (median trajectory 6714 -> 5358 -> 4823.5, still recovering from critic warm-up when the run died). CHAMPION FOR JUNGLE3 = THE 240-EP BC INIT, unchanged (16/16, median 4660, fastest 2443).",
+  "checkpoint_grid": [
+    {
+      "checkpoint": 262120,
+      "wins": "16/16",
+      "median": 6714,
+      "expected_time": 6714
+    },
+    {
+      "checkpoint": 524240,
+      "wins": "16/16",
+      "median": 5358,
+      "expected_time": 5358
+    },
+    {
+      "checkpoint": 786360,
+      "wins": "16/16",
+      "median": 4823.5,
+      "expected_time": 4823.5,
+      "note": "eval interrupted by the same infrastructure event and completed post-hoc with the identical instrument (seed 1494001013 rerun after its truncated dir was cleared)"
+    }
+  ],
+  "init_baseline": {
+    "wins": "16/16",
+    "median": 4660,
+    "fastest": 2443,
+    "expected_time": 4660
+  },
+  "champion": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-bc-jungle3-240-s99081726-v1/final_model.zip",
+    "sha256": "sha256:d97178f5f8d6510c6a694c81c81ab2b8ad57676b8c1373a60f4d9c46a330785f"
+  },
+  "unrealized_budget_note": "The recovery trend (6714 -> 5358 -> 4823.5 across 262k-step intervals) makes it plausible the un-run 1.05M-2M step region contained a checkpoint under the init's 4660 (the Jungle1 champion emerged at 1.57M). A POLISH ROUND 2 - fresh prereg, init from ckpt786360 or from the BC - is the recorded lever; it was NOT attempted tonight to keep every training launch preregistered.",
+  "evidence": [
+    {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle3-s99081727-v1/eval16-ckpt3262120",
+      "note": "16 per-seed completions"
+    },
+    {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle3-s99081727-v1/eval16-ckpt3524240",
+      "note": "16 per-seed completions"
+    },
+    {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle3-s99081727-v1/eval16-ckpt3786360",
+      "note": "16 per-seed completions (one seed completed post-hoc)"
+    }
+  ],
+  "formal_seed_consumption": false
+}

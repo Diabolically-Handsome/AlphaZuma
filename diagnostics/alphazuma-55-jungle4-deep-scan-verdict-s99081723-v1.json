@@ -1,0 +1,65 @@
+{
+  "schema": "alphazuma-55-record-scan-verdict",
+  "version": 1,
+  "written_utc": "2026-08-20T21:48:57Z",
+  "level": "jungle4",
+  "verdict": "HUMAN_RECORD_NOT_BROKEN",
+  "summary": "Deep golden-seed record scan (ranks 30,001..100,000 of the jungle4 enumeration) completed: fastest win 754 ticks = 7.54 s simulator time vs the human RTA IL record 7.00 s (gap 1.077x). Combined with the earlier top-30k scan, the ENTIRE 100k golden-seed shortlist is now exhausted for the current champion; 7.54 s stands as the jungle4 AI-TAS best. Win rate across the deep block: 69,976/70,000 (99.97%).",
+  "best": {
+    "ticks": 754,
+    "seconds_simulator": 7.54,
+    "seed": 23398839,
+    "shots": 14
+  },
+  "top_5": [
+    {
+      "seed": 23398839,
+      "ticks": 754,
+      "shots": 14,
+      "score": 2110
+    },
+    {
+      "seed": 17219244,
+      "ticks": 965,
+      "shots": 16,
+      "score": 2320
+    },
+    {
+      "seed": 27340777,
+      "ticks": 1028,
+      "shots": 18,
+      "score": 2140
+    },
+    {
+      "seed": 12999550,
+      "ticks": 1035,
+      "shots": 19,
+      "score": 2460
+    },
+    {
+      "seed": 20034431,
+      "ticks": 1041,
+      "shots": 20,
+      "score": 2530
+    }
+  ],
+  "human_reference": {
+    "record_seconds": 7.0,
+    "record_ticks_equivalent": 700,
+    "source": "speedrun.com Adventure jungle4 IL, RTA timing",
+    "caveat": "simulator-tick timing vs RTA video timing audit still pending (campaign-wide caveat)"
+  },
+  "convention": "AI-TAS (seed_list_tas over enumerated golden seeds); elite-human-v1 motor constraints active; hold_ticks 4",
+  "champion_model_sha256": "sha256:c3f831fbb442c26c5270e9bc6ef2058ac1b093f515d8f0f97c61d1d7ab603aa2",
+  "evidence": {
+    "completion": "/mnt/d/ZumaTraining/alphazuma-55-record-jungle4-deep-s99081723-v1/completion.json",
+    "sha256": "sha256:ca77fa9a62efadd6966d27ea8c0ec60e5c6095ac0f924905a16314b042f55d3e"
+  },
+  "next_levers_assessed": [
+    "extend the golden enumeration shortlist beyond rank 100k (opening quality decays with rank - diminishing returns expected but unmeasured)",
+    "second timepolish round from the current jungle4 champion (its panel E[t] may still have headroom; needs a fresh prereg)",
+    "hold_ticks sweep at record time (4 is the campaign default; 2-3 untested on jungle4)",
+    "NOT stochastic record-mode sampling: falsified on jungle4 2026-08-20 (13.63 s vs deterministic 8.27 s) - determinism is the speed"
+  ],
+  "formal_seed_consumption": false
+}

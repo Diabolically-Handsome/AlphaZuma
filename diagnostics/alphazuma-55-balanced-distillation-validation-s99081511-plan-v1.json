@@ -1,0 +1,100 @@
+{
+  "schema": "zuma-rl.alphazuma-55-balanced-distillation-validation-plan",
+  "version": 1,
+  "status": "FROZEN_BEFORE_TARGET_MODEL",
+  "created_utc": "2026-08-15T08:06:05.227848+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "purpose": "Paired fresh-seed engineering test of whether balanced fire sampling improves the distilled initialization; it cannot select a finalist.",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "balanced_distillation_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-balanced-distillation-s99081510-preregistration-v1.json",
+    "sha256": "sha256:2ac8fd4be62917fabee445bce268deba5991ebbf2e869fd94295fe3dd3e617f8"
+  },
+  "original_root": "/mnt/d/SteamLibrary/steamapps/common/Zuma's Revenge",
+  "models": {
+    "baseline": {
+      "id": "specialist-distilled-v1",
+      "training_steps": 34444283,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-specialist-distillation-s85081501-v1/final_model.zip",
+      "sha256": "sha256:36d8bf8882a949d69f06f7ba5c456ef076b6a4bd7268505c996ba627050ccb82"
+    },
+    "baseline_completion": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-specialist-distillation-s85081501-v1/completion.json",
+      "sha256": "sha256:60f6db201333558c4784606d3aaa971bbbc77149f97ddbc6688503f1dd7a2476"
+    },
+    "target": {
+      "id": "balanced-distilled-v1",
+      "expected_path": "/mnt/d/ZumaTraining/alphazuma-55-balanced-distillation-s99081510-v1/final_model.zip",
+      "expected_completion_path": "/mnt/d/ZumaTraining/alphazuma-55-balanced-distillation-s99081510-v1/completion.json",
+      "must_be_absent_at_freeze": true,
+      "hash_and_training_steps_frozen_after_completion": true
+    }
+  },
+  "matrix": {
+    "levels": 55,
+    "attempts_per_level_per_model": 1,
+    "paired_models_share_identical_task_seeds": true,
+    "seed_registry": "training_validation",
+    "base_seed": 1550000110,
+    "last_seed": 1550000164,
+    "max_ticks": 12000,
+    "prior_consumed_ranges": [
+      [
+        1550000000,
+        1550000054
+      ],
+      [
+        1550000055,
+        1550000109
+      ]
+    ]
+  },
+  "execution": {
+    "device": "cuda:1",
+    "parallel_envs": 24
+  },
+  "implementation": {
+    "planner": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_balanced_validation_plan.py",
+      "sha256": "sha256:ae44e8f8db72cd60949a0e629b3a9415f16363dbf18c3af1385d6ace884897be"
+    },
+    "materializer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/materialize_alphazuma_55_balanced_validation.py",
+      "sha256": "sha256:958e7cca38bc866e5fed98a65c4f78c4903ef791e05ff24f6a790c768497d45e"
+    },
+    "contract_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_training_validation.py",
+      "sha256": "sha256:45fcdd98cda89f2a606cb24c30a82c12b877d108b232d37f7623ed71bb9a1391"
+    },
+    "evaluator": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel_v2.py",
+      "sha256": "sha256:811de7b530e6703858ae218aa9a0309724c49824d817e2f55733646ec89fd6c3"
+    },
+    "independent_auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_training_validation.py",
+      "sha256": "sha256:3621dcb64c3342e3954533d22401f258fe6c72ac49d164456455ad77ea54aa67"
+    }
+  },
+  "outputs": {
+    "run_root": "/mnt/d/ZumaTraining/alphazuma-55-balanced-distillation-validation-s99081511-v1",
+    "models_manifest": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-balanced-distillation-validation-s99081511-models-v1.json",
+    "preregistration": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-balanced-distillation-validation-s99081511-preregistration-v1.json",
+    "audit_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-balanced-distillation-validation-s99081511-audit-v1.json"
+  },
+  "decision_rule": {
+    "evidence_scope": "engineering_only",
+    "positive_signal": "target paired cleared-level coverage exceeds baseline and no capacity overflow is hidden",
+    "positive_signal_authorizes": "separate PPO route preregistration only",
+    "formal_candidate_registration_authorized": false,
+    "negative_result_must_be_retained": true
+  },
+  "authority_boundary": {
+    "formal_seed_consumption": false,
+    "formal_selection_authority": false,
+    "training_recipe_change_authority": false,
+    "candidate_addition_or_removal_authority": false
+  }
+}

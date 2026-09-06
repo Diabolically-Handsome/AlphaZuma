@@ -1,0 +1,46 @@
+{
+  "schema": "zuma-rl.pc-handoff-rng-readiness-replication-orchestration-incident",
+  "version": 27,
+  "status": "NON_EXPERIMENTAL_ORCHESTRATION_FAILURE_AFTER_VALID_G03",
+  "created_utc": "2026-08-05T20:35:03.9637702Z",
+  "session_nonce": "88bc188677184850b4244a5521d39db0",
+  "parent_preregistration": "diagnostics/handoff-rng-readiness-replication-preregistration-v27.json",
+  "failed_after_run_id": "g03",
+  "failure": {
+    "component": "PowerShell progress-summary parser",
+    "message": "Cannot convert the System.Object[] value of type System.Object[] to type System.Int32.",
+    "location": "formatting selected attempt number after the collector and host-after snapshot had completed",
+    "collector_affected": false,
+    "retail_process_affected": false,
+    "host_restoration_affected": false,
+    "experiment_semantics_affected": false
+  },
+  "g03_frozen_evidence": {
+    "attempt_count": 3,
+    "attempt_1_status": "RETRY",
+    "attempt_2_status": "RETRY",
+    "attempt_3_status": "PASS",
+    "retry_scope": "pre_handoff_startup_infrastructure_only",
+    "attempts_sha256": "sha256:70e005797646d3abaea06265e584858886219e7affbc59225235e158cd965895",
+    "selected_probe_sha256": "sha256:16f2efba671339f65ca0463cb33f6793888dc46604f2567ef7360c19b88a34c2",
+    "observer_sha256": "sha256:37ab8e9ce7534eff9d399a9f444da1d3e6b7c80c8feaadf9677fa03fb628b1ea",
+    "wait_status": "TARGET_REACHED",
+    "handoff_draw_count": 1563,
+    "boundary_draw_count": 1662,
+    "source_exact": true,
+    "process_memory_writes": 0
+  },
+  "safety_recheck": {
+    "host_after_path": "D:/ZumaGolden/diagnostics/handoff-rng-readiness-replication-host-after-g03-v27.json",
+    "host_after_sha256": "sha256:902bd23aa5db8f705ac2a90e5d46fd40203854458d814b8dd5632699771eb1aa",
+    "host_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "residual_retail_process_count": 0
+  },
+  "continuation": {
+    "rerun_g03": false,
+    "resume_at": "g04",
+    "reason": "g03 is already a complete valid independent root; rerunning it would violate the frozen first-valid-result rule",
+    "command_parameters_unchanged": true,
+    "semantic_results_unchanged": true
+  }
+}

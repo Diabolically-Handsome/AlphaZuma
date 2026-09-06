@@ -1,0 +1,115 @@
+{
+  "audit_fingerprint": "sha256:73f6a507931491a3405e57c84e2cb521359ed9fcedfd21aff366250fe77fe320",
+  "audit_type": "pc_mechanism_coverage",
+  "cases": [
+    {
+      "authorized_features": [
+        "projectile_collision",
+        "shot_release"
+      ],
+      "case_id": "jungle2_natural_entry_c35_third_seed_provenance_v1",
+      "dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+      "feature_proofs": [
+        {
+          "ball_id": 21,
+          "collision_update": 3474,
+          "color_id": 3,
+          "feature": "projectile_collision",
+          "from_zone": "fired",
+          "proof": "a previously observed fired projectile entered the retail insertion-staging list",
+          "spawn_update": 3453,
+          "status": "PASS",
+          "to_zone": "curve:0:list:050"
+        },
+        {
+          "ball_id": 21,
+          "color_id": 3,
+          "feature": "shot_release",
+          "framework_update": 3453,
+          "proof": "same-tick shooter-current to fired transfer, projectile spawn, and chamber advance",
+          "status": "PASS"
+        }
+      ],
+      "id": "c35-natural-shot-window",
+      "manifest_path": "cases/jungle2-natural-entry-c35-third-seed-provenance-v1/manifest.json",
+      "manifest_sha256": "sha256:24a8548361ef2daea15711f5b1996bf92d5b8ede1471817bfc30a477b494f2e1",
+      "memory_probe_path": "memory-followup-c35-natural-shot-u3429-u3499-v2/attempt-01/memory-probe.json",
+      "memory_probe_sha256": "sha256:6bedf5653998404e359a1a37376e675453c24aca4dbcc674c6bc32fe9cdc8170",
+      "runtime_executable_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+      "source_fingerprint": "sha256:867bc2aad347230f9cdb0579505e181fa5496151b6ed181bf64c794f8c20ad06",
+      "status": "PASS",
+      "trajectory": {
+        "artifact": "memory-followup-c35-natural-shot-u3429-u3499-v2/attempt-01/trajectory/index.json",
+        "artifact_sha256": "sha256:8315bd73d1b2e9c1dc308d8fb436f86ad2b918a5f5f1c11bf50d87b6a6bb15cd",
+        "end_update": 3499,
+        "start_update": 3429,
+        "tick_count": 71
+      },
+      "video_binding": {
+        "excluded_bottom_rows": 4,
+        "excluded_edge_mismatch_count": 0,
+        "framework_update": 3429,
+        "interior_height": 596,
+        "interior_mismatch_count": 0,
+        "interior_rgb24_sha256": "sha256:a36f52e50ed832eea37a6f9738125b3259683c8ee641ca9a4712b0d5af51c618",
+        "native_tick": 1,
+        "probe_rgb24_sha256": "sha256:45a31ed02af4d1099b50c593b039ea992b9271dfe38f87eca7ed5e8a1558d4fa",
+        "status": "PASS",
+        "video_pts": 273,
+        "video_rgb24_sha256": "sha256:45a31ed02af4d1099b50c593b039ea992b9271dfe38f87eca7ed5e8a1558d4fa"
+      },
+      "window": {
+        "end_update": 3499,
+        "start_update": 3429,
+        "tick_count": 71
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "natural_memory_trajectory_provenance",
+      "status": "PASS"
+    },
+    {
+      "name": "pc_video_tick_binding",
+      "status": "PASS"
+    },
+    {
+      "name": "machine_derived_feature_authorization",
+      "status": "PASS"
+    }
+  ],
+  "failure_reasons": [],
+  "schema": "zuma-rl.fidelity-audit",
+  "scope": {
+    "environment_id": "ZumaRevenge-v0",
+    "hard": false,
+    "level_id": "Jungle2",
+    "observation_mode": "actor",
+    "policy": "original-transfer-jungle2-v1",
+    "profile_mode": "tutorials_completed"
+  },
+  "status": "PASS",
+  "summary": {
+    "authorized_feature_union": [
+      "projectile_collision",
+      "shot_release"
+    ],
+    "case_count": 1,
+    "passing_case_count": 1,
+    "pc_source_count": 1,
+    "pc_source_fingerprints": [
+      "sha256:867bc2aad347230f9cdb0579505e181fa5496151b6ed181bf64c794f8c20ad06"
+    ],
+    "source_feature_authorizations": [
+      {
+        "authorized_features": [
+          "projectile_collision",
+          "shot_release"
+        ],
+        "source_fingerprint": "sha256:867bc2aad347230f9cdb0579505e181fa5496151b6ed181bf64c794f8c20ad06"
+      }
+    ]
+  },
+  "version": 1
+}

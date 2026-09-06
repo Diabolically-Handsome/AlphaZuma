@@ -1,0 +1,46 @@
+{
+  "schema": "zuma-rl.alphazuma-55-allaim-candidate-inventory-contract-audit",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-16T15:04:42.9842139Z",
+  "incident": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-allaim-postprocess-s99081634-candidate-metadata-incident-v1.json",
+    "sha256": "sha256:1635ef702d76db1e53327dc00fc658c0badad0028ed77bed36ff2e889c5c9645"
+  },
+  "plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-allaim-postprocess-s99081634-plan-v2.json",
+    "sha256": "sha256:88d7c794cc4285db7e769e01ea14ca4f742293cee73050ad1143be1777328c01"
+  },
+  "test": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tests/test_motor_observable_allaim_postprocess_v2.py",
+    "sha256": "sha256:8eb52c9180f4e1bb21d72c2e29ba5478aa5636cd231c3552e998873328869e80",
+    "command": "TMPDIR=/tmp TEMP=/tmp .venv/bin/python -m pytest -q tests/test_motor_observable_allaim_postprocess_v2.py",
+    "exit_code": 0,
+    "summary": "3 passed"
+  },
+  "verified_contract": {
+    "source_baselines": 1,
+    "source_baseline_promotable": false,
+    "rounds": 4,
+    "checkpoints_per_round": 4,
+    "checkpoint_epochs": [
+      3,
+      6,
+      9,
+      12
+    ],
+    "promotable_checkpoints": 16,
+    "total_candidates": 17,
+    "candidate_order": "source baseline, then round-major and epoch-major",
+    "screen_expected_attempts": 204,
+    "full55_gate_maximum_attempts": 275
+  },
+  "boundary": {
+    "fixture_only": true,
+    "training_validation_seed_consumption": "NONE",
+    "formal_seed_consumption": "NONE",
+    "candidate_rule_changed": false,
+    "seed_ranges_changed": false,
+    "promotion_gate_changed": false
+  }
+}

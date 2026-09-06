@@ -1,0 +1,105 @@
+{
+  "schema": "zuma-rl.c183-fruit-powerup-collision-simulator-diff-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_DIFF_OUTPUT_OR_CODE_CHANGE",
+  "created_utc": "2026-08-10T15:33:38.8306949Z",
+  "purpose": "Restore the exact c183 retail midstate one tick before the simultaneous type-0 proximity-bomb and fruit collection, then compare every simulator transition through the installed 26-tick collection-animation pointer clear with no shooter synchronization or RNG reconciliation.",
+  "classification": "preregistered-source-bound-fruit-powerup-collision-simulator-diff",
+  "parents": {
+    "c185_success_receipt": "diagnostics/c185-c183-fruit-powerup-collision-mechanism-success-receipt-v1.json",
+    "c185_success_receipt_sha256": "sha256:4988f9f9a3e46f7f251d4340072792a030b6a3e0fe6fdb5106433a338b084739",
+    "source_manifest_sha256": "sha256:814d71f96b2ecf587c1bc3d3215fc2cb5b85f54450ab28f23b8b41a5be0d96f6",
+    "mechanism_audit_sha256": "sha256:7ac2bbc222761d0a52d29ada93fe93b114dfa23d418d24f8d3b8407300ff5f29",
+    "source_fingerprint": "sha256:73d85b5a2d5ce714b50be47d6345f2c9265a7a8f6e455837979320003dd177a3"
+  },
+  "immutable_source": {
+    "trajectory": "D:/ZumaGolden/formal-full-state-c181a1-fruit-powerup-c182-campaign-v1/attempt-01/source/attempt-01/trajectory/index.json",
+    "trajectory_sha256": "sha256:64e8439227c20cd5f4909f8cdfafc6cd69d87496af411dc4aa284c9c1174f7f4",
+    "dmo": "D:/ZumaGolden/diagnostics/full-state-source-bound-fruit-powerup-c181a1-plan-v1-stop3166/inputs/input.dmo",
+    "dmo_sha256": "sha256:413ff5b6470f695dc703b99064762a3d5749434530e620833291925c56339e77",
+    "captured_start_update": 8120,
+    "captured_end_update": 8270,
+    "source_proof_start_update": 8120,
+    "source_proof_end_update": 8270,
+    "selected_start_update": 8233,
+    "selected_end_update": 8260,
+    "selected_source_frame_count": 28,
+    "expected_compared_transition_count": 27,
+    "selection_basis": "machine-authorized bomb and fruit collection begin at 8234 and installed animation clears at 8260; start one exact source tick before the joint transition",
+    "source_bytes_modified": false
+  },
+  "comparison_contract": {
+    "level_id": "Jungle2",
+    "hard": false,
+    "curve_index": 0,
+    "synchronize_shooter": false,
+    "reconcile_external_visual_mtrand": false,
+    "global_mtrand_policy": "exact_no_reconciliation",
+    "waypoint_tolerance": 0.0001,
+    "position_tolerance_px": 0.001,
+    "progress_tolerance": 0.000001,
+    "restore_initial_insertion_staging_projectile": true,
+    "restore_full_powerup_manager_state": true,
+    "restore_full_fruit_runtime_state": true,
+    "derive_source_features_from_full_captured_window": true
+  },
+  "output": {
+    "path": "D:/ZumaGolden/diagnostics/jungle2-c183-u8233-u8260-fruit-powerup-collision-diff-v1.json",
+    "absent_at_freeze": true,
+    "schema": "zuma-rl.pc-gameplay-simulator-diff",
+    "version": 5
+  },
+  "fixed_command": ".\\.venv-win\\Scripts\\python.exe tools\\compare_pc_gameplay_trajectory.py D:\\ZumaGolden\\formal-full-state-c181a1-fruit-powerup-c182-campaign-v1\\attempt-01\\source\\attempt-01\\trajectory\\index.json --dmo D:\\ZumaGolden\\diagnostics\\full-state-source-bound-fruit-powerup-c181a1-plan-v1-stop3166\\inputs\\input.dmo --original-root \"D:\\SteamLibrary\\steamapps\\common\\Zuma's Revenge\" --level-id Jungle2 --curve-index 0 --start-update 8233 --end-update 8260 --no-synchronize-shooter --source-feature-proofs --source-proof-start-update 8120 --source-proof-end-update 8270 --evidence-root D:\\ZumaGolden --waypoint-tolerance 0.0001 --position-tolerance 0.001 --progress-tolerance 0.000001 --output D:\\ZumaGolden\\diagnostics\\jungle2-c183-u8233-u8260-fruit-powerup-collision-diff-v1.json",
+  "acceptance": {
+    "status": "PASS",
+    "start_update": 8233,
+    "end_update": 8260,
+    "compared_tick_count": 27,
+    "fruit_runtime_state_restored": true,
+    "powerup_manager_state_restored": true,
+    "initial_insertion_staging_projectile_count": 1,
+    "all_tick_statuses_pass": true,
+    "all_fruit_state_mismatches_empty": true,
+    "all_powerup_and_chain_state_mismatches_empty": true,
+    "all_global_mtrand_states_exact_without_reconciliation": true,
+    "all_qrand_and_thread_crt_states_exact": true,
+    "all_shooter_states_exact_without_synchronization": true,
+    "required_source_authorized_features": [
+      "powerup_proximity_bomb",
+      "fruit_powerup_collision",
+      "fruit_collection_animation"
+    ],
+    "collection_update": 8234,
+    "collection_tick_fruits_collected": 1,
+    "collection_tick_score_delta": 590,
+    "collection_tick_powerups_triggered": 1,
+    "animation_updates_inclusive": [
+      8234,
+      8260
+    ],
+    "animation_first_tick_fruits_collected": 1,
+    "animation_remaining_ticks_fruits_collected": 0,
+    "animation_all_ticks_fruits_expired": 0
+  },
+  "frozen_code": {
+    "tools/compare_pc_gameplay_trajectory.py": "sha256:96ef141bee133f7c866f41183b2e0f41a420eab6345b77e5d5bc6a9ecd8ee8c8",
+    "src/zuma_rl/pc_gameplay_diff.py": "sha256:0b8cd75dd7d93180269f255d946b4959ddb7b65cd23ed0303662d5e0db4fa971",
+    "src/zuma_rl/revenge_core.py": "sha256:0229faec8c7b3fb05f64831bcc93565ef072184d48bb96c489b767d6c55628ad",
+    "src/zuma_rl/pc_memory_trajectory.py": "sha256:ce77027b57c1a4ff686cf923703128afe9fe7c674a6ebc87e6919c987ce9dae8",
+    "src/zuma_rl/pc_mechanism_audit.py": "sha256:656895a45cc546238e6c7051272eef325b1853527bacde1c76586b5f138abad4",
+    "tests/test_pc_gameplay_diff.py": "sha256:ff927afd96029e3eede47126b8fc721f148ac6624a86e81cc110a0ab00489be6",
+    "tests/test_fidelity_gate.py": "sha256:70a8226703e2b4b0f71bc4c36252eec4fa824ee9bda3db0efc0b0ec67c7be5d3"
+  },
+  "qualification": {
+    "focused_powerup_and_mechanism_tests": "PASS_52",
+    "full_suite": "PASS_1572_COLLECTED_ZERO_FAILURES"
+  },
+  "decision_rule": {
+    "pass": "The single exclusively written v1 output satisfies every acceptance invariant and independently validates its embedded source proofs.",
+    "simulator_mismatch": "Retain the failed output or exception, do not rerun the same output, and preregister only an isolated source-proven simulator repair or independently trace-bound external-visual RNG reconciliation.",
+    "pc_golden_authentication_pending": true,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

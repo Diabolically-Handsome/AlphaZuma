@@ -1,0 +1,117 @@
+{
+  "schema": "zuma-rl.alphazuma-55-motor-observable-gradual-launch-receipt",
+  "version": 1,
+  "status": "LAUNCHED_AND_COLLECTING",
+  "observed_utc": "2026-08-16T17:12:33.254306+00:00",
+  "campaign_id": "alphazuma-55-motor-observable-gradual-headonly-allaim-s99081646-v1",
+  "bindings": {
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-headonly-allaim-s99081646-preregistration-v1.json",
+      "sha256": "sha256:bcede95c539b97ea9a440ccee5f68e8715ce6b3dd3c9ad3eac2b7651d28c3470"
+    },
+    "trainer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_motor_observable_gradual_headonly_allaim_v1.py",
+      "sha256": "sha256:a1087452f49bb1fdc516394e1e9f07a6e8955490ddfd5025798dbdd2710ec372"
+    },
+    "builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_motor_observable_gradual_headonly_allaim_v1.py",
+      "sha256": "sha256:33547d3149a64aec6972e28910455a3a388cb410f05d3522510b771a9f554a4a"
+    },
+    "preregistration_independent_audit": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-headonly-allaim-s99081646-independent-prereg-audit-v1.json",
+      "sha256": "sha256:b0c17f5a4d96bf940fbe267b0a1472bcc31b6282119d02f551744a36f18a430c"
+    },
+    "launch_script": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/launch_alphazuma_55_motor_observable_gradual_headonly_allaim_v1.sh",
+      "sha256": "sha256:a5bc547911591a49ad7a685640f43ab308bab5225fcbc9c4e3c8577cb61c5b2a"
+    },
+    "launch_receipt_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/capture_alphazuma_55_motor_observable_gradual_headonly_allaim_launch_receipt_v1.py",
+      "sha256": "sha256:646b12b10dcafd7aefe3a92c58ed5698a7f0a73809b189eb8d34e4f0ebf02975"
+    }
+  },
+  "validation": {
+    "status": "VALID",
+    "observation_shape": [
+      22904
+    ],
+    "teacher_execution_probabilities": [
+      1.0,
+      0.9,
+      0.7,
+      0.5
+    ],
+    "epochs_per_round": 12,
+    "formal_seed_consumption": false
+  },
+  "processes": {
+    "windows_launcher_pid": 41460,
+    "wsl_trainer_pid": 410838,
+    "windows_launcher_alive": true,
+    "wsl_trainer_alive": true
+  },
+  "logs": {
+    "stdout": {
+      "path": "D:\\ZumaTraining\\alphazuma-55-headonly-allaim-s99081646-watcher.stdout.log",
+      "bytes_at_snapshot": 554,
+      "sha256_at_snapshot": "sha256:ecb3ab84b76db75d227b946f461f343130f50351eb371cd56e920e53b7b3744e"
+    },
+    "stderr": {
+      "path": "D:\\ZumaTraining\\alphazuma-55-headonly-allaim-s99081646-watcher.stderr.log",
+      "bytes_at_snapshot": 0,
+      "sha256_at_snapshot": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "initial_artifacts": {
+    "config": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-headonly-allaim-s99081646-v1/config.json",
+      "sha256": "sha256:bb4901b0897458cb67ff7da6d466c11eb405f6d945a337d1e47dd858a19db3da"
+    },
+    "training_status": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-headonly-allaim-s99081646-v1/training_status.json",
+      "sha256_at_snapshot": "sha256:17145aa16af61a58660d5a8e46d9ca3b88ade259905a35167728e01c26d9d0f1",
+      "stage": "COLLECTING",
+      "current_round": 0,
+      "teacher_execution_probability": 1.0,
+      "completed_rounds": 0,
+      "expected_rounds": 4
+    }
+  },
+  "resource_snapshot": {
+    "wsl_available_memory_bytes": 14240886784,
+    "wsl_swap_used_bytes": 0,
+    "wsl_root_available_bytes": 26914689024,
+    "d_drive_available_bytes": 719816130560,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5090",
+        "power_draw_watts": 147.84,
+        "power_limit_watts": 550.0,
+        "utilization_percent": 35,
+        "memory_used_mib": 17686,
+        "memory_total_mib": 32607,
+        "temperature_c": 49
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA GeForce RTX 5080",
+        "power_draw_watts": 69.45,
+        "power_limit_watts": 250.0,
+        "utilization_percent": 18,
+        "memory_used_mib": 12211,
+        "memory_total_mib": 16303,
+        "temperature_c": 50
+      }
+    ]
+  },
+  "authority_boundary": {
+    "engineering_training_route_only": true,
+    "training_seed_range_is_fresh": true,
+    "formal_selection_seed_consumption": "NONE",
+    "formal_final_blind_seed_consumption": "NONE",
+    "continuous_campaign_seed_consumption": "NONE",
+    "formal_candidate_authority": false,
+    "power_restore_authority": false
+  }
+}

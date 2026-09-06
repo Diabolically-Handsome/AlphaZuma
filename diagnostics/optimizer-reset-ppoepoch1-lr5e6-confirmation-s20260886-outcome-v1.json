@@ -1,0 +1,106 @@
+{
+  "schema": "zuma-rl.optimizer-reset-ppoepoch1-lr-confirmation-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T14:04:57.861Z",
+  "status": "FRESH_PPO_EPOCH1_LR5E6_CONFIRMATION_FAIL",
+  "decision": "DO_NOT_SCALE_ADD_EXPLICIT_INITIAL_POLICY_ANCHOR",
+  "preregistration": {
+    "path": "diagnostics/optimizer-reset-ppoepoch1-lr5e6-confirmation-s20260886-preregistration-v1.json",
+    "sha256": "sha256:e3713e9df1bf989e07e7b7f2409fda89e1ab028901cfc31452ee6acb67c30a7d",
+    "status": "FROZEN_BEFORE_RUN_OUTPUT"
+  },
+  "artifacts": {
+    "run_dir": "D:/ZumaTraining/confirmation-optimizer-reset-ppoepoch1-lr5e6-s20260886-v1",
+    "config_sha256": "sha256:e5ac9aa7a575dccd85185c17696534fdda7dfa018d90064eaa2ca59cc67d718c",
+    "completion_sha256": "sha256:0b4a69eb99b0dfcb866bed0a0ae6122d39fdc21859156e3910fbc1a14cfa1e97",
+    "optimizer_reset_sha256": "sha256:eaca6a6bc3fee4d8ce4a5a4877b38a823b2d2d90ae9c87fb14cd54d9bca4219d",
+    "pretrain_deterministic_sha256": "sha256:69055a053315111a156c6512708ed9939b9488f53fb6fa80ca79a3e0d3b3ce85",
+    "pretrain_stochastic_sha256": "sha256:866a6a097f8924e1b82467be1c924028fde2d5808c90a62df99b58f1c3f8a94d",
+    "posttrain_deterministic_sha256": "sha256:5da8214225bccb5610d7316214f47afd3b34a0eb88e2c10d833c2534fcead6f6",
+    "posttrain_stochastic_sha256": "sha256:0cffb5f8727db8923ba6b54a055a0e8a6c3fdf693adfee9e496f957f6e5f4d7e",
+    "deterministic_comparison_sha256": "sha256:9b10375cc06ac99373deda805f7e95672e25cf4db1582e82ccf16f434113a0a6",
+    "stochastic_comparison_sha256": "sha256:4df74fce70ab633a05c7e16d8896cf508d83d4d822610419305f5ddbdd32610c",
+    "final_model_sha256": "sha256:a60ee81b45beae954dcbebc473ad44bcb16eb18a312be884788afeda2ccc1f3f",
+    "stdout_sha256": "sha256:53d069c3b422ecff410cad72ebeacb9249776d2c60db5a117f6ef3409c80b047",
+    "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "acceptance_results": {
+    "pipeline": {
+      "pass": true,
+      "completion_status": "COMPLETE",
+      "effective_steps": 16384,
+      "optimizer_reset_status": "PASS",
+      "boundary_receipt_version": 4,
+      "comparison_version": 2,
+      "outcome_source": "terminal_info",
+      "identity_sets_match": true,
+      "failure_receipt_present": false,
+      "stderr_bytes": 0
+    },
+    "precondition": {
+      "pass": true,
+      "deterministic_wins": 7,
+      "required_wins": 6
+    },
+    "deterministic_retention": {
+      "pass": false,
+      "pretrain_wins": 7,
+      "posttrain_wins": 5,
+      "posttrain_losses": 1,
+      "posttrain_truncations": 2,
+      "pretrain_mean_reward": 32.099925,
+      "posttrain_mean_reward": 30.4894375,
+      "mean_reward_delta": -1.6104874999999979,
+      "paired_regressions_exceeding_5": 2,
+      "failed_clauses": [
+        "posttrain_wins_at_least",
+        "posttrain_wins_no_less_than_pretrain_minus",
+        "posttrain_losses_plus_truncations_at_most",
+        "posttrain_truncations_at_most",
+        "posttrain_mean_reward_at_least_pretrain_minus"
+      ]
+    },
+    "stochastic_retention": {
+      "pass": false,
+      "pretrain_wins": 8,
+      "posttrain_wins": 8,
+      "posttrain_losses": 0,
+      "posttrain_truncations": 0,
+      "pretrain_mean_reward": 39.4421125,
+      "posttrain_mean_reward": 36.7022125,
+      "mean_reward_delta": -2.7398999999999987,
+      "paired_regressions_exceeding_5": 1,
+      "failed_clauses": [
+        "posttrain_mean_reward_at_least_pretrain_minus"
+      ]
+    },
+    "overall": {
+      "pass": false,
+      "reason": "both deterministic and stochastic frozen retention gates failed on fresh nonoverlapping streams",
+      "post_hoc_override_applied": false
+    }
+  },
+  "consumed_dataset_drift_audit": {
+    "classification": "diagnostic_only_not_certification_evidence",
+    "report_sha256": "sha256:b618b26525a6679337d23cc847fb14d49acf1c709e988635e041c1342a2e9353",
+    "completion_sha256": "sha256:ae53db2874338fed1e8e9a09fc3f89349efcb5ddbeeca906b34d763527e4a4d2",
+    "verb_accuracy": 0.9745248685806712,
+    "fire_aim_exact_accuracy": 0.6605263157894737,
+    "fire_aim_mean_circular_bin_error": 9.58421052631579,
+    "fire_predicted_unique_aim_bins": 160,
+    "teacher_fire_aim_exact_accuracy": 0.6618421052631579,
+    "teacher_fire_aim_mean_circular_bin_error": 9.453947368421053
+  },
+  "bounded_inference": "the candidate preserves frozen-dataset verb and aim argmax capability almost exactly yet changes fresh full-horizon trajectories enough to fail both retention gates; this rules against basic representation erosion as the main cause and shows that a small per-update learning rate alone is not a durable behavioral constraint",
+  "next_action": {
+    "authorized": "implement and KAT an explicit KL or behavior anchor to the immutable initial teacher on current rollout observations, with a content-addressed anchor receipt, before screening a new recipe",
+    "reason": "an initial-policy anchor constrains cumulative behavioral drift over longer training, whereas further learning-rate reduction only shrinks each step and risks eliminating useful adaptation",
+    "forbidden": "do not launch the 98304-step scale screen"
+  },
+  "non_authorizations": [
+    "98304_step_scale_screen",
+    "large_scale_training",
+    "fidelity_gate_opening",
+    "original_transfer_certification"
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schema": "zuma-rl.actor-observable-teacher-benchmark-preregistration",
+  "version": 1,
+  "created_utc": "2026-08-04T09:10:20.037Z",
+  "status": "FROZEN_BEFORE_RUN_OUTPUT",
+  "classification": "closed_gate_actor_capacity_and_behavior_cloning_feasibility_diagnostic",
+  "hypotheses": {
+    "null": "an observation-only geometric policy cannot reliably complete full-horizon Jungle2",
+    "alternative": "the current actor observation and action interface contain enough information for a compact geometric policy to complete Jungle2 reliably"
+  },
+  "design": {
+    "output": "diagnostics/actor-observable-teacher-jungle2-s20271840-v1.json",
+    "expected_output_absent": true,
+    "level": "Jungle2",
+    "profile_mode": "tutorials_completed",
+    "seed": 20271840,
+    "seed_protocol": "seed_first_reset_then_continuous_resets",
+    "episodes": 16,
+    "aim_bins": 180,
+    "max_ticks": 12000,
+    "max_balls": 768,
+    "frame_skip": 1,
+    "reward_scale": 0.01,
+    "dynamic_policy_input": "packed_actor_observation_only",
+    "static_policy_inputs": [
+      "feature_layout",
+      "logical_canvas_size",
+      "fixed_level_shooter_position",
+      "collision_radius"
+    ]
+  },
+  "acceptance": {
+    "report_status": "PASS",
+    "wins_at_least": 15,
+    "losses_at_most": 1,
+    "mean_ticks_at_most": 3000.0,
+    "all_actions_inside_factorized_action_space": true,
+    "privileged_dynamic_state_forbidden": true,
+    "promotion_rule": "a pass authorizes a separately preregistered behavior-cloning feasibility screen, not RL recipe promotion",
+    "rejection_rule": "if any capacity criterion fails, do not use this teacher as a policy initialization target"
+  },
+  "evidence_anchor": {
+    "curriculum_failure": {
+      "path": "diagnostics/training-timelimit2048-screening-s20260811-outcome-v1.json",
+      "sha256": "sha256:e10945178167e9c568963d6e7c19f8da1cba90ce52c2e83e07f20e7ff0b49f19",
+      "status": "EPISODE_DIVERSITY_SCREEN_FAIL"
+    },
+    "targeted_test": "PASS_18"
+  },
+  "source_hashes": {
+    "revenge_teacher.py": "sha256:9a7d343f824e29b0074053440a93ec4456e7584c433342fff850afd89bb1f3a5",
+    "benchmark_revenge_teacher.py": "sha256:1dbbee8752e618ea1b01de468fc27ce9f0e421eef071169fe89850343f59e673",
+    "revenge_env.py": "sha256:ff18c84e8b73459994aa738fe3a767c019de452a898d8506531978a12c40b849",
+    "test_revenge_env.py": "sha256:f0b8b453b3367715c9fa1d54333647978b31d35aacb3a7f588e64021dcb1de84"
+  },
+  "non_authorizations": [
+    "large_scale_training",
+    "rl_recipe_promotion",
+    "fidelity_gate_opening",
+    "original_game_deployment",
+    "original_transfer_certification",
+    "visual_policy_training"
+  ]
+}

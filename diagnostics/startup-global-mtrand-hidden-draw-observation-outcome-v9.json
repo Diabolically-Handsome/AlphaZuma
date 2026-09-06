@@ -1,0 +1,98 @@
+{
+  "schema": "zuma-rl.pc-startup-global-mtrand-hidden-draw-diagnostic-outcome",
+  "version": 9,
+  "created_utc": "2026-08-04T21:02:43.196Z",
+  "status": "FAIL_METHOD_REJECTED_CROSS_THREAD_PERTURBATION",
+  "decision": {
+    "result": "REJECT_MAIN_THREAD_DR1_AS_A_COMPLETE_OR_NON_PERTURBING_HIDDEN_DRAW_OBSERVER",
+    "pc_golden_credit": false,
+    "fidelity_gate_change": false,
+    "formal_transport_change": false,
+    "large_scale_training_start": false
+  },
+  "parent_preregistration": "diagnostics/startup-global-mtrand-hidden-draw-observation-preregistration-v9.json",
+  "parent_preregistration_sha256": "sha256:98b1c491b2bc9524efcc6480d9ae2ef7a03be1eb2738da3c94d198b2810aedf7",
+  "parent_execution_binding": "diagnostics/startup-global-mtrand-hidden-draw-observation-execution-binding-v9.json",
+  "parent_execution_binding_sha256": "sha256:35240faa73333296c23f44f63a211c71c6c4eae74f68b229c628edff145a2490",
+  "run": {
+    "path": "D:/ZumaGolden/diagnostics/startup-global-mtrand-hidden-draw-observation-e02-o308-o309-v9",
+    "attempts_sha256": "sha256:44ba565613f906678f31e55d0b30b5f6f71c2e32b14944ead608ffe9ef991cdd",
+    "attempt_count": 3,
+    "validated_success_count": 0,
+    "terminal_error": "all_probe_attempts_failed"
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "process_id": 27216,
+      "classification": "COMPLETE_WRAPPER_ORACLE_BUT_HIDDEN_OBSERVER_CONTRACT_INVALID",
+      "startup_receipt_sha256": "sha256:926cf0c6e03a1a00d00ccf6b24eb312abe0a112a82f5773de91969ba97663fce",
+      "strict_log_sha256": "sha256:57d9cb7258e5fba3eeba767e43e694a76bf7c0928b02dc99e5abf69fba20f1cd",
+      "wrapper_calls_observed": 312,
+      "wrapper_calls_expected": 312,
+      "runtime_hidden_boundary_contract": "PASS",
+      "persisted_hidden_analysis": "FAIL",
+      "persisted_hidden_failures": [
+        "stop_pre_draw_count_mismatch",
+        "hidden_draw_span_inconsistent"
+      ]
+    },
+    {
+      "attempt": 2,
+      "process_id": 56040,
+      "classification": "INCOMPLETE_STARTUP_WRAPPER_COLLECTION",
+      "startup_receipt_sha256": "sha256:2e2239ad724fc2455e993e9e00ac673d12b686e10693c9e4ed96ae4f66a4d9d8",
+      "strict_log_sha256": "sha256:1ddab0224f7760ac7d5be9b12dfe629fd5ea1e9ba0ead6ee363e62a342f953ba",
+      "wrapper_calls_observed": 305,
+      "wrapper_calls_expected": 312,
+      "target_interval_evidence_usable": false
+    },
+    {
+      "attempt": 3,
+      "process_id": 47308,
+      "classification": "INCOMPLETE_AND_MISALIGNED_START_BOUNDARY",
+      "startup_receipt_sha256": "sha256:b95ac3a5fbd14b422aadf7b4574d58938dabe96ebc8c91826cf400d4da85d358",
+      "strict_log_sha256": "sha256:8144c5011ae9e864983d3b123ff2576168893017ad17cb4dac72af3cdf40b781",
+      "wrapper_calls_observed": 311,
+      "wrapper_calls_expected": 312,
+      "target_interval_evidence_usable": false
+    }
+  ],
+  "method_falsification": {
+    "hardware_breakpoint_scope": "debug registers are per-thread and DR1 was armed only on the proven startup main thread",
+    "attempt_1_main_thread_index_writes": 128,
+    "attempt_1_main_thread_write_callsite": {
+      "instruction_pointer": 6356160,
+      "instruction_pointer_hex": "0x0060fcc0",
+      "stack_return": 6356218,
+      "stack_return_hex": "0x0060fcfa",
+      "first_framework_update": 1675,
+      "last_framework_update": 1802
+    },
+    "attempt_1_start_post_draw_count": 1435,
+    "attempt_1_last_main_thread_observed_post_draw_count": 1563,
+    "attempt_1_stop_wrapper_observed_pre_draw_count": 1662,
+    "draws_written_by_unobserved_threads_or_after_unobserved_interleaving": 99,
+    "source_expected_stop_pre_draw_count": 1662,
+    "v6_without_dr1_stop_pre_draw_count": 1639,
+    "dr1_run_minus_v6_draw_count": 23,
+    "conclusion": "the main-thread DR1 stream is incomplete, and its debugger stalls changed cross-thread scheduling by exactly the previously missing 23 draws; call counts from this run cannot be treated as natural replay semantics"
+  },
+  "scientific_update": {
+    "prior_hypothesis": "a deterministic main-thread branch omitted 23 direct draws",
+    "current_best_hypothesis": "the strict replay reaches source order 309 before another thread has consumed the final 23 time-sensitive global RNG draws; delaying the main thread lets that thread catch up",
+    "confidence": "moderate_to_high",
+    "reason": "one main-thread-only observer run added exactly 23 draws at the known boundary while leaving process memory untouched, and the remaining 99 interval draws were demonstrably outside the observed main-thread DR1 stream"
+  },
+  "host_state": {
+    "pre_snapshot": "D:/ZumaGolden/diagnostics/startup-global-mtrand-hidden-draw-observation-host-pre-v9.json",
+    "pre_snapshot_sha256": "sha256:2cd57cc0fa99bb1b13864553e1d6876331172e73a966dad7fc091588a8985bcf",
+    "post_snapshot": "D:/ZumaGolden/diagnostics/startup-global-mtrand-hidden-draw-observation-host-post-v9.json",
+    "post_snapshot_sha256": "sha256:9248ba84271d1f7498bcd13981ea900f9fedae6c6917124b262e5baa4059a9c7",
+    "pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "post_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "state_root_match": true,
+    "residual_retail_process_count": 0
+  },
+  "next_action": "use the existing reversible main-thread priority-bias transport without DR1, preregister repeated wrapper-only runs through source order 309, and test whether giving worker threads scheduling opportunity closes the 23-draw boundary reproducibly"
+}

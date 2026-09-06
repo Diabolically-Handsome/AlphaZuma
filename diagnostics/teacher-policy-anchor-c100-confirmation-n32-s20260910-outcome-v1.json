@@ -1,0 +1,153 @@
+{
+  "schema": "zuma-rl.teacher-policy-anchor-confirmation-outcome",
+  "version": 2,
+  "created_utc": "2026-08-04T15:14:47.667Z",
+  "status": "FRESH_N32_CONFIRMATION_FAIL",
+  "decision": "DO_NOT_SCALE_DIAGNOSE_DETERMINISTIC_BOUNDARY_DRIFT",
+  "preregistration": {
+    "path": "diagnostics/teacher-policy-anchor-c100-confirmation-n32-s20260910-preregistration-v1.json",
+    "sha256": "sha256:86eb6f64e4ef64c7210de4b5db052659f2114e6f79628ca7afa2ee38bbf03fc1",
+    "status": "FROZEN_BEFORE_RUN_OUTPUT"
+  },
+  "run": {
+    "path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260910-n32-v1",
+    "training_base_seed": 20260910,
+    "boundary_base_seed": 20270910,
+    "stochastic_action_sampling_seed": 20280910,
+    "effective_steps": 16384,
+    "stderr_bytes": 0
+  },
+  "acceptance_results": {
+    "pipeline": {
+      "pass": true,
+      "completion_status": "COMPLETE",
+      "effective_steps": 16384,
+      "optimizer_reset_status": "PASS",
+      "teacher_anchor_installation_status": "INSTALLED",
+      "teacher_anchor_verification_status": "PASS",
+      "teacher_policy_bitwise_unchanged": true,
+      "teacher_requires_grad_all_false": true,
+      "current_policy_bitwise_changed": true,
+      "teacher_detached_before_model_save": true,
+      "teacher_anchor_train_calls": 8,
+      "teacher_anchor_minibatches": 32,
+      "teacher_anchor_samples": 16384,
+      "teacher_anchor_mean_forward_kl": 0.000006118046172787217,
+      "teacher_anchor_max_sample_forward_kl": 0.00017156032845377922,
+      "boundary_receipt_version": 4,
+      "boundary_episode_count": 32,
+      "boundary_vector_env_count": 8,
+      "comparison_version": 2,
+      "comparison_outcome_source": "terminal_info",
+      "failure_receipt_present": false,
+      "stderr_bytes": 0
+    },
+    "precondition": {
+      "pass": true,
+      "pretrain_deterministic_wins": 25,
+      "required_wins": 24,
+      "episodes": 32
+    },
+    "deterministic_retention": {
+      "pass": false,
+      "pretrain": {"wins": 25, "losses": 4, "truncations": 3, "mean_reward": 33.30008125},
+      "posttrain": {"wins": 23, "losses": 5, "truncations": 4, "mean_reward": 31.63623125},
+      "mean_reward_delta": -1.66385,
+      "paired_reward_regressions_exceeding_5": 4,
+      "checks": {
+        "posttrain_wins_at_least_24": false,
+        "posttrain_wins_no_less_than_pretrain_minus_2": true,
+        "posttrain_losses_plus_truncations_at_most_8": false,
+        "posttrain_truncations_at_most_4": true,
+        "posttrain_mean_reward_at_least_pretrain_minus_1_5": false,
+        "paired_reward_regressions_exceeding_5_at_most_8": true
+      },
+      "failed_identities": [
+        {
+          "pairing_key": "env-0:episode-2",
+          "initial_env_seed": 20270910,
+          "pretrain_outcome": "win",
+          "posttrain_outcome": "truncation",
+          "reward_delta": -17.3296
+        },
+        {
+          "pairing_key": "env-0:episode-3",
+          "initial_env_seed": 20270910,
+          "pretrain_outcome": "win",
+          "posttrain_outcome": "win",
+          "reward_delta": -15.2414
+        },
+        {
+          "pairing_key": "env-6:episode-1",
+          "initial_env_seed": 20270916,
+          "pretrain_outcome": "win",
+          "posttrain_outcome": "loss",
+          "reward_delta": -22.7404
+        },
+        {
+          "pairing_key": "env-6:episode-3",
+          "initial_env_seed": 20270916,
+          "pretrain_outcome": "win",
+          "posttrain_outcome": "loss",
+          "reward_delta": -26.9162
+        }
+      ],
+      "cluster_observation": "all four severe regressions occurred in two of eight initial environment streams; env-6 also contained one loss-to-win improvement of plus 20.0458"
+    },
+    "stochastic_retention": {
+      "pass": true,
+      "pretrain": {"wins": 32, "losses": 0, "truncations": 0, "mean_reward": 36.821640625},
+      "posttrain": {"wins": 32, "losses": 0, "truncations": 0, "mean_reward": 36.8437625},
+      "mean_reward_delta": 0.022121875,
+      "paired_reward_regressions_exceeding_5": 2,
+      "all_frozen_checks_pass": true
+    },
+    "overall": {
+      "pass": false,
+      "post_hoc_override_applied": false,
+      "failed_frozen_requirements": [
+        "deterministic_posttrain_wins_at_least_24",
+        "deterministic_posttrain_losses_plus_truncations_at_most_8",
+        "deterministic_posttrain_mean_reward_at_least_pretrain_minus_1_5"
+      ]
+    }
+  },
+  "consumed_dataset_drift_audit": {
+    "classification": "diagnostic_only_not_certification_evidence",
+    "report_sha256": "sha256:12400e8c72f2e51c4e10edef7ae5218b3cb9a58dec8554d654b3fea650e44013",
+    "completion_sha256": "sha256:35d790df65b584e83513ccb2ee87283326e9dc4f4ae72f6138d063c1961fff02",
+    "verb_accuracy": 0.9753336029114436,
+    "fire_aim_exact_accuracy": 0.6618421052631579,
+    "fire_aim_mean_circular_bin_error": 9.522368421052631,
+    "fire_predicted_unique_aim_bins": 160,
+    "observation": "categorical teacher-label accuracy was retained exactly on the consumed 2473-sample dataset, so this audit does not explain the deterministic fresh-trajectory flips"
+  },
+  "bounded_inference": "coefficient-100 forward KL preserves stochastic performance and consumed-dataset argmax accuracy, but does not yet guarantee deterministic noninferiority on unseen long-horizon states; the failure is concentrated rather than global and requires factor-level distribution and decision-margin diagnosis",
+  "next_action": {
+    "authorized": "post-hoc factor-level policy-drift audit and a consumed-stream stronger-anchor ablation",
+    "forbidden": "do not run the reserved 98304-step scale screen or select another fresh confirmation seed block before a revised mechanism passes controlled diagnosis"
+  },
+  "artifacts": {
+    "config": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260910-n32-v1/config.json", "sha256": "sha256:90f9630178e77050fdb294721d8cfefd4efaf51e21d16ef540ddf1d5d312f2c3"},
+    "completion": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260910-n32-v1/completion.json", "sha256": "sha256:077c2634fe0b1115b6ca181fe28234a80157656f13280495fa9daa44922e5cb6"},
+    "optimizer_state_reset": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260910-n32-v1/optimizer_state_reset.json", "sha256": "sha256:eaca6a6bc3fee4d8ce4a5a4877b38a823b2d2d90ae9c87fb14cd54d9bca4219d"},
+    "teacher_policy_anchor": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260910-n32-v1/teacher_policy_anchor.json", "sha256": "sha256:5746393f8b673d23f72252a7dac9d759b07cf208773519061e1080a2b7695f96"},
+    "teacher_policy_anchor_verification": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260910-n32-v1/teacher_policy_anchor_verification.json", "sha256": "sha256:581f08c46cb602e4583434beee15b721b66b180c7d8498454133c48a0fe77c1d"},
+    "deterministic_pretrain": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260910-n32-v1/pretrain_evaluation.json", "sha256": "sha256:8695133d6a441784a8317b46908a80dd3d37fea12fbb0bbcb5bacef4b5e31887"},
+    "deterministic_posttrain": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260910-n32-v1/posttrain_evaluation.json", "sha256": "sha256:2d3786bd8fb8046ccf32e858781d22ca5f25451652945a51c546b87c0feea802"},
+    "stochastic_pretrain": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260910-n32-v1/pretrain_evaluation_stochastic.json", "sha256": "sha256:a83bb21121557dd65d092e69ea5724e72b4e0da23c99759c06d006e56441d433"},
+    "stochastic_posttrain": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260910-n32-v1/posttrain_evaluation_stochastic.json", "sha256": "sha256:8500b5df778292fd8e3e7aafc1cd1bac2074efc369736b453c6a408158ade536"},
+    "deterministic_comparison": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260910-n32-v1/deterministic_comparison.json", "sha256": "sha256:887836817302dfa7a4dea0202e75a08301a1dd10c78b7956fda5778dd1ac06e3"},
+    "stochastic_comparison": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260910-n32-v1/stochastic_comparison.json", "sha256": "sha256:f24f24f5a2c1984c5369c3ff1c08b2893923ec443fc1e81d9baadb330d1d31f0"},
+    "final_model": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260910-n32-v1/final_model.zip", "sha256": "sha256:ce7b4ff07b57972946672bc17cfb42fc42c4e0c22d059ce41ccab8bd7b089fe0"},
+    "stdout": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260910-n32-v1.stdout.log", "sha256": "sha256:ab8fe402ce510f70d7db63ebdfb93d4ab14df8c358b877d7dd7756342c5bb6a1"},
+    "stderr": {"path": "D:/ZumaTraining/confirmation-teacher-anchor-c100-s20260910-n32-v1.stderr.log", "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"}
+  },
+  "non_authorizations": [
+    "reinterpreting_the_narrow_failure_as_a_pass",
+    "reserved_20260920_scale_screen",
+    "large_scale_training",
+    "fidelity_gate_opening",
+    "original_transfer_certification"
+  ]
+}

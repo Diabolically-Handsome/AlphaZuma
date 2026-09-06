@@ -1,0 +1,68 @@
+{
+  "schema": "zuma-rl.pc-late-handoff-rng-smoke-outcome",
+  "version": 22,
+  "status": "FAIL_LATE_HANDOFF_DETACHED_AFTER_SOURCE_BOUNDARY",
+  "created_utc": "2026-08-05T19:36:34.305Z",
+  "id": "late-handoff-rng-smoke-v22-outcome",
+  "parent_preregistration": {
+    "path": "diagnostics/late-handoff-rng-smoke-preregistration-v22.json",
+    "sha256": "sha256:f1a43b92bbc12891b5088da5c25aceb278c67c7f781d69fbcd72bf62ca2e7ff1"
+  },
+  "execution_binding": {
+    "path": "diagnostics/late-handoff-rng-smoke-execution-binding-v22.json",
+    "sha256": "sha256:79708444cf157c4f16e6826f91bb0e13159e09133abb599781e75299ec9050bd",
+    "session_nonce": "b16225408efa42b68e332508da38641a"
+  },
+  "execution": {
+    "run_root": "D:/ZumaGolden/diagnostics/late-handoff-rng-smoke-e01-v22",
+    "attempt_count": 3,
+    "selected_attempt": null,
+    "collector_status": "FAIL",
+    "all_attempts_retry_scope": "pre_handoff_startup_infrastructure",
+    "all_attempt_errors": "global_mtrand_call_sync_exited_before_ready:exit=2",
+    "attempts_sha256": "sha256:d99a3ec44b772ead7516f42e5cbb4e7e159174b664a960867f7d530704b9c39d"
+  },
+  "observer_evidence": {
+    "all_attempt_statuses": "FAIL",
+    "all_attempt_stop_reasons": "timeout",
+    "all_attempt_hit_counts": 0,
+    "attempt_01_observer_sha256": "sha256:a1f2e689838f1b879c85bb0afb0e575fc27cfa7e44b7c6ec2395447bcb80b694",
+    "attempt_02_observer_sha256": "sha256:78f83ffc201dcf96ef6dbfe74bb5158627119c904bc31259ad3c307e6dce22f9",
+    "attempt_03_observer_sha256": "sha256:4b19b3e7ddc33fa0de51ed87824035c56fbbe6b5899c086ec8a206e277c94fb6"
+  },
+  "root_cause": {
+    "classification": "trace_detach_parameter_semantics_off_by_one_relative_to_source_boundary",
+    "frozen_requested_trace_detach_update": 3120,
+    "observed_handoff_main_thread_suspended_update": 3121,
+    "observed_detached_after_update": 3121,
+    "source_boundary_update": 3121,
+    "detail": "The tracer interprets detach_at_update as the last completed update threshold and publishes the handoff after the next observed update. At 3120 it still owned the debug session through the update-3121 source call, so the boundary observer could neither attach nor become ready before the call.",
+    "attempt_01_trace_sha256": "sha256:35a01aea26dd147f8581e14c58bc1281e00907287cd1e9a1b081cd923db9c3d8",
+    "latest_viable_requested_detach_update": 3119,
+    "tool_code_defect_claimed": false,
+    "game_semantics_implicated": false
+  },
+  "semantic_result": {
+    "available": false,
+    "reason": "No observer attached before the source boundary and no boundary hit was captured.",
+    "pc_golden_credit": false
+  },
+  "host_safety": {
+    "canonical_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_pre_sha256": "sha256:b1ab1e7ea286c8fa06aa64d0ed3b09c973af57094b854168fc04ce84e8a2d574",
+    "host_post_sha256": "sha256:6e0f5698e4d8c2ae1248f808e6a6faaa87923f87529574cad99f644984d78881",
+    "pre_state_root_match": true,
+    "post_state_root_match": true,
+    "residual_retail_process_count": 0
+  },
+  "decision": {
+    "late_handoff_update_3120_qualified": false,
+    "next_action": "Freeze a fresh smoke with requested detach and source-start update 3119, which should publish the actual handoff after update 3120 and before the update-3121 source call.",
+    "reuse_v22_output_root": false,
+    "pc_golden_credit": false,
+    "fidelity_gate_change": false,
+    "formal_transport_change": false,
+    "large_scale_training_start": false
+  },
+  "non_authorizations": ["pc_golden_credit", "fidelity_gate_change", "formal_transport_change", "large_scale_training_start"]
+}

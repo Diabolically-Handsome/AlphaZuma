@@ -1,0 +1,75 @@
+{
+  "schema": "zuma-rl.retail-target-write-operational-failure-receipt",
+  "version": 1,
+  "status": "FAIL_RETAINED",
+  "created_utc": "2026-08-10T10:52:00Z",
+  "run": {
+    "id": "c153a1",
+    "root": "D:/ZumaGolden/record-c153a1-idle-natural-loss-target-write-v1",
+    "preregistration_sha256": "sha256:c3d867cd7808d4d7f0477b70b3c7e859ceaa1e49f1140ee60b4995ad44a2b426",
+    "implementation_receipt_sha256": "sha256:3bb1fa71a70a332f1515b8e427d2cf8b5aa13b42fe54cdd1ee38e04db1d2130b",
+    "result_status": "FAILED",
+    "result_sha256": "sha256:6f49b080883ffc32460b352742294b4c13b71f30fb4b326f912d6db3ff08354f",
+    "active_board_observed": false,
+    "target_write_protocol_evaluated": false
+  },
+  "root_cause": {
+    "classification": "foreground_hwnd_was_verified_only_instantaneously_not_stable_until_game_focus_messages_were_processed",
+    "first_failed_stage": "title_start",
+    "evidence_chain": [
+      "Immediately before the title click, foreground acquisition changed HWND 0x000000000013072a to the exact retail HWND 0x000000000056026c and reported verified=true.",
+      "The immediate post-click snapshot reported target_window_not_foreground.",
+      "The later Adventure-stage frame still showed CLICK TO CONTINUE, proving the click did not advance the title UI.",
+      "The Continue-stage frame showed the main menu, proving the remaining absolute-update clicks stayed one screen behind.",
+      "c152 succeeded when all three clicks used the already-foreground fast path; c153 failed when title and Adventure required a fresh foreground transition."
+    ],
+    "localization": "GetForegroundWindow equality at one instant is insufficient. The game needs a short continuous foreground interval to process WM_ACTIVATE/WM_SETFOCUS before SendInput.",
+    "not_a_target_watchpoint_failure": true,
+    "not_a_runtime_crash": true
+  },
+  "evidence": [
+    {
+      "path": "D:/ZumaGolden/record-c153a1-idle-natural-loss-target-write-v1/board-global-precall-and-target-write.json",
+      "bytes": 11176,
+      "sha256": "sha256:322894d701fe5226b0cd86a7f0559c80150cacb2599ce3577bce38e5b6b356e2",
+      "status": "FAIL",
+      "failure": "source_board_anchor_not_observed",
+      "call_count": 8,
+      "source_anchor_count": 0,
+      "target_write_count": 0,
+      "process_memory_writes": 0,
+      "hardware_breakpoint_restored": true
+    },
+    {
+      "path": "D:/ZumaGolden/record-c153a1-idle-natural-loss-target-write-v1/navigation-before-adventure.bmp",
+      "bytes": 1920054,
+      "sha256": "sha256:6ecaec3df120ef3fd46619092d436277dedcd0ed159ed55743615438e87988c2",
+      "visual_state": "CLICK TO CONTINUE"
+    },
+    {
+      "path": "D:/ZumaGolden/record-c153a1-idle-natural-loss-target-write-v1/navigation-before-continue-game.bmp",
+      "bytes": 1920054,
+      "sha256": "sha256:6bea4dc03356107725f32d63c72d4457f53f05399eefed301c5e01f881884bd7",
+      "visual_state": "main menu"
+    }
+  ],
+  "safety": {
+    "host_pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "applied_pre_state_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526",
+    "host_end_state_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526",
+    "host_restored_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_restored_exactly": true,
+    "retail_process_remaining": false,
+    "process_memory_writes": 0,
+    "hardware_breakpoint_restored": true
+  },
+  "decision": {
+    "c153a1_remains_failed": true,
+    "same_preregistration_retry_forbidden": true,
+    "target_write_trace_contract_changed": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false,
+    "next_step": "Freeze a new operational run requiring the exact retail HWND to remain continuously foreground for 150 ms, with reacquisition and stability-window restart on any loss, before each unchanged SendInput click."
+  }
+}

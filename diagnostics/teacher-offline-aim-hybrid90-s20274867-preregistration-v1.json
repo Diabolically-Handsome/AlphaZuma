@@ -1,0 +1,95 @@
+{
+  "schema": "zuma-rl.teacher-offline-hybrid-aim-preregistration",
+  "version": 1,
+  "created_utc": "2026-08-04T10:52:57.927Z",
+  "status": "FROZEN_BEFORE_RUN_OUTPUT",
+  "classification": "matched_frozen_dataset_exact_plus_circular_distance_screen",
+  "hypotheses": {
+    "null": "adding expected circular-distance shaping to exact categorical aim loss does not pass the frozen-dataset capacity gate",
+    "alternative": "the hybrid objective retains exact-bin concentration while reducing circular error enough to pass all capacity criteria"
+  },
+  "design": {
+    "run_dir": "/mnt/d/ZumaTraining/screening-teacher-offline-aim-hybrid90-s20274867-v1",
+    "expected_run_dir_absent": true,
+    "input_model": {
+      "path": "D:/ZumaTraining/screening-teacher-bc-dagger-relational-refine-s20260859-v1/cloned_model.zip",
+      "sha256": "sha256:0f538b539347e8d4ec1f0c8cda1829a8f60a6fa2d3f694a61c5bb4ab1fd7e423"
+    },
+    "input_dataset": {
+      "path": "D:/ZumaTraining/screening-teacher-bc-dagger-relational-refine-s20260859-v1/teacher_dataset.npz",
+      "sha256": "sha256:1f01535ef45794071e819b779abf91f0f005e982a33b07cada0d4d82da614862",
+      "sample_count": 2473,
+      "classification": "consumed_training_dataset_not_generalization_holdout"
+    },
+    "optimization": {
+      "epochs": 90,
+      "batch_size": 256,
+      "learning_rate": 0.0001,
+      "verb_loss_weight": 1.0,
+      "aim_loss_scope": "fire_only",
+      "aim_loss_mode": "categorical_distance",
+      "aim_distance_weight": 1.0,
+      "circular_distance_normalizer_bins": 90,
+      "max_grad_norm": 0.5,
+      "shuffle_seed": 20274867,
+      "new_environment_steps": 0
+    },
+    "matched_controls": {
+      "categorical": "D:/ZumaTraining/screening-teacher-offline-aim-horizon90-s20274867-v1",
+      "circular_smoothed": "D:/ZumaTraining/screening-teacher-offline-aim-circular90-s20274867-v1"
+    },
+    "validation_episodes": 0,
+    "resources": {
+      "cuda_visible_devices": "0",
+      "expected_cuda_device": "NVIDIA GeForce RTX 5090",
+      "rtx_5080_excluded": true
+    }
+  },
+  "acceptance": {
+    "pipeline": {
+      "process_exit_code": 0,
+      "completion_receipt_status": "COMPLETE",
+      "report_status": "OFFLINE_COMPLETE",
+      "refined_model_required": true
+    },
+    "verb_retention": {
+      "verb_accuracy_at_least": 0.9,
+      "fire_recall_at_least": 0.65,
+      "swap_recall_at_least": 0.65
+    },
+    "optimization_capacity": {
+      "fire_aim_exact_accuracy_at_least": 0.35,
+      "fire_aim_within_three_accuracy_at_least": 0.55,
+      "fire_predicted_unique_aim_bins_at_least": 60,
+      "fire_aim_mean_circular_bin_error_at_most": 10.0
+    },
+    "promotion_rule": "a pass authorizes one preregistered full-horizon evaluation of this frozen candidate on fresh seeds",
+    "rejection_rule": "if any capacity criterion fails, reject current categorical action-head objectives and move to an angle-equivariant representation"
+  },
+  "evidence_anchor": {
+    "categorical_control_status": "CATEGORICAL_AIM_HORIZON_CAPACITY_FAIL",
+    "circular_control": {
+      "outcome": "diagnostics/teacher-offline-aim-circular90-s20274867-outcome-v1.json",
+      "outcome_sha256": "sha256:0006719463322e4b9f0c314769b8e166d133f56a7ad76395f68e67cda9ee2b6c",
+      "status": "CIRCULAR_SMOOTHED_AIM_CAPACITY_FAIL"
+    },
+    "hybrid_infrastructure_smoke": {
+      "report": "D:/ZumaTraining/infrastructure-teacher-offline-hybrid-s20260870-v1/report.json",
+      "report_sha256": "sha256:d0843e654bb5c58c8f0500f4224da58d2380c031f0f883f60dd34de388e3d952",
+      "completion_sha256": "sha256:acfc30ab4f9391f30fd2f4b8a8fd254eda5504ea6258a45b7338d0f9bc5fd98a"
+    }
+  },
+  "source_hashes": {
+    "refine_maskable_ppo_teacher.py": "sha256:07589402e8f9a02b01b0b677c850f09cf0e53530582119aaaf715e299e4d134b",
+    "pretrain_maskable_ppo_teacher.py": "sha256:e9224e2238e97d8bec7cc0456fcbcf6ce13f3ba236e82319a1d22bea35bbbe1d",
+    "revenge_features.py": "sha256:c51e80b1385fa24052d368585c63fd3e7a8c7230e9d35f88acfc2a98a12c8fc4"
+  },
+  "non_authorizations": [
+    "generalization_claim",
+    "held_out_environment_claim",
+    "large_scale_training",
+    "rl_recipe_promotion",
+    "fidelity_gate_opening",
+    "original_transfer_certification"
+  ]
+}

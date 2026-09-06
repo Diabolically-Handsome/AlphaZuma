@@ -1,0 +1,80 @@
+{
+  "schema": "zuma-rl.teacher-bc-dagger-screening-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T09:59:04.552Z",
+  "status": "DAGGER_SCREEN_FAIL_RECIPE_REJECTED",
+  "decision": "REJECT_EXACT_RECIPE",
+  "preregistration": {
+    "path": "diagnostics/teacher-bc-dagger-jungle2-s20260859-preregistration-v1.json",
+    "sha256": "sha256:eb029313808675ba10a7d07f2bd621edf699cf60b603c2b6c8e6d56fefe6280c",
+    "status": "FROZEN_BEFORE_RUN_OUTPUT"
+  },
+  "artifacts": {
+    "run_dir": "D:/ZumaTraining/screening-teacher-bc-dagger-s20260859-v1",
+    "report_sha256": "sha256:a654d9a9d003d85d0fb8e88ec4b752da2267834fdf1be498d6721e2ccc8f8315",
+    "completion_sha256": "sha256:fa4ef319e24480f3e92f6a9fcb1f48e3783423e03d0a40d544a49b5bfea8ba4c",
+    "model_sha256": "sha256:fa88d94ae98d862c273b66f1c601f1e5a8c8510b6679257f998bc9c17c4d2129"
+  },
+  "acceptance_results": {
+    "pipeline": {
+      "pass": true,
+      "process_exit_code": 0,
+      "completion_receipt_status": "COMPLETE",
+      "all_dagger_rounds_complete": true
+    },
+    "aggregated_dataset": {
+      "pass": false,
+      "sample_count": 2355,
+      "verb_accuracy": 0.8267515923566879,
+      "verb_accuracy_threshold": 0.9,
+      "fire_recall": 0.6460674157303371,
+      "fire_recall_threshold": 0.65,
+      "swap_recall": 0.7301038062283737,
+      "swap_recall_threshold": 0.65,
+      "confusion_expected_rows_predicted_columns": [
+        [1065, 0, 0],
+        [0, 460, 252],
+        [0, 156, 422]
+      ]
+    },
+    "held_out_full_horizon": {
+      "pass": false,
+      "wins": 0,
+      "required_wins": 1,
+      "losses": 2,
+      "truncations": 0,
+      "mean_score": 0.0,
+      "episode_action_counts": [
+        {"wait": 37, "fire": 1, "swap": 7870},
+        {"wait": 37, "fire": 1, "swap": 7870}
+      ]
+    }
+  },
+  "diagnostic_observations": {
+    "dagger_round_0": {
+      "teacher_verb_counts": [3779, 158, 63],
+      "policy_verb_counts": [3779, 221, 0],
+      "teacher_conditioned_verb_recall": [1.0, 1.0, 0.0],
+      "interpretation": "before aggregation the policy mapped every teacher swap state to fire"
+    },
+    "dagger_round_1": {
+      "teacher_verb_counts": [2917, 185, 110],
+      "policy_verb_counts": [2917, 114, 181],
+      "teacher_conditioned_verb_recall": [1.0, 0.43243243243243246, 0.6909090909090909],
+      "interpretation": "after aggregation the policy over-corrected toward swap and lost fire discrimination"
+    },
+    "bounded_inference": "DAgger exposed and labeled policy-visited errors, but the current representation and joint objective did not learn a stable fire-versus-swap decision boundary"
+  },
+  "next_action": {
+    "authorized": "inspect and test an explicit color-relation representation or factorized semantic action head under a new preregistration",
+    "forbidden": "do not extend this exact recipe to more seeds or large-scale RL"
+  },
+  "non_authorizations": [
+    "large_scale_training",
+    "rl_recipe_promotion",
+    "fidelity_gate_opening",
+    "original_game_deployment",
+    "original_transfer_certification",
+    "visual_policy_training"
+  ]
+}

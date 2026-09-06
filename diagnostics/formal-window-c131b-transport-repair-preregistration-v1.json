@@ -1,0 +1,104 @@
+{
+  "schema": "zuma-rl.pc-formal-window-transport-repair-preregistration",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T04:19:24.7142867Z",
+  "evidence_classification": "preregistration-not-certifying",
+  "purpose": "Repeat the already-fixed reverse-powerup window once after a host I/O failure that occurred during full-state trajectory persistence.",
+  "selection_policy": {
+    "coordinates_reselected": false,
+    "feature_presence_used_for_retry": false,
+    "prior_diagnostic_locator_reused": true,
+    "prior_formal_coordinates_unchanged": true
+  },
+  "prior_preregistration": {
+    "path": "diagnostics/formal-window-c130b-startup-screen-preregistration-v1.json",
+    "bytes": 4092,
+    "sha256": "sha256:894f5b792204e98f82c7991d9edc9f1896375b2fd76f25ec8efe6311823e07ba"
+  },
+  "failed_attempt": {
+    "id": "c130b1",
+    "status": "FAIL_DURING_TRAJECTORY_PERSISTENCE",
+    "error_type": "OSError",
+    "error": "[Errno 22] Invalid argument",
+    "attempts": {
+      "path": "formal-full-state-c130b1-reverse-u4955-u5160-v1/attempts.json",
+      "bytes": 198,
+      "sha256": "sha256:3be1487504f267ff0b62cdc04163ba503affe90d0b1f080fed39d1c7067c1870"
+    },
+    "strict_replay": {
+      "path": "formal-full-state-c130b1-reverse-u4955-u5160-v1/attempt-01/strict-replay.json",
+      "bytes": 55356,
+      "sha256": "sha256:d3509c42549871091c07c4634765a570a557f03039aa6efe98b16615c646c3af",
+      "failure_count": 0
+    },
+    "completed_trajectory_prefix": {
+      "start_update": 4955,
+      "last_complete_update": 4986,
+      "complete_tick_count": 32,
+      "next_tick_directory_created": false,
+      "last_tick": {
+        "path": "formal-full-state-c130b1-reverse-u4955-u5160-v1/attempt-01/trajectory/tick-00004986/tick.json",
+        "bytes": 55390,
+        "sha256": "sha256:6943d1d637331e9e518f0a38ac5089671b627ca7b1533ef0e277c78df5784308"
+      }
+    },
+    "external_input_guard": {
+      "path": "formal-full-state-c130b1-reverse-u4955-u5160-v1/attempt-01/external-input-guard.json",
+      "bytes": 786,
+      "sha256": "sha256:85632b49103623c9c60190a7de42edf5bba2180a599ddc8cb4ab7073401e2ec3",
+      "status": "PASS",
+      "external_event_count": 0
+    },
+    "host_state": {
+      "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+      "pre_sha256": "sha256:f936b65926bc9de8cf47c277b5afd71f5f74d64d60dd4c32a682fb9bb847fbcd",
+      "post_sha256": "sha256:ff7cdaa6e4ac818aff6fc124372e329f3aab420c11a03da93d2b23aff552d6f2",
+      "restored_exactly": true
+    },
+    "target_window_completed": false,
+    "eligible_for_gate": false
+  },
+  "fixed_window": {
+    "features_sought": [
+      "powerup_reverse",
+      "powerup_spawn"
+    ],
+    "slowdown_update": 4945,
+    "freeze_update": 4955,
+    "trajectory_end_update": 5160,
+    "acceptance_independent_of_feature_presence": true
+  },
+  "source": {
+    "dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "runtime_executable_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "plan": {
+      "path": "diagnostics/full-state-source-bound-natural-win-c126-plan-v1/plan.json",
+      "bytes": 12888,
+      "sha256": "sha256:d814b8fc4a46c619a4d9834f8a744a31e48a27696ec25e2b73ff2fdc6b920755"
+    },
+    "prestate": {
+      "path": "diagnostics/full-state-source-bound-natural-win-c126-plan-v1/protocol/pre-template.json",
+      "bytes": 16964,
+      "sha256": "sha256:b67be1d2693b26cdad4c9189022a5df9dcce1dd65c88ac61ca2c170b4b82af2a"
+    }
+  },
+  "repair_attempt": {
+    "id": "c131b1",
+    "session_nonce": "c131b100000000000000000000000000",
+    "output_root": "formal-full-state-c131b1-reverse-u4955-u5160-v1",
+    "host_pre_output": "diagnostics/formal-full-state-c131b1-host-pre-v1.json",
+    "host_post_output": "diagnostics/formal-full-state-c131b1-host-post-v1.json",
+    "maximum_attempts": 1
+  },
+  "decision_rules": {
+    "failed_attempts_are_retained": true,
+    "new_coordinates_forbidden": true,
+    "feature_absence_does_not_permit_retry": true,
+    "formal_collection_requires_zero_external_input_events": true,
+    "formal_collection_requires_zero_post_board_memory_writes": true,
+    "formal_collection_requires_exact_host_state_restore": true,
+    "partial_c130b1_prefix_must_not_be_submitted_to_fidelity_gate": true,
+    "repair_attempt_is_final_for_this_window": true
+  }
+}

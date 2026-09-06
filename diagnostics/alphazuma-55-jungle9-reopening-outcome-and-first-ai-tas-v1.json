@@ -1,0 +1,54 @@
+{
+  "schema": "alphazuma-55-level-reopening-outcome",
+  "version": 1,
+  "written_utc": "2026-08-23T05:14:42Z",
+  "level": "Jungle9 (Creeper Copse - the jungle's only dual-curve level)",
+  "verdict": "FIRST_AI_TAS_TIME_ON_THE_BOOKS_CHAPTER_CLOSED",
+  "reopening_arc": [
+    {
+      "attempt": "strengthened 240-ep BC (s99081735)",
+      "panel": "0/16"
+    },
+    {
+      "attempt": "plain DAgger aggregate (s99081739)",
+      "panel": "0/16 (never-fire poison, receipted)"
+    },
+    {
+      "attempt": "beta-0.5 round 1 aggregate (s99081747)",
+      "panel": "0/16 (best survival, doorstep deaths)"
+    },
+    {
+      "attempt": "wide-lag 0,16,32 single-variable (s99081766)",
+      "panel": "0/16 (velocity-observability hypothesis FALSIFIED)"
+    },
+    {
+      "attempt": "beta-0.5 round 2 aggregate (s99081764)",
+      "panel": "4/16 - FIRST AUTONOMOUS JUNGLE9 WINS (fastest 6615 ticks = teacher pace)"
+    },
+    {
+      "attempt": "beta-0.5 round 3 aggregate (s99081769)",
+      "panel": "3/16 (plateau; iterated corridor coverage saturating against the quadratic dual-chain crisis space)"
+    }
+  ],
+  "champion": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-bc-jungle9-beta05r2-s99081764-v1/final_model.zip",
+    "sha256": "sha256:a9b36f7f80f0c2825072b23e98015aae5a017125e5f643fd1799a740d8e57715",
+    "panel": "4/16, fastest 6615"
+  },
+  "first_ai_tas_record": {
+    "ticks": 4802,
+    "seconds_simulator": 48.02,
+    "seed": 1675761,
+    "shots": 74,
+    "scan": {
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-record-jungle9-s99081771-v1",
+      "completion_sha256": "sha256:0db1f34010f8a8bcbb076f9fa76763866f92496665ed758731a8fa417f1b9de8",
+      "wins": 563,
+      "seeds": 3000
+    },
+    "convention": "AI-TAS (seed_list_tas, jungle9 golden enumeration s99081770); elite-human-v1 motor constraints; hold_ticks 4; simulator timing, RTA audit pending",
+    "human_reference_note": "human IL line not yet API-bound for this level; to bind if a record push is ever mounted"
+  },
+  "science_yield": "The dual-curve attention-allocation diagnosis, the DAgger-poison rule, the beta-mix corridor recipe, the per-merge weight recomputation, and the falsified velocity-observability hypothesis - Jungle9 paid more methodology per GPU-hour than any level in the campaign. Its remaining levers (beta rounds with crisis-weighted sampling, curriculum spawn anchoring, auxiliary curve-attention head) are receipted for a future reopening; the same toolkit maps directly onto AlphaDiablo's multi-enemy combat.",
+  "formal_seed_consumption": false
+}

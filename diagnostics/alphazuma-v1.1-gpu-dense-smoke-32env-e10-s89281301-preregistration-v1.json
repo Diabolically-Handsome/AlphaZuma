@@ -1,0 +1,111 @@
+{
+  "schema": "zuma-rl.overnight-multilevel-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_TRAINING",
+  "frozen_utc": "2026-08-13T23:10:00Z",
+  "id": "alphazuma-v1.1-gpu-dense-smoke-32env-e10-s89281301-v1",
+  "objective": "Measure useful GPU occupancy and throughput for a documented compute-dense PPO branch with 32 environments and 10 epochs, while preserving the V1 policy architecture, environment, reward, input limits, and both frozen main routes.",
+  "scope": {
+    "benchmark_only": true,
+    "candidate_eligible": false,
+    "published_v1_unchanged": true,
+    "main_v1.1_routes_unchanged": true,
+    "architecture_changed": false,
+    "reward_changed": false,
+    "human_input_limits_changed": false,
+    "optimizer_reset_for_recipe_change": true
+  },
+  "trainer": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/train_overnight_multilevel.py",
+    "sha256": "sha256:2886a72a7348e492f4d34f4ef9733eee1668df24e17cc896ace0094267d371ba"
+  },
+  "initial_model": {
+    "id": "alphazuma-v1-published-champion-adaptive-mid-13631488",
+    "training_steps": 13631488,
+    "path": "/mnt/d/ZumaTraining/overnight-v11-adaptive-recovery-s43081301-v1/checkpoints/adaptive-5090-recovery_13631488_steps.zip",
+    "sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579"
+  },
+  "levels": [
+    {
+      "id": "Jungle2",
+      "display_name": "Castaway",
+      "curve_count": 1,
+      "curve_names": ["Jungle2\\Jungle2"]
+    }
+  ],
+  "environment": {
+    "profile_mode": "tutorials_completed",
+    "hard": false,
+    "curve_index": 0,
+    "base_config": {
+      "aim_bins": 180,
+      "action_mode": "factorized",
+      "frame_skip": 1,
+      "max_ticks": 12000,
+      "max_balls": 768,
+      "max_projectiles": 32,
+      "max_curves": 2,
+      "score_reward_scale": 0.01,
+      "step_penalty": -0.0001,
+      "win_reward": 10,
+      "loss_reward": -10,
+      "privileged_debug": false,
+      "render_width": 400,
+      "render_height": 300
+    },
+    "input_profile": {
+      "profile_id": "elite-human-v1",
+      "reaction_delay_ticks": 12,
+      "max_aim_speed_degrees_per_second": 1080,
+      "max_aim_acceleration_degrees_per_second_squared": 18000,
+      "min_button_interval_ticks": 5
+    },
+    "reward_profile": {
+      "profile_id": "win-time-score-v1",
+      "win_reward": 10,
+      "failure_reward": -10,
+      "time_penalty_per_native_tick": -0.0001,
+      "score_progress_reward_cap": 0.01
+    }
+  },
+  "runs": [
+    {
+      "id": "gpu-dense-smoke-5090-32env-e10",
+      "description": "Disposable compute-dense calibration on RTX 5090; optimizer reset is intentional because PPO epochs change from 1 to 10.",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-v1.1-gpu-dense-smoke-5090-32env-e10-s89281301-v1",
+      "device": "cuda:0",
+      "seed": 89281301,
+      "episode_seed_base": 892000000,
+      "episode_seed_stride": 25000,
+      "total_steps": 262144,
+      "num_envs": 32,
+      "rollout_steps": 256,
+      "batch_size": 512,
+      "ppo_epochs": 10,
+      "learning_rate": 0.000005,
+      "entropy_coef": 0,
+      "checkpoint_every": 131072,
+      "initial_weights": {
+        "Jungle2": 1
+      },
+      "adaptive": {
+        "enabled": false,
+        "update_every_steps": 262144,
+        "rolling_episodes": 64,
+        "minimum_episodes": 4,
+        "minimum_weight": 1,
+        "maximum_weight": 1,
+        "anchor_level": "Jungle2"
+      }
+    }
+  ],
+  "seed_isolation": {
+    "smoke_episode_range": [892000000, 892799999],
+    "excluded_from_training_selection_and_blind": true,
+    "no_overlap": true
+  },
+  "schedule": {
+    "training_stop_utc": "2026-08-14T00:15:00Z",
+    "goal_end_utc": "2026-08-14T00:30:00Z"
+  }
+}

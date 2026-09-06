@@ -1,0 +1,57 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-policy-diversity-audit-receipt",
+  "version": 1,
+  "completed_utc": "2026-08-14T02:56:42.6876916Z",
+  "status": "PASS",
+  "classification": "frozen_dataset_post_hoc_training_health_diagnostic_only",
+  "preregistration": {
+    "path": "diagnostics/alphazuma-v1.1-policy-diversity-audit-0241z-s61081301-preregistration-v1.json",
+    "sha256": "sha256:2ec85cfbbafb715d1d7e1c93b256e6df28b9a092da5d8930417c3f1ac24b969e",
+    "frozen_before_execution": true
+  },
+  "source_audit": {
+    "path": "D:\\ZumaTraining\\alphazuma-v1.1-policy-diversity-audit-0241z-s61081301-v1\\audit.json",
+    "sha256": "sha256:b199d0227247d6d02e47fd24487c0c5a3b4b0277974ce1178c3a56cf58100802"
+  },
+  "tool": {
+    "path": "tools/audit_alphazuma_v11_policy_diversity.py",
+    "sha256": "sha256:17db88ef92f4078748b286af3094335498e6188afd9e21ff50a92bf595dc2249"
+  },
+  "validation": {
+    "candidate_count": 7,
+    "pairwise_candidate_comparisons": 21,
+    "unique_candidate_action_signatures": 7,
+    "identical_candidate_pairs": 0,
+    "reference_reproduced_all_1243_stored_collector_actions": true,
+    "all_predicted_actions_satisfied_frozen_masks": true,
+    "all_10_input_hashes_independently_revalidated": true,
+    "pairwise_summary_arithmetic_independently_recomputed": true,
+    "exact_action_difference_rate": {
+      "min": 0.37892196299275943,
+      "median": 0.6790024135156878,
+      "max": 0.7755430410297667
+    },
+    "semantic_action_difference_rate": {
+      "min": 0.014481094127111826,
+      "median": 0.03459372485921158,
+      "max": 0.04827031375703942
+    }
+  },
+  "comparison_to_0212z_portfolio": {
+    "prior_source_audit_sha256": "sha256:a11e518103a66df3337865716074abe586482ddec3f97bbe9a263c7e62d4f6c4",
+    "prior_semantic_difference_median": 0.0249396621078037,
+    "current_semantic_difference_median": 0.03459372485921158,
+    "median_delta_percentage_points": 0.9654062751407882,
+    "prior_exact_difference_median": 0.6572807723250201,
+    "current_exact_difference_median": 0.6790024135156878,
+    "interpretation": "Later independently audited checkpoints remain behaviorally distinct and show greater pairwise divergence on the same frozen probe. Divergence does not establish improvement."
+  },
+  "conclusion": {
+    "candidate_portfolio_behaviorally_diverse_on_frozen_probe": true,
+    "later_training_collapsed_to_duplicate_deterministic_policies": false,
+    "performance_improvement_claimed": false
+  },
+  "training_or_evaluation_semantics_changed": false,
+  "formal_seed_consumption": "none",
+  "formal_gate_effect": "none"
+}

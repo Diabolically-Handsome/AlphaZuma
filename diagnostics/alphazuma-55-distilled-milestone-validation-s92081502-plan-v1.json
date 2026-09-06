@@ -1,0 +1,87 @@
+{
+  "schema": "zuma-rl.alphazuma-55-training-validation-milestone-plan",
+  "version": 1,
+  "status": "FROZEN_BEFORE_TARGET_CHECKPOINT",
+  "created_utc": "2026-08-15T05:06:36.0182925Z",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "purpose": "Measure whether the distilled PPO learning signal persists from 1,048,576 to 8,388,608 new route steps on fresh non-formal seeds.",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "training_route": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-distilled-ppo-s86081501-preregistration-v1.json",
+    "sha256": "sha256:6796be4cb62b376a5d462af4ea9c52b368db95836a9ce4ea043595063bfffd7c",
+    "run_id": "alphazuma55-distilled-frontier-5090"
+  },
+  "prior_validation_audit": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-distilled-first-checkpoint-validation-s92081501-audit-v1.json",
+    "sha256": "sha256:e0c13e3d0a2b036b8d914ef75eab3a34a72cac9441a86d84b78402379ddbb21c",
+    "status": "PASS",
+    "baseline_cleared_levels": 0,
+    "first_checkpoint_cleared_levels": 13
+  },
+  "models": {
+    "baseline": {
+      "id": "distilled-ppo-1048576",
+      "training_steps": 1048576,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-distilled-ppo-s86081501-v1/checkpoints/alphazuma55-distilled-frontier-5090_1048576_steps.zip",
+      "sha256": "sha256:2ef8e2d4f4865c13056c27e71bd203f454f883a9b226583050156b6ae9ce4bc8"
+    },
+    "target": {
+      "id": "distilled-ppo-8388608",
+      "training_steps": 8388608,
+      "expected_path": "/mnt/d/ZumaTraining/alphazuma-55-distilled-ppo-s86081501-v1/checkpoints/alphazuma55-distilled-frontier-5090_8388608_steps.zip",
+      "must_be_absent_at_freeze": true,
+      "sha256_frozen_only_after_file_exists": true
+    }
+  },
+  "matrix": {
+    "levels": 55,
+    "attempts_per_level_per_model": 1,
+    "paired_models_share_identical_task_seeds": true,
+    "seed_registry": "training_validation",
+    "base_seed": 1550000055,
+    "last_seed": 1550000109,
+    "max_ticks": 12000,
+    "device": "cuda:0",
+    "parallel_envs": 55
+  },
+  "implementation": {
+    "contract_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_training_validation.py",
+      "sha256": "sha256:45fcdd98cda89f2a606cb24c30a82c12b877d108b232d37f7623ed71bb9a1391"
+    },
+    "evaluator": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel.py",
+      "sha256": "sha256:d0011f9ad5c6837315007a7fb31e128fb315e4baddb45959c5f3b98d11a6a7e3"
+    },
+    "independent_auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_training_validation.py",
+      "sha256": "sha256:3621dcb64c3342e3954533d22401f258fe6c72ac49d164456455ad77ea54aa67"
+    }
+  },
+  "activation_gate": {
+    "target_checkpoint_exists_and_hash_is_frozen": true,
+    "all_four_training_routes_running_or_cleanly_completed": true,
+    "formal_controller_phase_must_equal": "WAITING_FOR_TRAINING",
+    "formal_selection_final_and_continuous_roots_must_be_absent": true,
+    "wsl_available_memory_gib_at_least": 40,
+    "wsl_swap_used_bytes_must_equal": 0,
+    "gpu_temperature_c_below": 82,
+    "run_at_most_once": true
+  },
+  "outputs": {
+    "run_root": "/mnt/d/ZumaTraining/alphazuma-55-distilled-milestone-validation-s92081502-v1",
+    "models_manifest": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-distilled-milestone-validation-s92081502-models-v1.json",
+    "preregistration": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-distilled-milestone-validation-s92081502-preregistration-v1.json",
+    "audit_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-distilled-milestone-validation-s92081502-audit-v1.json"
+  },
+  "authority_boundary": {
+    "formal_selection_authority": false,
+    "training_recipe_change_authority": false,
+    "candidate_addition_or_removal_authority": false,
+    "gate_or_seed_change_authority": false,
+    "result_may_only_be_reported_as_training_health_evidence": true
+  }
+}

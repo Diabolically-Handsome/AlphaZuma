@@ -1,0 +1,36 @@
+{
+  "schema": "alphazuma-55-record-scan-verdict",
+  "version": 1,
+  "written_utc": "2026-08-21T07:16:24Z",
+  "level": "Jungle3 (Adv 3, 'Echo Beach')",
+  "verdict": "HUMAN_RECORD_NOT_BROKEN_AND_TAIL_REGRESSED_VS_BC",
+  "summary": "Rescan of the same top-3000 golden seeds with the round-2 polished champion (panel median 4156, -10.8% vs BC): fastest 1365 ticks = 13.65 s - WORSE than the unpolished BC's 1179 (11.79 s) - while win rate rose 98.2% -> 99.8% (2993/3000). CAMPAIGN LESSON (mean-tail tradeoff): a modest timepolish buys consistency (win rate up, median down) and can SELL tail sharpness - the BC's fastest line used 16 shots, the polished model's 24. Large polishes (J1/J2/jungle6) improved both; small ones may not. RECORD-HUNTING and FULL-RUN champions are therefore separate titles: Jungle3's AI-TAS best stands with the BC at 11.79 s; the expected-time champion is the round-2 final model.",
+  "best_this_scan": {
+    "ticks": 1365,
+    "seconds_simulator": 13.65,
+    "seed": 4544501,
+    "shots": 24
+  },
+  "standing_ai_tas_best": {
+    "ticks": 1179,
+    "seconds_simulator": 11.79,
+    "seed": 963914,
+    "shots": 16,
+    "model": "240-ep BC (s99081726)",
+    "scan": "s99081730"
+  },
+  "human_reference": {
+    "record": "0:07 RTA",
+    "runner": "LookingForDreams",
+    "date": "2023-06-25",
+    "source": "speedrun.com REST API",
+    "caveat": "simulator timing, RTA audit pending"
+  },
+  "scan": {
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-record-jungle3-r2-s99081732-v1",
+    "completion_sha256": "sha256:b273cdab951658b052889b332182a64990ecc35df1ee5ba70163589644b1d3a9",
+    "model_sha256": "sha256:c0e21a35316eab0d539e66258ec6bb9e51e1cf69dbc93d3c124f8e3192ef6cb1"
+  },
+  "next_lever": "deep scan ranks 3001-30000 with the sharper-tailed BC champion",
+  "formal_seed_consumption": false
+}

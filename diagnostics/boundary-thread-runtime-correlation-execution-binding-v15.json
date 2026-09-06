@@ -1,0 +1,79 @@
+{
+  "schema": "zuma-rl.pc-boundary-thread-runtime-correlation-execution-binding",
+  "version": 15,
+  "status": "BOUND_BEFORE_RUN_OUTPUTS",
+  "created_utc": "2026-08-05T17:16:52.804Z",
+  "id": "boundary-thread-runtime-correlation-v15-execution",
+  "session_nonce": "722af890b5f64df3906ea73cee0ce375",
+  "parent_preregistration": "diagnostics/boundary-thread-runtime-correlation-preregistration-v15.json",
+  "parent_preregistration_sha256": "sha256:7956b5a6831396e865f79407756eefdf33202648ed5282acc4b5791f7c272989",
+  "trigger_outcome": "diagnostics/boundary-thread-runtime-smoke-outcome-v14.json",
+  "trigger_outcome_sha256": "sha256:c1aa78f43018cfcf059900dee2c053f395c538547936218da8d48d90745649a7",
+  "preflight": {
+    "all_six_run_roots_absent": true,
+    "host_outputs_absent": true,
+    "runtime_process_count": 0,
+    "qualified_tool_hashes_match": true,
+    "focused_tests": "PASS_56",
+    "native_full_suite": "PASS_1170_COLLECTED_EXIT_0",
+    "capture_fresh_host_pre_after_this_binding": true
+  },
+  "hash_recheck": {
+    "collector_plan_sha256": "sha256:5a7ba58eccd7e0d1b1008ac089cce59c167a26ba8bc359ef76f3dcd2bea8c0db",
+    "playback_dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "replay_pre_snapshot_sha256": "sha256:06d243f34ecf209c6296659fd4cc3c0a6c299c203cc8b4e342f55cc001c32842",
+    "host_restore_snapshot_sha256": "sha256:c48bd69be03fc6e2fdf1a400b571f0f0294a5fadda1c48e08c1bd6d1dd093f46",
+    "global_mtrand_source_trace_sha256": "sha256:4de39ac6a0e800323949e0095fc2fd3e924ea41a670ceb5d75a0ecb25b5c15a4",
+    "thread_runtime_tool_sha256": "sha256:e7edc2f002d7c5168c0a3649092936bcacb6f0e31bbeee9b431b643a29762275",
+    "global_boundary_tool_sha256": "sha256:0f9a2d43ffcfea2539f63bae63efcc787299dcf6403d0b18fb042e9fb1d9b604",
+    "collector_sha256": "sha256:0ce7066a0da6f26f3a88b14c68f16e4f623bac6d2279c91555fa240a9e36ee16"
+  },
+  "fixed_command_contract": {
+    "probe_update": 3425,
+    "slowdown_update": 3415,
+    "maximum_attempts": 3,
+    "trajectory_mode": "rng",
+    "trajectory_end_update": 3425,
+    "trace_detach_update": 1702,
+    "trace_reattach_update": 3501,
+    "global_mtrand_call_start_after_update": 1702,
+    "global_mtrand_call_end_at_update": 3121,
+    "global_mtrand_call_observe_boundary_only": true,
+    "global_mtrand_call_observe_thread_runtime": true,
+    "initial_global_mtrand_oracle": false,
+    "diagnostic_disable_source_bound_board_anchor": true,
+    "skip_repaint_guard": true,
+    "skip_frozen_snapshot": true,
+    "timeout_seconds": 900
+  },
+  "fixed_execution_order": [
+    "D:/ZumaGolden/diagnostics/boundary-thread-runtime-correlation-r01-v15",
+    "D:/ZumaGolden/diagnostics/boundary-thread-runtime-correlation-r02-v15",
+    "D:/ZumaGolden/diagnostics/boundary-thread-runtime-correlation-r03-v15",
+    "D:/ZumaGolden/diagnostics/boundary-thread-runtime-correlation-r04-v15",
+    "D:/ZumaGolden/diagnostics/boundary-thread-runtime-correlation-r05-v15",
+    "D:/ZumaGolden/diagnostics/boundary-thread-runtime-correlation-r06-v15"
+  ],
+  "execution_rule": {
+    "retain_every_attempt": true,
+    "stop_at_first_valid_boundary_observation_per_root": true,
+    "never_retry_for_semantic_source_mismatch": true,
+    "post_boundary_failure_is_nonretryable": true,
+    "capture_host_snapshot_after_every_root": true,
+    "verify_same_host_state_root_after_every_root": true,
+    "run_all_six_even_after_both_modes_appear": true,
+    "do_not_change_analysis_after_outputs": true
+  },
+  "output_absence_recheck": {
+    "all_six_run_roots": true,
+    "host_pre": true,
+    "host_post": true,
+    "outcome": true
+  },
+  "non_authorizations": [
+    "pc_golden_credit",
+    "fidelity_gate_change",
+    "formal_transport_change",
+    "large_scale_training_start"
+  ]
+}

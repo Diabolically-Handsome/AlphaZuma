@@ -1,0 +1,40 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-postprocess-synthetic-tests",
+  "version": 1,
+  "status": "PASS",
+  "completed_utc": "2026-08-14T00:25:40Z",
+  "command": ".venv/bin/python -m pytest tests/test_alphazuma_v11_frontier_postprocess.py -q",
+  "result": {
+    "passed": 5,
+    "failed": 0,
+    "exit_code": 0
+  },
+  "coverage": [
+    "undefined winning median is represented by strict-JSON null",
+    "selection ranking applies Jungle2 retention before zero-win recovery",
+    "candidate midpoint is measured over new route steps after the source counter",
+    "seventeen-level paired report closes every attempt matrix exactly",
+    "promotion report and selection decision serialize with allow_nan disabled"
+  ],
+  "artifacts": {
+    "test": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tests/test_alphazuma_v11_frontier_postprocess.py",
+      "sha256": "sha256:1693a3799e49323a581d66c5ed910dafe27f926a0fd3080161f3ad2ba145c0a1"
+    },
+    "controller": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_v11_frontier_postprocess.py",
+      "sha256": "sha256:0f97b9d143f9d33de935311d11074ea4f68cb4b3027a412ed70b52b76ff99689"
+    },
+    "master_preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-v1.1-frontier-postprocess-s51081301-preregistration-v1.json",
+      "sha256": "sha256:3dc8a51563c763ef46b3c3415a6e4da9b5430ab3a19b586e5e0b95b98b0ffc01"
+    }
+  },
+  "runtime_after_test": {
+    "formal_training_processes": 7,
+    "postprocess_controller_processes": 1,
+    "controller_status": "RUNNING",
+    "controller_phase": "WAITING_FOR_TRAINING",
+    "controller_error": null
+  }
+}

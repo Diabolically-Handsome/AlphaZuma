@@ -1,0 +1,116 @@
+{
+  "schema": "zuma-rl.teacher-policy-anchor-screen-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T14:36:39.721Z",
+  "status": "TEACHER_POLICY_ANCHOR_MECHANISM_PASS",
+  "decision": "AUTHORIZE_FRESH_NONOVERLAPPING_CONFIRMATION",
+  "preregistration": {
+    "path": "diagnostics/teacher-policy-anchor-c100-s20260886-preregistration-v1.json",
+    "sha256": "sha256:a69095f0fc39c447def1630456a132977713a630d8fd9323892f7abadaac4cde",
+    "status": "FROZEN_BEFORE_RUN_OUTPUT"
+  },
+  "artifacts": {
+    "run_dir": "D:/ZumaTraining/screening-teacher-anchor-c100-s20260886-v1",
+    "config_sha256": "sha256:c9da45f168a4ee34cb183054349391149c40cc1b7a1e9bb12dd0fc7c0aee873f",
+    "completion_sha256": "sha256:17cc058e7419a1a3d7f53b8c7f31e24de982afc1600d7f4944d7239540e0bb49",
+    "optimizer_reset_sha256": "sha256:eaca6a6bc3fee4d8ce4a5a4877b38a823b2d2d90ae9c87fb14cd54d9bca4219d",
+    "teacher_anchor_installation_sha256": "sha256:5746393f8b673d23f72252a7dac9d759b07cf208773519061e1080a2b7695f96",
+    "teacher_anchor_verification_sha256": "sha256:a805b1da5731d487e343f248e348a00abdf673b47aa90a2d4103c57a6c9438c6",
+    "pretrain_deterministic_sha256": "sha256:69055a053315111a156c6512708ed9939b9488f53fb6fa80ca79a3e0d3b3ce85",
+    "pretrain_stochastic_sha256": "sha256:866a6a097f8924e1b82467be1c924028fde2d5808c90a62df99b58f1c3f8a94d",
+    "posttrain_deterministic_sha256": "sha256:0f8f979cdeb63d8b12957c0faf0c14c3697f22dd3090324490c6565c3c2ce45b",
+    "posttrain_stochastic_sha256": "sha256:8dd27a687a4c1478e16517b38d8d0f672649fff3b0b581b8d99c180443668851",
+    "deterministic_comparison_sha256": "sha256:863ff5c37b71cf511f2dbdb3ad64cabc84076da3662b8179edfc5c95706199c6",
+    "stochastic_comparison_sha256": "sha256:e638de227f0beaf8086c8ed08102967e2d76666f9df692a2fac00a91251ac732",
+    "final_model_sha256": "sha256:9ed1a6879cc461584bc2664992de93f767776a4c263a0bddc39cd16f77882ab0",
+    "stdout_sha256": "sha256:01bb7563c4087ac25b3b2984c51b7f4b273e88fd0a98b18d2c45dec731dd50ad",
+    "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "acceptance_results": {
+    "pipeline": {
+      "pass": true,
+      "completion_status": "COMPLETE",
+      "effective_steps": 16384,
+      "optimizer_reset_status": "PASS",
+      "teacher_anchor_installation_status": "INSTALLED",
+      "teacher_anchor_verification_status": "PASS",
+      "teacher_policy_bitwise_unchanged": true,
+      "current_policy_bitwise_changed": true,
+      "teacher_anchor_train_calls": 8,
+      "teacher_anchor_minibatches": 32,
+      "teacher_anchor_samples": 16384,
+      "teacher_anchor_mean_forward_kl": 0.000006363015643273684,
+      "teacher_anchor_max_sample_forward_kl": 0.0001178134698420763,
+      "boundary_receipt_version": 4,
+      "comparison_version": 2,
+      "outcome_source": "terminal_info",
+      "failure_receipt_present": false,
+      "stderr_bytes": 0
+    },
+    "baseline_reproduction": {
+      "pass": true,
+      "deterministic_receipt_hash_exact": true,
+      "stochastic_receipt_hash_exact": true
+    },
+    "precondition": {
+      "pass": true,
+      "deterministic_wins": 7,
+      "required_wins": 6
+    },
+    "deterministic_retention": {
+      "pass": true,
+      "pretrain_wins": 7,
+      "posttrain_wins": 7,
+      "posttrain_losses": 1,
+      "posttrain_truncations": 0,
+      "pretrain_mean_reward": 32.099925,
+      "posttrain_mean_reward": 32.045,
+      "mean_reward_delta": -0.054924999999997226,
+      "paired_regressions_exceeding_5": 0
+    },
+    "stochastic_retention": {
+      "pass": true,
+      "pretrain_wins": 8,
+      "posttrain_wins": 8,
+      "posttrain_losses": 0,
+      "posttrain_truncations": 0,
+      "pretrain_mean_reward": 39.4421125,
+      "posttrain_mean_reward": 38.955575,
+      "mean_reward_delta": -0.4865374999999972,
+      "paired_regressions_exceeding_5": 0
+    },
+    "mechanism_effect": {
+      "pass": true,
+      "unanchored_deterministic_wins": 5,
+      "anchored_deterministic_wins": 7,
+      "unanchored_deterministic_mean_reward_delta": -1.6104874999999979,
+      "anchored_deterministic_mean_reward_delta": -0.054924999999997226,
+      "unanchored_stochastic_mean_reward_delta": -2.7398999999999987,
+      "anchored_stochastic_mean_reward_delta": -0.4865374999999972
+    },
+    "overall": {
+      "pass": true,
+      "post_hoc_override_applied": false
+    }
+  },
+  "consumed_dataset_drift_audit": {
+    "classification": "diagnostic_only_not_certification_evidence",
+    "report_sha256": "sha256:5582314e9c3f2698c8a1fac5fd1565ec1fb6d10c088f01478d252eb699fedf9c",
+    "completion_sha256": "sha256:308e45e8508bc682ce8d7a135a081eab73f686765604fab59bc0301fb4a2c345",
+    "verb_accuracy": 0.9753336029114436,
+    "fire_aim_exact_accuracy": 0.6592105263157895,
+    "fire_aim_mean_circular_bin_error": 9.618421052631579,
+    "fire_predicted_unique_aim_bins": 160
+  },
+  "bounded_inference": "on the exact fresh stream where unanchored low-rate PPO failed, the immutable initial-policy anchor restores both deterministic and stochastic retention with zero severe paired regressions while preserving nonzero policy updates; independence remains unestablished until a new seed family passes",
+  "next_action": {
+    "authorized": "freeze and run one 16384-step anchored confirmation on fresh nonoverlapping training, boundary, and action-sampling seeds",
+    "forbidden": "do not launch the 98304-step scale screen before fresh confirmation passes"
+  },
+  "non_authorizations": [
+    "98304_step_scale_screen",
+    "large_scale_training",
+    "fidelity_gate_opening",
+    "original_transfer_certification"
+  ]
+}

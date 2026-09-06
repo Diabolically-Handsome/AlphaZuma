@@ -1,0 +1,25 @@
+{
+ "schema": "zuma-rl.alphazuma-55-macro-ppo-run-outcome",
+ "version": 1,
+ "run_id": "macro-ppo-jungle2-r4",
+ "preregistration": {
+  "path": "/mnt/c/Users/Laure/Documents/\u7956\u739b/diagnostics/alphazuma-55-macro-ppo-jungle2-r4-s99081688-preregistration-v1.json",
+  "sha256": "sha256:006f27dcc9ac8a1e2a69458dab74aa3c3243e7398d63148c35e1d57a566ea053"
+ },
+ "status": "STOPPED_EARLY_USER_DIRECTED_STRATEGY_PIVOT",
+ "decision": "FAIL",
+ "stopped_utc": "2026-08-18T16:01:32.025599+00:00",
+ "reason": "Single-variable experiment concluded: with the SAME fresh-value-head BC-transplant init that produced 32 stochastic wins under cap-10.0 (run s99081684), cap-1.0 produced ZERO training wins in 1,899 episodes and progressive behavior loss in eval (ckpt2M: 2 shots, score 40). Combined with r3/r3b, the family verdict is: cap-10 shaping was simultaneously the win-discovery scaffold AND the farm attractor; removing it without another scaffold removes discovery too. The historically proven scaffold in this project is TEACHER ANCHORING (Jungle2-era pure speedrun reward + teacher-anchored PPO reached 32/32 stochastic). Successor route: macro-level teacher supervision (teacher-through-macro decisions as labels; teacher wins 50/55 through the macro interface).",
+ "evidence": [
+  {
+   "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle2-r4-s99081688-v1/eval-ckpt2M/completion.json",
+   "sha256": "sha256:d7bb6112a6711037dbe429177b25b1e8fec1ecb07ba6a95cb8cd795ce2563924"
+  },
+  {
+   "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle2-r4-s99081688-v1/training_status.json",
+   "sha256": "sha256:6442f41c38c45206003470969b1d82960af4c8ee9e1d9df8877e25d72bcfcbaf"
+  }
+ ],
+ "successor": "macro-teacher-supervision line (macro-decision collector + macro BC + optional anchored PPO fine-tune)",
+ "formal_seed_consumption": false
+}

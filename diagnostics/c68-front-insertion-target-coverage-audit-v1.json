@@ -1,0 +1,71 @@
+{
+  "schema": "zuma-rl.pc-targeted-capture-coverage-audit",
+  "version": 1,
+  "id": "c68-front-insertion-u3664-u3684-coverage-audit",
+  "created_utc": "2026-08-03T17:50:00Z",
+  "status": "target_not_covered",
+  "classification": "complete-collection-diagnostic-only-not-pc-golden",
+  "gate_effect": "none",
+  "execution_binding": {
+    "path": "diagnostics/c68-front-insertion-execution-binding-v1.json",
+    "sha256": "sha256:2e96a010c652ac240bac592b2f26f06ddf498f57cff8c99fe876262a0304adda"
+  },
+  "collection": {
+    "path": "D:/ZumaGolden/campaign-c68-natural-win-v8-front-insertion-u3635-u3690/collection.json",
+    "sha256": "sha256:8e4e361e836aef47d556efab728d5bd80c5fd5998d227e1c0435c3f56cd37005",
+    "status": "complete",
+    "independent_process_ids": [
+      53668,
+      52924
+    ],
+    "host_state_restored_exactly": true,
+    "protocol_state_restored_exactly": true
+  },
+  "frozen_required_update_range": [
+    3664,
+    3684
+  ],
+  "runs": [
+    {
+      "run_id": "r1",
+      "frame_count": 90,
+      "framework_update_range": [
+        3714,
+        3768
+      ],
+      "framework_update_map_sha256": "sha256:d00c9f597891e82c2e478faf24c3ef57ffcd7222ec5876b62c1c99c3496fdb63",
+      "capture_metadata_sha256": "sha256:452e00f2fffbe7459ff6e296e4ad1fa54e8c87b4232d5c67f88ff117428773eb",
+      "first_frame_offset_from_wait_update": 79,
+      "contains_required_start": false,
+      "contains_required_end": false
+    },
+    {
+      "run_id": "r2",
+      "frame_count": 90,
+      "framework_update_range": [
+        3702,
+        3756
+      ],
+      "framework_update_map_sha256": "sha256:13ef586bd0980f0d149fc74e2ef46b3fb9274404fadfdbf83d7e1cf370947c01",
+      "capture_metadata_sha256": "sha256:008e7c8f39c2fce14d94fc5d7f790b848bc779afcfa43660f109cfc7308be900",
+      "first_frame_offset_from_wait_update": 67,
+      "contains_required_start": false,
+      "contains_required_end": false
+    }
+  ],
+  "decision": {
+    "package_attempted": false,
+    "reason": "Both immutable framework-update maps begin after the preregistered target range, so no packaging selection can contain updates 3664 through 3684.",
+    "pc_golden_authorized": false,
+    "mechanism_audit_authorized": false
+  },
+  "calibration_use": {
+    "allowed": true,
+    "observed_capture_start_latency_updates": [
+      67,
+      79
+    ],
+    "cause": "DXGI camera creation and frame-pool preallocation occur after the repaint trigger and before the framework-update capture gate.",
+    "target_data_use_forbidden": true
+  }
+}

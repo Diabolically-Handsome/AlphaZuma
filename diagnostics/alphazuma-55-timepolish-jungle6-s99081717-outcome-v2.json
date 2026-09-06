@@ -1,0 +1,83 @@
+{
+  "schema": "zuma-rl.alphazuma-55-macro-ppo-run-outcome",
+  "version": 1,
+  "run_id": "timepolish-jungle6",
+  "preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-timepolish-jungle6-s99081717-preregistration-v2.json",
+    "sha256": "sha256:8507bf8ab1bfa4b65845cff7cfaf805032e30e7c56114f3a06db96131ba691b7"
+  },
+  "status": "STOPPED_BY_WIN_RATE_FLOOR_CLAUSE",
+  "decision": "SUCCESS_POLISH_GAIN_CHAMPION_CKPT262120",
+  "stopped_utc": "2026-08-21T00:02:16Z",
+  "reason": "Floor clause (0.70) fired on two consecutive breaches: ckpt1048480 11/16 (0.688) then ckpt1310600 9/16 (0.562); trainer stopped by SIGTERM at ~1.31M/2M steps. UNLIKE the jungle8 rematch, polish DID produce a champion: ckpt262120 (13/16, median 10761) beats the init baseline (12/16, median 11991) on expected time 13,244 vs 15,988 native ticks (-17%). Panel win rate oscillated 13-9-13-11-9 with no recovery trend after 786k, so the stop also protects the champion.",
+  "checkpoint_grid": [
+    {
+      "checkpoint": 262120,
+      "wins": "13/16",
+      "median": 10761,
+      "expected_time": 13244,
+      "above_floor": true
+    },
+    {
+      "checkpoint": 524240,
+      "wins": "9/16",
+      "median": 9787,
+      "expected_time": 17399,
+      "above_floor": false
+    },
+    {
+      "checkpoint": 786360,
+      "wins": "13/16",
+      "median": 10997,
+      "expected_time": 13535,
+      "above_floor": true
+    },
+    {
+      "checkpoint": 1048480,
+      "wins": "11/16",
+      "median": 10526,
+      "expected_time": 15311,
+      "above_floor": false
+    },
+    {
+      "checkpoint": 1310600,
+      "wins": "9/16",
+      "median": 9703,
+      "expected_time": 17250,
+      "above_floor": false
+    }
+  ],
+  "init_baseline": {
+    "wins": "12/16",
+    "median": 11991,
+    "expected_time": 15988
+  },
+  "champion": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle6-s99081717-v2/checkpoints/timepolish-jungle6_262120_steps.zip",
+    "sha256": "sha256:a3d74a60e1b8ba1f1ffe18bee5b4be536e92339ef0f95a9a8d4a2c0023d5b1b3"
+  },
+  "evidence": [
+    {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle6-s99081717-v2/eval16-ckpt6262120",
+      "note": "16 per-seed completions"
+    },
+    {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle6-s99081717-v2/eval16-ckpt6524240",
+      "note": "16 per-seed completions"
+    },
+    {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle6-s99081717-v2/eval16-ckpt6786360",
+      "note": "16 per-seed completions"
+    },
+    {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle6-s99081717-v2/eval16-ckpt61048480",
+      "note": "16 per-seed completions"
+    },
+    {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle6-s99081717-v2/eval16-ckpt61310600",
+      "note": "16 per-seed completions"
+    }
+  ],
+  "next_step": "golden record scan on the top-3000 enumerated jungle6 seeds with the champion (target: beat the 18 s human line = 1800 ticks; AI-TAS convention, simulator timing, RTA audit pending)",
+  "formal_seed_consumption": false
+}

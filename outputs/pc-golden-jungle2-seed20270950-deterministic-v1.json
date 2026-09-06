@@ -1,0 +1,55 @@
+{
+  "schema": "zuma-rl.trained-policy-episode-video",
+  "version": 1,
+  "status": "COMPLETE",
+  "policy": {
+    "algorithm": "MaskablePPO",
+    "deterministic": true,
+    "model": "/mnt/d/ZumaTraining/pc-golden-jungle2-transfer-s20260950-98k-v1/final_model.zip",
+    "model_sha256": "sha256:7869b4306a1f05128cd8fbff978361ba1969454dceaf28b5fb611d8965baa97b",
+    "model_num_timesteps": 98304
+  },
+  "environment": {
+    "level": "Jungle2",
+    "profile_mode": "tutorials_completed",
+    "seed": 20270950,
+    "run_config": "/mnt/d/ZumaTraining/pc-golden-jungle2-transfer-s20260950-98k-v1/config.json",
+    "run_config_sha256": "sha256:e62643a14df0e5cb4c87f34e0c67c92c031faaaeabf6293164b2aefc0a4a8091",
+    "native_tick_hz": 100,
+    "frame_skip": 1
+  },
+  "episode": {
+    "outcome": "win",
+    "score": 2600,
+    "ticks": 1343,
+    "decisions": 1343,
+    "total_reward": 35.86570000000022,
+    "action_counts": {
+      "wait": 1264,
+      "fire": 61,
+      "swap": 18
+    },
+    "accepted_action_counts": {
+      "wait": 1264,
+      "fire": 61,
+      "swap": 18
+    },
+    "terminated": true,
+    "truncated": false
+  },
+  "video": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/outputs/pc-golden-jungle2-seed20270950-deterministic-v1.mp4",
+    "sha256": "sha256:27e08caede5d58d3abfa1466e3d8b843b691b9b3f6361ff6b9ff1598280e5b6d",
+    "bytes": 859710,
+    "codec": "h264/libx264",
+    "pixel_format": "yuv420p",
+    "width": 800,
+    "height": 600,
+    "fps": 50,
+    "frame_stride_native_ticks": 2,
+    "frame_count": 773,
+    "decoded_frame_count": 773,
+    "duration_seconds": 15.46,
+    "final_hold_seconds": 2.0
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "schema": "zuma-rl.alphazuma-55-headonly-allaim-prereg-independent-audit",
+  "version": 1,
+  "status": "PASS",
+  "audited_utc": "2026-08-16T16:22:12.476577+00:00",
+  "auditor": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_motor_observable_gradual_headonly_allaim_prereg_v1.py",
+    "sha256": "sha256:1ee0de5480112d470616d656a9c6932d48e3850fd9bebd782609c9bd64bb4683"
+  },
+  "base": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-allaim-s99081633-preregistration-v1.json",
+    "sha256": "sha256:502c0ab5566a66fa33ff33df80b10b101c5ea1b75dc4e21ff07f5996965730e1"
+  },
+  "candidate": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-headonly-allaim-s99081646-preregistration-v1.json",
+    "sha256": "sha256:bcede95c539b97ea9a440ccee5f68e8715ce6b3dd3c9ad3eac2b7651d28c3470"
+  },
+  "allowed_recipe_delta": {
+    "optimizer_parameter_scope": [
+      "full_policy",
+      "action_net_only"
+    ],
+    "fresh_training_seed_range": [
+      1546001000,
+      1546001219
+    ],
+    "run_identity_device_and_output_paths": true
+  },
+  "factorial_lineage_verified": true,
+  "all_other_recipe_fields_byte_equivalent_after_normalization": true,
+  "run_directory_absent": true,
+  "formal_seed_consumption": "NONE",
+  "formal_candidate_authority": false
+}

@@ -1,0 +1,108 @@
+{
+  "schema": "zuma-rl.pc-fruit-powerup-collision-preservation-controller-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_IMPLEMENTATION",
+  "created_utc": "2026-08-10T14:01:29.5399565Z",
+  "objective": "Increase natural retail fruit-powerup overlap by preserving active type-0 chain balls until an active fruit enters the strict native 108-pixel TreasurePoint radius, while retaining ordinary Win32 input and zero process-memory writes.",
+  "parents": {
+    "v1_controller_preregistration": {
+      "path": "diagnostics/c174-fruit-powerup-collision-acquisition-controller-preregistration-v1.json",
+      "sha256": "sha256:9505babdd4b2b378bf17e366f884cb77d6483122d01d28094bffb1f72f46a60d"
+    },
+    "v1_controller_qualification": {
+      "path": "diagnostics/c174-fruit-powerup-collision-acquisition-controller-qualification-v1.json",
+      "sha256": "sha256:405dd525af438d65786abc85de49ba408f1b5676353db42e41d3c338bf8bcb45"
+    },
+    "c175_acquisition_failure": {
+      "path": "diagnostics/recording-c175-fruit-powerup-collision-acquisition-failure-receipt-v1.json",
+      "sha256": "sha256:17bc6ed4e5a963be7126416b82ca3883deb3f1f85364a95bf1e47df8aa2d020d",
+      "status": "CLOSED_NO_LOCATOR_CANDIDATE",
+      "completed_natural_retail_recordings": 8,
+      "targeted_bomb_decisions": 0
+    }
+  },
+  "preservation_contract": {
+    "fruit_policy": "bomb",
+    "active_bomb_definition": "active-chain ball whose powerup_primary_type equals 0",
+    "trigger_rule": "Retain the qualified c174 strict-radius trigger rule unchanged whenever an active uncollected fruit and a qualifying bomb run are available.",
+    "preserve_rule": "When at least one active bomb exists but no qualified trigger can execute, remove every candidate run containing an active bomb from current- and next-chamber targeting.",
+    "safe_alternative_rule": "Apply the pre-existing complete-match and build-pair ordering exactly to the remaining bomb-free current and next rows.",
+    "discard_rule": "If no bomb-free current or next row exists, fire the current chamber toward the first deterministic in-canvas perimeter point whose ray has no active-chain collision and, while fruit is active, remains at least 60 pixels from the rendered fruit centre.",
+    "wait_rule": "If no safe discard ray exists, issue no input for that decision and reevaluate on the next normal poll.",
+    "bomb_expiration_or_natural_chain_loss": "No process-memory intervention is permitted; retail movement, expiry and terminal outcome remain natural.",
+    "direct_fruit_targeting": false,
+    "process_memory_access": [
+      "PROCESS_QUERY_INFORMATION",
+      "PROCESS_VM_READ"
+    ],
+    "process_memory_writes": 0,
+    "input_transport": "Win32 SendInput"
+  },
+  "deterministic_discard_points": [
+    [0.0, 0.0],
+    [799.0, 0.0],
+    [799.0, 599.0],
+    [0.0, 599.0],
+    [400.0, 0.0],
+    [799.0, 300.0],
+    [400.0, 599.0],
+    [0.0, 300.0]
+  ],
+  "legacy_scope": {
+    "ignore_policy_unchanged": true,
+    "collect_policy_unchanged": true,
+    "bomb_trigger_branch_unchanged": true,
+    "bomb_policy_without_any_active_bomb_unchanged": true,
+    "controller_is_certifying_evidence": false
+  },
+  "implementation_surface": {
+    "files": [
+      {
+        "path": "tools/autoplay_live_zuma.py",
+        "pre_bytes": 88005,
+        "pre_sha256": "sha256:56aaa9684a8130af16b974aeca96beded709da9c181cc2f614d263eb808c19fd"
+      },
+      {
+        "path": "tests/test_autoplay_live_zuma.py",
+        "pre_bytes": 22406,
+        "pre_sha256": "sha256:006edb6bc0d050844c3edf16877f4f122df8c3af64c1a42cb1d1612eaf232f0b"
+      }
+    ],
+    "frozen_record_wrapper": {
+      "path": "tools/record_autoplay_zuma.py",
+      "sha256": "sha256:438b74c5f6fc8190c9835852a86dfba5c04e25c9b963f98c8d2564b5123d614f"
+    },
+    "simulator_core_change": false,
+    "fidelity_gate_policy_change": false,
+    "training_gate_policy_change": false
+  },
+  "qualification": {
+    "required_tests": [
+      "a bomb-free same-colour row is selected instead of a bomb-bearing row",
+      "the next chamber is used when it is the only bomb-free match",
+      "a clear perimeter discard cycles an otherwise forced bomb shot",
+      "an active fruit excludes discard rays passing within the 60-pixel safety radius",
+      "the strict-radius trigger still outranks preservation",
+      "no active bomb preserves the qualified c174 recommendation",
+      "ignore and collect policy tests remain unchanged"
+    ],
+    "focused_test_command": ".venv-win/Scripts/python.exe -m pytest tests/test_autoplay_live_zuma.py tests/test_record_autoplay_zuma.py -q",
+    "full_suite_required_before_fresh_capture": true
+  },
+  "formal_source_rules": {
+    "fresh_retail_recording_required": true,
+    "controlled_crt_seed_forbidden": true,
+    "offline_dmo_seed_edit_forbidden": true,
+    "natural_retail_outcome_required": true,
+    "host_state_exact_restore_required": true,
+    "formal_source_bound_full_state_replay_required": true,
+    "machine_mechanism_audit_required": true,
+    "exact_simulator_diff_required": true,
+    "pc_golden_authentication_required": true
+  },
+  "decision": {
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

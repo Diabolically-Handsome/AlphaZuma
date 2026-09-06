@@ -1,0 +1,78 @@
+{
+  "schema": "zuma-rl.ppo-diagnostic-failure-audit",
+  "version": 1,
+  "created_utc": "2026-08-04T01:15:02.054Z",
+  "run_id": "ppo-jungle2-c91-c92-initial-baseline-s20260804-v1",
+  "status": "ABORTED_FAIL_CLOSED_OBSERVATION_CAPACITY",
+  "classification": "training_infrastructure_failure_not_a_model_result",
+  "preregistration": {
+    "path": "diagnostics/ppo-jungle2-c91-c92-initial-baseline-preregistration-v1.json",
+    "sha256": "sha256:aa3cf2c726328cbf9084dda0e35f6763577d03d6d79300e76c6cd707f887e7d9",
+    "maximum_runs": 1,
+    "runs_consumed": 1
+  },
+  "failure": {
+    "last_durable_tensorboard_step": 40960,
+    "worker_process": "ForkServerProcess-3",
+    "exception_type": "RuntimeError",
+    "exception": "actor observation capacity exceeded: 193 visible balls > max_balls=192; increase max_balls instead of silently truncating game state",
+    "worker_exit_consequence": "parent received EOFError from SubprocVecEnv and then blocked while closing remotes",
+    "manual_action": "SIGINT was sent only after the failed parent remained blocked in close; this released cleanup and preserved partial artifacts",
+    "root_cause": "A legal simulated state exceeded the fixed actor-vector capacity; the environment correctly refused silent truncation, but the training wrapper had no emergency checkpoint and its failure cleanup could block after a worker exit."
+  },
+  "live_evidence": {
+    "missing_training_worker_pid": 431,
+    "surviving_training_worker_count": 7,
+    "surviving_eval_worker_count": 1,
+    "residual_python_process_count_after_cleanup": 0,
+    "kernel_oom_or_segfault_recorded": false,
+    "main_process_kernel_wait": "unix_stream_read_generic",
+    "main_process_gdb_frame": "__GI___libc_read(fd=12,nbytes=4)",
+    "worker_traceback_source": "RevengeEnv._ball_observation"
+  },
+  "pretrain_evaluation": {
+    "episode_count": 4,
+    "seed": 20270804,
+    "episode_rewards": [-10.7836, -10.7908, -10.7836, -10.7908],
+    "episode_lengths": [7836, 7908, 7836, 7908],
+    "mean_reward": -10.7872,
+    "mean_episode_length": 7872.0
+  },
+  "last_durable_training_metrics": {
+    "step": 40960,
+    "fps": 668.0,
+    "rollout_episode_reward_mean": -0.3314000070095062,
+    "rollout_episode_length_mean": 4314.0,
+    "approx_kl": 0.01786588504910469,
+    "clip_fraction": 0.23713378608226776,
+    "entropy_loss": -6.182582855224609,
+    "explained_variance": 0.17833513021469116,
+    "interpretation": "Promising on-policy behavior was observed, but there is no paired posttrain evaluation or final model, so no learning-success decision is authorized."
+  },
+  "artifacts": {
+    "config": {
+      "path": "D:/ZumaTraining/diagnostic-jungle2-c91-c92-baseline-s20260804-v1/config.json",
+      "bytes": 2859,
+      "sha256": "sha256:3fc8b4b3a4d636264d01c5a5109e0e16e68b4b3bda8d5da793ca5ded55cfc354"
+    },
+    "pretrain_evaluation": {
+      "path": "D:/ZumaTraining/diagnostic-jungle2-c91-c92-baseline-s20260804-v1/pretrain_evaluation.json",
+      "bytes": 433,
+      "sha256": "sha256:f779118c793bd34545deb384d01db5bf232115f44189a30f03c3b8e5c7e688bb"
+    },
+    "tensorboard": {
+      "path": "D:/ZumaTraining/diagnostic-jungle2-c91-c92-baseline-s20260804-v1/tensorboard/PPO_1/events.out.tfevents.1785805456.Laure.320.0",
+      "bytes": 5490,
+      "sha256": "sha256:dc2f29c2eb1c19e96d7a3cdc840fe4093e5abafbba37379b9307c99e7991f798"
+    },
+    "final_model_present": false,
+    "posttrain_evaluation_present": false
+  },
+  "publication": {
+    "training_completed": false,
+    "learning_success_claim": false,
+    "transfer_claim": false,
+    "fidelity_gate_open": false
+  },
+  "next_action": "Qualify an explicit larger actor observation capacity, add emergency-model persistence and nonblocking failed-worker cleanup, run the full suite, and freeze a new one-run diagnostic preregistration."
+}

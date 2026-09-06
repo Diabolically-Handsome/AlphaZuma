@@ -1,0 +1,79 @@
+{
+  "schema": "zuma-rl.retail-source-recording-operational-failure-receipt",
+  "version": 1,
+  "status": "FAIL_RETAINED",
+  "created_utc": "2026-08-10T10:11:23.5924709Z",
+  "run": {
+    "id": "c149a1",
+    "root": "D:/ZumaGolden/record-c149a1-idle-natural-loss-board-identity-v3",
+    "result_status": "FAILED",
+    "result_sha256": "sha256:faa259370adf8e55ad8632ce34ccea8385c567550d6cfc8c54585faad0a1e914",
+    "dmo_created": false,
+    "active_board_observed": false,
+    "v3_protocol_evaluated": false
+  },
+  "root_cause": {
+    "classification": "invocation_did_not_match_frozen_navigation_contract",
+    "omitted_arguments": [
+      "--title-start-point 400 533",
+      "--adventure-point 633 281",
+      "--continue-game-point 399 456"
+    ],
+    "actual_default_points": {
+      "title_start": [496.0, 477.0],
+      "adventure": [608.0, 279.0],
+      "continue_game": [442.0, 463.0]
+    },
+    "frozen_required_points": {
+      "title_start": [400.0, 533.0],
+      "adventure": [633.0, 281.0],
+      "continue_game": [399.0, 456.0]
+    },
+    "observed_sequence": [
+      "The Adventure-stage diagnostic frame still displayed CLICK TO CONTINUE.",
+      "The Continue-stage diagnostic frame displayed the main menu, and the actual point 442,463 did not select Adventure or Continue Adventure.",
+      "The recorder timed out waiting for an active retail Board."
+    ],
+    "not_a_v3_predicate_failure": true,
+    "not_a_runtime_crash": true
+  },
+  "evidence": [
+    {
+      "path": "D:/ZumaGolden/record-c149a1-idle-natural-loss-board-identity-v3/navigation-before-adventure.bmp",
+      "bytes": 1920054,
+      "sha256": "sha256:ec37591cc6460060f3fa1de113273b7244c4e91ad41e82ac85e8b076dcb65133"
+    },
+    {
+      "path": "D:/ZumaGolden/record-c149a1-idle-natural-loss-board-identity-v3/navigation-before-continue-game.bmp",
+      "bytes": 1920054,
+      "sha256": "sha256:4dd2ee48db524ffc45aca4be5ea077e85969760b41842842f3b397aaa3a3b2a8"
+    },
+    {
+      "path": "D:/ZumaGolden/record-c149a1-idle-natural-loss-board-identity-v3/board-global-precall.json",
+      "bytes": 10050,
+      "sha256": "sha256:6c12ec288f4a96dd93a1b2ea7b8dd0fe8ef5ee588d6ac6fa6142a16f462f193a",
+      "status": "FAIL",
+      "failure": "source_board_anchor_not_observed",
+      "call_count": 8,
+      "process_memory_writes": 0,
+      "hardware_breakpoint_restored": true
+    }
+  ],
+  "safety": {
+    "host_pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "applied_pre_state_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526",
+    "host_end_state_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526",
+    "host_restored_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_restored_exactly": true,
+    "retail_process_remaining": false,
+    "process_memory_writes": 0
+  },
+  "decision": {
+    "c149a1_remains_failed": true,
+    "same_preregistration_retry_forbidden": true,
+    "v3_threshold_change": false,
+    "gate_change": false,
+    "training_start": false,
+    "next_step": "Freeze a separate operational-correction run with the original v3 contract unchanged and all three navigation points explicit."
+  }
+}

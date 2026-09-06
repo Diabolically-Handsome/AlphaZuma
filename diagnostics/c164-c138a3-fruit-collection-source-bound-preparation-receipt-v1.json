@@ -1,0 +1,80 @@
+{
+  "schema": "zuma-rl.c138a3-fruit-collection-source-bound-preparation-receipt",
+  "version": 1,
+  "status": "PASS_BEFORE_FORMAL_CAMPAIGN_OUTPUT",
+  "created_utc": "2026-08-10T12:42:18.3212053Z",
+  "evidence_chain": {
+    "preregistration_sha256": "sha256:4750bb9cfc209df055364dd8404d156d8b61c7729690274e83d057b6a1d951e1",
+    "parent_hash_amendment_sha256": "sha256:bee3c585f52876539d7a67c57546fa4c326773d46da48e327e1486e775c5f6e6",
+    "failed_base_plan_receipt_sha256": "sha256:e8e7beadc329c42b816b413f407d287da7c9f1ef8389109354be20778b7f18cd",
+    "base_plan_execution_amendment_sha256": "sha256:aaee9c6a439190aa9f9b33a549deb15162ca781932296c0060136370eba8453c"
+  },
+  "normalized_dmo": {
+    "path": "D:/ZumaGolden/diagnostics/normalized-c138a3-fruit-collection-v1.dmo",
+    "bytes": 21719,
+    "sha256": "sha256:6f2d645c3109f73b77ef55c7e7e7941f7f1d2f73dccd5a71adc3051d4a360989",
+    "command_count": 1011,
+    "input_command_count": 277,
+    "random_seed": 403511671,
+    "length_updates": 10043,
+    "sole_permitted_normalization_exact": true
+  },
+  "base_plan": {
+    "path": "D:/ZumaGolden/diagnostics/base-c138a3-fruit-collection-source-bound-plan-v1/plan.json",
+    "bytes": 12706,
+    "sha256": "sha256:5749727a3472ed375d14a7021c4753bc2d80e65c7e188b751552011184771644",
+    "source_bound_framework_update": 3121,
+    "source_order": 327,
+    "pre_index": 446,
+    "pre_state_sha256": "sha256:82a04abb0676c7ab43bb6f6849cba3c2d968dc43d74148c0f317592148dcc07a",
+    "rewind_draws": 4,
+    "expected_output": 1300598932,
+    "thread_crt_state": 3534207302,
+    "allow_source_bound_board_global_correction": false
+  },
+  "finite_plan": {
+    "root": "D:/ZumaGolden/diagnostics/full-state-source-bound-fruit-collection-c138a3-plan-v1-stop3151",
+    "plan_bytes": 12934,
+    "plan_sha256": "sha256:a5c4b44df8828862f67335ef8919861eb6d33bb517b92bcab22b599a56d150aa",
+    "preparation_report_sha256": "sha256:4f99998d077562e78165592afd12fa1093e7d0376249f0f70b0866c8285f1056",
+    "transport_normalization_bytes": 2772,
+    "transport_normalization_sha256": "sha256:a628441dc30a123d1b21dd066c0aaaab14ba40815c96ce8228bd6ed75273630f",
+    "pre_template_sha256": "sha256:ca058b8e2f231335255b51174088530a77aa9fb0f31818987dd1559dcf725fbb",
+    "pre_template_state_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526",
+    "host_pre_sha256": "sha256:0f1dd88161454724adaa7619c8ee78601fb453d243e9b6ccc69db928819fda9a",
+    "host_pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "source_bound_command_broker_stop_after_update": 3151,
+    "stop_command_sequence": 279,
+    "stop_command_kind": "idle",
+    "stop_command_number": 31,
+    "stop_is_exact_idle_command_boundary": true,
+    "base_blackout_endpoints_removed": true
+  },
+  "independent_transport_validation": {
+    "status": "PASS",
+    "classification": "certifying-retail-recording-transport-normalization",
+    "provenance_version": 2,
+    "source_dmo_sha256": "sha256:8d206ee20450fe5c7973e2fe476ca3eab87176eba20ab1ebb7d137c411df127b",
+    "playback_dmo_sha256": "sha256:6f2d645c3109f73b77ef55c7e7e7941f7f1d2f73dccd5a71adc3051d4a360989",
+    "recording_outcome": "natural_win",
+    "recording_natural_outcome": true,
+    "recording_process_memory_writes": 0,
+    "recording_host_restored_exactly": true,
+    "collector_prestate_matched": true,
+    "collector_board_seed_mutation": false,
+    "gameplay_input_commands_preserved": true
+  },
+  "formal_campaign": {
+    "path": "D:/ZumaGolden/formal-full-state-c138a3-fruit-collection-c164-campaign-v1",
+    "absent_at_receipt": true,
+    "maximum_attempts": 8,
+    "feature_presence_not_inspected": true
+  },
+  "authorization": {
+    "may_execute_frozen_formal_campaign_once": true,
+    "pc_source_credit_before_campaign_pass": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

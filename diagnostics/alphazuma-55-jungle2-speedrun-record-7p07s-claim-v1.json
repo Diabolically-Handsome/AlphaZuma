@@ -1,0 +1,52 @@
+{
+ "schema": "zuma-rl.alphazuma-55-speedrun-record-claim",
+ "version": 1,
+ "level": "Jungle2 (Adv 2)",
+ "claim": "AI completion of Jungle2 (Adv 2) in 707 native ticks (7.07 s at 100 Hz) \u2014 numerically below the 12 s human RTA IL record (41 percent faster)",
+ "convention": "AI-TAS (seed_list_tas): golden-seed enumeration; simulator timing, RTA boundary audit PENDING; no original-client record claim; elite-human motor constraints active",
+ "human_reference": {
+  "source": "speedrun.com Zumas Revenge IL Adv 2",
+  "record": "0:12 RTA",
+  "runner": "WYL071018",
+  "date": "2022-07-24"
+ },
+ "record_run": {
+  "schema": "zuma-rl.alphazuma-55-macro-speedrun-seed-search-v1-row",
+  "level_id": "Jungle2",
+  "seed": 33230,
+  "outcome": "win",
+  "native_outcome": null,
+  "time_limit_truncated": false,
+  "ticks": 707,
+  "score": 2100,
+  "shots": 13,
+  "macro_decisions": 22,
+  "native_ticks_consumed": 707,
+  "win_trigger_tick": 707,
+  "win_pending_at_termination": true,
+  "board_cleared_tick": null
+ },
+ "runner_up": {
+  "ticks": 812,
+  "seconds": 8.12,
+  "seed": 849445,
+  "shots": 14,
+  "note": "also below the human record"
+ },
+ "model": {
+  "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle2-s99081716-v1/final_model.zip",
+  "sha256": "sha256:eebe911a0788b97ae6bdf9c2e9503380b73aee60e05c5f23207f75a201178b73",
+  "lineage": "macro-teacher-BC (init 8/16 on panel) -> relative-floor timepolish PPO (16/16, median 10920->4729)"
+ },
+ "scan": {
+  "path": "/mnt/d/ZumaTraining/alphazuma-55-record-jungle2-s99081721-v1/completion.json",
+  "sha256": "sha256:cf46eb550510f880c9507ea4c34c40c0a997d783fa617f9ca67a4ad730c13225",
+  "win_rate": "3000/3000"
+ },
+ "seed_provenance": {
+  "golden_enumeration": "/mnt/d/ZumaTraining/alphazuma-55-golden-seeds-jungle2-s99081719-v1/completion.json",
+  "sha256": "sha256:6fc309f9f2a46933f5d621050f03cfbdd4f35aaa33d012c3c2c9fe1aa487e3f1"
+ },
+ "claimed_utc": "2026-08-20T11:19:23.028639+00:00",
+ "formal_seed_consumption": false
+}

@@ -1,0 +1,100 @@
+{
+  "schema": "zuma-rl.retail-board-reset-trace-verified-foreground-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_IMPLEMENTATION_AND_OUTPUT",
+  "created_utc": "2026-08-10T10:36:53.4679545Z",
+  "purpose": "Repeat the unchanged c151 exact-runtime reset observation under a separately frozen navigation correction that verifies foreground ownership before each existing SendInput click.",
+  "classification": "operational-focus-correction-no-reset-threshold-change",
+  "predecessor": {
+    "c151_preregistration_sha256": "sha256:8e5a4ff555ea1fa86d31f5da121d04d802b863d7d4f04f5fe9a0b55624328e38",
+    "c151_implementation_receipt_sha256": "sha256:09ded8d7f6b1a6bf9e6b6e1f364c7181a21b6c5fc088d3cc8e3c8ebd7257d8e2",
+    "c151_failure_receipt_sha256": "sha256:10ac50f0740ac712a54ced9f2f1dfc7d7ac531ddd3406bf307e4882a2c58b52e",
+    "c151_output_retained": true,
+    "c151_failure": "The first frozen click was sent before the retail HWND became foreground; the remaining absolute-update clicks were one screen behind.",
+    "reset_entry_protocol_evaluated_in_c151": false
+  },
+  "frozen_operational_correction": {
+    "scope": "tools/autoplay_live_zuma.py::_activate_window and send_mouse_click receipts only",
+    "before_every_existing_click": [
+      "Restore the retail window if minimized.",
+      "Request foreground ownership and poll GetForegroundWindow.",
+      "If ordinary activation is not verified promptly, temporarily attach the recorder thread input queue to the current foreground and retail window threads, bring the retail window to the top, request foreground ownership, then detach all temporary attachments.",
+      "Do not issue mouse SendInput until GetForegroundWindow equals the exact target HWND.",
+      "Fail closed after at most two seconds if verified foreground ownership is unavailable."
+    ],
+    "receipt_fields": [
+      "target_window_handle_hex",
+      "foreground_before_hex",
+      "foreground_after_hex",
+      "verified",
+      "attach_fallback_used",
+      "elapsed_seconds"
+    ],
+    "additional_keyboard_inputs": 0,
+    "additional_mouse_inputs": 0,
+    "process_memory_writes": 0,
+    "existing_click_points_and_updates_unchanged": true
+  },
+  "combined_reset_trace_contract_unchanged": {
+    "initial_source_address": "0x0065B81C",
+    "source_instruction_hex": "e86fbcfbff",
+    "reset_entry_address": "0x00419A90",
+    "reset_entry_first_32_bytes_sha256": "sha256:5a8da3a3f64f779b8260c3dffd24affb179daa0f925b6808e9bce44394ea37a4",
+    "reset_native_clock_zero_address": "0x00419BAF",
+    "reset_return_instruction_address": "0x00419E24",
+    "require_one_source_anchor": true,
+    "require_one_structurally_valid_entry": true,
+    "require_one_paired_dynamic_return": true,
+    "entry_esi_must_equal_positive_active_source_board": true,
+    "dynamic_return_must_come_from_frozen_static_call_site_set": true,
+    "same_active_board_at_entry_and_return": true,
+    "semantic_argument_and_state_values_are_observations_not_c152_thresholds": true,
+    "maximum_simultaneous_hardware_breakpoints": 1,
+    "process_memory_writes": 0
+  },
+  "preimplementation_code": {
+    "tools/autoplay_live_zuma.py": "sha256:f7f84bf2ce6f00821f7c368491b95f0e5d2f1d9065da7436111954699f872034",
+    "tests/test_autoplay_live_zuma.py": "sha256:f0f4464c34de8d4a04f49680d16eda6341def75940f13096af53e645a3f9e6ef",
+    "tools/trace_popcap_gameplay_mtrand.py": "sha256:5d66b5bd78241e834ef8feed5d06b8150ce21b7cdbbec256e42a515ae736d9b8",
+    "tools/record_autoplay_zuma.py": "sha256:a5f305ff8174ea6c5eb87abdc4cb0674e711f7e5e1008edcb36c7b26b5e7ae17"
+  },
+  "tooling_acceptance": {
+    "foreground_helper_returns_only_after_exact_hwnd_match": true,
+    "already_foreground_fast_path_tested": true,
+    "ordinary_activation_path_tested": true,
+    "attached-input fallback_cleanup_tested": true,
+    "timeout_fail_closed_tested": true,
+    "click_receipt_contains_verified_activation": true,
+    "focused_and_integration_tests_pass": true
+  },
+  "run": {
+    "id": "c152a1",
+    "output_root": "D:/ZumaGolden/record-c152a1-idle-natural-loss-reset-trace-v1-verified-foreground",
+    "output_root_absent_at_freeze": true,
+    "maximum_started_attempts": 1,
+    "runtime_executable": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "changedir": "D:/SteamLibrary/steamapps/common/Zuma's Revenge",
+    "prestate_dir": "D:/ZumaGolden/session-20260728-203153/native-windowed-record-001-prestate-reconstructed",
+    "expected_score_target": 9650,
+    "minimum_entry_score": 7000,
+    "maximum_gameplay_seconds": 180.0,
+    "expected_outcome": "natural_loss",
+    "gameplay_policy": "idle",
+    "fruit_policy": "ignore",
+    "mtrand_trace_kind": "board_global_precall_and_reset",
+    "navigation_updates": [1622, 2422, 3108],
+    "navigation_points": [[400.0, 533.0], [633.0, 281.0], [399.0, 456.0]],
+    "prelaunch_cursor_screen_point": [100, 100],
+    "retail_process_count_at_freeze": 0,
+    "host_state_restore_required": true
+  },
+  "decision_rule": {
+    "pass": "Retain c152a1 and freeze a separate exact-runtime semantic natural-loss protocol from its direct reset entry/return observations before implementation or formal source recording.",
+    "fail": "Retain c152a1 and localize the first operational or structural failure without retry-selection or threshold weakening.",
+    "c152a1_may_receive_fidelity_credit": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

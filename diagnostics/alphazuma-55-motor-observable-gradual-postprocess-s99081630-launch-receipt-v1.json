@@ -1,0 +1,52 @@
+{
+  "schema": "zuma-rl.alphazuma-55-motor-observable-gradual-postprocess-launch-receipt",
+  "version": 1,
+  "status": "WAITING_FOR_TRAINING",
+  "observed_utc": "2026-08-16T08:33:25.6621515Z",
+  "campaign_id": "alphazuma-55-motor-observable-gradual-postprocess-s99081630-v1",
+  "bindings": {
+    "plan": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-postprocess-s99081630-plan-v1.json",
+      "sha256": "sha256:e8e8f1b7bf4c9a73e353d6c278523e005790565753d42ad293ce1c47be2cbe67"
+    },
+    "controller": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_motor_observable_gradual_postprocess_v1.py",
+      "sha256": "sha256:620448a9c821673ccb4e5873c43d6a2477f49e3d07740b5a4242f6e8fdc6bf8e"
+    },
+    "auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_motor_observable_gradual_postprocess_v1.py",
+      "sha256": "sha256:7c9af4e8ab33f58166da84e41232dfa2cb8567fdc4d057e272171e3b97fb64ce"
+    },
+    "builder_reporting_incident": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-postprocess-s99081630-builder-incident-v1.json",
+      "sha256": "sha256:1221ac8dafb0723530472dcdd29d29e980b493324cc7d4c2d1373abb7362e58b"
+    }
+  },
+  "validation": {
+    "status": "VALID",
+    "screen_candidates": 17,
+    "screen_attempts": 204,
+    "maximum_full55_attempts": 275,
+    "formal_seed_consumption": false
+  },
+  "processes": {
+    "windows_launcher_pid": 41708,
+    "wsl_controller_pid": 350157,
+    "training_process_pid": 346105,
+    "all_alive_at_snapshot": true
+  },
+  "initial_status": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-postprocess-s99081630-v1/controller_status.json",
+    "sha256_at_snapshot": "sha256:f0db37c6f5a3c0443c42c6b85ac33f8d0380356fbb2dbed507a1a84e866cd630",
+    "phase": "WAITING_FOR_TRAINING",
+    "training_processes": [346105],
+    "missing_process_rounds": 0,
+    "error": null
+  },
+  "seed_boundary": {
+    "training_validation_inference_started": false,
+    "formal_selection_seed_consumption": "NONE",
+    "formal_final_blind_seed_consumption": "NONE",
+    "continuous_campaign_seed_consumption": "NONE"
+  }
+}

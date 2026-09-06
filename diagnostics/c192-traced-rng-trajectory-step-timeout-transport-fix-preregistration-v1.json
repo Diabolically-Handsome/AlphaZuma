@@ -1,0 +1,66 @@
+{
+  "schema": "zuma-rl.traced-rng-trajectory-step-timeout-transport-fix-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_CODE_CHANGE",
+  "created_utc": "2026-08-10T15:55:25.2578904Z",
+  "purpose": "Make the compact RNG trajectory's post-update replay-step wait budget explicitly configurable so a read-only native caller tracer can finish a retail update containing 1220 debugger-observed MTRand calls without weakening any state, barrier, or source-overlap check.",
+  "parent": {
+    "failure_receipt": "diagnostics/c191-c183-fruit-powerup-collision-forensic-mtrand-trace-barrier-timeout-failure-receipt-v1.json",
+    "failure_receipt_sha256": "sha256:12f0f398e3b67e3e8a2c912b0ff9d184db921a9e8fc86d3a7fbf4c395c353065",
+    "failure_classification": "infrastructure replay-step barrier timeout after 41 of 1220 calls at update 8235"
+  },
+  "frozen_prechange": {
+    "tools/collect_pc_memory_probe.py": "sha256:79464752ab35693b8f8765483894ae152a389c367f511e7e33398fc4fa2d28b0",
+    "tests/test_collect_pc_memory_probe.py": "sha256:ac038b8b7f327bd1aaf37e7c5672f782405e0ff58de301f2255ae4b51649adae",
+    "legacy_timeout_per_step_seconds": 5.0,
+    "legacy_default_must_remain": 5.0
+  },
+  "allowed_code_change": {
+    "new_parameter": "trajectory_step_timeout_seconds",
+    "collect_rng_trajectory_default": 5.0,
+    "collect_probe_default": 5.0,
+    "cli_option": "--trajectory-step-timeout-seconds",
+    "cli_default": 5.0,
+    "validation": {
+      "type": "finite real excluding bool",
+      "minimum_exclusive_seconds": 0.0,
+      "maximum_inclusive_seconds": 3600.0,
+      "failure_code": "trajectory_step_timeout_invalid"
+    },
+    "use": "pass the normalized value unchanged to every step_to invocation in collect_rng_trajectory, including the unrecorded warmup step and all recorded steps",
+    "board_trajectory_timeout_unchanged": true,
+    "natural_freeze_timeout_unchanged": true,
+    "global_rng_trace_timeout_unchanged": true,
+    "replay_step_barrier_predicate_unchanged": true,
+    "process_memory_write_surface_unchanged": true,
+    "trajectory_payload_schema_unchanged": true,
+    "all_gameplay_and_rng_values_unchanged": true
+  },
+  "qualification": {
+    "python_compile": "PASS_REQUIRED",
+    "targeted_tests": [
+      "legacy default remains exactly 5.0 seconds",
+      "custom 300.0-second value reaches warmup and recorded step_to calls",
+      "zero, negative, non-finite, boolean, and greater-than-3600 values fail before Windows access",
+      "CLI parser exposes 300.0 seconds and main forwards it exactly"
+    ],
+    "existing_collect_pc_memory_probe_tests": "PASS_REQUIRED",
+    "full_pytest_suite": "PASS_REQUIRED",
+    "code_hashes_frozen_after_qualification": true
+  },
+  "next_run_if_qualified": {
+    "new_output_root": "D:/ZumaGolden/diagnostics/c193-c183-forensic-source-bound-rng-trace-u8213-u8260-v1",
+    "new_output_root_absent_at_freeze": true,
+    "trajectory_step_timeout_seconds": 300.0,
+    "all_c191_source_window_trace_and_host_contracts_otherwise_unchanged": true
+  },
+  "decision_rule": {
+    "pass": "Freeze a qualification receipt, then preregister c193 with the new output root and the sole runtime option change to 300 seconds.",
+    "fail": "Retain the failing test output and do not start c193.",
+    "scientific_classification_change": false,
+    "pc_golden_credit": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

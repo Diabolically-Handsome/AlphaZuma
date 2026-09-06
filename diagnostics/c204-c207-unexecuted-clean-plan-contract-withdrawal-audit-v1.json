@@ -1,0 +1,29 @@
+{
+  "created_utc": "2026-08-10T17:52:15.584Z",
+  "decision": {
+    "contracts_reusable": false,
+    "formal_process_count": 0,
+    "outputs_reusable": false,
+    "replacement_must_use_fresh_run_ids_and_output_roots": true
+  },
+  "id": "c204-c207-unexecuted-clean-plan-contract-withdrawal",
+  "reason": "The c202-c203 predeclared sibling plan exposed independent main-thread CRT drift before c204-c207 execution. The same omitted fixed seed exists in both sibling plans, so their contracts are withdrawn without consuming a formal process.",
+  "status": "WITHDRAWN_BEFORE_EXECUTION",
+  "withdrawn": [
+    {
+      "binding": "diagnostics/c204-c205-fruit-collection-exact-step-golden-execution-binding-v1.json",
+      "binding_sha256": "sha256:f60df1277eaf6a5bf7a5a27bd735d1d1452b214e5cb485b6856bcf224436fc85",
+      "output_roots_absent_at_withdrawal": true,
+      "preregistration": "diagnostics/c204-c205-fruit-collection-exact-step-golden-preregistration-v1.json",
+      "preregistration_sha256": "sha256:64003720bdde0a4c9e3f828182de5acf0aa7e751d096fc5aa2aeea5c6b0eb639"
+    },
+    {
+      "binding": "diagnostics/c206-c207-fruit-powerup-exact-step-golden-execution-binding-v1.json",
+      "binding_sha256": "sha256:53ea372a0f1f881e3f7bd1689f7cf7b205bf20549d5db9d85a4904258d7d1cbd",
+      "output_roots_absent_at_withdrawal": true,
+      "preregistration": "diagnostics/c206-c207-fruit-powerup-exact-step-golden-preregistration-v1.json",
+      "preregistration_sha256": "sha256:a4b0558233d9cfedb5c4a99b412f30bd9f8c6fccb5a83885eb8bedd51de4ad91"
+    }
+  ],
+  "version": 1
+}

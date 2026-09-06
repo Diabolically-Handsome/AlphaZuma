@@ -1,0 +1,102 @@
+{
+  "schema": "zuma-rl.teacher-policy-anchor-confirmation-outcome",
+  "version": 3,
+  "created_utc": "2026-08-04T16:00:14.655Z",
+  "status": "FRESH_COEFFICIENT_1000_CONFIRMATION_PASS",
+  "decision": "AUTHORIZE_ONE_98304_STEP_CLOSED_GATE_SCALE_STABILITY_SCREEN",
+  "preregistration": {
+    "path": "diagnostics/teacher-policy-anchor-c1000-confirmation-n32-s20260920-preregistration-v1.json",
+    "sha256": "sha256:33d3f343c8c56526bcb9d8feb8135c2b4cc30da592f6446913bd0741bccb31a6",
+    "status": "FROZEN_BEFORE_RUN_OUTPUT"
+  },
+  "independence": {
+    "classification": "fresh_pre_reserved_nonoverlapping_multi_episode_vector_seed_confirmation",
+    "seed_family": 20260920,
+    "seed_family_was_reserved_before_repair_outputs": true,
+    "prior_run_artifacts_using_seed_family": 0,
+    "replacement_seed_selection_after_baseline": false
+  },
+  "acceptance_results": {
+    "pipeline": {
+      "pass": true,
+      "completion_status": "COMPLETE",
+      "effective_steps": 16384,
+      "optimizer_reset_status": "PASS",
+      "teacher_anchor_installation_status": "INSTALLED",
+      "teacher_anchor_verification_status": "PASS",
+      "teacher_policy_bitwise_unchanged": true,
+      "teacher_requires_grad_all_false": true,
+      "current_policy_bitwise_changed": true,
+      "teacher_detached_before_model_save": true,
+      "teacher_anchor_train_calls": 8,
+      "teacher_anchor_minibatches": 32,
+      "teacher_anchor_samples": 16384,
+      "teacher_anchor_mean_forward_kl": 0.0000016067236536798646,
+      "teacher_anchor_max_sample_forward_kl": 0.00006429594941437244,
+      "boundary_receipt_version": 4,
+      "boundary_episode_count": 32,
+      "boundary_vector_env_count": 8,
+      "comparison_version": 2,
+      "comparison_outcome_source": "terminal_info",
+      "failure_receipt_present": false,
+      "stderr_bytes": 0
+    },
+    "precondition": {
+      "pass": true,
+      "pretrain_deterministic_wins": 25,
+      "required_wins": 24,
+      "episodes": 32
+    },
+    "deterministic_retention": {
+      "pass": true,
+      "pretrain": {"wins": 25, "losses": 6, "truncations": 1, "mean_reward": 32.25884375},
+      "posttrain": {"wins": 25, "losses": 6, "truncations": 1, "mean_reward": 31.6834125},
+      "mean_reward_delta": -0.57543125,
+      "paired_reward_improvements": 2,
+      "paired_reward_regressions": 2,
+      "paired_reward_regressions_exceeding_5": 2,
+      "all_frozen_checks_pass": true
+    },
+    "stochastic_retention": {
+      "pass": true,
+      "pretrain": {"wins": 32, "losses": 0, "truncations": 0, "mean_reward": 35.092671875},
+      "posttrain": {"wins": 32, "losses": 0, "truncations": 0, "mean_reward": 35.2907125},
+      "mean_reward_delta": 0.198040625,
+      "paired_reward_improvements": 6,
+      "paired_reward_regressions": 3,
+      "paired_reward_regressions_exceeding_5": 2,
+      "all_frozen_checks_pass": true
+    },
+    "overall": {
+      "pass": true,
+      "post_hoc_override_applied": false
+    }
+  },
+  "bounded_inference": "after a controlled consumed-stream repair, coefficient-1000 initial-teacher forward KL independently preserves deterministic win structure and stochastic 32-of-32 capability over fresh training, boundary, and action-sampling streams at 16384 steps",
+  "artifacts": {
+    "run_dir": "D:/ZumaTraining/confirmation-teacher-anchor-c1000-s20260920-n32-v1",
+    "config_sha256": "sha256:ffc04e92b1ec8768bd1362d045f1132b1f85a29b6e992415c1b74cab7d17eb0e",
+    "completion_sha256": "sha256:d29a092c134936813ded23d597b490dcab5cbfd566f24f0a76f48f0cce8af979",
+    "optimizer_reset_sha256": "sha256:eaca6a6bc3fee4d8ce4a5a4877b38a823b2d2d90ae9c87fb14cd54d9bca4219d",
+    "teacher_anchor_installation_sha256": "sha256:166deb0d205c0522fe428c86b9846a6969d7bbc107a6f86d8804774d22668111",
+    "teacher_anchor_verification_sha256": "sha256:49a05510f8e480814d49bcc03b194af36f7e76821154e6264c493be0150d9214",
+    "pretrain_deterministic_sha256": "sha256:31c9bd07640bda8a5952b1e43ed42cc1831bf13ede8fb7c021b47092385b8169",
+    "posttrain_deterministic_sha256": "sha256:97a006db8ffafbfbe26eeb6d6dc54e7c11c83374f9579ec0bc5bad97fed59f78",
+    "pretrain_stochastic_sha256": "sha256:a451aeaddd338027973cd896843c79cd5031c981002651df3fd93ba3b32bfb33",
+    "posttrain_stochastic_sha256": "sha256:39a6c466c53643b9ef01c456f4d2903d1ec680c20e53ef25f7a3c9ff249de93c",
+    "deterministic_comparison_sha256": "sha256:9d256aece362f571b2e36966d5a5ae88a3ae86d23c986bb1c464448867526d0b",
+    "stochastic_comparison_sha256": "sha256:0513246de672a286d2a132f2d9d8fa226393042330c4cbb718352402ca1898dc",
+    "final_model_sha256": "sha256:92224387e407e56dfdcf3e366882907bc4aa5aeb9531c107aa3485e07b656ab0",
+    "stdout_sha256": "sha256:72cb301dd66928bfe557e4ead3c8a647cc313709b28202a37e60473fb7703a7d",
+    "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "next_action": {
+    "authorized": "freeze and execute one 98304-step coefficient-1000 closed-gate scale-stability screen on the pre-reserved 20260930 seed family",
+    "forbidden": "do not claim original-game transfer readiness until the scale screen passes and Fidelity Gate reaches eight of eight"
+  },
+  "non_authorizations": [
+    "large_scale_original_transfer_training",
+    "fidelity_gate_opening",
+    "original_transfer_certification"
+  ]
+}

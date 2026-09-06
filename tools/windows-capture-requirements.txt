@@ -1,0 +1,8 @@
+# Windows-only DXGI capture helper dependencies.
+# Install into an isolated Windows CPython 3.12 virtual environment.
+comtypes==1.4.16 \
+    --hash=sha256:e18d85179ff12955524c5a8c3bc09cb3c0d890f1da4d7123d14244c7b78f84c8
+dxcam==0.3.0 \
+    --hash=sha256:ab75b16529b8bd7337dfcb663525c338233a24b4c5b76193ced82a70e16edf49
+numpy==2.5.1 \
+    --hash=sha256:f7d60026c0bdb1380e83bfa7a0419c4577ee4b9a08880afcb6dadeb74c649fa2

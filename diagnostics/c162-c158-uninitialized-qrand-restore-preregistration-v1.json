@@ -1,0 +1,122 @@
+{
+  "schema": "zuma-rl.c158-uninitialized-qrand-restore-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_CODE_CHANGE_OR_DIFF_OUTPUT",
+  "created_utc": "2026-08-10T12:23:40.5448061Z",
+  "purpose": "Represent the exact native preinitialization QRand sentinel in the simulator so the immutable c158 natural-loss midstate can be replayed without padding, fitting, or source edits.",
+  "classification": "preregistered-native-state-serialization-bridge",
+  "parents": {
+    "c161_failure_receipt": "diagnostics/c161-c158-natural-loss-simulator-diff-failure-receipt-v1.json",
+    "c161_failure_receipt_sha256": "sha256:780a9d0d7b0bedca20ac9bc2c7217f674b638411f88b8df423a9774bd046bcaf",
+    "c160_source_success_receipt": "diagnostics/c160-c158-natural-loss-source-packaging-success-receipt-v1.json",
+    "c160_source_success_receipt_sha256": "sha256:8a91af77259d99115725966f24ef012d9117ad518546c390f029dfaea225830b",
+    "source_manifest_sha256": "sha256:706b8e9d18cf8bdbed2b7d9b9adab052258638ed8955a8199e2cb578f89f23b1",
+    "mechanism_audit_sha256": "sha256:148cdcabf8ad633cfdc73bf53952888bc1e136f18a825bae6d6426949b218b26"
+  },
+  "immutable_source": {
+    "trajectory": "D:/ZumaGolden/formal-full-state-c155-natural-loss-c158-campaign-v1/attempt-01/source/attempt-01/trajectory/index.json",
+    "trajectory_sha256": "sha256:a5cd4410676579f0ac75ec0bb69f18d483c026cde14566284ad10a24e2b60ada",
+    "selected_start_update": 11341,
+    "selected_end_update": 11519,
+    "source_bytes_modified": false
+  },
+  "native_state_contract": {
+    "preinitialization_sentinel": {
+      "update": 11341,
+      "thread_crt_rand_state": 1020014204,
+      "update_count": 0,
+      "selected_index": -1,
+      "weights": [],
+      "sways": [],
+      "last_hit": [],
+      "previous_hit": []
+    },
+    "simulator_equivalent": {
+      "update_count": 0,
+      "selected_index": -1,
+      "allocated_vector_length": 6,
+      "all_allocated_values_zero": true,
+      "allowed_support": null
+    },
+    "accept_only_if_all_four_vectors_empty": true,
+    "accept_only_if_scalar_sentinel_exact": true,
+    "partial_empty_vectors_rejected": true,
+    "noncanonical_empty_scalar_state_rejected": true,
+    "initialized_vector_validation_unchanged": true,
+    "restore_consumes_rng_draws": false,
+    "classification": "canonical_serialization_mapping_not_padding"
+  },
+  "post_reset_oracle": {
+    "update": 11342,
+    "thread_crt_rand_state": 3527905494,
+    "current_color_id": 0,
+    "next_color_id": 2,
+    "qrand_update_count": 2,
+    "qrand_selected_index": 2,
+    "qrand_weights": [0.25, 0.25, 0.25, 0.25, 0.0, 0.0],
+    "qrand_sways": [0.0832500010728836, 0.109375, 0.109375, 0.109375, 0.0, 0.0],
+    "qrand_last_hit": [1, 0, 2, 0, 0, 0],
+    "qrand_previous_hit": [0, 0, 0, 0, 0, 0]
+  },
+  "permitted_changes": {
+    "src/zuma_rl/revenge_core.py": [
+      "Teach _BalancedColorChooser.load_state to map only the exact all-empty native sentinel to its factory-equivalent allocated zero arrays and allowed_support=None.",
+      "Retain all initialized-state length, scalar, float, hit-history, and nonempty-support validation."
+    ],
+    "tests/test_revenge_core.py": [
+      "Add a positive exact c158 sentinel restore and two-draw skull-entry reset oracle test.",
+      "Add negative tests for partial-empty vectors and all-empty vectors with noncanonical scalar state."
+    ]
+  },
+  "forbidden_changes": [
+    "No c158 source, source manifest, or mechanism audit edit.",
+    "No c161 preregistration, implementation receipt, failure receipt, or fixed v1 output reuse.",
+    "No chain, skull-entry, loss-suction, RNG-choice, score, timer, or outcome dynamics change.",
+    "No acceptance tolerance or Gate policy change.",
+    "No general padding or truncation of native QRand vectors."
+  ],
+  "frozen_code_before_change": {
+    "src/zuma_rl/revenge_core.py": "sha256:0533d0e3f0bd6457da0425b6b3eb4bc8f7db9de239b647f10b5dec06f1803a60",
+    "src/zuma_rl/pc_loss_sequence.py": "sha256:0da3747d4931438eed86e1797303aba83306b226fea2b4d6b9b4ed1c4676c42b",
+    "tools/compare_pc_loss_sequence.py": "sha256:661a8a1371514030ab4694607dd2e8f357209d5c22e838799668ff4b327cddc4",
+    "tests/test_revenge_core.py": "sha256:0dbccfc005d270506ca3bc76ee6daf1faa3a65c59c1d6888a2638021b875a096"
+  },
+  "output": {
+    "path": "D:/ZumaGolden/diagnostics/jungle2-c158-u11341-u11519-natural-loss-diff-v2.json",
+    "absent_at_freeze": true,
+    "schema": "zuma-rl.pc-loss-simulator-diff",
+    "version": 1
+  },
+  "fixed_command": ".\\.venv-win\\Scripts\\python.exe tools\\compare_pc_loss_sequence.py --trajectory D:\\ZumaGolden\\formal-full-state-c155-natural-loss-c158-campaign-v1\\attempt-01\\source\\attempt-01\\trajectory\\index.json --root \"D:\\SteamLibrary\\steamapps\\common\\Zuma's Revenge\" --level Jungle2 --curve-index 0 --start-update 11341 --end-update 11519 --trigger-ball-id 176 --decoded-curve-end 3757 --expected-trigger-update 11343 --expected-chain-empty-update 11519 --expected-pending-count 1 --expected-pretrigger-advance 0.125 --output D:\\ZumaGolden\\diagnostics\\jungle2-c158-u11341-u11519-natural-loss-diff-v2.json",
+  "acceptance": {
+    "status": "PASS",
+    "start_update": 11341,
+    "reset_update": 11342,
+    "trigger_update": 11343,
+    "empty_update": 11519,
+    "end_update": 11519,
+    "ticks_compared": 178,
+    "maximum_waypoint_error": 0.0,
+    "initial_chain_count": 105,
+    "pending_ball_count": 1,
+    "score": 7950,
+    "shooter_colors_after_reset": [0, 2],
+    "post_empty_pc_ticks_excluded": 0,
+    "inferred_advance_speed": 0.125,
+    "oracle_status": "PASS",
+    "oracle_ticks_from_trigger_to_empty": 176,
+    "removal_coverage_exact": true
+  },
+  "required_tests": {
+    "targeted": "PASS",
+    "full_suite": "PASS before the single v2 diff execution",
+    "implementation_receipt_required_before_diff": true
+  },
+  "decision_rule": {
+    "pass": "The exact sentinel contract, all tests, and every frozen natural-loss diff acceptance value pass.",
+    "simulator_mismatch": "Retain the exception and evidence, create no replacement output, and preregister the next isolated repair.",
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

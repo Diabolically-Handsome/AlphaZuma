@@ -1,0 +1,128 @@
+{
+  "schema": "zuma-rl.pc-gameplay-mtrand-call-trace-confirmatory-input-guard-startup-overlap-failure-receipt",
+  "version": 1,
+  "status": "FAIL_CONTAMINATED",
+  "created_utc": "2026-08-10T16:33:17.3791119Z",
+  "preregistration": {
+    "artifact": "diagnostics/c195-c183-fruit-powerup-collision-confirmatory-mtrand-trace-preregistration-v1.json",
+    "artifact_bytes": 6701,
+    "artifact_sha256": "sha256:178b738ffe7b00e5062abd4b012f53d9e2723580d4eefda9559325db61be77ea"
+  },
+  "formal_decision": {
+    "collector_attempt_status": "INVALID",
+    "error": "formal_external_input_guard_failed",
+    "error_type": "FormalInputContaminationError",
+    "external_input_guard_status": "FAIL",
+    "external_event_count": 717,
+    "stored_external_event_count": 64,
+    "stored_external_event_device": "mouse",
+    "stored_external_event_action": "move",
+    "stored_external_event_injected": false,
+    "keyboard_or_click_event_observed_in_stored_sample": false,
+    "pc_golden_credit": false,
+    "proof_derivation_for_certification_forbidden": true,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  },
+  "guard_startup_timing_diagnosis": {
+    "guard_coverage_start_perf_counter_ns": 433869817644900,
+    "first_external_perf_counter_ns": 433869819271700,
+    "first_external_offset_ns": 1626800,
+    "last_stored_external_offset_ns": 237965200,
+    "first_external_before_gameplay_trace_start": true,
+    "gameplay_trace_start_offset_ns": 232706484100,
+    "guard_code_sets_coverage_start_before_start_self_test": true,
+    "ten_standalone_start_kat_runs": {
+      "status": "PASS_10_OF_10",
+      "external_event_total": 0,
+      "coverage_start_to_start_return_min_ms": 1.0769,
+      "coverage_start_to_start_return_max_ms": 2.4035,
+      "c195_first_external_offset_overlaps_observed_start_kat_envelope": true
+    },
+    "standalone_two_second_guard": {
+      "status": "PASS",
+      "external_event_count": 0,
+      "self_test_event_count": 8
+    },
+    "idle_cursor_probe": {
+      "duration_seconds": 10.0131541,
+      "coordinate_change_count": 0
+    },
+    "diagnosis": "The first contamination event occurred inside the empirically observed start-KAT timing envelope, before the gameplay trace. The guard currently starts formal coverage before its own start KAT. This is an intermittent transport-boundary ambiguity, not evidence of a gameplay or RNG mismatch.",
+    "diagnosis_scope": "transport_only",
+    "no_external_event_is_reclassified_or_deleted": true
+  },
+  "retained_artifacts": {
+    "attempts": {
+      "path": "D:/ZumaGolden/diagnostics/c195-c183-confirmatory-source-bound-rng-trace-u8213-u8260-v1/attempts.json",
+      "bytes": 229,
+      "sha256": "sha256:9176c316f86a0286e619d4050a13cccdcf5fdbb472cbcafd25562774a03cf4b5"
+    },
+    "external_input_guard": {
+      "path": "D:/ZumaGolden/diagnostics/c195-c183-confirmatory-source-bound-rng-trace-u8213-u8260-v1/attempt-01/external-input-guard.json",
+      "bytes": 6290,
+      "sha256": "sha256:fc0d02abba8a421a186a61d633b4cdb3ece42f75699efb990700aef016187389"
+    },
+    "call_trace": {
+      "path": "D:/ZumaGolden/diagnostics/c195-c183-confirmatory-source-bound-rng-trace-u8213-u8260-v1/attempt-01/global-rng-call-trace.json",
+      "bytes": 2874323,
+      "sha256": "sha256:fe02e893695a80d1decd17a07086258074120063dac5cd6ecebd4fe8ed84d038"
+    },
+    "trajectory_index": {
+      "path": "D:/ZumaGolden/diagnostics/c195-c183-confirmatory-source-bound-rng-trace-u8213-u8260-v1/attempt-01/trajectory/index.json",
+      "bytes": 559659,
+      "sha256": "sha256:4397086965241533ed81c7b6270d5f8b19e9fc97116c8ee6ba8db903b4443a3e"
+    },
+    "alignment": {
+      "path": "D:/ZumaGolden/diagnostics/c195-c183-confirmatory-source-bound-rng-trace-u8213-u8260-v1/attempt-01/global-rng-call-trace-alignment.json",
+      "bytes": 412004,
+      "sha256": "sha256:6b91030f536f485dce9a0680dac6c38f1ab23283d5d6c4ed5071eb3cb9a8dff6"
+    },
+    "source_overlap": {
+      "path": "D:/ZumaGolden/diagnostics/c195-c183-confirmatory-source-bound-rng-trace-u8213-u8260-v1/attempt-01/c111-compact-overlap-verification.json",
+      "bytes": 1359,
+      "sha256": "sha256:b8b9a95ae2af753096f355b5e153abadf5ab20e70bc2dbd80608dd30367783e9"
+    },
+    "strict_replay": {
+      "path": "D:/ZumaGolden/diagnostics/c195-c183-confirmatory-source-bound-rng-trace-u8213-u8260-v1/attempt-01/strict-replay.json",
+      "bytes": 55157,
+      "sha256": "sha256:a419bab0437cf563c9b6110e7307a24562e07bb9e43e62ec0cf349a033acf44b"
+    }
+  },
+  "scientific_results_retained_as_forensic_only": {
+    "trajectory_tick_count": 48,
+    "trajectory_transition_count": 47,
+    "call_count": 3587,
+    "alignment_exact_transition_count": 47,
+    "source_overlap_compact_exact_tick_count": 48,
+    "source_overlap_mtrand_exact_tick_count": 48,
+    "natural_recording_call_count": 3587,
+    "natural_recording_mismatch_count": 0,
+    "semantic_counts": {
+      "pi_effect_particle_update": 9,
+      "pil_particle_emitter_update": 3562,
+      "score_digit_transition": 14,
+      "shadow_canopy_animation": 2
+    },
+    "unclassified_call_count": 0,
+    "modeled_gameplay_call_count": 0,
+    "c194_partition_exact": true
+  },
+  "host_restoration": {
+    "snapshot": "D:/ZumaGolden/diagnostics/c195-host-post-v1.json",
+    "snapshot_bytes": 33118,
+    "snapshot_sha256": "sha256:2f56f30d2f372edff8b148ae84abc8da5dfeb97a0574cb5d48d33b327ad60b57",
+    "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "residual_game_process_count": 0,
+    "exact_host_restore": true
+  },
+  "next_action": {
+    "freeze_guard_start_boundary_fix_before_edit": true,
+    "start_kat_must_finish_before_coverage_start": true,
+    "bounded_quiescence_must_finish_before_coverage_start": true,
+    "coverage_start_must_remain_before_game_launch": true,
+    "formal_interval_external_event_limit_remains_zero": true,
+    "qualify_guard_fix_before_new_confirmatory_root": true
+  }
+}

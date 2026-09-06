@@ -1,0 +1,100 @@
+{
+  "schema": "zuma-rl.pc-fruit-powerup-collision-acquisition-controller-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_IMPLEMENTATION",
+  "created_utc": "2026-08-10T13:34:52.1245370Z",
+  "objective": "Increase the probability of recording one natural retail Jungle2 proximity-bomb fruit collection without changing retail process memory or weakening Fidelity Gate v4.",
+  "recovered_retail_semantics": {
+    "collision_cause": "proximity_bomb",
+    "powerup_type": 0,
+    "fruit_collision_radius_px": 108.0,
+    "distance_predicate": "strict_less_than_radius_squared",
+    "fruit_geometry": "static installed TreasurePoint coordinates; collection bob is not added to the bomb radius test",
+    "activation_requirement": "the type-0 chain ball must participate in a natural scored explosion"
+  },
+  "falsified_reuse_candidate": {
+    "source": "D:/ZumaGolden/diagnostics/source-bound-compact-locator-c128a-u3429-u5476-v1 and source-bound-compact-locator-c128b2-u5476-u7520-v1",
+    "covered_framework_updates": [3429, 7520],
+    "proximity_bomb_activation_count": 1,
+    "activation_update": 7248,
+    "trigger_ball_id": 161,
+    "fruit_active": false,
+    "minimum_distance_to_installed_treasure_point_px": 290.94833276398947,
+    "decision": "not_eligible_for_fruit_powerup_collision"
+  },
+  "controller_contract": {
+    "new_fruit_policy": "bomb",
+    "process_memory_access": [
+      "PROCESS_QUERY_INFORMATION",
+      "PROCESS_VM_READ"
+    ],
+    "process_memory_writes": 0,
+    "input_transport": "Win32 SendInput",
+    "direct_fruit_shots_under_bomb_policy": 0,
+    "priority_condition": "fruit is active and not collecting, and an effective type-0 active-chain ball lies strictly within 108 pixels of the active static TreasurePoint",
+    "shot_condition": "the current or next shooter colour has an unobstructed candidate run containing that qualifying bomb ball",
+    "selection_order": [
+      "prefer a qualifying run of length at least two",
+      "prefer longer qualifying runs",
+      "prefer current chamber on ties",
+      "otherwise preserve the pre-existing autoplay recommendation exactly"
+    ],
+    "legacy_policies_unchanged": [
+      "ignore",
+      "collect"
+    ],
+    "controller_is_certifying_evidence": false
+  },
+  "implementation_surface": {
+    "files": [
+      {
+        "path": "tools/autoplay_live_zuma.py",
+        "pre_sha256": "sha256:6711d208cf0181782b9f9b5c1197f642ebf67a4174c51985b76d14db34d4a77f"
+      },
+      {
+        "path": "tools/record_autoplay_zuma.py",
+        "pre_sha256": "sha256:7d671bf6d1f99f4d7f6cce00759b2912fb287b08ec05548afb06655d24ec9e44"
+      },
+      {
+        "path": "tests/test_autoplay_live_zuma.py",
+        "pre_sha256": "sha256:465d3426d91e473d34fb831fb9daf0fac8f36ecfd8a7c116c040185dc4818c72"
+      },
+      {
+        "path": "tests/test_record_autoplay_zuma.py",
+        "pre_sha256": "sha256:4b935d6f6077310d270c11c723c404729111c75ca12a71f0ca5de4c07c0129db"
+      }
+    ],
+    "simulator_core_change": false,
+    "fidelity_gate_policy_change": false,
+    "training_gate_policy_change": false
+  },
+  "qualification": {
+    "required_tests": [
+      "bomb policy selects a visible current-colour qualifying bomb run",
+      "bomb policy swaps only when the next colour supplies the qualifying run",
+      "strict 108-pixel boundary is enforced",
+      "inactive or collecting fruit preserves legacy autoplay",
+      "no qualifying bomb preserves legacy autoplay",
+      "collect and ignore policy tests remain unchanged",
+      "recording CLI and validation accept bomb"
+    ],
+    "focused_test_command": ".venv-win/Scripts/python.exe -m pytest tests/test_autoplay_live_zuma.py tests/test_record_autoplay_zuma.py -q",
+    "full_suite_required_before_formal_capture": true
+  },
+  "formal_source_rules": {
+    "fresh_retail_recording_required": true,
+    "controlled_crt_seed_forbidden": true,
+    "offline_dmo_seed_edit_forbidden": true,
+    "natural_retail_outcome_required": true,
+    "host_state_transaction_and_exact_restore_required": true,
+    "formal_full_state_source_bound_replay_required_after_locator_success": true,
+    "machine_derived_pc_mechanism_audit_required": true,
+    "exact_simulator_diff_required": true,
+    "pc_golden_authentication_required": true
+  },
+  "decision": {
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

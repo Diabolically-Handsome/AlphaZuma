@@ -1,0 +1,75 @@
+{
+  "schema": "zuma-rl.zero-shot-models-manifest",
+  "version": 1,
+  "status": "FROZEN",
+  "created_utc": "2026-08-15T10:56:53.315218+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "stage": "training_validation",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "models": [
+    {
+      "id": "v11-full55-v1",
+      "training_steps": 33772736,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1.zip",
+      "sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d"
+    },
+    {
+      "id": "settled-v3-reset-aim-v2-epoch-04",
+      "training_steps": 34252935,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-reset-aim-v2-s99081523-v1/epoch_04_model.zip",
+      "sha256": "sha256:8aa2060280ff97f5e2c5325e9fbe08d44c2b37854d090b565e810425257d8716"
+    },
+    {
+      "id": "settled-v3-reset-aim-v2-epoch-08",
+      "training_steps": 34252935,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-reset-aim-v2-s99081523-v1/epoch_08_model.zip",
+      "sha256": "sha256:9355ee6089bbc5fa9fb3d06beaffcdfd99936a2a2acc3a509d96480d0200b668"
+    },
+    {
+      "id": "settled-v3-reset-aim-v2-epoch-12",
+      "training_steps": 34252935,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-reset-aim-v2-s99081523-v1/epoch_12_model.zip",
+      "sha256": "sha256:eb068320f8fae00e665431eebf15a881e6c6da9eba540823929ae77d5d151bde"
+    },
+    {
+      "id": "settled-v3-reset-aim-v2-epoch-16",
+      "training_steps": 34252935,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-reset-aim-v2-s99081523-v1/epoch_16_model.zip",
+      "sha256": "sha256:0047468bb029191e9bf2290d9dc00e654d245d7c608bbba59ffd3039de009c49"
+    },
+    {
+      "id": "settled-v3-reset-aim-v2-epoch-20",
+      "training_steps": 34252935,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-reset-aim-v2-s99081523-v1/epoch_20_model.zip",
+      "sha256": "sha256:a432e0b67d0d60dbf842128b96fd9422b84254e22e1f9497f73eb4d3570e7e6d"
+    },
+    {
+      "id": "settled-v3-reset-aim-v2-epoch-24",
+      "training_steps": 34252935,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-reset-aim-v2-s99081523-v1/epoch_24_model.zip",
+      "sha256": "sha256:6426afecb3cf2a74f048afff69a42d0285a36cd9bcf63cb2e8e44e3753b6d584"
+    },
+    {
+      "id": "settled-v3-reset-aim-v2-final",
+      "training_steps": 34252935,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-reset-aim-v2-s99081523-v1/final_model.zip",
+      "sha256": "sha256:826b0daa8cf2e3fb7cf1c9dc9f7ba57d426e881b52bdec8de533614e79f03c69"
+    }
+  ],
+  "purpose": "Paired early-health diagnostic only; it cannot select the formal finalist.",
+  "builder": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_training_validation.py",
+    "sha256": "sha256:45fcdd98cda89f2a606cb24c30a82c12b877d108b232d37f7623ed71bb9a1391"
+  },
+  "settled_v3_reset_aim_validation_plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-settled-v3-reset-aim-v2-validation-s99081524-plan-v1.json",
+    "sha256": "sha256:fa71ec0e86fe4236047145ca35e6539d685fbafdcd4ca0027751c7e9ee552f7c"
+  },
+  "target_completion": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-reset-aim-v2-s99081523-v1/completion.json",
+    "sha256": "sha256:700195aae28a4af00c7a4b96bb9cb7445a52b57cb4252bf683e805f95796520d"
+  }
+}

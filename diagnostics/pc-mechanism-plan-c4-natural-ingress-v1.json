@@ -1,0 +1,15 @@
+{
+  "schema": "zuma-rl.pc-mechanism-audit-plan",
+  "version": 1,
+  "cases": [
+    {
+      "id": "c4-natural-chain-ingress",
+      "manifest_path": "cases/jungle2-front-insertion-u13230-13326-v4-score-bound/manifest.json",
+      "memory_probe_path": "memory-followup-c4-front-insertion-u13230-u13326-v2/attempt-01/memory-probe.json",
+      "window": {
+        "start_update": 13230,
+        "end_update": 13326
+      }
+    }
+  ]
+}

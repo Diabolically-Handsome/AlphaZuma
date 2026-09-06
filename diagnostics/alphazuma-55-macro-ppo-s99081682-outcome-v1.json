@@ -1,0 +1,29 @@
+{
+ "schema": "zuma-rl.alphazuma-55-macro-ppo-run-outcome",
+ "version": 1,
+ "run_id": "macro-ppo-5090-r2",
+ "preregistration": {
+  "path": "/mnt/c/Users/Laure/Documents/\u7956\u739b/diagnostics/alphazuma-55-macro-ppo-s99081682-preregistration-v1.json",
+  "sha256": "sha256:c2053de5bacfd44e5fabd8522094b9ecc72c85d5874d7055826a8dc910a287a1"
+ },
+ "status": "STOPPED_EARLY_USER_DIRECTED_STRATEGY_PIVOT",
+ "decision": "INCONCLUSIVE_STOPPED_AT_13_PERCENT_BUDGET",
+ "stopped_utc": "2026-08-18T00:34:17.429110+00:00",
+ "reason": "User-directed pivot to per-level specialist campaigns after the per-level budget diagnosis: 6M macro steps over 49 levels gives ~122k macro steps (~1.1M native ticks) per level, versus the user historical single-level budget of 10-20M native-tick steps. Anti-collapse knobs verified healthy before stop: checkpoint 786k = 304 shots (4x run-1 same point, baseline 73), checkpoint 1573k = 280 shots (stable, no collapse), on-target 1.00 both, wins 0/12 both. Early-stop rule NOT triggered; this stop is a strategy pivot, not a tier-0 breach.",
+ "evidence": [
+  {
+   "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-s99081682-v1/eval-ckpt786k/completion.json",
+   "sha256": "sha256:c7aa40c1ab0aeed7c1352603a55b73a5742239753a8c7830af701a7dff575cb8"
+  },
+  {
+   "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-s99081682-v1/eval-ckpt1572k/completion.json",
+   "sha256": "sha256:eca7f1df676a5df9f9abc32ffd2de210bcef728cc3a73329c7f654dcc35373b4"
+  }
+ ],
+ "preserved_checkpoints": [
+  "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-s99081682-v1/checkpoints/macro-ppo-5090-r2_786432_steps.zip",
+  "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-s99081682-v1/checkpoints/macro-ppo-5090-r2_1572864_steps.zip"
+ ],
+ "successor": "per-level specialist campaign alphazuma-55-macro-ppo-perlevel (Jungle1 s99081683 on cuda:0, Jungle2 s99081684 on cuda:1; 4M macro steps each ~= 2-4x user historical per-level budget)",
+ "formal_seed_consumption": false
+}

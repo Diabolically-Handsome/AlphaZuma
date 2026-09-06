@@ -1,0 +1,77 @@
+{
+ "schema": "zuma-rl.alphazuma-55-macro-ppo-run-outcome",
+ "version": 1,
+ "run_id": "macro-ppo-jungle2-r3",
+ "preregistration": {
+  "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-macro-ppo-jungle2-r3-s99081686-preregistration-v1.json",
+  "sha256": "sha256:3abb091c40384e6b69bef120b1d532081b672a5e3888b7a70313f2a352759b5c"
+ },
+ "status": "STOPPED_EARLY_PREREGISTERED_CLAUSE_2",
+ "decision": "FAIL",
+ "stopped_utc": "2026-08-18T13:18:28.350960+00:00",
+ "receipt_written_utc": "2026-08-18T13:25:36Z",
+ "stop_mechanism_note": "stopped_utc is the trainer's final training_status.json write (its last heartbeat): the operator terminated the process externally immediately after the ckpt2M eval completed (13:17:22Z) and clause 2 was adjudicated, so the on-disk status file still reads status RUNNING / stop_reason null; this receipt, not the status file, is the record of the stop. Unlike the sibling jungle1-r3 stop, this stop is authorized by the run's OWN frozen early_stop_rule - no prereg deviation.",
+ "early_stop_adjudication": {
+  "clause_fired": "early_stop_rule.clause_2_reward_misalignment of the run's own frozen preregistration (sha256:3abb091c40384e6b69bef120b1d532081b672a5e3888b7a70313f2a352759b5c)",
+  "clause_text_verbatim": "if two consecutive checkpoints show zero new TRAINING wins in the run's training_status.json while eval score rises, the run is stopped as reward-misaligned",
+  "measurement": "the cumulative training win counter in the run's own training_status.json was 0 at the ckpt1M interval and still 0 at the ckpt2M interval (zero new training wins across both consecutive checkpoint intervals - and across all 1,635 episodes of the run) while the per-checkpoint macro-native eval total_score ROSE: 200 at ckpt1M -> 1950 at ckpt2M. Both prongs of the clause are met at the ckpt2M adjudication point.",
+  "clause_1_note": "clause_1_fire_collapse (two consecutive evals with total_shots below the 73-shot transplant baseline) was NOT the adjudicated basis: the 73-shot baseline is a 12-episode panel aggregate carried from the multi-level lineage and is not commensurable with this single-level document's single-episode per-checkpoint evals (12 shots at ckpt1M, 24 at ckpt2M); the same reading is what kept clause 1 un-fired throughout the predecessor (36-40 shots/episode). Recorded for completeness, not re-adjudicated."
+ },
+ "verified_numbers": {
+  "source": "all numbers below re-read from the run dir /mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle2-r3-s99081686-v1 at receipt time; the operator's live read during adjudication (1,613 episodes) had advanced to 1,635 by the trainer's final status write - the on-disk endpoint bound here is authoritative",
+  "training_status_final": {
+   "started_utc": "2026-08-18T11:24:56.150612+00:00",
+   "final_write_utc": "2026-08-18T13:18:28.350960+00:00",
+   "timesteps": 2160680,
+   "episodes": 1635,
+   "wins": 0,
+   "losses": 187,
+   "truncations": 1448,
+   "truncation_fraction": 0.8856,
+   "observed_win_rate": 0.0,
+   "recent_win_rate_last_64": 0.0,
+   "steps_per_second": 321.05
+  },
+  "eval_ckpt1M": {
+   "completed_utc": "2026-08-18T12:20:27.087413+00:00",
+   "evaluated_model": "checkpoints/macro-ppo-jungle2-r3_1048560_steps.zip",
+   "evaluated_model_sha256": "sha256:1cf791615a7a80a8867c85923b6d364a2602dc7a161d1af2e0f9f3d9d810b5a5",
+   "outcome": "loss",
+   "score": 200,
+   "shots": 12,
+   "shots_on_target_rate": 1.0,
+   "ticks": 9253,
+   "time_limit_truncated": false
+  },
+  "eval_ckpt2M": {
+   "completed_utc": "2026-08-18T13:17:22.693000+00:00",
+   "evaluated_model": "checkpoints/macro-ppo-jungle2-r3_2097120_steps.zip",
+   "evaluated_model_sha256": "sha256:9ac2a7d0dc62ffd0e3720d52f4202581d8a1b3c53b784fb385435e9a4a431b0d",
+   "outcome": "loss",
+   "score": 1950,
+   "shots": 24,
+   "shots_on_target_rate": 1.0,
+   "ticks": 15066,
+   "time_limit_truncated": false
+  }
+ },
+ "reason": "Win-rediscovery failure: initialized from the predecessor's farm-converged final model (macro-ppo-jungle2 s99081684, trained under cap 10.0), the policy produced ZERO training wins across 1,635 episodes and both checkpoint intervals under the realigned cap 1.0, while 88.6% of training episodes farmed to the 12,000-tick truncation horizon and the deterministic per-checkpoint eval farmed RISING score (200 -> 1950) without winning - the exact reward-misalignment signature the run's own clause 2 preregisters. With zero win events there is no positive win gradient to sharpen; continuing spends budget optimizing the shaping.",
+ "operator_hypothesis_value_head_shock": "HYPOTHESIS, operator-attributed, NOT an adjudicated fact: the failure is compounded by value-head shock. The init carried a value head calibrated to cap-10.0 returns; under cap 1.0 every early return is far below that head's predictions, so all early advantages are strongly negative and PPO dismantles the init's structured behavior before any win event can supply positive gradient. This hypothesis is recorded here because it motivates the successor r4's design - restart from the ORIGINAL BC transplant (whose value pathway is FRESH by construction, per the transplant receipt) rather than from any cap-10.0-era PPO checkpoint - and it is to be tested by r4, not treated as established by this receipt.",
+ "evidence": [
+  {
+   "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle2-r3-s99081686-v1/eval-ckpt1M/completion.json",
+   "sha256": "sha256:143c38f2a6c56f5d8ba5a200c3f21c037d4f9a91e6a26ce4b0262d420fa0c09d"
+  },
+  {
+   "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle2-r3-s99081686-v1/eval-ckpt2M/completion.json",
+   "sha256": "sha256:7ecfff96cf63bcd5898961ae98a8e61e8212971041ab7c8b84d975a332cf34f0"
+  },
+  {
+   "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle2-r3-s99081686-v1/training_status.json",
+   "sha256": "sha256:2a9f66f50d7439c3490fd7c8ce8693bc27f1d95cd1d4c143c4b4b117a45d972c",
+   "stability_note": "hashed twice 20 seconds apart with identical digest and mtime after process-table verification that no jungle2-r3 trainer process exists; the file is a dead run's final state, not a live heartbeat"
+  }
+ ],
+ "successor": "jungle2-r4 s99081688 (single-variable rerun of the first Jungle2 specialist s99081684: ORIGINAL BC transplant init with FRESH value head, identical knobs, cap 1.0; frozen in the same conclusion pass as this receipt)",
+ "formal_seed_consumption": false
+}

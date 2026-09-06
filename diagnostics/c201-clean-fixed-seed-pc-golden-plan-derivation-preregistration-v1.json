@@ -1,0 +1,106 @@
+{
+  "acceptance": {
+    "all_three_plans_must_validate": true,
+    "fixed_seed_register_overrides_only": [
+      "startup_crt_rand_seed",
+      "board_mtrand_seed"
+    ],
+    "normalized_playback_dmo_must_equal_frozen_source": true,
+    "prestate_projection_must_equal_frozen_source": true,
+    "source_bound_board_anchor_forbidden": true,
+    "source_bound_global_state_restore_forbidden": true,
+    "source_bound_rng_oracle_forbidden": true
+  },
+  "classification": "clean_fixed_seed_plan_derivation_for_fresh_pc_golden",
+  "created_utc": "2026-08-10T17:37:09.984Z",
+  "id": "c201-clean-fixed-seed-pc-golden-plan-derivation",
+  "non_authorizations": [
+    "pc_golden_credit",
+    "fidelity_gate_open",
+    "training_gate_open",
+    "large_scale_training_start"
+  ],
+  "plans": [
+    {
+      "board_seed": 1853292490,
+      "crt_rand_seed": 147023375,
+      "detach_at_update": 3167,
+      "dmo_sha256": "sha256:a5306095efb020c747530b0b546c8a8af1267a71ea48395e225f9b9a7c6516cf",
+      "id": "natural_loss",
+      "normalization_sha256": "sha256:7a0294b821c34f6a8a4d77388c781ab505e73e0c9b62075845b6dafff67b3a25",
+      "output_absent_at_freeze": true,
+      "output_root": "D:/ZumaGolden/diagnostics/clean-c201-natural-loss-fixed-seed-plan-v1",
+      "parent_base_plan_sha256": "sha256:ed6bc59310c53f2badcd97371140db3aca4adfe84cd88dcf908a7ff7034a7da3",
+      "parent_finite_plan_sha256": "sha256:9e75c425106c7cb9a9d1c878eed4decabbf9203c5459d3ac1bcb0f5d14dfc538",
+      "reattach_at_update": 16546,
+      "session_nonce": "c2010000000000000000000000000001",
+      "wait_until_framework_update": 3417,
+      "window_repaint_update": 3187
+    },
+    {
+      "board_seed": 1300598932,
+      "crt_rand_seed": 147023375,
+      "detach_at_update": 3136,
+      "dmo_sha256": "sha256:6f2d645c3109f73b77ef55c7e7e7941f7f1d2f73dccd5a71adc3051d4a360989",
+      "id": "fruit_collection",
+      "normalization_sha256": "sha256:a628441dc30a123d1b21dd066c0aaaab14ba40815c96ce8228bd6ed75273630f",
+      "output_absent_at_freeze": true,
+      "output_root": "D:/ZumaGolden/diagnostics/clean-c201-fruit-collection-fixed-seed-plan-v1",
+      "parent_base_plan_sha256": "sha256:5749727a3472ed375d14a7021c4753bc2d80e65c7e188b751552011184771644",
+      "parent_finite_plan_sha256": "sha256:a5c4b44df8828862f67335ef8919861eb6d33bb517b92bcab22b599a56d150aa",
+      "reattach_at_update": 9865,
+      "session_nonce": "c2010000000000000000000000000002",
+      "wait_until_framework_update": 3400,
+      "window_repaint_update": 3150
+    },
+    {
+      "board_seed": 2088163177,
+      "crt_rand_seed": 147023375,
+      "detach_at_update": 3151,
+      "dmo_sha256": "sha256:413ff5b6470f695dc703b99064762a3d5749434530e620833291925c56339e77",
+      "id": "fruit_powerup_collision",
+      "normalization_sha256": "sha256:ddb15a55c1ac6eff0032eb20b99d2dd88ecf546eef90367374870903ba1289e3",
+      "output_absent_at_freeze": true,
+      "output_root": "D:/ZumaGolden/diagnostics/clean-c201-fruit-powerup-collision-fixed-seed-plan-v1",
+      "parent_base_plan_sha256": "sha256:9a5b12e6bf1ccb96777aab34c68523d0dfc89fb51add334e5b41defa1d341fda",
+      "parent_finite_plan_sha256": "sha256:a0452ac0d2d77f58b192539fdb37c3d59683d044cd5831472003248f5f4b3ccd",
+      "reattach_at_update": 12799,
+      "session_nonce": "c2010000000000000000000000000003",
+      "wait_until_framework_update": 3415,
+      "window_repaint_update": 3165
+    }
+  ],
+  "shared_contract": {
+    "allow_font_cache_manifest_completion_debt": true,
+    "allow_pre_stream_commands": true,
+    "attach_at_update": 0,
+    "board_seed_call_address": 6666280,
+    "changedir": "D:/SteamLibrary/steamapps/common/Zuma's Revenge",
+    "device_index": 0,
+    "direct_runtime": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+    "direct_runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "duration_seconds": 1.0,
+    "frame_budget_fps": 180,
+    "maximum_hits": 100000,
+    "output_index": 0,
+    "runtime_source": "D:/SteamLibrary/steamapps/common/Zuma's Revenge/ZumasRevenge.exe",
+    "runtime_source_sha256": "sha256:db85b891ba662a463d23251a376081386b47437c29248b21e2c10335a6f3eb50",
+    "skip_startup_window_activation": true,
+    "startup_seed_transport": "debugger_register",
+    "startup_trace_handoff": true,
+    "trace_timeout_seconds": 900.0
+  },
+  "shared_prestate_files": {
+    "adv_in_game2.sav": "sha256:0009b6b3309aaa1bd6689e8093d66f36fea43648ebc3ad66ec911ddf1ee23539",
+    "adv_in_game2.sav.provenance.json": "sha256:29e7fcd7f87914b816a562286c4fc210b6310a1a4e1e01411d0151bf249e48cb",
+    "user2.dat": "sha256:8bfbb6b7321169c19539f9c0e580bf0de7436f60bd1e0f7f63433e07aa0cd672",
+    "user2.dat.provenance.json": "sha256:8732ff01dffb4bfc786f65c950f66f39a88c50f60874ea939fe34622ea99b0a0",
+    "users.dat": "sha256:99a6996f6105eccc3e1bb2f95b5d2ec2a1d261e6d63aa22cc213e5c88f3e26f6",
+    "users.dat.provenance.json": "sha256:a8acee0681ca91168fa45a92cf8ac5c6c11789f6e948a5efeb13e97dfe8b6b53"
+  },
+  "status": "FROZEN_BEFORE_PLAN_OUTPUTS",
+  "tooling": {
+    "collect_pc_golden_v4_sha256": "sha256:9f8b9daf566e992458becd8dde817da6dae5d46e7f7aec93d9be073c865a5fd5"
+  },
+  "version": 1
+}

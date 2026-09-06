@@ -1,0 +1,169 @@
+{
+  "schema": "zuma-rl.retail-board-reset-low-perturbation-trace-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_IMPLEMENTATION_AND_OUTPUT",
+  "created_utc": "2026-08-10T10:26:32.349522+00:00",
+  "purpose": "Directly observe the pinned retail runtime's candidate in-place Board reset after the exact first active-Board global-MTRand source anchor, including its dynamic caller, two stack arguments, active Board identity, and entry/return state, while using one execution hardware-breakpoint slot and zero process-memory writes.",
+  "classification": "diagnostic-only-exact-runtime-call-trace-no-gate-credit",
+  "trigger": {
+    "c150_preregistration_sha256": "sha256:b1e160e3f5fe926da85999cdeefdbce92c348ba2dffff2757e33145c48af6210",
+    "c150_falsification_receipt_sha256": "sha256:3859a66882d097d7e1be5713758452e33e4db7c2ba4729d517b9947ba5c7ca05",
+    "c150_result_sha256": "sha256:7ec0d8801217a1d8a6d752a49be93115cfea89ddbbc1a91b43b4d1c3f29a8b97",
+    "finding": "A mature exhausted Board, rollback animation, coherent restarted level, and second loss all used Board address 630698032. Object replacement is not the retail reset mechanism."
+  },
+  "runtime_identity": {
+    "path": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+    "bytes": 6657328,
+    "sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "image_base": "0x00400000"
+  },
+  "frozen_static_candidate": {
+    "entry_address": "0x00419A90",
+    "entry_first_32_bytes_hex": "558bec6aff68285d940064a1000000005083ec205357a110509e0033c5508d45",
+    "entry_first_32_bytes_sha256": "sha256:5a8da3a3f64f779b8260c3dffd24affb179daa0f925b6808e9bce44394ea37a4",
+    "candidate_body_end_exclusive": "0x00419E27",
+    "candidate_body_bytes": 919,
+    "candidate_body_sha256": "sha256:afac77a4bf2755be9a6bccf29512b1099de582efcb73816f774dc6eb000868aa",
+    "native_clock_zero_instruction": {
+      "address": "0x00419BAF",
+      "bytes_hex": "c786c80e000000000000",
+      "disassembly": "mov dword ptr [esi+0xEC8], 0"
+    },
+    "level_initializer_call": {
+      "address": "0x00419BC5",
+      "target": "0x004128C0",
+      "bytes_hex": "e8f68cffff"
+    },
+    "return_instruction": {
+      "address": "0x00419E24",
+      "bytes_hex": "c20800",
+      "disassembly": "ret 8"
+    },
+    "static_direct_call_sites": [
+      "0x004163DD",
+      "0x00416485",
+      "0x00419F77",
+      "0x0041E627",
+      "0x00420E03",
+      "0x00422370",
+      "0x00423A64",
+      "0x004242F5",
+      "0x0043352C",
+      "0x00433917",
+      "0x004368F4",
+      "0x004382CC",
+      "0x00438458",
+      "0x00438BFE"
+    ],
+    "static_analysis_limit": "The exact loss-path caller and argument values are deliberately not selected from static analysis; c151a1 must discover them dynamically."
+  },
+  "family_source_correlation": {
+    "classification": "guide-only-not-exact-revenge-source",
+    "transition_source": "external/CircleShootApp/source/CircleShoot/TransitionMgr.cpp:1250-1271",
+    "board_source": "external/CircleShootApp/source/CircleShoot/Board.cpp:1718-1860",
+    "hypothesis": "The Revenge runtime likely invokes an in-place reset on the existing Board after the loss rollback, matching the family source structure.",
+    "cannot_certify_runtime_behavior": true
+  },
+  "preimplementation_code": {
+    "tools/trace_popcap_gameplay_mtrand.py": "sha256:20dff67af2a47e25b0e5cf8ffc4f6a00a9a2a64aafaac4099f6ecee03f338394",
+    "tools/record_autoplay_zuma.py": "sha256:0b6fe561ff07e97d532e32fa6e9393807ac24256a8fd0d614a0de1f52215fd8e",
+    "tests/test_record_autoplay_zuma.py": "sha256:7e8e78f997f01498fb7220a21aa24791adc2d9db577df333e4e7f5993523f0df"
+  },
+  "frozen_observation_protocol": {
+    "initial_boundary": {
+      "address": "0x0065B81C",
+      "instruction_hex": "e86fbcfbff",
+      "semantic_return": "0x0065B821",
+      "require_exactly_one_first_active_board_candidate": true,
+      "capture_global_mtrand_pre_and_predicted_post_state": true,
+      "capture_main_thread_crt_rand_state": true
+    },
+    "entry_boundary": {
+      "after_source_anchor_switch_same_hardware_slot_to": "0x00419A90",
+      "validate_frozen_entry_bytes_before_arming": true,
+      "capture_esi_as_candidate_board_pointer": true,
+      "capture_active_board_pointer": true,
+      "candidate_esi_must_equal_positive_active_board_pointer": true,
+      "capture_return_address_from_stack_esp_plus_0": true,
+      "return_address_must_equal_one_static_direct_call_site_plus_five": true,
+      "capture_stack_argument_dwords_at_esp_plus_4_and_esp_plus_8": true,
+      "capture_registers_and_compact_board_state": true,
+      "capture_global_curve_plan_exhausted_byte": true
+    },
+    "return_boundary": {
+      "switch_same_hardware_slot_to_dynamic_return_address": true,
+      "capture_registers_and_compact_board_state": true,
+      "active_board_address_must_equal_entry_active_board_address": true,
+      "pair_return_address_must_equal_observed_instruction_pointer": true
+    },
+    "hardware_semantics": {
+      "debug_register_slot": 0,
+      "main_thread_only": true,
+      "maximum_simultaneous_hardware_breakpoints": 1,
+      "restore_original_dr0_dr1_dr2_dr3_dr6_dr7": true,
+      "process_memory_writes": 0,
+      "gameplay_inputs": 0
+    }
+  },
+  "diagnostic_acceptance": {
+    "trace_status": "PASS",
+    "source_anchor_count": 1,
+    "reset_entry_count": 1,
+    "reset_return_count": 1,
+    "entry_return_pair_complete": true,
+    "same_active_board_at_entry_and_return": true,
+    "dynamic_caller_and_arguments_recorded": true,
+    "process_memory_writes": 0,
+    "process_memory_mutation": false,
+    "hardware_breakpoint_restored": true,
+    "debugger_detach_error": null,
+    "host_state_restored_exactly": true,
+    "semantic_values_such_as_arguments_native_clock_and_target_are_observations_not_c151_pass_thresholds": true
+  },
+  "implementation_boundary": {
+    "allowed": [
+      "Add one combined board_global_precall_and_reset breakpoint kind to the existing tracer and recorder.",
+      "Validate the frozen source-call and reset-entry instruction identities before reporting ready.",
+      "Retarget DR0 in the paused main-thread context and set the resume flag without writing process memory.",
+      "Add event kinds and one reset entry/return pair to the existing trace schema version.",
+      "Allow the existing exact source-anchor monitor derivation to consume the combined trace while selecting only its source candidate row.",
+      "Add deterministic unit tests for kind routing, static identities, source row selection, and reset-pair structural validation."
+    ],
+    "forbidden": [
+      "Any process-memory write, software breakpoint patch, gameplay action, swap, or fruit shot.",
+      "Changing the natural-loss v3 outcome predicate or provenance validator before c151a1 output.",
+      "Selecting a caller or argument value after output as a c151 pass threshold.",
+      "Treating c151 as formal natural-loss evidence, strict source-bound replay, Fidelity Gate credit, or Training Gate credit.",
+      "Retry-selecting c151a1 or weakening its structural observation protocol after output."
+    ]
+  },
+  "run": {
+    "id": "c151a1",
+    "output_root": "D:/ZumaGolden/record-c151a1-idle-natural-loss-reset-trace-v1",
+    "output_root_absent_at_freeze": true,
+    "maximum_started_attempts": 1,
+    "runtime_executable": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+    "changedir": "D:/SteamLibrary/steamapps/common/Zuma's Revenge",
+    "prestate_dir": "D:/ZumaGolden/session-20260728-203153/native-windowed-record-001-prestate-reconstructed",
+    "expected_score_target": 9650,
+    "minimum_entry_score": 7000,
+    "maximum_gameplay_seconds": 180.0,
+    "expected_outcome": "natural_loss",
+    "gameplay_policy": "idle",
+    "fruit_policy": "ignore",
+    "mtrand_trace_kind": "board_global_precall_and_reset",
+    "navigation_updates": [1622, 2422, 3108],
+    "navigation_points": [[400.0, 533.0], [633.0, 281.0], [399.0, 456.0]],
+    "prelaunch_cursor_screen_point": [100, 100],
+    "retail_process_count_at_freeze": 0,
+    "host_state_restore_required": true
+  },
+  "decision_rule": {
+    "pass": "Retain c151a1 and freeze a separate exact-runtime semantic natural-loss protocol using the observed caller, arguments, and reset entry/return state before implementation or source recording.",
+    "fail": "Retain the sole output and localize the first structural observation failure; do not retry-select, infer a loss from timeout, or relax c151.",
+    "c151a1_may_receive_fidelity_credit": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-checkpoint-auditor-watcher-deployment",
+  "version": 1,
+  "started_utc": "2026-08-14T01:03:43Z",
+  "status": "WAITING_FOR_FIRST_ULTRADENSE_CHECKPOINT",
+  "classification": "training_integrity_infrastructure",
+  "watcher": {
+    "path": "tools/watch_and_audit_alphazuma_v11_checkpoints.sh",
+    "sha256": "sha256:33d9142bb38c6d10c1e6d55e093d46746c05db100f16de4f1e2f4d41693fac98",
+    "linux_pid_at_deployment": 3272,
+    "poll_seconds": 30,
+    "required_checkpoint_stable_age_seconds": 45,
+    "deadline_utc": "2026-08-14T02:00:00Z"
+  },
+  "auditor": {
+    "path": "tools/audit_alphazuma_v11_checkpoints.py",
+    "sha256": "sha256:f690cf732d147c8bc5ad777261ea9a016a4babcc8895fc9861443e5be2a800d4",
+    "test_receipt": "diagnostics/alphazuma-v1.1-checkpoint-auditor-tests-v1.json",
+    "test_receipt_sha256": "sha256:3379aa1743435daaf066fe4e54aba0d47ba9b8e4d2a16eaa1c9f1208288dd88e",
+    "tests_passed": 3,
+    "device": "cpu",
+    "cpu_affinity": [47],
+    "nice": 10
+  },
+  "master_preregistration": {
+    "path": "diagnostics/alphazuma-v1.1-frontier-postprocess-s51081301-preregistration-v1.json",
+    "sha256": "sha256:3dc8a51563c763ef46b3c3415a6e4da9b5430ab3a19b586e5e0b95b98b0ffc01",
+    "formal_routes": 7
+  },
+  "planned_output": "/mnt/d/ZumaTraining/alphazuma-v1.1-checkpoint-recovery-audit-7of7-s53081301-v1/audit.json",
+  "stdout_log": "/mnt/d/ZumaTraining/alphazuma-v1.1-checkpoint-auditor-s53081301.stdout.log",
+  "stderr_log": "/mnt/d/ZumaTraining/alphazuma-v1.1-checkpoint-auditor-s53081301.stderr.log",
+  "formal_gate_effect": "none"
+}

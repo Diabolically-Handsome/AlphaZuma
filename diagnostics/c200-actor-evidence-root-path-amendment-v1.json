@@ -1,0 +1,33 @@
+{
+  "schema": "zuma-rl.gate-contract-and-drift-refresh-amendment",
+  "version": 1,
+  "status": "FROZEN_BEFORE_EVIDENCE_ROOT_ACTOR_OUTPUT",
+  "created_utc": "2026-08-10T17:30:00Z",
+  "id": "c200-actor-audit-evidence-root-path-correction",
+  "parent": {
+    "path": "diagnostics/c200-gate-contract-and-drift-refresh-preregistration-v1.json",
+    "sha256": "sha256:ca8c0150eb043d7d43d169080579a4d881b9e87a1d07b0ab921e6fe040350d56"
+  },
+  "observed_preexecution_failure": {
+    "stage": "build c200 suite",
+    "error": "D:/ZumaGolden/diagnostics/actor-audit-jungle2-current-v12.json not found",
+    "cause": "the frozen relative suite path is resolved under the evidence root, while the first deterministic actor report was emitted under the workspace diagnostics directory",
+    "candidate_suite_created": false
+  },
+  "validated_workspace_report": {
+    "path": "diagnostics/actor-audit-jungle2-current-v12.json",
+    "sha256": "sha256:676b6d540d22efac9e1fdc4279044ff2f54cf2b390fbe86872984330176cbd11",
+    "status": "PASS"
+  },
+  "corrected_output": {
+    "path": "D:/ZumaGolden/diagnostics/actor-audit-jungle2-current-v12.json",
+    "absent_at_freeze": true,
+    "generation": "rerun the deterministic actor audit from the same implementation and original asset root",
+    "acceptance": "output bytes and SHA-256 must exactly equal the already validated workspace report"
+  },
+  "decision_rule": {
+    "pass": "use the evidence-root artifact in the unchanged relative suite entry",
+    "fail": "retain both reports and stop suite construction",
+    "training_start": false
+  }
+}

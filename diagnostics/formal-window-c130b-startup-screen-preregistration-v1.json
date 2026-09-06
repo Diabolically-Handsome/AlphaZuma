@@ -1,0 +1,101 @@
+{
+  "schema": "zuma-rl.pc-formal-startup-screen-preregistration",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-09T22:51:49.3841849Z",
+  "evidence_classification": "preregistration-not-certifying",
+  "supersedes_window_attempt": "c129b-reverse",
+  "does_not_supersede_artifacts": true,
+  "prior_preregistration": {
+    "path": "diagnostics/formal-window-c129-preregistration-v1.json",
+    "bytes": 7606,
+    "sha256": "sha256:fa321695d587d55ff3f27b41f310ad13492ec075bae4345f971f389bc5a6b598"
+  },
+  "failed_attempt": {
+    "id": "c129b-reverse",
+    "status": "FAIL_BEFORE_FORMAL_WINDOW",
+    "failure": "source_bound_strict_trace_process_failed",
+    "underlying_exception": "preloading failed file-write tail short-header recovery boundary is invalid",
+    "last_replay_update_in_log": 389,
+    "trajectory_created": false,
+    "strict_replay_receipt_created": false,
+    "target_feature_observed": null,
+    "strict_replay_log": {
+      "path": "formal-full-state-c129b-reverse-u4955-u5160-v1/attempt-01/strict-replay.log",
+      "bytes": 25627,
+      "sha256": "sha256:492775f40704f6a5d478006af513d8db0cdc9d4fe5f4106be2da7a2b98081f94"
+    },
+    "attempts": {
+      "path": "formal-full-state-c129b-reverse-u4955-u5160-v1/attempts.json",
+      "bytes": 214,
+      "sha256": "sha256:66392e1ae243bec3192cc47a76670c5de6f48f2dadde0ce306a7764a855b4c54"
+    },
+    "external_input_guard": {
+      "bytes": 785,
+      "sha256": "sha256:ea75b7d011f94534695a8a38da3fa2a3898a7b8f7ef23a6411c4450ec007fbc9",
+      "status": "PASS",
+      "external_event_count": 0,
+      "protocol_error_count": 0
+    },
+    "host_state": {
+      "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+      "pre_sha256": "sha256:746cde9396c506d4e794116618b3fe240e2a12cf3f9d54e385c4cb3703076f81",
+      "post_sha256": "sha256:147244ef645439bddea7bdfda46c4f96b7ec373c46b0cc0e443ef5ef955350aa",
+      "restored_exactly": true
+    }
+  },
+  "fixed_window": {
+    "features_sought": [
+      "powerup_reverse",
+      "powerup_spawn"
+    ],
+    "slowdown_update": 4945,
+    "freeze_update": 4955,
+    "trajectory_end_update": 5160,
+    "coordinates_unchanged_from_c129b": true
+  },
+  "startup_screen_policy": {
+    "maximum_reserved_attempts": 3,
+    "launch_order": [
+      "c130b1",
+      "c130b2",
+      "c130b3"
+    ],
+    "launch_next_only_if": "the preceding attempt creates no trajectory and fails the strict source-bound startup contract before board construction",
+    "stop_after_first_startup_pass": true,
+    "selection_must_not_inspect_target_window_or_feature_presence": true,
+    "any_attempt_reaching_formal_trajectory_is_final_for_this_window": true,
+    "all_launched_attempts_and_host_snapshots_are_retained": true,
+    "required_startup_state": {
+      "global_precall_changed": false,
+      "global_precall_bytes_written": 0,
+      "global_precall_process_memory_mutation": false,
+      "global_postcall_natural_state_match": true,
+      "global_postcall_bytes_written": 0,
+      "strict_trace_process_completed": true
+    }
+  },
+  "reserved_attempts": [
+    {
+      "id": "c130b1",
+      "session_nonce": "c130b100000000000000000000000000",
+      "output_root": "formal-full-state-c130b1-reverse-u4955-u5160-v1",
+      "host_pre_output": "diagnostics/formal-full-state-c130b1-host-pre-v1.json",
+      "host_post_output": "diagnostics/formal-full-state-c130b1-host-post-v1.json"
+    },
+    {
+      "id": "c130b2",
+      "session_nonce": "c130b200000000000000000000000000",
+      "output_root": "formal-full-state-c130b2-reverse-u4955-u5160-v1",
+      "host_pre_output": "diagnostics/formal-full-state-c130b2-host-pre-v1.json",
+      "host_post_output": "diagnostics/formal-full-state-c130b2-host-post-v1.json"
+    },
+    {
+      "id": "c130b3",
+      "session_nonce": "c130b300000000000000000000000000",
+      "output_root": "formal-full-state-c130b3-reverse-u4955-u5160-v1",
+      "host_pre_output": "diagnostics/formal-full-state-c130b3-host-pre-v1.json",
+      "host_post_output": "diagnostics/formal-full-state-c130b3-host-post-v1.json"
+    }
+  ]
+}

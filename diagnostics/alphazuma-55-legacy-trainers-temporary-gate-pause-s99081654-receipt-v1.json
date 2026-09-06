@@ -1,0 +1,35 @@
+{
+  "schema": "zuma-rl.temporary-resource-pause-receipt",
+  "version": 1,
+  "status": "PASS_WITH_MANUAL_RESUME",
+  "campaign_id": "alphazuma-55-weekend-s81081401",
+  "purpose": "temporarily free CPU, GPU, and D-drive service time for the frozen 17-candidate engineering screen",
+  "pause_script": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/temporarily_pause_alphazuma_55_legacy_trainers_for_gate_v1.sh",
+    "sha256": "sha256:8742d07955e5815c3d066f6913a30ef893d858c1c2f444012a7c9ea52ff2ecd3"
+  },
+  "process_groups": [
+    -3786,
+    -3797,
+    -12280,
+    -8488,
+    -39873,
+    -41683,
+    -330473
+  ],
+  "pause_signal": "SIGSTOP",
+  "checkpoint_bytes_modified": false,
+  "training_recipe_modified": false,
+  "auto_resume": {
+    "planned_after_seconds": 300,
+    "status": "DID_NOT_OBSERVABLY_RESUME",
+    "log_path": "/mnt/d/ZumaTraining/alphazuma-55-legacy-trainers-temporary-gate-pause-s99081654-auto-resume.log"
+  },
+  "manual_resume": {
+    "signal": "SIGCONT",
+    "resumed_utc": "2026-08-16T19:45:40Z",
+    "all_seven_main_processes_alive_after_resume": true,
+    "all_seven_main_processes_non_stopped_after_resume": true
+  },
+  "formal_seed_consumption": "NONE"
+}

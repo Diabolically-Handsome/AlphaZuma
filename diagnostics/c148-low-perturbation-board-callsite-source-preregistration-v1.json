@@ -1,0 +1,108 @@
+{
+  "schema": "zuma-rl.pc-low-perturbation-board-callsite-source-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_IMPLEMENTATION_AND_OUTPUT",
+  "created_utc": "2026-08-10T09:50:59.9062381Z",
+  "purpose": "Test whether replacing the 6090-hit global-wrapper source tracer with a read-only Board-constructor callsite observer removes the source/replay startup scheduling perturbation and yields a naturally exact global-MTRand pre-call state.",
+  "classification": "diagnostic-method-validation-no-fidelity-credit",
+  "trigger": {
+    "failed_output_root": "D:/ZumaGolden/diagnostics/c147-c145-natural-loss-localization-u11250-u11840-v1",
+    "attempts_sha256": "sha256:90e12d64237f48a48b3ce6b81cd349bf55b5792b18b56f51ef8af498c6014a4d",
+    "strict_replay_sha256": "sha256:39b2f79c33efb821443f5719d174f939d571ff5e06fdef3b445cd57a00c4bfc5",
+    "strict_replay_log_sha256": "sha256:d0d5c63d0999c705c6fba2071577a9cd65228b61b0a5757499fb6e50dbbdf54f",
+    "failure": "source_bound_global_precall_natural_state_mismatch",
+    "source_pre_index": 431,
+    "source_pre_state_sha256": "sha256:718f7e165023baf51d5451125358bba411f04255e3c3e2dfb784c33600aa0659",
+    "replay_natural_pre_index": 443,
+    "replay_natural_pre_state_sha256": "sha256:6fb8b085682731f5427b2c5d9aa678fc4d7dd19d7a5f6f33510c15035a2e2173",
+    "excess_natural_draws": 12,
+    "rejected_precall_write_bytes": 2500,
+    "c146_same_natural_pre_state": true
+  },
+  "method_change": {
+    "old_observer": {
+      "hardware_execute_breakpoint": "global MTRand wrapper 0x00617490",
+      "source_hit_count": 6090,
+      "pre_anchor_hit_count": 321,
+      "artifact_sha256": "sha256:c77493c223808bfb4838280b1c8de1ab50595a38c09c3f1803fe632f6af575ed"
+    },
+    "new_observer": {
+      "hardware_execute_breakpoint": "Board global-MTRand call instruction 0x0065B81C",
+      "static_instruction_hex": "e86fbcfbff",
+      "semantic_caller": "0x0065B821",
+      "global_wrapper_target": "0x00617490",
+      "main_thread_only": true,
+      "stop_after_first_active_gameplay_board_candidate": true,
+      "expected_pre_anchor_hit_count_upper_bound": 16,
+      "process_memory_writes": 0,
+      "persistent_file_modified": false,
+      "hardware_breakpoint_must_be_restored": true,
+      "capture": [
+        "framework_update",
+        "active_board_address",
+        "native_game_time",
+        "score",
+        "score_target",
+        "global_mtrand_pre_index_and_sha256",
+        "predicted_output_and_post_state",
+        "main_thread_crt_state_and_identity"
+      ],
+      "derived_monitor": "A transparent two-line zuma-rl.live-rng-change-monitor artifact derived from the exact read-only callsite row; no polling or inferred rewind is allowed."
+    }
+  },
+  "tooling_acceptance": {
+    "focused_tests_pass": true,
+    "legacy_gameplay_return_and_global_wrapper_modes_unchanged": true,
+    "board_callsite_default_address_exact": 6666268,
+    "board_callsite_semantic_caller_exact": 6666273,
+    "derived_monitor_contains_exactly_one_rng_row": true,
+    "derived_monitor_hash_is_bound_in_recording_report": true,
+    "trace_and_monitor_process_ids_match_recording": true,
+    "source_candidate_count_exactly_one": true
+  },
+  "diagnostic_source_run": {
+    "id": "c148a1",
+    "output_root": "D:/ZumaGolden/record-c148a1-idle-natural-loss-board-callsite-v1",
+    "output_root_absent_at_freeze": true,
+    "runtime_executable": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "changedir": "D:/SteamLibrary/steamapps/common/Zuma's Revenge",
+    "prestate_dir": "D:/ZumaGolden/session-20260728-203153/native-windowed-record-001-prestate-reconstructed",
+    "expected_outcome": "natural_loss",
+    "gameplay_policy": "idle",
+    "fruit_policy": "ignore",
+    "expected_score_target": 9650,
+    "minimum_entry_score": 7000,
+    "maximum_gameplay_seconds": 180.0,
+    "controlled_crt_rand_seed": null,
+    "rng_poll_monitor_disabled": true,
+    "mtrand_trace_kind": "board_global_precall",
+    "navigation_updates": [1622, 2422, 3108],
+    "process_memory_writes_required": 0,
+    "host_state_restore_required": true,
+    "maximum_started_attempts": 1
+  },
+  "post_recording_diagnostic": {
+    "normalize_only_the_known_duplicate_startup_registry_read": true,
+    "prepare_new_source_bound_plan": true,
+    "finite_stop_must_be_an_exact_DMO_command_boundary_after_the_source_anchor": true,
+    "run_one_new_strict_source_bound_diagnostic": true,
+    "required_success": {
+      "global_precall_changed": false,
+      "global_precall_bytes_written": 0,
+      "global_precall_process_memory_mutation": false,
+      "global_postcall_natural_state_match": true,
+      "global_postcall_bytes_written": 0,
+      "strict_trace_status": "PASS",
+      "host_state_restored": true
+    }
+  },
+  "decision_rule": {
+    "pass": "Freeze a separate confirmatory source ensemble before any formal natural-loss replay or Gate credit.",
+    "fail": "Retain all artifacts and localize the remaining source/replay draw delta; do not retry-select or weaken the zero-write rule.",
+    "c148a1_may_receive_fidelity_credit": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "large_scale_training_start": false
+  }
+}

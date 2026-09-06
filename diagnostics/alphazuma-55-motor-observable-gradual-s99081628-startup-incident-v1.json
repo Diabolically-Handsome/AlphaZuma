@@ -1,0 +1,39 @@
+{
+  "schema": "zuma-rl.alphazuma-55-motor-observable-gradual-startup-incident",
+  "version": 1,
+  "status": "STARTUP_ABORTED_BEFORE_CONFIG_NO_SEEDS_CONSUMED",
+  "observed_utc": "2026-08-16T08:12:03.3499251Z",
+  "classification": "windows_wsl_background_argument_transport_silent_exit",
+  "campaign_id": "alphazuma-55-motor-observable-gradual-s99081628-v1",
+  "preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-s99081628-preregistration-v1.json",
+    "sha256": "sha256:e9747af431410abc5c47d048e87f6bf874cd6bf6023f04b94adbd628ca220ea0"
+  },
+  "windows_launcher_pid": 38864,
+  "evidence": {
+    "launcher_process_alive": false,
+    "run_directory_exists": false,
+    "config_exists": false,
+    "training_status_exists": false,
+    "model_update_occurred": false,
+    "training_seed_consumption": "NONE",
+    "stdout": {
+      "path": "D:\\ZumaTraining\\alphazuma-55-motor-observable-gradual-s99081628-launcher-01.stdout.log",
+      "bytes": 0,
+      "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "path": "D:\\ZumaTraining\\alphazuma-55-motor-observable-gradual-s99081628-launcher-01.stderr.log",
+      "bytes": 0,
+      "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "recovery_boundary": {
+    "authorized": true,
+    "must_use_identical_preregistration": true,
+    "must_use_identical_training_command": true,
+    "must_not_change_seed_or_recipe_semantics": true,
+    "must_use_new_non_overwriting_recovery_logs": true
+  },
+  "formal_seed_consumption": "NONE"
+}

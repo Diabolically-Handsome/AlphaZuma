@@ -1,0 +1,94 @@
+{
+  "schema": "zuma-rl.pc-fruit-bomb-native-tick-telemetry-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_IMPLEMENTATION",
+  "created_utc": "2026-08-10T14:22:37.5230614Z",
+  "objective": "Resolve the c177 observation boundary without changing the qualified c176 action policy by logging read-only fruit and type-0 active-chain geometry once per distinct native Board tick whenever either entity class is present.",
+  "parents": {
+    "qualified_action_controller": {
+      "path": "diagnostics/c176-fruit-powerup-collision-preservation-controller-qualification-v1.json",
+      "sha256": "sha256:6ac4e71852e997724739963ebefb2204cc4e15d444c323c553941f93351a05d7"
+    },
+    "c177_acquisition_failure": {
+      "path": "diagnostics/recording-c177-fruit-powerup-preservation-acquisition-failure-receipt-v1.json",
+      "sha256": "sha256:f2bbb4595455f3f74b8eca23406bddaecb594e2640e3b6bd92d1a30247d67ce2"
+    }
+  },
+  "telemetry_contract": {
+    "enabled_policy": "bomb",
+    "event_type": "fruit_bomb_observation",
+    "sampling_key": ["board_address", "native_game_time"],
+    "sample_when": "fruit active or at least one active-chain ball has powerup_primary_type 0",
+    "fruit_fields": [
+      "active",
+      "collecting",
+      "selected_point_index",
+      "point_x",
+      "point_y",
+      "target_x",
+      "target_y",
+      "vertical_offset"
+    ],
+    "bomb_fields": [
+      "chain_index",
+      "ball_id",
+      "color_id",
+      "position_x",
+      "position_y",
+      "static_point_distance_squared",
+      "strictly_within_108"
+    ],
+    "summary_fields": [
+      "fruit_bomb_temporal_overlap",
+      "minimum_static_point_distance_squared",
+      "strict_overlap_bomb_count",
+      "current_color_id",
+      "next_color_id",
+      "fired_ball_count",
+      "inserting_ball_count"
+    ],
+    "distance_geometry": "static installed TreasurePoint point_x and point_y",
+    "strict_radius_px": 108.0,
+    "log_is_certifying_evidence": false,
+    "action_selection_change": false,
+    "process_memory_writes": 0,
+    "input_transport_change": false
+  },
+  "implementation_surface": {
+    "files": [
+      {
+        "path": "tools/autoplay_live_zuma.py",
+        "pre_bytes": 93387,
+        "pre_sha256": "sha256:ebd1c8a4d09b4f17d33a8b68f6a2920b03097fafe0ce60991ded6dc3d26b5428"
+      },
+      {
+        "path": "tests/test_autoplay_live_zuma.py",
+        "pre_bytes": 25062,
+        "pre_sha256": "sha256:28d5a457867d8674571428ae7498b183d56aec2f5f79c25d41550742f852781d"
+      }
+    ],
+    "record_wrapper_unchanged_sha256": "sha256:438b74c5f6fc8190c9835852a86dfba5c04e25c9b963f98c8d2564b5123d614f",
+    "simulator_core_change": false,
+    "fidelity_gate_policy_change": false,
+    "training_gate_policy_change": false
+  },
+  "qualification": {
+    "required_tests": [
+      "fruit-only observation",
+      "bomb-only observation",
+      "temporal overlap with exact distance",
+      "strict 108-pixel boundary remains outside",
+      "inactive empty state emits no observation",
+      "existing action recommendations remain byte-for-byte equal in representative fixtures"
+    ],
+    "focused_test_command": ".venv-win/Scripts/python.exe -m pytest tests/test_autoplay_live_zuma.py tests/test_record_autoplay_zuma.py -q",
+    "full_suite_required_before_diagnostic_capture": true
+  },
+  "decision": {
+    "telemetry_may_select_only_a_later_formal_replay_window": true,
+    "telemetry_gate_credit": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

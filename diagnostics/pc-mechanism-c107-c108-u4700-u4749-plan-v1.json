@@ -1,0 +1,15 @@
+{
+  "schema": "zuma-rl.pc-mechanism-audit-plan",
+  "version": 1,
+  "cases": [
+    {
+      "id": "c107-c108-u4700-u4749-exact-step",
+      "manifest_path": "cases/jungle2-natural-mechanisms-c107-c108-u4700-u4749-exact-step-v1/manifest.json",
+      "memory_probe_path": "cases/jungle2-natural-mechanisms-c107-c108-u4700-u4749-exact-step-v1/evidence/runs/c107/attempt-02/memory-probe.json",
+      "window": {
+        "start_update": 4700,
+        "end_update": 4749
+      }
+    }
+  ]
+}

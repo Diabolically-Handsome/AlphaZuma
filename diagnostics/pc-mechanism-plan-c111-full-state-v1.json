@@ -1,0 +1,15 @@
+{
+  "schema": "zuma-rl.pc-mechanism-audit-plan",
+  "version": 1,
+  "cases": [
+    {
+      "id": "c111-natural-full-state-mechanisms",
+      "manifest_path": "sources/c111-u3615-u4240-full-state-source-v1.json",
+      "memory_probe_path": "formal-full-state-c111-natural-u3615-u4240-v1/attempt-01/memory-probe.json",
+      "window": {
+        "start_update": 3615,
+        "end_update": 4240
+      }
+    }
+  ]
+}

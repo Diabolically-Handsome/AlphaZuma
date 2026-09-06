@@ -1,0 +1,99 @@
+{
+  "schema": "zuma-rl.pc-front-insertion-render-settled-late-arm-failure-audit",
+  "version": 1,
+  "id": "c73-front-insertion-late-arm-second-run-startup-boundary-failure",
+  "created_utc": "2026-08-03T18:47:27Z",
+  "classification": "invalidated-infrastructure-failure-before-second-run-board-anchor",
+  "gate_effect": "none",
+  "parent_execution_binding": {
+    "path": "diagnostics/c73-front-insertion-render-settled-late-arm-execution-binding-v1.json",
+    "sha256": "sha256:1339d8d8c6d15f7dfa036784e983322476085d58a5dc36167ffd83a7e8ae24b3"
+  },
+  "session": {
+    "root": "D:/ZumaGolden/campaign-c73-natural-win-v8-front-insertion-render-settled-late-arm-u3569-u3710",
+    "plan_sha256": "sha256:993e77599421c269b9a8a53190fd7a88ef565770cd5c2c0221f872cb519375d6",
+    "collection_failure_sha256": "sha256:5c25b1eda643b1d648b613dfbe90e36d6e873871c42a074b5c326814b0fc4b33",
+    "collection_failure_code": "trace_exited_before_capture"
+  },
+  "run_r1": {
+    "status": "complete-diagnostic-only-because-pair-failed",
+    "process_id": 42880,
+    "strict_replay_sha256": "sha256:674ba2d24e5140b5d1f75c07a0c340086b20a821c0adb55df87ab83440ae99e2",
+    "strict_replay_failure_count": 0,
+    "strict_replay_last_update": 10536,
+    "actual_observer_arm_update": 3566,
+    "mean_poll_hz": 4966.883159584266,
+    "p99_poll_interval_ns": 205600,
+    "skipped_draw_increments": 0,
+    "capture_frame_count": 90,
+    "capture_metadata_sha256": "sha256:ddfb1197e51a14816a27314e19b440e9daed62145ee826dcd1e1d19987f7df4d",
+    "frames_csv_sha256": "sha256:6f7480183c3e894e636b8a04fb9612f2bf063e279876e5e0e95765342243df4f",
+    "framework_poll_sha256": "sha256:be5e92b5fb521a1ccec0a3f5d6fb9b1ed1a29dc6944e156f119b5f39a19aca30",
+    "posthoc_diagnostic_render_settled_map_sha256": "sha256:00af4c181fa3213be538dce29cba2475f380dc8fe9c9d6da4e11df349f604cd7",
+    "assigned_update_range": [
+      3643,
+      3697
+    ],
+    "reuse_for_certification_forbidden": true
+  },
+  "run_r2_failure": {
+    "process_id": 55808,
+    "strict_replay_sha256": "sha256:276cd9c37595a11716f4c61c14ce9ab507a4fd6d06dd72ba3fb284e326a0878e",
+    "failure_update": 246,
+    "failure": "command start is absent from the offline DMO: 911",
+    "boundary_failure_count": 1,
+    "board_anchor_update": 3121,
+    "failed_before_board_anchor": true,
+    "failed_before_observer_arm": true,
+    "capture_started": false,
+    "interpretation": "The second strict replay rejected an extra startup-phase short command at bit position 911. This occurred 2875 updates before the board anchor and 3320 updates before the observer arm, so it cannot test or falsify the late-arm hypothesis."
+  },
+  "late_arm_hypothesis_diagnostic": {
+    "status": "strongly-supported-by-one-run-not-pair-confirmed",
+    "method": "render-settled same-update masked-BGR comparison using the independently derived C64 66-pixel compositor-edge mask",
+    "mask_source_session": "D:/ZumaGolden/campaign-c64-natural-win-v8-affinity1-physicalcore1-5khz-drawpoll-u4180-4380",
+    "mask_anchor_update": 4250,
+    "mask_sha256": "sha256:5e88cfacf441a56a5de6636fd3fe1259c9c844fc8494a992655d92e3a970530b",
+    "mask_pixel_count": 66,
+    "target_update_range": [
+      3664,
+      3684
+    ],
+    "c73_r1_vs_c69_r1_masked_exact_target_updates": 21,
+    "c73_r1_vs_c69_r2_masked_exact_target_updates": 21,
+    "c73_r1_vs_c71_r1_masked_exact_target_updates": 0,
+    "c73_r1_vs_c71_r2_masked_exact_target_updates": 0,
+    "c73_r1_vs_c69_r1_common_masked_exact_updates": {
+      "exact": 52,
+      "common": 52,
+      "range": [
+        3643,
+        3694
+      ]
+    },
+    "u3664_full_frame_c73_vs_c69_mismatched_pixels": 66,
+    "u3664_full_frame_c73_vs_c69_maximum_channel_delta": 3,
+    "u3664_full_frame_difference_bounds_xyxy": [
+      0,
+      588,
+      800,
+      600
+    ],
+    "interpretation": "The only C73 run reaching the target returned exactly to the C69 natural gameplay pixels once the independently frozen compositor-edge mask is applied. This supports a same-recipe fresh retry but is not itself certifying pair evidence."
+  },
+  "restoration": {
+    "host_pre_snapshot_sha256": "sha256:815b190dd2caf1cdba09dca8b1a1af5f9323e9c1be1ac250cf76b7ee7e9076a3",
+    "host_restored_snapshot_sha256": "sha256:b4142c8e38524cbe743efdbc04baca2db7374599b7db000fc5a265831b1a14d9",
+    "host_pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "host_restored_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "game_process_remaining": false
+  },
+  "decision": {
+    "c73_status": "INVALIDATED",
+    "may_not_be_packaged": true,
+    "may_not_be_retried_in_place": true,
+    "may_not_receive_front_insertion_gate_credit": true,
+    "next_attempt_requires_fresh_session": true,
+    "next_attempt_must_be_semantically_identical_to_c73": true
+  }
+}

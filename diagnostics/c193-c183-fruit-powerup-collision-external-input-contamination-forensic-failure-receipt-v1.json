@@ -1,0 +1,141 @@
+{
+  "schema": "zuma-rl.pc-gameplay-mtrand-call-trace-forensic-contamination-failure-receipt",
+  "version": 1,
+  "status": "FAIL_CONTAMINATED",
+  "created_utc": "2026-08-10T16:14:09.2653585Z",
+  "preregistration": {
+    "artifact": "diagnostics/c193-c183-fruit-powerup-collision-forensic-mtrand-trace-preregistration-v1.json",
+    "artifact_bytes": 6106,
+    "artifact_sha256": "sha256:9ba67cf0acc130e64fe905f3c9958c09baaf718aef42063888ea628093a4a9c5"
+  },
+  "formal_decision": {
+    "collector_attempt_status": "INVALID",
+    "error": "formal_external_input_guard_failed",
+    "error_type": "FormalInputContaminationError",
+    "external_input_guard_status": "FAIL",
+    "external_event_count": 1239,
+    "stored_external_event_count": 64,
+    "stored_external_event_device": "mouse",
+    "stored_external_event_action": "move",
+    "stored_external_event_injected": false,
+    "keyboard_or_click_event_observed_in_stored_sample": false,
+    "privacy_policy": "no_key_identity_text_or_pointer_coordinates_recorded",
+    "collector_self_test_event_count": 8,
+    "collector_self_tests_passed": true,
+    "pc_golden_credit": false,
+    "proof_derivation_for_certification_forbidden": true,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  },
+  "retained_forensic_artifacts": {
+    "attempts": {
+      "path": "D:/ZumaGolden/diagnostics/c193-c183-forensic-source-bound-rng-trace-u8213-u8260-v1/attempts.json",
+      "bytes": 229,
+      "sha256": "sha256:39770be647e2c36a6645cc405ff9ba9f644f47d46ad0d69502bd7bd17032cb9d"
+    },
+    "external_input_guard": {
+      "path": "D:/ZumaGolden/diagnostics/c193-c183-forensic-source-bound-rng-trace-u8213-u8260-v1/attempt-01/external-input-guard.json",
+      "bytes": 6291,
+      "sha256": "sha256:a23780312e1cbdfd7a3c4f3d811b2aaac0f11a52aedf23d98879310de28b0596"
+    },
+    "call_trace": {
+      "path": "D:/ZumaGolden/diagnostics/c193-c183-forensic-source-bound-rng-trace-u8213-u8260-v1/attempt-01/global-rng-call-trace.json",
+      "bytes": 2873672,
+      "sha256": "sha256:3b1f70903302b358415008fcb59db659c2f170bf3a97b89dbc90a2538d6b62a2"
+    },
+    "trajectory_index": {
+      "path": "D:/ZumaGolden/diagnostics/c193-c183-forensic-source-bound-rng-trace-u8213-u8260-v1/attempt-01/trajectory/index.json",
+      "bytes": 559659,
+      "sha256": "sha256:bf03b58cdf07435ad9520c5d8911050acffd00e9d8125ffc78a28a5190b985c3"
+    },
+    "alignment": {
+      "path": "D:/ZumaGolden/diagnostics/c193-c183-forensic-source-bound-rng-trace-u8213-u8260-v1/attempt-01/global-rng-call-trace-alignment.json",
+      "bytes": 412004,
+      "sha256": "sha256:2176f3bebb1ffa83e3717d9a04b0405abef3840d273d7b645fbc6dd05c3339a8"
+    },
+    "source_overlap": {
+      "path": "D:/ZumaGolden/diagnostics/c193-c183-forensic-source-bound-rng-trace-u8213-u8260-v1/attempt-01/c111-compact-overlap-verification.json",
+      "bytes": 1355,
+      "sha256": "sha256:4b6a7f258f86e181bfb1e8814f05a7ae60bb275ba128224d1aeb913e6402332d"
+    },
+    "strict_replay": {
+      "path": "D:/ZumaGolden/diagnostics/c193-c183-forensic-source-bound-rng-trace-u8213-u8260-v1/attempt-01/strict-replay.json",
+      "bytes": 55156,
+      "sha256": "sha256:877b33fc8b2c1c0733fd87cc016424ab60961f043d2504c892d435b442164744"
+    }
+  },
+  "forensic_results": {
+    "trajectory_tick_count": 48,
+    "trajectory_transition_count": 47,
+    "call_trace_status": "PASS",
+    "call_trace_stop_reason": "stop_requested",
+    "call_count": 3587,
+    "alignment_status": "PASS",
+    "alignment_exact_transition_count": 47,
+    "source_overlap_status": "PASS",
+    "source_overlap_compact_exact_tick_count": 48,
+    "source_overlap_mtrand_exact_tick_count": 48,
+    "natural_recording_trace": {
+      "path": "D:/ZumaGolden/record-c181a1-fruit-bomb-cycle-alignment-v1/global-mtrand-calls.json",
+      "bytes": 12811409,
+      "sha256": "sha256:8d2b3a49094507d519ed74b5953db29fdff2d6e73b53ef9e2a435c32e359281b"
+    },
+    "natural_window_call_count": 3587,
+    "natural_window_fields_compared": [
+      "framework_update",
+      "caller",
+      "output",
+      "pre_index",
+      "post_index",
+      "pre_state_sha256"
+    ],
+    "natural_window_mismatch_count": 0,
+    "natural_window_exact": true,
+    "caller_counts": {
+      "0x0040ae62": 2504,
+      "0x0040cadf": 7,
+      "0x0040cbc0": 7,
+      "0x00454c4e": 1,
+      "0x0065b821": 9,
+      "0x00907084": 230,
+      "0x0090715d": 107,
+      "0x00907222": 31,
+      "0x0090739c": 107,
+      "0x009073ab": 107,
+      "0x00907458": 107,
+      "0x00907462": 107,
+      "0x009074ee": 107,
+      "0x00909626": 64,
+      "0x0090972f": 46,
+      "0x0090973e": 46
+    },
+    "stack_partition": {
+      "score_digit_transition": 14,
+      "pi_effect_particle_update": 9,
+      "shadow_canopy_animation": 2,
+      "pil_particle_emitter_update_candidate": 3562,
+      "unpartitioned": 0,
+      "generic_0x0040ae62_primary_0x00901e46": 401,
+      "generic_0x0040ae62_particle_movable_pair_0x009022ec_0x0090dcd5": 2102,
+      "generic_0x0040ae62_shadow_stack": 1,
+      "new_direct_pil_callers": 1059
+    },
+    "classification_status": "FORENSIC_HYPOTHESIS_CONFIRMED_PENDING_PREREGISTERED_VERIFIER_QUALIFICATION_AND_FRESH_TRACE"
+  },
+  "host_restoration": {
+    "snapshot": "D:/ZumaGolden/diagnostics/c193-host-post-v1.json",
+    "snapshot_bytes": 33118,
+    "snapshot_sha256": "sha256:adce6eeeaa0ba3787ef1516438c2f9b5bf3e88ac59038d31c9910793a9feddbb",
+    "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "residual_game_process_count": 0,
+    "exact_host_restore": true
+  },
+  "next_action": {
+    "freeze_verifier_extension_before_edit": true,
+    "qualify_static_and_dynamic_fail_closed_classification": true,
+    "reverify_immutable_legacy_proof_byte_semantically": true,
+    "require_fresh_zero_external_input_confirmatory_trace": true,
+    "c193_may_not_be_reclassified_after_the_fact": true
+  }
+}

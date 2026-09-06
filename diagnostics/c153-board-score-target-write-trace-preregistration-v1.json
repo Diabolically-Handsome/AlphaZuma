@@ -1,0 +1,123 @@
+{
+  "schema": "zuma-rl.retail-board-score-target-write-trace-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_IMPLEMENTATION_AND_OUTPUT",
+  "created_utc": "2026-08-10T10:44:55.0483796Z",
+  "purpose": "Discover the exact pinned-runtime instruction path that reinitializes a lost level by watching the anchored Board's low-frequency score-target field for writes, instead of guessing a reset function entry.",
+  "classification": "diagnostic-only-read-only-data-watchpoint-no-gate-credit",
+  "trigger": {
+    "c152_failure_receipt_sha256": "sha256:d5e058d100a8aee4b92497d07703f036733ee72598b356c5779ef75d35951901",
+    "c152_trace_sha256": "sha256:b4582b9008cdda7163d4900f51a8ec67d5cc37696b75fca05d0f637ecaaec4b3",
+    "finding": "The natural-loss sequence completed and changed target 9650 to 9616 on the same Board, but candidate entry 0x00419A90 had zero hits. A field watchpoint is required to identify the actual writer without another entry guess."
+  },
+  "runtime_identity": {
+    "path": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+    "bytes": 6657328,
+    "sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20"
+  },
+  "frozen_source_boundary": {
+    "address": "0x0065B81C",
+    "instruction_hex": "e86fbcfbff",
+    "semantic_return": "0x0065B821",
+    "first_active_board_candidate_exactly_once": true,
+    "source_board_score": 7950,
+    "source_board_score_target": 9650,
+    "source_board_address_is_discovered_per_run": true
+  },
+  "frozen_data_watchpoint": {
+    "field": "Board+0x108 score_target",
+    "address_formula": "source_board_address + 0x108",
+    "address_alignment_bytes": 4,
+    "debug_register_slot": 0,
+    "dr7_rw0": "write_only_01b",
+    "dr7_len0": "four_bytes_11b",
+    "dr7_slot_zero_control_nibble": "0xD",
+    "maximum_simultaneous_hardware_breakpoints": 1,
+    "trigger_semantics": "x86 data breakpoint is observed after the writing instruction completes",
+    "process_memory_writes": 0
+  },
+  "per_write_capture": {
+    "required": [
+      "write order and perf counter",
+      "watched address",
+      "post-instruction EIP and debug exception address",
+      "all general registers and EFlags",
+      "32-byte code window centered around the post-instruction EIP",
+      "64 bytes of stack from ESP",
+      "active Board address, native time, score, score target, and curve-plan-exhausted flag",
+      "previous observed score target and post-write score target"
+    ],
+    "maximum_write_events": 16,
+    "same_active_board_as_source_required": true
+  },
+  "diagnostic_completion": {
+    "source_anchor_count": 1,
+    "minimum_target_write_count": 1,
+    "complete_when_same_board_post_write_target_is_positive_and_differs_from_source_target": true,
+    "source_target": 9650,
+    "post_write_native_clock_and_target_values_are_recorded_observations": true,
+    "exact_writer_instruction_is_discovered_from_post_eip_and_code_window_not_selected_as_a_pass_threshold": true,
+    "hardware_breakpoint_restored": true,
+    "debugger_detach_error": null,
+    "process_memory_mutation": false,
+    "host_state_restored_exactly": true
+  },
+  "static_writer_context_not_acceptance_threshold": [
+    {"instruction": "0x00411B71", "post_eip": "0x00411B7B", "bytes": "c78608010000ffffff7f"},
+    {"instruction": "0x00411B8D", "post_eip": "0x00411B93", "bytes": "899608010000"},
+    {"instruction": "0x00411B95", "post_eip": "0x00411B9F", "bytes": "c7860801000000000000"},
+    {"instruction": "0x00412EED", "post_eip": "0x00412EF3", "bytes": "899f08010000"},
+    {"instruction": "0x004BE51E", "post_eip": "0x004BE524", "bytes": "899e08010000"},
+    {"instruction": "0x004C0ADA", "post_eip": "0x004C0AE0", "bytes": "898208010000"}
+  ],
+  "preimplementation_code": {
+    "tools/trace_popcap_gameplay_mtrand.py": "sha256:5d66b5bd78241e834ef8feed5d06b8150ce21b7cdbbec256e42a515ae736d9b8",
+    "tools/record_autoplay_zuma.py": "sha256:a5f305ff8174ea6c5eb87abdc4cb0674e711f7e5e1008edcb36c7b26b5e7ae17",
+    "tests/test_record_autoplay_zuma.py": "sha256:a75f6cca27b0ec69e89db699ac1cab0a7dab321ef2c15b015890c63f10f0b30f",
+    "tools/autoplay_live_zuma.py": "sha256:8cfa18256a4e699c5fe131db6e1e4b815ec4698c2150c7508ad40435884703f2"
+  },
+  "implementation_boundary": {
+    "allowed": [
+      "Add a board_global_precall_and_target_write trace kind to the existing tracer and recorder.",
+      "Add an explicit DR0 four-byte write-watchpoint retarget helper and deterministic tests for its DR7 encoding and restoration.",
+      "After the source anchor, compute the watched address only from that run's source Board plus the frozen 0x108 offset.",
+      "Collect no more than sixteen writes and stop on the first positive target different from the source target.",
+      "Reuse verified-foreground navigation and exact source-anchor monitor derivation."
+    ],
+    "forbidden": [
+      "Any process-memory write, software breakpoint, gameplay action, swap, fruit shot, or post-output target selection.",
+      "Changing the natural-loss v3 predicate or provenance validator before c153 output.",
+      "Treating a timeout, score-target change without the data watchpoint, or a static candidate address as c153 PASS.",
+      "Fidelity Gate credit, Training Gate credit, or training start from c153."
+    ]
+  },
+  "run": {
+    "id": "c153a1",
+    "output_root": "D:/ZumaGolden/record-c153a1-idle-natural-loss-target-write-v1",
+    "output_root_absent_at_freeze": true,
+    "maximum_started_attempts": 1,
+    "runtime_executable": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+    "changedir": "D:/SteamLibrary/steamapps/common/Zuma's Revenge",
+    "prestate_dir": "D:/ZumaGolden/session-20260728-203153/native-windowed-record-001-prestate-reconstructed",
+    "expected_score_target": 9650,
+    "minimum_entry_score": 7000,
+    "maximum_gameplay_seconds": 180.0,
+    "expected_outcome": "natural_loss",
+    "gameplay_policy": "idle",
+    "fruit_policy": "ignore",
+    "mtrand_trace_kind": "board_global_precall_and_target_write",
+    "navigation_updates": [1622, 2422, 3108],
+    "navigation_points": [[400.0, 533.0], [633.0, 281.0], [399.0, 456.0]],
+    "prelaunch_cursor_screen_point": [100, 100],
+    "retail_process_count_at_freeze": 0,
+    "host_state_restore_required": true
+  },
+  "decision_rule": {
+    "pass": "Retain c153a1 and freeze a separate exact writer/call-path semantic protocol from the observed post-EIP, stack, and Board state before implementation or formal source recording.",
+    "fail": "Retain c153a1 and localize the first structural failure without retry-selection or threshold weakening.",
+    "c153a1_may_receive_fidelity_credit": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "schema": "zuma-rl.alphazuma-55-configured-successor-independent-audit",
+  "version": 1,
+  "status": "PASS",
+  "audited_utc": "2026-08-16T05:31:56.231671+00:00",
+  "controller_result": "COMPLETE_NO_PROMOTION",
+  "formal_seed_consumption": "NONE",
+  "promotion_gate": {
+    "actual": {
+      "wins": 0,
+      "cleared_levels": 0,
+      "total_score": 52340,
+      "median_winning_ticks": null,
+      "model_bytes": 9449142
+    },
+    "required": {
+      "selected_model_must_be_one_of": [
+        "polar-intent-autonomy-round-00",
+        "polar-intent-autonomy-round-01",
+        "polar-intent-autonomy-round-02",
+        "polar-intent-autonomy-round-03"
+      ],
+      "minimum_cleared_levels": 35,
+      "minimum_wins": 35
+    },
+    "passed": false
+  },
+  "artifacts": {
+    "master": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-autonomy-successor-s99081603-preregistration-v1.json",
+      "sha256": "sha256:96c4edcbdf9416efbc83980221d3a0a4e260b13fd9d859029ac8d8de3f10ceec"
+    },
+    "controller": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_configured_successor_certification_autonomy_v1.py",
+      "sha256": "sha256:c3ed8d8f7544eb43c6634ceca2de114b408d42c38bd687a270a234c40de3da78"
+    },
+    "promotion_decision": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-autonomy-successor-s99081603-v1/controller/promotion-decision.json",
+      "sha256": "sha256:1430aa6b64e1cb8fb32a1c218a5aaea00df602c261f69c75c914244bbc21c871"
+    },
+    "engineering_audit": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-autonomy-validation-s99081602-audit-v1.json",
+      "sha256": "sha256:d303d8c9cf9eb05bb09364bfffd4b2f0e5a9a9dc01b023be5811ae8b46b74585"
+    }
+  },
+  "checks": [
+    "engineering_matrix_recomputed",
+    "promotion_ranking_recomputed",
+    "promotable_inventory_recomputed",
+    "successor_seed_roots_absent"
+  ],
+  "ranking_tie_break_semantics": "earlier_manifest_round_first",
+  "engineering_candidate_count": 5
+}

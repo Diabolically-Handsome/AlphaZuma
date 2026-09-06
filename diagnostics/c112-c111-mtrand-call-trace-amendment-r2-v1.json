@@ -1,0 +1,52 @@
+{
+  "schema": "zuma-rl.pc-gameplay-mtrand-call-trace-preregistration-amendment",
+  "version": 1,
+  "id": "c112-c111-u3615-u4240-independent-call-trace-r2",
+  "status": "FROZEN_BEFORE_RETRY_OUTPUTS",
+  "parent": {
+    "artifact": "diagnostics/c112-c111-mtrand-call-trace-amendment-r1-v1.json",
+    "artifact_sha256": "sha256:beb976a47a0a5ddc94652dba911708d9804774c85650fdf027d9398985d90adb"
+  },
+  "accepted_segment": {
+    "start_update": 3615,
+    "end_update": 3800,
+    "artifact": "D:/ZumaGolden/diagnostics/c112-rng-trace-u3615-u3800-r1-v1",
+    "collector_status": "PASS",
+    "formal_c111_global_mtrand_mismatch_count": 0,
+    "retained_tick_count": 186
+  },
+  "failed_attempt": {
+    "artifact": "D:/ZumaGolden/diagnostics/c112-rng-trace-u3800-u4013-r1-v1/attempts.json",
+    "status": "RETAINED_NOT_USABLE",
+    "attempt_count": 3,
+    "common_error": "discovered_score_not_stable",
+    "cause": "at update 3800 the retail Board score is 7980 while its normal rolling displayed score remains 7950; the discovery mode intentionally requires equality",
+    "rng_trace_started": false
+  },
+  "host_restoration_check": {
+    "artifact": "D:/ZumaGolden/diagnostics/c112-trace-host-after-failed-segment2-v1.json",
+    "artifact_sha256": "sha256:987a5364227902cd10b81b35b4e73950b91387d807617841041896a89ccb404f",
+    "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "equals_original_c112_prestate": true
+  },
+  "single_protocol_change": {
+    "remove_flag": "--discover-score",
+    "add_arguments": {
+      "--int32-value": 7980,
+      "--displayed-score-value": 7950
+    },
+    "applies_to_segments_starting_at": [
+      3800,
+      4013
+    ],
+    "source": "the immutable formal C111 full-state frames at updates 3800 and 4013",
+    "allows_arbitrary_score_display_mismatch": false,
+    "state_or_rng_mutation_added": false
+  },
+  "retry_outputs": [
+    "D:/ZumaGolden/diagnostics/c112-rng-trace-u3800-u4013-r2-v1",
+    "D:/ZumaGolden/diagnostics/c112-rng-trace-u4013-u4240-r2-v1"
+  ],
+  "acceptance_contract": "unchanged_from_parent",
+  "retry_output_paths_absent_at_freeze": true
+}

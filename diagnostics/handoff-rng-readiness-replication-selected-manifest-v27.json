@@ -1,0 +1,29 @@
+{
+  "schema": "zuma-rl.pc-handoff-rng-readiness-replication-selected-manifest",
+  "version": 27,
+  "status": "FROZEN_FIRST_VALID_ATTEMPTS",
+  "session_nonce": "88bc188677184850b4244a5521d39db0",
+  "parent_preregistration_sha256": "sha256:d82757655e8306c50d71374db1dfaade98db5d4cc4eb7bbe69c4fbbf4bdef028",
+  "runs": [
+    {"run":"g01","attempts":1,"selected":1,"probe_sha256":"sha256:bf00dfffbc53a3c28db39df58a3b5de940da455098ccf22e52f4dd8d4cfbd790","wait":"TIMEOUT","initial":1548,"final":1548,"polls":167,"boundary":1639,"exact":false},
+    {"run":"g02","attempts":1,"selected":1,"probe_sha256":"sha256:9515c0b6ef0fb3a322e1f9fc1518a493902a81777a2d0de054412a09aa32e54c","wait":"TARGET_REACHED","initial":1563,"final":1563,"polls":0,"boundary":1662,"exact":true},
+    {"run":"g03","attempts":3,"selected":3,"probe_sha256":"sha256:16f2efba671339f65ca0463cb33f6793888dc46604f2567ef7360c19b88a34c2","wait":"TARGET_REACHED","initial":1563,"final":1563,"polls":0,"boundary":1662,"exact":true},
+    {"run":"g04","attempts":1,"selected":1,"probe_sha256":"sha256:0c060dcdae8192795fb4ee4e61ade830db23e678972623af1f40d65c301e0b3c","wait":"TIMEOUT","initial":1542,"final":1542,"polls":165,"boundary":1640,"exact":false},
+    {"run":"g05","attempts":1,"selected":1,"probe_sha256":"sha256:1020f130bb51ad43ea7401e8232798bfbfad441b3b98f0fa15b47bf5ad8a78f2","wait":"TIMEOUT","initial":1562,"final":1562,"polls":165,"boundary":1662,"exact":true},
+    {"run":"g06","attempts":1,"selected":1,"probe_sha256":"sha256:6db2cb3c4057947b5be359926a525a367324aed6d82f1f45e5e40a29135b4bf0","wait":"TIMEOUT","initial":1562,"final":1562,"polls":166,"boundary":1662,"exact":true},
+    {"run":"g07","attempts":1,"selected":1,"probe_sha256":"sha256:82177940ff36261bfdb805918e0d4ac2bfcde8fbb9d6fde252f7b380759dcdb4","wait":"TIMEOUT","initial":1557,"final":1557,"polls":165,"boundary":1646,"exact":false},
+    {"run":"g08","attempts":2,"selected":2,"probe_sha256":"sha256:9632d78b4a4007bcccf51cf7d3c86ed7b7b57a1994870d9b26949ce86ff12044","wait":"TARGET_REACHED","initial":1563,"final":1563,"polls":0,"boundary":1662,"exact":true},
+    {"run":"g09","attempts":1,"selected":1,"probe_sha256":"sha256:ada47fc7e930bed4390b6a1d3fd4d295310016cbad7e02c187e9c963c5c91b23","wait":"TARGET_REACHED","initial":1563,"final":1563,"polls":0,"boundary":1662,"exact":true},
+    {"run":"g10","attempts":1,"selected":1,"probe_sha256":"sha256:2d056efad07c2d0d59a8ec2ce2fa7b691efe735072f5cab3db98c96da070b5ef","wait":"TARGET_REACHED","initial":1563,"final":1563,"polls":0,"boundary":1662,"exact":true},
+    {"run":"g11","attempts":1,"selected":1,"probe_sha256":"sha256:6fd5a7b434719fc112b825580b038f859241756358ee9fbf5344e641ed7d05da","wait":"TARGET_REACHED","initial":1563,"final":1563,"polls":0,"boundary":1662,"exact":true},
+    {"run":"g12","attempts":1,"selected":1,"probe_sha256":"sha256:44f9445d1e754844ce888fc890948ce8126507ab566785f702aa34dd3e14c437","wait":"TARGET_REACHED","initial":1563,"final":1563,"polls":0,"boundary":1662,"exact":true},
+    {"run":"g13","attempts":1,"selected":1,"probe_sha256":"sha256:abf636d3603966a48190f4fa5e2ca9544f920aaeac79507c9a11831a6b78c082","wait":"TARGET_REACHED","initial":1563,"final":1563,"polls":0,"boundary":1662,"exact":true},
+    {"run":"g14","attempts":1,"selected":1,"probe_sha256":"sha256:206ba99217a3127433f980b106e15283b35ae87d87e2214b93347fe0f5a1371c","wait":"TARGET_REACHED","initial":1563,"final":1563,"polls":0,"boundary":1662,"exact":true},
+    {"run":"g15","attempts":1,"selected":1,"probe_sha256":"sha256:654f0dd2b4c0eb6177711e20a7e149761e8fe7f0a300538e2a66aaf521a7767f","wait":"TARGET_REACHED","initial":1563,"final":1563,"polls":0,"boundary":1662,"exact":true},
+    {"run":"g16","attempts":1,"selected":1,"probe_sha256":"sha256:e9c0d9ed372438d90db6e7e7d3aa2bb138ebb1766a5c39be0b3d370e875ef800","wait":"TIMEOUT","initial":1557,"final":1557,"polls":166,"boundary":1646,"exact":false},
+    {"run":"g17","attempts":1,"selected":1,"probe_sha256":"sha256:06ccdcccd3922d080f2a807bd0c3637172620992a21c24f8d6a2e5f1b3cd83ea","wait":"TARGET_REACHED","initial":1563,"final":1563,"polls":0,"boundary":1662,"exact":true},
+    {"run":"g18","attempts":1,"selected":1,"probe_sha256":"sha256:931544c7ab6ecdfa959be0b6945a0189e93a74f7d55fb3e341547da182d11145","wait":"TARGET_REACHED","initial":1563,"final":1563,"polls":0,"boundary":1662,"exact":true},
+    {"run":"g19","attempts":1,"selected":1,"probe_sha256":"sha256:6d087d8df5d93bc91755f1e7d6f30925466d7b5fa986ff80f36063f517c017eb","wait":"TIMEOUT","initial":1562,"final":1562,"polls":166,"boundary":1662,"exact":true},
+    {"run":"g20","attempts":1,"selected":1,"probe_sha256":"sha256:2d2a118c84e1993fb9288f7e6c1715ba9d89dedf169fb99affedee118d2dc41d","wait":"TIMEOUT","initial":1562,"final":1562,"polls":165,"boundary":1662,"exact":true}
+  ]
+}

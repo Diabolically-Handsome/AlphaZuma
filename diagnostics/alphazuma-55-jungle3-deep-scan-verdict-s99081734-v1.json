@@ -1,0 +1,65 @@
+{
+  "schema": "alphazuma-55-record-scan-verdict",
+  "version": 1,
+  "written_utc": "2026-08-21T18:23:22Z",
+  "level": "Jungle3 (Adv 3, 'Echo Beach')",
+  "verdict": "HUMAN_RECORD_NOT_BROKEN_AI_TAS_BEST_IMPROVED",
+  "summary": "Deep golden scan (ranks 3001-30000, model = the 240-ep BC per the mean-tail-tradeoff rule): fastest 988 ticks = 9.88 s in TEN shots (seed 34689848), improving the Jungle3 AI-TAS best from 11.79 s; win rate 26494/27000 (98.1%). The 7.00 s human line stands (gap 1.41x, was 1.68x). The 30k golden shortlist is exhausted for this champion.",
+  "best": {
+    "ticks": 988,
+    "seconds_simulator": 9.88,
+    "seed": 34689848,
+    "shots": 10
+  },
+  "top_5": [
+    {
+      "seed": 34689848,
+      "ticks": 988,
+      "shots": 10,
+      "score": 2100
+    },
+    {
+      "seed": 13343984,
+      "ticks": 1005,
+      "shots": 14,
+      "score": 2300
+    },
+    {
+      "seed": 17191226,
+      "ticks": 1008,
+      "shots": 13,
+      "score": 2390
+    },
+    {
+      "seed": 31315276,
+      "ticks": 1083,
+      "shots": 16,
+      "score": 2080
+    },
+    {
+      "seed": 23180766,
+      "ticks": 1158,
+      "shots": 17,
+      "score": 2300
+    }
+  ],
+  "human_reference": {
+    "record": "0:07 RTA",
+    "runner": "LookingForDreams",
+    "date": "2023-06-25",
+    "source": "speedrun.com REST API",
+    "caveat": "simulator timing, RTA audit pending"
+  },
+  "convention": "AI-TAS (seed_list_tas); elite-human-v1 motor constraints; hold_ticks 4",
+  "champion_model_sha256": "sha256:d97178f5f8d6510c6a694c81c81ab2b8ad57676b8c1373a60f4d9c46a330785f",
+  "scan": {
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-record-jungle3-deep-s99081734-v1",
+    "completion_sha256": "sha256:863a42e38f7bbcf02a0bf0d60875b05e2f89810504bbe73691f09f021bbe565c"
+  },
+  "next_levers_assessed": [
+    "ranks 30001-100000 deep scan (J4 precedent shaved 9% - projects to ~9.0 s, likely still short of 700 ticks; 6-9 GPU-hours)",
+    "a LARGE polish (J10-class, -20% E[t]) might shift the tail unlike round 2's modest -10.8%; needs a fresh prereg and budget",
+    "hold_ticks sweep at record time (untested on Jungle3)"
+  ],
+  "formal_seed_consumption": false
+}

@@ -1,0 +1,127 @@
+{
+  "schema": "zuma-rl.ppo-diagnostic-preregistration",
+  "version": 1,
+  "id": "ppo-jungle2-c91-c92-initial-baseline-s20260804-v2",
+  "status": "FROZEN_BEFORE_TRAINING",
+  "created_utc": "2026-08-04T01:28:48.361Z",
+  "question": "After qualifying a non-truncating actor capacity and failed-worker cleanup, does one capped PPO run show an initial paired-seed learning signal in the original-data Jungle2 diagnostic environment?",
+  "classification": "diagnostic_non_transferable_initial_training",
+  "predecessor": {
+    "run_id": "ppo-jungle2-c91-c92-initial-baseline-s20260804-v1",
+    "failure_audit": "diagnostics/ppo-jungle2-c91-c92-initial-baseline-s20260804-v1-failure-audit.json",
+    "failure_audit_sha256": "sha256:cc30e8192f322b8cb51c5f8433335096f060098f84a40dcb95fda3378889d75e",
+    "status": "ABORTED_FAIL_CLOSED_OBSERVATION_CAPACITY",
+    "model_result_consumed": false,
+    "selection_from_model_performance": false
+  },
+  "capacity_qualification": {
+    "path": "diagnostics/jungle2-actor-capacity-768-qualification-v1.json",
+    "sha256": "sha256:487a4dd8cfc03a7d0bc7db3c5446152867b3ca48e9d00ec828c5166fd87d2755",
+    "selected_max_balls": 768,
+    "stress_peak_visible_balls": 490,
+    "overflow_behavior": "fail_closed_without_silent_truncation"
+  },
+  "pc_golden_dependency": {
+    "case_id": "jungle2_natural_front_insertion_c91_c92_exact_step_v1",
+    "manifest": "D:/ZumaGolden/cases/jungle2-natural-front-insertion-c91-c92-exact-step-v1/manifest.json",
+    "manifest_sha256": "sha256:5b1685882984d00414c26e65a6c83f665845452ff68eb49599e423e7e54363bc",
+    "verification": "D:/ZumaGolden/cases/jungle2-natural-front-insertion-c91-c92-exact-step-v1.verification.json",
+    "verification_sha256": "sha256:74c50253bae90c5445f5fa2029ac52cf64f28b67ae15b13ceb3329fb1a2aaadf",
+    "verification_status": "PASS",
+    "used_as_training_data": false,
+    "role": "stage_readiness_evidence_only"
+  },
+  "gate_boundary": {
+    "fidelity_gate": "CLOSED",
+    "transfer_training": false,
+    "acknowledge_fidelity_gate": true,
+    "maximum_effective_timesteps": 100000,
+    "claims_not_authorized": [
+      "original_game_transfer",
+      "fidelity_gate_open",
+      "large_scale_training",
+      "policy_superiority"
+    ]
+  },
+  "frozen_training": {
+    "algorithm": "PPO",
+    "policy": "MlpPolicy",
+    "environment": "ZumaRevenge-v0",
+    "level": "Jungle2",
+    "difficulty": "normal",
+    "profile_mode": "tutorials_completed",
+    "action_mode": "factorized",
+    "aim_bins": 180,
+    "frame_skip": 1,
+    "max_ticks": 12000,
+    "max_balls": 768,
+    "seed": 20260804,
+    "requested_timesteps": 98304,
+    "effective_timesteps": 98304,
+    "num_envs": 8,
+    "rollout_steps": 512,
+    "batch_size": 1024,
+    "learning_rate": 0.0003,
+    "reward_scale": 0.01,
+    "entropy_coef": 0.001,
+    "gamma": 0.995,
+    "gae_lambda": 0.95,
+    "network": [256, 256],
+    "checkpoint_every": 16384,
+    "periodic_eval_every": 1000000,
+    "periodic_eval_episodes": 4,
+    "device": "cuda:0",
+    "cuda_visible_devices": "0",
+    "physical_gpu": "NVIDIA GeForce RTX 5090"
+  },
+  "paired_boundary_evaluation": {
+    "enabled": true,
+    "deterministic": true,
+    "episode_count_per_boundary": 4,
+    "seed": 20270804,
+    "same_seed_sequence_before_and_after": true,
+    "primary_descriptive_metrics": [
+      "mean_reward",
+      "episode_rewards",
+      "mean_episode_length",
+      "episode_lengths"
+    ],
+    "formal_significance_claim": false
+  },
+  "failure_resilience": {
+    "periodic_checkpoints": true,
+    "emergency_model_on_parent_visible_failure": true,
+    "machine_readable_failure_receipt": true,
+    "bounded_subprocess_cleanup": true
+  },
+  "fixed_inputs": {
+    "original_executable_sha256": "sha256:db85b891ba662a463d23251a376081386b47437c29248b21e2c10335a6f3eb50",
+    "original_main_pak_sha256": "sha256:02c7038e531c6b9d57ba114fd0e72a475ea51c7c62b1054678af38efd24a2e7d",
+    "train_py_sha256": "sha256:5a6d1a6a3c63253f2d675cf5584df157b4be497b0c3ead3314d77a18b5b976cb",
+    "revenge_env_py_sha256": "sha256:d3ede0b90e593ef346ec6c690f34a369cc9af8ac5ea37f17643f451563a99d9c",
+    "revenge_core_py_sha256": "sha256:d0c2b763734f8225299fea7c84acdb4307c65b82f02f2830353f6b262e13594c"
+  },
+  "qualification": {
+    "capacity_and_train_targeted_tests": "45 passed",
+    "full_suite": "1099 passed, 1 skipped, 1 warning",
+    "cuda_runtime": "torch 2.12.1+cu130",
+    "stable_baselines3": "2.9.0"
+  },
+  "output": {
+    "run_root": "D:/ZumaTraining/diagnostic-jungle2-c91-c92-baseline-s20260804-v2",
+    "absent_at_freeze": true,
+    "required_artifacts": [
+      "config.json",
+      "pretrain_evaluation.json",
+      "checkpoints",
+      "final_model.zip",
+      "posttrain_evaluation.json"
+    ]
+  },
+  "execution_rule": {
+    "maximum_runs_under_this_preregistration": 1,
+    "no_hyperparameter_selection_from_this_result": true,
+    "preserve_partial_artifacts_on_failure": true,
+    "interpretation": "Report the paired descriptive change and runtime honestly; regardless of outcome, do not treat this four-episode diagnostic as transfer certification."
+  }
+}

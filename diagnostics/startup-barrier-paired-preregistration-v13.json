@@ -1,0 +1,194 @@
+{
+  "schema": "zuma-rl.pc-startup-initial-atomic-barrier-paired-preregistration",
+  "version": 13,
+  "status": "FROZEN_BEFORE_RUN_OUTPUTS",
+  "created_utc": "2026-08-05T16:41:10.863Z",
+  "id": "startup-initial-atomic-barrier-paired-v13",
+  "question": "Holding the update-1702 debugger handoff and the read-only update-3121 boundary observer fixed, does the initial wrapper-entry-through-first-return atomic barrier consistently change the natural global-MTRand draw deficit?",
+  "evidence_classification": "diagnostic_paired_factor_localization_no_pc_golden_credit",
+  "trigger": {
+    "outcome": "diagnostics/global-mtrand-boundary-observer-smoke-outcome-v12.json",
+    "outcome_sha256": "sha256:9d33312b9e1e2bb8bfb895c420a537548364e9dfc80b6443d8839f7162fc81bd",
+    "status": "PASS_TOOL_QUALIFIED_SEMANTIC_RESULT_QUARANTINED"
+  },
+  "fixed_inputs": {
+    "collector_plan": {
+      "path": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/plan.json",
+      "sha256": "sha256:5a7ba58eccd7e0d1b1008ac089cce59c167a26ba8bc359ef76f3dcd2bea8c0db"
+    },
+    "playback_dmo": {
+      "path": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/inputs/input.dmo",
+      "sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7"
+    },
+    "replay_pre_snapshot": {
+      "path": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/protocol/pre.json",
+      "sha256": "sha256:06d243f34ecf209c6296659fd4cc3c0a6c299c203cc8b4e342f55cc001c32842"
+    },
+    "host_restore_snapshot": {
+      "path": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/safety/host-pre.json",
+      "sha256": "sha256:c48bd69be03fc6e2fdf1a400b571f0f0294a5fadda1c48e08c1bd6d1dd093f46",
+      "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061"
+    },
+    "global_mtrand_source_trace": {
+      "path": "D:/ZumaGolden/autoplay-jungle2-natural-win-v8-globaloracle-20260802-0250/global-mtrand-calls.json",
+      "sha256": "sha256:4de39ac6a0e800323949e0095fc2fd3e924ea41a670ceb5d75a0ecb25b5c15a4",
+      "seed": 23557968,
+      "initial_semantic_sha256": "sha256:09b5f5c607785d1093db75581a2c3655a39d533d2ceec0124974996918b544d4"
+    },
+    "runtime_payload": {
+      "path": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+      "sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20"
+    }
+  },
+  "fixed_common_run_contract": {
+    "maximum_startup_attempts_per_root": 3,
+    "probe_update": 3425,
+    "slowdown_update": 3415,
+    "score_at_probe": 7950,
+    "displayed_score_at_probe": 7950,
+    "trajectory_mode": "rng",
+    "trajectory_end_update": 3425,
+    "trace_detach_update": 1702,
+    "trace_reattach_update": 3501,
+    "global_mtrand_call_start_after_update": 1702,
+    "global_mtrand_call_end_at_update": 3121,
+    "global_mtrand_seed": 23557968,
+    "global_mtrand_maximum_draws": 100000,
+    "global_mtrand_sync_timeout_seconds": 900,
+    "observe_boundary_only": true,
+    "diagnostic_disable_source_bound_board_anchor": true,
+    "startup_priority_bias": false,
+    "dr1_watch": false,
+    "process_affinity_override": null,
+    "skip_repaint_guard": true,
+    "skip_frozen_snapshot": true,
+    "source_expected_boundary": {
+      "framework_update": 3121,
+      "caller": 6666273,
+      "caller_hex": "0x0065b821",
+      "source_order": 309,
+      "pre_draw_count": 1662,
+      "pre_index": 414,
+      "pre_state_sha256": "sha256:c0d2599105a0ba4ee7623f4991a704c0260548dbf7fc47b1041dbfd1e45e2422"
+    }
+  },
+  "arms": {
+    "A_NO_INITIAL_BARRIER": {
+      "initial_global_mtrand_oracle": false,
+      "initial_atomic_barrier": false
+    },
+    "B_INITIAL_ATOMIC_BARRIER": {
+      "initial_global_mtrand_oracle": true,
+      "initial_global_mtrand_seed": 23557968,
+      "initial_atomic_window": "wrapper_entry_through_first_source_call_return",
+      "required_initial_receipt": {
+        "status": "PASS_ALREADY_EXACT_ZERO_WRITE",
+        "atomic_window_completed": true,
+        "call_return_observed": true,
+        "bytes_written": 0,
+        "changed": false,
+        "other_threads_resumed_after_call_return": true
+      }
+    }
+  },
+  "paired_design": {
+    "pair_count": 3,
+    "fixed_execution_order": [
+      "A01_NO_INITIAL",
+      "B01_INITIAL_ATOMIC",
+      "B02_INITIAL_ATOMIC",
+      "A02_NO_INITIAL",
+      "A03_NO_INITIAL",
+      "B03_INITIAL_ATOMIC"
+    ],
+    "order_balance": "AB_BA_AB",
+    "independent_retail_process_per_run_root": true,
+    "restore_same_host_state_after_every_run_root": true,
+    "run_roots": {
+      "A01_NO_INITIAL": "D:/ZumaGolden/diagnostics/startup-barrier-paired-a01-no-initial-v13",
+      "B01_INITIAL_ATOMIC": "D:/ZumaGolden/diagnostics/startup-barrier-paired-b01-initial-atomic-v13",
+      "B02_INITIAL_ATOMIC": "D:/ZumaGolden/diagnostics/startup-barrier-paired-b02-initial-atomic-v13",
+      "A02_NO_INITIAL": "D:/ZumaGolden/diagnostics/startup-barrier-paired-a02-no-initial-v13",
+      "A03_NO_INITIAL": "D:/ZumaGolden/diagnostics/startup-barrier-paired-a03-no-initial-v13",
+      "B03_INITIAL_ATOMIC": "D:/ZumaGolden/diagnostics/startup-barrier-paired-b03-initial-atomic-v13"
+    }
+  },
+  "valid_run_acceptance": {
+    "collector_status": "PASS",
+    "observer_status": "PASS",
+    "observer_hit_count": 1,
+    "observer_expected_hit_count": 1,
+    "boundary_contract_match": true,
+    "draw_count_reconstruction": "PASS",
+    "process_memory_writes": 0,
+    "process_memory_mutation": false,
+    "state_correction_count": 0,
+    "hardware_breakpoint_restored": true,
+    "debugger_detach_error": null,
+    "handoff_main_thread_resumed": true,
+    "boundary_return_verified": true,
+    "persistent_file_modified": false,
+    "natural_source_exact": "MEASURED_NOT_AN_ACCEPTANCE_CRITERION"
+  },
+  "retry_contract": {
+    "maximum_attempts_per_root": 3,
+    "retain_every_attempt": true,
+    "retryable": "only infrastructure failure before a validated boundary-observer receipt exists",
+    "semantic_source_exact_or_deficit_never_triggers_retry": true,
+    "first_valid_boundary_observation_is_selected": true,
+    "post_boundary_failure_is_nonretryable": true
+  },
+  "analysis_plan": {
+    "draw_deficit": "1662 minus observed live pre-draw count",
+    "paired_effect": "B draw deficit minus A draw deficit within each numbered pair",
+    "barrier_consistent_additional_deficit": "all three paired effects are at least +1 draw",
+    "barrier_consistent_deficit_reduction": "all three paired effects are at most -1 draw",
+    "no_detectable_pairwise_effect": "all three paired effects are exactly zero",
+    "otherwise": "VARIABLE_OR_INCONCLUSIVE",
+    "initial_barrier_not_necessary_for_deficit": "all three A-arm draw deficits are greater than zero",
+    "detached_interval_implicated_in_both_arms": "all six draw deficits are greater than zero",
+    "minimum_valid_pairs": 3,
+    "no_threshold_changes_after_outputs": true
+  },
+  "decision_rule": {
+    "if_all_three_pairs_valid": "classify the paired barrier effect using the frozen analysis plan and select the next read-only thread-readiness localization",
+    "if_fewer_than_three_pairs_valid": "report INSUFFICIENT without transport or Gate credit",
+    "if_any_A_run_has_deficit": "the initial barrier cannot be the sole cause of the detached-interval deficit",
+    "pc_golden_credit": false,
+    "fidelity_gate_change": false,
+    "formal_transport_change": false,
+    "large_scale_training_start": false
+  },
+  "outputs": {
+    "host_pre": "D:/ZumaGolden/diagnostics/startup-barrier-paired-host-pre-v13.json",
+    "host_after_each_prefix": "D:/ZumaGolden/diagnostics/startup-barrier-paired-host-after-<run>-v13.json",
+    "host_post": "D:/ZumaGolden/diagnostics/startup-barrier-paired-host-post-v13.json",
+    "execution_binding": "diagnostics/startup-barrier-paired-execution-binding-v13.json",
+    "outcome": "diagnostics/startup-barrier-paired-outcome-v13.json"
+  },
+  "output_absence_at_freeze": {
+    "all_six_run_roots": true,
+    "host_pre": true,
+    "host_post": true,
+    "execution_binding": true,
+    "outcome": true
+  },
+  "tooling": {
+    "global_boundary_tool_sha256": "sha256:3d4b3a0285bbc26a0fc2ccce539652ada90d6af9b5be892ec3882b1f3bfbf8af",
+    "collector_sha256": "sha256:e6d3d45f19661b62ec7d50f996146192e2e6d582ff5f85b487300f481cd749d6",
+    "tracer_sha256": "sha256:6586859c0eab6d29673f2a8ca05b0c80f6b59c87b8c985cd24c50423ab72d10d",
+    "state_transaction_sha256": "sha256:b6f2b810dfa180f3368c368850eab57d4c2a1010067ea7de26e6cc1271fcd493",
+    "global_oracle_loader_sha256": "sha256:813ef37279e7b00bade0dc73ecdb405841fdaff5b85a5b85727eb059a0485269",
+    "global_boundary_test_sha256": "sha256:ab5d29f0c18e7b1090ccbbd36345f077bbf8699df41c518aeddcd812c0541e2d",
+    "collector_test_sha256": "sha256:9a96e8a6cf7c7bc96eb145629164f20d7437b7485efd28f9a2f7b3b9a1601d20",
+    "global_oracle_test_sha256": "sha256:50e3e2df66943f3bf5c3e331eca11302b1aa9a3e58882d8cf3a895732a2a4243",
+    "focused_tests": "PASS_60",
+    "native_full_suite": "PASS_1168_COLLECTED_EXIT_0"
+  },
+  "non_authorizations": [
+    "pc_golden_credit",
+    "fidelity_gate_change",
+    "formal_transport_change",
+    "large_scale_training_start"
+  ]
+}

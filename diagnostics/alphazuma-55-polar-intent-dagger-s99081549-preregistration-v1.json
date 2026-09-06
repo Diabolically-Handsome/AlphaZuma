@@ -1,0 +1,307 @@
+{
+  "schema": "zuma-rl.alphazuma-55-polar-intent-dagger-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_TRAINING",
+  "created_utc": "2026-08-15T23:05:12.093446+00:00",
+  "campaign_id": "alphazuma-55-polar-intent-dagger-s99081549-v1",
+  "objective": "Preserve corrected raw teacher intent labels while collecting supervision on mixed and student-only state distributions, so a single wide policy can recover after its own full55 mistakes.",
+  "decision_evidence_available_before_freeze": {
+    "effective_label_pollution": {
+      "raw_teacher_wait": 309492,
+      "effective_wait": 421533,
+      "intent_mask_relaxations": 112041,
+      "identity_check": "421533 - 309492 == 112041"
+    },
+    "raw_intent_first_pass": {
+      "teacher_wins": 54,
+      "teacher_attempts": 55,
+      "retained_samples": 39489,
+      "classification": "training collection evidence only"
+    },
+    "prior_effective_label_dagger": {
+      "offline_accuracy_improved": true,
+      "student_only_online_wins": 1,
+      "student_only_online_attempts": 55,
+      "classification": "consistent with label mismatch plus covariate shift"
+    }
+  },
+  "hypotheses": {
+    "alternative": "raw-intent labels on student-visited states prevent both wait-policy collapse and compounding recovery errors",
+    "null": "representation or optimization limits dominate, so corrected labels plus DAgger do not improve paired full55 coverage"
+  },
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "materialization_plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-dagger-s99081549-plan-v1.json",
+    "sha256": "sha256:360faa9d23d746b0978bbd5745c805ebc82dde53eb97bcf715bf48ad2083efc3"
+  },
+  "trainer": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_polar_intent_dagger_v1.py",
+    "sha256": "sha256:4f8dad5c8d5445261cfa1ee8e00743aa71c545f84f6ef3ebbb47631488202e01"
+  },
+  "implementation": {
+    "legacy_distillation_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55.py",
+      "sha256": "sha256:13ac1883fc9dc9541193dbca0da3b94fa91c7476e07873d22bec51a7a330b38a"
+    },
+    "settled_v3_distillation_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_settled_v3.py",
+      "sha256": "sha256:42e8c5274b4674c60b17d80470cbf29d5f4f09adc079f128f587f0e085f0a1be"
+    },
+    "polar_dagger_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_polar_dagger_v1.py",
+      "sha256": "sha256:90037e68004aa20480153ca884791ebd04d67d9d50dead65e031aebf52cbd59f"
+    },
+    "raw_intent_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_polar_intent_wide_v1.py",
+      "sha256": "sha256:186fa0eb1a015ac9ba2f089b36269c41b994661a6c4f0f09090bcb2aab0a7fd2"
+    },
+    "wide_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_polar_wide_v1.py",
+      "sha256": "sha256:6ecfebc751af35c33469bace5aea47d80bc6162a9c1500cd71410ce94337f715"
+    },
+    "behavior_clone_batch_primitive": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/pretrain_maskable_ppo_teacher.py",
+      "sha256": "sha256:a8d271e3b70198cd324f8e9bd41f59f50c1874451400cf188156c146187e59c9"
+    },
+    "settled_teacher_v3": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_settled_strategic_teacher_v3.py",
+      "sha256": "sha256:32181d24b6dee736f18afb588ce5baea32d96ac055da06be621c2a36f45369a3"
+    },
+    "environment": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_env.py",
+      "sha256": "sha256:d95407a7127ecc4e580aef041426d012edf5ea8dfa2fa8c4405c398445b1132e"
+    },
+    "core": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_core.py",
+      "sha256": "sha256:7718ae186c173127ac82e488413857dc6c82d2e41c1dfb5e94ca553a1a3abff6"
+    },
+    "features": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_features.py",
+      "sha256": "sha256:d878d7ec034bfe1d0b9c8f16bf2fcc787a05de5ac404eb4f1685c4f5a46646a0"
+    },
+    "scope": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/alphazuma_55.py",
+      "sha256": "sha256:ba316c4537fd62d4c34cfc1c40d722d5d9b5f38ba954e691acea83ab51837649"
+    }
+  },
+  "teacher_evidence": {
+    "exact_mask_fresh_55": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/masked-teacher-v3-fresh-probe-s99081516-v1/result.json",
+      "sha256": "sha256:415aa45c46e3021f8edb9d6b3c061954226aa497b14996a86d006fa86c30f9ec"
+    },
+    "classification": "engineering_teacher_not_formal_blind"
+  },
+  "source": {
+    "completion_path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-wide-s99081540-v1/completion.json",
+    "completion_sha256": "sha256:3565942394dade186548bc56cddc30e5506c47b6e46cf27174a3db370db16c86",
+    "model_path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-wide-s99081540-v1/final_model.zip",
+    "model_sha256": "sha256:9533690041859e73e0ae8f072e4a8ff05a9e316c29a974d666878e4e5bb0b424",
+    "model_bytes": 9448887
+  },
+  "levels": [
+    "Jungle1",
+    "Jungle2",
+    "Jungle3",
+    "Jungle4",
+    "jungle6",
+    "Jungle7",
+    "Jungle8",
+    "Jungle9",
+    "Jungle10",
+    "village1",
+    "village2",
+    "village3",
+    "village4",
+    "village5",
+    "village6",
+    "village7",
+    "village8",
+    "village10",
+    "city1",
+    "city2",
+    "city3",
+    "city4",
+    "city5",
+    "city6",
+    "city7",
+    "city9",
+    "city10",
+    "Coast1",
+    "Coast2",
+    "Coast3",
+    "Coast4",
+    "Coast5",
+    "Coast6",
+    "Coast7",
+    "Coast9",
+    "Coast10",
+    "grotto1",
+    "grotto2",
+    "grotto3",
+    "grotto4",
+    "grotto5",
+    "grotto6",
+    "grotto7",
+    "grotto9",
+    "grotto10",
+    "volcano1",
+    "volcano2",
+    "volcano3",
+    "volcano4",
+    "volcano5",
+    "volcano6",
+    "volcano7",
+    "volcano8",
+    "volcano9",
+    "volcano10"
+  ],
+  "run": {
+    "id": "alphazuma55-polar-intent-dagger-5090",
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-dagger-s99081549-v1",
+    "device": "cuda:0",
+    "policy_architecture": "entity_polar_intent_wide_dagger",
+    "learned_features_dim": 1024,
+    "model_seed": 1542004500,
+    "training_seed_base": 1542004000,
+    "training_seed_last_consumed": 1542004164,
+    "rounds": 3,
+    "teacher_execution_probabilities": [
+      0.75,
+      0.25,
+      0.0
+    ],
+    "parallel_envs": 24,
+    "max_ticks": 30000,
+    "reservoir_capacity_by_verb": {
+      "wait": 256,
+      "fire": 256,
+      "swap": 192,
+      "hop": 192
+    },
+    "sample_stride_by_verb": {
+      "wait": 4,
+      "fire": 1,
+      "swap": 1,
+      "hop": 1
+    },
+    "target_batch_fraction_by_verb": {
+      "wait": 0.45,
+      "fire": 0.35,
+      "swap": 0.15,
+      "hop": 0.05
+    },
+    "batch_size": 512,
+    "capacity_eval_batch_size": 128,
+    "epochs_per_round": 18,
+    "checkpoint_interval_epochs": 6,
+    "learning_rate": 2e-05,
+    "verb_loss_weight": 2.0,
+    "max_grad_norm": 0.5,
+    "aim_loss_scope": "fire_only",
+    "aim_loss_mode": "categorical",
+    "aim_smoothing_sigma": 1.5,
+    "aim_distance_weight": 0.0,
+    "exact_action_masks_before_every_decision": true,
+    "masked_verb_fallback": "wait_with_teacher_aim",
+    "verb_balanced_optimization": true,
+    "aggregate_dataset_across_rounds": true,
+    "optimize_after_each_round": true,
+    "source_is_frozen_raw_intent_final_model": true,
+    "student_state_collection": true,
+    "raw_teacher_intent_labels": true,
+    "training_mask_relaxation": "unmask_only_the_teacher_target_verb",
+    "exact_action_masks_for_environment_execution": true,
+    "exact_action_masks_for_online_policy_inference": true,
+    "invalid_intent_execution": "unchanged_wait_fallback",
+    "label_aim_must_remain_exact_mask_legal": true,
+    "final_runtime_teacher_calls_forbidden": true
+  },
+  "frozen_engineering_validation": {
+    "registry": "training_validation",
+    "base_seed": 1550001800,
+    "last_seed": 1550001854,
+    "level_order": [
+      "Jungle1",
+      "Jungle2",
+      "Jungle3",
+      "Jungle4",
+      "jungle6",
+      "Jungle7",
+      "Jungle8",
+      "Jungle9",
+      "Jungle10",
+      "village1",
+      "village2",
+      "village3",
+      "village4",
+      "village5",
+      "village6",
+      "village7",
+      "village8",
+      "village10",
+      "city1",
+      "city2",
+      "city3",
+      "city4",
+      "city5",
+      "city6",
+      "city7",
+      "city9",
+      "city10",
+      "Coast1",
+      "Coast2",
+      "Coast3",
+      "Coast4",
+      "Coast5",
+      "Coast6",
+      "Coast7",
+      "Coast9",
+      "Coast10",
+      "grotto1",
+      "grotto2",
+      "grotto3",
+      "grotto4",
+      "grotto5",
+      "grotto6",
+      "grotto7",
+      "grotto9",
+      "grotto10",
+      "volcano1",
+      "volcano2",
+      "volcano3",
+      "volcano4",
+      "volcano5",
+      "volcano6",
+      "volcano7",
+      "volcano8",
+      "volcano9",
+      "volcano10"
+    ],
+    "attempts_per_level_per_model": 1,
+    "models": [
+      "source-final",
+      "intent-dagger-round-00",
+      "intent-dagger-round-01",
+      "intent-dagger-round-02"
+    ],
+    "ranking": [
+      "wins_desc",
+      "level_coverage_desc",
+      "total_score_desc",
+      "median_winning_ticks_asc",
+      "earlier_round_first"
+    ],
+    "promotion_rule": "engineering evidence only; a separately frozen successor campaign is required before formal promotion"
+  },
+  "authority_boundary": {
+    "classification": "isolated_adaptive_raw_intent_dagger_engineering_training_only",
+    "current_campaign_candidate_authority": false,
+    "s99081545_successor_candidate_authority": false,
+    "formal_selection_seed_consumption": false,
+    "formal_final_blind_seed_consumption": false,
+    "continuous_campaign_seed_consumption": false
+  }
+}

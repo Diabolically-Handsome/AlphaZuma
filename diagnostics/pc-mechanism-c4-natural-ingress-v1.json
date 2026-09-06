@@ -1,0 +1,56 @@
+{
+  "audit_fingerprint": "sha256:4bf72d05bf0b08bca93426db6d96286784afb25042d72401aceb5b8113fd449d",
+  "audit_type": "pc_mechanism_coverage",
+  "cases": [
+    {
+      "authorized_features": [],
+      "feature_proofs": [],
+      "id": "c4-natural-chain-ingress",
+      "manifest_path": "cases/jungle2-front-insertion-u13230-13326-v4-score-bound/manifest.json",
+      "memory_probe_path": "memory-followup-c4-front-insertion-u13230-u13326-v2/attempt-01/memory-probe.json",
+      "reason": "mechanism_audit_no_machine_derived_features",
+      "status": "INCOMPARABLE",
+      "window": {
+        "end_update": 13326,
+        "start_update": 13230
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "natural_memory_trajectory_provenance",
+      "status": "INCOMPARABLE"
+    },
+    {
+      "name": "pc_video_tick_binding",
+      "status": "INCOMPARABLE"
+    },
+    {
+      "name": "machine_derived_feature_authorization",
+      "status": "INCOMPARABLE"
+    }
+  ],
+  "failure_reasons": [
+    "c4-natural-chain-ingress:mechanism_audit_no_machine_derived_features",
+    "no source has a machine-derived mechanism feature"
+  ],
+  "schema": "zuma-rl.fidelity-audit",
+  "scope": {
+    "environment_id": "ZumaRevenge-v0",
+    "hard": false,
+    "level_id": "Jungle2",
+    "observation_mode": "actor",
+    "policy": "original-transfer-jungle2-v1",
+    "profile_mode": "tutorials_completed"
+  },
+  "status": "INCOMPARABLE",
+  "summary": {
+    "authorized_feature_union": [],
+    "case_count": 1,
+    "passing_case_count": 0,
+    "pc_source_count": 0,
+    "pc_source_fingerprints": [],
+    "source_feature_authorizations": []
+  },
+  "version": 1
+}

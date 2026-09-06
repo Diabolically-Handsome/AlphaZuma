@@ -1,0 +1,49 @@
+{
+  "schema": "zuma-rl.alphazuma-55-weekend-evaluation-resume-watcher-launch-receipt",
+  "version": 1,
+  "status": "LAUNCHED_AND_WAITING_FOR_COMBINED_GATE",
+  "observed_utc": "2026-08-16T17:24:12.6106878Z",
+  "preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-evaluation-resume-watcher-s99081651-preregistration-v1.json",
+    "sha256": "sha256:26a2142ad221be3a817c470c489b334799bd9313c75b63057dd8033cc712281e"
+  },
+  "watcher": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/watch_alphazuma_55_weekend_evaluation_resume_order_v1.py",
+    "sha256": "sha256:856ff7e389408e727a0fd8d8154d39d445a301351ffa6c7b550fd18cc804500a"
+  },
+  "processes": {
+    "windows_wsl_client_pid": 29968,
+    "wsl_watcher_pid": 424503,
+    "windows_wsl_client_alive_at_snapshot": true,
+    "wsl_watcher_alive_at_snapshot": true
+  },
+  "command": ".venv/bin/python tools/watch_alphazuma_55_weekend_evaluation_resume_order_v1.py --deadline-utc 2026-08-16T20:00:00Z --poll-seconds 10",
+  "validation": {
+    "status": "VALID",
+    "resource_schedule_sha256": "sha256:4e60fdde646e89eddf8072af09d463dcf0f3dc02e6767f333c55eca2a92f1413",
+    "head_only_pid": 404830,
+    "head_only_process_state": "T (stopped)",
+    "all_actions_pid": 393431,
+    "all_actions_process_state": "T (stopped)",
+    "formal_seed_consumption": "NONE"
+  },
+  "logs": {
+    "stdout": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-evaluation-resume-watcher-s99081651-v1.stdout.log",
+      "bytes_at_snapshot": 2228,
+      "sha256_at_snapshot": "sha256:b082d5e74cf96956cc26cce80619a7c2628bb20d217895c89853b49042ebe55f"
+    },
+    "stderr": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-evaluation-resume-watcher-s99081651-v1.stderr.log",
+      "bytes_at_snapshot": 0,
+      "sha256_at_snapshot": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "authority_boundary": {
+    "current_action": "read-only wait",
+    "formal_seed_consumption": "NONE",
+    "candidate_or_gate_change": false,
+    "training_recipe_change": false,
+    "power_restore_authority": false
+  }
+}

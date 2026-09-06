@@ -1,0 +1,41 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-gpu-load-spotcheck",
+  "version": 1,
+  "status": "PASS",
+  "ended_utc": "2026-08-14T01:43:01.7978071+00:00",
+  "window_seconds": 30,
+  "sampling_interval_seconds": 1,
+  "acceptance": {
+    "metric": "per_gpu_window_average_utilization_pct",
+    "minimum": 65,
+    "maximum": 90,
+    "target_approximate": 80
+  },
+  "gpus": [
+    {
+      "index": 0,
+      "model": "NVIDIA GeForce RTX 5090",
+      "samples": 30,
+      "average_utilization_pct": 72.4,
+      "median_utilization_pct": 83.0,
+      "minimum_utilization_pct": 23,
+      "maximum_utilization_pct": 91,
+      "average_memory_mib": 10329,
+      "maximum_temperature_c": 52,
+      "pass": true
+    },
+    {
+      "index": 1,
+      "model": "NVIDIA GeForce RTX 5080",
+      "samples": 30,
+      "average_utilization_pct": 71.3,
+      "median_utilization_pct": 78.0,
+      "minimum_utilization_pct": 17,
+      "maximum_utilization_pct": 91,
+      "average_memory_mib": 9494,
+      "maximum_temperature_c": 59,
+      "pass": true
+    }
+  ],
+  "decision": "Keep the frozen seven-route recipe unchanged. Short utilization troughs are consistent with PPO synchronization and update gaps; both per-GPU window averages remain inside the preregistered operating band."
+}

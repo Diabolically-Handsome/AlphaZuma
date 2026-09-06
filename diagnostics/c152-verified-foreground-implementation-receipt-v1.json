@@ -1,0 +1,60 @@
+{
+  "schema": "zuma-rl.retail-verified-foreground-implementation-receipt",
+  "version": 1,
+  "status": "PASS_BEFORE_OUTPUT",
+  "created_utc": "2026-08-10T10:38:50.1486910Z",
+  "preregistration": {
+    "path": "diagnostics/c152-verified-foreground-reset-trace-preregistration-v1.json",
+    "sha256": "sha256:e2f292f59d94dd95e2be08e09e9611f5cd406a732319738f3ed8c4b685eb2aca"
+  },
+  "implementation": {
+    "ordinary_path": "Restore, bring to top, request foreground, then verify the exact HWND with GetForegroundWindow before SendInput.",
+    "fallback_path": "After 50 ms without verification, temporarily attach the recorder input queue to unique foreground and target window threads, retry activation, and detach every successful attachment in reverse order.",
+    "failure_path": "Raise before SendInput if the exact target HWND is not foreground within two seconds.",
+    "receipt": "Each successful click now includes the target, foreground before and after, verified flag, fallback use, attached thread IDs, attempt count, and elapsed seconds.",
+    "additional_keyboard_inputs": 0,
+    "additional_mouse_inputs": 0,
+    "process_memory_writes": 0
+  },
+  "code": [
+    {
+      "path": "tools/autoplay_live_zuma.py",
+      "bytes": 79647,
+      "sha256": "sha256:8cfa18256a4e699c5fe131db6e1e4b815ec4698c2150c7508ad40435884703f2"
+    },
+    {
+      "path": "tests/test_autoplay_live_zuma.py",
+      "bytes": 17062,
+      "sha256": "sha256:5983077f4b4f747fd7595599f19f88e2ba786215a4e3bc2daa7d913209f745c0"
+    },
+    {
+      "path": "tools/trace_popcap_gameplay_mtrand.py",
+      "bytes": 70556,
+      "sha256": "sha256:5d66b5bd78241e834ef8feed5d06b8150ce21b7cdbbec256e42a515ae736d9b8"
+    },
+    {
+      "path": "tools/record_autoplay_zuma.py",
+      "bytes": 54683,
+      "sha256": "sha256:a5f305ff8174ea6c5eb87abdc4cb0674e711f7e5e1008edcb36c7b26b5e7ae17"
+    }
+  ],
+  "verification": {
+    "py_compile": "PASS",
+    "foreground_fast_path": "PASS",
+    "foreground_ordinary_path": "PASS",
+    "foreground_attach_fallback_and_reverse_cleanup": "PASS",
+    "foreground_timeout_fail_closed_and_cleanup": "PASS",
+    "autoplay_and_record_focused_tests_passed": 68,
+    "probe_and_provenance_tests_passed": 128,
+    "integration_tests_passed": 196,
+    "failures": 0
+  },
+  "safety": {
+    "c151_output_unchanged": true,
+    "c152_output_root_created": false,
+    "combined_reset_trace_contract_changed": false,
+    "navigation_updates_or_points_changed": false,
+    "gate_change": false,
+    "training_start": false
+  }
+}

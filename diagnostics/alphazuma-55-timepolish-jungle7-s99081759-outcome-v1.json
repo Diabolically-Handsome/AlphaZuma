@@ -1,0 +1,62 @@
+{
+  "schema": "zuma-rl.alphazuma-55-macro-ppo-run-outcome",
+  "version": 1,
+  "run_id": "timepolish-jungle7",
+  "preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-timepolish-jungle7-s99081759-preregistration-v1.json",
+    "sha256": "sha256:bc67af155b2b35f27fc6d43c58ea1872632bb52f1c398b86380dcf8fbe7cb765"
+  },
+  "status": "STOPPED_BY_WIN_RATE_FLOOR_CLAUSE_ADJUDICATED_RETROACTIVELY",
+  "decision": "SUCCESS_MODEST_POLISH_GAIN_CHAMPION_CKPT786360",
+  "completed_utc": "2026-08-22T03:07:03Z",
+  "reason": "The floor clause (0.5575) fired at ckpt1310600 (1048k 8/16 + 1310k 6/16, two consecutive breaches). The eval pipeline lagged the trainer, which ran on to 1,653,040 steps before a Windows-update reboot killed it at 02:33Z; both events are incidental to the adjudication - the clause point stands at 1310600 and every later checkpoint is void for championship (jungle8-r3 precedent). The post-clause 1572720 eval (2/16) confirms the decay was real and accelerating, so no warm-resume is warranted (unlike Jungle3, whose round-1 curve was still RECOVERING when it died). CHAMPION = ckpt786360: 9/16, median 7976, E[t] 14179 vs the beta-2 init's 14871 (-4.7%, a modest but real gain).",
+  "checkpoint_grid": [
+    {
+      "checkpoint": 262120,
+      "wins": "6/16",
+      "median": 7923
+    },
+    {
+      "checkpoint": 524240,
+      "wins": "11/16",
+      "median": 11198
+    },
+    {
+      "checkpoint": 786360,
+      "wins": "9/16",
+      "median": 7976,
+      "expected_time": 14179,
+      "champion": true
+    },
+    {
+      "checkpoint": 1048480,
+      "wins": "8/16",
+      "median": 11623,
+      "note": "floor breach, strike one"
+    },
+    {
+      "checkpoint": 1310600,
+      "wins": "6/16",
+      "median": 9330,
+      "note": "second consecutive breach - CLAUSE POINT (eval completed post-hoc after the Windows-update reboot)"
+    },
+    {
+      "checkpoint": 1572720,
+      "wins": "2/16",
+      "median": 9762,
+      "note": "POST-CLAUSE, void for championship; documents the accelerating decay"
+    }
+  ],
+  "init_baseline": {
+    "wins": "10/16",
+    "median": 9294.5,
+    "expected_time": 14871
+  },
+  "champion": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle7-s99081759-v1/checkpoints/timepolish-jungle7_786360_steps.zip",
+    "sha256": "sha256:55fd8f6b0c64ba7159af204dfd4ee856460a2d21be49e5a03d1259823353afea"
+  },
+  "infrastructure_note": "second Windows-auto-update casualty of the campaign (first: the app-restart that killed Jungle3 round 1). Checkpoints + receipts made the loss ~350k steps of a run the clause had already ended - the discipline is the disaster recovery.",
+  "next_step": "golden enumeration + top-3000 record scan vs the Adv 7 human line 16 s = 1600 ticks; per the mean-tail rule the champion (panel fastest 4217) is the primary scan candidate, the beta-2 BC (fastest 5451) the secondary",
+  "formal_seed_consumption": false
+}

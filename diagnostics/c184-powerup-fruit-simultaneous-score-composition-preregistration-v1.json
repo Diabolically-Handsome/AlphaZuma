@@ -1,0 +1,94 @@
+{
+  "schema": "zuma-rl.powerup-fruit-simultaneous-score-composition-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_VALIDATOR_OR_TEST_CHANGES_AND_REVISED_AUDIT_OUTPUT",
+  "created_utc": "2026-08-10T15:28:23.8615388Z",
+  "purpose": "Repair the machine auditor's verified compositionality gap for an exact same-tick retail proximity-bomb score plus independently installed-formula fruit score, without weakening any isolated power-up, geometry, source-authenticity, or fruit-cause requirement.",
+  "classification": "preregistered-audit-validator-correction-not-retail-model-change",
+  "parent_failure": {
+    "path": "diagnostics/c183-fruit-powerup-collision-source-packaging-audit-failure-receipt-v1.json",
+    "sha256": "sha256:89de1f9823572049f4da1028d0194ecabfe963cc1cbc8a792db2f3ab8b508359",
+    "failure_code": "powerup_trigger_score_delta_mismatch",
+    "observed_total_score_delta": 590,
+    "base_explosion_score_delta": 90,
+    "installed_formula_fruit_score_delta": 500
+  },
+  "frozen_inputs": {
+    "source_manifest": "D:/ZumaGolden/sources/c183-u8120-u8270-source-bound-fruit-powerup-collision-v1.json",
+    "source_manifest_sha256": "sha256:814d71f96b2ecf587c1bc3d3215fc2cb5b85f54450ab28f23b8b41a5be0d96f6",
+    "source_fingerprint": "sha256:73d85b5a2d5ce714b50be47d6345f2c9265a7a8f6e455837979320003dd177a3",
+    "mechanism_plan": "D:/ZumaGolden/diagnostics/pc-mechanism-c183-fruit-powerup-collision-plan-v1.json",
+    "mechanism_plan_sha256": "sha256:190baba6b99719d9315da386a7e7836b2cace87fa7c1939a13908327d99ab005",
+    "failed_audit": "D:/ZumaGolden/diagnostics/pc-mechanism-c183-fruit-powerup-collision-live-v1.json",
+    "failed_audit_sha256": "sha256:6c63cea0944ce09f576a4e40da7fe80765c85998790b53938581df2437428b57",
+    "failed_audit_immutable": true
+  },
+  "prechange_code": {
+    "src/zuma_rl/pc_powerup_trigger.py": "sha256:f097fdfe8bdf7ffc58ae3ab295a495d0b9659649d56c7e3e5230cb88e1087430",
+    "src/zuma_rl/pc_mechanism_audit.py": "sha256:b413e07ca095f2e9bb6048d300883dd04f80697776e6d9da6f4d0601e9321e87",
+    "tests/test_pc_powerup_trigger.py": "sha256:0bfda415ea2d9c56c1849a1700ed912a383f6fa416046e15d943abaebaaf9225",
+    "tests/test_pc_mechanism_audit.py": "sha256:a30772c1554be479a660a851dd5928936c51234355ec2a629b2361d179ad8e36"
+  },
+  "implementation_contract": {
+    "strict_verifier_extension": {
+      "new_keyword": "expected_concurrent_score_delta",
+      "default": 0,
+      "must_be_nonnegative_integer": true,
+      "exact_equation": "observed_score_delta == expected_score_delta == 10 * newly_exploding_count + expected_concurrent_score_delta",
+      "isolated_existing_behavior_unchanged_when_zero": true,
+      "returned_proof_records_base_and_concurrent_components": true
+    },
+    "auditor_binding": {
+      "concurrent_component_allowed_only_for_exact_native_fruit_transition": true,
+      "requires_consecutive_native_game_time": true,
+      "requires_consecutive_board_update_count": true,
+      "requires_same_nonzero_treasure_pointer": true,
+      "requires_noncollecting_to_collecting": true,
+      "requires_same_selected_point_and_expiry": true,
+      "requires_valid_installed_treasure_point": true,
+      "requires_installed_level_zuma_score": true,
+      "fruit_score_formula": "max(500, floor((score_before - (score_target - zuma_score)) / 600) * 100)",
+      "requires_total_score_exactly_base_plus_formula_fruit": true,
+      "does_not_itself_authorize_fruit_collision_cause": true,
+      "fruit_powerup_collision_still_requires_same-tick_bomb_proof_no_free_projectile_and_strict_distance_squared_less_than_11664": true
+    }
+  },
+  "tests": {
+    "direct_verifier_exact_combined_score_passes": true,
+    "direct_verifier_wrong_combined_score_rejected": true,
+    "audit_exact_bomb_plus_fruit_transition_emits_both_linked_proofs": true,
+    "audit_missing_or_tampered_fruit_transition_does_not_unlock_concurrent_score": true,
+    "existing_isolated_powerup_and_fruit_tests_unchanged": true,
+    "focused_tests_must_pass": true,
+    "full_suite_must_have_zero_failures": true
+  },
+  "revised_audit": {
+    "output": "D:/ZumaGolden/diagnostics/pc-mechanism-c185-fruit-powerup-collision-live-v2.json",
+    "output_absent_at_freeze": true,
+    "command": ".\\.venv-win\\Scripts\\python.exe -m zuma_rl.pc_mechanism_audit D:\\ZumaGolden\\diagnostics\\pc-mechanism-c183-fruit-powerup-collision-plan-v1.json --evidence-root D:\\ZumaGolden --original-root \"D:\\SteamLibrary\\steamapps\\common\\Zuma's Revenge\" --level Jungle2 --compact --output D:\\ZumaGolden\\diagnostics\\pc-mechanism-c185-fruit-powerup-collision-live-v2.json",
+    "required_features": [
+      "powerup_proximity_bomb",
+      "fruit_powerup_collision",
+      "fruit_collection_animation"
+    ],
+    "forbidden_features": [
+      "fruit_projectile_collision",
+      "fruit_collection_score"
+    ],
+    "expected_framework_update": 8234,
+    "expected_trigger_ball_id": 87,
+    "expected_powerup_type": 0,
+    "expected_animation_clear_update": 8260,
+    "expected_animation_collection_ticks": 26
+  },
+  "decision_rule": {
+    "pass": "The new tests and full suite pass, the original c183 failed output remains byte-identical, and the exclusively created c185 audit emits every required linked proof with all frozen event facts and no forbidden proof.",
+    "failure": "Retain all outputs, issue a new failure receipt, and grant no mechanism credit.",
+    "standards_lowered": false,
+    "simulator_diff_pending": true,
+    "pc_golden_authentication_pending": true,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

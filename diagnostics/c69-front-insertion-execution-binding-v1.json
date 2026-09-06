@@ -1,0 +1,47 @@
+{
+  "schema": "zuma-rl.pc-targeted-capture-execution-binding",
+  "version": 1,
+  "id": "c69-front-insertion-u3664-u3684-execution",
+  "created_utc": "2026-08-03T17:52:00Z",
+  "latency_amendment": {
+    "path": "diagnostics/c69-front-insertion-capture-latency-amendment-v1.json",
+    "sha256": "sha256:d516a3795c270d135e99f4df240210541058d1429d1e686d3ec8ee7524c86159"
+  },
+  "collector_plan": {
+    "path": "D:/ZumaGolden/campaign-c69-natural-win-v8-front-insertion-u3569-u3710/plan.json",
+    "sha256": "sha256:cd1963ffd1651edc2bb34d91e712cdc887b1f86258cc486931350704481f6f68",
+    "session_nonce": "7e26618935674efebae21adc3a78e8b1"
+  },
+  "identity_check": {
+    "dmo_equal_to_c68": true,
+    "prestate_equal_to_c68": true,
+    "runtime_equal_to_c68": true,
+    "trace_equal_to_c68": true,
+    "safety_equal_to_c68": true,
+    "duration_and_frame_budget_equal_to_c68": true,
+    "only_capture_trigger_timing_and_session_identity_changed": true
+  },
+  "verified_timing": {
+    "source_anchor_update": 3121,
+    "detach_update": 3150,
+    "previous_effectful_update": 3567,
+    "window_repaint_update": 3568,
+    "framework_state_poll_arm_update": 3568,
+    "capture_wait_update": 3569,
+    "next_effectful_update": 3621,
+    "required_update_range": [
+      3664,
+      3684
+    ],
+    "reattach_update": 10373
+  },
+  "verified_identity": {
+    "host_pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "protocol_prestate_template_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526",
+    "dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "source_global_seed": 23557968,
+    "source_board_output": 835125098,
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20"
+  },
+  "gate_effect_before_collection": "none"
+}

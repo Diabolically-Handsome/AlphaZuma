@@ -1,0 +1,130 @@
+{
+  "schema": "zuma-rl.alphazuma-55-capacity-expansion-launch-receipt",
+  "version": 2,
+  "status": "PASS",
+  "recorded_utc": "2026-08-15T06:02:02.119256+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "expansion_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-capacity-expansion-s96081501-preregistration-v1.json",
+    "sha256": "sha256:982786bd9e8539937f4afe2e5c9b78c05e23cea3ad3b71db4559004bbd85fb0d"
+  },
+  "hard_frontier_route": {
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-v1-hard-frontier-rescue-s89081501-preregistration-v1.json",
+      "sha256": "sha256:524330741123505a13cb447d80f791c07c11c6f0df085fe50f7a581f75077124"
+    },
+    "source_checkpoint": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-v1-frontier-s87081501-v1/checkpoints/alphazuma55-v1-frontier-5080_4194304_steps.zip",
+      "sha256": "sha256:4324ccf39b822ad946359e34c73a1afe62c7f00d73d4a2d1375a5b9e64a955bc",
+      "training_steps": 4194304
+    },
+    "run_id": "alphazuma55-v1-hard-frontier-rescue-5090",
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-v1-hard-frontier-rescue-s89081501-v1",
+    "windows_wsl_client_pid": 49436,
+    "wsl_main_pid": 41683,
+    "started_utc": "2026-08-15T06:00:01.390603+00:00",
+    "status_snapshot_utc": "2026-08-15T06:01:43.203880+00:00",
+    "status": "RUNNING",
+    "steps_this_run": 38352,
+    "steps_per_second": 422.19891722264265,
+    "config": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-v1-hard-frontier-rescue-s89081501-v1/config.json",
+      "sha256": "sha256:7abb3ed3add3aa3226634cd5f1a1e2e75a025859bdd617a3c4be9e9a70913427"
+    },
+    "initialization": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-v1-hard-frontier-rescue-s89081501-v1/initialization.json",
+      "sha256": "sha256:5a261cdb820849c3079239fc767197ea7b9d3f5efbf02338d751c60309d855b4",
+      "policy_parameters": 324122,
+      "policy_copied_bitwise": true,
+      "optimizer_state_reset": true
+    },
+    "mutable_status_snapshot": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-v1-hard-frontier-rescue-s89081501-v1/training_status.json",
+      "sha256_at_recording": "sha256:a78871f3698bee61bbca78a71f0b163515d182ed29f58f9bc48b120cf964c5bd"
+    },
+    "worker_processes": 16,
+    "failure_receipt_exists": false,
+    "logs": {
+      "stdout": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/launchers/v1-hard-frontier-rescue-s89081501.stdout.log",
+      "stderr": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/launchers/v1-hard-frontier-rescue-s89081501.stderr.log",
+      "stderr_bytes": 0
+    }
+  },
+  "preflight_validation": {
+    "status": "VALID",
+    "levels_verified": 55,
+    "observation_shape": [22833],
+    "action_nvec": [4, 180],
+    "base_environment_unchanged": true,
+    "observation_space_unchanged": true,
+    "action_space_unchanged": true
+  },
+  "throughput_comparison": {
+    "five_route_baseline_steps_per_second": 2477.316958570216,
+    "six_route_steps_per_second": 2807.3,
+    "absolute_gain_steps_per_second": 329.983041429784,
+    "relative_gain_percent": 13.320181435799,
+    "original_four_after_sixth_steps_per_second": 1958.99,
+    "original_four_after_fifth_steps_per_second": 1984.52052052522,
+    "original_four_relative_change_percent": -1.286431586143,
+    "sixth_route_steps_per_second": 422.2,
+    "interpretation": "The sixth route adds a net roughly 13 percent aggregate throughput while the original four routes lose only about 1.3 percent, so the expansion is compute-positive."
+  },
+  "hardware_snapshot": {
+    "gpu_0": {
+      "name": "NVIDIA GeForce RTX 5090",
+      "power_draw_watts": 235.57,
+      "power_limit_watts": 550.0,
+      "utilization_percent": 79,
+      "memory_used_mib": 14741,
+      "memory_total_mib": 32607,
+      "temperature_c": 49
+    },
+    "gpu_1": {
+      "name": "NVIDIA GeForce RTX 5080",
+      "power_draw_watts": 62.37,
+      "power_limit_watts": 250.0,
+      "utilization_percent": 17,
+      "memory_used_mib": 9510,
+      "memory_total_mib": 16303,
+      "temperature_c": 47
+    },
+    "wsl_available_memory_bytes": 51022430208,
+    "wsl_swap_used_bytes": 0,
+    "wsl_root_free_bytes": 26884194304,
+    "d_drive_free_bytes": 722780532736,
+    "power_limits_match": true,
+    "thermal_gate_pass": true
+  },
+  "postprocess_preview": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-expansion-preview-s97081501-preregistration-v1.json",
+    "sha256": "sha256:95581528c3f055dffe85a679799039aa75acf16d9109365ef3907b6b3c9ae317",
+    "validate_only_status": "VALID",
+    "registered_routes": 6,
+    "migration_baselines": 3,
+    "levels": 55
+  },
+  "tooling": {
+    "hard_frontier_route_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_hard_frontier_route.py",
+      "sha256": "sha256:71253c0c847912d6ea7d525e55f104dba2d1393bfa6bb9a4ab1145bbcec90e4c"
+    },
+    "expanded_deployment_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_capacity_expansion_deployment.py",
+      "sha256": "sha256:2d911c1be3f1c63e74643417a54eba486f8c7179aebf1cca4b51ca5acb0b19da"
+    },
+    "withdrawal_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/freeze_alphazuma_55_waiting_postprocess_withdrawal.py",
+      "sha256": "sha256:59592f8a2eee9d48d78e52fd92c6d30622849abfdbfc91eba668fc66a166aa83"
+    },
+    "related_tests_passed": 19,
+    "related_tests_failed": 0
+  },
+  "formal_boundary": {
+    "selection_root_exists": false,
+    "final_blind_root_exists": false,
+    "continuous_root_exists": false,
+    "formal_seed_consumption": false,
+    "ranking_gate_or_environment_change": false
+  }
+}

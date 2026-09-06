@@ -1,0 +1,102 @@
+{
+  "schema": "zuma-rl.pc-front-insertion-bottom-row-attempt-audit",
+  "version": 1,
+  "id": "c84-front-insertion-bottom-row-retry-02-failure",
+  "created_utc": "2026-08-03T20:58:24Z",
+  "status": "FAIL",
+  "classification": "fresh-attempt-2-of-3-formal-failure",
+  "parent_preregistration": {
+    "path": "diagnostics/c83-c85-front-insertion-bottom-row-finite-stopping-preregistration-v1.json",
+    "sha256": "sha256:4e69087d5719d43aebaf31be195ee3574de85a532b9d9716af74ba49305be1ae"
+  },
+  "execution_binding": {
+    "path": "diagnostics/c84-front-insertion-bottom-row-execution-binding-v1.json",
+    "sha256": "sha256:63605e54f875dbd1e39ccdc8a5d2cc62aab9a7cb1a191507980b0b23c305b0ad"
+  },
+  "collection": {
+    "path": "D:/ZumaGolden/campaign-c84-natural-win-v8-front-insertion-bottom-row-retry-02-u3569-u3710/collection.json",
+    "sha256": "sha256:50384fac1a6b576154d771d04e2dd0b0a4ea5690fea355e08bb0b8e57d37270b",
+    "status": "complete",
+    "run_frame_counts": [
+      90,
+      90
+    ],
+    "run_process_ids": [
+      48852,
+      12200
+    ],
+    "poll_armed_updates": [
+      3566,
+      3566
+    ],
+    "host_and_protocol_state_restored_exactly": true
+  },
+  "render_settled_maps": {
+    "r1": {
+      "path": "D:/ZumaGolden/campaign-c84-natural-win-v8-front-insertion-bottom-row-retry-02-u3569-u3710/run-r1/render-settled-updates.json",
+      "sha256": "sha256:25b55e6c547a701cd06004117ab186b6592c80c9489c8035e9cae9f44ea6b79a",
+      "assigned_update_range": [
+        3638,
+        3692
+      ]
+    },
+    "r2": {
+      "path": "D:/ZumaGolden/campaign-c84-natural-win-v8-front-insertion-bottom-row-retry-02-u3569-u3710/run-r2/render-settled-updates.json",
+      "sha256": "sha256:cd12572e91def0f9650901dcc63ab33176671fab611df621f2817aa1a866ca85",
+      "assigned_update_range": [
+        3639,
+        3693
+      ]
+    }
+  },
+  "target_verification": {
+    "path": "D:/ZumaGolden/diagnostics/c84-bottom-row-terminal-state-target-verification-v1.json",
+    "sha256": "sha256:0aa3ef28c76d5a33fa75612613420bd6bf25cc47b676b55506c901d9243caaa2",
+    "status": "FAIL",
+    "required_update_count": 21,
+    "selected_update_count": 0,
+    "absent_updates": [],
+    "unmatched_update_count": 21
+  },
+  "frozen_frame_localization": {
+    "best_candidate_interior_mismatch_count_range": [
+      100453,
+      100723
+    ],
+    "best_candidate_final_row_mismatch_count_range": [
+      28,
+      31
+    ],
+    "best_candidate_edge_alpha_mismatch_count": 0,
+    "terminal_r1_to_frozen_post_insertion_reference": {
+      "interior_mismatch_count": 101500,
+      "edge_mismatch_count": 69,
+      "edge_alpha_mismatch_count": 0
+    },
+    "terminal_r2_to_frozen_post_insertion_reference": {
+      "interior_mismatch_count": 101281,
+      "edge_mismatch_count": 65,
+      "edge_alpha_mismatch_count": 0
+    },
+    "classification": "displayed_surface_phase_branch_outside_bottom_row_contract"
+  },
+  "host_postcheck": {
+    "path": "D:/ZumaGolden/diagnostics/c84-host-postcheck-v1.json",
+    "sha256": "sha256:9a71667bfd325449f6102e7c8192e9419a4e787256552bcdfb8776abae87602a",
+    "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "status": "PASS"
+  },
+  "decision": {
+    "reason": "all_target_updates_failed_exact_gameplay_rows_and_final_row_budget",
+    "in_place_retry": "FORBIDDEN",
+    "package_pc_golden": "FORBIDDEN",
+    "gate_credit": "NONE",
+    "next_action": "prepare_and_collect_final_fresh_attempt_c85_without_contract_change"
+  },
+  "non_authorizations": [
+    "pc_golden",
+    "front_insertion",
+    "fidelity_gate_open",
+    "formal_transfer_training"
+  ]
+}

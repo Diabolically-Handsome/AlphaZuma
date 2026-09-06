@@ -1,0 +1,118 @@
+{
+  "schema": "zuma-rl.alphazuma-55-motor-observable-gradual-round-evidence",
+  "version": 1,
+  "status": "FROZEN_AFTER_ROUTE_COMPLETION_BEFORE_ENGINEERING_SCREEN",
+  "observed_utc": "2026-08-16T11:17:21.0593089Z",
+  "campaign_id": "alphazuma-55-motor-observable-gradual-s99081629-v1",
+  "round": {
+    "index": 3,
+    "teacher_execution_probability": 0.5,
+    "levels": 55,
+    "wins": 15,
+    "losses": 40,
+    "truncations": 0,
+    "first_24_wins": 14,
+    "second_24_wins": 1,
+    "last_7_wins": 0,
+    "collection_wall_seconds": 2751.252861511006,
+    "retained_samples": 36577,
+    "aggregate_samples_after_round": 153429
+  },
+  "capacity_metrics_on_consumed_training_data": {
+    "sample_count": 153429,
+    "exact_action_accuracy": 0.07122512693167524,
+    "verb_accuracy": 0.9247990927399644,
+    "fire_aim_sample_count": 54257,
+    "fire_aim_exact_accuracy": 0.11014247009602447,
+    "fire_aim_within_three_accuracy": 0.6344250511454743,
+    "fire_aim_mean_circular_bin_error": 3.4675894354645482,
+    "fire_aim_median_circular_bin_error": 2.0,
+    "fire_aim_p90_circular_bin_error": 8.0,
+    "fire_expected_unique_aim_bins": 180,
+    "fire_predicted_unique_aim_bins": 180
+  },
+  "comparison_to_round_2": {
+    "teacher_execution_probability": {
+      "round_2": 0.7,
+      "round_3": 0.5
+    },
+    "closed_loop_mixed_execution_wins": {
+      "round_2": 23,
+      "round_3": 15
+    },
+    "offline_verb_accuracy": {
+      "round_2": 0.9178619107931401,
+      "round_3": 0.9247990927399644
+    },
+    "fire_aim_within_three_accuracy": {
+      "round_2": 0.6114306340993864,
+      "round_3": 0.6344250511454743
+    },
+    "fire_aim_mean_circular_bin_error": {
+      "round_2": 3.6259655877752377,
+      "round_3": 3.4675894354645482
+    }
+  },
+  "interpretation_boundary": {
+    "observation": "offline verb and fire-aim capacity improved while mixed-execution closed-loop wins fell again as teacher execution decreased",
+    "supports": "closed-loop covariate shift and under-supervised queued aim state rather than a simple model-capacity explanation",
+    "does_not_prove": "that the separately preregistered all-actions route will pass its engineering Gate",
+    "fallback_trigger_satisfied": true
+  },
+  "source_artifacts": {
+    "completion": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-s99081629-v1/completion.json",
+      "sha256": "sha256:746495d29349fc9d59adb809e3d426513732730377d2e8b988e11d779256c60d",
+      "status": "COMPLETE"
+    },
+    "training_status": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-s99081629-v1/training_status.json",
+      "sha256": "sha256:3306bb422a4359d3e82c80204a20770e079c88edc4acb8d9ea0d9b813a0a03d3",
+      "status": "RUNNING",
+      "stage": "ROUND_COMPLETE",
+      "trainer_process_present": false
+    },
+    "route_final_model": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-s99081629-v1/final_model.zip",
+      "sha256": "sha256:0b8343366b21ad8b4709d06088d2f55c3e8c369ff6ea2c4afe7e62c9dcde72ba",
+      "bytes": 9559148
+    },
+    "round_final_model": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-s99081629-v1/round_03/final_model.zip",
+      "sha256": "sha256:df64681ef98378307b8bf42489af9491ab9838b263a39f39b06e0ba4f29b59d6",
+      "bytes": 9559148
+    }
+  },
+  "checkpoints": [
+    {
+      "epoch": 3,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-s99081629-v1/round_03/epoch_03_model.zip",
+      "sha256": "sha256:87a7a65027eb45270480a9ac81087bfcee3f54b91e0644efc072489d7163828a",
+      "bytes": 9559148
+    },
+    {
+      "epoch": 6,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-s99081629-v1/round_03/epoch_06_model.zip",
+      "sha256": "sha256:ee03a02f561605be18835c4aec2b5d51b64cace55ba6f915ae3d05860932afad",
+      "bytes": 9559148
+    },
+    {
+      "epoch": 9,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-s99081629-v1/round_03/epoch_09_model.zip",
+      "sha256": "sha256:e7d4feff42cad8d705beee83f52848040b4e875bbd5b0f8096f760d8c4d70a50",
+      "bytes": 9559148
+    },
+    {
+      "epoch": 12,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-s99081629-v1/round_03/epoch_12_model.zip",
+      "sha256": "sha256:92e19f92a44b190a0267a225dca6e8cc6d7c42474dda37dcc93b756ad17d303d",
+      "bytes": 9559148
+    }
+  ],
+  "authority_boundary": {
+    "engineering_evidence_only": true,
+    "formal_seed_consumption": "NONE",
+    "formal_candidate_authority": false,
+    "power_restore_authority": false
+  }
+}

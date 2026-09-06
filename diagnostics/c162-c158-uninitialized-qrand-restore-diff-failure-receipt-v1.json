@@ -1,0 +1,86 @@
+{
+  "schema": "zuma-rl.c158-uninitialized-qrand-restore-diff-failure-receipt",
+  "version": 1,
+  "status": "FAILED_CLOSED",
+  "created_utc": "2026-08-10T12:27:17.2703384Z",
+  "preregistration": "diagnostics/c162-c158-uninitialized-qrand-restore-preregistration-v1.json",
+  "preregistration_sha256": "sha256:dac9400e4751dad1b72ec7a41eac35a743beebf0655de9df753d495bfb19576a",
+  "implementation_receipt": "diagnostics/c162-c158-uninitialized-qrand-restore-implementation-receipt-v1.json",
+  "implementation_receipt_sha256": "sha256:45a61534bdc6138054297abc948e1ce83d2943db0887b0913bf87809acc6c28a",
+  "immutable_source": {
+    "trajectory": "D:/ZumaGolden/formal-full-state-c155-natural-loss-c158-campaign-v1/attempt-01/source/attempt-01/trajectory/index.json",
+    "trajectory_sha256": "sha256:a5cd4410676579f0ac75ec0bb69f18d483c026cde14566284ad10a24e2b60ada",
+    "selected_start_update": 11341,
+    "selected_end_update": 11519,
+    "source_bytes_modified": false
+  },
+  "execution": {
+    "attempt_count": 1,
+    "fixed_output": "D:/ZumaGolden/diagnostics/jungle2-c158-u11341-u11519-natural-loss-diff-v2.json",
+    "output_created": false,
+    "exception_type": "PcLossSequenceError",
+    "exception_message": "loss_simulator_locked_state_mismatch:11518",
+    "first_failing_update": 11518,
+    "classification": "late_loss_locked_shooter_state_divergence"
+  },
+  "passed_before_failure": {
+    "initial_midstate_load": true,
+    "native_uninitialized_qrand_restore": true,
+    "skull_entry_reset": true,
+    "chain_identity_through_update_11518": true,
+    "chain_count_through_update_11518": true,
+    "ball_waypoint_and_raw_state_through_update_11518": true,
+    "removal_events_through_update_11518": true,
+    "locked_state_through_update_11517": true
+  },
+  "source_boundary": {
+    "update_11517": {
+      "active_colors": [0, 2],
+      "shooter_colors": [0, 2],
+      "native_game_time": 175,
+      "qrand_update_count": 2,
+      "qrand_selected_index": 2,
+      "thread_crt_rand_state": 3527905494
+    },
+    "update_11518": {
+      "active_colors": [0],
+      "pending_colors": [0],
+      "shooter_colors": [0, 2],
+      "native_game_time": 176,
+      "qrand_update_count": 2,
+      "qrand_selected_index": 2,
+      "thread_crt_rand_state": 3527905494
+    },
+    "update_11519": {
+      "active_colors": [],
+      "pending_colors": [0],
+      "shooter_colors": [0, 2],
+      "native_game_time": 177,
+      "qrand_update_count": 2,
+      "qrand_selected_index": 2,
+      "thread_crt_rand_state": 3527905494
+    },
+    "retail_semantics": "The chamber and shooter QRand/CRT state remain frozen while loss suction removes colors from the active chain."
+  },
+  "deterministic_code_path_diagnosis": {
+    "method": "RevengeSimulator.tick calls _check_gun_colors after loss suction on every update.",
+    "trigger": "At update 11518 color 2 leaves the active chain while next_color remains 2 in retail.",
+    "current_simulator_behavior": "_check_gun_colors treats color 2 as absent and invokes QRand.choose over active color 0, changing the locked chamber and RNG state.",
+    "scope": "loss and skull-entry input-lock phases only",
+    "confidence": "deterministic_from_source_boundary_and_code_path"
+  },
+  "immutability": {
+    "c162_preregistration_modified": false,
+    "c162_implementation_receipt_modified": false,
+    "c162_fixed_output_reused": false,
+    "source_modified": false
+  },
+  "decision": {
+    "c162_diff_result": "FAIL",
+    "qrand_serialization_bridge_result": "PASS",
+    "new_loss_lock_repair_preregistration_required": true,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

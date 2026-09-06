@@ -1,0 +1,91 @@
+{
+  "schema": "zuma-rl.pc-startup-global-mtrand-priority-bias-dose-diagnostic-execution-binding",
+  "version": 10,
+  "status": "BOUND_BEFORE_RUN_OUTPUTS",
+  "created_utc": "2026-08-04T21:05:57.482Z",
+  "id": "startup-global-mtrand-priority-bias-dose-v10-execution",
+  "session_nonce": "a2012b85f47a400ba295e1d67ee033ad",
+  "parent_preregistration": "diagnostics/startup-global-mtrand-priority-bias-dose-preregistration-v10.json",
+  "parent_preregistration_sha256": "sha256:b79f7a06642e2a175b59b81b4b6c415837a54e142efbfeb8fcd196527e6f2b34",
+  "trigger_outcome": "diagnostics/startup-global-mtrand-hidden-draw-observation-outcome-v9.json",
+  "trigger_outcome_sha256": "sha256:0ec76ea986719ca50fc70f803ff7883b73341e1cfa433cd942d9506e2960c097",
+  "hash_recheck": {
+    "collector_plan_sha256": "sha256:5a7ba58eccd7e0d1b1008ac089cce59c167a26ba8bc359ef76f3dcd2bea8c0db",
+    "playback_dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "replay_pre_snapshot_sha256": "sha256:06d243f34ecf209c6296659fd4cc3c0a6c299c203cc8b4e342f55cc001c32842",
+    "global_mtrand_source_trace_sha256": "sha256:4de39ac6a0e800323949e0095fc2fd3e924ea41a670ceb5d75a0ecb25b5c15a4",
+    "startup_oracle_semantic_sha256": "sha256:4342d275f7ed0aa561171b4522aaf1ab7d92fb0b83aa293213b519f867e380fb",
+    "collector_sha256": "sha256:a137d9c4ed1d113b96ebd97257ff61727d261daea573e2520b41e356e84d483c",
+    "tracer_sha256": "sha256:6586859c0eab6d29673f2a8ca05b0c80f6b59c87b8c985cd24c50423ab72d10d",
+    "global_oracle_loader_sha256": "sha256:813ef37279e7b00bade0dc73ecdb405841fdaff5b85a5b85727eb059a0485269",
+    "collector_test_sha256": "sha256:48bd9b15a00904280280ecbda7ccda0ea3d88841391ce8b1f24f4787187ebc07",
+    "tracer_test_sha256": "sha256:eab284b79a4e465dc89d15a3890409510b38c67b4b8b76193605d9bf688273f9",
+    "global_oracle_test_sha256": "sha256:50e3e2df66943f3bf5c3e331eca11302b1aa9a3e58882d8cf3a895732a2a4243"
+  },
+  "preflight": {
+    "tooling_python_compile": "PASS",
+    "focused_native_tests": "PASS_63",
+    "native_full_suite": "PASS_1162_COLLECTED_EXIT_0",
+    "offline_startup_oracle_reconstruction": "PASS_312_CALLS",
+    "dr1_disabled_for_all_arms": true,
+    "priority_transport_existing_tested_path": true,
+    "priority_restore_enforcement": "PASS",
+    "read_only_process_memory_contract": "PASS",
+    "host_state_after_v9": "PASS_STATE_ROOT_MATCH"
+  },
+  "fixed_execution_order": [
+    {
+      "arm": "control_none",
+      "priority_bias_until_update": null,
+      "output": "D:/ZumaGolden/diagnostics/startup-global-mtrand-priority-bias-control-none-e01-v10"
+    },
+    {
+      "arm": "bias_u1802",
+      "priority_bias_until_update": 1802,
+      "output": "D:/ZumaGolden/diagnostics/startup-global-mtrand-priority-bias-u1802-e02-v10"
+    },
+    {
+      "arm": "bias_u3121",
+      "priority_bias_until_update": 3121,
+      "output": "D:/ZumaGolden/diagnostics/startup-global-mtrand-priority-bias-u3121-e03-v10"
+    }
+  ],
+  "fixed_contract": {
+    "expected_wrapper_hit_count": 312,
+    "selection_end_at_update": 3121,
+    "seed": 23557968,
+    "maximum_draws": 100000,
+    "source_order_309_pre_draw_count": 1662,
+    "v6_control_pre_draw_count": 1639,
+    "process_memory_writes_required": 0,
+    "hardware_breakpoint_restored_required": true,
+    "priority_restored_required": true,
+    "diagnostic_disable_source_bound_board_anchor": true,
+    "freeze_update": 3425,
+    "slowdown_update": 3415,
+    "trajectory_end_update": 3425,
+    "maximum_attempts_per_arm": 3,
+    "outer_runner_timeout_seconds_per_arm": 900
+  },
+  "execution_rule": {
+    "capture_fresh_host_pre_after_this_binding": true,
+    "restore_host_state_after_each_arm": true,
+    "retain_every_attempt": true,
+    "do_not_change_thresholds_after_outputs_exist": true,
+    "execute_all_three_arms_even_if_an_earlier_arm_is_source_exact": true
+  },
+  "output_absence_recheck": {
+    "control_run": true,
+    "bias_u1802_run": true,
+    "bias_u3121_run": true,
+    "host_pre_snapshot": true,
+    "host_post_snapshot": true,
+    "outcome": true
+  },
+  "non_authorizations": [
+    "pc_golden_credit",
+    "fidelity_gate_change",
+    "formal_transport_change",
+    "large_scale_training_start"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema": "zuma-rl.zero-shot-models-manifest",
+  "version": 1,
+  "status": "FROZEN",
+  "created_utc": "2026-08-16T03:11:35.031766+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "stage": "training_validation",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "models": [
+    {
+      "id": "polar-intent-wide-source-final",
+      "training_steps": 1287818,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-wide-s99081540-v1/final_model.zip",
+      "sha256": "sha256:9533690041859e73e0ae8f072e4a8ff05a9e316c29a974d666878e4e5bb0b424"
+    },
+    {
+      "id": "polar-intent-dagger-round-00",
+      "training_steps": 1665147,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-dagger-s99081549-v1/round_00/final_model.zip",
+      "sha256": "sha256:ca3263daf92bc3486d2dc08333f1415b3a386187754e42d052e44dafa7b7d550"
+    },
+    {
+      "id": "polar-intent-dagger-round-01",
+      "training_steps": 1911915,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-dagger-s99081549-v1/round_01/final_model.zip",
+      "sha256": "sha256:fefd1693a5493c6dc7378ee37cffb0553ea7d642f92d5480fa330ce60828adea"
+    },
+    {
+      "id": "polar-intent-dagger-round-02",
+      "training_steps": 2136517,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-dagger-s99081549-v1/round_02/final_model.zip",
+      "sha256": "sha256:810c848223e794e40a51cf9fab5826a2f24a7b531657634c8ede6a53c7a8fc3e"
+    }
+  ],
+  "purpose": "Paired early-health diagnostic only; it cannot select the formal finalist.",
+  "builder": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_training_validation.py",
+    "sha256": "sha256:45fcdd98cda89f2a606cb24c30a82c12b877d108b232d37f7623ed71bb9a1391"
+  },
+  "polar_intent_dagger_validation_plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-dagger-validation-s99081550-plan-v1.json",
+    "sha256": "sha256:8cbc5837e6eba98c921f182adc6e17173e53e5c5315c5f426168b8092fdfafb6"
+  },
+  "training_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-dagger-s99081549-preregistration-v1.json",
+    "sha256": "sha256:1721b512669947ecdd390b54123be0a6eedac41424b66ba9f83049df55525bad"
+  },
+  "target_completion": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-dagger-s99081549-v1/completion.json",
+    "sha256": "sha256:8cba46149613b3a20ab9ee4147bd97cb31c6b33c6b72846c584e78d10f734278"
+  }
+}

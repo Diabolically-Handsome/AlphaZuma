@@ -1,0 +1,54 @@
+{
+  "schema": "zuma-rl.human-speedrun-blind-evaluation-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_EVALUATION",
+  "frozen_utc": "2026-08-12T20:17:44.3594311Z",
+  "human_record": {
+    "strict_record_threshold_ticks": 1200
+  },
+  "selection_disclosure": {
+    "total_preregistered_attempts": 2
+  },
+  "seeds": [20261000, 20261001],
+  "models": [
+    {
+      "id": "evaluator-smoke-source",
+      "training_steps": 2621440,
+      "path": "/mnt/d/ZumaTraining/human-speedrun-v1-jungle2-s20261010-2621k-v1/final_model.zip",
+      "sha256": "sha256:aeb6385c6df3faa0e720b43dd52853284807a25eaf2e4d0da4dcdc0769c4f5b6"
+    }
+  ],
+  "environment": {
+    "level": "Jungle2",
+    "profile_mode": "tutorials_completed",
+    "frame_skip": 1,
+    "max_ticks": 100,
+    "max_balls": 768,
+    "input_profile": {
+      "id": "elite-human-v1",
+      "reaction_delay_ticks": 12,
+      "max_aim_speed_degrees_per_second": 1080.0,
+      "max_aim_acceleration_degrees_per_second_squared": 18000.0,
+      "min_button_interval_ticks": 5
+    },
+    "reward_profile": {
+      "id": "win-time-score-v1",
+      "win_reward": 10.0,
+      "failure_reward": -10.0,
+      "time_penalty_per_native_tick": -0.0001,
+      "score_progress_reward_cap": 0.01
+    }
+  },
+  "execution": {
+    "device": "cuda:0",
+    "parallel_envs": 2,
+    "output_directory": "/mnt/d/ZumaTraining/human-speedrun-blind-evaluator-smoke-v1"
+  },
+  "replay_protocol": {
+    "independent_repetitions": 3
+  },
+  "evaluator": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_human_speedrun_blind.py",
+    "sha256": "sha256:ca7b75bb3389675899c5e3620a4f028a19afe07c4fdbb97f1fcf8ee74a4b6802"
+  }
+}

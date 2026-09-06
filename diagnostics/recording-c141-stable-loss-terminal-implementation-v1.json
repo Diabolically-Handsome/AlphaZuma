@@ -1,0 +1,39 @@
+{
+  "schema": "zuma-rl.retail-stable-loss-terminal-implementation-receipt",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T08:33:31.6889548Z",
+  "preregistration": {
+    "path": "diagnostics/recording-c141-stable-loss-terminal-preregistration-v1.json",
+    "sha256": "sha256:d147ad03de0070e5ed9b4acd00cedb687fec621bb58243641695a1643d1cb4ed"
+  },
+  "implementation": [
+    {
+      "path": "tools/autoplay_live_zuma.py",
+      "bytes": 48289,
+      "sha256": "sha256:d75cb5fec1f3a08e99951e41e7cdf29643bdba05c10be4faeab53b11593b1811"
+    },
+    {
+      "path": "tools/record_autoplay_zuma.py",
+      "bytes": 47774,
+      "sha256": "sha256:c61928d29f33870d97e94fdc808ed92069547e1eeba1b7a7c0571815d734e3f9"
+    },
+    {
+      "path": "src/zuma_rl/retail_dmo_provenance.py",
+      "bytes": 41591,
+      "sha256": "sha256:e06b4218417033b2ac96cb8ff9281e619938add4ddd2617837a29856a214f69b"
+    }
+  ],
+  "verification": {
+    "passed": 70,
+    "failed": 0,
+    "command": "python -m pytest tests/test_autoplay_live_zuma.py tests/test_record_autoplay_zuma.py tests/test_retail_dmo_provenance.py tests/test_popcap_thread_crt_restore.py tests/test_popcap_global_mtrand_restore.py -q"
+  },
+  "frozen_semantics": {
+    "zero_score_target_cannot_win": true,
+    "stable_loss_requires_ten_seconds_and_five_snapshots": true,
+    "pending_one_is_the_observed_game_over_sentinel": true,
+    "loss_counter_is_ignored": true,
+    "source_guided_game_over_ui_exit": true
+  }
+}

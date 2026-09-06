@@ -1,0 +1,73 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-power-plan-sequential-window-comparison",
+  "version": 1,
+  "created_utc": "2026-08-14T02:49:20.5238536Z",
+  "status": "PASS_KEEP_TEMPORARY_HIGH_PERFORMANCE",
+  "classification": "operational_sequential_comparison_only",
+  "method": {
+    "sampling": "120 one-second nvidia-smi samples per GPU plus summed training-status steps before and after each window",
+    "windows_are_randomized": false,
+    "windows_are_concurrent": false,
+    "interpretation_limit": "The sequential comparison supports retaining the reversible setting but does not establish strict causal uplift because training state changes over time."
+  },
+  "balanced_window": {
+    "power_plan_guid": "381b4222-f694-41f0-9685-ff5bb260df2e",
+    "start_utc": "2026-08-14T02:36:15.2120217Z",
+    "end_utc": "2026-08-14T02:38:24.1332082Z",
+    "duration_seconds": 128.921,
+    "step_delta": 221936,
+    "steps_per_second": 1721.486,
+    "gpus": [
+      {
+        "index": 0,
+        "utilization_percent": {"mean": 74.46, "median": 79.5, "min": 28, "max": 92},
+        "power_watts_mean": 232.11,
+        "temperature_celsius_max": 52
+      },
+      {
+        "index": 1,
+        "utilization_percent": {"mean": 70.52, "median": 77.0, "min": 10, "max": 93},
+        "power_watts_mean": 136.64,
+        "temperature_celsius_max": 59
+      }
+    ]
+  },
+  "high_performance_window": {
+    "power_plan_guid": "8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c",
+    "start_utc": "2026-08-14T02:47:10.5117420Z",
+    "end_utc": "2026-08-14T02:49:20.5238536Z",
+    "duration_seconds": 130.012,
+    "step_delta": 238272,
+    "steps_per_second": 1832.691,
+    "gpus": [
+      {
+        "index": 0,
+        "utilization_percent": {"mean": 75.13, "median": 79.5, "min": 32, "max": 92},
+        "power_watts_mean": 233.88,
+        "temperature_celsius_max": 52
+      },
+      {
+        "index": 1,
+        "utilization_percent": {"mean": 71.47, "median": 74.0, "min": 18, "max": 90},
+        "power_watts_mean": 141.8,
+        "temperature_celsius_max": 58
+      }
+    ]
+  },
+  "observed_deltas": {
+    "steps_per_second_fraction": 0.06459825987547974,
+    "steps_per_second_percent": 6.46,
+    "gpu0_mean_utilization_percentage_points": 0.67,
+    "gpu1_mean_utilization_percentage_points": 0.95,
+    "gpu0_mean_power_watts": 1.77,
+    "gpu1_mean_power_watts": 5.16
+  },
+  "decision": {
+    "keep_high_performance_until_goal_terminal_condition": true,
+    "restore_balanced_after_terminal_condition": true,
+    "restore_instruction_bound_to_active_watchdog": true
+  },
+  "training_or_evaluation_semantics_changed": false,
+  "formal_seed_consumption": "none",
+  "formal_gate_effect": "none"
+}

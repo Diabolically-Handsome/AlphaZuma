@@ -1,0 +1,102 @@
+{
+  "schema": "zuma-rl.alphazuma-55-dagger-validation-plan",
+  "version": 1,
+  "status": "FROZEN_BEFORE_DAGGER_TRAINING",
+  "created_utc": "2026-08-15T13:05:58.438622+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "purpose": "Paired fresh-seed comparison of the frozen DAgger source, the post-round-one policy, and the final post-round-two policy.",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "dagger_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-dagger-s99081529-preregistration-v1.json",
+    "sha256": "sha256:d201dd5d0a7b25df109ce0929f02dbb58fb4cf6161d5e56c2316564ae8f5ebf8"
+  },
+  "original_root": "/mnt/d/SteamLibrary/steamapps/common/Zuma's Revenge",
+  "models": {
+    "source": {
+      "id": "dagger-source",
+      "training_steps": 36027227,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-reanchor-variants-s99081527-v1/polar-additive-identity-scale-1.zip",
+      "sha256": "sha256:97ada7f7eadf8be03036a4036c64a1d27052b7dd1e21bb00ce2e3b2f66b18905"
+    },
+    "target": {
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-dagger-s99081529-v1",
+      "expected_completion_path": "/mnt/d/ZumaTraining/alphazuma-55-dagger-s99081529-v1/completion.json",
+      "expected_round_one": {
+        "id": "dagger-round-01",
+        "expected_path": "/mnt/d/ZumaTraining/alphazuma-55-dagger-s99081529-v1/round_01/model_after_round.zip"
+      },
+      "expected_final": {
+        "id": "dagger-final",
+        "expected_path": "/mnt/d/ZumaTraining/alphazuma-55-dagger-s99081529-v1/final_model.zip"
+      },
+      "all_paths_must_be_absent_at_freeze": true,
+      "hashes_frozen_after_completion": true
+    }
+  },
+  "matrix": {
+    "levels": 55,
+    "attempts_per_level_per_model": 1,
+    "paired_models_share_identical_task_seeds": true,
+    "seed_registry": "training_validation",
+    "base_seed": 1550000800,
+    "last_seed": 1550000854,
+    "max_ticks": 30000
+  },
+  "execution": {
+    "device": "cuda:1",
+    "parallel_envs": 24,
+    "shard_count": 1
+  },
+  "implementation": {
+    "planner": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_dagger_validation_plan.py",
+      "sha256": "sha256:25c36c9823b1daadc03411624131ec327a5dae7f781c0affbebe31df6939a1f1"
+    },
+    "materializer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/materialize_alphazuma_55_dagger_validation.py",
+      "sha256": "sha256:9e95361c70659b774f30b542ba6cd3da244ee2ccaeac2917c99b6f2391db4ddb"
+    },
+    "contract_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_training_validation.py",
+      "sha256": "sha256:45fcdd98cda89f2a606cb24c30a82c12b877d108b232d37f7623ed71bb9a1391"
+    },
+    "evaluator": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel_v2.py",
+      "sha256": "sha256:811de7b530e6703858ae218aa9a0309724c49824d817e2f55733646ec89fd6c3"
+    },
+    "independent_auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_training_validation.py",
+      "sha256": "sha256:3621dcb64c3342e3954533d22401f258fe6c72ac49d164456455ad77ea54aa67"
+    },
+    "dagger_training_auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_dagger.py",
+      "sha256": "sha256:244cfa572c53a3b1fd4b8bd5b6d561846f49ca02ac933f0c8abd1ec3c73c8aed"
+    }
+  },
+  "outputs": {
+    "run_root": "/mnt/d/ZumaTraining/alphazuma-55-dagger-validation-s99081530-v1",
+    "models_manifest": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-dagger-validation-s99081530-models-v1.json",
+    "preregistration": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-dagger-validation-s99081530-preregistration-v1.json",
+    "audit_receipt": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-dagger-validation-s99081530-independent-audit-v1.json",
+    "dagger_training_audit": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-dagger-s99081529-independent-audit-v1.json"
+  },
+  "decision_rule": {
+    "ranking": [
+      "cleared_levels_descending",
+      "wins_descending",
+      "median_winning_ticks_ascending",
+      "model_sha256_ascending"
+    ],
+    "all_three_models_reported": true,
+    "negative_result_must_be_retained": true,
+    "formal_candidate_registration_authorized": false
+  },
+  "authority_boundary": {
+    "formal_seed_consumption": false,
+    "formal_selection_authority": false,
+    "training_recipe_change_authority": false
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "schema": "zuma-rl.alphazuma-55-motor-observable-gradual-runtime-incident",
+  "version": 1,
+  "status": "FAILED_BEFORE_MODEL_LOAD_NO_SEEDS_CONSUMED",
+  "observed_utc": "2026-08-16T08:14:49.5084594Z",
+  "campaign_id": "alphazuma-55-motor-observable-gradual-s99081628-v1",
+  "classification": "preregistration_source_schema_adapter_error",
+  "root_cause": {
+    "error_type": "KeyError",
+    "error": "'model_path'",
+    "new_source_field": "source.model.path",
+    "legacy_reader_field": "source.model_path",
+    "semantic_effect": "none; the exception occurred before source-model loading and before environment collection"
+  },
+  "lineage": {
+    "initial_startup_incident": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-s99081628-startup-incident-v1.json",
+      "sha256": "sha256:970f8f3001e62793806368ddea764f516b8844c0816a01b83b8ed3a490f3b943"
+    },
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-s99081628-preregistration-v1.json",
+      "sha256": "sha256:e9747af431410abc5c47d048e87f6bf874cd6bf6023f04b94adbd628ca220ea0"
+    },
+    "trainer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_motor_observable_gradual_v1.py",
+      "sha256": "sha256:b01572103c9ad4441a534b5970674c799c0f1f54cf75506aa4dbb3e58c34f64a"
+    }
+  },
+  "evidence": {
+    "stdout": {
+      "path": "D:\\ZumaTraining\\alphazuma-55-motor-observable-gradual-s99081628-recovery-02.stdout.log",
+      "bytes": 0,
+      "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "path": "D:\\ZumaTraining\\alphazuma-55-motor-observable-gradual-s99081628-recovery-02.stderr.log",
+      "bytes": 815,
+      "sha256": "sha256:39963923eaaf31215fa98ce05b6939b4ce807a1d99dc1b6e22b1a6ec97d546d3"
+    },
+    "config": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-s99081628-v1/config.json",
+      "sha256": "sha256:2e3d7c7a0afdacba58413ae32edf15f63910cbff5383148a6f4db76c9a33bcde"
+    },
+    "failure": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-s99081628-v1/failure.json",
+      "sha256": "sha256:42c926ae74695cc2bd4aa2b26530af7e27e7532e43afff9e69ae9d7b510dfa29"
+    },
+    "training_status_exists": false,
+    "checkpoint_exists": false,
+    "model_load_started": false,
+    "environment_collection_started": false
+  },
+  "seed_boundary": {
+    "engineering_training_seed_consumption": "NONE",
+    "formal_selection_seed_consumption": "NONE",
+    "formal_final_blind_seed_consumption": "NONE",
+    "continuous_campaign_seed_consumption": "NONE"
+  },
+  "recovery_boundary": {
+    "requires_new_preregistration": true,
+    "allowed_change": "schema compatibility adapter only",
+    "must_preserve_training_recipe": true,
+    "must_preserve_seed_interval": true,
+    "must_use_new_run_directory": true,
+    "formal_candidate_authority": false,
+    "power_restore_authority": false
+  }
+}

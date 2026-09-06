@@ -1,0 +1,110 @@
+{
+  "schema": "zuma-rl.pc-gameplay-mtrand-call-trace-confirmation-preregistration",
+  "version": 2,
+  "status": "FROZEN_BEFORE_OUTPUT",
+  "created_utc": "2026-08-10T13:17:46.5162968Z",
+  "id": "c172-c164-u5278-u5305-revised-stack-confirmatory-source-bound-call-trace-v1",
+  "purpose": "Acquire a new, independent c164 native call trace after qualifying the stable near-stack and v2 retail-DMO provenance verifier.",
+  "parents": {
+    "qualified_verifier_receipt": "diagnostics/c171-mtrand-proof-v2-candidate-qualification-success-receipt-v1.json",
+    "qualified_verifier_receipt_sha256": "sha256:74794881fd88631a7600d8bff38546ec4742a9480036871f2eb5d0acb5706c1e",
+    "forensic_c169_outcome": "diagnostics/c169-c164-fruit-collection-mtrand-trace-attempt2-outcome-v1.json",
+    "forensic_c169_outcome_sha256": "sha256:a1dd3fdee414406a7f44e80fbda9b3b7d9e02b59f27b02596b912da12f0a3ad2",
+    "forensic_c169_use": "hypothesis_generation_only"
+  },
+  "fixed_source": {
+    "source_memory_probe_sha256": "sha256:5db71850365ca198e4be8a42997d7e8d18e7478c0293d94fcd82773917140876",
+    "source_trajectory_sha256": "sha256:6ea075248dc73e1023a04a72ff6352355f762cad7a8a4cb916d7563d974c3b36",
+    "dmo_sha256": "sha256:6f2d645c3109f73b77ef55c7e7e7941f7f1d2f73dccd5a71adc3051d4a360989",
+    "retail_transport_provenance_sha256": "sha256:a628441dc30a123d1b21dd066c0aaaab14ba40815c96ce8228bd6ed75273630f",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "freeze_update": 5220,
+    "freeze_score": 8780,
+    "freeze_displayed_score": 7950
+  },
+  "fixed_transport": {
+    "plan_sha256": "sha256:a5c4b44df8828862f67335ef8919861eb6d33bb517b92bcab22b599a56d150aa",
+    "pre_template_sha256": "sha256:ca058b8e2f231335255b51174088530a77aa9fb0f31818987dd1559dcf725fbb",
+    "host_pre_sha256": "sha256:0f1dd88161454724adaa7619c8ee78601fb453d243e9b6ccc69db928819fda9a",
+    "collector_sha256": "sha256:79464752ab35693b8f8765483894ae152a389c367f511e7e33398fc4fa2d28b0",
+    "qualified_proof_verifier_sha256": "sha256:d9781e7626b1f981aa82ce220dd96e55ac074722d83873ba8990617aec4e3ac7"
+  },
+  "fixed_window": {
+    "trajectory_start_update": 5278,
+    "trajectory_end_update": 5305,
+    "tick_count": 28,
+    "transition_count": 27,
+    "initial_mtrand_index": 403,
+    "final_mtrand_index": 412,
+    "expected_total_call_count": 9,
+    "expected_calls_by_update": {
+      "5279": ["0x0040cadf", "0x0040cbc0", "0x0040cadf", "0x0040cbc0", "0x0040cadf", "0x0040cbc0"],
+      "5295": ["0x0040cdde"],
+      "5301": ["0x00458cd1", "0x00402111"]
+    },
+    "expected_outputs_in_order": [1812868868, 433870383, 1943661770, 861977117, 389320100, 1193189089, 5368987, 1138495214, 1730531522]
+  },
+  "frozen_classification_contract": {
+    "score_transition_calls": {
+      "callers": ["0x0040cadf", "0x0040cbc0"],
+      "scope": "omitted_visual",
+      "semantic": "score_digit_transition",
+      "required_stack_ancestor": "0x004171ad"
+    },
+    "score_wobble_call": {
+      "caller": "0x0040cdde",
+      "scope": "omitted_visual",
+      "semantic": "score_digit_wobble",
+      "required_stack_ancestors": ["0x0041fd7d", "0x004227f5"]
+    },
+    "pending_repeat_call": {
+      "caller": "0x00458cd1",
+      "scope": "modeled_gameplay",
+      "semantic": "pending_ball_repeat_roll",
+      "required_near_stack_ancestors": ["0x00459031", "0x0045de5e"],
+      "outer_0x0065de83_optional": true,
+      "required_static_instruction_hex": "e85f88faff99b964000000f7f93bd6"
+    },
+    "pending_visual_frame_call": {
+      "caller": "0x00402111",
+      "scope": "modeled_gameplay",
+      "semantic": "pending_ball_visual_frame_roll",
+      "required_near_stack_ancestors": ["0x00458d6a", "0x00459031", "0x0045de5e"],
+      "outer_0x0065de83_optional": true,
+      "required_static_instruction_hex": "e81ff4ffff99f77e345e8997f4000000c3"
+    },
+    "caller_only_labels_forbidden": true
+  },
+  "outputs": {
+    "root": "D:/ZumaGolden/diagnostics/c172-c164-final-confirmatory-source-bound-rng-trace-u5278-u5305-v1",
+    "root_absent_at_freeze": true,
+    "maximum_attempts": 1,
+    "alignment_output": "attempt-01/global-rng-call-trace-alignment.json",
+    "alignment_output_absent_at_freeze": true,
+    "overlap_output": "attempt-01/c111-compact-overlap-verification.json",
+    "overlap_output_absent_at_freeze": true,
+    "host_post_output": "D:/ZumaGolden/diagnostics/c172-host-post-v1.json",
+    "host_post_output_absent_at_freeze": true
+  },
+  "acceptance": {
+    "strict_source_bound_replay_status": "PASS",
+    "diagnostic_mutation_must_be_null": true,
+    "external_input_event_count": 0,
+    "trace_complete_sequence_equals_frozen_expectation": true,
+    "all_nine_calls_satisfy_frozen_classification_contract": true,
+    "alignment_all_27_transitions_exact": true,
+    "source_overlap_all_28_compact_states_exact": true,
+    "source_overlap_all_28_global_mtrand_states_exact": true,
+    "v2_retail_dmo_provenance_recomputes_exactly": true,
+    "host_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "residual_game_process_count": 0
+  },
+  "command": ".\\.venv-win\\Scripts\\python.exe tools\\collect_pc_memory_probe.py --plan D:\\ZumaGolden\\diagnostics\\full-state-source-bound-fruit-collection-c138a3-plan-v1-stop3151\\plan.json --prestate D:\\ZumaGolden\\diagnostics\\full-state-source-bound-fruit-collection-c138a3-plan-v1-stop3151\\protocol\\pre-template.json --host-restore D:\\ZumaGolden\\diagnostics\\full-state-source-bound-fruit-collection-c138a3-plan-v1-stop3151\\safety\\host-pre.json --output-root D:\\ZumaGolden\\diagnostics\\c172-c164-final-confirmatory-source-bound-rng-trace-u5278-u5305-v1 --probe-update 5220 --slowdown-update 5200 --int32-value 8780 --displayed-score-value 7950 --maximum-attempts 1 --trajectory-start-update 5278 --trajectory-end-update 5305 --trajectory-mode rng --trace-global-rng-calls --global-rng-call-trace-timeout-seconds 900 --skip-repaint-guard --skip-frozen-snapshot --diagnostic-source-bound-replay",
+  "decision_rule": {
+    "pass": "Generate the two deterministic verification outputs, independently verify host restoration, then freeze a source-trace success receipt.",
+    "fail": "Retain every artifact, do not reuse the output root, and do not derive a c164 reconciliation proof.",
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

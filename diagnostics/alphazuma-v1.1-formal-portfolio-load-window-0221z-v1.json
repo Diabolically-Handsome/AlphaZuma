@@ -1,0 +1,61 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-gpu-load-window",
+  "version": 1,
+  "status": "PASS",
+  "started_utc": "2026-08-14T02:21:32.1611127+00:00",
+  "ended_utc": "2026-08-14T02:26:35.0946928+00:00",
+  "elapsed_seconds": 302.9335801,
+  "sampling_interval_seconds": 10,
+  "exit_reason": "window_complete",
+  "acceptance": {
+    "per_gpu_window_average_minimum_pct": 65,
+    "per_gpu_window_average_maximum_pct": 90,
+    "approximate_target_pct": 80
+  },
+  "training": {
+    "routes_running": 7,
+    "errors": 0,
+    "controller_status": "RUNNING",
+    "controller_phase": "WAITING_FOR_TRAINING",
+    "maximum_status_age_seconds": 29.7,
+    "start_steps_this_campaign": 17148224,
+    "end_steps_this_campaign": 17691480,
+    "delta_steps": 543256,
+    "observed_steps_per_second": 1793.3172011523725,
+    "village10_live_training_wins": 0
+  },
+  "gpus": [
+    {
+      "index": 0,
+      "model": "NVIDIA GeForce RTX 5090",
+      "samples": 31,
+      "average_utilization_pct": 75.4,
+      "median_utilization_pct": 77.0,
+      "minimum_utilization_pct": 45,
+      "maximum_utilization_pct": 88,
+      "maximum_temperature_c": 52,
+      "pass": true
+    },
+    {
+      "index": 1,
+      "model": "NVIDIA GeForce RTX 5080",
+      "samples": 31,
+      "average_utilization_pct": 66.7,
+      "median_utilization_pct": 71.0,
+      "minimum_utilization_pct": 4,
+      "maximum_utilization_pct": 93,
+      "maximum_temperature_c": 59,
+      "pass": true
+    }
+  ],
+  "capacity_projection": {
+    "training_stop_utc": "2026-08-14T12:00:00+00:00",
+    "remaining_seconds_at_window_end": 34404.9053072,
+    "projected_additional_steps": 61698908,
+    "projected_total_campaign_steps": 79390388,
+    "method": "constant observed five-minute aggregate throughput"
+  },
+  "decision": "Keep the frozen seven-route portfolio unchanged. Both GPUs remain inside the preregistered operating band, hardware throttling is absent, and adding non-candidate load or changing formal concurrency would not improve the frozen candidate set.",
+  "training_or_evaluation_semantics_changed": false,
+  "formal_seed_consumption": "none"
+}

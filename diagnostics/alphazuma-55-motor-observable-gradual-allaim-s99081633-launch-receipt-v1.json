@@ -1,0 +1,112 @@
+{
+  "schema": "zuma-rl.alphazuma-55-motor-observable-gradual-launch-receipt",
+  "version": 1,
+  "status": "LAUNCHED_AND_COLLECTING",
+  "observed_utc": "2026-08-16T14:25:32.120968+00:00",
+  "campaign_id": "alphazuma-55-motor-observable-gradual-allaim-s99081633-v1",
+  "bindings": {
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-allaim-s99081633-preregistration-v1.json",
+      "sha256": "sha256:502c0ab5566a66fa33ff33df80b10b101c5ea1b75dc4e21ff07f5996965730e1"
+    },
+    "trainer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_motor_observable_gradual_allaim_v1.py",
+      "sha256": "sha256:4e55d406a65be0a7ea1d0e4302b736cf1b3fb1dd48e85e4f5d04633f21cf1b3a"
+    },
+    "builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_motor_observable_gradual_allaim_v1.py",
+      "sha256": "sha256:37254db4f8e68966fa5b5dc96d94e4cb368ac80d78ce5939e63cf6825e9a8663"
+    },
+    "preregistration_independent_audit": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-allaim-s99081633-independent-prereg-audit-v1.json",
+      "sha256": "sha256:61be913b30601f2e529cc8112dd18aab8b434d82a7364a794e1ff756c5d99b6d"
+    },
+    "launch_receipt_builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/capture_alphazuma_55_motor_observable_gradual_allaim_launch_receipt_v1.py",
+      "sha256": "sha256:c80a13cfdbaf91cd923fbf1cbee7786ae429a3b77b01dae8d25c4e2703d5fd69"
+    }
+  },
+  "validation": {
+    "status": "VALID",
+    "observation_shape": [
+      22904
+    ],
+    "teacher_execution_probabilities": [
+      1.0,
+      0.9,
+      0.7,
+      0.5
+    ],
+    "epochs_per_round": 12,
+    "formal_seed_consumption": false
+  },
+  "processes": {
+    "windows_launcher_pid": 25680,
+    "wsl_trainer_pid": 390568,
+    "windows_launcher_alive": true,
+    "wsl_trainer_alive": true
+  },
+  "logs": {
+    "stdout": {
+      "path": "D:\\ZumaTraining\\alphazuma-55-motor-observable-gradual-allaim-s99081633-launcher-01.stdout.log",
+      "bytes_at_snapshot": 0,
+      "sha256_at_snapshot": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "path": "D:\\ZumaTraining\\alphazuma-55-motor-observable-gradual-allaim-s99081633-launcher-01.stderr.log",
+      "bytes_at_snapshot": 0,
+      "sha256_at_snapshot": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "initial_artifacts": {
+    "config": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-allaim-s99081633-v1/config.json",
+      "sha256": "sha256:bf14beb644d21214c878acd810765fa35d568560099c79a36dc2aedfd39adab5"
+    },
+    "training_status": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-motor-observable-gradual-allaim-s99081633-v1/training_status.json",
+      "sha256_at_snapshot": "sha256:fd0e72e824e9e82c18418a8bc792bb5c39d26c33df9405f8a698984bffb37a4a",
+      "stage": "COLLECTING",
+      "current_round": 0,
+      "teacher_execution_probability": 1.0,
+      "completed_rounds": 0,
+      "expected_rounds": 4
+    }
+  },
+  "resource_snapshot": {
+    "wsl_available_memory_bytes": 33592078336,
+    "wsl_swap_used_bytes": 0,
+    "wsl_root_available_bytes": 26913964032,
+    "d_drive_available_bytes": 720220528640,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5090",
+        "power_draw_watts": 278.85,
+        "power_limit_watts": 550.0,
+        "utilization_percent": 89,
+        "memory_used_mib": 15427,
+        "memory_total_mib": 32607,
+        "temperature_c": 52
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA GeForce RTX 5080",
+        "power_draw_watts": 68.75,
+        "power_limit_watts": 250.0,
+        "utilization_percent": 26,
+        "memory_used_mib": 11775,
+        "memory_total_mib": 16303,
+        "temperature_c": 49
+      }
+    ]
+  },
+  "authority_boundary": {
+    "engineering_training_route_only": true,
+    "formal_selection_seed_consumption": "NONE",
+    "formal_final_blind_seed_consumption": "NONE",
+    "continuous_campaign_seed_consumption": "NONE",
+    "formal_candidate_authority": false,
+    "power_restore_authority": false
+  }
+}

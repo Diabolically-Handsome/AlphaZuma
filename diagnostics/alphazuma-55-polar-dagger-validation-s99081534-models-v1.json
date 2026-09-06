@@ -1,0 +1,51 @@
+{
+  "schema": "zuma-rl.zero-shot-models-manifest",
+  "version": 1,
+  "status": "FROZEN",
+  "created_utc": "2026-08-15T23:45:11.672643+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "stage": "training_validation",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "models": [
+    {
+      "id": "polar-source-final",
+      "training_steps": 423483,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-distillation-s99081531-v1/final_model.zip",
+      "sha256": "sha256:3e9996b20c18cf24e6a0f23c719bf383e6381d3240c91d9767e0245e372d12b0"
+    },
+    {
+      "id": "polar-dagger-round-00",
+      "training_steps": 837372,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-dagger-s99081533-v1/round_00/final_model.zip",
+      "sha256": "sha256:d27896a2368092e7e8b91541895365cd27726c91899c688c3d1f20b93743042c"
+    },
+    {
+      "id": "polar-dagger-round-01",
+      "training_steps": 1107078,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-dagger-s99081533-v1/round_01/final_model.zip",
+      "sha256": "sha256:a6dc4d51ac122bc9b175c6cd86c90dd7bc86cf0ff1c8eaa4a22033e0dbab5e87"
+    },
+    {
+      "id": "polar-dagger-round-02",
+      "training_steps": 1330854,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-dagger-s99081533-v1/round_02/final_model.zip",
+      "sha256": "sha256:f709562346b3fc6c2df76e6cf0f003b4434edf2d7a257c2b934a446095c9625f"
+    }
+  ],
+  "purpose": "Paired early-health diagnostic only; it cannot select the formal finalist.",
+  "builder": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_training_validation.py",
+    "sha256": "sha256:45fcdd98cda89f2a606cb24c30a82c12b877d108b232d37f7623ed71bb9a1391"
+  },
+  "polar_dagger_validation_plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-dagger-validation-s99081534-plan-v1.json",
+    "sha256": "sha256:65250178fd5d551919a0e6ca0610f54aba3ff9b3a177f72d97d09e4de7df027a"
+  },
+  "target_completion": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-dagger-s99081533-v1/completion.json",
+    "sha256": "sha256:1e94986f07788de29cf861dc13f0684705b46c8e8e6f4f6f8e42caea7cf163e1"
+  }
+}

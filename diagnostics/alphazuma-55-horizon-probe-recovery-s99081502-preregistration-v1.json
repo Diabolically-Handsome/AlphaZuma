@@ -1,0 +1,241 @@
+{
+  "schema": "zuma-rl.zero-shot-multilevel-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_EVALUATION",
+  "created_utc": "2026-08-15T06:52:30.529631+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "stage": "engineering_horizon_probe_capacity_recovery",
+  "question": "Does the frozen V1 frontier checkpoint clear any level whose live training outcomes were dominated by 12,000-tick truncations when allowed 30,000 ticks?",
+  "classification": "engineering_recovery_reusing_consumed_seeds_not_fresh_or_formal_evidence",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "source_analysis": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-hard-frontier-analysis-s95081501-v1.json",
+    "sha256": "sha256:49ae136c38458fe0f452975257085ccdaee765a7e35cbcf517f7a2cc6766572e",
+    "selection_rule": "wins == 0 and episodes >= 10 and truncations / episodes >= 0.75"
+  },
+  "model": {
+    "id": "v1-frontier-4194304",
+    "training_steps": 4194304,
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-v1-frontier-s87081501-v1/checkpoints/alphazuma55-v1-frontier-5080_4194304_steps.zip",
+    "sha256": "sha256:4324ccf39b822ad946359e34c73a1afe62c7f00d73d4a2d1375a5b9e64a955bc"
+  },
+  "levels": [
+    {
+      "id": "village5",
+      "display_name": "Abandoned Well",
+      "curve_count": 1,
+      "curve_names": [
+        "Village5"
+      ]
+    },
+    {
+      "id": "city5",
+      "display_name": "Mossy Square",
+      "curve_count": 1,
+      "curve_names": [
+        "city5\\city5"
+      ]
+    },
+    {
+      "id": "city6",
+      "display_name": "Mosaic Mayhem",
+      "curve_count": 1,
+      "curve_names": [
+        "city6\\city6"
+      ]
+    },
+    {
+      "id": "city7",
+      "display_name": "Strange Smile",
+      "curve_count": 1,
+      "curve_names": [
+        "city7\\city7-2"
+      ]
+    },
+    {
+      "id": "city9",
+      "display_name": "Ghosts of the Past",
+      "curve_count": 1,
+      "curve_names": [
+        "city9\\city9"
+      ]
+    },
+    {
+      "id": "Coast1",
+      "display_name": "Swamp Spin",
+      "curve_count": 1,
+      "curve_names": [
+        "coast1"
+      ]
+    },
+    {
+      "id": "Coast6",
+      "display_name": "Ancient Inlay",
+      "curve_count": 1,
+      "curve_names": [
+        "coast6"
+      ]
+    },
+    {
+      "id": "Coast7",
+      "display_name": "Secret Circle",
+      "curve_count": 1,
+      "curve_names": [
+        "coast7"
+      ]
+    },
+    {
+      "id": "grotto2",
+      "display_name": "Wave Babies",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto2\\grotto2-2"
+      ]
+    },
+    {
+      "id": "grotto5",
+      "display_name": "Coelacanth Cave",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto5\\grotto5"
+      ]
+    },
+    {
+      "id": "grotto10",
+      "display_name": "Shark Den",
+      "curve_count": 2,
+      "curve_names": [
+        "grotto10\\grotto10-1",
+        "grotto10\\grotto10-2"
+      ]
+    },
+    {
+      "id": "volcano2",
+      "display_name": "Subterran Solaris",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano2/Volcano2-3"
+      ]
+    },
+    {
+      "id": "volcano3",
+      "display_name": "Reflection in Magma",
+      "curve_count": 1,
+      "curve_names": [
+        "volcano3\\volcano3"
+      ]
+    },
+    {
+      "id": "volcano4",
+      "display_name": "Obsidian Isle",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano4\\Volcano4"
+      ]
+    },
+    {
+      "id": "volcano6",
+      "display_name": "Thermal Vortex",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano6\\Volcano6"
+      ]
+    },
+    {
+      "id": "volcano7",
+      "display_name": "Molten Dais",
+      "curve_count": 1,
+      "curve_names": [
+        "volcano7\\volcano7-2"
+      ]
+    },
+    {
+      "id": "volcano8",
+      "display_name": "Basaltic Approach",
+      "curve_count": 1,
+      "curve_names": [
+        "volcano8\\volcano8-3"
+      ]
+    }
+  ],
+  "attempts_per_level": 1,
+  "total_attempts": 17,
+  "seed_plan": {
+    "registry": "engineering_and_calibration",
+    "base_seed": 1400400000,
+    "last_seed": 1400400016,
+    "formal_seed_consumption": false
+  },
+  "environment": {
+    "profile_mode": "tutorials_completed",
+    "base_config": {
+      "aim_bins": 180,
+      "action_mode": "factorized",
+      "frame_skip": 1,
+      "max_ticks": 30000,
+      "max_balls": 768,
+      "max_projectiles": 32,
+      "max_curves": 2,
+      "score_reward_scale": 1.0,
+      "step_penalty": -0.01,
+      "win_reward": 1000.0,
+      "loss_reward": -1000.0,
+      "privileged_debug": false,
+      "render_width": 400,
+      "render_height": 300,
+      "actor_interface": "full55-v1"
+    },
+    "input_profile": {
+      "profile_id": "elite-human-v1",
+      "reaction_delay_ticks": 12,
+      "max_aim_speed_degrees_per_second": 1080.0,
+      "max_aim_acceleration_degrees_per_second_squared": 18000.0,
+      "min_button_interval_ticks": 5
+    },
+    "reward_profile": {
+      "profile_id": "win-time-score-v1",
+      "win_reward": 10.0,
+      "failure_reward": -10.0,
+      "time_penalty_per_native_tick": -0.0001,
+      "score_progress_reward_cap": 0.01
+    }
+  },
+  "execution": {
+    "output_root": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/engineering/horizon-probe-recovery-s99081502-v1",
+    "shard_count": 1,
+    "devices": [
+      "cuda:1"
+    ],
+    "parallel_envs_per_shard": 17
+  },
+  "interpretation": {
+    "positive": "A win after tick 12000 supports testing a separately frozen long-horizon training route; it does not promote this model.",
+    "negative": "No wins by the probe ceiling does not prove longer horizons are useless; it rejects only this frozen checkpoint and seed matrix.",
+    "formal_authority": false
+  },
+  "evaluator": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel_v2.py",
+    "sha256": "sha256:811de7b530e6703858ae218aa9a0309724c49824d817e2f55733646ec89fd6c3"
+  },
+  "builder": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_horizon_probe_recovery.py",
+    "sha256": "sha256:0571a2d6fb585dee166768b66d9ada40d9a9c9d12588c2e13a6776d0602fdd20"
+  },
+  "source_incident": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-horizon-probe-s99081501-incident-v1.json",
+    "sha256": "sha256:f4724400052048a9658cb3fd04a2186cd969ecf1a1496f66697477aa031f1702"
+  },
+  "recovery_contract": {
+    "same_model_levels_and_engineering_seeds": true,
+    "seeds_are_already_consumed": true,
+    "formal_authority": false,
+    "only_exact_actor_observation_capacity_overflow_is_fail_closed": true,
+    "overflow_attempt_outcome": "loss",
+    "sibling_attempts_must_complete": true,
+    "all_other_exceptions_must_fail_the_shard": true,
+    "source_probe_output_must_not_be_overwritten": true
+  }
+}

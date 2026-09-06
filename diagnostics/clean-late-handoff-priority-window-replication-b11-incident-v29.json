@@ -1,0 +1,80 @@
+{
+  "schema": "zuma-rl.pc-clean-late-handoff-priority-window-replication-incident",
+  "version": 29,
+  "status": "CLOSED_NON_SEMANTIC_INFRASTRUCTURE_FAILURE",
+  "created_utc": "2026-08-05T22:35:51.8471650Z",
+  "session_nonce": "62811397062144f1beec342904b4ffbf",
+  "run_id": "b11",
+  "arm": "B_bias_u1802",
+  "root": "D:/ZumaGolden/diagnostics/clean-late-handoff-priority-bias-b11-v29",
+  "attempts_manifest_sha256": "sha256:cf8cea2194ee938ceeda6c7241ca0b409297a4f5977b2072f5fdb9b8a1371d1a",
+  "classification": "pre_handoff_startup_infrastructure",
+  "semantic_observation_available": false,
+  "retry_contract": {
+    "maximum_attempts": 3,
+    "attempts_consumed": 3,
+    "further_retry_authorized": false,
+    "reason": "The frozen maximum was exhausted before any transactional ready-v2 receipt."
+  },
+  "common_failure": {
+    "framework_update": 379,
+    "strict_replay_exception": "RuntimeError: post-bypass worker yield resume count mismatch: 2",
+    "collector_error": "trace_exited_before_global_mtrand_call_sync_ready:exit=1",
+    "ready_receipt_published": false
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "strict_log_sha256": "sha256:d8d42eb862e060f634b40ec5e18c811f76799bda61bc271ccd6d82c66eb7b8f9",
+      "observer_sha256": "sha256:d9c2058d2475960099424d1cde46f69cee37225ea0daf50970e02080349d92f9",
+      "priority_apply_count": 1,
+      "priority_apply_update": 0,
+      "priority_restore_count": 1,
+      "priority_restore_update": 379,
+      "resume_mismatch_count": 1,
+      "observer_process_memory_writes": 0,
+      "observer_state_correction_count": 0,
+      "hardware_breakpoint_restored": true,
+      "debugger_detach_error": null,
+      "persistent_file_modified": false
+    },
+    {
+      "attempt": 2,
+      "strict_log_sha256": "sha256:4f2a24cc223b4f1f2b2205b1486c91970678a9a1eabdfce4f326e09c5f909c7c",
+      "observer_sha256": "sha256:e13bb6811f6a91d469bb8619e2781c37ef9576f0350b88b4748c82fc59e07575",
+      "priority_apply_count": 1,
+      "priority_apply_update": 0,
+      "priority_restore_count": 1,
+      "priority_restore_update": 379,
+      "resume_mismatch_count": 1,
+      "observer_process_memory_writes": 0,
+      "observer_state_correction_count": 0,
+      "hardware_breakpoint_restored": true,
+      "debugger_detach_error": null,
+      "persistent_file_modified": false
+    },
+    {
+      "attempt": 3,
+      "strict_log_sha256": "sha256:22e52618f80afd2a4a99063bf5c8a145f740b5492af4e7f1a4e6a7be0f5742db",
+      "observer_sha256": "sha256:ba0f136bb038c332a23fcb6b99c3c2cdc836394c6ae2d503396473afc1221e71",
+      "priority_apply_count": 1,
+      "priority_apply_update": 0,
+      "priority_restore_count": 1,
+      "priority_restore_update": 379,
+      "resume_mismatch_count": 1,
+      "observer_process_memory_writes": 0,
+      "observer_state_correction_count": 0,
+      "hardware_breakpoint_restored": true,
+      "debugger_detach_error": null,
+      "persistent_file_modified": false
+    }
+  ],
+  "post_root_safety": {
+    "host_snapshot": "D:/ZumaGolden/diagnostics/clean-late-handoff-priority-replication-host-after-b11-v29.json",
+    "host_snapshot_sha256": "sha256:033777a84c2b1938e5b20f84b3830ecad3c079d02c7fecf49aaa912d2ae278e6",
+    "state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "canonical_match": true,
+    "residual_runtime_process_count": 0
+  },
+  "decision": "EXCLUDE_B11_AS_INVALID_INFRASTRUCTURE_AND_DO_NOT_RERUN_UNDER_V29"
+}

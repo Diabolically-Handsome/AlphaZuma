@@ -1,0 +1,77 @@
+{
+  "schema": "zuma-rl.c158-natural-loss-simulator-diff-success-receipt",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T12:30:26.3452490Z",
+  "preregistration": "diagnostics/c163-c158-loss-chamber-lock-preregistration-v1.json",
+  "preregistration_sha256": "sha256:7673e75758c31eb3f8d4bdeb5fef4f2ab3caf57bbdcdd58bb37a7280b808626b",
+  "implementation_receipt": "diagnostics/c163-c158-loss-chamber-lock-implementation-receipt-v1.json",
+  "implementation_receipt_sha256": "sha256:4d63748bbded2788c43a6b7c2ba470081b82d41e681dea9a04a2142683f8d828",
+  "immutable_source": {
+    "source_manifest": "D:/ZumaGolden/sources/c158-u11200-u11830-source-bound-natural-loss-v1.json",
+    "source_manifest_sha256": "sha256:706b8e9d18cf8bdbed2b7d9b9adab052258638ed8955a8199e2cb578f89f23b1",
+    "source_fingerprint": "sha256:0feed280a4662b83a1b9072664f54b17b492495e8a81d926df43e35e00218edf",
+    "trajectory": "D:/ZumaGolden/formal-full-state-c155-natural-loss-c158-campaign-v1/attempt-01/source/attempt-01/trajectory/index.json",
+    "trajectory_sha256": "sha256:a5cd4410676579f0ac75ec0bb69f18d483c026cde14566284ad10a24e2b60ada",
+    "source_bytes_modified": false
+  },
+  "mechanism": {
+    "audit": "D:/ZumaGolden/diagnostics/pc-mechanism-c158-natural-loss-live-v1.json",
+    "audit_sha256": "sha256:148cdcabf8ad633cfdc73bf53952888bc1e136f18a825bae6d6426949b218b26",
+    "status": "PASS",
+    "derived_features": ["natural_loss"]
+  },
+  "simulator_diff": {
+    "artifact": "D:/ZumaGolden/diagnostics/jungle2-c158-u11341-u11519-natural-loss-diff-v3.json",
+    "artifact_bytes": 2752,
+    "artifact_sha256": "sha256:7c2911a81b9535e392d0b69d751ce81cdde9cb6996021af48449f77dae376269",
+    "schema": "zuma-rl.pc-loss-simulator-diff",
+    "version": 1,
+    "status": "PASS",
+    "start_update": 11341,
+    "reset_update": 11342,
+    "trigger_update": 11343,
+    "empty_update": 11519,
+    "end_update": 11519,
+    "ticks_compared": 178,
+    "maximum_waypoint_error": 0.0,
+    "initial_chain_count": 105,
+    "pending_ball_count": 1,
+    "score": 7950,
+    "shooter_colors_after_reset": [0, 2],
+    "post_empty_pc_ticks_excluded": 0,
+    "inferred_advance_speed": 0.125,
+    "terminal_pretrigger_advance_exact": true,
+    "removal_update_count": 103,
+    "removed_ball_count": 105,
+    "distinct_removed_ball_count": 105,
+    "removal_coverage_exact": true
+  },
+  "oracle": {
+    "status": "PASS",
+    "trigger_update": 11343,
+    "empty_update": 11519,
+    "ticks_from_trigger_to_empty": 176
+  },
+  "implementation_state": {
+    "src/zuma_rl/revenge_core.py_sha256": "sha256:0229faec8c7b3fb05f64831bcc93565ef072184d48bb96c489b767d6c55628ad",
+    "tests/test_revenge_core.py_sha256": "sha256:61c72424c5883a7fbae33f65f12d7742e7e1c0ad81741a6de1a098a0671c576c",
+    "full_suite_collected_test_count": 1542,
+    "full_suite_status": "PASS"
+  },
+  "immutability": {
+    "failed_c161_output_reused": false,
+    "failed_c162_output_reused": false,
+    "source_modified": false,
+    "mechanism_audit_modified": false,
+    "gate_threshold_modified": false
+  },
+  "decision": {
+    "natural_loss_original_source_candidate": true,
+    "natural_loss_simulator_diff_candidate": true,
+    "natural_loss_gate_recompute_authorized": true,
+    "fidelity_gate_change_applied": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

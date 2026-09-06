@@ -1,0 +1,397 @@
+{
+  "schema": "zuma-rl.overnight-multilevel-preregistration-v2",
+  "version": 2,
+  "status": "FROZEN_BEFORE_TRAINING",
+  "draft_utc": "2026-08-18T05:26:24Z",
+  "frozen_utc": "2026-08-18T11:21:49Z",
+  "draft_note": "DRAFT successor (run 3) to the Jungle2 specialist macro-ppo-jungle2 (s99081684, frozen prereg sha256:ec364fba827c9b15de3b33e626d6a12e91373a2d83cbdf519a235555e4da2bda), drafted WHILE the predecessor is still training. FREEZE PROTOCOL: this document must NOT be frozen, validated (--validate-only included), or launched until AFTER the predecessor stops at its preregistered training_stop_utc 2026-08-18T11:05:00Z and its final 8-seed best-checkpoint eval completes. Every field valued FILL_AT_FREEZE is deliberately unresolvable at draft time and is filled in this order at freeze: (1) initial_model.path + initial_model.sha256 + initial_model.eval_receipt (the predecessor's best checkpoint by final 8-seed eval, fallback latest checkpoint, cannot exist until the predecessor stops), and delegate.cli.init_model which must equal initial_model.path; (2) gating_evidence_required_before_freeze.predecessor_best_checkpoint_eval (the eval receipt path + sha256 backing that selection); (3) lineage.stall_evidence additions (eval-ckpt dirs that appear between draft and freeze are hashed and appended; the four hashed here existed at draft time, eval-ckpt5M is expected before the stop); (4) schedule.training_stop_utc / goal_end_utc / freeze_arithmetic (derived from frozen_utc, unknowable now); (5) frozen_utc and freeze_note themselves (the freeze pass timestamp and its delta log). No other field may change between draft and freeze except by a logged freeze_note delta.",
+  "freeze_note": "FROZEN at 2026-08-18T11:21:49Z from draft sha256:7b60c10f6aab0557460a4cf2d3f330506c5e01e48a96b464d11eb30f6cdee81c (draft_utc 2026-08-18T05:26:24Z, kept verbatim above as draft_note). The predecessor macro-ppo-jungle2 (s99081684) COMPLETED its full 10M-step budget at 2026-08-18T11:01:52Z (stop_reason REQUESTED_TIMESTEPS_REACHED, ahead of the 11:05Z wall-clock backstop) and its final 8-seed eval finished at 11:14:16Z, so the draft's freeze protocol precondition is met. DELTA LOG (every change from the draft): (1) initial_model.path/.sha256 filled with the predecessor's final_model.zip (sha256:a9f1966b3e6840e5129cd2671d42a09bf1f6efe281edd0ac2b79ea33da1a495a). SELECTION REASON - the final model is the WIN-RICHEST policy, not merely a fallback: unlike the sibling Jungle1 freeze, the predecessor's training win counter was still ACCRUING when the budget ended (16 -> 18 recorded mid-run in this draft's own prose; 32 wins over 9,174 episodes at completion), so the latest weights embody every stochastic win the run produced; the draft's 'fallback: latest checkpoint' clause also formally covers the selection because the final 8-seed eval is 0/8 and every per-checkpoint eval (eval-ckpt1M..9M) is 0/1, leaving best-checkpoint-by-eval UNDEFINED - and final_model.zip (10,004,480 steps, later than ckpt9M) is exactly the model the 8-seed eval ran (every per-seed completion binds the same source sha256). initial_model.eval_receipt filled with the 8-seed summary receipt and initial_model.freeze_selection_note added. (2) gating_evidence_required_before_freeze.predecessor_best_checkpoint_eval: receipt_path/receipt_sha256 = the 8-seed summary receipt, selected_checkpoint_path/sha256 = final_model.zip; resolved_note added recording the stop facts. (3) lineage.stall_evidence.eval_run_dirs appended with eval-ckpt5M/6M/7M/8M/9M (all 0/1, shots_on_target_rate 1.0), lineage.stall_evidence.final_8seed_eval_summary added (0/8), and lineage.stall_evidence.freeze_addendum added recording the MISALIGNMENT EVIDENCE: the predecessor's terminal signature is win accrual WITHOUT deterministic conversion (32 training wins, still accruing, vs 0 wins across all 17 deterministic evals), not the Jungle1 counter freeze - the draft's 'trickle 16 -> 18' prose is left verbatim as draft-time history, and the addendum records which win counts are derivable from disk and which are operator observations. (4) lineage.predecessor_outcome added binding the predecessor's outcome receipt (decision FAIL, completed full budget). (5) delegate.cli.init_model set to the same final_model.zip path (must equal initial_model.path). (6) schedule filled per the draft's rule; see freeze_arithmetic. (7) status -> FROZEN_BEFORE_TRAINING, frozen_utc and this freeze_note set. No other field changed; no validator-driven document reshaping was needed (the two-clause early_stop_rule and the draft's extra keys are outside the v2 validator's checked surface, verified against tools/train_overnight_multilevel_v2.py sha256:d1338514c4483068af9caecf7b00ebdedb98067a60f90e0fd0ef127457f7cef3, byte-identical to the trainer that validated the sibling jungle1-r3 freeze).",
+  "objective": "Run 3 per-level SPEEDRUN specialist on Jungle2: continuation fine-tune from the BEST CHECKPOINT of predecessor run macro-ppo-jungle2 (s99081684) with the score-shaping cap realigned from 10.0 to 1.0. The predecessor's mid-run evidence shows a reward-misalignment failure mode: the policy fires well (36-40 shots/episode) and farms score, but training wins only trickle (16 -> 18 over 1,700+ episodes), consistent with shaped score return rivaling the win bonus. SPEEDRUN objective is unchanged: success is win rate first, then median winning ticks; SCORE IS EXPLICITLY NOT A SUCCESS METRIC and is recorded only as a liveness diagnostic. Same stack-under-macro composition and verified anti-collapse knobs (entropy floor 0.01, lr 1e-5, ppo_epochs 2). Budget unchanged: 10M macro steps ~= 94M native ticks.",
+  "lineage": {
+    "run_1_preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-macro-ppo-s99081680-preregistration-v1.json",
+      "sha256": "sha256:fcd2f536c9a0596cdd7b23180d38fd16ff51917a009f157c65ed5259cc2068fa"
+    },
+    "run_1_outcome": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-macro-ppo-s99081680-outcome-v1.json",
+      "sha256": "sha256:cccda4f1a80702cdd4f7ff37c5fe8c480d322b4ae1e93b94ad593a1f916f0c31",
+      "decision": "FAIL",
+      "status": "STOPPED_EARLY_ENGINEERING_DECISION"
+    },
+    "collapse_summary": "run 1 (macro-ppo-5090, s99081680) collapsed into the never-fire attractor: two consecutive macro-native 12-panel checkpoints fired below the 73-shot transplant-init baseline (94 then 10 shots), so it was stopped early and reported FAIL",
+    "run_2_preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-macro-ppo-s99081682-preregistration-v1.json",
+      "sha256": "sha256:c2053de5bacfd44e5fabd8522094b9ecc72c85d5874d7055826a8dc910a287a1"
+    },
+    "run_2_outcome": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-macro-ppo-s99081682-outcome-v1.json",
+      "sha256": "sha256:1133eaae654726c5e47ce01e0428a01e593ac2c84702403012f02073d909de11",
+      "decision": "INCONCLUSIVE_STOPPED_AT_13_PERCENT_BUDGET",
+      "status": "STOPPED_EARLY_USER_DIRECTED_STRATEGY_PIVOT"
+    },
+    "pivot_summary": "run 2 (macro-ppo-5090-r2, s99081682) was stopped at ~13% budget by a user-directed strategy pivot to per-level specialists; the anti-collapse knobs were verified healthy before the stop and carry into this run unchanged",
+    "predecessor_preregistration": {
+      "role": "DIRECT predecessor of this run 3 document: the Jungle2 specialist whose best checkpoint becomes this run's initial_model at freeze",
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-macro-ppo-jungle2-s99081684-preregistration-v1.json",
+      "sha256": "sha256:ec364fba827c9b15de3b33e626d6a12e91373a2d83cbdf519a235555e4da2bda",
+      "sibling_predecessor_preregistration": {
+        "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-macro-ppo-jungle1-s99081683-preregistration-v1.json",
+        "sha256": "sha256:6f9097d6494f798d45300a7e5f9abb3d5dc52b59432b9b7f34f22711f55ae100"
+      }
+    },
+    "stall_evidence": {
+      "note": "farm-not-finish pattern in the predecessor (macro-ppo-jungle2, s99081684), documented mid-run: per-checkpoint macro-native evals show a healthy firing policy that farms score without reliably winning, while the run's training_status.json shows training wins only trickling (16 -> 18) over 1,700+ episodes as score climbs. Suspected mechanism: score_progress_reward_cap 10.0 lets a shaped truncation return approach a win's return, creating a farm-not-finish attractor. The eval run dirs below existed at draft time and their completion.json hashes are bound here; MORE eval-ckpt dirs may exist by freeze (the predecessor trains until 2026-08-18T11:05:00Z; eval-ckpt5M is expected) and are appended at freeze.",
+      "eval_run_dirs": [
+        {
+          "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle2-s99081684-v1/eval-ckpt1M",
+          "completion_sha256": "sha256:d38e9b6a2e60e1f585387487d4e85a296a18ebec5383679abc4f4a3dd54e0e6a"
+        },
+        {
+          "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle2-s99081684-v1/eval-ckpt2M",
+          "completion_sha256": "sha256:2addbf633267c46eeb3a3735df591c4fc77a5216037a45ab617e2c839c38ca6e"
+        },
+        {
+          "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle2-s99081684-v1/eval-ckpt3M",
+          "completion_sha256": "sha256:09a178be24154a600cfe0584d2b918e1e86c85c36afcc6ebab9a11ac41e02fa8"
+        },
+        {
+          "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle2-s99081684-v1/eval-ckpt4M",
+          "completion_sha256": "sha256:561dc16a521693d3134b2e8abcc634d5bb70ba22606b822526d9bc7e20b338a6"
+        },
+        {
+          "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle2-s99081684-v1/eval-ckpt5M",
+          "completion_sha256": "sha256:6c8d4e60c14472e5447b7a5ae177f284698e6b306e9718fe9a4c538ebad025e0"
+        },
+        {
+          "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle2-s99081684-v1/eval-ckpt6M",
+          "completion_sha256": "sha256:a2eae120a6086d1d65cd0f26f6c23ed79a15d35ccd2e17325b62b83137a8dc84"
+        },
+        {
+          "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle2-s99081684-v1/eval-ckpt7M",
+          "completion_sha256": "sha256:834a1ef716d781ed36579a711e7706135927461803b96e3697f596dd9802ccd7"
+        },
+        {
+          "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle2-s99081684-v1/eval-ckpt8M",
+          "completion_sha256": "sha256:988f06716589c05664f24661bf808a490d678c1e161cbf22abb5614f30742f54"
+        },
+        {
+          "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle2-s99081684-v1/eval-ckpt9M",
+          "completion_sha256": "sha256:0fc6d2479c060556489c2bc3a585df5dcb265c713272ae8a44606716b643e270"
+        }
+      ],
+      "final_8seed_eval_summary": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle2-s99081684-v1/eval-final-8seed/summary.json",
+        "sha256": "sha256:3daf641e527a379b3c6c0e1ed4df8c2a6ce7ad46667b00558428df9381cfdac0",
+        "wins": "0/8",
+        "note": "final 8-seed eval of the predecessor's final model: 0/8 wins, shots_on_target_rate 1.0 on every seed, no time-limit truncations (ticks 11,991-17,763 under the 30,000-tick eval limit); the deterministic policy farms score to a natural death rather than finishing, to the end of the budget"
+      },
+      "freeze_addendum": "MISALIGNMENT EVIDENCE - the predecessor's terminal signature is NOT the Jungle1 stall: final training_status.json (sha256:89cfc4a035c2b13aac12d888e0e8d1059189ea10003669d8624bee05897f08b4): timesteps 10,004,480; episodes 9,174; wins 32 and STILL ACCRUING at the end of the budget (checkpoint-wise counts observed live: 16 at ~3.2k episodes, 18 at ~4.1k, 21 at ~6k, 24 at ~7k, 27 at ~8k, 29 at ~9k, final 32 at 9,174; only the endpoint is derivable from on-disk artifacts - curriculum_history.jsonl holds only the training_start/training_end rows (wins {} -> {Jungle2: 32}) and tensorboard has no win-count scalar - and of the intermediates only the 16 -> 18 segment is independently on disk, in this draft's own verbatim prose); losses 1,491; truncations 7,651 (83% of episodes farm to the 12,000-tick training horizon); observed_win_rate ~0.0035; recent_win_rate 0.0 over the final 64 episodes (consistent with a ~0.35% win rate, not a terminal stall). Meanwhile the DETERMINISTIC argmax policy converted none of 17 evals (0/1 at eval-ckpt1M..9M, 0/8 on the final 8-seed eval). Stochastic wins that keep accruing while the deterministic policy never converts is reward misalignment by ADVANTAGE DILUTION (deterministic-policy sharpening failure) rather than exploration collapse: under score_progress_reward_cap 10.0 the abundant score-farming returns rival the rare win returns and drown the advantage signal that would sharpen winning trajectories into the argmax mode; the cap realignment to 1.0 (trainer_v2.reward_alignment) is exactly the fix this run tests."
+    },
+    "predecessor_outcome": {
+      "role": "outcome receipt of the DIRECT predecessor, written in the same conclusion pass as this freeze",
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-macro-ppo-jungle2-s99081684-outcome-v1.json",
+      "sha256": "sha256:29bfe53878fb74fc07e2b07cf5d25f9e256c864ffc233bc865ac31374b5fd3a3",
+      "decision": "FAIL",
+      "status": "COMPLETED_FULL_BUDGET"
+    }
+  },
+  "early_stop_rule": {
+    "clause_1_fire_collapse": {
+      "clause": "if the macro-native eval of two consecutive checkpoints both show total_shots below the transplant-init baseline (73 shots), the run is stopped and reported FAIL",
+      "baseline_source": "eval of the transplant init through the macro protocol (score 2090, 73 shots)",
+      "authorized_by_outcome": "sha256:cccda4f1a80702cdd4f7ff37c5fe8c480d322b4ae1e93b94ad593a1f916f0c31",
+      "carried_over_note": "carried unchanged from runs 1-3 of this lineage; the predecessor specialist trained under this rule without triggering it"
+    },
+    "clause_2_reward_misalignment": {
+      "clause": "if two consecutive checkpoints show zero new TRAINING wins in the run's training_status.json while eval score rises, the run is stopped as reward-misaligned",
+      "rationale": "this is the lesson of the predecessor generation's stall (Jungle1 training wins frozen at 16 over 1,700+ episodes; Jungle2 trickling 16 -> 18, both while firing 36-40 shots/episode and farming score): a policy that gets better at scoring without winning is optimizing the shaping, not the objective. Run 3 self-polices by encoding the stall signature as a stop condition rather than waiting for a human to notice it.",
+      "measurement": "checked at each checkpoint: 'new TRAINING wins' is the delta of the cumulative win counter in the run's own training_status.json between consecutive checkpoints; 'eval score rises' is the per-checkpoint macro-native eval total_score exceeding the prior checkpoint's"
+    }
+  },
+  "gating_evidence_required_before_freeze": {
+    "predecessor_best_checkpoint_eval": {
+      "requirement": "FILL_AT_FREEZE: the predecessor run (macro-ppo-jungle2, s99081684) must have stopped at its preregistered training_stop_utc 2026-08-18T11:05:00Z, and its final 8-seed eval (seeds 1400920000..1400920007) must have selected the best checkpoint. The receipt path and sha256 of that eval, plus the selected checkpoint path and sha256, are bound here and mirrored into initial_model before this document may freeze. Fallback if the 8-seed eval cannot complete: the latest predecessor checkpoint, with the fallback reason logged in freeze_note.",
+      "receipt_path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle2-s99081684-v1/eval-final-8seed/summary.json",
+      "receipt_sha256": "sha256:3daf641e527a379b3c6c0e1ed4df8c2a6ce7ad46667b00558428df9381cfdac0",
+      "selected_checkpoint_path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle2-s99081684-v1/final_model.zip",
+      "selected_checkpoint_sha256": "sha256:a9f1966b3e6840e5129cd2671d42a09bf1f6efe281edd0ac2b79ea33da1a495a",
+      "resolved_note": "RESOLVED AT FREEZE: the predecessor stopped at 2026-08-18T11:01:52Z with stop_reason REQUESTED_TIMESTEPS_REACHED (full 10M budget, ahead of the 11:05Z wall-clock backstop; the budget, not the backstop, is the primary stop condition). The final 8-seed eval (seeds 1400920000..1400920007) completed 11:03:37Z-11:14:16Z: 0/8 wins, so best-checkpoint-by-eval is undefined and the latest-checkpoint clause selects final_model.zip - which is also positively the win-richest policy, since training wins were still accruing at the end of the budget; the selection reasoning is logged in freeze_note and initial_model.freeze_selection_note as required"
+    },
+    "teacher_macro_ceiling_probe": {
+      "role": "carried as history from the predecessor's frozen document (interface-reachability evidence remains valid for run 3)",
+      "instrument": "/mnt/c/Users/Laure/Documents/祖玛/tools/probe_alphazuma_55_macro_teacher_v1.py",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-teacher12-s99081678-v1",
+      "completion_sha256": "sha256:2c4962716d40f4ec7d1111b45252f20514fc80ba7c6118303ea7cf0267bd6d7f",
+      "resolved_outcome": {
+        "attempts": 12,
+        "wins": 10,
+        "losses": 2,
+        "go_condition_met": true,
+        "go_condition_margin": "10 wins >= 9 required"
+      }
+    },
+    "transplant_receipt": {
+      "role": "carried as history: the transplant was the predecessor's init, not this run's; kept because the model lineage chain runs through it",
+      "instrument": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_macro_policy_bootstrap_v1.py",
+      "receipt_path": "/mnt/d/ZumaTraining/alphazuma-55-macro-bootstrap-s99081679-v1/transplant.json",
+      "receipt_sha256": "sha256:78e83bba83d4afc70fcbb273961bac445d88f1a679a86f90e85e5b76f9adfa9a",
+      "output_model_sha256": "sha256:2bca8d00f02423492cc2fc0b1338152db07cd7d9a6f54eb52a10b903ef408574"
+    },
+    "teacher_macro_ceiling_map_55": {
+      "role": "carried as history from the predecessor's frozen document",
+      "instrument": "/mnt/c/Users/Laure/Documents/祖玛/tools/probe_alphazuma_55_macro_teacher_v1.py",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-teacher55-s99081681-v1",
+      "completion_sha256": "sha256:a35dd7e1cd182b0d59ce69a6ef4d91f6310511735d0da5d5b9d7e068b24f9d20",
+      "resolved_outcome": {
+        "attempts": 55,
+        "wins": 50,
+        "losses": 5
+      }
+    }
+  },
+  "trainer": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/train_overnight_multilevel_v2.py",
+    "sha256": "sha256:d1338514c4483068af9caecf7b00ebdedb98067a60f90e0fd0ef127457f7cef3",
+    "note": "v2 owns validation, PPO construction, the learn loop, receipts, and checkpointing; the v2b delegate below only rebinds the env factories (stack UNDER macro) and injects --init-model"
+  },
+  "delegate": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/train_overnight_multilevel_v2b.py",
+    "sha256": "sha256:0dc69a8e426f28ce1e460ebebb92d6bdb7d0203896e4197fc55465796244db80",
+    "cli": {
+      "stack_lags": "0,4,8",
+      "init_model": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle2-s99081684-v1/final_model.zip"
+    },
+    "composition_order": [
+      "RevengeEnv (per-level max_ticks)",
+      "DenseShapingObservableHumanSpeedrunWrapper",
+      "TruncationNeutralRewardWrapper",
+      "ObservationStackWrapper(0,4,8)",
+      "ParkSettleActionWrapper"
+    ],
+    "stack_position_rationale": "the ring buffer advances every NATIVE tick a macro consumes, so the policy sees true frame(t-4)/frame(t-8) context at each macro decision point, identical to the distill-v3 training layout and the probe-v5 runtime convention"
+  },
+  "implementation": {
+    "park_settle_action_wrapper": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/park_settle_action_wrapper.py",
+      "sha256": "sha256:c641739ca100ff21cf9f056d9785141e759ba6e6bb6ab2bd51a58c264647363a"
+    },
+    "observation_stack_wrapper": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/observation_stack_wrapper.py",
+      "sha256": "sha256:d348fcf2e40b8a1f2e8b5045350b88d7e81ac285cdd03bbdde76f16887afa2fd"
+    },
+    "macro_policy_bootstrap": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_macro_policy_bootstrap_v1.py",
+      "sha256": "sha256:13a634cabfb9c8cd28d96746d7503ca297291e4853d3399138fb7b334537d431"
+    },
+    "macro_teacher_probe": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/probe_alphazuma_55_macro_teacher_v1.py",
+      "sha256": "sha256:d9f10653501fa4a25030ff115b9ac59ae129053c4cbb3f3672dcb2092efdf256"
+    },
+    "macro_native_eval_probe": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/probe_alphazuma_55_macro_native_eval_v1.py",
+      "sha256": "sha256:f36c6af8ebb481f21736f9a4fb79538463a27b69edb450b51d428193a290c23d"
+    }
+  },
+  "initial_model": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle2-s99081684-v1/final_model.zip",
+    "sha256": "sha256:a9f1966b3e6840e5129cd2671d42a09bf1f6efe281edd0ac2b79ea33da1a495a",
+    "selection_rule": "the best checkpoint of the predecessor run (macro-ppo-jungle2, s99081684) by final 8-seed eval (fallback: latest checkpoint); its sha256 and the eval receipt are bound here at freeze",
+    "eval_receipt": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle2-s99081684-v1/eval-final-8seed/summary.json",
+      "sha256": "sha256:3daf641e527a379b3c6c0e1ed4df8c2a6ce7ad46667b00558428df9381cfdac0",
+      "wins": "0/8"
+    },
+    "transplant_lineage_history": "kept as history: BC frame-stack final s99081671 (self-driven aim p50 20 bins, recovery 9/12) -> macro transplant s99081679 (feature extractor and aim head verbatim, macro verb head from per-tick rows [wait,fire,swap], hop dropped, value pathway fresh; macro_model.zip sha256:2bca8d00f02423492cc2fc0b1338152db07cd7d9a6f54eb52a10b903ef408574) -> predecessor PPO fine-tune macro-ppo-jungle2 (s99081684) -> THIS run's init is a checkpoint of that predecessor, chosen at freeze",
+    "interface": "macro MultiDiscrete([3, 180]) over stacked Box(3 x 22904)",
+    "note": "also injected at launch via v2b --init-model; the CLI injection and this block must agree at freeze",
+    "freeze_selection_note": "selection at freeze: final model, positively selected as the WIN-RICHEST policy - the predecessor's training win counter was still ACCRUING when the budget ended (32 wins over 9,174 episodes; checkpoint-wise 16 / 18 / 21 / 24 / 27 / 29 -> 32 observed live in training_status.json, of which only the endpoint and the 16 -> 18 segment recorded in this draft are on disk), so the latest weights embody every stochastic win the run produced. The draft's 'fallback: latest checkpoint' clause also formally covers this selection, because the final 8-seed eval (0/8) and all nine per-checkpoint evals (0/1) leave best-checkpoint-by-eval UNDEFINED; final_model.zip (10,004,480 steps, later than ckpt9M) is the exact model the 8-seed eval receipt binds (every per-seed completion records the same source sha256)."
+  },
+  "trainer_v2": {
+    "gamma": 0.999,
+    "gae_lambda": 0.95,
+    "score_progress_reward_cap": 1.0,
+    "reward_alignment": "cap lowered 10.0 -> 1.0 (the ONLY reward delta from the predecessor). SPEEDRUN objective: score shaping is a discovery aid only and must never rival the +10 win bonus. Under the predecessor's cap of 10.0, a shaped truncation return could approach a win's return, and the predecessor generation duly farmed score without finishing (Jungle1 wins frozen at 16; Jungle2 trickling 16 -> 18 over 1,700+ episodes). Under 1.0, the max shaped truncation return is ~= 1.0 minus the time penalty, far below the worst-case win return of ~= 8.6 (win +10, plus at most +1.0 shaping, minus 24000 ticks x 0.0001 time penalty = 2.4), so finishing strictly dominates farming everywhere in return space.",
+    "default_max_ticks": 12000,
+    "long_horizon_max_ticks": 24000,
+    "long_horizon_level_prefixes": [
+      "coast",
+      "grotto",
+      "volcano"
+    ],
+    "use_park_settle_wrapper": true,
+    "use_motor_observable": true,
+    "discounting_note": "gamma applies PER MACRO STEP; the macro reward is the undiscounted per-tick sum over the ticks the macro consumed (~20-70), so 0.999 per macro is roughly 0.999^(1/40) per native tick; truncation is reward-neutral (v2 wrapper), so 24000-tick late-level truncations bootstrap instead of paying -10"
+  },
+  "levels_scope": {
+    "rule": "SINGLE-LEVEL specialist campaign: this preregistration trains exactly one level, Jungle2, continuing the per-level pivot recorded in the run-2 outcome (sha256:1133eaae654726c5e47ce01e0428a01e593ac2c84702403012f02073d909de11)",
+    "pivot_note": "Jungle2 is macro-reachable (teacher win through the macro interface, 55-level teacher ceiling map teacher55 (s99081681)); its catalog entry is carried verbatim from the predecessor's frozen document",
+    "count": 1
+  },
+  "levels": [
+    {
+      "id": "Jungle2",
+      "display_name": "Castaway",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle2\\Jungle2"
+      ]
+    }
+  ],
+  "environment": {
+    "profile_mode": "tutorials_completed",
+    "hard": false,
+    "curve_index": 0,
+    "base_config": {
+      "aim_bins": 180,
+      "action_mode": "factorized",
+      "frame_skip": 1,
+      "max_ticks": 12000,
+      "max_balls": 768,
+      "max_projectiles": 32,
+      "max_curves": 2,
+      "actor_interface": "full55-v1"
+    },
+    "input_profile": {
+      "profile_id": "elite-human-v1",
+      "reaction_delay_ticks": 12,
+      "max_aim_speed_degrees_per_second": 1080.0,
+      "max_aim_acceleration_degrees_per_second_squared": 18000.0,
+      "min_button_interval_ticks": 5
+    },
+    "reward_profile": {
+      "profile_id": "win-time-score-truncation-neutral-v2",
+      "win_reward": 10.0,
+      "failure_reward": -10.0,
+      "time_penalty_per_native_tick": -0.0001
+    },
+    "reward_note": "score_progress_reward_cap is owned by trainer_v2 and is 1.0 for this run (was 10.0 in the predecessor; see trainer_v2.reward_alignment); time-limit truncation pays NO terminal penalty (v2 TruncationNeutralRewardWrapper), per the verified root-cause fixes"
+  },
+  "runs": [
+    {
+      "id": "macro-ppo-jungle2-r3",
+      "description": "run 3 single-level speedrun specialist: ~10h macro-interface PPO continuation fine-tune from the predecessor's best checkpoint on Jungle2 only (cuda:1), with the score-shaping cap realigned to 1.0; num_envs 40 targets ~80% utilization of the 48 WSL cores across the two concurrent specialist runs (80 workers total, oversubscription amortized by the synchronous inference gaps)",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-jungle2-r3-s99081686-v1",
+      "device": "cuda:1",
+      "seed": 99081686,
+      "episode_seed_base": 1482000000,
+      "episode_seed_stride": 100000,
+      "total_steps": 10000000,
+      "num_envs": 40,
+      "rollout_steps": 256,
+      "batch_size": 1024,
+      "ppo_epochs": 2,
+      "learning_rate": 1e-05,
+      "entropy_coef": 0.01,
+      "checkpoint_every": 1048576,
+      "checkpoint_note": "one macro step is one policy timestep (~20-70 native ticks); 1048576 steps is roughly every 50-60 minutes at projected throughput and gives 9 interior checkpoints over the 10M budget; NOTE both specialist runs (cuda:0 and cuda:1) share the same CPU, so per-run throughput may drop ~25% versus a solo run; if observed throughput is far off, adjust checkpoint_every at freeze, never mid-run",
+      "budget_note": "total_steps 10M is the budget (user-directed headroom for complex levels): 10M macro steps ~= 94M native ticks ~= 5-10x the user historical per-level budget of 10-20M native-tick steps; the schedule's training_stop_utc is the wall-clock backstop and the v2 callback stops there",
+      "initial_weights": {
+        "Jungle2": 1.0
+      },
+      "adaptive": {
+        "enabled": false,
+        "update_every_steps": 262144,
+        "rolling_episodes": 64,
+        "minimum_episodes": 4,
+        "minimum_weight": 1.0,
+        "maximum_weight": 4.0,
+        "anchor_level": "Jungle2"
+      }
+    }
+  ],
+  "evaluation_cadence": {
+    "panel": "single trained level: Jungle2 (the probe-v4 12-level panel is retired for this single-level document)",
+    "seed_base": 1400920000,
+    "when": "per checkpoint (roughly every 50-60 minutes), student_only, deterministic masked predict; eval device chosen at eval time so as not to preempt the concurrent specialist trainings on cuda:0/cuda:1",
+    "best_checkpoint_eval": "the best checkpoint by per-checkpoint Jungle2 results gets an 8-seed Jungle2 eval (seeds 1400920000..1400920007); tier_2 and tier_3 are judged on that 8-seed eval",
+    "instrument": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/probe_alphazuma_55_macro_native_eval_v1.py",
+      "sha256": "sha256:f36c6af8ebb481f21736f9a4fb79538463a27b69edb450b51d428193a290c23d",
+      "interface": "macro-native: direct MultiDiscrete([3, 180]) macro masks (no per-tick 4+180 adaptation), ObservationStackWrapper(0,4,8) UNDER the macro in the env factory, same telemetry and receipts as macro-eval-v1"
+    },
+    "telemetry": "same outcome/shot telemetry as macro-eval-v1: wins, winning ticks (median over wins), shots, shots_on_target_rate (wrapper fidelity, expect ~1.0), macro fire rate vs teacher's, mask_fallbacks; score is recorded only as a liveness diagnostic, never as a success metric"
+  },
+  "success_criteria_tiers": {
+    "scope_note": "all tiers are STUDENT_ONLY autonomous outcomes on engineering-seed evals of Jungle2; teacher-assisted or recovery-mode wins count for nothing here. SPEEDRUN objective: success is win rate first, then median winning ticks; SCORE IS EXPLICITLY NOT A SUCCESS METRIC at any tier (it appears in telemetry only as a liveness diagnostic)",
+    "tier_0_sanity": "wrapper fidelity holds under the trained policy: shots_on_target_rate >= 0.95 on every eval, and the policy fires at >= 0.5x the teacher's macro fire rate (the BC init fires ~20x too rarely; PPO must at least not collapse further)",
+    "tier_1_signal": "any autonomous Jungle2 win at any checkpoint",
+    "tier_2_promising": "win rate >= 50% over the 8-seed Jungle2 eval of the best checkpoint",
+    "tier_3_strong": "median winning ticks over the 8-seed eval of the best checkpoint <= 1.5x the teacher-through-macro Jungle2 time: 55-level teacher ceiling map teacher55 (s99081681) won Jungle2 in 2300 native ticks (completion sha256:a35dd7e1cd182b0d59ce69a6ef4d91f6310511735d0da5d5b9d7e068b24f9d20), so the threshold is 3450 ticks",
+    "teacher_reference": {
+      "level": "Jungle2",
+      "source": "55-level teacher ceiling map teacher55 (s99081681)",
+      "completion_path": "/mnt/d/ZumaTraining/alphazuma-55-macro-teacher55-s99081681-v1/completion.json",
+      "completion_sha256": "sha256:a35dd7e1cd182b0d59ce69a6ef4d91f6310511735d0da5d5b9d7e068b24f9d20",
+      "outcome": "win",
+      "ticks": 2300,
+      "episode_seed": 1400920001,
+      "tier_3_threshold_ticks": 3450,
+      "threshold_rule": "tier_3 threshold = floor(1.5 x teacher ticks)"
+    },
+    "failure_is_reportable": "if tier 1 is not reached, the run is reported as FAIL with the full eval telemetry; no re-slicing after the fact"
+  },
+  "seed_isolation": {
+    "training_episode_range": [
+      1482000000,
+      1485999999
+    ],
+    "training_range_rule": "episode_seed_base 1482000000 + 40 workers x stride 100000 = [1482000000, 1485999999], below the 1600000000 embargo floor and disjoint from every prior training range listed in prior_training_ranges and from the sibling jungle1-r3 range [1478000000, 1481999999] which ends exactly where this range starts - 1",
+    "prior_training_ranges": [
+      {
+        "run": "macro-ppo-5090 (s99081680, run 1)",
+        "range": [
+          1460000000,
+          1462399999
+        ]
+      },
+      {
+        "run": "macro-ppo-5090-r2 (s99081682, run 2)",
+        "range": [
+          1463000000,
+          1465399999
+        ]
+      },
+      {
+        "run": "macro-ppo-jungle1 (s99081683, sibling predecessor)",
+        "range": [
+          1466000000,
+          1469999999
+        ]
+      },
+      {
+        "run": "macro-ppo-jungle2 (s99081684, predecessor)",
+        "range": [
+          1474000000,
+          1477999999
+        ]
+      }
+    ],
+    "eval_panel_seed_base": 1400920000,
+    "embargoed_formal_ranges_untouched": [
+      [
+        1600000000,
+        1600000219
+      ],
+      [
+        1700000000,
+        1700000439
+      ],
+      [
+        1800000000,
+        1800000219
+      ]
+    ],
+    "no_overlap": true
+  },
+  "schedule": {
+    "training_stop_utc": "2026-08-18T21:45:00Z",
+    "goal_end_utc": "2026-08-18T22:45:00Z",
+    "freeze_arithmetic": "frozen_utc 2026-08-18T11:21:49Z + 20 min launch margin + 10 h training = 2026-08-18T21:41:49Z, rounded UP to the next 5 minutes -> training_stop_utc 2026-08-18T21:45:00Z; goal_end_utc = training_stop_utc + 60 min eval/reporting margin = 2026-08-18T22:45:00Z"
+  },
+  "authority": {
+    "formal_seed_consumption": false,
+    "formal_candidate_authority": false,
+    "engineering_run": true,
+    "note": "any candidate this run produces must pass a separately preregistered formal evaluation on embargoed seeds before any autonomy claim"
+  }
+}

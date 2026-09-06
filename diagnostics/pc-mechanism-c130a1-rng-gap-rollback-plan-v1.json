@@ -1,0 +1,15 @@
+{
+  "cases": [
+    {
+      "id": "c130a1-rng-gap-rollback",
+      "manifest_path": "sources/c130a1-u3575-u3970-source-bound-rng-gap-rollback-v1.json",
+      "memory_probe_path": "formal-full-state-c130a1-rng-gap-rollback-u3575-u3970-v1/attempt-01/memory-probe.json",
+      "window": {
+        "end_update": 3970,
+        "start_update": 3575
+      }
+    }
+  ],
+  "schema": "zuma-rl.pc-mechanism-audit-plan",
+  "version": 1
+}

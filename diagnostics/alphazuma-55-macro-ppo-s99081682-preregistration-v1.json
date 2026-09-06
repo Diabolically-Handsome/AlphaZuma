@@ -1,0 +1,735 @@
+{
+  "schema": "zuma-rl.overnight-multilevel-preregistration-v2",
+  "version": 2,
+  "status": "FROZEN_BEFORE_TRAINING",
+  "draft_utc": "2026-08-17T18:30:00Z",
+  "frozen_utc": "2026-08-17T20:39:46Z",
+  "freeze_note": "FROZEN at 2026-08-17T20:39:46Z for the run-2 engineering attempt (authority flags unchanged: engineering_run true, no formal authority). This document is a copy of the frozen run-1 preregistration (s99081680) with exactly these deltas: run identity (id macro-ppo-5090-r2, seed 99081682, run_dir .../alphazuma-55-macro-ppo-s99081682-v1, episode_seed_base 1463000000 with seed_isolation updated to match), anti-collapse knobs (entropy_coef 0.01 keeps fire probability alive; learning_rate 1e-05 and ppo_epochs 2 protect the BC prior while the fresh value head calibrates), an explicit early_stop_rule authorized by the run-1 FAIL outcome, a lineage block binding the run-1 preregistration and outcome by sha256, and a recomputed schedule. All tool/wrapper/evidence sha256 bindings, levels scope, environment, evaluation cadence, success tiers, and authority values carry over unchanged from the run-1 frozen document.",
+  "objective": "Second PPO fine-tune (run 2) on the park-settle MACRO interface: reinitialize from the BC-to-macro transplanted policy (frame-stacked distill-v3 student, s99081671) and train with the v2 credit-horizon fixes through the stack-under-macro composition, after run 1 (s99081680) collapsed into the never-fire attractor. Run 2 changes only the anti-collapse knobs: the entropy floor 0.01 keeps fire probability alive, and lr 1e-5 with ppo_epochs 2 protects the BC prior while the fresh value head calibrates.",
+  "lineage": {
+    "run_1_preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-macro-ppo-s99081680-preregistration-v1.json",
+      "sha256": "sha256:fcd2f536c9a0596cdd7b23180d38fd16ff51917a009f157c65ed5259cc2068fa"
+    },
+    "run_1_outcome": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-macro-ppo-s99081680-outcome-v1.json",
+      "sha256": "sha256:cccda4f1a80702cdd4f7ff37c5fe8c480d322b4ae1e93b94ad593a1f916f0c31",
+      "decision": "FAIL",
+      "status": "STOPPED_EARLY_ENGINEERING_DECISION"
+    },
+    "collapse_summary": "run 1 (macro-ppo-5090, s99081680) collapsed into the never-fire attractor: two consecutive macro-native 12-panel checkpoints fired below the 73-shot transplant-init baseline (94 then 10 shots), so it was stopped early and reported FAIL"
+  },
+  "early_stop_rule": {
+    "clause": "if the macro-native 12-panel eval of two consecutive checkpoints both show total_shots below the transplant-init baseline (73 shots), the run is stopped and reported FAIL",
+    "baseline_source": "eval of the transplant init through the macro protocol (score 2090, 73 shots)",
+    "authorized_by_outcome": "sha256:cccda4f1a80702cdd4f7ff37c5fe8c480d322b4ae1e93b94ad593a1f916f0c31"
+  },
+  "gating_evidence_required_before_freeze": {
+    "teacher_macro_ceiling_probe": {
+      "instrument": "/mnt/c/Users/Laure/Documents/祖玛/tools/probe_alphazuma_55_macro_teacher_v1.py",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-teacher12-s99081678-v1",
+      "completion_sha256": "sha256:2c4962716d40f4ec7d1111b45252f20514fc80ba7c6118303ea7cf0267bd6d7f",
+      "go_condition": "teacher wins >= 9 of the 12-panel levels through the macro interface (dual-position panel members expected to fail for lack of hop); if the ceiling is materially lower, the macro interface itself is the bottleneck and this PPO run should not launch as designed",
+      "also_informs": "per-level outcomes identify interface-blocked levels; any non-dual-position teacher failure through the macro interface must be listed here before freeze",
+      "resolved_outcome": {
+        "attempts": 12,
+        "wins": 10,
+        "losses": 2,
+        "go_condition_met": true,
+        "go_condition_margin": "10 wins >= 9 required",
+        "loss_detail": {
+          "village3": "dual-position panel member, hop-blocked by design: teacher hop proposals fell back to wait_hold 738 times (mask_fallbacks.per_tick_verb_outside_macro_interface = 738); score 880; expected loss, already excluded from training scope",
+          "volcano9": "NON-dual-position teacher failure, listed per the also_informs requirement: timing loss at score 8990 with ZERO mask fallbacks and shots_on_target_rate 1.0, so the level is interface-reachable and the loss is strategic/timing, not an interface block; accepted as known-hard and KEPT in training scope (volcano9 won under the 55-map run's seed, confirming reachability)"
+        }
+      }
+    },
+    "transplant_receipt": {
+      "instrument": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_macro_policy_bootstrap_v1.py",
+      "receipt_path": "/mnt/d/ZumaTraining/alphazuma-55-macro-bootstrap-s99081679-v1/transplant.json",
+      "receipt_sha256": "sha256:78e83bba83d4afc70fcbb273961bac445d88f1a679a86f90e85e5b76f9adfa9a",
+      "required_facts": [
+        "round_trip_bitwise_equal true",
+        "parameter_counts.difference_ok true",
+        "logits_equivalence both flags true",
+        "value pathway fresh (never copied)"
+      ],
+      "resolved_facts": {
+        "round_trip_bitwise_equal": true,
+        "parameter_counts_difference_ok": true,
+        "parameter_counts_difference": 6325,
+        "logits_equivalence_verb_rows_0_1_2_bitwise_equal": true,
+        "logits_equivalence_aim_bitwise_equal": true,
+        "value_pathway_fresh_never_copied": [
+          "mlp_extractor.value_net.0.weight",
+          "mlp_extractor.value_net.0.bias",
+          "value_net.weight",
+          "value_net.bias"
+        ],
+        "output_model_sha256": "sha256:2bca8d00f02423492cc2fc0b1338152db07cd7d9a6f54eb52a10b903ef408574",
+        "output_model_sha256_recomputed_from_macro_model_zip_bytes": true,
+        "output_model_sha256_equals_initial_model_sha256": true
+      }
+    },
+    "teacher_macro_ceiling_map_55": {
+      "role": "supplementary evidence ADDED AT FREEZE (beyond the draft's requirements): full 55-level teacher ceiling map through the same macro interface, same instrument",
+      "instrument": "/mnt/c/Users/Laure/Documents/祖玛/tools/probe_alphazuma_55_macro_teacher_v1.py",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-teacher55-s99081681-v1",
+      "completion_sha256": "sha256:a35dd7e1cd182b0d59ce69a6ef4d91f6310511735d0da5d5b9d7e068b24f9d20",
+      "resolved_outcome": {
+        "attempts": 55,
+        "wins": 50,
+        "losses": 5,
+        "loss_detail": {
+          "city3": "dual-position, hop-blocked (excluded from training scope)",
+          "Coast3": "dual-position, hop-blocked (excluded from training scope)",
+          "Coast10": "dual-position, hop-blocked (excluded from training scope)",
+          "grotto3": "dual-position, hop-blocked (excluded from training scope)",
+          "Coast7": "NON-dual-position timing loss at score 9050 with ZERO mask fallbacks and shots_on_target_rate 1.0; interface-reachable, accepted as known-hard, KEPT in training scope"
+        },
+        "dual_position_note": "village3 and volcano3 WON under this run's seeds, so dual-position levels are seed-dependently winnable without the hop verb; they nonetheless remain EXCLUDED from training scope exactly as preregistered (levels_scope is unchanged from the draft)"
+      }
+    }
+  },
+  "trainer": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/train_overnight_multilevel_v2.py",
+    "sha256": "sha256:d1338514c4483068af9caecf7b00ebdedb98067a60f90e0fd0ef127457f7cef3",
+    "note": "v2 owns validation, PPO construction, the learn loop, receipts, and checkpointing; the v2b delegate below only rebinds the env factories (stack UNDER macro) and injects --init-model"
+  },
+  "delegate": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/train_overnight_multilevel_v2b.py",
+    "sha256": "sha256:0dc69a8e426f28ce1e460ebebb92d6bdb7d0203896e4197fc55465796244db80",
+    "cli": {
+      "stack_lags": "0,4,8",
+      "init_model": "/mnt/d/ZumaTraining/alphazuma-55-macro-bootstrap-s99081679-v1/macro_model.zip"
+    },
+    "composition_order": [
+      "RevengeEnv (per-level max_ticks)",
+      "DenseShapingObservableHumanSpeedrunWrapper",
+      "TruncationNeutralRewardWrapper",
+      "ObservationStackWrapper(0,4,8)",
+      "ParkSettleActionWrapper"
+    ],
+    "stack_position_rationale": "the ring buffer advances every NATIVE tick a macro consumes, so the policy sees true frame(t-4)/frame(t-8) context at each macro decision point, identical to the distill-v3 training layout and the probe-v5 runtime convention"
+  },
+  "implementation": {
+    "park_settle_action_wrapper": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/park_settle_action_wrapper.py",
+      "sha256": "sha256:c641739ca100ff21cf9f056d9785141e759ba6e6bb6ab2bd51a58c264647363a"
+    },
+    "observation_stack_wrapper": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/observation_stack_wrapper.py",
+      "sha256": "sha256:d348fcf2e40b8a1f2e8b5045350b88d7e81ac285cdd03bbdde76f16887afa2fd"
+    },
+    "macro_policy_bootstrap": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_macro_policy_bootstrap_v1.py",
+      "sha256": "sha256:13a634cabfb9c8cd28d96746d7503ca297291e4853d3399138fb7b334537d431"
+    },
+    "macro_teacher_probe": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/probe_alphazuma_55_macro_teacher_v1.py",
+      "sha256": "sha256:d9f10653501fa4a25030ff115b9ac59ae129053c4cbb3f3672dcb2092efdf256"
+    },
+    "macro_native_eval_probe": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/probe_alphazuma_55_macro_native_eval_v1.py",
+      "sha256": "sha256:f36c6af8ebb481f21736f9a4fb79538463a27b69edb450b51d428193a290c23d"
+    }
+  },
+  "initial_model": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-bootstrap-s99081679-v1/macro_model.zip",
+    "sha256": "sha256:2bca8d00f02423492cc2fc0b1338152db07cd7d9a6f54eb52a10b903ef408574",
+    "lineage": "BC frame-stack final s99081671 (self-driven aim p50 20 bins, recovery 9/12) -> macro transplant s99081679: feature extractor and aim head verbatim, macro verb head from per-tick rows [wait,fire,swap] (hop dropped), value pathway fresh",
+    "interface": "macro MultiDiscrete([3, 180]) over stacked Box(3 x 22904)",
+    "note": "also injected at launch via v2b --init-model; the CLI injection and this block must agree at freeze"
+  },
+  "trainer_v2": {
+    "gamma": 0.999,
+    "gae_lambda": 0.95,
+    "score_progress_reward_cap": 10.0,
+    "default_max_ticks": 12000,
+    "long_horizon_max_ticks": 24000,
+    "long_horizon_level_prefixes": [
+      "coast",
+      "grotto",
+      "volcano"
+    ],
+    "use_park_settle_wrapper": true,
+    "use_motor_observable": true,
+    "discounting_note": "gamma applies PER MACRO STEP; the macro reward is the undiscounted per-tick sum over the ticks the macro consumed (~20-70), so 0.999 per macro is roughly 0.999^(1/40) per native tick; truncation is reward-neutral (v2 wrapper), so 24000-tick late-level truncations bootstrap instead of paying -10"
+  },
+  "levels_scope": {
+    "rule": "INCLUDED_LEVELS minus DUAL_POSITION_LEVELS: the macro interface exposes no hop verb, so the 6 dual-position levels are unreachable by design and are excluded from training rather than trained as guaranteed losses",
+    "excluded_dual_position": [
+      "village3",
+      "city3",
+      "Coast3",
+      "Coast10",
+      "grotto3",
+      "volcano3"
+    ],
+    "resolved_at_freeze": "confirmed against the 12-panel probe (s99081678) and the 55-level ceiling map (s99081681): the only NON-dual-position teacher failures through the macro interface are volcano9 (12-panel seed) and Coast7 (55-map seed), both timing losses with zero mask fallbacks -- interface-reachable, ACCEPTED as known-hard, and kept in training scope; no additional interface-blocked level was found; the 6 dual-position exclusions stand even though village3 and volcano3 won under the 55-map seeds (seed-dependent hopless wins do not change the designed exclusion)",
+    "count": 49
+  },
+  "levels": [
+    {
+      "id": "Jungle1",
+      "display_name": "Shipwrecked!",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle1\\Jungle1"
+      ]
+    },
+    {
+      "id": "Jungle2",
+      "display_name": "Castaway",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle2\\Jungle2"
+      ]
+    },
+    {
+      "id": "Jungle3",
+      "display_name": "Echo Beach",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle3\\Jungle3"
+      ]
+    },
+    {
+      "id": "Jungle4",
+      "display_name": "Bones of an Idol",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle4\\Jungle4"
+      ]
+    },
+    {
+      "id": "jungle6",
+      "display_name": "Jungle Clearing",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle6\\Jungle6"
+      ]
+    },
+    {
+      "id": "Jungle7",
+      "display_name": "Sand Trap",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle7\\Jungle7"
+      ]
+    },
+    {
+      "id": "Jungle8",
+      "display_name": "Nasal Passage",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle8\\Jungle8"
+      ]
+    },
+    {
+      "id": "Jungle9",
+      "display_name": "Creeper Copse",
+      "curve_count": 2,
+      "curve_names": [
+        "Jungle9\\Jungle9-1",
+        "Jungle9\\Jungle9-2"
+      ]
+    },
+    {
+      "id": "Jungle10",
+      "display_name": "Darkness Falls",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle10\\Jungle10"
+      ]
+    },
+    {
+      "id": "village1",
+      "display_name": "Watering Hole",
+      "curve_count": 1,
+      "curve_names": [
+        "Village1"
+      ]
+    },
+    {
+      "id": "village2",
+      "display_name": "Overgrown Plaza",
+      "curve_count": 1,
+      "curve_names": [
+        "Village2"
+      ]
+    },
+    {
+      "id": "village4",
+      "display_name": "Sandspirals",
+      "curve_count": 1,
+      "curve_names": [
+        "Village4v2"
+      ]
+    },
+    {
+      "id": "village5",
+      "display_name": "Abandoned Well",
+      "curve_count": 1,
+      "curve_names": [
+        "Village5"
+      ]
+    },
+    {
+      "id": "village6",
+      "display_name": "Face Your Fear",
+      "curve_count": 2,
+      "curve_names": [
+        "Village6-1",
+        "Village6-2"
+      ]
+    },
+    {
+      "id": "village7",
+      "display_name": "Seven Sides (minus one)",
+      "curve_count": 1,
+      "curve_names": [
+        "Village7"
+      ]
+    },
+    {
+      "id": "village8",
+      "display_name": "Vines of Vengeance",
+      "curve_count": 1,
+      "curve_names": [
+        "Village8"
+      ]
+    },
+    {
+      "id": "village10",
+      "display_name": "The Horseshoe",
+      "curve_count": 1,
+      "curve_names": [
+        "Village10\\Village10v2"
+      ]
+    },
+    {
+      "id": "city1",
+      "display_name": "Ancient Cistern",
+      "curve_count": 1,
+      "curve_names": [
+        "city1"
+      ]
+    },
+    {
+      "id": "city2",
+      "display_name": "Blossom Grove",
+      "curve_count": 1,
+      "curve_names": [
+        "city2\\city2"
+      ]
+    },
+    {
+      "id": "city4",
+      "display_name": "Ancestral Tongue",
+      "curve_count": 2,
+      "curve_names": [
+        "city4\\city4-1v2",
+        "city4\\city4-2v2"
+      ]
+    },
+    {
+      "id": "city5",
+      "display_name": "Mossy Square",
+      "curve_count": 1,
+      "curve_names": [
+        "city5\\city5"
+      ]
+    },
+    {
+      "id": "city6",
+      "display_name": "Mosaic Mayhem",
+      "curve_count": 1,
+      "curve_names": [
+        "city6\\city6"
+      ]
+    },
+    {
+      "id": "city7",
+      "display_name": "Strange Smile",
+      "curve_count": 1,
+      "curve_names": [
+        "city7\\city7-2"
+      ]
+    },
+    {
+      "id": "city9",
+      "display_name": "Ghosts of the Past",
+      "curve_count": 1,
+      "curve_names": [
+        "city9\\city9"
+      ]
+    },
+    {
+      "id": "city10",
+      "display_name": "Double Danger",
+      "curve_count": 2,
+      "curve_names": [
+        "city10\\city10-1",
+        "city10\\city10-2"
+      ]
+    },
+    {
+      "id": "Coast1",
+      "display_name": "Swamp Spin",
+      "curve_count": 1,
+      "curve_names": [
+        "coast1"
+      ]
+    },
+    {
+      "id": "Coast2",
+      "display_name": "Deadmarsh",
+      "curve_count": 1,
+      "curve_names": [
+        "coast2"
+      ]
+    },
+    {
+      "id": "Coast4",
+      "display_name": "Brackish Pool",
+      "curve_count": 1,
+      "curve_names": [
+        "coast4"
+      ]
+    },
+    {
+      "id": "Coast5",
+      "display_name": "Justified and Ancient",
+      "curve_count": 1,
+      "curve_names": [
+        "coast5"
+      ]
+    },
+    {
+      "id": "Coast6",
+      "display_name": "Ancient Inlay",
+      "curve_count": 1,
+      "curve_names": [
+        "coast6"
+      ]
+    },
+    {
+      "id": "Coast7",
+      "display_name": "Secret Circle",
+      "curve_count": 1,
+      "curve_names": [
+        "coast7"
+      ]
+    },
+    {
+      "id": "Coast9",
+      "display_name": "Tide Pools",
+      "curve_count": 1,
+      "curve_names": [
+        "coast9"
+      ]
+    },
+    {
+      "id": "grotto1",
+      "display_name": "Coral Catch",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto1\\grotto1"
+      ]
+    },
+    {
+      "id": "grotto2",
+      "display_name": "Wave Babies",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto2\\grotto2-2"
+      ]
+    },
+    {
+      "id": "grotto4",
+      "display_name": "Anglers Cove",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto4\\grotto4"
+      ]
+    },
+    {
+      "id": "grotto5",
+      "display_name": "Coelacanth Cave",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto5\\grotto5"
+      ]
+    },
+    {
+      "id": "grotto6",
+      "display_name": "Ocean Floor",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto6\\grotto6"
+      ]
+    },
+    {
+      "id": "grotto7",
+      "display_name": "Smugglers Depth",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto7\\grotto7"
+      ]
+    },
+    {
+      "id": "grotto9",
+      "display_name": "The Deep",
+      "curve_count": 1,
+      "curve_names": [
+        "grotto9\\grotto9"
+      ]
+    },
+    {
+      "id": "grotto10",
+      "display_name": "Shark Den",
+      "curve_count": 2,
+      "curve_names": [
+        "grotto10\\grotto10-1",
+        "grotto10\\grotto10-2"
+      ]
+    },
+    {
+      "id": "volcano1",
+      "display_name": "Flowing Tiki Rage",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano1\\Volcano1"
+      ]
+    },
+    {
+      "id": "volcano2",
+      "display_name": "Subterran Solaris",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano2/Volcano2-3"
+      ]
+    },
+    {
+      "id": "volcano4",
+      "display_name": "Obsidian Isle",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano4\\Volcano4"
+      ]
+    },
+    {
+      "id": "volcano5",
+      "display_name": "Underworld Remnants",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano5\\Volcano5-2"
+      ]
+    },
+    {
+      "id": "volcano6",
+      "display_name": "Thermal Vortex",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano6\\Volcano6"
+      ]
+    },
+    {
+      "id": "volcano7",
+      "display_name": "Molten Dais",
+      "curve_count": 1,
+      "curve_names": [
+        "volcano7\\volcano7-2"
+      ]
+    },
+    {
+      "id": "volcano8",
+      "display_name": "Basaltic Approach",
+      "curve_count": 1,
+      "curve_names": [
+        "volcano8\\volcano8-3"
+      ]
+    },
+    {
+      "id": "volcano9",
+      "display_name": "Searing Visage",
+      "curve_count": 2,
+      "curve_names": [
+        "volcano9\\volcano9-1",
+        "Volcano9\\Volcano9-2"
+      ]
+    },
+    {
+      "id": "volcano10",
+      "display_name": "Descent into Anguish",
+      "curve_count": 1,
+      "curve_names": [
+        "volcano10\\volcano10-4"
+      ]
+    }
+  ],
+  "environment": {
+    "profile_mode": "tutorials_completed",
+    "hard": false,
+    "curve_index": 0,
+    "base_config": {
+      "aim_bins": 180,
+      "action_mode": "factorized",
+      "frame_skip": 1,
+      "max_ticks": 12000,
+      "max_balls": 768,
+      "max_projectiles": 32,
+      "max_curves": 2,
+      "actor_interface": "full55-v1"
+    },
+    "input_profile": {
+      "profile_id": "elite-human-v1",
+      "reaction_delay_ticks": 12,
+      "max_aim_speed_degrees_per_second": 1080.0,
+      "max_aim_acceleration_degrees_per_second_squared": 18000.0,
+      "min_button_interval_ticks": 5
+    },
+    "reward_profile": {
+      "profile_id": "win-time-score-truncation-neutral-v2",
+      "win_reward": 10.0,
+      "failure_reward": -10.0,
+      "time_penalty_per_native_tick": -0.0001
+    },
+    "reward_note": "score_progress_reward_cap is owned by trainer_v2 (10.0); time-limit truncation pays NO terminal penalty (v2 TruncationNeutralRewardWrapper), per the verified root-cause fixes"
+  },
+  "runs": [
+    {
+      "id": "macro-ppo-5090-r2",
+      "description": "single ~6h macro-interface PPO fine-tune from the transplanted BC init, uniform sampling over the 49 macro-reachable levels",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-s99081682-v1",
+      "device": "cuda:0",
+      "seed": 99081682,
+      "episode_seed_base": 1463000000,
+      "episode_seed_stride": 100000,
+      "total_steps": 6000000,
+      "num_envs": 24,
+      "rollout_steps": 256,
+      "batch_size": 1024,
+      "ppo_epochs": 2,
+      "learning_rate": 1e-05,
+      "entropy_coef": 0.01,
+      "checkpoint_every": 786432,
+      "checkpoint_note": "one macro step is one policy timestep (~20-70 native ticks); at the projected 300-600 macro steps/s over 24 envs, 786432 steps is roughly every 25-45 minutes; if observed throughput is far off, adjust checkpoint_every at freeze, never mid-run",
+      "budget_note": "total_steps 6M is an upper bound; the schedule's training_stop_utc is the real ~6h budget and the v2 callback stops there",
+      "initial_weights": {
+        "Jungle1": 1.0,
+        "Jungle2": 1.0,
+        "Jungle3": 1.0,
+        "Jungle4": 1.0,
+        "jungle6": 1.0,
+        "Jungle7": 1.0,
+        "Jungle8": 1.0,
+        "Jungle9": 1.0,
+        "Jungle10": 1.0,
+        "village1": 1.0,
+        "village2": 1.0,
+        "village4": 1.0,
+        "village5": 1.0,
+        "village6": 1.0,
+        "village7": 1.0,
+        "village8": 1.0,
+        "village10": 1.0,
+        "city1": 1.0,
+        "city2": 1.0,
+        "city4": 1.0,
+        "city5": 1.0,
+        "city6": 1.0,
+        "city7": 1.0,
+        "city9": 1.0,
+        "city10": 1.0,
+        "Coast1": 1.0,
+        "Coast2": 1.0,
+        "Coast4": 1.0,
+        "Coast5": 1.0,
+        "Coast6": 1.0,
+        "Coast7": 1.0,
+        "Coast9": 1.0,
+        "grotto1": 1.0,
+        "grotto2": 1.0,
+        "grotto4": 1.0,
+        "grotto5": 1.0,
+        "grotto6": 1.0,
+        "grotto7": 1.0,
+        "grotto9": 1.0,
+        "grotto10": 1.0,
+        "volcano1": 1.0,
+        "volcano2": 1.0,
+        "volcano4": 1.0,
+        "volcano5": 1.0,
+        "volcano6": 1.0,
+        "volcano7": 1.0,
+        "volcano8": 1.0,
+        "volcano9": 1.0,
+        "volcano10": 1.0
+      },
+      "adaptive": {
+        "enabled": false,
+        "update_every_steps": 262144,
+        "rolling_episodes": 64,
+        "minimum_episodes": 4,
+        "minimum_weight": 1.0,
+        "maximum_weight": 4.0,
+        "anchor_level": "Jungle2"
+      }
+    }
+  ],
+  "evaluation_cadence": {
+    "panel": "probe-v4 12 levels (Jungle1, Jungle9, village3, village8, city1, city9, Coast1, Coast9, grotto1, grotto9, volcano1, volcano9)",
+    "seed_base": 1400920000,
+    "when": "per checkpoint (roughly every 30-45 minutes) on cuda:1, student_only, deterministic masked predict",
+    "instrument": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/probe_alphazuma_55_macro_native_eval_v1.py",
+      "sha256": "sha256:f36c6af8ebb481f21736f9a4fb79538463a27b69edb450b51d428193a290c23d",
+      "interface": "macro-native: direct MultiDiscrete([3, 180]) macro masks (no per-tick 4+180 adaptation), ObservationStackWrapper(0,4,8) UNDER the macro in the env factory, same telemetry and receipts as macro-eval-v1"
+    },
+    "instrument_gap_resolution": "the draft's MISSING INSTRUMENT flag is resolved: the macro-native eval variant exists and is bound above (also listed under implementation.macro_native_eval_probe, so its bytes are re-verified at every launch); village3 in the panel is dual-position and expected to stay a loss",
+    "telemetry": "same outcome/shot telemetry as macro-eval-v1: wins, score, shots, shots_on_target_rate (wrapper fidelity, expect ~1.0), macro fire rate vs teacher's, mask_fallbacks"
+  },
+  "success_criteria_tiers": {
+    "scope_note": "all tiers are STUDENT_ONLY autonomous outcomes on engineering-seed panels; teacher-assisted or recovery-mode wins count for nothing here",
+    "tier_0_sanity": "wrapper fidelity holds under the trained policy: shots_on_target_rate >= 0.95 on every eval, and the policy fires at >= 0.5x the teacher's macro fire rate (the BC init fires ~20x too rarely; PPO must at least not collapse further)",
+    "tier_1_signal": "any autonomous win on any level beyond Jungle1 on the 12-panel at any checkpoint (the historical autonomous best is ~Jungle1-only on this panel)",
+    "tier_2_promising": "at least 5 of 12 panel levels won autonomously by the final checkpoint",
+    "tier_3_strong": "at least 20 of the 49 trained levels won autonomously in a full 49-level eval of the final model",
+    "failure_is_reportable": "if tier 1 is not reached, the run is reported as FAIL with the per-level telemetry; no re-slicing after the fact"
+  },
+  "seed_isolation": {
+    "training_episode_range": [
+      1463000000,
+      1465399999
+    ],
+    "training_range_rule": "episode_seed_base 1463000000 + 24 workers x stride 100000 = [1463000000, 1465399999], still outside the embargoed formal ranges",
+    "eval_panel_seed_base": 1400920000,
+    "embargoed_formal_ranges_untouched": [
+      [
+        1600000000,
+        1600000219
+      ],
+      [
+        1700000000,
+        1700000439
+      ],
+      [
+        1800000000,
+        1800000219
+      ]
+    ],
+    "no_overlap": true
+  },
+  "schedule": {
+    "training_stop_utc": "2026-08-18T02:30:00Z",
+    "goal_end_utc": "2026-08-18T04:00:00Z",
+    "freeze_arithmetic": "frozen_utc 2026-08-17T20:39:46Z + 20 min launch margin + 5.5 h training = 2026-08-18T02:29:46Z, rounded UP to the next 5 minutes -> training_stop_utc; goal_end_utc = training_stop_utc + 90 min eval/reporting margin"
+  },
+  "authority": {
+    "formal_seed_consumption": false,
+    "formal_candidate_authority": false,
+    "engineering_run": true,
+    "note": "any candidate this run produces must pass a separately preregistered formal evaluation on embargoed seeds before any autonomy claim"
+  }
+}

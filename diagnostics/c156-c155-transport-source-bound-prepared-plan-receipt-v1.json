@@ -1,0 +1,63 @@
+{
+  "schema": "zuma-rl.c155-natural-loss-transport-source-bound-prepared-plan-receipt",
+  "version": 1,
+  "status": "PASS_BEFORE_LOCALIZATION_OUTPUT",
+  "created_utc": "2026-08-10T11:30:34.1248119Z",
+  "preregistration_sha256": "sha256:65bad45bb5b0e6b12e7be62d4c27aac5c5e57acdf0e1e35f57b76ba09810cee1",
+  "amendment_sha256": "sha256:00f9c1dba0792c45b7f34a451f2676589854d9dfe6442a60ceea6e45fc06f2db",
+  "normalized_dmo": {
+    "path": "D:/ZumaGolden/diagnostics/normalized-c155a1-natural-loss-v1.dmo",
+    "bytes": 21769,
+    "sha256": "sha256:a5306095efb020c747530b0b546c8a8af1267a71ea48395e225f9b9a7c6516cf",
+    "command_count": 1236,
+    "input_command_count": 25,
+    "random_seed": 415356078,
+    "length_updates": 16724,
+    "sole_permitted_normalization_exact": true
+  },
+  "base_plan": {
+    "path": "D:/ZumaGolden/diagnostics/base-c155-natural-loss-source-bound-plan-v1/plan.json",
+    "bytes": 12770,
+    "sha256": "sha256:ed6bc59310c53f2badcd97371140db3aca4adfe84cd88dcf908a7ff7034a7da3",
+    "source_bound_framework_update": 3137,
+    "source_order": 8,
+    "pre_index": 447,
+    "pre_state_sha256": "sha256:5bf8c65b8348e1fc66be38f460343e8b960c4cb0fd691435c6579c12aade4f35",
+    "rewind_draws": 0,
+    "expected_output": 1853292490,
+    "thread_crt_state": 1020014204,
+    "allow_source_bound_board_global_correction": false
+  },
+  "finite_plan": {
+    "root": "D:/ZumaGolden/diagnostics/full-state-source-bound-natural-loss-c155-plan-v1-stop3182",
+    "plan_bytes": 12991,
+    "plan_sha256": "sha256:9e75c425106c7cb9a9d1c878eed4decabbf9203c5459d3ac1bcb0f5d14dfc538",
+    "preparation_report_sha256": "sha256:e04cbf80d36377b3fe6b203527bf2f934e5858a16772d65c8e30940fd3d26d41",
+    "transport_normalization_bytes": 2768,
+    "transport_normalization_sha256": "sha256:7a0294b821c34f6a8a4d77388c781ab505e73e0c9b62075845b6dafff67b3a25",
+    "pre_template_sha256": "sha256:be6b5ca9997b78499dd1031d914ba0587bc84df9509c5fceac232e09f0329065",
+    "host_pre_sha256": "sha256:5eca63252f27a8d4a375cd0fcf58e36ded5c030c20f10c0969bde2dbd754ce03",
+    "host_pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "source_bound_command_broker_stop_after_update": 3182,
+    "stop_is_exact_idle_command_boundary": true
+  },
+  "independent_transport_validation": {
+    "status": "PASS",
+    "classification": "certifying-retail-recording-transport-normalization",
+    "provenance_version": 2,
+    "source_dmo_sha256": "sha256:fe550425c3a7a0977b2bf1b3be45ab8281f26fb44b5bd71a0fede87c8d508e41",
+    "playback_dmo_sha256": "sha256:a5306095efb020c747530b0b546c8a8af1267a71ea48395e225f9b9a7c6516cf",
+    "recording_outcome": "natural_loss",
+    "recording_natural_outcome": true,
+    "recording_process_memory_writes": 0,
+    "recording_host_restored_exactly": true,
+    "collector_prestate_matched": true,
+    "collector_board_seed_mutation": false
+  },
+  "localization_output": {
+    "path": "D:/ZumaGolden/diagnostics/c156-c155-natural-loss-localization-u11780-u11920-v1",
+    "absent_at_receipt": true,
+    "maximum_attempts": 1,
+    "formal_or_fidelity_credit": false
+  }
+}

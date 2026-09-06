@@ -1,0 +1,50 @@
+{
+  "schema": "zuma-rl.retail-fruit-bomb-telemetry-recording-ensemble-execution-receipt",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T14:32:55.3103211Z",
+  "classification": "completed-fixed-ensemble-before-telemetry-analysis",
+  "preregistration": {
+    "path": "diagnostics/recording-c179-fruit-bomb-telemetry-ensemble-preregistration-v1.json",
+    "sha256": "sha256:8b06653da3ac662b7a9e84c2b549c0d32b3b52a0d3dd2cf8c13b8fdc561585ef"
+  },
+  "telemetry_analysis_performed_before_this_receipt": false,
+  "attempt_fields": [
+    "id",
+    "result_bytes",
+    "result_sha256",
+    "dmo_bytes",
+    "dmo_sha256",
+    "autoplay_bytes",
+    "autoplay_sha256",
+    "rng_monitor_sha256",
+    "global_trace_sha256",
+    "gameplay_elapsed_seconds",
+    "final_score"
+  ],
+  "attempts": [
+    ["c179a1", 20857, "sha256:cd94c7237172450e6e9e34380c45f7858eddf2682581eb28701c058fe9be57d6", 21843, "sha256:c74420f4be8947243bdcdb8360d71f6da908f798079e8bcbf1eaccfde09af94a", 1563440, "sha256:d5bc203d6ead1a11a916235fd1dc53d3bd867b60bca42ff24430364b81f8470c", "sha256:bb56da9040952ec55513ba3cf9e4f0036fa6473fd26113f928fb2acfb1988fbf", "sha256:5e72c9471ca553a92e9a31c8175122e2467c4e2a052148c2652f6e636847b19f", 46.51600000000326, 10110],
+    ["c179a2", 20852, "sha256:c4e9f241a2e2ee1871110e8e28d66ebbf437413b984f0c13554e70306b13938d", 21467, "sha256:9fb842ef827d3749b8090118e76144c34edc264015c9da9fe97a57c44b76822e", 61607, "sha256:c9cf123f3178a0eab558457e8fdb675a567fde7a68e3182795e1ad74b955bf88", "sha256:603af635279eeb03d2b11921252e1f4f57e7cb5e401b821e54e88770f9bddf2b", "sha256:371870ff5f933d14acfa0d1e99d02ea342e385f928bc6bb26b658091beec5dbf", 26.81300000002375, 9870],
+    ["c179a3", 20858, "sha256:e71e6d9d262ba77f90a5e5eb51a73975be5935232ae212c6d0538d771deea78b", 21654, "sha256:aa966fb8596350b7561fcdb2cdd97313309e86d65267134209d3d23cdbd15ebe", 792340, "sha256:c2fcd07f899a90be04aa96bded90bc36b50893207b1ae43eeb920bf8ae3204e0", "sha256:c88206f75eafe492e161b9f10b36635da035d9e632657940a7b8ca912f08b34c", "sha256:c2f0dc25d58479a0c8b404e1ca3515fab743c3c7f19100c36145a986605a072d", 40.64000000001397, 9850],
+    ["c179a4", 20856, "sha256:679675de5f09dbd0f485f4398c5c70203ae1f784525a05bc3c9331a84796121a", 21629, "sha256:76b51a227502de2fbe011af39d58f19b37f2eaf8d854fb81cfa1805f40e3b202", 1287156, "sha256:d96cc11751877f8b21232dd48173df1040b4e0ed9b88df28ff3132f4c3113fb4", "sha256:9570e0114856c33bfa901b45b46fd1e18b9713c211eb071fe4149cefac674003", "sha256:59e0c1e0c6ca902a7a97b7c322b8c654f22063230ab280505bb1746482a1115f", 35.35899999999674, 10090]
+  ],
+  "common_contract": {
+    "completed_attempts": 4,
+    "recording_status_passes": 4,
+    "natural_wins": 4,
+    "normal_exits": 4,
+    "global_trace_passes": 4,
+    "zero_process_memory_write_attempts": 4,
+    "host_exact_restores": 4,
+    "controlled_crt_rand_seed": null,
+    "active_game_process_count_after_ensemble": 0
+  },
+  "decision": {
+    "all_declared_attempts_completed": true,
+    "telemetry_analysis_now_permitted": true,
+    "recordings_are_pc_golden": false,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-frontier-independent-audit",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-14T13:59:11.571957+00:00",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-v1.1-frontier-postprocess-s51081301-preregistration-v1.json",
+    "sha256": "sha256:3dc8a51563c763ef46b3c3415a6e4da9b5430ab3a19b586e5e0b95b98b0ffc01"
+  },
+  "output_root": "/mnt/d/ZumaTraining/alphazuma-v1.1-frontier-postprocess-s51081301-v1",
+  "invariants_verified": [
+    "controller_completion_and_receipts",
+    "seven_route_fifteen_candidate_manifest",
+    "model_and_training_receipt_hashes",
+    "selection_attempt_and_seed_matrix",
+    "frozen_candidate_ranking",
+    "selection_to_final_model_binding",
+    "final_blind_attempt_and_paired_seed_matrix",
+    "raw_result_to_aggregate_arithmetic",
+    "paired_mcnemar_counts",
+    "seven_frozen_promotion_gates",
+    "goal_window_arithmetic"
+  ],
+  "selection": {
+    "candidates": 15,
+    "attempt_records": 480,
+    "seed_range": [
+      910000000,
+      910000031
+    ],
+    "selected_model": {
+      "id": "frontier-fixed-5080-oom-recovery-final-33772736",
+      "training_steps": 33772736,
+      "frontier_steps": 18044096,
+      "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-frontier-fixed-oom-recovery-s47081302-v1/final_model.zip",
+      "sha256": "sha256:c3ffb855f0a7d3f8521bc81224172e992cd59249154f0c0a3251636d63f6ba91",
+      "source": "frontier-fixed-5080-oom-recovery:final",
+      "route_family": "broad-frontier-fixed-ppo1-resume",
+      "device": "cuda:1"
+    },
+    "aggregate_sha256": "sha256:27eb5ba315c995c54ca8ad7efb7ea45e7bdca099a0d765c80c5b55187864f470",
+    "shard_sha256": [
+      "sha256:930150e136d3c329f179db63af6ef70f96c6f0ebc1fe6e295245aa8e815bb9e4",
+      "sha256:da17f3ffdf2f771a99f054370aa6fe731bdf12a1fade09434be8d42d5e782753"
+    ]
+  },
+  "final_blind": {
+    "models": 2,
+    "attempt_records": 544,
+    "seed_range": [
+      1010000000,
+      1010000271
+    ],
+    "aggregate_sha256": "sha256:afc09c5aec04a6490109020b19488b627aa9e307a4e56c484d5a41db532fee1c",
+    "shard_sha256": [
+      "sha256:5abe0392db560226cd5f4821896890da95547d64ed212250588503094bc879c2",
+      "sha256:2cb7130092f52b58e268812329f78c9dfe88c2688ee2c85cbd1e8b107016b935"
+    ]
+  },
+  "performance": {
+    "scientifically_valid": true,
+    "v11_promotion_passed": false,
+    "stretch_goals_passed": false,
+    "within_goal_window": true,
+    "promotion_gates": {
+      "jungle2_retention": {
+        "actual": 16,
+        "required": 14,
+        "comparison": ">=",
+        "passed": true
+      },
+      "target_breadth": {
+        "actual": 13,
+        "required": 14,
+        "comparison": ">=",
+        "passed": false
+      },
+      "target_wins": {
+        "actual": 168,
+        "required": 168,
+        "comparison": ">=",
+        "passed": true
+      },
+      "zero_win_breadth": {
+        "actual": 0,
+        "required": 1,
+        "comparison": ">=",
+        "passed": false
+      },
+      "zero_win_wins": {
+        "actual": 0,
+        "required": 4,
+        "comparison": ">=",
+        "passed": false
+      },
+      "target_wins_noninferior_to_same_seed_baseline": {
+        "actual": 168,
+        "required": 159,
+        "comparison": ">=",
+        "passed": true
+      },
+      "target_breadth_noninferior_to_same_seed_baseline": {
+        "actual": 13,
+        "required": 14,
+        "comparison": ">=",
+        "passed": false
+      }
+    },
+    "target_blind": {
+      "selected_wins": 168,
+      "baseline_wins": 159,
+      "selected_levels_cleared": 13,
+      "baseline_levels_cleared": 14
+    },
+    "zero_win_blind": {
+      "selected_wins": 0,
+      "baseline_wins": 1,
+      "selected_levels_cleared": 0,
+      "baseline_levels_cleared": 1
+    },
+    "jungle2_selected_wins": 16
+  },
+  "artifacts": {
+    "controller_status": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-frontier-postprocess-s51081301-v1/controller_status.json",
+      "sha256": "sha256:c91a908e289576636650c48dd540cafe54d7cc43a58cd5db2fb539ffee3d41b3"
+    },
+    "selection_decision": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-frontier-postprocess-s51081301-v1/selection-decision.json",
+      "sha256": "sha256:3c599f48544f081865dc0565fab3318117f672de85dfdee879331c2c86cc7806"
+    },
+    "final_report": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-frontier-postprocess-s51081301-v1/final_report.json",
+      "sha256": "sha256:64e9d8bb4a8f0a07fd5834e02e86002aa438326a972c8f5ca62b9c6d67288190"
+    },
+    "markdown": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-v1.1-frontier-postprocess-s51081301-v1/FINAL_REPORT.md",
+      "sha256": "sha256:6d5e92f501f2d8966f40a44c6137aa6024ce6f65e13ad8a015896572218af90b"
+    }
+  }
+}

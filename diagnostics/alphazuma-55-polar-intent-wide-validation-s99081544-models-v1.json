@@ -1,0 +1,51 @@
+{
+  "schema": "zuma-rl.zero-shot-models-manifest",
+  "version": 1,
+  "status": "FROZEN",
+  "created_utc": "2026-08-16T01:57:33.261864+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "stage": "training_validation",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "models": [
+    {
+      "id": "polar-source-final",
+      "training_steps": 423483,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-distillation-s99081531-v1/final_model.zip",
+      "sha256": "sha256:3e9996b20c18cf24e6a0f23c719bf383e6381d3240c91d9767e0245e372d12b0"
+    },
+    {
+      "id": "polar-intent-wide-epoch-10",
+      "training_steps": 1287818,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-wide-s99081540-v1/epoch_10_model.zip",
+      "sha256": "sha256:97ec109d29d1493a795a427deb77efb4c905426c530a1365ce2fc89cdf1e92ff"
+    },
+    {
+      "id": "polar-intent-wide-epoch-20",
+      "training_steps": 1287818,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-wide-s99081540-v1/epoch_20_model.zip",
+      "sha256": "sha256:58719893176ed75a9af6f9809a4ec9217230dab80f5e76d36e918cb230787a80"
+    },
+    {
+      "id": "polar-intent-wide-epoch-30",
+      "training_steps": 1287818,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-wide-s99081540-v1/epoch_30_model.zip",
+      "sha256": "sha256:3672b4829b47ac10c8111508f9e80c5ce0de9b80194bd411eb1f195236f5fdb2"
+    }
+  ],
+  "purpose": "Paired early-health diagnostic only; it cannot select the formal finalist.",
+  "builder": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_training_validation.py",
+    "sha256": "sha256:45fcdd98cda89f2a606cb24c30a82c12b877d108b232d37f7623ed71bb9a1391"
+  },
+  "polar_intent_wide_validation_plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-intent-wide-validation-s99081544-plan-v1.json",
+    "sha256": "sha256:8a0918bf7e4a52b6a9beaf12a396f360821ca39d638c814f3da10171179ab8e6"
+  },
+  "target_completion": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-intent-wide-s99081540-v1/completion.json",
+    "sha256": "sha256:3565942394dade186548bc56cddc30e5506c47b6e46cf27174a3db370db16c86"
+  }
+}

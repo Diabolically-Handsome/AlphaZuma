@@ -1,0 +1,40 @@
+{
+  "schema": "zuma-rl.c138a3-fruit-collection-formal-source-preregistration-amendment",
+  "version": 1,
+  "status": "FROZEN_BEFORE_PLAN_OR_CAMPAIGN_OUTPUT",
+  "created_utc": "2026-08-10T12:38:12.7705491Z",
+  "parent_preregistration": "diagnostics/c164-c138a3-fruit-collection-formal-source-preregistration-v1.json",
+  "parent_preregistration_sha256": "sha256:4750bb9cfc209df055364dd8404d156d8b61c7729690274e83d057b6a1d951e1",
+  "reason": "Correct one pre-execution parent-file SHA transcription error discovered by direct recomputation. No normalized DMO, base plan, finite plan, or campaign output existed when this amendment was frozen.",
+  "sole_correction": {
+    "json_pointer": "/parents/recording_ensemble_preregistration_sha256",
+    "incorrect_frozen_value": "sha256:5cd6cdcbf35b28c702314231295b4e5a95a3423e1acd5b5a01cfdd0f96a77514",
+    "correct_value": "sha256:8db2719df78ab8423796e1b1ac221dbd6421fefc450648c7f216803aa1dc59ec",
+    "file": "diagnostics/recording-c137-c138-preregistration-v1.json",
+    "file_bytes": 4630,
+    "file_last_write_utc": "2026-08-10T07:38:55.7632123Z",
+    "file_schema": "zuma-rl.retail-targeted-recording-ensemble-preregistration",
+    "file_status": "PASS"
+  },
+  "output_absence_reverified_before_amendment": {
+    "D:/ZumaGolden/diagnostics/normalized-c138a3-fruit-collection-v1.dmo": true,
+    "D:/ZumaGolden/diagnostics/base-c138a3-fruit-collection-source-bound-plan-v1": true,
+    "D:/ZumaGolden/diagnostics/full-state-source-bound-fruit-collection-c138a3-plan-v1-stop3151": true,
+    "D:/ZumaGolden/formal-full-state-c138a3-fruit-collection-c164-campaign-v1": true
+  },
+  "unchanged_contract": {
+    "all_other_parent_preregistration_fields_remain_frozen": true,
+    "selection_rule_unchanged": true,
+    "window_unchanged": true,
+    "campaign_attempt_rule_unchanged": true,
+    "acceptance_rule_unchanged": true,
+    "tooling_hashes_unchanged": true,
+    "posthoc_outcome_selection": false
+  },
+  "authorization": {
+    "may_execute_c164_under_parent_plus_this_sole_correction": true,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schema": "zuma-rl.gate-contract-and-drift-refresh-amendment",
+  "version": 1,
+  "status": "FROZEN_BEFORE_REDERIVED_PROOFS",
+  "created_utc": "2026-08-10T17:25:00Z",
+  "id": "c200-q7-q8-parent-diff-proof-rebinding",
+  "parent": {
+    "path": "diagnostics/c200-gate-contract-and-drift-refresh-preregistration-v1.json",
+    "sha256": "sha256:ca8c0150eb043d7d43d169080579a4d881b9e87a1d07b0ab921e6fe040350d56"
+  },
+  "observed_preexecution_failure": {
+    "stage": "bind historical MTRand proof to refreshed source-feature-proof report",
+    "error": "mtrand_reconciliation_proof_recomputation_mismatch",
+    "final_bound_outputs_created": false,
+    "interpretation": "the reconciliation transcript is unchanged, but proof version 2 also recomputes the parent differential binding; therefore the historical proof cannot be copied onto a byte-distinct refreshed report"
+  },
+  "frozen_refreshed_diffs": {
+    "c126": {
+      "path": "D:/ZumaGolden/diagnostics/jungle2-c126-u7222-u7248-powerup-proximity-bomb-diff-v13-nosync-unbound-current.json",
+      "sha256": "sha256:6235ff49f2b3c52207a08294fcd444dfa45d55596192ae6df25cb7ed14c88f5e"
+    },
+    "c131": {
+      "path": "D:/ZumaGolden/diagnostics/jungle2-c131b1-u5060-u5098-powerup-reverse-diff-v8-nosync-unbound-current.json",
+      "sha256": "sha256:ccb48d7c9961123a99565095c41bbbfd61239071bdd3386f39a8d3e3dbc8ece3"
+    }
+  },
+  "immutable_trace_sources": {
+    "c126": "diagnostics/c134-c126-source-bound-replay-rng-trace-u7221-u7248-v1/attempt-01",
+    "c131": "diagnostics/c137-c131b1-final-confirmatory-source-bound-rng-trace-u5062-u5096-v1/attempt-01",
+    "runtime": "tools/direct-runtime/popcapgame1.exe",
+    "new_pc_collection": false
+  },
+  "outputs_absent_at_freeze": {
+    "D:/ZumaGolden/diagnostics/jungle2-c126-u7222-u7248-powerup-proximity-bomb-mtrand-proof-v3-source-refresh-current.json": true,
+    "D:/ZumaGolden/diagnostics/jungle2-c131b1-u5060-u5098-powerup-reverse-mtrand-proof-v3-source-refresh-current.json": true,
+    "D:/ZumaGolden/diagnostics/jungle2-c126-u7222-u7248-powerup-proximity-bomb-diff-v14-nosync-bound-current.json": true,
+    "D:/ZumaGolden/diagnostics/jungle2-c131b1-u5060-u5098-powerup-reverse-diff-v9-nosync-bound-current.json": true
+  },
+  "decision_rule": {
+    "pass": "each new proof independently recomputes from its immutable native trace, binds exactly to the corresponding refreshed report, and the final report passes both source-proof and MTRand Gate validators",
+    "fail": "retain outputs and stop q7/q8 refresh without changing windows, traces, or caps",
+    "training_start": false
+  }
+}

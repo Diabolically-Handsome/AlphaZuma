@@ -1,0 +1,130 @@
+{
+  "schema": "zuma-rl.pc-full-state-source-preregistration",
+  "version": 2,
+  "id": "c120-natural-win-u6300-u7300-formal-full-state-source",
+  "status": "FROZEN_BEFORE_RUN_OUTPUTS",
+  "created_utc": "2026-08-09T17:27:51.921Z",
+  "question": "Does one fresh, unmodified retail Jungle2 process naturally reproduce the fixed late-game interval and expose any machine-derived win, Zuma transition, gap, tunnel, RNG-rejection, or power-up mechanisms without outcome filtering?",
+  "evidence_classification": "fresh_formal_pc_full_state_source",
+  "fixed_contract": {
+    "freeze_update": 6300,
+    "source_start_update": 6300,
+    "source_end_update": 7300,
+    "retained_tick_count": 1001,
+    "warmup_tick_count": 0,
+    "trajectory_mode": "full_raw_board_state",
+    "sample_phase": "frozen_post_replay_update_barrier",
+    "maximum_startup_attempts": 1,
+    "strict_command_broker_stop_update": 3123,
+    "score_binding_schema_version": 2,
+    "score_mode": "independent_active_board_fields_read_only",
+    "score_offsets": {
+      "accumulated_score": 260,
+      "rolling_display_score": 3836
+    },
+    "score_acceptance_rule": "all_int32_pairs_without_outcome_filtering",
+    "slowdown_update": 6280,
+    "single_retail_process": true
+  },
+  "acceptance_contract": {
+    "collector_status": "PASS",
+    "selected_attempt": 1,
+    "started_attempt_count": 1,
+    "external_event_count": 0,
+    "strict_replay_failure_count": 0,
+    "strict_replay_gameplay_or_rng_process_memory_write_count": 0,
+    "runtime_payload_must_bind_to_signed_retail_executable": true,
+    "all_1001_tick_artifacts_must_pass_independent_full_state_reader": true,
+    "first_trajectory_frame_must_equal_both_score_binding_fields": true,
+    "visual_anchor_must_bind_the_freeze_process_and_window": true,
+    "host_post_state_root_must_equal_fresh_host_pre_state_root": true,
+    "no_feature_or_outcome_is_required_for_source_acceptance": true,
+    "feature_authorization_is_machine_derived_after_source_acceptance": true
+  },
+  "attempt_rule": {
+    "retain_every_started_attempt": true,
+    "retry_allowed": false,
+    "infrastructure_failure_disposition": "retain_failed_source_and_create_a_new_preregistered_source",
+    "external_input_is_not_retryable": true,
+    "maximum_attempts": 1
+  },
+  "selection_basis": {
+    "historical_evidence_only": true,
+    "recording_report": {
+      "path": "D:/ZumaGolden/autoplay-jungle2-natural-win-late-nav-v6-init-anchor-20260801-1144/result.json",
+      "sha256": "sha256:791ede5184ebd2eaa5d614995c024e99f7ee25799b24eebdd40b209910eb1e63",
+      "recorded_outcome": "natural_win",
+      "recorded_final_score": 9690,
+      "score_target": 9650
+    },
+    "historical_replay_parity": {
+      "path": "D:/ZumaGolden/diagnostics/natural-win-late-nav-v6-sourcebound-dual-hardware-startup-handoff-full-r4/source-bound-gameplay-parity.json",
+      "sha256": "sha256:e5f35f98e296998ac3e31c798eb439a2ba0dfae32553754bc7c1ae602e28573b",
+      "historical_win_framework_update": 6804
+    },
+    "window_reason": "the fixed interval begins 504 updates before the historical score-crossing input and ends 496 updates after it; the fresh run must be accepted or rejected without moving either endpoint",
+    "expected_feature_hypotheses_not_acceptance_criteria": [
+      "natural_win",
+      "zuma_transition",
+      "gap_shot",
+      "tunnel_collision",
+      "rng_rejection",
+      "powerup_reverse",
+      "powerup_proximity_bomb"
+    ]
+  },
+  "fixed_inputs": {
+    "collector_plan": {
+      "path": "D:/ZumaGolden/diagnostics/natural-win-natural-strict-plan-c120-v1/plan.json",
+      "sha256": "sha256:f7362d69ea537b1b50e35c24add3b03a176ff68bfb2bb1097b4e6915dc3f3fe9"
+    },
+    "playback_dmo": {
+      "path": "D:/ZumaGolden/diagnostics/natural-win-natural-strict-plan-c120-v1/inputs/input.dmo",
+      "sha256": "sha256:f4d0df000468e0417573bb77bfd6bc248c3c3ea63e383dc3ce3a0dcbf76fc1ba"
+    },
+    "replay_pre_snapshot": {
+      "path": "D:/ZumaGolden/diagnostics/natural-win-natural-strict-plan-c120-v1/protocol/pre-template.json",
+      "sha256": "sha256:7efeae8bb9df049a65c6dde7bd3b156a9c0828d927d42ef474329fd82d5ba3e8"
+    },
+    "runtime_payload": {
+      "path": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+      "sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20"
+    },
+    "runtime_source": {
+      "path": "D:/SteamLibrary/steamapps/common/Zuma's Revenge/ZumasRevenge.exe",
+      "sha256": "sha256:db85b891ba662a463d23251a376081386b47437c29248b21e2c10335a6f3eb50"
+    }
+  },
+  "state_transaction": {
+    "session_nonce": "616a69abf1454da68d97ef9a24001ec6",
+    "host_prestate_role": "fresh_live_state_captured_after_this_preregistration_and_before_the_run",
+    "replay_prestate_role": "fixed_game_start_state",
+    "poststate_rule": "same session nonce and exact state root after the sole attempt finishes"
+  },
+  "outputs": {
+    "run": "D:/ZumaGolden/formal-full-state-c120-natural-win-u6300-u7300-v1",
+    "host_pre_snapshot": "D:/ZumaGolden/diagnostics/c120-natural-win-host-pre-v1.json",
+    "host_post_snapshot": "D:/ZumaGolden/diagnostics/c120-natural-win-host-post-v1.json",
+    "source_manifest": "D:/ZumaGolden/sources/c120-u6300-u7300-natural-win-full-state-source-v1.json",
+    "mechanism_audit": "D:/ZumaGolden/diagnostics/pc-mechanism-c120-natural-win-v1.json",
+    "natural_win_diff": "D:/ZumaGolden/diagnostics/jungle2-c120-natural-win-diff-v1.json"
+  },
+  "decision": {
+    "pass": "package and independently verify the source, then derive every observed mechanism and run only matching simulator diffs",
+    "any_attempt_failure": "retain immutable failure artifacts and do not grant Fidelity credit",
+    "external_input": "formal invalid",
+    "mechanism_or_win_absence": "does not invalidate source authenticity and cannot be repaired by changing this frozen window"
+  },
+  "tooling": {
+    "collector_sha256": "sha256:3b0a11c064755b403f99e82220189be4fd2e11a6b77ca2c9f166a181467aa91c",
+    "transaction_wrapper_sha256": "sha256:bdf7368ee6d0ced319f17b85c3b5ef4b80f4d85cbfbfbfeed9f71389da6d064e",
+    "full_state_reader_sha256": "sha256:7456c1e8059cd9d715e53756489b7ed089b52354a7bc4f8026bf6ea6cb1cc030",
+    "pc_source_verifier_sha256": "sha256:2cc32c99eec92711ebadf9abdaf7bf6e805aa89b1a87f5abcda4961550778e46",
+    "mechanism_auditor_sha256": "sha256:ee4c114ec69a98c3b1652009e756c5701d25f337306b9da243192505f25b5c36",
+    "natural_win_diff_sha256": "sha256:7f11e639062f7fb97e2d0d362f8372f89dc079d122857f4c87f0987bd0363a20",
+    "state_transaction_sha256": "sha256:b6f2b810dfa180f3368c368850eab57d4c2a1010067ea7de26e6cc1271fcd493",
+    "input_guard_sha256": "sha256:3f7b43d1100c44c0a07fe23cb9a20fba99ccbbb6e456115b4998f6b6f72d6212",
+    "focused_test_status": "PASS_93"
+  },
+  "output_paths_absent_at_freeze": true
+}

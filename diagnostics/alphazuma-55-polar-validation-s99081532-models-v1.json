@@ -1,0 +1,57 @@
+{
+  "schema": "zuma-rl.zero-shot-models-manifest",
+  "version": 1,
+  "status": "FROZEN",
+  "created_utc": "2026-08-15T21:08:06.092854+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "stage": "training_validation",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "models": [
+    {
+      "id": "v11-full55-v1",
+      "training_steps": 33772736,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1.zip",
+      "sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d"
+    },
+    {
+      "id": "polar-full55-epoch-10",
+      "training_steps": 423483,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-distillation-s99081531-v1/epoch_10_model.zip",
+      "sha256": "sha256:0c8cf133fc4ca7eed0347d6a4317e560f01f47282adef30b67f7f3b3250fbf39"
+    },
+    {
+      "id": "polar-full55-epoch-30",
+      "training_steps": 423483,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-distillation-s99081531-v1/epoch_30_model.zip",
+      "sha256": "sha256:b366e3af0ba11cb872317627b8b497657ea7a375bc80639f3bec8f5dad9c72cc"
+    },
+    {
+      "id": "polar-full55-epoch-60",
+      "training_steps": 423483,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-distillation-s99081531-v1/epoch_60_model.zip",
+      "sha256": "sha256:e560535a8c15b92de3c2ec55962f19de09757ff31f02b7c08e757341f1dce8a2"
+    },
+    {
+      "id": "polar-full55-epoch-90",
+      "training_steps": 423483,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-distillation-s99081531-v1/epoch_90_model.zip",
+      "sha256": "sha256:5ede889b54a06ff957e37e1f0d29cbca88652420abd307991544a29e44e5561b"
+    }
+  ],
+  "purpose": "Paired early-health diagnostic only; it cannot select the formal finalist.",
+  "builder": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_training_validation.py",
+    "sha256": "sha256:45fcdd98cda89f2a606cb24c30a82c12b877d108b232d37f7623ed71bb9a1391"
+  },
+  "polar_validation_plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-validation-s99081532-plan-v1.json",
+    "sha256": "sha256:b007beb7694baa29dac42013464735a3a57b8d071ac8c731f3fbd57f7c001a60"
+  },
+  "target_completion": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-distillation-s99081531-v1/completion.json",
+    "sha256": "sha256:90483fca9da18b36acbfcc54846af9a50cbaaa1ec0d707e4cb6e18fe13f040a1"
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "schema": "zuma-rl.pc-gameplay-reconciled-diff-proof-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_OUTPUT",
+  "created_utc": "2026-08-10T13:23:24.0345863Z",
+  "purpose": "Re-run the immutable c164 fruit window with only the qualified external-visual MTRand reconciliation enabled, then derive and bind a complete native-call proof.",
+  "parents": {
+    "c166_failed_exact_diff_receipt": "diagnostics/c166-c164-fruit-collection-simulator-diff-failure-receipt-v1.json",
+    "c166_failed_exact_diff_receipt_sha256": "sha256:4aa644f6439873b4ecef1c50b89f0f538cac1f9f031483eed23ec81be3327c77",
+    "c172_confirmatory_trace_receipt": "diagnostics/c172-c164-fruit-collection-revised-mtrand-trace-success-receipt-v1.json",
+    "c172_confirmatory_trace_receipt_sha256": "sha256:3fe6cb449249c22f1ccc74ff2fcf462ff020e5b7ae62e6ab85d32b662db2ac22"
+  },
+  "immutable_source": {
+    "trajectory": "D:/ZumaGolden/formal-full-state-c138a3-fruit-collection-c164-campaign-v1/attempt-01/source/attempt-01/trajectory/index.json",
+    "trajectory_sha256": "sha256:6ea075248dc73e1023a04a72ff6352355f762cad7a8a4cb916d7563d974c3b36",
+    "dmo": "D:/ZumaGolden/diagnostics/full-state-source-bound-fruit-collection-c138a3-plan-v1-stop3151/inputs/input.dmo",
+    "dmo_sha256": "sha256:6f2d645c3109f73b77ef55c7e7e7941f7f1d2f73dccd5a71adc3051d4a360989",
+    "selected_start_update": 5278,
+    "selected_end_update": 5305,
+    "source_proof_start_update": 5220,
+    "source_proof_end_update": 5310,
+    "source_bytes_modified": false
+  },
+  "qualified_trace_window": {
+    "root": "diagnostics/c172-c164-final-confirmatory-source-bound-rng-trace-u5278-u5305-v1/attempt-01",
+    "memory_probe_sha256": "sha256:8959e55952eba6fcd918664b70641be1533a46b9505dcfcd4f07893cf800758d",
+    "trajectory_sha256": "sha256:663663d0b5d5a2a5200b52cc00bada010ad75f036ca136338cd2d71bcc3032ef",
+    "trace_sha256": "sha256:051ad362fc8b19d063714e58e069efa85da684ed1b04ba1a92ed64a0c10b0ece",
+    "alignment_sha256": "sha256:be508998f750bc0a57c5e383572ea84fa6e655cae075317d13ca2c729db36c85",
+    "overlap_sha256": "sha256:27d12443b81dc595ad80cbe97c830a588ccec02494e33abcd4bead5af29e12ed"
+  },
+  "comparison_contract": {
+    "level_id": "Jungle2",
+    "hard": false,
+    "curve_index": 0,
+    "synchronize_shooter": false,
+    "reconcile_external_visual_mtrand": true,
+    "global_mtrand_policy": "conditional_external_mtrand_reconciliation_v2",
+    "maximum_external_visual_mtrand_draws_per_tick": 64,
+    "waypoint_tolerance": 0.0001,
+    "position_tolerance_px": 0.001,
+    "progress_tolerance": 0.000001,
+    "simulator_or_source_state_changes": false
+  },
+  "expected_reconciliation": {
+    "classification": "unclassified_until_bound_call_trace_proof",
+    "reconciled_tick_count": 2,
+    "total_reconciled_draw_count": 7,
+    "rows": [
+      {
+        "framework_update": 5279,
+        "phase": "after_gameplay_state_match",
+        "draw_count": 6,
+        "native_calls": 6,
+        "omitted_visual_calls": 6,
+        "modeled_gameplay_calls": 0
+      },
+      {
+        "framework_update": 5295,
+        "phase": "after_gameplay_state_match",
+        "draw_count": 1,
+        "native_calls": 1,
+        "omitted_visual_calls": 1,
+        "modeled_gameplay_calls": 0
+      }
+    ],
+    "update_5301_reconciliation_row_forbidden": true,
+    "update_5301_modeled_gameplay_draw_count": 2,
+    "update_5301_pending_colors_must_match_naturally": true
+  },
+  "outputs": {
+    "unbound_diff": "D:/ZumaGolden/diagnostics/jungle2-c164-u5278-u5305-fruit-collection-diff-v2-reconciled-unbound.json",
+    "unbound_diff_absent_at_freeze": true,
+    "proof": "D:/ZumaGolden/diagnostics/jungle2-c164-u5278-u5305-fruit-collection-mtrand-proof-v1.json",
+    "proof_absent_at_freeze": true,
+    "bound_diff": "D:/ZumaGolden/diagnostics/jungle2-c164-u5278-u5305-fruit-collection-diff-v3-reconciled-bound.json",
+    "bound_diff_absent_at_freeze": true
+  },
+  "frozen_code": {
+    "tools/compare_pc_gameplay_trajectory.py": "sha256:96ef141bee133f7c866f41183b2e0f41a420eab6345b77e5d5bc6a9ecd8ee8c8",
+    "src/zuma_rl/pc_gameplay_diff.py": "sha256:0b8cd75dd7d93180269f255d946b4959ddb7b65cd23ed0303662d5e0db4fa971",
+    "src/zuma_rl/revenge_core.py": "sha256:0229faec8c7b3fb05f64831bcc93565ef072184d48bb96c489b767d6c55628ad",
+    "src/zuma_rl/pc_memory_trajectory.py": "sha256:ce77027b57c1a4ff686cf923703128afe9fe7c674a6ebc87e6919c987ce9dae8",
+    "src/zuma_rl/pc_mtrand_reconciliation.py": "sha256:d9781e7626b1f981aa82ce220dd96e55ac074722d83873ba8990617aec4e3ac7",
+    "tools/derive_pc_mtrand_reconciliation_proof.py": "sha256:793560ed8691a75e9b3b2d6a0abeca2f8117dec0c9a6f20e8f64e3153cf48239",
+    "tools/bind_pc_mtrand_reconciliation_proof.py": "sha256:e6dccde3970daf4934d08be700a5dfdc9887905938ac605822eac90677af5e45"
+  },
+  "commands": {
+    "diff": ".\\.venv-win\\Scripts\\python.exe tools\\compare_pc_gameplay_trajectory.py D:\\ZumaGolden\\formal-full-state-c138a3-fruit-collection-c164-campaign-v1\\attempt-01\\source\\attempt-01\\trajectory\\index.json --dmo D:\\ZumaGolden\\diagnostics\\full-state-source-bound-fruit-collection-c138a3-plan-v1-stop3151\\inputs\\input.dmo --original-root \"D:\\SteamLibrary\\steamapps\\common\\Zuma's Revenge\" --level-id Jungle2 --curve-index 0 --start-update 5278 --end-update 5305 --no-synchronize-shooter --reconcile-external-visual-mtrand --source-feature-proofs --source-proof-start-update 5220 --source-proof-end-update 5310 --evidence-root D:\\ZumaGolden --waypoint-tolerance 0.0001 --position-tolerance 0.001 --progress-tolerance 0.000001 --output D:\\ZumaGolden\\diagnostics\\jungle2-c164-u5278-u5305-fruit-collection-diff-v2-reconciled-unbound.json",
+    "derive_proof": ".\\.venv-win\\Scripts\\python.exe tools\\derive_pc_mtrand_reconciliation_proof.py --gameplay-diff D:\\ZumaGolden\\diagnostics\\jungle2-c164-u5278-u5305-fruit-collection-diff-v2-reconciled-unbound.json --evidence-root D:\\ZumaGolden --trace-window-root diagnostics/c172-c164-final-confirmatory-source-bound-rng-trace-u5278-u5305-v1/attempt-01 --output D:\\ZumaGolden\\diagnostics\\jungle2-c164-u5278-u5305-fruit-collection-mtrand-proof-v1.json",
+    "bind_proof": ".\\.venv-win\\Scripts\\python.exe tools\\bind_pc_mtrand_reconciliation_proof.py --gameplay-diff D:\\ZumaGolden\\diagnostics\\jungle2-c164-u5278-u5305-fruit-collection-diff-v2-reconciled-unbound.json --proof D:\\ZumaGolden\\diagnostics\\jungle2-c164-u5278-u5305-fruit-collection-mtrand-proof-v1.json --evidence-root D:\\ZumaGolden --output D:\\ZumaGolden\\diagnostics\\jungle2-c164-u5278-u5305-fruit-collection-diff-v3-reconciled-bound.json"
+  },
+  "acceptance": {
+    "unbound_diff_status": "PASS",
+    "compared_tick_count": 27,
+    "all_tick_statuses_pass": true,
+    "all_fruit_state_mismatches_empty": true,
+    "all_gameplay_states_exact_before_global_rng": true,
+    "all_global_mtrand_states_exact_after_reconciliation": true,
+    "all_qrand_crt_and_shooter_states_exact": true,
+    "proof_status": "PASS",
+    "proof_reconciled_tick_count": 2,
+    "proof_reconciled_draw_count": 7,
+    "proof_native_call_count": 7,
+    "proof_modeled_gameplay_call_count": 0,
+    "proof_semantic_call_counts": {
+      "score_digit_transition": 6,
+      "score_digit_wobble": 1
+    },
+    "source_and_trace_v2_provenance_present": true,
+    "bound_report_independent_proof_reverification": "PASS",
+    "gameplay_mtrand_contract_reason": null,
+    "source_feature_proof_reason": null
+  },
+  "decision_rule": {
+    "pass": "Freeze all three immutable artifacts and a success receipt; only then may the fruit simulator_diff requirement be updated.",
+    "fail": "Retain the first failing artifact and do not write downstream proof/bound outputs unless its direct prerequisite passed.",
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "audit_fingerprint": "sha256:6b2225aa3a58f06ceb474fb67659cb27f8488fa1c7b25844fc424551ffebbce9",
+  "audit_type": "pc_mechanism_coverage",
+  "cases": [
+    {
+      "authorized_features": [
+        "powerup_spawn"
+      ],
+      "case_id": "jungle2_dmo_e43c645a18d7_u9539_9600",
+      "dmo_sha256": "sha256:e43c645a18d74c5320a0687446f38cd9c46fff4eb8c0ff1a2b9c265b78a18b12",
+      "feature_proofs": [
+        {
+          "ball_transition_exact": true,
+          "calibration_provenance": "retail Jungle2 u9547-u9552 call trace and u9547-u9652 full-object trajectory",
+          "candidate_count": 13,
+          "chance_denominator": 617,
+          "curve_index": 0,
+          "eligible_colors": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "feature": "powerup_spawn",
+          "framework_update": 9550,
+          "manager_transition_exact": true,
+          "mtrand_draw_count": 4,
+          "mtrand_outputs": [
+            1458389326,
+            1124812746,
+            96453945,
+            499711592
+          ],
+          "mtrand_state_exact": true,
+          "native_game_time": 5961,
+          "powerup_type": 3,
+          "powerup_weights": [
+            100,
+            0,
+            0,
+            100,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "proof": "the exact retail MT state advances four draws through chance, weighted type, eligible colour, and active-list candidate selection, landing on the sole observed manager and ball transition",
+          "selected_ball_active_index": 22,
+          "selected_ball_id": 86,
+          "selected_color_id": 1,
+          "status": "PASS"
+        }
+      ],
+      "id": "c5-existing-reverse-powerup-spawn",
+      "manifest_path": "cases/jungle2-existing-reverse-u9539-9600-v5-full-exact/manifest.json",
+      "manifest_sha256": "sha256:47f3deb6a16ccc0358b126349d92859ec4f6e1b13bcbbb77bd403c1905e16557",
+      "memory_probe_path": "memory-followup-c5-existing-reverse-u9539-u9600-v2/attempt-01/memory-probe.json",
+      "memory_probe_sha256": "sha256:1129ad03fcd3258ff196d66a179c0ce73463b2d38ff07e392de67c9c2374018d",
+      "runtime_executable_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+      "source_fingerprint": "sha256:efd64ec25f47ef20bfe4a5a91f8e0850e4566bd99fb3afc81b8623699b28ae01",
+      "status": "PASS",
+      "trajectory": {
+        "artifact": "memory-followup-c5-existing-reverse-u9539-u9600-v2/attempt-01/trajectory/index.json",
+        "artifact_sha256": "sha256:fd680a6ba3150252a602dad250992a184ba0ea0d98eccbdd2a88b4e5a4898479",
+        "end_update": 9600,
+        "start_update": 9539,
+        "tick_count": 62
+      },
+      "video_binding": {
+        "excluded_bottom_rows": 4,
+        "excluded_edge_mismatch_count": 2,
+        "framework_update": 9539,
+        "interior_height": 596,
+        "interior_mismatch_count": 0,
+        "interior_rgb24_sha256": "sha256:602690e09ab94a9f7421e784a394fd8aede42cafcf76bddacfe6c0e4b06fce97",
+        "native_tick": 0,
+        "probe_rgb24_sha256": "sha256:3a8814c35a5675fd5e1f2f5963a8dd2d9514e12c9c4d7c90abe86d550ef96615",
+        "status": "PASS",
+        "video_pts": 79,
+        "video_rgb24_sha256": "sha256:9036144333afd33514efa52c20eec38623ae91826d684f06c51ae2f9d5b0d9a8"
+      },
+      "window": {
+        "end_update": 9600,
+        "start_update": 9539,
+        "tick_count": 62
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "natural_memory_trajectory_provenance",
+      "status": "PASS"
+    },
+    {
+      "name": "pc_video_tick_binding",
+      "status": "PASS"
+    },
+    {
+      "name": "machine_derived_feature_authorization",
+      "status": "PASS"
+    }
+  ],
+  "failure_reasons": [],
+  "schema": "zuma-rl.fidelity-audit",
+  "scope": {
+    "environment_id": "ZumaRevenge-v0",
+    "hard": false,
+    "level_id": "Jungle2",
+    "observation_mode": "actor",
+    "policy": "original-transfer-jungle2-v1",
+    "profile_mode": "tutorials_completed"
+  },
+  "status": "PASS",
+  "summary": {
+    "authorized_feature_union": [
+      "powerup_spawn"
+    ],
+    "case_count": 1,
+    "passing_case_count": 1,
+    "pc_source_count": 1,
+    "pc_source_fingerprints": [
+      "sha256:efd64ec25f47ef20bfe4a5a91f8e0850e4566bd99fb3afc81b8623699b28ae01"
+    ],
+    "source_feature_authorizations": [
+      {
+        "authorized_features": [
+          "powerup_spawn"
+        ],
+        "source_fingerprint": "sha256:efd64ec25f47ef20bfe4a5a91f8e0850e4566bd99fb3afc81b8623699b28ae01"
+      }
+    ]
+  },
+  "version": 1
+}

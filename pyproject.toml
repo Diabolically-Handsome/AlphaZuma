@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zuma-rl"
+version = "0.4.0"
+description = "Fidelity-first Zuma's Revenge reinforcement-learning research environment."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "gymnasium>=1.0,<2",
+  "numpy>=1.26,<3",
+]
+
+[project.optional-dependencies]
+train = [
+  "stable-baselines3>=2.9,<3",
+  "sb3-contrib>=2.9,<3",
+  "tensorboard>=2.18,<3",
+  "tqdm>=4.66,<5",
+  "rich>=13.9,<15",
+]
+pc-video = [
+  "av>=18,<19",
+  "Pillow>=12,<13",
+]
+test = [
+  "av>=18,<19",
+  "Pillow>=12,<13",
+  "pytest>=8.3,<10",
+]
+
+[project.scripts]
+zuma-benchmark = "zuma_rl.benchmark:main"
+zuma-benchmark-revenge = "zuma_rl.benchmark_revenge:main"
+zuma-train = "zuma_rl.train:main"
+zuma-demo = "zuma_rl.demo:main"
+zuma-audit-original = "zuma_rl.audit_original:main"
+zuma-audit-dmo = "zuma_rl.popcap_dmo:main"
+zuma-audit-actor-observation = "zuma_rl.actor_audit:main"
+zuma-audit-actor-visual = "zuma_rl.pc_visual_audit:main"
+zuma-audit-pc-mechanisms = "zuma_rl.pc_mechanism_audit:main"
+zuma-audit-source-guidance = "zuma_rl.source_guidance:main"
+zuma-verify-pc-capture-campaign = "zuma_rl.pc_capture_campaign:main"
+zuma-verify-pc-memory-followup = "zuma_rl.pc_memory_followup:main"
+zuma-verify-pc-golden = "zuma_rl.verify_pc_golden:main"
+zuma-verify-fidelity-suite = "zuma_rl.fidelity_gate:main"
+zuma-verify-training-suite = "zuma_rl.training_gate:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]

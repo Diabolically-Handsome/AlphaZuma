@@ -1,0 +1,45 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-independent-result-auditor-test-receipt",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-14T01:54:29.4381872+00:00",
+  "auditor": {
+    "path": "tools/audit_alphazuma_v11_frontier_result.py",
+    "sha256": "sha256:a37ea47134610ec2824c1774d98afa84ff9025f7aa3b4d7235414feec6e45b34"
+  },
+  "auditor_tests": {
+    "path": "tests/test_audit_alphazuma_v11_frontier_result.py",
+    "sha256": "sha256:3b923a916dcc36e583786bf837da7bc8e9c3fe8810823232827ba22a11f8daab"
+  },
+  "frozen_controller": {
+    "path": "tools/run_alphazuma_v11_frontier_postprocess.py",
+    "sha256": "sha256:0f97b9d143f9d33de935311d11074ea4f68cb4b3027a412ed70b52b76ff99689",
+    "modified_by_this_change": false
+  },
+  "controller_tests": {
+    "path": "tests/test_alphazuma_v11_frontier_postprocess.py",
+    "sha256": "sha256:1693a3799e49323a581d66c5ed910dafe27f926a0fd3080161f3ad2ba145c0a1"
+  },
+  "test_command": "TMPDIR=/tmp TEMP=/tmp .venv/bin/python -m pytest -q tests/test_alphazuma_v11_frontier_postprocess.py tests/test_audit_alphazuma_v11_frontier_result.py",
+  "tests_passed": 8,
+  "tests_failed": 0,
+  "adversarial_cases": [
+    "seed_tamper_detected_after_shard_receipt_rehash",
+    "gate_arithmetic_tamper_detected_after_controller_receipt_rehash"
+  ],
+  "production_invariants_recomputed": [
+    "controller_completion_and_receipts",
+    "seven_route_fifteen_candidate_manifest",
+    "model_and_training_receipt_hashes",
+    "selection_attempt_and_seed_matrix",
+    "frozen_candidate_ranking",
+    "selection_to_final_model_binding",
+    "final_blind_attempt_and_paired_seed_matrix",
+    "raw_result_to_aggregate_arithmetic",
+    "paired_mcnemar_counts",
+    "seven_frozen_promotion_gates",
+    "goal_window_arithmetic"
+  ],
+  "training_or_evaluation_semantics_changed": false,
+  "formal_seed_consumption": "none"
+}

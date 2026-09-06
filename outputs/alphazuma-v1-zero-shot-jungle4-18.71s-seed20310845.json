@@ -1,0 +1,128 @@
+{
+  "schema": "zuma-rl.zero-shot-multilevel-best-video",
+  "version": 1,
+  "status": "COMPLETE",
+  "source": {
+    "aggregate": "/mnt/d/ZumaTraining/zero-shot-v1-multilevel-final-s20310812-n16-v1/aggregate.json",
+    "aggregate_sha256": "sha256:632114ff4f202bd1e840aa5a07bfec30cbb41f456679955b114460e4f23719fb",
+    "preregistration": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/zero-shot-v1-multilevel-final-s20310812-n16-preregistration.json",
+    "preregistration_sha256": "sha256:fbf25818d232f5991396c6f574ed485d98ec7061173ef51906550c92f23acc06"
+  },
+  "candidate": {
+    "model_id": "step-2621440-final",
+    "training_steps": 2621440,
+    "model_sha256": "sha256:aeb6385c6df3faa0e720b43dd52853284807a25eaf2e4d0da4dcdc0769c4f5b6",
+    "seed": 20310845,
+    "outcome": "win",
+    "native_outcome": null,
+    "time_limit_truncated": false,
+    "ticks": 1871,
+    "seconds": 18.71,
+    "score": 2190,
+    "reward": 9.822900000000004,
+    "decisions": 1871,
+    "desired_action_counts": {
+      "wait": 1771,
+      "fire": 54,
+      "swap": 46
+    },
+    "executed_action_counts": {
+      "wait": 1771,
+      "fire": 54,
+      "swap": 46
+    },
+    "trajectory_sha256": "sha256:90db8f3d505e3a90ee2a9636224334258973b40beb18ca859a6635c48b66cb0b",
+    "level_id": "Jungle4",
+    "display_name": "Bones of an Idol",
+    "curve_count": 1,
+    "attempt_index": 1
+  },
+  "model": {
+    "path": "/mnt/d/ZumaTraining/human-speedrun-v1-jungle2-s20261010-2621k-v1/final_model.zip",
+    "sha256": "sha256:aeb6385c6df3faa0e720b43dd52853284807a25eaf2e4d0da4dcdc0769c4f5b6",
+    "device": "cuda:0"
+  },
+  "verification": {
+    "identity_fields": [
+      "outcome",
+      "ticks",
+      "score",
+      "trajectory_sha256",
+      "decisions",
+      "desired_action_counts",
+      "executed_action_counts"
+    ],
+    "pre_render_matches_formal_attempt": true,
+    "rendered_matches_formal_attempt": true,
+    "pre_render": {
+      "model_id": "step-2621440-final",
+      "training_steps": 2621440,
+      "model_sha256": "sha256:aeb6385c6df3faa0e720b43dd52853284807a25eaf2e4d0da4dcdc0769c4f5b6",
+      "seed": 20310845,
+      "outcome": "win",
+      "native_outcome": null,
+      "time_limit_truncated": false,
+      "ticks": 1871,
+      "seconds": 18.71,
+      "score": 2190,
+      "reward": 9.822900000000004,
+      "decisions": 1871,
+      "desired_action_counts": {
+        "wait": 1771,
+        "fire": 54,
+        "swap": 46
+      },
+      "executed_action_counts": {
+        "wait": 1771,
+        "fire": 54,
+        "swap": 46
+      },
+      "trajectory_sha256": "sha256:90db8f3d505e3a90ee2a9636224334258973b40beb18ca859a6635c48b66cb0b",
+      "qualifies_sub_12": false
+    },
+    "rendered": {
+      "model_id": "step-2621440-final",
+      "training_steps": 2621440,
+      "model_sha256": "sha256:aeb6385c6df3faa0e720b43dd52853284807a25eaf2e4d0da4dcdc0769c4f5b6",
+      "seed": 20310845,
+      "outcome": "win",
+      "native_outcome": null,
+      "time_limit_truncated": false,
+      "ticks": 1871,
+      "seconds": 18.71,
+      "score": 2190,
+      "reward": 9.822900000000004,
+      "decisions": 1871,
+      "desired_action_counts": {
+        "wait": 1771,
+        "fire": 54,
+        "swap": 46
+      },
+      "executed_action_counts": {
+        "wait": 1771,
+        "fire": 54,
+        "swap": 46
+      },
+      "trajectory_sha256": "sha256:90db8f3d505e3a90ee2a9636224334258973b40beb18ca859a6635c48b66cb0b",
+      "qualifies_sub_12": false
+    }
+  },
+  "video": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/outputs/alphazuma-v1-zero-shot-jungle4-18.71s-seed20310845.mp4",
+    "sha256": "sha256:5fde9619497c09c1d1e5059fa2bddbbd3a5d0ca6ff3f5d5268c2dbfbfbddc00b",
+    "bytes": 1338691,
+    "codec": "h264/libx264",
+    "pixel_format": "yuv420p",
+    "width": 800,
+    "height": 716,
+    "fps": 50,
+    "frame_stride_native_ticks": 2,
+    "gameplay_frame_count": 937,
+    "frame_count": 1037,
+    "decoded_frame_count": 1037,
+    "duration_seconds": 20.74,
+    "final_hold_seconds": 2.0,
+    "poster": "/mnt/c/Users/Laure/Documents/祖玛/outputs/alphazuma-v1-zero-shot-jungle4-18.71s-seed20310845-poster.png",
+    "poster_sha256": "sha256:8fd3057fbe4f2fe71289d904c0c41dad24e61e7b96bc80ce23a8b806418b860b"
+  }
+}

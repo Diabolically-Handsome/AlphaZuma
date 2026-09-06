@@ -1,0 +1,115 @@
+{
+  "schema": "zuma-rl.teacher-policy-anchor-repair-screen-outcome",
+  "version": 1,
+  "created_utc": "2026-08-04T15:39:58.172Z",
+  "status": "COEFFICIENT_1000_REPAIR_SCREEN_PASS",
+  "decision": "AUTHORIZE_ONE_FRESH_NONOVERLAPPING_COEFFICIENT_1000_CONFIRMATION",
+  "preregistration": {
+    "path": "diagnostics/teacher-policy-anchor-c1000-repair-screen-s20260910-preregistration-v1.json",
+    "sha256": "sha256:51872988e80ca0905c55e8639843ea2d2902926f74fa8f2715e1e364b4e5542c",
+    "status": "FROZEN_BEFORE_RUN_OUTPUT"
+  },
+  "causal_control": {
+    "changed_variable_only": "teacher_forward_kl_coefficient_100_to_1000",
+    "coefficient_100_failed_outcome_sha256": "sha256:cf0a934bff46b6e1bb2286a3845648dc909bd77bcb93c53d91ff3ce1733cae77",
+    "coefficient_1000_pretrain_receipt_sha256": "sha256:8695133d6a441784a8317b46908a80dd3d37fea12fbb0bbcb5bacef4b5e31887",
+    "coefficient_100_pretrain_receipt_sha256": "sha256:8695133d6a441784a8317b46908a80dd3d37fea12fbb0bbcb5bacef4b5e31887",
+    "baseline_reproduced_byte_exact": true,
+    "stream_classification": "consumed_failure_control_not_independent_evidence"
+  },
+  "acceptance_results": {
+    "pipeline": {
+      "pass": true,
+      "completion_status": "COMPLETE",
+      "effective_steps": 16384,
+      "optimizer_reset_status": "PASS",
+      "teacher_anchor_verification_status": "PASS",
+      "teacher_policy_bitwise_unchanged": true,
+      "current_policy_bitwise_changed": true,
+      "train_calls": 8,
+      "minibatches": 32,
+      "samples": 16384,
+      "mean_forward_kl": 0.000001657991699488548,
+      "max_sample_forward_kl": 0.00006190274143591523,
+      "mean_forward_kl_below_coefficient_100_observation": true,
+      "mean_forward_kl_reduction_vs_coefficient_100": 0.729008007140036,
+      "stderr_bytes": 0
+    },
+    "baseline_reproduction": {
+      "pass": true,
+      "receipt_hash_exact": true,
+      "wins": 25,
+      "losses": 4,
+      "truncations": 3,
+      "mean_reward": 33.30008125
+    },
+    "deterministic_repair": {
+      "pass": true,
+      "pretrain": {"wins": 25, "losses": 4, "truncations": 3, "mean_reward": 33.30008125},
+      "posttrain": {"wins": 25, "losses": 4, "truncations": 3, "mean_reward": 33.30008125},
+      "mean_reward_delta": 0.0,
+      "paired_reward_improvements": 0,
+      "paired_reward_regressions": 0,
+      "paired_reward_regressions_exceeding_5": 0,
+      "all_32_rewards_lengths_terminal_scores_and_outcomes_identical": true,
+      "all_frozen_checks_pass": true
+    },
+    "overall": {
+      "pass": true,
+      "post_hoc_override_applied": false
+    }
+  },
+  "mechanism_effect": {
+    "coefficient_100": {
+      "posttrain_wins": 23,
+      "mean_reward_delta": -1.66385,
+      "paired_regressions_exceeding_5": 4
+    },
+    "coefficient_1000": {
+      "posttrain_wins": 25,
+      "mean_reward_delta": 0.0,
+      "paired_regressions_exceeding_5": 0
+    },
+    "bounded_inference": "on the exact byte-reproduced consumed population, increasing only the initial-teacher forward-KL coefficient from 100 to 1000 eliminated every deterministic trajectory change while retaining nonzero policy updates"
+  },
+  "factor_drift_diagnostic": {
+    "classification": "post_hoc_consumed_dataset_diagnostic_only",
+    "report_sha256": "sha256:4279c029c311777765c71b0b5026a5f6057ce1d7eea09fee1cedc4893709d55c",
+    "verb_argmax_flips": 0,
+    "aim_argmax_flips": 4,
+    "semantic_argmax_flips": 3,
+    "all_aim_flips_reference_margin_below_0_001": true,
+    "observation": "a few near-tie frozen-dataset aim flips remain, but none changed any of the 32 long-horizon deterministic control trajectories"
+  },
+  "regression": {
+    "targeted_factor_audit_tests": "PASS_3",
+    "wsl_full_pytest": "PASS_1137",
+    "wsl_full_pytest_exit_code": 0
+  },
+  "artifacts": {
+    "run_dir": "D:/ZumaTraining/screening-teacher-anchor-c1000-s20260910-n32-deterministic-v1",
+    "config_sha256": "sha256:70d4e6debd4548c4305ff661b67b6791c92fc4350939ac951cb8264f7f74f364",
+    "completion_sha256": "sha256:40a669eb536f6e14c0b698c878a42e983cf45e7034c6c8294f314e72db0917a3",
+    "optimizer_reset_sha256": "sha256:eaca6a6bc3fee4d8ce4a5a4877b38a823b2d2d90ae9c87fb14cd54d9bca4219d",
+    "teacher_anchor_installation_sha256": "sha256:166deb0d205c0522fe428c86b9846a6969d7bbc107a6f86d8804774d22668111",
+    "teacher_anchor_verification_sha256": "sha256:cbca1e6b591b42d83447a159b912c13762f6bf4ad7a727870fe4c120cafdad12",
+    "pretrain_deterministic_sha256": "sha256:8695133d6a441784a8317b46908a80dd3d37fea12fbb0bbcb5bacef4b5e31887",
+    "posttrain_deterministic_sha256": "sha256:ba2369a84a5170e4e84c9e06c94de67fcc2d67ea4537902338f8c38a9733172f",
+    "deterministic_comparison_sha256": "sha256:161f0f9309bf7ae2263f1db034cfc0b7061ad1a5a35da02465a24971bcf8ca90",
+    "final_model_sha256": "sha256:a330e289420a5e02288f035562d3196d54b4debb230aba86484bd169599f2126",
+    "stdout_sha256": "sha256:be63813bb2c6af797a047328bf889a20b85b8837c2adc7a4e9b5ebf2294ad876",
+    "stderr_sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "factor_drift_report_sha256": "sha256:4279c029c311777765c71b0b5026a5f6057ce1d7eea09fee1cedc4893709d55c"
+  },
+  "next_action": {
+    "authorized": "freeze and run one coefficient-1000 confirmation on a pre-reserved seed family that has no prior run outputs",
+    "forbidden": "do not launch the 98304-step scale screen before the fresh confirmation passes"
+  },
+  "non_authorizations": [
+    "treating_consumed_stream_repair_as_independent_confirmation",
+    "98304_step_scale_screen",
+    "large_scale_training",
+    "fidelity_gate_opening",
+    "original_transfer_certification"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "schema": "zuma-rl.alphazuma-55-postprocess-deployment-withdrawal",
+  "version": 1,
+  "status": "WITHDRAWN_BEFORE_FORMAL_SEEDS",
+  "created_utc": "2026-08-15T03:47:36.1908979Z",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "withdrawn_deployment": {
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-deployment-s88081502-preregistration-v1.json",
+      "sha256": "sha256:177632ac4d7f4fe363c8b0c0911293821b6a3717339df897fe16544a90a900ff"
+    },
+    "generated_postprocess_preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-postprocess-s89081701-preregistration-v1.json",
+      "sha256": "sha256:d7a7e39c03a951fefb9c11bf2bfe81fb27701dda7b5f94ca0ed351e520672e7a"
+    },
+    "deployment_status": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/postprocess-deployment-s88081502-v1/deployment_status.json",
+      "sha256": "sha256:e368113c42b1e3fefd8ec2774e00b072bf621b18b76845a9fdbbd386dfdc7282"
+    },
+    "controller_status": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/postprocess-s89081701-v1/controller_status.json",
+      "sha256": "sha256:aa5d876be3cb8d49bd05ade43f4df993bc2f72fcec570c657b182c8fb0e28e81"
+    },
+    "last_stage": "WAITING_FOR_TRAINING",
+    "deployer_wsl_pid": 16001,
+    "controller_wsl_pid": 31643,
+    "termination": "SIGTERM via /bin/kill; deployer process-group termination also stopped the controller",
+    "both_processes_confirmed_stopped": true
+  },
+  "formal_seed_boundary": {
+    "selection_output_root_existed": false,
+    "final_blind_output_root_existed": false,
+    "continuous_output_root_existed": false,
+    "selection_seed_first": 1600000000,
+    "selection_or_later_seed_consumed": false,
+    "embargo_intact": true
+  },
+  "reason": {
+    "category": "PRESEED_EVALUATION_THROUGHPUT_CORRECTION",
+    "detail": "The original controller hard-coded 24 environments per shard. A same-task engineering-registry benchmark proved that 112 environments reduced wall time by 24.13 percent without changing task, seed, model, evaluator, ranking, or Gate semantics.",
+    "first_termination_attempt": "A shell-variable quoting error caused Bash parse failure before any signal was sent.",
+    "first_termination_attempt_changed_process_state": false
+  },
+  "replacement_evidence": {
+    "parallelism_decision": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-evaluation-parallelism-decision-s90081503-v1.json",
+      "sha256": "sha256:52c3c18e5af75f9115b4111c4caea549e184fabe58f2e5a0a29b08dd4c91c17a"
+    },
+    "builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_postprocess_parallel_v2.py",
+      "sha256": "sha256:2224d497852ce8f66eba0e7131afee7e68e1acd0b169618c82bff2ed8eb8db2c"
+    },
+    "controller": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_postprocess_parallel_v2.py",
+      "sha256": "sha256:4e1f1c4c9fdd5c26ee1cd018c2494f2945f2d72329ffc8bfc620e815e6404611"
+    },
+    "tests": "tests/test_alphazuma_55_postprocess.py: 4 passed"
+  },
+  "semantics_unchanged": {
+    "training_recipe": true,
+    "candidate_inventory_rule": true,
+    "selection_seed_matrix": true,
+    "final_blind_seed_matrix": true,
+    "continuous_seed_matrix": true,
+    "rankings": true,
+    "gates": true,
+    "only_execution_parallel_width_changed": true
+  }
+}

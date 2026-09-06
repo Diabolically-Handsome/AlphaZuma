@@ -1,0 +1,77 @@
+{
+  "schema": "zuma-rl.alphazuma-55-distillation-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_TRAINING",
+  "created_utc": "2026-08-15T02:38:16.766938+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "trainer": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55.py",
+    "sha256": "sha256:13ac1883fc9dc9541193dbca0da3b94fa91c7476e07873d22bec51a7a330b38a"
+  },
+  "implementation": {
+    "behavior_clone_batch_primitive": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/pretrain_maskable_ppo_teacher.py",
+      "sha256": "sha256:a8d271e3b70198cd324f8e9bd41f59f50c1874451400cf188156c146187e59c9"
+    },
+    "teacher": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_teacher.py",
+      "sha256": "sha256:ce31abd1b422770d1c34f55226c550a5a19570fd6a994ab330769eb758cf5089"
+    },
+    "environment": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_env.py",
+      "sha256": "sha256:d95407a7127ecc4e580aef041426d012edf5ea8dfa2fa8c4405c398445b1132e"
+    },
+    "core": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_core.py",
+      "sha256": "sha256:7718ae186c173127ac82e488413857dc6c82d2e41c1dfb5e94ca553a1a3abff6"
+    },
+    "features": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/revenge_features.py",
+      "sha256": "sha256:d878d7ec034bfe1d0b9c8f16bf2fcc787a05de5ac404eb4f1685c4f5a46646a0"
+    },
+    "scope": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/alphazuma_55.py",
+      "sha256": "sha256:ba316c4537fd62d4c34cfc1c40d722d5d9b5f38ba954e691acea83ab51837649"
+    },
+    "source_migration_receipt": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1-migration.json",
+      "sha256": "sha256:87b2c6fe7b15f7e356332fea0393cdce19db6564453969a83e50fee198b99ed7"
+    }
+  },
+  "teacher_map": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-teacher-map-s85081501-v1.json",
+    "sha256": "sha256:eeeba5e859b18d57f58d055d69bf8a187560039fa3ff39c0467c34b9a44605eb"
+  },
+  "student_source_model": {
+    "id": "v11-full55",
+    "training_steps": 33772736,
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1.zip",
+    "sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d"
+  },
+  "run": {
+    "id": "alphazuma55-specialist-distillation-5090",
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-specialist-distillation-s85081501-v1",
+    "device": "cuda:0",
+    "model_seed": 85081501,
+    "training_seed_base": 1520000000,
+    "training_seed_last_consumed": 1520000109,
+    "rounds": 2,
+    "samples_per_level_per_round": 192,
+    "sample_stride": 8,
+    "batch_size": 512,
+    "epochs_per_round": 3,
+    "parallel_envs": 24,
+    "max_ticks": 12000,
+    "teacher_execution_probability_after_round_zero": 0.25,
+    "learning_rate": 2e-05,
+    "verb_loss_weight": 2.0,
+    "max_grad_norm": 0.5,
+    "geometric_teacher_for_unproven_levels": true,
+    "geometric_hop_override_on_all_dual_position_levels": true,
+    "final_runtime_teacher_calls_forbidden": true
+  }
+}

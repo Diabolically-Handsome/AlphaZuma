@@ -1,0 +1,80 @@
+{
+  "schema": "zuma-rl.alphazuma-55-dagger-independent-audit",
+  "version": 1,
+  "status": "PASS",
+  "audited_utc": "2026-08-15T14:32:36.740940+00:00",
+  "formal_selection_authority": false,
+  "artifacts": {
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-dagger-s99081529-preregistration-v1.json",
+      "sha256": "sha256:d201dd5d0a7b25df109ce0929f02dbb58fb4cf6161d5e56c2316564ae8f5ebf8"
+    },
+    "completion": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-dagger-s99081529-v1/completion.json",
+      "sha256": "sha256:a04709036e75dca798b27b28068fbe0ebacbd98612d559edc4a88477a877971c"
+    },
+    "trainer": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_dagger.py",
+      "sha256": "sha256:f3facd13c52a09c01c25829e94d289d5cc911f31bd3e69a332d6d5a249b2bd6a"
+    },
+    "auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_dagger.py",
+      "sha256": "sha256:244cfa572c53a3b1fd4b8bd5b6d561846f49ca02ac933f0c8abd1ec3c73c8aed"
+    },
+    "final_model": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-dagger-s99081529-v1/final_model.zip",
+      "sha256": "sha256:dc77c37f92fdab7a0680c32ec563429b08c5fedd7e94aef9fc45d38b848f1f4c",
+      "bytes": 3344805,
+      "num_timesteps": 36770928
+    }
+  },
+  "collections": [
+    {
+      "round_index": 0,
+      "wins": 9,
+      "losses": 46,
+      "truncations": 0,
+      "capacity_overflows": 0,
+      "retained_samples": 15545,
+      "teacher_executions": 100830,
+      "student_executions": 301032
+    },
+    {
+      "round_index": 1,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "capacity_overflows": 0,
+      "retained_samples": 12942,
+      "teacher_executions": 34173,
+      "student_executions": 307666
+    }
+  ],
+  "optimizations": [
+    {
+      "round_index": 0,
+      "aggregate_samples": 15545,
+      "epochs": 12,
+      "round_model": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-dagger-s99081529-v1/round_01/model_after_round.zip",
+        "sha256": "sha256:fab7ae45948f89c9ddd9392dc41261a74b5f265fe0314b3817c033f4156a23ce",
+        "bytes": 3344805,
+        "num_timesteps": 36429089
+      }
+    },
+    {
+      "round_index": 1,
+      "aggregate_samples": 28487,
+      "epochs": 12,
+      "round_model": {
+        "path": "/mnt/d/ZumaTraining/alphazuma-55-dagger-s99081529-v1/round_02/model_after_round.zip",
+        "sha256": "sha256:dc77c37f92fdab7a0680c32ec563429b08c5fedd7e94aef9fc45d38b848f1f4c",
+        "bytes": 3344805,
+        "num_timesteps": 36770928
+      }
+    }
+  ],
+  "total_student_visited_steps": 743701,
+  "final_num_timesteps": 36770928,
+  "interpretation_boundary": "This PASS proves DAgger artifact, seed, and recipe integrity only; fresh validation is required for performance claims."
+}

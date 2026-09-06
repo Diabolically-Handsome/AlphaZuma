@@ -1,0 +1,131 @@
+{
+  "schema": "zuma-rl.pc-startup-global-mtrand-observation-diagnostic-preregistration",
+  "version": 7,
+  "status": "FROZEN_BEFORE_RUN_OUTPUTS",
+  "created_utc": "2026-08-04T20:21:37.533Z",
+  "id": "startup-global-mtrand-observation-e01-u0-u1702-v7",
+  "question": "At which first source-indexed global MTRand wrapper call does the strict replay startup draw schedule diverge from the natural retail source before source order 309?",
+  "trigger": {
+    "outcome": "diagnostics/initial-global-mtrand-exact-step-d01-d02-outcome-v6.json",
+    "outcome_sha256": "sha256:d27af3f8b477c68b3d1379a678bee70d3da870e6dbc79c1f6b0fa73308605348",
+    "finding": "the initial seeded state and first call were already exact, but source order 309 was reached 23 draws short"
+  },
+  "evidence_classification": "diagnostic_only_no_pc_golden_credit",
+  "fixed_inputs": {
+    "collector_plan": {
+      "path": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/plan.json",
+      "sha256": "sha256:5a7ba58eccd7e0d1b1008ac089cce59c167a26ba8bc359ef76f3dcd2bea8c0db",
+      "persistent_modification_allowed": false
+    },
+    "playback_dmo": {
+      "path": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/inputs/input.dmo",
+      "sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7"
+    },
+    "replay_pre_snapshot": {
+      "path": "D:/ZumaGolden/campaign-c78-natural-win-v8-front-insertion-finite-retry-03-u3569-u3710/protocol/pre.json",
+      "sha256": "sha256:06d243f34ecf209c6296659fd4cc3c0a6c299c203cc8b4e342f55cc001c32842"
+    },
+    "global_mtrand_source_trace": {
+      "path": "D:/ZumaGolden/autoplay-jungle2-natural-win-v8-globaloracle-20260802-0250/global-mtrand-calls.json",
+      "sha256": "sha256:4de39ac6a0e800323949e0095fc2fd3e924ea41a670ceb5d75a0ecb25b5c15a4",
+      "seed": 23557968,
+      "source_process_id": 43056,
+      "source_main_thread_id": 49020
+    },
+    "runtime_payload_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "runtime_source_sha256": "sha256:db85b891ba662a463d23251a376081386b47437c29248b21e2c10335a6f3eb50"
+  },
+  "oracle_contract": {
+    "wrapper_address": 6386832,
+    "wrapper_instruction_hex": "bac013a300",
+    "seed": 23557968,
+    "source_order_first": 0,
+    "source_order_last": 308,
+    "entry_count": 309,
+    "source_update_first": 0,
+    "source_update_last": 1675,
+    "selection_end_at_update": 1702,
+    "first_pre_draw_count": 0,
+    "last_post_draw_count": 1435,
+    "maximum_reconstruction_draws": 100000,
+    "semantic_sha256": "sha256:b056ae46a5bf3228adec0be9309d1bffae349bae55dcd2063c2a02b894069c94"
+  },
+  "diagnostic_transport": {
+    "mechanism": "main_thread_global_wrapper_hardware_execution_breakpoint",
+    "read_only_process_memory": true,
+    "process_memory_writes_required": 0,
+    "ephemeral_debug_register_housekeeping_allowed": true,
+    "hardware_breakpoint_restore_required": true,
+    "disable_source_bound_board_anchor": true,
+    "disable_source_bound_board_precall_restore": true,
+    "initial_global_state_control_allowed": false,
+    "gameplay_global_sync_allowed": false,
+    "playback_dmo_modified": false,
+    "collector_plan_file_modified": false
+  },
+  "fixed_run_contract": {
+    "run_count": 1,
+    "maximum_startup_attempts": 3,
+    "freeze_update": 3425,
+    "slowdown_update": 3415,
+    "trajectory_mode": "rng",
+    "trajectory_end_update": 3425,
+    "skip_repaint_guard": true,
+    "skip_frozen_snapshot": true,
+    "snapshot_trajectory_frames": false,
+    "startup_priority_bias": null,
+    "process_affinity_override": null,
+    "trace_detach_update": 3150,
+    "trace_reattach_update": 10373
+  },
+  "collection_acceptance": {
+    "receipt_status": "PASS",
+    "oracle_complete": true,
+    "observed_call_count": 309,
+    "draw_count_reconstruction_status": "PASS",
+    "process_memory_writes": 0,
+    "process_memory_mutation": false,
+    "hardware_breakpoint_restored": true,
+    "persistent_file_modified": false,
+    "host_state_restored_after_run": true
+  },
+  "decision_rule": {
+    "no_threshold_changes_after_output": true,
+    "if_first_mismatch_exists": "classify the earliest caller, update, state, and draw-count divergence and authorize a narrower read-only watchpoint experiment around that interval",
+    "if_no_mismatch_exists": "extend read-only observation from source order 309 to the known suffix boundary without granting PC Golden credit",
+    "if_collection_contract_fails": "retain all attempts, classify infrastructure versus debugger perturbation, and do not infer RNG semantics"
+  },
+  "retry_contract": {
+    "maximum_attempts": 3,
+    "retain_every_attempt": true,
+    "retryable": "only collection infrastructure failure before a complete validated 309-call receipt",
+    "semantic_mismatch_is_successful_diagnostic_observation": true
+  },
+  "outputs": {
+    "run": "D:/ZumaGolden/diagnostics/startup-global-mtrand-observation-e01-u0-u1702-v7",
+    "host_pre_snapshot": "D:/ZumaGolden/diagnostics/startup-global-mtrand-observation-host-pre-v7.json",
+    "host_post_snapshot": "D:/ZumaGolden/diagnostics/startup-global-mtrand-observation-host-post-v7.json",
+    "outcome": "diagnostics/startup-global-mtrand-observation-outcome-v7.json"
+  },
+  "output_absence_at_freeze": {
+    "run": true,
+    "host_pre_snapshot": true,
+    "host_post_snapshot": true,
+    "outcome": true
+  },
+  "tooling": {
+    "collector_sha256": "sha256:30292b775b011afea212e4874398a421b359c4ea58b25cf0a2d1d56c7bed6db8",
+    "tracer_sha256": "sha256:7c77547e00806af95cab5376e863ae197ff012467055dad69519dbe7bd6ef96e",
+    "global_oracle_loader_sha256": "sha256:813ef37279e7b00bade0dc73ecdb405841fdaff5b85a5b85727eb059a0485269",
+    "collector_test_sha256": "sha256:ca2968101298b31d456ad6203cf86ef99de05f23efa4466f863891735774fb14",
+    "tracer_test_sha256": "sha256:77093df2f3ad2a8089904b237a26516f33e4703152c11ba4fae5866eca1985a0",
+    "global_oracle_test_sha256": "sha256:50e3e2df66943f3bf5c3e331eca11302b1aa9a3e58882d8cf3a895732a2a4243",
+    "native_full_suite": "PASS_1160_COLLECTED_EXIT_0"
+  },
+  "non_authorizations": [
+    "pc_golden_credit",
+    "fidelity_gate_change",
+    "formal_transport_change",
+    "large_scale_training_start"
+  ]
+}

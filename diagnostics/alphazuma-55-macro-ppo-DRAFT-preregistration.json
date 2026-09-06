@@ -1,0 +1,252 @@
+{
+  "schema": "zuma-rl.overnight-multilevel-preregistration-v2",
+  "version": 2,
+  "status": "DRAFT_NOT_FROZEN",
+  "draft_utc": "2026-08-17T18:30:00Z",
+  "draft_note": "AFTERNOON ENGINEERING RUN DRAFT. This document is a v2-schema skeleton so freezing is mechanical, but it is NOT frozen: every FILL_AT_FREEZE placeholder must be resolved, the status flipped to FROZEN_BEFORE_TRAINING, and the gating evidence below bound by sha256 BEFORE tools/train_overnight_multilevel_v2b.py will accept it. Engineering run: results carry no formal-candidate authority.",
+  "objective": "First PPO fine-tune on the park-settle MACRO interface: initialize from the BC-to-macro transplanted policy (frame-stacked distill-v3 student, s99081671) and train with the v2 credit-horizon fixes through the stack-under-macro composition, to test whether macro-level decision quality (when/where to fire) improves once the motor protocol is owned by the wrapper and the horizon is divided by ~40.",
+  "gating_evidence_required_before_freeze": {
+    "teacher_macro_ceiling_probe": {
+      "instrument": "/mnt/c/Users/Laure/Documents/祖玛/tools/probe_alphazuma_55_macro_teacher_v1.py",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-teacher12-s99081678-v1",
+      "completion_sha256": "FILL_AT_FREEZE",
+      "go_condition": "teacher wins >= 9 of the 12-panel levels through the macro interface (dual-position panel members expected to fail for lack of hop); if the ceiling is materially lower, the macro interface itself is the bottleneck and this PPO run should not launch as designed",
+      "also_informs": "per-level outcomes identify interface-blocked levels; any non-dual-position teacher failure through the macro interface must be listed here before freeze"
+    },
+    "transplant_receipt": {
+      "instrument": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_macro_policy_bootstrap_v1.py",
+      "receipt_path": "/mnt/d/ZumaTraining/alphazuma-55-macro-bootstrap-s99081679-v1/transplant.json",
+      "receipt_sha256": "FILL_AT_FREEZE",
+      "required_facts": [
+        "round_trip_bitwise_equal true",
+        "parameter_counts.difference_ok true",
+        "logits_equivalence both flags true",
+        "value pathway fresh (never copied)"
+      ]
+    }
+  },
+  "trainer": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/train_overnight_multilevel_v2.py",
+    "sha256": "FILL_AT_FREEZE",
+    "note": "v2 owns validation, PPO construction, the learn loop, receipts, and checkpointing; the v2b delegate below only rebinds the env factories (stack UNDER macro) and injects --init-model"
+  },
+  "delegate": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/train_overnight_multilevel_v2b.py",
+    "sha256": "FILL_AT_FREEZE",
+    "cli": {
+      "stack_lags": "0,4,8",
+      "init_model": "/mnt/d/ZumaTraining/alphazuma-55-macro-bootstrap-s99081679-v1/macro_model.zip"
+    },
+    "composition_order": [
+      "RevengeEnv (per-level max_ticks)",
+      "DenseShapingObservableHumanSpeedrunWrapper",
+      "TruncationNeutralRewardWrapper",
+      "ObservationStackWrapper(0,4,8)",
+      "ParkSettleActionWrapper"
+    ],
+    "stack_position_rationale": "the ring buffer advances every NATIVE tick a macro consumes, so the policy sees true frame(t-4)/frame(t-8) context at each macro decision point, identical to the distill-v3 training layout and the probe-v5 runtime convention"
+  },
+  "implementation": {
+    "park_settle_action_wrapper": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/park_settle_action_wrapper.py",
+      "sha256": "FILL_AT_FREEZE"
+    },
+    "observation_stack_wrapper": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/observation_stack_wrapper.py",
+      "sha256": "FILL_AT_FREEZE"
+    },
+    "macro_policy_bootstrap": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_macro_policy_bootstrap_v1.py",
+      "sha256": "FILL_AT_FREEZE"
+    },
+    "macro_teacher_probe": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/probe_alphazuma_55_macro_teacher_v1.py",
+      "sha256": "FILL_AT_FREEZE"
+    }
+  },
+  "initial_model": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-macro-bootstrap-s99081679-v1/macro_model.zip",
+    "sha256": "FILL_AT_FREEZE_FROM_TRANSPLANT_RECEIPT_OUTPUT_SHA256",
+    "lineage": "BC frame-stack final s99081671 (self-driven aim p50 20 bins, recovery 9/12) -> macro transplant s99081679: feature extractor and aim head verbatim, macro verb head from per-tick rows [wait,fire,swap] (hop dropped), value pathway fresh",
+    "interface": "macro MultiDiscrete([3, 180]) over stacked Box(3 x 22904)",
+    "note": "also injected at launch via v2b --init-model; the CLI injection and this block must agree at freeze"
+  },
+  "trainer_v2": {
+    "gamma": 0.999,
+    "gae_lambda": 0.95,
+    "score_progress_reward_cap": 10.0,
+    "default_max_ticks": 12000,
+    "long_horizon_max_ticks": 24000,
+    "long_horizon_level_prefixes": ["coast", "grotto", "volcano"],
+    "use_park_settle_wrapper": true,
+    "use_motor_observable": true,
+    "discounting_note": "gamma applies PER MACRO STEP; the macro reward is the undiscounted per-tick sum over the ticks the macro consumed (~20-70), so 0.999 per macro is roughly 0.999^(1/40) per native tick; truncation is reward-neutral (v2 wrapper), so 24000-tick late-level truncations bootstrap instead of paying -10"
+  },
+  "levels_scope": {
+    "rule": "INCLUDED_LEVELS minus DUAL_POSITION_LEVELS: the macro interface exposes no hop verb, so the 6 dual-position levels are unreachable by design and are excluded from training rather than trained as guaranteed losses",
+    "excluded_dual_position": ["village3", "city3", "Coast3", "Coast10", "grotto3", "volcano3"],
+    "pending": "confirm against the teacher ceiling probe per-level outcomes before freeze; any additional interface-blocked level found there must be discussed (excluded or accepted as known-lost) explicitly at freeze",
+    "count": 49
+  },
+  "levels": [
+    {"id": "Jungle1", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "Jungle2", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "Jungle3", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "Jungle4", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "jungle6", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "Jungle7", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "Jungle8", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "Jungle9", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "Jungle10", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "village1", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "village2", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "village4", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "village5", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "village6", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "village7", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "village8", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "village10", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "city1", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "city2", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "city4", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "city5", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "city6", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "city7", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "city9", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "city10", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "Coast1", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "Coast2", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "Coast4", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "Coast5", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "Coast6", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "Coast7", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "Coast9", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "grotto1", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "grotto2", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "grotto4", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "grotto5", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "grotto6", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "grotto7", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "grotto9", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "grotto10", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "volcano1", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "volcano2", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "volcano4", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "volcano5", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "volcano6", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "volcano7", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "volcano8", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "volcano9", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []},
+    {"id": "volcano10", "display_name": "FILL_FROM_CATALOG_AT_FREEZE", "curve_count": 0, "curve_names": []}
+  ],
+  "environment": {
+    "profile_mode": "tutorials_completed",
+    "hard": false,
+    "curve_index": 0,
+    "base_config": {
+      "aim_bins": 180,
+      "action_mode": "factorized",
+      "frame_skip": 1,
+      "max_ticks": 12000,
+      "max_balls": 768,
+      "max_projectiles": 32,
+      "max_curves": 2,
+      "actor_interface": "full55-v1"
+    },
+    "input_profile": {
+      "profile_id": "elite-human-v1",
+      "reaction_delay_ticks": 12,
+      "max_aim_speed_degrees_per_second": 1080.0,
+      "max_aim_acceleration_degrees_per_second_squared": 18000.0,
+      "min_button_interval_ticks": 5
+    },
+    "reward_profile": {
+      "profile_id": "win-time-score-truncation-neutral-v2",
+      "win_reward": 10.0,
+      "failure_reward": -10.0,
+      "time_penalty_per_native_tick": -0.0001
+    },
+    "reward_note": "score_progress_reward_cap is owned by trainer_v2 (10.0); time-limit truncation pays NO terminal penalty (v2 TruncationNeutralRewardWrapper), per the verified root-cause fixes"
+  },
+  "runs": [
+    {
+      "id": "macro-ppo-5090",
+      "description": "single ~6h macro-interface PPO fine-tune from the transplanted BC init, uniform sampling over the 49 macro-reachable levels",
+      "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-macro-ppo-s99081680-v1",
+      "device": "cuda:0",
+      "seed": 99081680,
+      "episode_seed_base": 1460000000,
+      "episode_seed_stride": 100000,
+      "total_steps": 6000000,
+      "num_envs": 24,
+      "rollout_steps": 256,
+      "batch_size": 1024,
+      "ppo_epochs": 4,
+      "learning_rate": 3e-05,
+      "entropy_coef": 0.002,
+      "checkpoint_every": 786432,
+      "checkpoint_note": "one macro step is one policy timestep (~20-70 native ticks); at the projected 300-600 macro steps/s over 24 envs, 786432 steps is roughly every 25-45 minutes; if observed throughput is far off, adjust checkpoint_every at freeze, never mid-run",
+      "budget_note": "total_steps 6M is an upper bound; the schedule's training_stop_utc is the real ~6h budget and the v2 callback stops there",
+      "initial_weights": {
+        "Jungle1": 1.0, "Jungle2": 1.0, "Jungle3": 1.0, "Jungle4": 1.0,
+        "jungle6": 1.0, "Jungle7": 1.0, "Jungle8": 1.0, "Jungle9": 1.0,
+        "Jungle10": 1.0, "village1": 1.0, "village2": 1.0, "village4": 1.0,
+        "village5": 1.0, "village6": 1.0, "village7": 1.0, "village8": 1.0,
+        "village10": 1.0, "city1": 1.0, "city2": 1.0, "city4": 1.0,
+        "city5": 1.0, "city6": 1.0, "city7": 1.0, "city9": 1.0,
+        "city10": 1.0, "Coast1": 1.0, "Coast2": 1.0, "Coast4": 1.0,
+        "Coast5": 1.0, "Coast6": 1.0, "Coast7": 1.0, "Coast9": 1.0,
+        "grotto1": 1.0, "grotto2": 1.0, "grotto4": 1.0, "grotto5": 1.0,
+        "grotto6": 1.0, "grotto7": 1.0, "grotto9": 1.0, "grotto10": 1.0,
+        "volcano1": 1.0, "volcano2": 1.0, "volcano4": 1.0, "volcano5": 1.0,
+        "volcano6": 1.0, "volcano7": 1.0, "volcano8": 1.0, "volcano9": 1.0,
+        "volcano10": 1.0
+      },
+      "adaptive": {
+        "enabled": false,
+        "update_every_steps": 262144,
+        "rolling_episodes": 64,
+        "minimum_episodes": 4,
+        "minimum_weight": 1.0,
+        "maximum_weight": 4.0,
+        "anchor_level": "Jungle2"
+      }
+    }
+  ],
+  "evaluation_cadence": {
+    "panel": "probe-v4 12 levels (Jungle1, Jungle9, village3, village8, city1, city9, Coast1, Coast9, grotto1, grotto9, volcano1, volcano9)",
+    "seed_base": 1400920000,
+    "when": "per checkpoint (roughly every 30-45 minutes) on cuda:1, student_only, deterministic masked predict",
+    "instrument_gap": "MISSING INSTRUMENT: tools/probe_alphazuma_55_macro_eval_v1.py adapts PER-TICK models to the macro interface (it derives 4+180 masks); the PPO checkpoints here are MACRO-NATIVE (3+180) and stacked, so a thin macro-native eval variant (direct macro masks, ObservationStackWrapper under the macro in the env factory, same telemetry/receipts) must exist BEFORE freeze; note village3 in the panel is dual-position and expected to stay a loss",
+    "telemetry": "same outcome/shot telemetry as macro-eval-v1: wins, score, shots, shots_on_target_rate (wrapper fidelity, expect ~1.0), macro fire rate vs teacher's, mask_fallbacks"
+  },
+  "success_criteria_tiers": {
+    "scope_note": "all tiers are STUDENT_ONLY autonomous outcomes on engineering-seed panels; teacher-assisted or recovery-mode wins count for nothing here",
+    "tier_0_sanity": "wrapper fidelity holds under the trained policy: shots_on_target_rate >= 0.95 on every eval, and the policy fires at >= 0.5x the teacher's macro fire rate (the BC init fires ~20x too rarely; PPO must at least not collapse further)",
+    "tier_1_signal": "any autonomous win on any level beyond Jungle1 on the 12-panel at any checkpoint (the historical autonomous best is ~Jungle1-only on this panel)",
+    "tier_2_promising": "at least 5 of 12 panel levels won autonomously by the final checkpoint",
+    "tier_3_strong": "at least 20 of the 49 trained levels won autonomously in a full 49-level eval of the final model",
+    "failure_is_reportable": "if tier 1 is not reached, the run is reported as FAIL with the per-level telemetry; no re-slicing after the fact"
+  },
+  "seed_isolation": {
+    "training_episode_range": [1460000000, 1462399999],
+    "training_range_rule": "episode_seed_base 1460000000 + 24 workers x stride 100000",
+    "eval_panel_seed_base": 1400920000,
+    "embargoed_formal_ranges_untouched": [
+      [1600000000, 1600000219],
+      [1700000000, 1700000439],
+      [1800000000, 1800000219]
+    ],
+    "no_overlap": true
+  },
+  "schedule": {
+    "training_stop_utc": "FILL_AT_FREEZE (launch + ~6h, e.g. 2026-08-18T01:30:00Z)",
+    "goal_end_utc": "FILL_AT_FREEZE (training_stop + eval/reporting margin, e.g. 2026-08-18T03:00:00Z)"
+  },
+  "authority": {
+    "formal_seed_consumption": false,
+    "formal_candidate_authority": false,
+    "engineering_run": true,
+    "note": "any candidate this run produces must pass a separately preregistered formal evaluation on embargoed seeds before any autonomy claim"
+  }
+}

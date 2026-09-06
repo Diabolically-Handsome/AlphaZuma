@@ -1,0 +1,103 @@
+{
+  "schema": "zuma-rl.pc-front-insertion-render-settled-bounded-arm-preregistration",
+  "version": 1,
+  "id": "c71-front-insertion-u3664-u3684-render-settled-bounded-arm",
+  "created_utc": "2026-08-03T18:22:24Z",
+  "status": "FROZEN_BEFORE_PREPARE_AND_COLLECTION",
+  "classification": "fresh-infrastructure-retry-with-bounded-pretarget-observer-arm",
+  "gate_effect": "none_until_pc_golden_and_source_bound_mechanism_audit_both_pass",
+  "parent_attempt": {
+    "preregistration_path": "diagnostics/c70-front-insertion-render-settled-preregistration-v1.json",
+    "preregistration_sha256": "sha256:ff25565ab854735dc29d0980d229bcaf6c10e1acc7fb591f365bc59310526fc7",
+    "failure_audit_path": "diagnostics/c70-front-insertion-render-settled-failure-audit-v1.json",
+    "failure_audit_sha256": "sha256:6cc51f7150d35a94b9bc1ff56ed68d52c70bf58ab2eb373cb275b6c30b878a0b",
+    "failure_class": "observer_exact-arm-phase-miss",
+    "c70_data_reuse_forbidden": true
+  },
+  "fresh_outputs": {
+    "session_root": "D:/ZumaGolden/campaign-c71-natural-win-v8-front-insertion-render-settled-bounded-arm-u3569-u3710",
+    "session_nonce": "5add4ee1fe974c77a7ae6ba49150b06d",
+    "case_root": "D:/ZumaGolden/cases/jungle2-natural-front-insertion-c71-render-settled-provenance-v1",
+    "case_id": "jungle2_natural_front_insertion_c71_render_settled_provenance_v1",
+    "verified_absent_at_freeze": true
+  },
+  "only_semantic_amendment": {
+    "field": "framework_state_poll_arm_contract",
+    "from": {
+      "mode": "exact_stable_update",
+      "update": 3568
+    },
+    "to": {
+      "mode": "first_stable_update_in_closed_window",
+      "start_update": 3540,
+      "deadline_update": 3568
+    },
+    "justification": "C70 proved that an exact transient render phase can be skipped even when the observer is ready at update 3531. The bounded window begins after observer readiness in every C69/C70 attempt and ends at the previously frozen exact arm update, before capture wait update 3569.",
+    "cannot_change_gameplay_or_captured_pixels": true,
+    "maximum_extra_high_rate_observation_updates": 28
+  },
+  "frozen_unchanged_identity": {
+    "dmo_sha256": "sha256:216eb662e060ea4a6cbded03018bc193247298c3ba9f57fbb06c0787a9f951a7",
+    "protocol_prestate_template_root": "sha256:4cb455670696ed66e0627d3e13ba4cbfd8efdfdf0880394f9c521c6c4ee8b526",
+    "required_host_pre_state_root": "sha256:ac4ae41545d0d874394cfad540c89861bc41f605b34a82cb764babf713f43061",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "source_global_seed": 23557968,
+    "source_board_output": 835125098,
+    "window_repaint_update": 3568,
+    "wait_until_framework_update": 3569,
+    "capture_duration_seconds": 0.55,
+    "frame_budget_fps": 180,
+    "startup_process_affinity_mask": 1,
+    "framework_state_poll_affinity_mask": 4,
+    "framework_state_poll_target_hz": 5000,
+    "inter_run_cooldown_seconds": 0.0,
+    "detach_at_update": 3150,
+    "reattach_at_update": 10373,
+    "required_update_range": [
+      3664,
+      3684
+    ],
+    "minimum_ticks": 21,
+    "select_exact_required_range": true,
+    "allow_idle_input_window": true,
+    "pixel_comparison": "exact_full_800x600_bgra",
+    "render_settle_delay_ns": 400000,
+    "minimum_mean_poll_hz_each_run": 4000.0,
+    "maximum_p99_poll_interval_ns_each_run": 300000,
+    "maximum_skipped_draw_increments_each_run": 0
+  },
+  "calibration": {
+    "preregistration_sha256": "sha256:e28cf5ce21428cc64fca82e822d818bb9797e743511f58d660efeaf703b5d8cb",
+    "execution_binding_sha256": "sha256:8fabe40f33cc8cc0e0bc03e807ed9a9a796845dbfee4ef7ad88757d5642174e6",
+    "independent_holdout_report_sha256": "sha256:2c01c7f14c7e636db2fd06d904a9beb927de0f09e828d9bba85dd9e0c98481dd"
+  },
+  "frozen_tools": {
+    "framework_poll_observer_sha256": "sha256:45af8c4b21eac158185bb88a54ecaab5a809ed546ec05a1dbcee6473701af447",
+    "collector_sha256": "sha256:3981b8d0dd31e655e704d5e658026b4b2762512ff87af9e7acb22844d79d2b95",
+    "render_settled_builder_sha256": "sha256:9551c7899cc02235b2b1f61a34c117302778f02f42199d23edd2d6d36557c7d0",
+    "render_settle_module_sha256": "sha256:c2e4b402832131d3dd0b0fb2b74b8d8b5b0fdba7f0be18dae400f091a50ce146",
+    "packager_sha256": "sha256:e0fc21d01060a9dfde73a81e9c5b382d71de022e3a59239bd851402ba3f8ecda",
+    "verifier_sha256": "sha256:57e802c7a649959ee205eaae920d0e4d5afde959ff2e554351bb3075b50429e3",
+    "pc_golden_schema_sha256": "sha256:7c0204b167bb4e4c66d285e3bd74c81168a881348887bb7a20aadeca3ef9a13c",
+    "full_test_result": "1062 passed, 1 skipped"
+  },
+  "acceptance": {
+    "collection_status": "complete",
+    "require_actual_arm_update_inside_3540_through_3568_each_run": true,
+    "require_poll_start_before_capture_start_each_run": true,
+    "require_distinct_process_instances": true,
+    "require_exact_protocol_and_host_restore": true,
+    "require_both_raw_capture_timelines_to_contain_updates_3664_through_3684": true,
+    "require_both_render_settled_maps_to_recompute_byte_exactly": true,
+    "require_exact_full_frame_match_for_every_update_3664_through_3684": true,
+    "require_selected_update_range_exactly_3664_through_3684": true,
+    "require_pc_golden_verifier_status": "PASS",
+    "require_all_pc_golden_checks_pass": true,
+    "require_source_bound_front_insertion_mechanism_audit": "PASS"
+  },
+  "decision_rules": {
+    "no_posthoc_arm_window_delay_threshold_target_or_pixel_mask_change": true,
+    "failed_or_missed_c71_session_is_immutable": true,
+    "front_insertion_gate_credit_only_after_visual_and_mechanism_evidence_pass": true
+  }
+}

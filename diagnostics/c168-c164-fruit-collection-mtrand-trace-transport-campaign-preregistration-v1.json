@@ -1,0 +1,69 @@
+{
+  "schema": "zuma-rl.pc-gameplay-mtrand-call-trace-transport-campaign-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_OUTPUT",
+  "created_utc": "2026-08-10T13:02:30.4064198Z",
+  "id": "c168-c164-u5278-u5305-bounded-transport-campaign-v1",
+  "parents": {
+    "scientific_preregistration": "diagnostics/c167-c164-fruit-collection-mtrand-trace-preregistration-v1.json",
+    "scientific_preregistration_sha256": "sha256:a6b791e927f1150b19aa42ce48c2319389e5ef4e08077e29d0861c3c6e60ddee",
+    "failed_transport_outcome": "diagnostics/c167-c164-fruit-collection-mtrand-trace-outcome-v1.json",
+    "failed_transport_outcome_sha256": "sha256:d181a4225060bb3075e8d2e110704e0221fe90fc52c160fe8be5e6dbee866ffc"
+  },
+  "only_protocol_change": {
+    "new_output_root": "diagnostics/c168-c164-final-confirmatory-source-bound-rng-trace-u5278-u5305-v1",
+    "new_output_root_absent_at_freeze": true,
+    "maximum_additional_transport_attempts": 7,
+    "maximum_total_attempts_across_c167_and_c168": 8,
+    "stop_at_first_pass": true,
+    "retain_every_started_attempt": true,
+    "retry_scope": "failures_before_a_complete_target_trace_and_source-overlap artifact exists",
+    "external_input_or_formal_contamination_is_fatal": true,
+    "post_trace_global_mtrand_failures_are_fatal": true,
+    "source_unchanged": true,
+    "window_unchanged": true,
+    "expected_call_sequence_unchanged": true,
+    "classification_contract_unchanged": true,
+    "acceptance_contract_unchanged": true,
+    "code_unchanged": true
+  },
+  "fixed_transport": {
+    "plan_sha256": "sha256:a5c4b44df8828862f67335ef8919861eb6d33bb517b92bcab22b599a56d150aa",
+    "pre_template_sha256": "sha256:ca058b8e2f231335255b51174088530a77aa9fb0f31818987dd1559dcf725fbb",
+    "host_pre_sha256": "sha256:0f1dd88161454724adaa7619c8ee78601fb453d243e9b6ccc69db928819fda9a",
+    "collector_sha256": "sha256:79464752ab35693b8f8765483894ae152a389c367f511e7e33398fc4fa2d28b0",
+    "dmo_sha256": "sha256:6f2d645c3109f73b77ef55c7e7e7941f7f1d2f73dccd5a71adc3051d4a360989",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20"
+  },
+  "inherited_scientific_contract": {
+    "trajectory_start_update": 5278,
+    "trajectory_end_update": 5305,
+    "tick_count": 28,
+    "transition_count": 27,
+    "expected_total_call_count": 9,
+    "expected_omitted_visual_call_count": 7,
+    "expected_modeled_gameplay_call_count": 2,
+    "expected_calls_by_update": {
+      "5279": ["0x0040cadf", "0x0040cbc0", "0x0040cadf", "0x0040cbc0", "0x0040cadf", "0x0040cbc0"],
+      "5295": ["0x0040cdde"],
+      "5301": ["0x00458cd1", "0x00402111"]
+    },
+    "strict_source_bound_replay_status": "PASS",
+    "diagnostic_mutation_must_be_null": true,
+    "external_input_event_count": 0,
+    "trace_complete_sequence_equals_frozen_expectation": true,
+    "all_calls_satisfy_frozen_classification_contract": true,
+    "all_27_transitions_align_exactly": true,
+    "all_28_compact_and_global_mtrand_source_states_overlap_exactly": true,
+    "host_state_must_be_restored": true
+  },
+  "command": ".\\.venv-win\\Scripts\\python.exe tools\\collect_pc_memory_probe.py --plan D:\\ZumaGolden\\diagnostics\\full-state-source-bound-fruit-collection-c138a3-plan-v1-stop3151\\plan.json --prestate D:\\ZumaGolden\\diagnostics\\full-state-source-bound-fruit-collection-c138a3-plan-v1-stop3151\\protocol\\pre-template.json --host-restore D:\\ZumaGolden\\diagnostics\\full-state-source-bound-fruit-collection-c138a3-plan-v1-stop3151\\safety\\host-pre.json --output-root D:\\ZumaGolden\\diagnostics\\c168-c164-final-confirmatory-source-bound-rng-trace-u5278-u5305-v1 --probe-update 5220 --slowdown-update 5200 --int32-value 8780 --displayed-score-value 7950 --maximum-attempts 7 --trajectory-start-update 5278 --trajectory-end-update 5305 --trajectory-mode rng --trace-global-rng-calls --global-rng-call-trace-timeout-seconds 900 --skip-repaint-guard --skip-frozen-snapshot --diagnostic-source-bound-replay",
+  "decision_rule": {
+    "pass": "Use only the first complete transport-passing attempt and require every inherited scientific acceptance invariant before proof derivation.",
+    "fail": "If no attempt passes, or any fatal post-trace/contamination failure occurs, retain all attempts and close c168 without Gate changes.",
+    "feature_presence_not_inspected_between_attempts": true,
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

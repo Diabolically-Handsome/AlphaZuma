@@ -1,0 +1,135 @@
+{
+  "schema": "zuma-rl.paired-multimodel-level-video",
+  "version": 1,
+  "status": "COMPLETE",
+  "source": {
+    "aggregate": "/mnt/d/ZumaTraining/overnight-v11-recovery-postprocess-s43081301-v1/morning-target-evaluation/aggregate.json",
+    "aggregate_sha256": "sha256:b82e017511d39540f17e28ab50bfa451cdac9804f2b67b7764762eb94d8621c8",
+    "preregistration": "/mnt/d/ZumaTraining/overnight-v11-recovery-postprocess-s43081301-v1/morning-target-preregistration.json",
+    "preregistration_sha256": "sha256:55543e20ecae3fac92072d8c40fcb65c686183cd292128d7504aa76eb0a4d3ad",
+    "models_manifest": "/mnt/d/ZumaTraining/overnight-v11-recovery-postprocess-s43081301-v1/morning-blind-models-manifest.json",
+    "models_manifest_sha256": "sha256:5f9c76008d70e6ce8c156916d6a1b214ad34509399a3142f44d4158e382408e0"
+  },
+  "selection": {
+    "rule": "fastest winning formal blind attempt for level across frozen models",
+    "requested_level_id": "village4",
+    "requested_model_id": null
+  },
+  "candidate": {
+    "model_id": "selected-overnight",
+    "training_steps": 16252928,
+    "model_sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579",
+    "seed": 710000168,
+    "outcome": "win",
+    "native_outcome": null,
+    "time_limit_truncated": false,
+    "ticks": 4277,
+    "seconds": 42.77,
+    "score": 6640,
+    "reward": 9.58230000000003,
+    "decisions": 4277,
+    "desired_action_counts": {
+      "wait": 4060,
+      "fire": 128,
+      "swap": 89
+    },
+    "executed_action_counts": {
+      "wait": 4060,
+      "fire": 128,
+      "swap": 89
+    },
+    "trajectory_sha256": "sha256:1f3daccb86046e9c616cf3a1436cce4cbb766161a4e30e1cbdbdb00b031ccfc6",
+    "level_id": "village4",
+    "display_name": "Sandspirals",
+    "curve_count": 1,
+    "attempt_index": 8
+  },
+  "model": {
+    "path": "/mnt/d/ZumaTraining/overnight-v11-adaptive-recovery-s43081301-v1/checkpoints/adaptive-5090-recovery_13631488_steps.zip",
+    "sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579",
+    "device": "cuda:0"
+  },
+  "verification": {
+    "identity_fields": [
+      "outcome",
+      "ticks",
+      "score",
+      "trajectory_sha256",
+      "decisions",
+      "desired_action_counts",
+      "executed_action_counts"
+    ],
+    "pre_render_matches_formal_attempt": true,
+    "rendered_matches_formal_attempt": true,
+    "pre_render": {
+      "model_id": "selected-overnight",
+      "training_steps": 16252928,
+      "model_sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579",
+      "seed": 710000168,
+      "outcome": "win",
+      "native_outcome": null,
+      "time_limit_truncated": false,
+      "ticks": 4277,
+      "seconds": 42.77,
+      "score": 6640,
+      "reward": 9.58230000000003,
+      "decisions": 4277,
+      "desired_action_counts": {
+        "wait": 4060,
+        "fire": 128,
+        "swap": 89
+      },
+      "executed_action_counts": {
+        "wait": 4060,
+        "fire": 128,
+        "swap": 89
+      },
+      "trajectory_sha256": "sha256:1f3daccb86046e9c616cf3a1436cce4cbb766161a4e30e1cbdbdb00b031ccfc6",
+      "qualifies_sub_12": false
+    },
+    "rendered": {
+      "model_id": "selected-overnight",
+      "training_steps": 16252928,
+      "model_sha256": "sha256:0d2193c864d68644a716711fd77abb553f6727807f7de2f0a81acf7e3bec1579",
+      "seed": 710000168,
+      "outcome": "win",
+      "native_outcome": null,
+      "time_limit_truncated": false,
+      "ticks": 4277,
+      "seconds": 42.77,
+      "score": 6640,
+      "reward": 9.58230000000003,
+      "decisions": 4277,
+      "desired_action_counts": {
+        "wait": 4060,
+        "fire": 128,
+        "swap": 89
+      },
+      "executed_action_counts": {
+        "wait": 4060,
+        "fire": 128,
+        "swap": 89
+      },
+      "trajectory_sha256": "sha256:1f3daccb86046e9c616cf3a1436cce4cbb766161a4e30e1cbdbdb00b031ccfc6",
+      "qualifies_sub_12": false
+    }
+  },
+  "video": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/outputs/aispeedrun-alpha-v1/adv14-sandspirals-42.77s.mp4",
+    "sha256": "sha256:982770c14f89a012ad14680fc0d3f320b3ab2021295d22d8c3c5a46597750c82",
+    "bytes": 3194608,
+    "codec": "h264/libx264",
+    "pixel_format": "yuv420p",
+    "width": 800,
+    "height": 736,
+    "fps": 50,
+    "frame_stride_native_ticks": 2,
+    "gameplay_frame_count": 2140,
+    "frame_count": 2240,
+    "decoded_frame_count": 2240,
+    "duration_seconds": 44.8,
+    "final_hold_seconds": 2.0,
+    "poster": "/mnt/c/Users/Laure/Documents/祖玛/outputs/aispeedrun-alpha-v1/adv14-sandspirals-42.77s-poster.png",
+    "poster_sha256": "sha256:149a50ebd6214fee35180198b03ef40cf66c61c5868c3c8020a1d32506f14658"
+  }
+}

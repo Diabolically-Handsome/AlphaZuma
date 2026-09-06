@@ -1,0 +1,70 @@
+{
+  "schema": "zuma-rl.c183-fruit-powerup-collision-reconciliation-1024-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_UNBOUND_DIFF_OUTPUT",
+  "created_utc": "2026-08-10T15:38:33.4007653Z",
+  "purpose": "Repeat c188 with the sole change required by its observed ceiling failure: search at most 1024 exact MTRand draws per tick instead of 512, while retaining the requirement for a complete native-call proof before certification.",
+  "classification": "preregistered-reconciliation-search-ceiling-expansion",
+  "parents": {
+    "c188_preregistration_sha256": "sha256:4b3e7774e14007e2d6b66462145c4a88d0e2f67a135ed1eea78e4aabdc8a50f0",
+    "c188_failure_receipt": "diagnostics/c188-c183-fruit-powerup-collision-reconciliation-ceiling-failure-receipt-v1.json",
+    "c188_failure_receipt_sha256": "sha256:a3a49a583fcf678cd18519fb5e5edf11fc4de660cdd9b1118009dc2ff7226463",
+    "c188_failed_output_sha256": "sha256:736fb7b4778ae54ef970630d88f88b50b350314647dff10f44d865e29770dcbd"
+  },
+  "only_change_from_c188": {
+    "maximum_external_visual_mtrand_draws_per_tick_before": 512,
+    "maximum_external_visual_mtrand_draws_per_tick_after": 1024,
+    "selected_window_unchanged": true,
+    "source_and_dmo_unchanged": true,
+    "no_shooter_synchronization_unchanged": true,
+    "tolerances_unchanged": true,
+    "code_unchanged": true
+  },
+  "fixed_inputs": {
+    "trajectory": "D:/ZumaGolden/formal-full-state-c181a1-fruit-powerup-c182-campaign-v1/attempt-01/source/attempt-01/trajectory/index.json",
+    "trajectory_sha256": "sha256:64e8439227c20cd5f4909f8cdfafc6cd69d87496af411dc4aa284c9c1174f7f4",
+    "dmo": "D:/ZumaGolden/diagnostics/full-state-source-bound-fruit-powerup-c181a1-plan-v1-stop3166/inputs/input.dmo",
+    "dmo_sha256": "sha256:413ff5b6470f695dc703b99064762a3d5749434530e620833291925c56339e77",
+    "start_update": 8213,
+    "end_update": 8260,
+    "source_proof_start_update": 8120,
+    "source_proof_end_update": 8270
+  },
+  "output": {
+    "path": "D:/ZumaGolden/diagnostics/jungle2-c183-u8213-u8260-fruit-powerup-collision-diff-v4-reconciled-unbound.json",
+    "absent_at_freeze": true
+  },
+  "fixed_command": ".\\.venv-win\\Scripts\\python.exe tools\\compare_pc_gameplay_trajectory.py D:\\ZumaGolden\\formal-full-state-c181a1-fruit-powerup-c182-campaign-v1\\attempt-01\\source\\attempt-01\\trajectory\\index.json --dmo D:\\ZumaGolden\\diagnostics\\full-state-source-bound-fruit-powerup-c181a1-plan-v1-stop3166\\inputs\\input.dmo --original-root \"D:\\SteamLibrary\\steamapps\\common\\Zuma's Revenge\" --level-id Jungle2 --curve-index 0 --start-update 8213 --end-update 8260 --no-synchronize-shooter --reconcile-external-visual-mtrand --maximum-external-visual-mtrand-draws-per-tick 1024 --source-feature-proofs --source-proof-start-update 8120 --source-proof-end-update 8270 --evidence-root D:\\ZumaGolden --waypoint-tolerance 0.0001 --position-tolerance 0.001 --progress-tolerance 0.000001 --output D:\\ZumaGolden\\diagnostics\\jungle2-c183-u8213-u8260-fruit-powerup-collision-diff-v4-reconciled-unbound.json",
+  "acceptance": {
+    "status": "PASS",
+    "compared_tick_count": 47,
+    "all_tick_statuses_pass": true,
+    "all_gameplay_states_exact_before_global_rng": true,
+    "all_global_mtrand_states_exact_after_reconciliation": true,
+    "all_qrand_crt_and_shooter_states_exact": true,
+    "required_source_authorized_features": [
+      "powerup_proximity_bomb",
+      "fruit_powerup_collision",
+      "fruit_collection_animation"
+    ],
+    "first_row_update": 8234,
+    "first_row_draw_count": 14,
+    "update_8235_draw_count_greater_than": 512,
+    "every_row_draw_count_at_most": 1024,
+    "unbound_output_is_not_certifying": true,
+    "native_call_trace_proof_pending": true
+  },
+  "frozen_code": {
+    "tools/compare_pc_gameplay_trajectory.py": "sha256:96ef141bee133f7c866f41183b2e0f41a420eab6345b77e5d5bc6a9ecd8ee8c8",
+    "src/zuma_rl/pc_gameplay_diff.py": "sha256:0b8cd75dd7d93180269f255d946b4959ddb7b65cd23ed0303662d5e0db4fa971",
+    "src/zuma_rl/pc_mtrand_reconciliation.py": "sha256:d9781e7626b1f981aa82ce220dd96e55ac074722d83873ba8990617aec4e3ac7",
+    "src/zuma_rl/pc_mechanism_audit.py": "sha256:656895a45cc546238e6c7051272eef325b1853527bacde1c76586b5f138abad4"
+  },
+  "decision_rule": {
+    "pass": "Freeze the exact transcript and preregister a native source-bound trace campaign; no simulator-diff or Gate credit yet.",
+    "failure": "Retain the output and diagnose without another ceiling increase unless the exact first unreached state proves it necessary.",
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "schema": "zuma-rl.zero-shot-multilevel-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_EVALUATION",
+  "created_utc": "2026-08-15T12:34:57.934154+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "stage": "engineering_polar_reanchor_probe",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "model": {
+    "id": "settled-v3-multiseed-final",
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-multiseed-s99081525-v1/final_model.zip",
+    "sha256": "sha256:ced0d6196fa27317e198d6c7a946fd21c9ed18d4d9574a02ea93ab8b4bcd116c",
+    "training_steps": 36027227
+  },
+  "levels": [
+    {
+      "id": "Jungle2",
+      "display_name": "Castaway",
+      "curve_count": 1,
+      "curve_names": [
+        "Jungle2\\Jungle2"
+      ]
+    },
+    {
+      "id": "Jungle9",
+      "display_name": "Creeper Copse",
+      "curve_count": 2,
+      "curve_names": [
+        "Jungle9\\Jungle9-1",
+        "Jungle9\\Jungle9-2"
+      ]
+    },
+    {
+      "id": "village6",
+      "display_name": "Face Your Fear",
+      "curve_count": 2,
+      "curve_names": [
+        "Village6-1",
+        "Village6-2"
+      ]
+    },
+    {
+      "id": "city4",
+      "display_name": "Ancestral Tongue",
+      "curve_count": 2,
+      "curve_names": [
+        "city4\\city4-1v2",
+        "city4\\city4-2v2"
+      ]
+    },
+    {
+      "id": "city10",
+      "display_name": "Double Danger",
+      "curve_count": 2,
+      "curve_names": [
+        "city10\\city10-1",
+        "city10\\city10-2"
+      ]
+    },
+    {
+      "id": "Coast10",
+      "display_name": "Skull Coral",
+      "curve_count": 2,
+      "curve_names": [
+        "coast10-1",
+        "coast10-2"
+      ]
+    },
+    {
+      "id": "grotto10",
+      "display_name": "Shark Den",
+      "curve_count": 2,
+      "curve_names": [
+        "grotto10\\grotto10-1",
+        "grotto10\\grotto10-2"
+      ]
+    },
+    {
+      "id": "volcano1",
+      "display_name": "Flowing Tiki Rage",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano1\\Volcano1"
+      ]
+    },
+    {
+      "id": "volcano5",
+      "display_name": "Underworld Remnants",
+      "curve_count": 1,
+      "curve_names": [
+        "Volcano5\\Volcano5-2"
+      ]
+    },
+    {
+      "id": "volcano8",
+      "display_name": "Basaltic Approach",
+      "curve_count": 1,
+      "curve_names": [
+        "volcano8\\volcano8-3"
+      ]
+    },
+    {
+      "id": "volcano9",
+      "display_name": "Searing Visage",
+      "curve_count": 2,
+      "curve_names": [
+        "volcano9\\volcano9-1",
+        "Volcano9\\Volcano9-2"
+      ]
+    },
+    {
+      "id": "volcano10",
+      "display_name": "Descent into Anguish",
+      "curve_count": 1,
+      "curve_names": [
+        "volcano10\\volcano10-4"
+      ]
+    }
+  ],
+  "attempts_per_level": 1,
+  "total_attempts": 12,
+  "seed_plan": {
+    "registry": "training_validation",
+    "base_seed": 1550000700,
+    "last_seed": 1550000711
+  },
+  "environment": {
+    "profile_mode": "tutorials_completed",
+    "base_config": {
+      "aim_bins": 180,
+      "action_mode": "factorized",
+      "frame_skip": 1,
+      "max_ticks": 30000,
+      "max_balls": 768,
+      "max_projectiles": 32,
+      "max_curves": 2,
+      "score_reward_scale": 1.0,
+      "step_penalty": -0.01,
+      "win_reward": 1000.0,
+      "loss_reward": -1000.0,
+      "privileged_debug": false,
+      "render_width": 400,
+      "render_height": 300,
+      "actor_interface": "full55-v1"
+    },
+    "input_profile": {
+      "profile_id": "elite-human-v1",
+      "reaction_delay_ticks": 12,
+      "max_aim_speed_degrees_per_second": 1080.0,
+      "max_aim_acceleration_degrees_per_second_squared": 18000.0,
+      "min_button_interval_ticks": 5
+    },
+    "reward_profile": {
+      "profile_id": "win-time-score-v1",
+      "win_reward": 10.0,
+      "failure_reward": -10.0,
+      "time_penalty_per_native_tick": -0.0001,
+      "score_progress_reward_cap": 0.01
+    }
+  },
+  "execution": {
+    "output_root": "/mnt/d/ZumaTraining/alphazuma-55-polar-reanchor-probe-s99081527-v1",
+    "shard_count": 1,
+    "devices": [
+      "cuda:0"
+    ],
+    "parallel_envs_per_shard": 24
+  },
+  "evaluator": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel_v2.py",
+    "sha256": "sha256:811de7b530e6703858ae218aa9a0309724c49824d817e2f55733646ec89fd6c3"
+  },
+  "diagnostic_contract": {
+    "paired_models_share_identical_task_seeds": true,
+    "formal_selection_authority": false,
+    "training_recipe_change_authority": false,
+    "formal_seed_ranges_consumed": false,
+    "max_ticks": 30000,
+    "probe_winner_cannot_enter_original_formal_campaign": true
+  },
+  "builder": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_training_validation.py",
+    "sha256": "sha256:45fcdd98cda89f2a606cb24c30a82c12b877d108b232d37f7623ed71bb9a1391"
+  },
+  "settled_v3_multiseed_validation_plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-settled-v3-multiseed-validation-s99081526-plan-v1.json",
+    "sha256": "sha256:e08d50ad88b557440199f99abb975e3e4bdc7f06dbe21b70b8ccfdb1b31b444f"
+  },
+  "target_completion": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-multiseed-s99081525-v1/completion.json",
+    "sha256": "sha256:84a06961d8fc2532830c2babb413b25ac185046a5d55ff7ce4af63854c550660"
+  },
+  "polar_reanchor_probe": {
+    "plan": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-polar-reanchor-probe-s99081527-plan-v1.json",
+      "sha256": "sha256:46022eab6f4adb4220a99b8e32923efee2969aed9375acc09b4bd76eaa25536c"
+    },
+    "completion": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-polar-reanchor-variants-s99081527-v1/completion.json",
+      "sha256": "sha256:e500e7afdc65d61a04c66a4a1459c30d98c9bd7de84a86cb740ab9496e714eed"
+    },
+    "posthoc_engineering_only": true
+  }
+}

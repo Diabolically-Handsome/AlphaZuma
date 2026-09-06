@@ -1,0 +1,53 @@
+{
+ "schema": "zuma-rl.alphazuma-55-speedrun-record-claim",
+ "version": 1,
+ "claim": "AI completion of Jungle1 (Adv 1) in 557 native ticks (5.57 s at 100 Hz) \u2014 numerically below the 6 s human RTA IL record on speedrun.com",
+ "convention": "AI-TAS (seed_list_tas): seed selected by exhaustive 2^32 opening enumeration; NOT an RTA-comparable claim; simulator timing, RTA boundary audit PENDING; no original-client record claim",
+ "human_reference": {
+  "source": "speedrun.com Zumas Revenge IL Adv 1",
+  "record": "0:06 RTA",
+  "runner": "UfahTrainer8",
+  "date": "2025-03-06"
+ },
+ "motor_constraints": "elite-human-v1 (120 ms reaction, 1080 deg/s aim, 50 ms button interval) active throughout",
+ "record_run": {
+  "schema": "zuma-rl.alphazuma-55-macro-speedrun-seed-search-v1-row",
+  "level_id": "Jungle1",
+  "seed": 4752474,
+  "outcome": "win",
+  "native_outcome": null,
+  "time_limit_truncated": false,
+  "ticks": 557,
+  "score": 1490,
+  "shots": 10,
+  "macro_decisions": 21,
+  "native_ticks_consumed": 557,
+  "win_trigger_tick": 557,
+  "win_pending_at_termination": true,
+  "board_cleared_tick": null
+ },
+ "model": {
+  "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle1-s99081706-v1/checkpoints/timepolish-jungle1_1572720_steps.zip",
+  "sha256": "sha256:611b3cbda00587c6d70bbd3f3458daa394036b76ea2b7ede8b964a8da7bb7e12",
+  "lineage": "macro-teacher-BC (invfreq) -> timepolish PPO champion (tier-1, median 3058 @ 16/16)"
+ },
+ "seed_provenance": {
+  "golden_enumeration": "/mnt/d/ZumaTraining/alphazuma-55-golden-seeds-jungle1-s99081701-v1/completion.json",
+  "sha256": "sha256:edfd53fb0736abe7cf02ad2a77b91c7797db0d08c91eb858aad16414a50c1e71",
+  "note": "seed 4752474 is a perfect 2-color opening from the full 2^32 enumeration"
+ },
+ "scan_config": {
+  "path": "/mnt/d/ZumaTraining/alphazuma-55-record-full-a-s99081708-v1/config.json",
+  "sha256": "sha256:bd5451bc43de025750dbdc85eccbe34ff4211f3fbde49f1ec8ca1829a1543d2b"
+ },
+ "progression": [
+  15.65,
+  8.91,
+  7.74,
+  6.77,
+  5.57
+ ],
+ "claimed_utc": "2026-08-19T23:07:20.722959+00:00",
+ "formal_seed_consumption": false,
+ "reproduction": "search tool --seed-file with this single seed + this checkpoint reproduces deterministically (hold_ticks 4, stack 0,4,8)"
+}

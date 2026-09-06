@@ -1,0 +1,126 @@
+{
+  "schema": "zuma-rl.teacher-policy-anchor-repair-screen-preregistration",
+  "version": 1,
+  "created_utc": "2026-08-04T15:23:46.912Z",
+  "status": "FROZEN_BEFORE_RUN_OUTPUT",
+  "classification": "consumed_failure_stream_controlled_coefficient_repair_screen",
+  "question": "Does increasing only the teacher forward-KL coefficient from 100 to 1000 eliminate the deterministic retention failure on the exact consumed 32-episode s20260910 comparison population?",
+  "causal_control": {
+    "failed_run_outcome": {
+      "path": "diagnostics/teacher-policy-anchor-c100-confirmation-n32-s20260910-outcome-v1.json",
+      "sha256": "sha256:cf0a934bff46b6e1bb2286a3845648dc909bd77bcb93c53d91ff3ce1733cae77",
+      "status": "FRESH_N32_CONFIRMATION_FAIL"
+    },
+    "changed_variable_only": "teacher_forward_kl_coefficient_100_to_1000",
+    "unchanged": [
+      "input_model",
+      "training_seed_and_four_vector_streams",
+      "boundary_seed_and_eight_vector_streams",
+      "total_steps",
+      "optimizer_reset",
+      "learning_rate",
+      "ppo_epochs",
+      "rollout_and_batch_sizes",
+      "environment_and_action_mask",
+      "deterministic_boundary_identity_protocol"
+    ],
+    "stochastic_boundary_omitted": "the coefficient-100 run already passed stochastic retention 32-to-32; this repair screen targets the failed deterministic mechanism only"
+  },
+  "design": {
+    "run_dir": "/mnt/d/ZumaTraining/screening-teacher-anchor-c1000-s20260910-n32-deterministic-v1",
+    "expected_run_dir_absent": true,
+    "input_model": {
+      "path": "D:/ZumaTraining/screening-teacher-offline-polar90-s20260873-v1/refined_model.zip",
+      "sha256": "sha256:f03dee97cb5a3e2ce3abcf4324137fe6ed9b68e827765b4a7b6adfa63cafb8f7"
+    },
+    "training_base_seed": 20260910,
+    "training_initial_vector_seeds": [20260910, 20260911, 20260912, 20260913],
+    "boundary_base_seed": 20270910,
+    "boundary_initial_vector_seeds": [20270910, 20270911, 20270912, 20270913, 20270914, 20270915, 20270916, 20270917],
+    "recipe": {
+      "environment": "ZumaRevenge-v0",
+      "level": "Jungle2",
+      "aim_bins": 180,
+      "actor_observable_retail_rejection_mask": true,
+      "frame_skip": 1,
+      "max_ticks": 12000,
+      "max_balls": 768,
+      "total_effective_steps": 16384,
+      "num_envs": 4,
+      "rollout_steps_per_env": 512,
+      "batch_size": 512,
+      "ppo_epochs": 1,
+      "learning_rate": 0.000005,
+      "entropy_coef": 0.0,
+      "reset_optimizer_state": true,
+      "teacher_forward_kl_coefficient": 1000.0
+    },
+    "boundary_evaluation": {
+      "deterministic_only": true,
+      "receipt_schema_version": 4,
+      "episodes": 32,
+      "eval_num_envs": 8,
+      "identity_aware_comparison_version": 2
+    },
+    "resources": {
+      "cuda_visible_devices": "0",
+      "expected_cuda_device": "NVIDIA GeForce RTX 5090",
+      "rtx_5080_excluded": true,
+      "cpu_affinity": "0-7",
+      "cpu_thread_budget": 8
+    }
+  },
+  "acceptance": {
+    "pipeline": {
+      "completion_status": "COMPLETE",
+      "effective_steps_exactly": 16384,
+      "optimizer_reset_status": "PASS",
+      "teacher_anchor_verification_status": "PASS",
+      "teacher_policy_bitwise_unchanged": true,
+      "current_policy_bitwise_changed": true,
+      "train_calls_exactly": 8,
+      "minibatches_exactly": 32,
+      "samples_exactly": 16384,
+      "mean_forward_kl_below_coefficient_100_observation": 0.000006118046172787217,
+      "stderr_bytes": 0
+    },
+    "baseline_reproduction": {
+      "pretrain_receipt_sha256_exactly": "sha256:8695133d6a441784a8317b46908a80dd3d37fea12fbb0bbcb5bacef4b5e31887",
+      "wins": 25,
+      "losses": 4,
+      "truncations": 3,
+      "mean_reward": 33.30008125
+    },
+    "deterministic_repair": {
+      "posttrain_wins_at_least": 25,
+      "posttrain_losses_plus_truncations_at_most": 7,
+      "posttrain_truncations_at_most": 3,
+      "posttrain_mean_reward_at_least_pretrain_minus": 0.5,
+      "identity_paired_reward_regressions_exceeding_5_at_most": 2
+    },
+    "promotion_rule": "a complete pass authorizes one fresh nonoverlapping coefficient-1000 confirmation; it does not authorize the 98304-step scale screen",
+    "rejection_rule": "on failure, do not increase the coefficient again without a structural actor-drift repair; inspect shared-feature and value-gradient coupling"
+  },
+  "evidence_anchor": {
+    "coefficient_1000_kat": {
+      "path": "diagnostics/teacher-policy-anchor-c1000-kat-s20260874-outcome-v1.json",
+      "sha256": "sha256:acccdd7733cd33e6e7f28cd808dea5fe334fb3c8de34d6d5df3d07da83ad8f07",
+      "status": "COEFFICIENT_1000_KAT_PASS"
+    },
+    "training_source_hashes": {
+      "train.py": "sha256:94d14cb9cf5da4e46989cab00ef501d0852bc8e08488d1e7fd955bd7185f0f84",
+      "teacher_anchor.py": "sha256:52611e4833422f81a148281dad8982d1d0908410f4c52842bd11f15c58d5a601",
+      "boundary_evidence.py": "sha256:27c1a103c53d57e0f3983714fce58ca144ab927a84dfd3770c4273c2590826f6",
+      "compare_ppo_boundaries.py": "sha256:c3d6d3bc02d0de6901d5d265db966dd015bda87473a10154a92c9439a17efeca"
+    },
+    "last_full_training_regression": "PASS_1134",
+    "new_factor_audit_targeted_tests": "PASS_3"
+  },
+  "non_authorizations": [
+    "fresh_holdout_claim",
+    "coefficient_1000_recipe_promotion_before_this_screen_passes",
+    "98304_step_scale_screen",
+    "large_scale_training",
+    "fidelity_gate_opening"
+  ]
+}

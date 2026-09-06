@@ -1,0 +1,61 @@
+{
+  "schema": "zuma-rl.human-speedrun-preregistration",
+  "version": 1,
+  "status": "PREREGISTERED_FOR_FORMAL_TRAINING",
+  "date": "2026-08-12",
+  "scope": "Jungle2 state-policy fine-tuning under an elite-human comparison interface",
+  "source_model": {
+    "path": "/mnt/d/ZumaTraining/pc-golden-jungle2-transfer-s20260950-98k-v1/final_model.zip",
+    "sha256": "sha256:7869b4306a1f05128cd8fbff978361ba1969454dceaf28b5fb611d8965baa97b",
+    "policy_parameters": 321828
+  },
+  "objective_order": [
+    "win",
+    "elapsed_native_ticks",
+    "bounded_score_progress"
+  ],
+  "reward_contract": {
+    "profile_id": "win-time-score-v1",
+    "win_reward": 10.0,
+    "failure_reward": -10.0,
+    "time_penalty_per_native_tick": -0.0001,
+    "score_progress_reward_cap": 0.01,
+    "score_progress_denominator": "native_board_score_target",
+    "score_progress_clipped_to": [0.0, 1.0],
+    "guarantees": {
+      "every_win_outranks_every_failure_at_max_ticks_12000": true,
+      "one_second_saved_value_at_least_full_score_shaping": true
+    }
+  },
+  "input_contract": {
+    "profile_id": "elite-human-v1",
+    "native_tick_hz": 100,
+    "reaction_delay_ticks": 12,
+    "reaction_delay_milliseconds": 120,
+    "max_aim_speed_degrees_per_second": 1080.0,
+    "max_aim_acceleration_degrees_per_second_squared": 18000.0,
+    "min_button_interval_ticks": 5,
+    "min_button_interval_milliseconds": 50,
+    "direct_aim_teleport": false
+  },
+  "calibration_status": {
+    "classification": "PROVISIONAL_ELITE_HUMAN_UPPER_ENVELOPE",
+    "raw_mouse_telemetry_available": false,
+    "required_followup": "replace provisional limits only after a frozen top-player telemetry study"
+  },
+  "compatibility": {
+    "base_pc_golden_environment_changed": false,
+    "observation_space_changed": false,
+    "action_space_changed": false,
+    "optimizer_state_reset_on_initialization": true,
+    "teacher_anchor_enabled": false
+  },
+  "smoke_validation": {
+    "formal_training_data": false,
+    "seed": 20261000,
+    "steps": 64,
+    "device": "cuda",
+    "status": "PASS",
+    "receipt": "/mnt/d/ZumaTraining/human-speedrun-v1-smoke-s20261000-64-v3/completion.json"
+  }
+}

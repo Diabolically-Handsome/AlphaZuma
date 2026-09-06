@@ -1,0 +1,146 @@
+{
+  "schema": "zuma-rl.alphazuma-55-training-validation-audit",
+  "version": 1,
+  "status": "PASS",
+  "audited_utc": "2026-08-15T10:12:30.964075+00:00",
+  "formal_selection_authority": false,
+  "training_recipe_change_authority": false,
+  "artifacts": {
+    "master": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+      "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+    },
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-balanced-distillation-validation-s99081511-preregistration-v1.json",
+      "sha256": "sha256:f1b862348a7fb6b02300d7df1a4adfd699b628de835749b047521179805c44c8"
+    },
+    "models_manifest": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-balanced-distillation-validation-s99081511-models-v1.json",
+      "sha256": "sha256:8e2d9f27212faa6945fbfa569f130f39a2dbde2e3d8367bdf7abbfbb9f33de0a"
+    },
+    "matrix_shard": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-balanced-distillation-validation-s99081511-v1/matrix-shard-00-of-01.json",
+      "sha256": "sha256:1b4dd4aac3984a4a123015aed1c8324007588962df99892bc783138609d53e8e"
+    },
+    "auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_training_validation.py",
+      "sha256": "sha256:3621dcb64c3342e3954533d22401f258fe6c72ac49d164456455ad77ea54aa67"
+    }
+  },
+  "matrix": {
+    "levels": 55,
+    "attempts_per_model": 55,
+    "models": 2,
+    "completed_attempts": 110,
+    "seed_plan": {
+      "registry": "training_validation",
+      "base_seed": 1550000110,
+      "last_seed": 1550000164
+    },
+    "runtime": {
+      "python": "3.12.3",
+      "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "parallel_envs": 24,
+      "total_vector_transitions": 973147,
+      "wall_seconds": 2090.3261516329985
+    }
+  },
+  "model_summaries": [
+    {
+      "model_id": "specialist-distilled-v1",
+      "model_sha256": "sha256:36d8bf8882a949d69f06f7ba5c456ef076b6a4bd7268505c996ba627050ccb82",
+      "attempts": 55,
+      "wins": 0,
+      "losses": 55,
+      "truncations": 0,
+      "cleared_levels": 0,
+      "winning_levels": [],
+      "median_winning_ticks": null
+    },
+    {
+      "model_id": "balanced-distilled-v1",
+      "model_sha256": "sha256:1dd57f98d3638f70235c2e2fefed272dafd58186a45b7ac48d598709ba74cf0d",
+      "attempts": 55,
+      "wins": 8,
+      "losses": 33,
+      "truncations": 14,
+      "cleared_levels": 8,
+      "winning_levels": [
+        {
+          "level_id": "Jungle1",
+          "seed": 1550000110,
+          "ticks": 1456,
+          "score": 1660,
+          "trajectory_sha256": "sha256:3fd6d67a4bf3f73f86c5b0de5aed5f99fe788aca38a6bed06ae9b87d7d46f623"
+        },
+        {
+          "level_id": "Jungle2",
+          "seed": 1550000111,
+          "ticks": 2867,
+          "score": 3200,
+          "trajectory_sha256": "sha256:d04958f86544bd119c9ffe3a6221e29fb9b95dc10a22d332672fa5f657a2e32f"
+        },
+        {
+          "level_id": "Jungle3",
+          "seed": 1550000112,
+          "ticks": 4201,
+          "score": 2690,
+          "trajectory_sha256": "sha256:509fbd3f63d128c36ffff00a2c794c3577c5ea33c77069d5180feae6856cfdf6"
+        },
+        {
+          "level_id": "Jungle4",
+          "seed": 1550000113,
+          "ticks": 2008,
+          "score": 2760,
+          "trajectory_sha256": "sha256:89b6037f2fa5bf55fae533d79366a8f613a8f0da4ba7474193376c412d260f57"
+        },
+        {
+          "level_id": "jungle6",
+          "seed": 1550000114,
+          "ticks": 8656,
+          "score": 4550,
+          "trajectory_sha256": "sha256:2727cb94bc4fd47ea229246f051288fe6b079bba22f848f384e270cd219b5114"
+        },
+        {
+          "level_id": "Jungle8",
+          "seed": 1550000116,
+          "ticks": 4117,
+          "score": 3120,
+          "trajectory_sha256": "sha256:5ba93f910e4cfa96524e42a823f2d5ab392c54826eab8dfa56b0f9e82ca9dcfb"
+        },
+        {
+          "level_id": "Jungle9",
+          "seed": 1550000117,
+          "ticks": 6915,
+          "score": 6710,
+          "trajectory_sha256": "sha256:85cb41b7959b6e16b15ecd8a3097b82aef6b18cae8fb97231dfd08afa4b53c6b"
+        },
+        {
+          "level_id": "village2",
+          "seed": 1550000120,
+          "ticks": 10070,
+          "score": 5920,
+          "trajectory_sha256": "sha256:18769c7f25f5024d231bdfb85f5cde7b81bbe007cf09ce386c0f1f690fb720e3"
+        }
+      ],
+      "median_winning_ticks": 4159.0
+    }
+  ],
+  "paired_comparison": {
+    "baseline_model_id": "specialist-distilled-v1",
+    "candidate_model_id": "balanced-distilled-v1",
+    "wins_delta": 8,
+    "cleared_levels_delta": 8,
+    "candidate_only_winning_levels": [
+      "Jungle1",
+      "Jungle2",
+      "Jungle3",
+      "Jungle4",
+      "Jungle8",
+      "Jungle9",
+      "jungle6",
+      "village2"
+    ]
+  },
+  "interpretation_boundary": "This PASS proves artifact integrity and a paired training-health signal only; it is not selection, final blind, or continuous-campaign evidence."
+}

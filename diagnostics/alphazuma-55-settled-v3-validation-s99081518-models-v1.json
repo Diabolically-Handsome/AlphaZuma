@@ -1,0 +1,63 @@
+{
+  "schema": "zuma-rl.zero-shot-models-manifest",
+  "version": 1,
+  "status": "FROZEN",
+  "created_utc": "2026-08-15T09:40:58.861915+00:00",
+  "campaign_id": "alphazuma-55-weekend-s81081401-v1",
+  "stage": "training_validation",
+  "master_preregistration": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-weekend-s81081401-preregistration-v1.json",
+    "sha256": "sha256:f43e10c299332b3e4b3497ff057596775c1bf3011e1ce08fc23f832a6652f4cb"
+  },
+  "models": [
+    {
+      "id": "v11-full55-v1",
+      "training_steps": 33772736,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-weekend-s81081401-v1/migrations/v11-full55-v1.zip",
+      "sha256": "sha256:248dd1a4091c4818fb63c7525448f9fddb51830d95ee1a5a168dde2a686a728d"
+    },
+    {
+      "id": "settled-v3-epoch-02",
+      "training_steps": 34231849,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-distillation-s99081517-v1/epoch_02_model.zip",
+      "sha256": "sha256:a50010acd9a6fc05a07f04b4f3b51d611b7e650d54cb0396558c98bdf9dd5bd1"
+    },
+    {
+      "id": "settled-v3-epoch-04",
+      "training_steps": 34231849,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-distillation-s99081517-v1/epoch_04_model.zip",
+      "sha256": "sha256:7434d8a08ef3fc003fc387c0c92578e7279313fc526ccbeffa47a7a12eeadf92"
+    },
+    {
+      "id": "settled-v3-epoch-06",
+      "training_steps": 34231849,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-distillation-s99081517-v1/epoch_06_model.zip",
+      "sha256": "sha256:0cb26f7f8bd001997e86217116f3aeb71483721ebeb8f7a67ac136d92dc179b5"
+    },
+    {
+      "id": "settled-v3-epoch-08",
+      "training_steps": 34231849,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-distillation-s99081517-v1/epoch_08_model.zip",
+      "sha256": "sha256:69971dabaac637536bcfe5ea6c28bbfbd561f7b900d4aeb06e56e6dd3090fb04"
+    },
+    {
+      "id": "settled-v3-final",
+      "training_steps": 34231849,
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-distillation-s99081517-v1/final_model.zip",
+      "sha256": "sha256:e457794d35b0e2008246c127f7bb377c1fbb4d9cc5b6f253a22a636ce6012c5e"
+    }
+  ],
+  "purpose": "Paired early-health diagnostic only; it cannot select the formal finalist.",
+  "builder": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_training_validation.py",
+    "sha256": "sha256:45fcdd98cda89f2a606cb24c30a82c12b877d108b232d37f7623ed71bb9a1391"
+  },
+  "settled_v3_validation_plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-settled-v3-validation-s99081518-plan-v1.json",
+    "sha256": "sha256:816ab53b407d700894f2d094c2aaab1391aeba5fb1b67e72aae4003fa50e897e"
+  },
+  "target_completion": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-settled-v3-distillation-s99081517-v1/completion.json",
+    "sha256": "sha256:0f426b36e7410b4a255324c16d690ea3d1a082a11e35d29ec27e5003ba99acb5"
+  }
+}

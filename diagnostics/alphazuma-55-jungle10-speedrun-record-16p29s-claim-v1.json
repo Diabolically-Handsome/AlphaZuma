@@ -1,0 +1,73 @@
+{
+  "schema": "zuma-rl.alphazuma-55-speedrun-record-claim",
+  "version": 1,
+  "level": "Jungle10 (Adv 10, 'Darkness Falls')",
+  "claim": "AI completion of Jungle10 (Adv 10) in 1629 native ticks (16.29 s at 100 Hz) — numerically below the 25 s human RTA IL record (34.8 percent faster). The scan's top EIGHT results all beat the human line.",
+  "convention": "AI-TAS (seed_list_tas): golden-seed enumeration; simulator timing, RTA boundary audit PENDING; no original-client record claim; elite-human motor constraints active",
+  "human_reference": {
+    "source": "speedrun.com REST API (level 69z884x9 'Adv 10', Any% 1st)",
+    "record": "0:25 RTA",
+    "runner": "Leshik_Doshik",
+    "date": "2021-03-23"
+  },
+  "record_run": {
+    "schema": "zuma-rl.alphazuma-55-macro-speedrun-seed-search-v1-row",
+    "level_id": "Jungle10",
+    "seed": 944583,
+    "outcome": "win",
+    "native_outcome": null,
+    "time_limit_truncated": false,
+    "ticks": 1629,
+    "score": 2880,
+    "shots": 22,
+    "macro_decisions": 173,
+    "native_ticks_consumed": 1629,
+    "win_trigger_tick": 1629,
+    "win_pending_at_termination": true,
+    "board_cleared_tick": null
+  },
+  "runner_up": {
+    "ticks": 2166,
+    "seconds": 21.66,
+    "seed": 768706,
+    "shots": 37,
+    "note": "also below the human record (as are the next six)",
+    "row": {
+      "schema": "zuma-rl.alphazuma-55-macro-speedrun-seed-search-v1-row",
+      "level_id": "Jungle10",
+      "seed": 768706,
+      "outcome": "win",
+      "native_outcome": null,
+      "time_limit_truncated": false,
+      "ticks": 2166,
+      "score": 2950,
+      "shots": 37,
+      "macro_decisions": 201,
+      "native_ticks_consumed": 2166,
+      "win_trigger_tick": 2166,
+      "win_pending_at_termination": true,
+      "board_cleared_tick": null
+    }
+  },
+  "tier_adjudication": "satisfies tier_3_sub_human_record_material of prereg s99081741-v2 with the simulator-time / RTA-audit-pending caveat verbatim",
+  "model": {
+    "path": "/mnt/d/ZumaTraining/alphazuma-55-timepolish-jungle10-s99081741-v1/checkpoints/timepolish-jungle10_1572720_steps.zip",
+    "sha256": "sha256:510d16c3a5e41d07c1c71a3f5ae746fb406b0f5036dcc57fae84279330495bb5",
+    "lineage": "strengthened-init route end-to-end: 240-ep teacher collection (s99081736) -> BC 10/16 (s99081740) -> timepolish champion ckpt1572720 (s99081741-v2 outcome: 13/16, median 5867, E[t] -20.5% vs init)"
+  },
+  "scan": {
+    "run_dir": "/mnt/d/ZumaTraining/alphazuma-55-record-jungle10-s99081750-v1",
+    "completion_sha256": "sha256:10576f2c7962cd69082d87a7104b84cd1f1a3b23477b511d05a7eacf3b057bbc",
+    "seeds_scanned": 3000,
+    "wins": 2644,
+    "hold_ticks": 4,
+    "device": "cuda:1"
+  },
+  "seed_provenance": {
+    "seed_file": "/mnt/d/ZumaTraining/alphazuma-55-record-seeds-jungle10-top3000-v1.jsonl",
+    "seed_file_sha256": "sha256:47ee786ddb0a4f035aea34bf316c08112e926f5323a3af9002bc44a6e7f9eee5",
+    "note": "top-3000 rows of the jungle10 golden-seed enumeration (s99081749, full 2^32 PopCapMTRandom space, live check); embargoed formal ranges dropped by the search tool"
+  },
+  "claimed_utc": "2026-08-21T19:31:14Z",
+  "formal_seed_consumption": false
+}

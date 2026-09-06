@@ -1,0 +1,64 @@
+{
+  "schema": "zuma-rl.retail-loss-phase-discovery-preregistration",
+  "version": 1,
+  "status": "PASS",
+  "created_utc": "2026-08-10T08:42:52.8923836Z",
+  "purpose": "Observe the finite relaxed-Board phase sequence that prevented c141's exact-single-state persistence rule from maturing, without changing outcome acceptance or requesting Fidelity Gate credit.",
+  "classification": "diagnostic-only-not-certifying",
+  "parent_preregistration": {
+    "path": "diagnostics/recording-c141-stable-loss-terminal-preregistration-v1.json",
+    "sha256": "sha256:d147ad03de0070e5ed9b4acd00cedb687fec621bb58243641695a1643d1cb4ed"
+  },
+  "frozen_pre_patch_implementation": {
+    "live_controller_sha256": "sha256:d75cb5fec1f3a08e99951e41e7cdf29643bdba05c10be4faeab53b11593b1811",
+    "record_controller_sha256": "sha256:c61928d29f33870d97e94fdc808ed92069547e1eeba1b7a7c0571815d734e3f9",
+    "provenance_validator_sha256": "sha256:e06b4218417033b2ac96cb8ff9281e619938add4ddd2617837a29856a214f69b"
+  },
+  "authorized_change": {
+    "logging_only": true,
+    "log_event_type": "relaxed_board_phase",
+    "emit_only_when_projected_state_changes": true,
+    "projected_fields": [
+      "native_game_time",
+      "score",
+      "displayed_score",
+      "score_target",
+      "runtime_active",
+      "curve_plan_exhausted",
+      "loss_counter",
+      "active_ball_count",
+      "inserting_ball_count",
+      "pending_ball_count",
+      "fired_ball_count"
+    ],
+    "include_current_win_and_loss_predicate_results": true,
+    "no_input_change": true,
+    "no_outcome_predicate_change": true,
+    "no_provenance_change": true
+  },
+  "single_run": {
+    "id": "c142d1",
+    "output_root": "D:/ZumaGolden/record-c142d1-idle-loss-phase-discovery-v1",
+    "expected_outcome": "natural_loss",
+    "gameplay_policy": "idle",
+    "fruit_policy": "ignore",
+    "maximum_gameplay_seconds": 120.0
+  },
+  "retail_contract": {
+    "runtime_executable": "D:/ZumaGolden/tools/direct-runtime/popcapgame1.exe",
+    "runtime_sha256": "sha256:2181ce2bfbfcb4678bf69a1474e08d3db941311aa768176a88453cc69692af20",
+    "changedir": "D:/SteamLibrary/steamapps/common/Zuma's Revenge",
+    "prestate_dir": "D:/ZumaGolden/session-20260728-203153/native-windowed-record-001-prestate-reconstructed",
+    "navigation_updates": [1622, 2422, 3108],
+    "navigation_points": [[400.0, 533.0], [633.0, 281.0], [399.0, 456.0]],
+    "prelaunch_cursor_screen_point": [100, 100],
+    "process_memory_writes_required": 0,
+    "host_state_restore_required": true
+  },
+  "decision_rules": {
+    "run_is_diagnostic_even_if_reported_outcome_matches": true,
+    "failed_or_partial_output_is_retained": true,
+    "phase_acceptance_rule_is_written_only_after_this_run_finishes": true,
+    "no_gate_credit": true
+  }
+}

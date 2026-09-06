@@ -1,0 +1,137 @@
+{
+  "schema": "zuma-rl.optimizer-reset-ppoepoch1-lr-confirmation-preregistration",
+  "version": 1,
+  "created_utc": "2026-08-04T13:54:19.564Z",
+  "status": "FROZEN_BEFORE_RUN_OUTPUT",
+  "classification": "fresh_nonoverlapping_vector_seed_recipe_confirmation",
+  "hypotheses": {
+    "null": "the 5e-6 one-epoch retention pass is specific to the consumed mechanism-screen streams",
+    "alternative": "the exact optimizer-reset, one-epoch, 5e-6 recipe also preserves capability on independent training, boundary, and action-sampling streams"
+  },
+  "design": {
+    "run_dir": "/mnt/d/ZumaTraining/confirmation-optimizer-reset-ppoepoch1-lr5e6-s20260886-v1",
+    "expected_run_dir_absent": true,
+    "input_model": {
+      "path": "D:/ZumaTraining/screening-teacher-offline-polar90-s20260873-v1/refined_model.zip",
+      "sha256": "sha256:f03dee97cb5a3e2ce3abcf4324137fe6ed9b68e827765b4a7b6adfa63cafb8f7"
+    },
+    "fresh_seeds": {
+      "training_base_seed": 20260886,
+      "training_initial_vector_seeds": [20260886, 20260887, 20260888, 20260889],
+      "boundary_base_seed": 20270886,
+      "boundary_initial_vector_seeds": [20270886, 20270887, 20270888, 20270889],
+      "stochastic_action_sampling_seed": 20280886,
+      "search_roots": [
+        "C:/Users/Laure/Documents/祖玛",
+        "D:/ZumaTraining",
+        "D:/ZumaGolden"
+      ],
+      "json_files_searched": 12816,
+      "exact_numeric_seed_or_vector_range_hits_before_freeze": 0,
+      "numeric_boundary_regex_used": true
+    },
+    "recipe": {
+      "environment": "ZumaRevenge-v0",
+      "level": "Jungle2",
+      "profile_mode": "tutorials_completed",
+      "aim_bins": 180,
+      "factorized_actions": true,
+      "actor_observable_retail_rejection_mask": true,
+      "frame_skip": 1,
+      "max_ticks": 12000,
+      "training_time_limit_steps": 0,
+      "max_balls": 768,
+      "algorithm": "MaskablePPO",
+      "total_effective_steps": 16384,
+      "num_envs": 4,
+      "rollout_steps_per_env": 512,
+      "batch_size": 512,
+      "ppo_epochs": 1,
+      "learning_rate": 0.000005,
+      "entropy_coef": 0.0,
+      "reset_optimizer_state": true,
+      "freeze_aim_path": false,
+      "all_policy_and_value_parameters_trainable": true
+    },
+    "boundary_evaluation": {
+      "receipt_schema_version": 4,
+      "episodes_per_boundary": 8,
+      "eval_num_envs": 4,
+      "episode_identity_protocol": "vector_env_index_per_env_episode_ordinal_and_terminal_info",
+      "outcome_source": "terminal_info",
+      "deterministic_and_stochastic": true,
+      "same_identity_sets_required_pre_and_post": true
+    },
+    "comparison": {
+      "schema_version": 2,
+      "tool_sha256": "sha256:c3d6d3bc02d0de6901d5d265db966dd015bda87473a10154a92c9439a17efeca",
+      "boundary_evidence_sha256": "sha256:27c1a103c53d57e0f3983714fce58ca144ab927a84dfd3770c4273c2590826f6",
+      "severe_regression_threshold": 5.0
+    },
+    "resources": {
+      "cuda_visible_devices": "0",
+      "expected_cuda_device": "NVIDIA GeForce RTX 5090",
+      "rtx_5080_excluded": true,
+      "cpu_affinity": "0-7",
+      "cpu_thread_budget": 8
+    }
+  },
+  "acceptance": {
+    "pipeline": {
+      "completion_receipt_status": "COMPLETE",
+      "effective_steps_exactly": 16384,
+      "optimizer_reset_receipt_status": "PASS",
+      "optimizer_state_parameter_count_after_reset": 0,
+      "model_parameters_bitwise_unchanged_by_reset": true,
+      "all_four_v4_boundary_receipts_required": true,
+      "both_v2_identity_comparisons_required": true,
+      "comparison_outcome_source": "terminal_info",
+      "failure_receipt_forbidden": true,
+      "stderr_bytes": 0
+    },
+    "precondition": {
+      "pretrain_deterministic_wins_at_least": 6,
+      "episodes": 8
+    },
+    "deterministic_retention": {
+      "posttrain_wins_at_least": 6,
+      "posttrain_wins_no_less_than_pretrain_minus": 1,
+      "posttrain_losses_plus_truncations_at_most": 2,
+      "posttrain_truncations_at_most": 1,
+      "posttrain_mean_reward_at_least_pretrain_minus": 1.5,
+      "identity_paired_reward_regressions_exceeding_5_at_most": 2
+    },
+    "stochastic_retention": {
+      "posttrain_wins_at_least": 7,
+      "posttrain_wins_no_less_than_pretrain_minus": 1,
+      "posttrain_truncations_at_most": 1,
+      "posttrain_mean_reward_at_least_pretrain_minus": 1.0,
+      "identity_paired_reward_regressions_exceeding_5_at_most": 2
+    },
+    "promotion_rule": "a complete pass authorizes one preregistered 98304-step closed-gate scale-stability screen using this exact recipe and another fresh nonoverlapping seed family; it does not authorize transfer training",
+    "rejection_rule": "on failure, do not scale; report which frozen clause failed and return to update-control diagnosis without post-hoc override"
+  },
+  "evidence_anchor": {
+    "mechanism_outcome": {
+      "path": "diagnostics/optimizer-reset-ppoepoch1-lr5e6-paired-s20260882-outcome-v1.json",
+      "sha256": "sha256:9e5caaf6bede2d0fc7c49d6d1f455233d8d6847986868f519096fcf4f3724510",
+      "status": "PPO_EPOCH1_LR5E6_MECHANISM_SCREEN_PASS",
+      "seed_classification": "consumed_control"
+    },
+    "regression": {
+      "wsl_targeted_pytest": "PASS_48",
+      "wsl_full_pytest": "PASS_1129"
+    }
+  },
+  "source_hashes": {
+    "train.py": "sha256:fadb2c03066199b6bffa829d69cfd6019b99cca74b6b27964c9c85a952ada61b",
+    "boundary_evidence.py": "sha256:27c1a103c53d57e0f3983714fce58ca144ab927a84dfd3770c4273c2590826f6",
+    "compare_ppo_boundaries.py": "sha256:c3d6d3bc02d0de6901d5d265db966dd015bda87473a10154a92c9439a17efeca"
+  },
+  "non_authorizations": [
+    "98304_step_scale_screen_before_this_confirmation_passes",
+    "large_scale_training",
+    "fidelity_gate_opening",
+    "original_transfer_certification"
+  ]
+}

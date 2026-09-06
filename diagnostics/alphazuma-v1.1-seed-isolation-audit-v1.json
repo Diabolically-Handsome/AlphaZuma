@@ -1,0 +1,40 @@
+{
+  "schema": "zuma-rl.alphazuma-v11-seed-isolation-audit",
+  "version": 1,
+  "status": "PASS",
+  "completed_utc": "2026-08-14T00:29:00Z",
+  "formal_training_ranges_recomputed_from_actual_preregistrations": [
+    {"run": "frontier-adaptive-5090-oom-recovery", "first": 930000000, "last": 933999999},
+    {"run": "frontier-fixed-5080-oom-recovery", "first": 940000000, "last": 943999999},
+    {"run": "memdense-adaptive-5090-a", "first": 950000000, "last": 953999999},
+    {"run": "memdense-fixed-5090-b", "first": 960000000, "last": 963999999},
+    {"run": "memdense-adaptive-5080-a", "first": 970000000, "last": 973999999},
+    {"run": "memdense-fixed-5080-b", "first": 980000000, "last": 983999999},
+    {"run": "ultradense-zero-win-5090-c", "first": 996000000, "last": 997999999}
+  ],
+  "reserved_evaluation_ranges": [
+    {"purpose": "candidate_selection", "first": 910000000, "last": 910000031},
+    {"purpose": "final_paired_blind", "first": 1010000000, "last": 1010000271}
+  ],
+  "prior_published_v1_evaluation_ranges": [
+    {"purpose": "V1 candidate selection", "first": 610000000, "last": 610000067},
+    {"purpose": "V1 target blind", "first": 710000000, "last": 710000255},
+    {"purpose": "V1 Jungle2 anchor blind", "first": 720000000, "last": 720000031}
+  ],
+  "consumption_search": {
+    "roots": ["/mnt/d/ZumaTraining", "/mnt/c/Users/Laure/Documents/祖玛/diagnostics"],
+    "file_filter": "*.json",
+    "selection_range_seed_or_base_seed_matches": 0,
+    "final_blind_range_seed_or_base_seed_matches": 0,
+    "reserved_mentions_in_preregistrations_are_not_inference_consumption": true
+  },
+  "validation": {
+    "formal_training_ranges_pairwise_disjoint": true,
+    "selection_range_disjoint_from_all_training_ranges": true,
+    "final_blind_range_disjoint_from_all_training_ranges": true,
+    "selection_and_final_blind_ranges_disjoint": true,
+    "selection_range_not_found_in_prior_attempt_receipts": true,
+    "final_blind_range_not_found_in_prior_attempt_receipts": true,
+    "all_checks_passed": true
+  }
+}

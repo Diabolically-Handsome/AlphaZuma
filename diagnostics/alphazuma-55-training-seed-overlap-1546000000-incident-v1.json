@@ -1,0 +1,56 @@
+{
+  "schema": "zuma-rl.alphazuma-55-engineering-training-seed-overlap-incident",
+  "version": 1,
+  "status": "CONFIRMED_PRE_INFERENCE",
+  "created_utc": "2026-08-16T15:36:55.8110957Z",
+  "incident_id": "alphazuma-55-training-seed-overlap-1546000000-v1",
+  "summary": "The all-actions gradual route reused the beginning of an engineering-training seed namespace that had already been entered by an earlier stalled near-miss route. Its preregistered claim that the range was strictly after all prior reservations is therefore false.",
+  "earlier_route": {
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-distilled-nearmiss-focus-s99081627-preregistration-v1.json",
+      "sha256": "sha256:f066e6460f570c0985bf4db43f0a9245905798564b989292a2f69e38d7cb35f6"
+    },
+    "registered_training_seed_range": [
+      1546000000,
+      1549999999
+    ],
+    "stale_runtime_status": {
+      "path": "/mnt/d/ZumaTraining/alphazuma-55-distilled-nearmiss-focus-s99081627-v1/training_status.json",
+      "sha256": "sha256:e938dfdbb133d62a1d1c9fc91c2f2c3a88999d5a14ce0fb5f9db225e37d94edd",
+      "status": "RUNNING",
+      "updated_utc": "2026-08-16T08:38:37.613796+00:00",
+      "timesteps": 757776,
+      "episodes": 64,
+      "process_present_when_incident_frozen": false,
+      "evidentiary_limit": "The status proves that the registered namespace was entered and 64 episodes completed; it does not enumerate the exact per-episode seed set."
+    }
+  },
+  "later_route": {
+    "preregistration": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-allaim-s99081633-preregistration-v1.json",
+      "sha256": "sha256:502c0ab5566a66fa33ff33df80b10b101c5ea1b75dc4e21ff07f5996965730e1"
+    },
+    "registered_training_seed_range": [
+      1546000000,
+      1546000219
+    ],
+    "incorrect_frozen_claim": "strictly_after_previous_reserved_range",
+    "frozen_preregistration_modified": false
+  },
+  "classification": {
+    "scope": "engineering_training_seed_reuse",
+    "scientific_effect": "Training trajectories are not fresh with respect to every earlier engineering route, so comparisons requiring fresh training randomness must not use that claim.",
+    "model_artifact_effect": "The reuse does not by itself invalidate an engineering candidate model, but it must be disclosed in every successor and ablation.",
+    "formal_selection_seed_overlap": false,
+    "full55_gate_seed_overlap": false,
+    "formal_final_blind_seed_overlap": false,
+    "continuous_campaign_seed_overlap": false,
+    "formal_seed_consumption_detected": false
+  },
+  "remediation": {
+    "preserve_original_preregistrations": true,
+    "future_engineering_routes_may_reuse_only_with_explicit_disclosure": true,
+    "future_gate_and_formal_ranges_must_remain_disjoint": true,
+    "retroactive_recipe_or_seed_edits_forbidden": true
+  }
+}

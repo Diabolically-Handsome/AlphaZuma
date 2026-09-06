@@ -1,0 +1,84 @@
+{
+  "schema": "zuma-rl.pc-mtrand-reconciliation-proof-generalization-preregistration",
+  "version": 1,
+  "status": "FROZEN_BEFORE_CODE_CHANGE",
+  "created_utc": "2026-08-10T13:11:46.1252735Z",
+  "purpose": "Support independently provenance-bound normalized retail DMOs and stable near-stack pending-ball classification without weakening legacy proof verification or accepting caller-only labels.",
+  "parents": {
+    "c169_forensic_outcome": "diagnostics/c169-c164-fruit-collection-mtrand-trace-attempt2-outcome-v1.json",
+    "c169_forensic_outcome_sha256": "sha256:a1dd3fdee414406a7f44e80fbda9b3b7d9e02b59f27b02596b912da12f0a3ad2",
+    "legacy_confirmatory_proof": "D:/ZumaGolden/diagnostics/jungle2-c131b1-u5060-u5098-powerup-reverse-mtrand-proof-v1-confirmatory.json",
+    "legacy_bound_diff": "D:/ZumaGolden/diagnostics/jungle2-c131b1-u5060-u5098-powerup-reverse-diff-v6-nosync-bound.json"
+  },
+  "frozen_code": {
+    "src/zuma_rl/pc_mtrand_reconciliation.py": "sha256:daed83c4e16a7086ac266be7b9ba5d391a6a804e24f4e239148d0b52f3318048",
+    "src/zuma_rl/retail_dmo_provenance.py": "sha256:f436003093e804e9a3d15f8f7b80b64f1a65697a28a18d1392d554a706380869",
+    "tests/test_pc_mtrand_reconciliation.py": "sha256:8e99160a6fc110d4ce641ce73b08bfb3af26296196991f5f117f96ed89ea231b",
+    "tools/derive_pc_mtrand_reconciliation_proof.py": "sha256:793560ed8691a75e9b3b2d6a0abeca2f8117dec0c9a6f20e8f64e3153cf48239",
+    "tools/bind_pc_mtrand_reconciliation_proof.py": "sha256:e6dccde3970daf4934d08be700a5dfdc9887905938ac605822eac90677af5e45"
+  },
+  "authorized_changes": {
+    "pending_ball_stack_contract": {
+      "repeat_roll_requires": ["0x00458cd1", "0x00459031", "0x0045de5e"],
+      "visual_frame_roll_requires": ["0x00402111", "0x00458d6a", "0x00459031", "0x0045de5e"],
+      "outer_0x0065de83_optional": true,
+      "caller_only_classification_remains_forbidden": true,
+      "runtime_static_verification_remains_mandatory": true,
+      "runtime_static_repeat_bytes": "e85f88faff99b964000000f7f93bd6",
+      "runtime_static_visual_frame_bytes": "e81ff4ffff99f77e345e8997f4000000c3"
+    },
+    "nonlegacy_dmo_contract": {
+      "legacy_expected_dmo_behavior_unchanged": true,
+      "arbitrary_hash_allowlist_forbidden": true,
+      "nonlegacy_dmo_requires_source_probe_version": 2,
+      "nonlegacy_dmo_requires_trace_probe_version": 2,
+      "required_replay_classification": "source_bound_original_natural_retail_outcome",
+      "recompute_transport_provenance_from": [
+        "raw retail recording DMO",
+        "normalized playback DMO",
+        "natural recording report",
+        "collector plan",
+        "transport normalization receipt"
+      ],
+      "required_recording_properties": {
+        "natural_outcome": true,
+        "normal_retail_exit": true,
+        "host_restored_exactly": true,
+        "process_memory_writes": 0,
+        "collector_board_seed_mutation": false,
+        "gameplay_input_commands_preserved": true
+      },
+      "source_and_every_trace_window_must_bind_same_dmo_sha256": true,
+      "hash_size_path_and_canonical_receipt_checks_fail_closed": true
+    },
+    "serialized_compatibility": {
+      "legacy_v1_proof_recomputation_must_remain_byte_semantically_equal": true,
+      "new_v2_proofs_may_add_provenance_summaries": true,
+      "proof_schema_and_version_unchanged": true,
+      "gameplay_diff_schema_unchanged": true
+    }
+  },
+  "forbidden_changes": [
+    "simulator RNG burns",
+    "fruit gameplay semantics",
+    "Gate thresholds",
+    "accepting unclassified native callers",
+    "using c169 as confirmatory evidence after observing its stack"
+  ],
+  "acceptance": {
+    "new_near_stack_positive_tests": true,
+    "new_missing_near_ancestor_negative_tests": true,
+    "existing_caller_only_negative_tests": true,
+    "targeted_mtrand_tests_pass": true,
+    "legacy_c137_bound_proof_independent_reverification_passes": true,
+    "full_test_suite_passes": true,
+    "new_c164_trace_required_after_code_and_contract_freeze": true
+  },
+  "decision_rule": {
+    "pass": "All acceptance checks pass and legacy proof output remains compatible; only then preregister a fresh c164 trace.",
+    "fail": "Retain code/test failure evidence, revert no user state, and do not derive or bind a c164 proof.",
+    "fidelity_gate_change": false,
+    "training_gate_change": false,
+    "training_start": false
+  }
+}

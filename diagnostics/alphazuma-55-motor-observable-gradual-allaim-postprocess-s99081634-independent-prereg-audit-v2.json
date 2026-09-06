@@ -1,0 +1,85 @@
+{
+  "schema": "zuma-rl.alphazuma-55-allaim-postprocess-prereg-audit",
+  "version": 2,
+  "status": "PASS",
+  "audited_utc": "2026-08-16T14:30:16.214070+00:00",
+  "plan": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-allaim-postprocess-s99081634-plan-v2.json",
+    "sha256": "sha256:88d7c794cc4285db7e769e01ea14ca4f742293cee73050ad1143be1777328c01"
+  },
+  "auditor": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_motor_observable_gradual_allaim_postprocess_prereg_v2.py",
+    "sha256": "sha256:76e0268a0f079e33ca0bd0bd4f728cae82c611102583a90f8449fae37c8a3dd3"
+  },
+  "predecessor_timeout_recovery": {
+    "path": "/mnt/c/Users/Laure/Documents/祖玛/diagnostics/alphazuma-55-motor-observable-gradual-postprocess-s99081630-timeout-recovery-audit-v1.json",
+    "sha256": "sha256:e2f73963847962ca7de39e1bcf3d7ad6eed604145caf57e78d77d32223818ff6",
+    "result": "COMPLETE_NO_PROMOTION"
+  },
+  "implementation": {
+    "builder": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/build_alphazuma_55_motor_observable_gradual_allaim_postprocess_plan_v2.py",
+      "sha256": "sha256:225b9ac54f1c9afbd377337d2e6315b533f05bddea70ea4541556860c8a6463a"
+    },
+    "controller": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_motor_observable_gradual_allaim_postprocess_v2.py",
+      "sha256": "sha256:7115b39982c2c8fc7e5228077be6197b071878e7acd6c720845d7846ce5ca61f"
+    },
+    "evaluator": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_alphazuma_55_motor_observable.py",
+      "sha256": "sha256:ca792c154864aa5dbfc3ad19460dee2ef9ea55aedecf69ba8e7b40b50f8d4fca"
+    },
+    "auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_motor_observable_gradual_allaim_postprocess_v2.py",
+      "sha256": "sha256:c2ba4bc1c3ca28576b860a46fb20c61d863afc21d71056a15ad7b2b717f1e031"
+    },
+    "capacity_safe_evaluator_dependency": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel_v2.py",
+      "sha256": "sha256:811de7b530e6703858ae218aa9a0309724c49824d817e2f55733646ec89fd6c3"
+    },
+    "base_evaluator_dependency": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/evaluate_zero_shot_multilevel.py",
+      "sha256": "sha256:d0011f9ad5c6837315007a7fb31e128fb315e4baddb45959c5f3b98d11a6a7e3"
+    },
+    "motor_observation_wrapper": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/src/zuma_rl/observable_human_speedrun.py",
+      "sha256": "sha256:1c0326c530ed797e4426965c241298b768b6689133762055cd3f9216b74258de"
+    },
+    "v1_controller_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/run_alphazuma_55_motor_observable_postprocess_v1.py",
+      "sha256": "sha256:c9df46eb9e8cbe4576fce64c582a058029112248d74a0dbc81f9249408546da3"
+    },
+    "v1_auditor_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_motor_observable_postprocess_v1.py",
+      "sha256": "sha256:5519e99babb15f71fe7a65bfd64e1adee83a809bcb4340541c61e6676026d5a7"
+    },
+    "gradual_training_runtime": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/distill_alphazuma_55_motor_observable_gradual_allaim_v1.py",
+      "sha256": "sha256:4e55d406a65be0a7ea1d0e4302b736cf1b3fb1dd48e85e4f5d04633f21cf1b3a"
+    },
+    "timeout_compatible_matrix_auditor": {
+      "path": "/mnt/c/Users/Laure/Documents/祖玛/tools/audit_alphazuma_55_motor_observable_timeout_recovery_v1.py",
+      "sha256": "sha256:8c5698afdf1cf0e8410512514249f7b58f83085415a4c821e09409886126e346"
+    }
+  },
+  "matrix": {
+    "screen_candidates": 17,
+    "screen_attempts": 204,
+    "screen_seed_range": [
+      1550002800,
+      1550002811
+    ],
+    "maximum_gate_candidates": 5,
+    "maximum_gate_attempts": 275,
+    "gate_seed_range": [
+      1550002900,
+      1550002954
+    ],
+    "minimum_wins": 35,
+    "minimum_cleared_levels": 35
+  },
+  "timeout_semantics": "canonical_max_tick_timeout_is_non_win",
+  "output_root_absent_before_audit": true,
+  "formal_seed_consumption": "NONE",
+  "formal_candidate_authority": false
+}
