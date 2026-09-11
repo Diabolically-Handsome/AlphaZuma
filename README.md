@@ -2,8 +2,6 @@
 
 **A fidelity-first reinforcement-learning research environment for the Steam PC release of *Zuma's Revenge*, and the AlphaZuma-55 learned-speedrun program built on it.**
 
-> 中文完整版(保真度门槛、证据链、常量与验收细节):[README.zh-CN.md](README.zh-CN.md)
-
 Everything here is organised around one rule: **the environment is validated against the original game before any result is allowed to count, and every result carries a receipt.** Published evidence lives at [aispeedrun.ai](https://aispeedrun.ai) (source: [Diabolically-Handsome/aispeedrun](https://github.com/Diabolically-Handsome/aispeedrun)).
 
 ## Highlights
